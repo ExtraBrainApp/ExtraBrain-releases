@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>AReinstein Assistant - Free AI-Powered Screen Recording & Analysis Tool</title>
+    <meta
+      name="title"
+      content="AReinstein Assistant - Free AI-Powered Screen Recording & Analysis Tool"
+    />
+    <meta
+      name="description"
+      content="Free AI-powered desktop app for screen recording with real-time transcription, intelligent analysis, and question generation. Available for macOS, Windows, and Linux."
+    />
+    <meta
+      name="keywords"
+      content="screen recording, AI analysis, speech-to-text transcription, Electron app, free recording software, conversation analysis, desktop recorder"
+    />
+    <meta name="author" content="AReinstein" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://andrewsokolov.github.io/AReinstein/" />
+    <meta property="og:title" content="AReinstein Assistant - Free AI-Powered Screen Recording" />
+    <meta
+      property="og:description"
+      content="Free desktop app for screen recording with AI-powered transcription and analysis. Built with Electron for cross-platform use."
+    />
+    <meta
+      property="og:image"
+      content="https://andrewsokolov.github.io/AReinstein/assets/images/logo-512.png"
+    />
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://andrewsokolov.github.io/AReinstein/" />
+    <meta property="twitter:title" content="AReinstein Assistant - Free AI Recording Tool" />
+    <meta
+      property="twitter:description"
+      content="Free AI-powered screen recording with real-time transcription and analysis for macOS, Windows, and Linux."
+    />
+    <meta
+      property="twitter:image"
+      content="https://andrewsokolov.github.io/AReinstein/assets/images/logo-512.png"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://andrewsokolov.github.io/AReinstein/" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradientShift 15s ease infinite;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .animate-gradient {
+          animation: none !important;
+        }
+      }
+    </style>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "AReinstein Assistant",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": ["macOS", "Windows", "Linux"],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "AI-powered screen recording and analysis tool with real-time transcription, intelligent question generation, and conversation topic detection.",
+        "downloadUrl": "https://github.com/andrewsokolov/AReinstein-releases/releases/latest",
+        "softwareVersion": "0.0.26",
+        "author": {
+          "@type": "Organization",
+          "name": "AReinstein"
+        },
+        "featureList": [
+          "Screen recording with session management",
+          "AI-powered content analysis",
+          "Real-time audio transcription",
+          "Screenshot capture and storage",
+          "Conversation topic detection",
+          "Follow-up question generation",
+          "Multi-platform support",
+          "Automatic updates"
+        ]
+      }
+    </script>
+  </head>
+  <body class="antialiased text-white">
+    <!-- Animated Background -->
+    <div
+      class="fixed inset-0 -z-10 bg-gradient-to-br from-purple-500 via-purple-700 to-pink-400 animate-gradient"
+    ></div>
+
+    <!-- Skip to content link -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-purple-700 focus:rounded"
+    >
+      Skip to main content
+    </a>
+
+    <!-- Main Content -->
+    <main id="main-content" class="min-h-screen">
+      <!-- Hero Section -->
+      <section class="container mx-auto px-4 py-16 md:py-24 lg:py-32" x-data="releaseData()">
+        <div class="max-w-4xl mx-auto text-center">
+          <!-- Logo -->
+          <div class="mb-8 flex justify-center">
+            <img
+              src="/assets/images/logo-512.png"
+              alt="AReinstein Assistant Logo"
+              class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 drop-shadow-2xl"
+              width="512"
+              height="512"
+            />
+          </div>
+
+          <!-- Title -->
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg">
+            AReinstein Assistant
+          </h1>
+
+          <!-- Tagline -->
+          <p class="text-xl md:text-2xl lg:text-3xl mb-8 text-purple-100">
+            AI-Powered Screen Recording & Analysis
+          </p>
+
+          <!-- Download CTA & FREE Badge -->
+          <div class="flex flex-col items-center gap-4 mb-4">
+            <template x-if="loading">
+              <button
+                class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-semibold cursor-wait"
+              >
+                Loading...
+              </button>
+            </template>
+
+            <template x-if="!loading">
+              <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a
+                  :href="downloadUrl"
+                  class="bg-white text-purple-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-50 transition-all shadow-2xl hover:shadow-purple-500/50 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-300"
+                  x-text="'Download v' + version + ' for macOS'"
+                >
+                  Download for macOS
+                </a>
+
+                <span
+                  class="bg-purple-500/30 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-purple-300/50"
+                >
+                  100% Free
+                </span>
+              </div>
+            </template>
+          </div>
+
+          <!-- Platform Note -->
+          <p class="text-sm text-purple-200">
+            Currently available for macOS. Windows & Linux coming soon.
+          </p>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="container mx-auto px-4 py-16 md:py-24">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Powerful Features</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <!-- Feature Card 1: Screen Recording -->
+            <div
+              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="w-8 h-8 text-purple-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Screen Recording</h3>
+                  <p class="text-purple-100">
+                    Capture your screen with intelligent session management
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 2: AI Analysis -->
+            <div
+              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="w-8 h-8 text-purple-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">AI-Powered Analysis</h3>
+                  <p class="text-purple-100">
+                    Intelligent analysis of recorded content with insights
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 3: Transcription -->
+            <div
+              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="w-8 h-8 text-purple-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Real-Time Transcription</h3>
+                  <p class="text-purple-100">Accurate voice-to-text transcription as you speak</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 4: Screenshots -->
+            <div
+              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="w-8 h-8 text-purple-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Screenshot Capture</h3>
+                  <p class="text-purple-100">Capture and store important moments with context</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 5: Topic Detection -->
+            <div
+              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="w-8 h-8 text-purple-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Topic Detection</h3>
+                  <p class="text-purple-100">
+                    Automatically identify and categorize conversation topics
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 6: Question Generation -->
+            <div
+              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="w-8 h-8 text-purple-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Question Generation</h3>
+                  <p class="text-purple-100">
+                    Smart follow-up questions based on conversation flow
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 7: Multi-Platform -->
+            <div
+              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="w-8 h-8 text-purple-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Multi-Platform Support</h3>
+                  <p class="text-purple-100">Works on macOS, Windows, and Linux (coming soon)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 8: Auto-Updates -->
+            <div
+              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="w-8 h-8 text-purple-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Auto-Updates</h3>
+                  <p class="text-purple-100">Always stay up-to-date with the latest features</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Stack Section -->
+      <section class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl font-bold mb-8">Built with Modern Technology</h2>
+          <div class="flex flex-wrap justify-center gap-4">
+            <span
+              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium border border-white/20"
+            >
+              Electron.js
+            </span>
+            <span
+              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium border border-white/20"
+            >
+              React 19
+            </span>
+            <span
+              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium border border-white/20"
+            >
+              TypeScript
+            </span>
+            <span
+              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium border border-white/20"
+            >
+              DrizzleORM
+            </span>
+            <span
+              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium border border-white/20"
+            >
+              SQLite
+            </span>
+            <span
+              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium border border-white/20"
+            >
+              AI SDK
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container mx-auto px-4 py-12 border-t border-white/20">
+      <div class="max-w-7xl mx-auto text-center">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-6">
+          <a
+            href="https://github.com/andrewsokolov/AReinstein"
+            class="text-purple-200 hover:text-white transition-colors flex items-center gap-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            Source Code
+          </a>
+          <a
+            href="https://github.com/andrewsokolov/AReinstein-releases/releases"
+            class="text-purple-200 hover:text-white transition-colors flex items-center gap-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+              ></path>
+            </svg>
+            All Releases
+          </a>
+        </div>
+        <p
+          class="text-purple-200 text-sm"
+          x-data
+          x-text="'© ' + new Date().getFullYear() + ' AReinstein. All rights reserved.'"
+        >
+          © 2025 AReinstein. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Alpine.js Release Data Component -->
+    <script>
+      function releaseData() {
+        return {
+          loading: true,
+          version: '0.0.26',
+          downloadUrl: '',
+
+          async init() {
+            try {
+              const cached = this.getCached()
+              if (cached) {
+                Object.assign(this, cached)
+                this.loading = false
+                return
+              }
+
+              const res = await fetch(
+                'https://api.github.com/repos/andrewsokolov/AReinstein-releases/releases/latest'
+              )
+
+              if (!res.ok) {
+                throw new Error(`GitHub API error: ${res.status}`)
+              }
+
+              const data = await res.json()
+
+              this.version = data.tag_name.replace(/^v/, '')
+              const dmgAsset = data.assets.find((a) => a.name.match(/\.dmg$/i))
+              this.downloadUrl = dmgAsset?.browser_download_url || data.html_url
+
+              this.cache({ version: this.version, downloadUrl: this.downloadUrl })
+            } catch (error) {
+              console.error('Failed to fetch release:', error)
+              this.downloadUrl =
+                'https://github.com/andrewsokolov/AReinstein-releases/releases/latest'
+            } finally {
+              this.loading = false
+            }
+          },
+
+          getCached() {
+            try {
+              const cached = localStorage.getItem('areinstein_release_data')
+              if (!cached) return null
+
+              const { data, timestamp } = JSON.parse(cached)
+              const age = Date.now() - timestamp
+
+              if (age < 3600000) {
+                // 1 hour
+                return data
+              }
+
+              localStorage.removeItem('areinstein_release_data')
+              return null
+            } catch (error) {
+              console.error('Cache read error:', error)
+              return null
+            }
+          },
+
+          cache(data) {
+            try {
+              const cacheEntry = {
+                data,
+                timestamp: Date.now()
+              }
+              localStorage.setItem('areinstein_release_data', JSON.stringify(cacheEntry))
+            } catch (error) {
+              console.error('Cache write error:', error)
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
