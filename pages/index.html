@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
-    <title>AReinstein Assistant - Free AI-Powered Screen Recording & Analysis Tool</title>
+    <title>AReinstein - Free AI-Powered Screen Recording & Analysis Tool</title>
     <meta
       name="title"
-      content="AReinstein Assistant - Free AI-Powered Screen Recording & Analysis Tool"
+      content="AReinstein - Free AI-Powered Screen Recording & Analysis Tool"
     />
     <meta
       name="description"
@@ -24,7 +24,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://andrewsokolov.github.io/AReinstein-releases/" />
-    <meta property="og:title" content="AReinstein Assistant - Free AI-Powered Screen Recording" />
+    <meta property="og:title" content="AReinstein - Free AI-Powered Screen Recording" />
     <meta
       property="og:description"
       content="Free desktop app for screen recording with AI-powered transcription and analysis. Built with Electron for cross-platform use."
@@ -37,7 +37,7 @@
     <!-- Twitter Card -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://andrewsokolov.github.io/AReinstein-releases/" />
-    <meta property="twitter:title" content="AReinstein Assistant - Free AI Recording Tool" />
+    <meta property="twitter:title" content="AReinstein - Free AI Recording Tool" />
     <meta
       property="twitter:description"
       content="Free AI-powered screen recording with real-time transcription and analysis for macOS, Windows, and Linux."
@@ -63,26 +63,7 @@
 
     <!-- Custom Styles -->
     <style>
-      @keyframes gradientShift {
-        0%,
-        100% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-      }
-
-      .animate-gradient {
-        background-size: 200% 200%;
-        animation: gradientShift 15s ease infinite;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .animate-gradient {
-          animation: none !important;
-        }
-      }
+      /* No custom animations needed for 2D design */
     </style>
 
     <!-- Schema.org JSON-LD -->
@@ -90,7 +71,7 @@
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "AReinstein Assistant",
+        "name": "AReinstein",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": ["macOS", "Windows", "Linux"],
         "offers": {
@@ -118,16 +99,14 @@
       }
     </script>
   </head>
-  <body class="antialiased text-white">
-    <!-- Animated Background -->
-    <div
-      class="fixed inset-0 -z-10 bg-gradient-to-br from-purple-500 via-purple-700 to-pink-400 animate-gradient"
-    ></div>
+  <body class="antialiased text-white bg-blue-900">
+    <!-- Solid Background -->
+    <div class="fixed inset-0 -z-10 bg-blue-900"></div>
 
     <!-- Skip to content link -->
     <a
       href="#main-content"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-purple-700 focus:rounded"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-blue-900 focus:rounded"
     >
       Skip to main content
     </a>
@@ -141,7 +120,7 @@
           <div class="mb-8 flex justify-center">
             <img
               src="assets/images/logo-512.png"
-              alt="AReinstein Assistant Logo"
+              alt="AReinstein Logo"
               class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 drop-shadow-2xl"
               width="512"
               height="512"
@@ -150,19 +129,26 @@
 
           <!-- Title -->
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg">
-            AReinstein Assistant
+            AReinstein
           </h1>
 
           <!-- Tagline -->
-          <p class="text-xl md:text-2xl lg:text-3xl mb-8 text-purple-100">
-            AI-Powered Screen Recording & Analysis
+          <p class="text-xl md:text-2xl lg:text-3xl mb-6 text-blue-100">
+            Your AI Assistant for Meetings and Interviews
+          </p>
+
+          <!-- Description -->
+          <p class="text-base md:text-lg mb-8 text-blue-200 max-w-2xl mx-auto">
+            AReinstein helps improve your knowledge through real-time analysis during meetings and interviews.
+            Invisible to screen sharing and video calls, it captures context, transcribes conversations,
+            and generates intelligent questions to enhance your understanding.
           </p>
 
           <!-- Download CTA & FREE Badge -->
           <div class="flex flex-col items-center gap-4 mb-4">
             <template x-if="loading">
               <button
-                class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-semibold cursor-wait"
+                class="bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold cursor-wait"
               >
                 Loading...
               </button>
@@ -172,14 +158,14 @@
               <div class="flex flex-col sm:flex-row items-center gap-4">
                 <a
                   :href="downloadUrl"
-                  class="bg-white text-purple-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-50 transition-all shadow-2xl hover:shadow-purple-500/50 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-300"
+                  class="bg-white text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
                   x-text="'Download v' + version + ' for macOS'"
                 >
                   Download for macOS
                 </a>
 
                 <span
-                  class="bg-purple-500/30 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-purple-300/50"
+                  class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium border-2 border-blue-500"
                 >
                   100% Free
                 </span>
@@ -188,7 +174,7 @@
           </div>
 
           <!-- Platform Note -->
-          <p class="text-sm text-purple-200">
+          <p class="text-sm text-blue-200">
             Currently available for macOS. Windows & Linux coming soon.
           </p>
         </div>
@@ -201,17 +187,10 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <!-- Feature Card 1: Screen Recording -->
-            <div
-              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
-            >
+            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg
-                    class="w-8 h-8 text-purple-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -222,25 +201,16 @@
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Screen Recording</h3>
-                  <p class="text-purple-100">
-                    Capture your screen with intelligent session management
-                  </p>
+                  <p class="text-blue-100">Capture your screen with intelligent session management</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 2: AI Analysis -->
-            <div
-              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
-            >
+            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg
-                    class="w-8 h-8 text-purple-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -251,25 +221,16 @@
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">AI-Powered Analysis</h3>
-                  <p class="text-purple-100">
-                    Intelligent analysis of recorded content with insights
-                  </p>
+                  <p class="text-blue-100">Intelligent analysis of recorded content with insights</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 3: Transcription -->
-            <div
-              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
-            >
+            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg
-                    class="w-8 h-8 text-purple-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -280,23 +241,16 @@
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Real-Time Transcription</h3>
-                  <p class="text-purple-100">Accurate voice-to-text transcription as you speak</p>
+                  <p class="text-blue-100">Accurate voice-to-text transcription as you speak</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 4: Screenshots -->
-            <div
-              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
-            >
+            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg
-                    class="w-8 h-8 text-purple-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -307,23 +261,16 @@
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Screenshot Capture</h3>
-                  <p class="text-purple-100">Capture and store important moments with context</p>
+                  <p class="text-blue-100">Capture and store important moments with context</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 5: Topic Detection -->
-            <div
-              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
-            >
+            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg
-                    class="w-8 h-8 text-purple-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -334,25 +281,16 @@
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Topic Detection</h3>
-                  <p class="text-purple-100">
-                    Automatically identify and categorize conversation topics
-                  </p>
+                  <p class="text-blue-100">Automatically identify and categorize conversation topics</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 6: Question Generation -->
-            <div
-              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
-            >
+            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg
-                    class="w-8 h-8 text-purple-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -363,25 +301,16 @@
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Question Generation</h3>
-                  <p class="text-purple-100">
-                    Smart follow-up questions based on conversation flow
-                  </p>
+                  <p class="text-blue-100">Smart follow-up questions based on conversation flow</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 7: Multi-Platform -->
-            <div
-              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
-            >
+            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg
-                    class="w-8 h-8 text-purple-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -392,23 +321,36 @@
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Multi-Platform Support</h3>
-                  <p class="text-purple-100">Works on macOS, Windows, and Linux (coming soon)</p>
+                  <p class="text-blue-100">Works on macOS, Windows, and Linux (coming soon)</p>
                 </div>
               </div>
             </div>
 
-            <!-- Feature Card 8: Auto-Updates -->
-            <div
-              class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
-            >
+            <!-- Feature Card 8: Invisible Mode -->
+            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg
-                    class="w-8 h-8 text-purple-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Invisible Mode</h3>
+                  <p class="text-blue-100">Hidden from screen sharing, screenshots, and video calls</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 9: Auto-Updates -->
+            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -419,7 +361,7 @@
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Auto-Updates</h3>
-                  <p class="text-purple-100">Always stay up-to-date with the latest features</p>
+                  <p class="text-blue-100">Always stay up-to-date with the latest features</p>
                 </div>
               </div>
             </div>
@@ -427,53 +369,15 @@
         </div>
       </section>
 
-      <!-- Technology Stack Section -->
-      <section class="container mx-auto px-4 py-16">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-2xl md:text-3xl font-bold mb-8">Built with Modern Technology</h2>
-          <div class="flex flex-wrap justify-center gap-4">
-            <span
-              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium border border-white/20"
-            >
-              Electron.js
-            </span>
-            <span
-              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium border border-white/20"
-            >
-              React 19
-            </span>
-            <span
-              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium border border-white/20"
-            >
-              TypeScript
-            </span>
-            <span
-              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium border border-white/20"
-            >
-              DrizzleORM
-            </span>
-            <span
-              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium border border-white/20"
-            >
-              SQLite
-            </span>
-            <span
-              class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium border border-white/20"
-            >
-              AI SDK
-            </span>
-          </div>
-        </div>
-      </section>
     </main>
 
     <!-- Footer -->
-    <footer class="container mx-auto px-4 py-12 border-t border-white/20">
+    <footer class="container mx-auto px-4 py-12 border-t-2 border-blue-700">
       <div class="max-w-7xl mx-auto text-center">
         <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-6">
           <a
             href="https://github.com/andrewsokolov/AReinstein"
-            class="text-purple-200 hover:text-white transition-colors flex items-center gap-2"
+            class="text-blue-200 hover:text-white transition-colors flex items-center gap-2"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -488,7 +392,7 @@
           </a>
           <a
             href="https://github.com/andrewsokolov/AReinstein-releases/releases"
-            class="text-purple-200 hover:text-white transition-colors flex items-center gap-2"
+            class="text-blue-200 hover:text-white transition-colors flex items-center gap-2"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -504,7 +408,7 @@
           </a>
         </div>
         <p
-          class="text-purple-200 text-sm"
+          class="text-blue-200 text-sm"
           x-data
           x-text="'© ' + new Date().getFullYear() + ' AReinstein. All rights reserved.'"
         >
