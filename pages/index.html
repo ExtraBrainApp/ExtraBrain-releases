@@ -55,6 +55,33 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
 
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Config (must come before the CDN script) -->
+    <script>
+      tailwind = window.tailwind || {}
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+            },
+            boxShadow: {
+              glow: '0 0 0 1px rgba(255,255,255,0.06), 0 10px 30px rgba(0,0,0,0.35)',
+              glowLg:
+                '0 0 0 1px rgba(255,255,255,0.08), 0 18px 55px rgba(0,0,0,0.55)'
+            }
+          }
+        }
+      }
+    </script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -63,7 +90,50 @@
 
     <!-- Custom Styles -->
     <style>
-      /* No custom animations needed for 2D design */
+      :root {
+        color-scheme: dark;
+      }
+
+      .bg-grid {
+        background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.06) 1px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+        background-size: 48px 48px;
+        mask-image: radial-gradient(circle at 50% 0%, black 40%, transparent 72%);
+      }
+
+      .bg-noise {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+        background-size: 220px 220px;
+        mix-blend-mode: overlay;
+        opacity: 0.25;
+      }
+
+      .bg-blob {
+        filter: blur(42px);
+        transform: translateZ(0);
+        opacity: 0.55;
+        animation: blob 14s ease-in-out infinite;
+      }
+
+      @keyframes blob {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        50% {
+          transform: translate3d(0, -18px, 0) scale(1.06);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .bg-blob {
+          animation: none;
+        }
+      }
     </style>
 
     <!-- Schema.org JSON-LD -->
@@ -99,14 +169,28 @@
       }
     </script>
   </head>
-  <body class="antialiased text-white bg-blue-900">
-    <!-- Solid Background -->
-    <div class="fixed inset-0 -z-10 bg-blue-900"></div>
+  <body class="antialiased font-sans text-white bg-slate-950 selection:bg-cyan-400/30 selection:text-white">
+    <!-- Background -->
+    <div class="fixed inset-0 -z-10">
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-indigo-950/70 to-slate-950"></div>
+      <div
+        class="absolute -top-24 left-1/2 h-[520px] w-[680px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-cyan-500/30 via-indigo-500/25 to-fuchsia-500/25 bg-blob"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute top-[520px] left-[10%] h-[420px] w-[520px] rounded-full bg-gradient-to-tr from-indigo-500/25 via-sky-500/20 to-cyan-500/20 bg-blob"
+        aria-hidden="true"
+        style="animation-delay: -4s"
+      ></div>
+      <div class="absolute inset-0 bg-grid opacity-25" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-noise" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+    </div>
 
     <!-- Skip to content link -->
     <a
       href="#main-content"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-blue-900 focus:rounded"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-slate-950 focus:rounded-xl focus:shadow"
     >
       Skip to main content
     </a>
@@ -115,30 +199,38 @@
     <main id="main-content" class="min-h-screen">
       <!-- Hero Section -->
       <section class="container mx-auto px-4 py-16 md:py-24 lg:py-32" x-data="releaseData()">
-        <div class="max-w-4xl mx-auto text-center">
+        <div
+          class="max-w-5xl mx-auto text-center rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-glow px-6 sm:px-10 py-10 sm:py-14"
+        >
           <!-- Logo -->
           <div class="mb-8 flex justify-center">
-            <img
-              src="assets/images/logo-512.png"
-              alt="AReinstein Logo"
-              class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 drop-shadow-2xl"
-              width="512"
-              height="512"
-            />
+            <div class="relative">
+              <div
+                class="absolute -inset-4 rounded-full bg-gradient-to-tr from-cyan-400/35 via-indigo-400/25 to-fuchsia-400/25 blur-2xl"
+                aria-hidden="true"
+              ></div>
+              <img
+                src="assets/images/logo-512.png"
+                alt="AReinstein Logo"
+                class="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 drop-shadow-2xl"
+                width="512"
+                height="512"
+              />
+            </div>
           </div>
 
           <!-- Title -->
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg">
+          <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
             AReinstein
           </h1>
 
           <!-- Tagline -->
-          <p class="text-xl md:text-2xl lg:text-3xl mb-6 text-blue-100">
+          <p class="text-xl md:text-2xl lg:text-3xl mb-6 text-slate-100/90">
             Your AI Assistant for Meetings and Interviews
           </p>
 
           <!-- Description -->
-          <p class="text-base md:text-lg mb-8 text-blue-200 max-w-2xl mx-auto">
+          <p class="text-base md:text-lg mb-9 text-slate-200/80 max-w-2xl mx-auto leading-relaxed">
             AReinstein helps improve your knowledge through real-time analysis during meetings and interviews.
             Invisible to screen sharing and video calls, it captures context, transcribes conversations,
             and generates intelligent questions to enhance your understanding.
@@ -148,7 +240,7 @@
           <div class="flex flex-col items-center gap-4 mb-4">
             <template x-if="loading">
               <button
-                class="bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold cursor-wait"
+                class="inline-flex items-center justify-center gap-2 rounded-2xl bg-white/10 text-white px-8 py-4 text-lg font-semibold cursor-wait border border-white/15 shadow-glow"
               >
                 Loading...
               </button>
@@ -158,15 +250,28 @@
               <div class="flex flex-col sm:flex-row items-center gap-4">
                 <a
                   :href="downloadUrl"
-                  class="bg-white text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300"
-                  x-text="'Download v' + version + ' for macOS'"
+                  class="group relative isolate inline-flex items-center justify-center overflow-hidden rounded-2xl px-8 py-4 text-lg font-semibold text-slate-950 shadow-glowLg focus:outline-none focus:ring-4 focus:ring-cyan-300/40"
                 >
-                  Download for macOS
+                  <span
+                    class="absolute inset-0 z-0 rounded-2xl bg-gradient-to-r from-white via-cyan-50 to-white opacity-100 transition-opacity group-hover:opacity-95"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="absolute -inset-px z-0 rounded-2xl bg-gradient-to-r from-cyan-400/45 via-indigo-400/35 to-fuchsia-400/35 blur-lg opacity-70 transition-opacity group-hover:opacity-90"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="relative z-10"
+                    x-text="'Download v' + version + ' for macOS'"
+                  >
+                    Download for macOS
+                  </span>
                 </a>
 
                 <span
-                  class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium border-2 border-blue-500"
+                  class="inline-flex items-center gap-2 rounded-2xl bg-white/7 text-white px-4 py-2 text-sm font-semibold border border-white/15 shadow-glow"
                 >
+                  <span class="h-2 w-2 rounded-full bg-emerald-400 shadow" aria-hidden="true"></span>
                   100% Free
                 </span>
               </div>
@@ -174,7 +279,7 @@
           </div>
 
           <!-- Platform Note -->
-          <p class="text-sm text-blue-200">
+          <p class="text-sm text-slate-200/75">
             Currently available for macOS. Windows & Linux coming soon.
           </p>
         </div>
@@ -183,185 +288,241 @@
       <!-- Features Section -->
       <section class="container mx-auto px-4 py-16 md:py-24">
         <div class="max-w-7xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Powerful Features</h2>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 tracking-tight">
+            Powerful Features
+          </h2>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <!-- Feature Card 1: Screen Recording -->
-            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
+            <div
+              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+            >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div
+                    class="rounded-xl p-2 bg-gradient-to-tr from-cyan-400/25 via-indigo-400/15 to-fuchsia-400/15 border border-white/10 shadow-glow"
+                  >
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                     ></path>
-                  </svg>
+                    </svg>
+                  </div>
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Screen Recording</h3>
-                  <p class="text-blue-100">Capture your screen with intelligent session management</p>
+                  <p class="text-slate-200/80">Capture your screen with intelligent session management</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 2: AI Analysis -->
-            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
+            <div
+              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+            >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div
+                    class="rounded-xl p-2 bg-gradient-to-tr from-cyan-400/25 via-indigo-400/15 to-fuchsia-400/15 border border-white/10 shadow-glow"
+                  >
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
                     ></path>
-                  </svg>
+                    </svg>
+                  </div>
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">AI-Powered Analysis</h3>
-                  <p class="text-blue-100">Intelligent analysis of recorded content with insights</p>
+                  <p class="text-slate-200/80">Intelligent analysis of recorded content with insights</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 3: Transcription -->
-            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
+            <div
+              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+            >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div
+                    class="rounded-xl p-2 bg-gradient-to-tr from-cyan-400/25 via-indigo-400/15 to-fuchsia-400/15 border border-white/10 shadow-glow"
+                  >
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
                     ></path>
-                  </svg>
+                    </svg>
+                  </div>
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Real-Time Transcription</h3>
-                  <p class="text-blue-100">Accurate voice-to-text transcription as you speak</p>
+                  <p class="text-slate-200/80">Accurate voice-to-text transcription as you speak</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 4: Screenshots -->
-            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
+            <div
+              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+            >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div
+                    class="rounded-xl p-2 bg-gradient-to-tr from-cyan-400/25 via-indigo-400/15 to-fuchsia-400/15 border border-white/10 shadow-glow"
+                  >
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                     ></path>
-                  </svg>
+                    </svg>
+                  </div>
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Screenshot Capture</h3>
-                  <p class="text-blue-100">Capture and store important moments with context</p>
+                  <p class="text-slate-200/80">Capture and store important moments with context</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 5: Topic Detection -->
-            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
+            <div
+              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+            >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div
+                    class="rounded-xl p-2 bg-gradient-to-tr from-cyan-400/25 via-indigo-400/15 to-fuchsia-400/15 border border-white/10 shadow-glow"
+                  >
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
                     ></path>
-                  </svg>
+                    </svg>
+                  </div>
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Topic Detection</h3>
-                  <p class="text-blue-100">Automatically identify and categorize conversation topics</p>
+                  <p class="text-slate-200/80">Automatically identify and categorize conversation topics</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 6: Question Generation -->
-            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
+            <div
+              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+            >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div
+                    class="rounded-xl p-2 bg-gradient-to-tr from-cyan-400/25 via-indigo-400/15 to-fuchsia-400/15 border border-white/10 shadow-glow"
+                  >
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     ></path>
-                  </svg>
+                    </svg>
+                  </div>
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Question Generation</h3>
-                  <p class="text-blue-100">Smart follow-up questions based on conversation flow</p>
+                  <p class="text-slate-200/80">Smart follow-up questions based on conversation flow</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 7: Multi-Platform -->
-            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
+            <div
+              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+            >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div
+                    class="rounded-xl p-2 bg-gradient-to-tr from-cyan-400/25 via-indigo-400/15 to-fuchsia-400/15 border border-white/10 shadow-glow"
+                  >
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     ></path>
-                  </svg>
+                    </svg>
+                  </div>
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Multi-Platform Support</h3>
-                  <p class="text-blue-100">Works on macOS, Windows, and Linux (coming soon)</p>
+                  <p class="text-slate-200/80">Works on macOS, Windows, and Linux (coming soon)</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 8: Invisible Mode -->
-            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
+            <div
+              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+            >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div
+                    class="rounded-xl p-2 bg-gradient-to-tr from-cyan-400/25 via-indigo-400/15 to-fuchsia-400/15 border border-white/10 shadow-glow"
+                  >
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
                     ></path>
-                  </svg>
+                    </svg>
+                  </div>
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Invisible Mode</h3>
-                  <p class="text-blue-100">Hidden from screen sharing, screenshots, and video calls</p>
+                  <p class="text-slate-200/80">Hidden from screen sharing, screenshots, and video calls</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 9: Auto-Updates -->
-            <div class="bg-blue-800 rounded-lg p-6 hover:bg-blue-700 transition-colors border-2 border-blue-600">
+            <div
+              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+            >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div
+                    class="rounded-xl p-2 bg-gradient-to-tr from-cyan-400/25 via-indigo-400/15 to-fuchsia-400/15 border border-white/10 shadow-glow"
+                  >
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
                     ></path>
-                  </svg>
+                    </svg>
+                  </div>
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold mb-2">Auto-Updates</h3>
-                  <p class="text-blue-100">Always stay up-to-date with the latest features</p>
+                  <p class="text-slate-200/80">Always stay up-to-date with the latest features</p>
                 </div>
               </div>
             </div>
@@ -372,12 +533,12 @@
     </main>
 
     <!-- Footer -->
-    <footer class="container mx-auto px-4 py-12 border-t-2 border-blue-700">
+    <footer class="container mx-auto px-4 py-12 border-t border-white/10">
       <div class="max-w-7xl mx-auto text-center">
         <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-6">
           <a
             href="https://github.com/andrewsokolov/AReinstein"
-            class="text-blue-200 hover:text-white transition-colors flex items-center gap-2"
+            class="text-slate-200/70 hover:text-white transition-colors flex items-center gap-2"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -392,7 +553,7 @@
           </a>
           <a
             href="https://github.com/andrewsokolov/AReinstein-releases/releases"
-            class="text-blue-200 hover:text-white transition-colors flex items-center gap-2"
+            class="text-slate-200/70 hover:text-white transition-colors flex items-center gap-2"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -408,7 +569,7 @@
           </a>
         </div>
         <p
-          class="text-blue-200 text-sm"
+          class="text-slate-200/60 text-sm"
           x-data
           x-text="'© ' + new Date().getFullYear() + ' AReinstein. All rights reserved.'"
         >
