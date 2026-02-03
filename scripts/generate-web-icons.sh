@@ -1,60 +1,59 @@
 #!/bin/bash
-# Generate web-optimized icons from source PNG
+# Generate web-optimized icons with macOS-style rounded corners from source PNG
 
 set -euo pipefail
 
 SOURCE="icon_source.png"
 DEST_DIR="pages/assets/images"
 
-# Validate source file exists
 if [[ ! -f "$SOURCE" ]]; then
   echo "Error: Source file '$SOURCE' not found"
   exit 1
 fi
 
-# Create destination directory
-mkdir -p "$DEST_DIR"
-
-echo "Generating web icons from $SOURCE..."
-
-# macOS: Use sips (native tool)
-if command -v sips &> /dev/null; then
-  sips -z 1024 1024 "$SOURCE" --out "$DEST_DIR/logo.png"
-  sips -z 512 512 "$SOURCE" --out "$DEST_DIR/logo-512.png"
-  sips -z 192 192 "$SOURCE" --out "$DEST_DIR/logo-192.png"
-  sips -z 180 180 "$SOURCE" --out "$DEST_DIR/apple-touch-icon.png"
-  sips -z 32 32 "$SOURCE" --out "$DEST_DIR/favicon-32x32.png"
-  sips -z 16 16 "$SOURCE" --out "$DEST_DIR/favicon-16x16.png"
-
-  echo "✓ Generated PNG icons using sips"
-
-# Linux/Other: Use ImageMagick
+if command -v magick &> /dev/null; then
+  MAGICK_CMD="magick"
 elif command -v convert &> /dev/null; then
-  convert "$SOURCE" -resize 1024x1024 "$DEST_DIR/logo.png"
-  convert "$SOURCE" -resize 512x512 "$DEST_DIR/logo-512.png"
-  convert "$SOURCE" -resize 192x192 "$DEST_DIR/logo-192.png"
-  convert "$SOURCE" -resize 180x180 "$DEST_DIR/apple-touch-icon.png"
-  convert "$SOURCE" -resize 32x32 "$DEST_DIR/favicon-32x32.png"
-  convert "$SOURCE" -resize 16x16 "$DEST_DIR/favicon-16x16.png"
-
-  echo "✓ Generated PNG icons using ImageMagick"
+  MAGICK_CMD="convert"
 else
-  echo "Error: Neither 'sips' (macOS) nor 'convert' (ImageMagick) found"
-  echo "Install ImageMagick: brew install imagemagick (macOS) or apt install imagemagick (Linux)"
+  echo "Error: ImageMagick not found"
+  echo "Rounded corner masks require ImageMagick"
+  echo "Install: brew install imagemagick (macOS) or apt install imagemagick (Linux)"
   exit 1
 fi
 
-# Generate multi-size .ico file (requires ImageMagick)
-if command -v convert &> /dev/null; then
-  convert "$DEST_DIR/favicon-16x16.png" \
-          "$DEST_DIR/favicon-32x32.png" \
-          -colors 256 "$DEST_DIR/favicon.ico"
-  echo "✓ Generated multi-size favicon.ico"
-else
-  echo "⚠ Skipped favicon.ico generation (requires ImageMagick)"
-fi
+generate_rounded_icon() {
+  local size=$1
+  local output=$2
+  local radius=$((size * 22 / 100))
 
-# Optimize PNGs (optional, requires optipng or pngquant)
+  $MAGICK_CMD "$SOURCE" -resize ${size}x${size} \
+    \( +clone -alpha extract \
+       -draw "fill black polygon 0,0 0,$radius $radius,0 fill white circle $radius,$radius $radius,0" \
+       \( +clone -flip \) -compose Multiply -composite \
+       \( +clone -flop \) -compose Multiply -composite \
+    \) -alpha off -compose CopyOpacity -composite \
+    "$output"
+}
+
+mkdir -p "$DEST_DIR"
+
+echo "Generating web icons with rounded corners from $SOURCE..."
+
+generate_rounded_icon 1024 "$DEST_DIR/logo.png"
+generate_rounded_icon 512 "$DEST_DIR/logo-512.png"
+generate_rounded_icon 192 "$DEST_DIR/logo-192.png"
+generate_rounded_icon 180 "$DEST_DIR/apple-touch-icon.png"
+generate_rounded_icon 32 "$DEST_DIR/favicon-32x32.png"
+generate_rounded_icon 16 "$DEST_DIR/favicon-16x16.png"
+
+echo "✓ Generated PNG icons with rounded corners"
+
+$MAGICK_CMD "$DEST_DIR/favicon-16x16.png" \
+        "$DEST_DIR/favicon-32x32.png" \
+        -colors 256 "$DEST_DIR/favicon.ico"
+echo "✓ Generated multi-size favicon.ico"
+
 if command -v optipng &> /dev/null; then
   optipng -o7 "$DEST_DIR"/*.png
   echo "✓ Optimized PNG files with optipng"
