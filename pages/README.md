@@ -1,6 +1,6 @@
-# AReinstein GitHub Pages Website
+# ExtraBrain GitHub Pages Website
 
-Static landing page for AReinstein Assistant hosted on GitHub Pages.
+Static landing page for ExtraBrain Assistant hosted on GitHub Pages.
 
 ## Deployment Options
 
@@ -101,9 +101,9 @@ Then visit: http://localhost:8000
 
 ## Deployment URLs
 
-- **Live Site**: https://andrewsokolov.github.io/AReinstein/
-- **Source**: https://github.com/andrewsokolov/AReinstein
-- **Releases**: https://github.com/andrewsokolov/AReinstein-releases
+- **Live Site**: https://andrewsokolov.github.io/ExtraBrain/
+- **Source**: https://github.com/andrewsokolov/ExtraBrain
+- **Releases**: https://github.com/andrewsokolov/ExtraBrain-releases
 
 ## Features
 
