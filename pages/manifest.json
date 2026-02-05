@@ -1,0 +1,21 @@
+{
+  "name": "ExtraBrain - AI Meeting Assistant",
+  "short_name": "ExtraBrain",
+  "description": "AI-powered meeting assistant with real-time transcription and question generation",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/assets/images/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
