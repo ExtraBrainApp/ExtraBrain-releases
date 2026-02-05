@@ -1,59 +1,75 @@
 <!doctype html>
 <html lang="en">
+  <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init rs ls yi ns us ts ss capture calculateEventProperties vs register register_once register_for_session unregister unregister_for_session gs getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty fs ds createPersonProfile setInternalOrTestUser ps Qr opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing hs debug M cs getPageViewId captureTraceFeedback captureTraceMetric Kr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_sXYeYYxL93wov0PTZ9ERSbuvNWlaULK3lSDkqhajz8u', {
+          api_host: 'https://us.i.posthog.com',
+          defaults: '2025-11-30',
+          person_profiles: 'always',
+      })
+  </script>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
-    <title>ExtraBrain - Free AI-Powered Screen Recording & Analysis Tool</title>
+    <title>ExtraBrain - AI Meeting Assistant & Interview Helper | Free Screen Recording with Transcription</title>
     <meta
       name="title"
-      content="ExtraBrain - Free AI-Powered Screen Recording & Analysis Tool"
+      content="ExtraBrain - AI Meeting Assistant & Interview Helper | Free Screen Recording with Transcription"
     />
     <meta
       name="description"
-      content="Free AI-powered desktop app for screen recording with real-time transcription, intelligent analysis, and question generation. Available for macOS, Windows, and Linux."
+      content="Free AI-powered meeting assistant that helps you ace interviews and meetings. Real-time transcription, intelligent question generation, and invisible screen recording. Available for macOS."
     />
     <meta
       name="keywords"
-      content="screen recording, AI analysis, speech-to-text transcription, Electron app, free recording software, conversation analysis, desktop recorder"
+      content="AI meeting assistant, interview helper, meeting transcription software, screen recording with transcription, AI interview preparation, real-time meeting notes, conversation analysis, invisible screen recorder, job interview helper, meeting AI, free transcription app, macOS screen recorder"
     />
     <meta name="author" content="ExtraBrain" />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://andrewsokolov.github.io/ExtraBrain-releases/" />
-    <meta property="og:title" content="ExtraBrain - Free AI-Powered Screen Recording" />
+    <meta property="og:url" content="https://extrabrain.app/" />
+    <meta property="og:title" content="ExtraBrain - AI Meeting Assistant & Interview Helper" />
     <meta
       property="og:description"
-      content="Free desktop app for screen recording with AI-powered transcription and analysis. Built with Electron for cross-platform use."
+      content="Free AI-powered meeting assistant with real-time transcription, intelligent question generation, and invisible screen recording for interviews and meetings."
     />
     <meta
       property="og:image"
-      content="https://andrewsokolov.github.io/ExtraBrain-releases/assets/images/logo-512.png"
+      content="https://extrabrain.app/assets/images/logo-512.png"
     />
 
     <!-- Twitter Card -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://andrewsokolov.github.io/ExtraBrain-releases/" />
-    <meta property="twitter:title" content="ExtraBrain - Free AI Recording Tool" />
+    <meta property="twitter:url" content="https://extrabrain.app/" />
+    <meta property="twitter:title" content="ExtraBrain - AI Meeting Assistant & Interview Helper" />
     <meta
       property="twitter:description"
-      content="Free AI-powered screen recording with real-time transcription and analysis for macOS, Windows, and Linux."
+      content="Free AI-powered meeting assistant with real-time transcription, intelligent question generation, and invisible screen recording."
     />
     <meta
       property="twitter:image"
-      content="https://andrewsokolov.github.io/ExtraBrain-releases/assets/images/logo-512.png"
+      content="https://extrabrain.app/assets/images/logo-512.png"
     />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://andrewsokolov.github.io/ExtraBrain-releases/" />
+    <link rel="canonical" href="https://extrabrain.app/" />
 
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Preload & DNS Prefetch -->
+    <link rel="preload" href="assets/images/logo-512.png" as="image" />
+    <link rel="dns-prefetch" href="https://api.github.com" />
+    <link rel="alternate" hreflang="en" href="https://extrabrain.app/" />
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -140,31 +156,109 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "ExtraBrain",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": ["macOS", "Windows", "Linux"],
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "AI-powered screen recording and analysis tool with real-time transcription, intelligent question generation, and conversation topic detection.",
-        "downloadUrl": "https://github.com/andrewsokolov/ExtraBrain-releases/releases/latest",
-        "softwareVersion": "0.0.26",
-        "author": {
-          "@type": "Organization",
-          "name": "ExtraBrain"
-        },
-        "featureList": [
-          "Screen recording with session management",
-          "AI-powered content analysis",
-          "Real-time audio transcription",
-          "Screenshot capture and storage",
-          "Conversation topic detection",
-          "Follow-up question generation",
-          "Multi-platform support",
-          "Automatic updates"
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "ExtraBrain",
+            "applicationCategory": "BusinessApplication",
+            "applicationSubCategory": "Meeting Assistant",
+            "operatingSystem": ["macOS", "Windows", "Linux"],
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "description": "AI-powered meeting assistant with real-time transcription, intelligent question generation, and invisible screen recording for interviews and meetings.",
+            "downloadUrl": "https://github.com/andrewsokolov/ExtraBrain-releases/releases/latest",
+            "softwareVersion": "0.0.26",
+            "author": {
+              "@type": "Organization",
+              "name": "ExtraBrain",
+              "url": "https://extrabrain.app"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "ratingCount": "1"
+            },
+            "featureList": [
+              "AI-powered meeting analysis",
+              "Real-time speech transcription",
+              "Intelligent question generation",
+              "Invisible mode for screen sharing",
+              "Topic detection and categorization",
+              "Screenshot capture with context",
+              "Multi-platform support",
+              "Automatic updates"
+            ]
+          },
+          {
+            "@type": "Organization",
+            "name": "ExtraBrain",
+            "url": "https://extrabrain.app",
+            "logo": "https://extrabrain.app/assets/images/logo-512.png",
+            "sameAs": [
+              "https://github.com/andrewsokolov/ExtraBrain-releases"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "name": "ExtraBrain",
+            "url": "https://extrabrain.app"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is ExtraBrain?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ExtraBrain is a free AI-powered meeting assistant that helps you excel in meetings and interviews. It provides real-time transcription, intelligent question generation, topic detection, and runs in invisible mode so it's hidden from screen sharing and video calls."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is ExtraBrain free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, ExtraBrain is 100% free to download and use. There are no hidden fees, subscriptions, or premium tiers."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does invisible mode work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ExtraBrain uses a special window mode that makes it invisible to screen sharing applications, screenshots, and video call software. This means you can use it during meetings without others seeing the app on your screen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What platforms does ExtraBrain support?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ExtraBrain is currently available for macOS. Windows and Linux versions are coming soon."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does ExtraBrain provide AI services or subscriptions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No, ExtraBrain does not provide any AI services or subscriptions. The app allows you to enter your own API keys and use your own AI subscriptions from providers like OpenAI or Anthropic. You have full control over your AI usage and costs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does ExtraBrain collect user data?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No, we do not collect any user data. ExtraBrain processes everything locally on your device. Your conversations, transcriptions, and API keys never leave your computer."
+                }
+              }
+            ]
+          }
         ]
       }
     </script>
@@ -211,7 +305,7 @@
               ></div>
               <img
                 src="assets/images/logo-512.png"
-                alt="ExtraBrain Logo"
+                alt="ExtraBrain AI Meeting Assistant Logo"
                 class="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 drop-shadow-2xl"
                 width="512"
                 height="512"
@@ -525,6 +619,82 @@
                   <p class="text-slate-200/80">Always stay up-to-date with the latest features</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="container mx-auto px-4 py-16 md:py-24">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 tracking-tight">
+            How It Works
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow mb-4">
+                <span class="text-2xl font-bold">1</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Start Recording</h3>
+              <p class="text-slate-200/80">Launch ExtraBrain and begin your meeting or interview. The app stays invisible to others.</p>
+            </div>
+
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow mb-4">
+                <span class="text-2xl font-bold">2</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">AI Analyzes in Real-Time</h3>
+              <p class="text-slate-200/80">ExtraBrain transcribes the conversation and identifies key topics as they're discussed.</p>
+            </div>
+
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow mb-4">
+                <span class="text-2xl font-bold">3</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Get Smart Questions</h3>
+              <p class="text-slate-200/80">Receive intelligent follow-up questions and insights to enhance your understanding.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="container mx-auto px-4 py-16 md:py-24">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 tracking-tight">
+            Frequently Asked Questions
+          </h2>
+
+          <div class="space-y-6">
+            <div class="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur">
+              <h3 class="text-xl font-semibold mb-2">What is ExtraBrain?</h3>
+              <p class="text-slate-200/80">ExtraBrain is a free AI-powered meeting assistant that helps you excel in meetings and interviews. It provides real-time transcription, intelligent question generation, topic detection, and runs in invisible mode so it's hidden from screen sharing and video calls.</p>
+            </div>
+
+            <div class="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur">
+              <h3 class="text-xl font-semibold mb-2">Is ExtraBrain free?</h3>
+              <p class="text-slate-200/80">Yes, ExtraBrain is 100% free to download and use. There are no hidden fees, subscriptions, or premium tiers.</p>
+            </div>
+
+            <div class="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur">
+              <h3 class="text-xl font-semibold mb-2">How does invisible mode work?</h3>
+              <p class="text-slate-200/80">ExtraBrain uses a special window mode that makes it invisible to screen sharing applications, screenshots, and video call software. This means you can use it during meetings without others seeing the app on your screen.</p>
+            </div>
+
+            <div class="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur">
+              <h3 class="text-xl font-semibold mb-2">What platforms does ExtraBrain support?</h3>
+              <p class="text-slate-200/80">ExtraBrain is currently available for macOS. Windows and Linux versions are coming soon.</p>
+            </div>
+
+            <div class="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur">
+              <h3 class="text-xl font-semibold mb-2">Does ExtraBrain provide AI services or subscriptions?</h3>
+              <p class="text-slate-200/80">No, ExtraBrain does not provide any AI services or subscriptions. The app allows you to enter your own API keys and use your own AI subscriptions from providers like OpenAI or Anthropic. You have full control over your AI usage and costs.</p>
+            </div>
+
+            <div class="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur">
+              <h3 class="text-xl font-semibold mb-2">Does ExtraBrain collect user data?</h3>
+              <p class="text-slate-200/80">No, we do not collect any user data. ExtraBrain processes everything locally on your device. Your conversations, transcriptions, and API keys never leave your computer.</p>
             </div>
           </div>
         </div>
