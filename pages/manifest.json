@@ -1,7 +1,7 @@
 {
   "name": "ExtraBrain - AI Meeting Assistant",
   "short_name": "ExtraBrain",
-  "description": "AI-powered meeting assistant with real-time transcription and question generation",
+  "description": "AI-powered meeting assistant with real-time transcription and intelligent question generation",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
