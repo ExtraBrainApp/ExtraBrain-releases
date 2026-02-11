@@ -1,0 +1,58 @@
+name: Package PR Artifact
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'pages/**'
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: 'package-pr-${{ github.event.pull_request.number }}'
+  cancel-in-progress: true
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Sanitize branch name
+        id: sanitize
+        run: |
+          BRANCH_NAME="${{ github.head_ref }}"
+          SANITIZED=$(echo "$BRANCH_NAME" | sed 's/[\/\\:*?"<>|]/-/g')
+          SANITIZED=$(echo "$SANITIZED" | sed 's/^[-.]*//' | sed 's/[-]*$//')
+          SANITIZED=$(echo "$SANITIZED" | cut -c1-50)
+          if [ -z "$SANITIZED" ]; then
+            SANITIZED="unknown"
+          fi
+          echo "sanitized_name=$SANITIZED" >> $GITHUB_OUTPUT
+          echo "Original branch: $BRANCH_NAME"
+          echo "Sanitized branch: $SANITIZED"
+
+      - name: Create zip archive
+        run: |
+          cd pages
+          zip -r ../extrabrain-${{ steps.sanitize.outputs.sanitized_name }}.zip .
+          cd ..
+          echo "Archive created:"
+          ls -lh extrabrain-${{ steps.sanitize.outputs.sanitized_name }}.zip
+          echo ""
+          echo "Archive contents:"
+          unzip -l extrabrain-${{ steps.sanitize.outputs.sanitized_name }}.zip | head -20
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: extrabrain-${{ steps.sanitize.outputs.sanitized_name }}
+          path: extrabrain-${{ steps.sanitize.outputs.sanitized_name }}.zip
+          retention-days: 30
+          if-no-files-found: error
