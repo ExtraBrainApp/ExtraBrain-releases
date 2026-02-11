@@ -114,3 +114,4 @@ Then visit: http://localhost:8000
 - 📱 Responsive mobile-first design
 - 🔍 SEO optimized (meta tags, Schema.org)
 - ♿ WCAG AAA accessibility
+<!-- Test comment to trigger workflow -->
