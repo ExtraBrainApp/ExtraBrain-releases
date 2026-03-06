@@ -101,7 +101,8 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Alpine.js CDN -->
+    <!-- Alpine.js Collapse Plugin + CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
 
     <!-- Custom Styles -->
@@ -129,10 +130,10 @@
       }
 
       .bg-blob {
-        filter: blur(42px);
+        filter: blur(80px);
         transform: translateZ(0);
-        opacity: 0.55;
-        animation: blob 14s ease-in-out infinite;
+        opacity: 0.6;
+        animation: blob 20s ease-in-out infinite;
       }
 
       @keyframes blob {
@@ -141,7 +142,7 @@
           transform: translate3d(0, 0, 0) scale(1);
         }
         50% {
-          transform: translate3d(0, -18px, 0) scale(1.06);
+          transform: translate3d(0, -12px, 0) scale(1.04);
         }
       }
 
@@ -268,20 +269,20 @@
       }
     </script>
   </head>
-  <body class="antialiased font-sans text-white bg-black selection:bg-fuchsia-400/30 selection:text-white">
+  <body class="antialiased font-sans text-white bg-black selection:bg-white/20 selection:text-white">
     <!-- Background -->
     <div class="fixed inset-0 -z-10">
-      <div class="absolute inset-0 bg-gradient-to-b from-black via-black to-black"></div>
+      <div class="absolute inset-0 bg-black"></div>
       <div
-        class="absolute -top-24 left-1/2 h-[520px] w-[680px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-fuchsia-500/30 via-cyan-500/25 to-orange-500/25 bg-blob"
+        class="absolute -top-32 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-white/[0.03] bg-blob"
         aria-hidden="true"
       ></div>
       <div
-        class="absolute top-[520px] left-[10%] h-[420px] w-[520px] rounded-full bg-gradient-to-tr from-cyan-500/25 via-fuchsia-500/20 to-orange-500/20 bg-blob"
+        class="absolute top-[600px] left-[15%] h-[400px] w-[500px] rounded-full bg-white/[0.02] bg-blob"
         aria-hidden="true"
         style="animation-delay: -4s"
       ></div>
-      <div class="absolute inset-0 bg-grid opacity-25" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-grid opacity-15" aria-hidden="true"></div>
       <div class="absolute inset-0 bg-noise" aria-hidden="true"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
     </div>
@@ -289,21 +290,25 @@
     <!-- Main Content -->
     <main id="main-content" class="min-h-screen">
       <!-- Hero Section -->
-      <section class="container mx-auto px-4 py-16 md:py-24 lg:py-32" x-data="releaseData()">
+      <section class="container mx-auto px-4 py-20 md:py-28 lg:py-36" x-data="releaseData()">
         <div
-          class="max-w-5xl mx-auto text-center rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-glow px-6 sm:px-10 py-10 sm:py-14"
+          class="relative max-w-4xl mx-auto text-center rounded-3xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-2xl shadow-glow px-6 sm:px-12 py-14 sm:py-20 overflow-hidden"
         >
+          <div class="absolute inset-0 overflow-hidden rounded-3xl" aria-hidden="true">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+          </div>
+
           <!-- Logo -->
-          <div class="mb-8 flex justify-center">
+          <div class="relative mb-10 flex justify-center">
             <div class="relative">
               <div
-                class="absolute -inset-4 rounded-full bg-gradient-to-tr from-fuchsia-400/35 via-cyan-400/25 to-orange-400/25 blur-2xl"
+                class="absolute -inset-6 rounded-full bg-white/[0.06] blur-3xl"
                 aria-hidden="true"
               ></div>
               <img
                 src="assets/images/logo-512.png"
                 alt="ExtraBrain AI Meeting Assistant Logo"
-                class="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 drop-shadow-2xl"
+                class="relative w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 drop-shadow-2xl"
                 width="512"
                 height="512"
               />
@@ -311,28 +316,29 @@
           </div>
 
           <!-- Title -->
-          <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
+          <h1 class="relative text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent">
             ExtraBrain
           </h1>
 
           <!-- Tagline -->
-          <p class="text-xl md:text-2xl lg:text-3xl mb-6 text-slate-100/90">
+          <p class="text-xl md:text-2xl lg:text-3xl mb-6 text-white/80 font-medium tracking-tight">
             Your AI Assistant for Meetings and Interviews
           </p>
 
           <!-- Description -->
-          <p class="text-base md:text-lg mb-9 text-slate-200/80 max-w-2xl mx-auto leading-relaxed">
-            ExtraBrain helps improve your knowledge through real-time analysis during meetings and interviews.
-            Invisible to screen sharing and video calls, it captures context, transcribes conversations,
-            and generates intelligent questions to enhance your understanding.
+          <p class="text-base md:text-lg mb-12 text-white/50 max-w-2xl mx-auto leading-relaxed">
+            Real-time analysis during meetings and interviews.
+            Invisible to screen sharing. Transcribes conversations.
+            Generates intelligent questions to enhance your understanding.
           </p>
 
           <!-- Download CTA & FREE Badge -->
-          <div class="flex flex-col items-center gap-4 mb-4">
+          <div class="relative flex flex-col items-center gap-5 mb-5">
             <template x-if="loading">
               <button
-                class="inline-flex items-center justify-center gap-2 rounded-2xl bg-white/10 text-white px-8 py-4 text-lg font-semibold cursor-wait border border-white/15 shadow-glow"
+                class="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 text-white px-8 py-4 text-lg font-semibold cursor-wait border border-white/10"
               >
+                <svg class="animate-spin h-5 w-5 text-white/60" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
                 Loading...
               </button>
             </template>
@@ -342,28 +348,28 @@
                 <a
                   :href="downloadUrl"
                   data-attr="download-cta"
-                  class="group relative isolate inline-flex items-center justify-center overflow-hidden rounded-2xl px-8 py-4 text-lg font-semibold text-slate-950 shadow-glowLg focus:outline-none focus:ring-4 focus:ring-fuchsia-300/40"
+                  class="group relative isolate inline-flex items-center justify-center overflow-hidden rounded-xl px-8 py-4 text-lg font-semibold text-black focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-black transition-all duration-300"
                 >
                   <span
-                    class="absolute inset-0 z-0 rounded-2xl bg-gradient-to-r from-white via-cyan-50 to-white opacity-100 transition-opacity group-hover:opacity-95"
+                    class="absolute inset-0 z-0 rounded-xl bg-white transition-all duration-300 group-hover:bg-white/90"
                     aria-hidden="true"
                   ></span>
                   <span
-                    class="absolute -inset-px z-0 rounded-2xl bg-gradient-to-r from-fuchsia-400/45 via-cyan-400/35 to-orange-400/35 blur-lg opacity-70 transition-opacity group-hover:opacity-90"
+                    class="absolute -inset-1 z-0 rounded-xl bg-white/20 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                     aria-hidden="true"
                   ></span>
                   <span
-                    class="relative z-10"
-                    x-text="'Download v' + version + ' for macOS'"
+                    class="relative z-10 flex items-center gap-2"
                   >
-                    Download for macOS
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    <span x-text="'Download v' + version + ' for macOS'">Download for macOS</span>
                   </span>
                 </a>
 
                 <span
-                  class="inline-flex items-center gap-2 rounded-2xl bg-white/7 text-white px-4 py-2 text-sm font-semibold border border-white/15 shadow-glow"
+                  class="inline-flex items-center gap-2 rounded-full bg-white/[0.05] text-white/70 px-4 py-2 text-sm font-medium border border-white/[0.08]"
                 >
-                  <span class="h-2 w-2 rounded-full bg-emerald-400 shadow" aria-hidden="true"></span>
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.5)]" aria-hidden="true"></span>
                   100% Free
                 </span>
               </div>
@@ -371,30 +377,31 @@
           </div>
 
           <!-- Platform Note -->
-          <p class="text-sm text-slate-200/75">
-            Currently available for macOS. Windows & Linux coming soon.
+          <p class="text-sm text-white/40">
+            Currently available for macOS · Windows & Linux coming soon
           </p>
         </div>
       </section>
 
       <!-- Features Section -->
-      <section class="container mx-auto px-4 py-16 md:py-24">
-        <div class="max-w-7xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 tracking-tight">
-            Powerful Features
+      <section class="container mx-auto px-4 py-20 md:py-28">
+        <div class="max-w-6xl mx-auto">
+          <p class="text-sm font-medium tracking-widest uppercase text-white/30 text-center mb-4">Features</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
+            Everything you need
           </h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             <!-- Feature Card 1: Screen Recording -->
             <div
-              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
             >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
                   <div
-                    class="rounded-xl p-2 bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow"
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
                   >
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -405,22 +412,22 @@
                   </div>
                 </div>
                 <div>
-                  <h3 class="text-xl font-semibold mb-2">Screen Recording</h3>
-                  <p class="text-slate-200/80">Capture your screen with intelligent session management</p>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Screen Recording</h3>
+                  <p class="text-white/40 text-sm">Capture your screen with intelligent session management</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 2: AI Analysis -->
             <div
-              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
             >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
                   <div
-                    class="rounded-xl p-2 bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow"
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
                   >
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -431,22 +438,22 @@
                   </div>
                 </div>
                 <div>
-                  <h3 class="text-xl font-semibold mb-2">AI-Powered Analysis</h3>
-                  <p class="text-slate-200/80">Intelligent analysis of recorded content with insights</p>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">AI-Powered Analysis</h3>
+                  <p class="text-white/40 text-sm">Intelligent analysis of recorded content with insights</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 3: Transcription -->
             <div
-              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
             >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
                   <div
-                    class="rounded-xl p-2 bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow"
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
                   >
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -457,22 +464,22 @@
                   </div>
                 </div>
                 <div>
-                  <h3 class="text-xl font-semibold mb-2">Real-Time Transcription</h3>
-                  <p class="text-slate-200/80">Accurate voice-to-text transcription as you speak</p>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Real-Time Transcription</h3>
+                  <p class="text-white/40 text-sm">Accurate voice-to-text transcription as you speak</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 4: Screenshots -->
             <div
-              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
             >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
                   <div
-                    class="rounded-xl p-2 bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow"
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
                   >
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -483,22 +490,22 @@
                   </div>
                 </div>
                 <div>
-                  <h3 class="text-xl font-semibold mb-2">Screenshot Capture</h3>
-                  <p class="text-slate-200/80">Capture and store important moments with context</p>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Screenshot Capture</h3>
+                  <p class="text-white/40 text-sm">Capture and store important moments with context</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 5: Topic Detection -->
             <div
-              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
             >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
                   <div
-                    class="rounded-xl p-2 bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow"
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
                   >
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -509,22 +516,22 @@
                   </div>
                 </div>
                 <div>
-                  <h3 class="text-xl font-semibold mb-2">Topic Detection</h3>
-                  <p class="text-slate-200/80">Automatically identify and categorize conversation topics</p>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Topic Detection</h3>
+                  <p class="text-white/40 text-sm">Automatically identify and categorize conversation topics</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 6: Question Generation -->
             <div
-              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
             >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
                   <div
-                    class="rounded-xl p-2 bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow"
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
                   >
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -535,22 +542,22 @@
                   </div>
                 </div>
                 <div>
-                  <h3 class="text-xl font-semibold mb-2">Question Generation</h3>
-                  <p class="text-slate-200/80">Smart follow-up questions based on conversation flow</p>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Question Generation</h3>
+                  <p class="text-white/40 text-sm">Smart follow-up questions based on conversation flow</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 7: Multi-Platform -->
             <div
-              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
             >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
                   <div
-                    class="rounded-xl p-2 bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow"
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
                   >
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -561,22 +568,22 @@
                   </div>
                 </div>
                 <div>
-                  <h3 class="text-xl font-semibold mb-2">Multi-Platform Support</h3>
-                  <p class="text-slate-200/80">Works on macOS, Windows, and Linux (coming soon)</p>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Multi-Platform Support</h3>
+                  <p class="text-white/40 text-sm">Works on macOS, Windows, and Linux (coming soon)</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 8: Invisible Mode -->
             <div
-              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
             >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
                   <div
-                    class="rounded-xl p-2 bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow"
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
                   >
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -587,22 +594,22 @@
                   </div>
                 </div>
                 <div>
-                  <h3 class="text-xl font-semibold mb-2">Invisible Mode</h3>
-                  <p class="text-slate-200/80">Hidden from screen sharing, screenshots, and video calls</p>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Invisible Mode</h3>
+                  <p class="text-white/40 text-sm">Hidden from screen sharing, screenshots, and video calls</p>
                 </div>
               </div>
             </div>
 
             <!-- Feature Card 9: Auto-Updates -->
             <div
-              class="group rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur transition duration-200 hover:bg-white/7 hover:border-white/15 hover:-translate-y-0.5 hover:shadow-glow"
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
             >
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0">
                   <div
-                    class="rounded-xl p-2 bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow"
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
                   >
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -613,8 +620,8 @@
                   </div>
                 </div>
                 <div>
-                  <h3 class="text-xl font-semibold mb-2">Auto-Updates</h3>
-                  <p class="text-slate-200/80">Always stay up-to-date with the latest features</p>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Auto-Updates</h3>
+                  <p class="text-white/40 text-sm">Always stay up-to-date with the latest features</p>
                 </div>
               </div>
             </div>
@@ -623,76 +630,110 @@
       </section>
 
       <!-- How It Works Section -->
-      <section id="how-it-works" class="container mx-auto px-4 py-16 md:py-24">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 tracking-tight">
-            How It Works
+      <section id="how-it-works" class="container mx-auto px-4 py-20 md:py-28">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-sm font-medium tracking-widest uppercase text-white/30 text-center mb-4">How it works</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
+            Three simple steps
           </h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="relative grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+            <div class="hidden md:block absolute top-8 left-[20%] right-[20%] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" aria-hidden="true"></div>
+
             <div class="text-center">
-              <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow mb-4">
-                <span class="text-2xl font-bold">1</span>
+              <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/[0.05] border border-white/[0.1] mb-5">
+                <span class="text-2xl font-bold text-white/80">1</span>
               </div>
-              <h3 class="text-xl font-semibold mb-2">Start Recording</h3>
-              <p class="text-slate-200/80">Launch ExtraBrain and begin your meeting or interview. The app stays invisible to others.</p>
+              <h3 class="text-lg font-semibold mb-2 text-white/90">Start Recording</h3>
+              <p class="text-white/40 text-sm leading-relaxed">Launch ExtraBrain and begin your meeting or interview. The app stays invisible to others.</p>
             </div>
 
             <div class="text-center">
-              <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow mb-4">
-                <span class="text-2xl font-bold">2</span>
+              <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/[0.05] border border-white/[0.1] mb-5">
+                <span class="text-2xl font-bold text-white/80">2</span>
               </div>
-              <h3 class="text-xl font-semibold mb-2">AI Analyzes in Real-Time</h3>
-              <p class="text-slate-200/80">ExtraBrain transcribes the conversation and identifies key topics as they're discussed.</p>
+              <h3 class="text-lg font-semibold mb-2 text-white/90">AI Analyzes in Real-Time</h3>
+              <p class="text-white/40 text-sm leading-relaxed">ExtraBrain transcribes the conversation and identifies key topics as they're discussed.</p>
             </div>
 
             <div class="text-center">
-              <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-fuchsia-400/25 via-cyan-400/15 to-orange-400/15 border border-white/10 shadow-glow mb-4">
-                <span class="text-2xl font-bold">3</span>
+              <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/[0.05] border border-white/[0.1] mb-5">
+                <span class="text-2xl font-bold text-white/80">3</span>
               </div>
-              <h3 class="text-xl font-semibold mb-2">Get Smart Questions</h3>
-              <p class="text-slate-200/80">Receive intelligent follow-up questions and insights to enhance your understanding.</p>
+              <h3 class="text-lg font-semibold mb-2 text-white/90">Get Smart Questions</h3>
+              <p class="text-white/40 text-sm leading-relaxed">Receive intelligent follow-up questions and insights to enhance your understanding.</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- FAQ Section -->
-      <section id="faq" class="container mx-auto px-4 py-16 md:py-24">
-        <div class="max-w-3xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 tracking-tight">
-            Frequently Asked Questions
+      <section id="faq" class="container mx-auto px-4 py-20 md:py-28">
+        <div class="max-w-2xl mx-auto">
+          <p class="text-sm font-medium tracking-widest uppercase text-white/30 text-center mb-4">FAQ</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
+            Common questions
           </h2>
 
-          <div class="space-y-6">
-            <div class="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur">
-              <h3 class="text-xl font-semibold mb-2">What is ExtraBrain?</h3>
-              <p class="text-slate-200/80">ExtraBrain is a free AI-powered meeting assistant that helps you excel in meetings and interviews. It provides real-time transcription, intelligent question generation, topic detection, and runs in invisible mode so it's hidden from screen sharing and video calls.</p>
+          <div class="space-y-3" x-data="{ active: null }">
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200" :class="active === 1 ? 'border-white/[0.12]' : ''">
+              <button @click="active = active === 1 ? null : 1" class="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group">
+                <h3 class="text-base font-semibold text-white/90 group-hover:text-white transition-colors">What is ExtraBrain?</h3>
+                <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 1 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div x-show="active === 1" x-collapse>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">ExtraBrain is a free AI-powered meeting assistant that helps you excel in meetings and interviews. It provides real-time transcription, intelligent question generation, topic detection, and runs in invisible mode so it's hidden from screen sharing and video calls.</p>
+              </div>
             </div>
 
-            <div class="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur">
-              <h3 class="text-xl font-semibold mb-2">Is ExtraBrain free?</h3>
-              <p class="text-slate-200/80">Yes, ExtraBrain is 100% free to download and use. There are no hidden fees, subscriptions, or premium tiers.</p>
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200" :class="active === 2 ? 'border-white/[0.12]' : ''">
+              <button @click="active = active === 2 ? null : 2" class="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group">
+                <h3 class="text-base font-semibold text-white/90 group-hover:text-white transition-colors">Is ExtraBrain free?</h3>
+                <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 2 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div x-show="active === 2" x-collapse>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">Yes, ExtraBrain is 100% free to download and use. There are no hidden fees, subscriptions, or premium tiers.</p>
+              </div>
             </div>
 
-            <div class="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur">
-              <h3 class="text-xl font-semibold mb-2">How does invisible mode work?</h3>
-              <p class="text-slate-200/80">ExtraBrain uses a special window mode that makes it invisible to screen sharing applications, screenshots, and video call software. This means you can use it during meetings without others seeing the app on your screen.</p>
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200" :class="active === 3 ? 'border-white/[0.12]' : ''">
+              <button @click="active = active === 3 ? null : 3" class="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group">
+                <h3 class="text-base font-semibold text-white/90 group-hover:text-white transition-colors">How does invisible mode work?</h3>
+                <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 3 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div x-show="active === 3" x-collapse>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">ExtraBrain uses a special window mode that makes it invisible to screen sharing applications, screenshots, and video call software. This means you can use it during meetings without others seeing the app on your screen.</p>
+              </div>
             </div>
 
-            <div class="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur">
-              <h3 class="text-xl font-semibold mb-2">What platforms does ExtraBrain support?</h3>
-              <p class="text-slate-200/80">ExtraBrain is currently available for macOS. Windows and Linux versions are coming soon.</p>
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200" :class="active === 4 ? 'border-white/[0.12]' : ''">
+              <button @click="active = active === 4 ? null : 4" class="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group">
+                <h3 class="text-base font-semibold text-white/90 group-hover:text-white transition-colors">What platforms does ExtraBrain support?</h3>
+                <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 4 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div x-show="active === 4" x-collapse>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">ExtraBrain is currently available for macOS. Windows and Linux versions are coming soon.</p>
+              </div>
             </div>
 
-            <div class="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur">
-              <h3 class="text-xl font-semibold mb-2">Does ExtraBrain provide AI services or subscriptions?</h3>
-              <p class="text-slate-200/80">No, ExtraBrain does not provide any AI services or subscriptions. The app allows you to enter your own API keys and use your own AI subscriptions from providers like OpenAI or Anthropic. You have full control over your AI usage and costs.</p>
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200" :class="active === 5 ? 'border-white/[0.12]' : ''">
+              <button @click="active = active === 5 ? null : 5" class="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group">
+                <h3 class="text-base font-semibold text-white/90 group-hover:text-white transition-colors">Does ExtraBrain provide AI services or subscriptions?</h3>
+                <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 5 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div x-show="active === 5" x-collapse>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">No, ExtraBrain does not provide any AI services or subscriptions. The app allows you to enter your own API keys and use your own AI subscriptions from providers like OpenAI or Anthropic. You have full control over your AI usage and costs.</p>
+              </div>
             </div>
 
-            <div class="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur">
-              <h3 class="text-xl font-semibold mb-2">Does ExtraBrain collect user data?</h3>
-              <p class="text-slate-200/80">No, we do not collect any user data. ExtraBrain processes everything locally on your device. Your conversations, transcriptions, and API keys never leave your computer.</p>
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200" :class="active === 6 ? 'border-white/[0.12]' : ''">
+              <button @click="active = active === 6 ? null : 6" class="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group">
+                <h3 class="text-base font-semibold text-white/90 group-hover:text-white transition-colors">Does ExtraBrain collect user data?</h3>
+                <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 6 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div x-show="active === 6" x-collapse>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">No, we do not collect any user data. ExtraBrain processes everything locally on your device. Your conversations, transcriptions, and API keys never leave your computer.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -701,16 +742,16 @@
     </main>
 
     <!-- Footer -->
-    <footer class="container mx-auto px-4 py-12 border-t border-white/10">
-      <div class="max-w-7xl mx-auto text-center">
-        <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-6">
+    <footer class="container mx-auto px-4 py-16 border-t border-white/[0.06]">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mb-8">
           <a
             href="https://github.com/andrewsokolov/ExtraBrain-releases/releases"
-            class="text-slate-300 hover:text-white transition-colors flex items-center gap-2"
+            class="text-white/40 hover:text-white/80 transition-colors duration-200 flex items-center gap-2 text-sm"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -722,9 +763,9 @@
           </a>
           <a
             href="mailto:info@extrabrain.app"
-            class="text-slate-300 hover:text-white transition-colors flex items-center gap-2"
+            class="text-white/40 hover:text-white/80 transition-colors duration-200 flex items-center gap-2 text-sm"
           >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -736,7 +777,7 @@
           </a>
         </div>
         <p
-          class="text-slate-300 text-sm"
+          class="text-white/25 text-xs"
           x-data
           x-text="'© ' + new Date().getFullYear() + ' ExtraBrain. All rights reserved.'"
         >
