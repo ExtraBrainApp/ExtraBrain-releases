@@ -5,7 +5,9 @@
       posthog.init('phc_sXYeYYxL93wov0PTZ9ERSbuvNWlaULK3lSDkqhajz8u', {
           api_host: 'https://us.i.posthog.com',
           defaults: '2025-11-30',
-          person_profiles: 'always',
+          person_profiles: 'identified_only',
+          capture_pageview: true,
+          capture_pageleave: true,
       })
   </script>
   <head>
@@ -351,6 +353,7 @@
               <div class="flex flex-col sm:flex-row items-center gap-4">
                 <a
                   :href="downloadUrl"
+                  @click="trackDownloadClick()"
                   data-attr="download-cta"
                   class="group relative isolate inline-flex items-center justify-center overflow-hidden rounded-xl px-8 py-4 text-lg font-semibold text-black focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-black transition-all duration-300"
                 >
@@ -831,7 +834,7 @@
                 <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 6 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
               </button>
               <div x-show="active === 6" x-collapse>
-                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">No, we do not collect any user data. ExtraBrain processes everything locally on your device. Your conversations, transcriptions, and API keys never leave your computer.</p>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">ExtraBrain does not collect your conversations, transcriptions, or API keys. That content stays on your device. Our website may collect anonymous analytics, such as page visits and download clicks, to help us improve the landing page and release experience.</p>
               </div>
             </div>
           </div>
@@ -846,6 +849,7 @@
         <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mb-8">
           <a
             href="https://github.com/andrewsokolov/ExtraBrain-releases/releases"
+            onclick="window.trackExtraBrainLinkClick && window.trackExtraBrainLinkClick('all_releases_clicked', { target: 'https://github.com/andrewsokolov/ExtraBrain-releases/releases' })"
             class="text-white/40 hover:text-white/80 transition-colors duration-200 flex items-center gap-2 text-sm"
             target="_blank"
             rel="noopener noreferrer"
@@ -862,6 +866,7 @@
           </a>
           <a
             href="mailto:info@extrabrain.app"
+            onclick="window.trackExtraBrainLinkClick && window.trackExtraBrainLinkClick('contact_email_clicked', { target: 'mailto:info@extrabrain.app' })"
             class="text-white/40 hover:text-white/80 transition-colors duration-200 flex items-center gap-2 text-sm"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -898,6 +903,12 @@
 
     <!-- Alpine.js Release Data Component -->
     <script>
+      window.trackExtraBrainLinkClick = function (eventName, properties = {}) {
+        if (window.posthog && typeof window.posthog.capture === 'function') {
+          window.posthog.capture(eventName, properties)
+        }
+      }
+
       function feedbackForm() {
         return {
           feedbackOpen: false,
@@ -982,6 +993,20 @@
           version: '0.0.26',
           downloadUrl: '',
 
+          trackEvent(eventName, properties = {}) {
+            if (window.posthog && typeof window.posthog.capture === 'function') {
+              window.posthog.capture(eventName, properties)
+            }
+          },
+
+          trackDownloadClick() {
+            this.trackEvent('download_cta_clicked', {
+              version: this.version,
+              target: this.downloadUrl,
+              fallback: !this.downloadUrl.match(/\.dmg($|[?#])/i)
+            })
+          },
+
           async init() {
             try {
               const cached = this.getCached()
@@ -1005,11 +1030,34 @@
               const dmgAsset = data.assets.find((a) => a.name.match(/\.dmg$/i))
               this.downloadUrl = dmgAsset?.browser_download_url || data.html_url
 
+              this.trackEvent('release_fetch_succeeded', {
+                version: this.version,
+                has_dmg_asset: Boolean(dmgAsset),
+                target: this.downloadUrl
+              })
+
+              if (!dmgAsset) {
+                this.trackEvent('download_link_fallback_used', {
+                  reason: 'missing_dmg_asset',
+                  version: this.version,
+                  target: this.downloadUrl
+                })
+              }
+
               this.cache({ version: this.version, downloadUrl: this.downloadUrl })
             } catch (error) {
               console.error('Failed to fetch release:', error)
               this.downloadUrl =
                 'https://github.com/andrewsokolov/ExtraBrain-releases/releases/latest'
+
+              this.trackEvent('release_fetch_failed', {
+                message: error instanceof Error ? error.message : String(error)
+              })
+              this.trackEvent('download_link_fallback_used', {
+                reason: 'release_fetch_failed',
+                version: this.version,
+                target: this.downloadUrl
+              })
             } finally {
               this.loading = false
             }
@@ -1024,7 +1072,6 @@
               const age = Date.now() - timestamp
 
               if (age < 3600000) {
-                // 1 hour
                 return data
               }
 
