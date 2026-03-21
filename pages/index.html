@@ -176,7 +176,7 @@
               "priceCurrency": "USD"
             },
             "description": "AI-powered meeting assistant with real-time transcription, intelligent question generation, and invisible screen recording for interviews and meetings.",
-            "downloadUrl": "https://github.com/andrewsokolov/ExtraBrain-releases/releases/latest",
+            "downloadUrl": "https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest",
             "softwareVersion": "0.0.26",
             "author": {
               "@type": "Organization",
@@ -205,7 +205,7 @@
             "url": "https://extrabrain.app",
             "logo": "https://extrabrain.app/assets/images/logo-512.png",
             "sameAs": [
-              "https://github.com/andrewsokolov/ExtraBrain-releases"
+              "https://github.com/ExtraBrainApp/ExtraBrain-releases"
             ],
             "contactPoint": {
               "@type": "ContactPoint",
@@ -848,8 +848,8 @@
       <div class="max-w-4xl mx-auto text-center">
         <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mb-8">
           <a
-            href="https://github.com/andrewsokolov/ExtraBrain-releases/releases"
-            onclick="window.trackExtraBrainLinkClick && window.trackExtraBrainLinkClick('all_releases_clicked', { target: 'https://github.com/andrewsokolov/ExtraBrain-releases/releases' })"
+            href="https://github.com/ExtraBrainApp/ExtraBrain-releases/releases"
+            onclick="window.trackExtraBrainLinkClick && window.trackExtraBrainLinkClick('all_releases_clicked', { target: 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases' })"
             class="text-white/40 hover:text-white/80 transition-colors duration-200 flex items-center gap-2 text-sm"
             target="_blank"
             rel="noopener noreferrer"
@@ -1017,7 +1017,7 @@
               }
 
               const res = await fetch(
-                'https://api.github.com/repos/andrewsokolov/ExtraBrain-releases/releases/latest'
+                'https://api.github.com/repos/ExtraBrainApp/ExtraBrain-releases/releases/latest'
               )
 
               if (!res.ok) {
@@ -1048,7 +1048,7 @@
             } catch (error) {
               console.error('Failed to fetch release:', error)
               this.downloadUrl =
-                'https://github.com/andrewsokolov/ExtraBrain-releases/releases/latest'
+                'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest'
 
               this.trackEvent('release_fetch_failed', {
                 message: error instanceof Error ? error.message : String(error)
