@@ -948,10 +948,10 @@
             this.errorMessage = ''
 
             try {
-              window.posthog.capture('website_feedback_submitted', {
+              window.posthog.capture('feedback_submitted', {
                 feedback,
                 email: email || undefined,
-                source: 'download_feedback_modal',
+                source: 'web-browser',
                 page: window.location.pathname
               })
 
