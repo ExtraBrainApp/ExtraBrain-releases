@@ -1044,7 +1044,7 @@
                 })
               }
 
-              this.cache({ version: this.version, downloadUrl: this.downloadUrl })
+              this.cache({ version: this.version, downloadUrl: this.downloadUrl, isDirect: Boolean(dmgAsset) })
             } catch (error) {
               console.error('Failed to fetch release:', error)
               this.downloadUrl =
@@ -1070,8 +1070,9 @@
 
               const { data, timestamp } = JSON.parse(cached)
               const age = Date.now() - timestamp
+              const maxAge = data.isDirect === false ? 300000 : 3600000
 
-              if (age < 3600000) {
+              if (age < maxAge) {
                 return data
               }
 
