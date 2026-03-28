@@ -485,6 +485,105 @@
         </div>
       </section>
 
+      <!-- Screenshots Section -->
+      <section class="container mx-auto px-4 py-10 md:py-14" x-data="screenshotLightbox()">
+        <div class="max-w-5xl mx-auto">
+          <p class="text-sm font-medium tracking-widest uppercase text-white/30 text-center mb-4">App Preview</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
+            See it in action
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+            <template x-for="(src, index) in screenshots" :key="index">
+              <button
+                type="button"
+                @click="open(index)"
+                class="group relative rounded-2xl overflow-hidden border border-white/[0.08] bg-white/[0.02] transition-all duration-300 hover:border-white/[0.18] hover:bg-white/[0.05] focus:outline-none focus:ring-2 focus:ring-white/20"
+              >
+                <img
+                  :src="src"
+                  :alt="'App screenshot ' + (index + 1)"
+                  class="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
+                  <div class="rounded-full bg-white/10 border border-white/20 p-3 backdrop-blur-sm">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            </template>
+          </div>
+        </div>
+
+        <!-- Lightbox Overlay -->
+        <div
+          x-cloak
+          x-show="lightboxOpen"
+          x-transition.opacity
+          @keydown.escape.window="close()"
+          @keydown.arrow-left.window="prev()"
+          @keydown.arrow-right.window="next()"
+          class="fixed inset-0 z-50 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Screenshot preview"
+        >
+          <div class="absolute inset-0 bg-black/85 backdrop-blur-md" @click="close()"></div>
+
+          <div class="relative z-10 max-w-5xl w-full flex items-center gap-3">
+            <button
+              type="button"
+              @click="prev()"
+              class="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/15 text-white/70 transition hover:bg-white/20 hover:text-white focus:outline-none"
+              aria-label="Previous screenshot"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+
+            <div class="flex-1 rounded-2xl overflow-hidden border border-white/[0.1] shadow-glowLg">
+              <img
+                :src="screenshots[current]"
+                :alt="'App screenshot ' + (current + 1)"
+                class="w-full h-auto block"
+              />
+            </div>
+
+            <button
+              type="button"
+              @click="next()"
+              class="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/15 text-white/70 transition hover:bg-white/20 hover:text-white focus:outline-none"
+              aria-label="Next screenshot"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+
+          <button
+            type="button"
+            @click="close()"
+            class="absolute top-4 right-4 z-10 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/15 text-white/70 transition hover:bg-white/20 hover:text-white focus:outline-none"
+            aria-label="Close preview"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
+            <template x-for="(_, i) in screenshots" :key="i">
+              <button
+                type="button"
+                @click="current = i"
+                :class="i === current ? 'bg-white w-5' : 'bg-white/30 w-2'"
+                class="h-2 rounded-full transition-all duration-300 focus:outline-none"
+                :aria-label="'Go to screenshot ' + (i + 1)"
+              ></button>
+            </template>
+          </div>
+        </div>
+      </section>
+
       <!-- Features Section -->
       <section class="container mx-auto px-4 py-10 md:py-14">
         <div class="max-w-6xl mx-auto">
@@ -902,6 +1001,36 @@
     </footer>
 
     <!-- Alpine.js Release Data Component -->
+    <script>
+      function screenshotLightbox() {
+        return {
+          screenshots: [
+            'assets/screenshots/image1.png',
+            'assets/screenshots/image2.png',
+            'assets/screenshots/image3.png',
+            'assets/screenshots/image4.png',
+          ],
+          lightboxOpen: false,
+          current: 0,
+          open(index) {
+            this.current = index
+            this.lightboxOpen = true
+            document.body.style.overflow = 'hidden'
+          },
+          close() {
+            this.lightboxOpen = false
+            document.body.style.overflow = ''
+          },
+          prev() {
+            this.current = (this.current - 1 + this.screenshots.length) % this.screenshots.length
+          },
+          next() {
+            this.current = (this.current + 1) % this.screenshots.length
+          },
+        }
+      }
+    </script>
+
     <script>
       window.trackExtraBrainLinkClick = function (eventName, properties = {}) {
         if (window.posthog && typeof window.posthog.capture === 'function') {
