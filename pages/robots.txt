@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://extrabrain.app/sitemap.xml

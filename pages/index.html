@@ -1,0 +1,1231 @@
+<!doctype html>
+<html lang="en">
+  <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init rs ls yi ns us ts ss capture calculateEventProperties vs register register_once register_for_session unregister unregister_for_session gs getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty fs ds createPersonProfile setInternalOrTestUser ps Qr opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing hs debug M cs getPageViewId captureTraceFeedback captureTraceMetric Kr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_sXYeYYxL93wov0PTZ9ERSbuvNWlaULK3lSDkqhajz8u', {
+          api_host: 'https://us.i.posthog.com',
+          defaults: '2025-11-30',
+          person_profiles: 'identified_only',
+          capture_pageview: true,
+          capture_pageleave: true,
+      })
+  </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>ExtraBrain - AI Meeting Assistant & Interview Helper | Free Screen Recording with Transcription</title>
+    <meta
+      name="title"
+      content="ExtraBrain - AI Meeting Assistant & Interview Helper | Free Screen Recording with Transcription"
+    />
+    <meta
+      name="description"
+      content="Free AI-powered meeting assistant that helps you ace interviews and meetings. Real-time transcription, intelligent question generation, and invisible screen recording. Available for macOS."
+    />
+    <meta
+      name="keywords"
+      content="AI meeting assistant, interview helper, meeting transcription software, screen recording with transcription, AI interview preparation, real-time meeting notes, conversation analysis, invisible screen recorder, job interview helper, meeting AI, free transcription app, macOS screen recorder"
+    />
+    <meta name="author" content="ExtraBrain" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://extrabrain.app/" />
+    <meta property="og:title" content="ExtraBrain - AI Meeting Assistant & Interview Helper" />
+    <meta
+      property="og:description"
+      content="Free AI-powered meeting assistant with real-time transcription, intelligent question generation, and invisible screen recording for interviews and meetings."
+    />
+    <meta
+      property="og:image"
+      content="https://extrabrain.app/assets/images/logo-512.png"
+    />
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://extrabrain.app/" />
+    <meta property="twitter:title" content="ExtraBrain - AI Meeting Assistant & Interview Helper" />
+    <meta
+      property="twitter:description"
+      content="Free AI-powered meeting assistant with real-time transcription, intelligent question generation, and invisible screen recording."
+    />
+    <meta
+      property="twitter:image"
+      content="https://extrabrain.app/assets/images/logo-512.png"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://extrabrain.app/" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png?v=2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png?v=2" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Preload & DNS Prefetch -->
+    <link rel="preload" href="assets/images/logo-512.png" as="image" />
+    <link rel="dns-prefetch" href="https://api.github.com" />
+    <link rel="alternate" hreflang="en" href="https://extrabrain.app/" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Config (must come before the CDN script) -->
+    <script>
+      tailwind = window.tailwind || {}
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+            },
+            boxShadow: {
+              glow: '0 0 0 1px rgba(255,255,255,0.06), 0 10px 30px rgba(0,0,0,0.35)',
+              glowLg:
+                '0 0 0 1px rgba(255,255,255,0.08), 0 18px 55px rgba(0,0,0,0.55)'
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js Collapse Plugin + CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+
+      [x-cloak] {
+        display: none !important;
+      }
+
+      .bg-grid {
+        background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.06) 1px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+        background-size: 48px 48px;
+        mask-image: radial-gradient(circle at 50% 0%, black 40%, transparent 72%);
+      }
+
+      .bg-noise {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+        background-size: 220px 220px;
+        mix-blend-mode: overlay;
+        opacity: 0.25;
+      }
+
+      .bg-blob {
+        filter: blur(80px);
+        transform: translateZ(0);
+        opacity: 0.6;
+        animation: blob 20s ease-in-out infinite;
+      }
+
+      @keyframes blob {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        50% {
+          transform: translate3d(0, -12px, 0) scale(1.04);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .bg-blob {
+          animation: none;
+        }
+      }
+    </style>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "ExtraBrain",
+            "applicationCategory": "BusinessApplication",
+            "applicationSubCategory": "Meeting Assistant",
+            "operatingSystem": ["macOS", "Windows", "Linux"],
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "description": "AI-powered meeting assistant with real-time transcription, intelligent question generation, and invisible screen recording for interviews and meetings.",
+            "downloadUrl": "https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest",
+            "softwareVersion": "0.0.26",
+            "author": {
+              "@type": "Organization",
+              "name": "ExtraBrain",
+              "url": "https://extrabrain.app"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "ratingCount": "1"
+            },
+            "featureList": [
+              "AI-powered meeting analysis",
+              "Real-time speech transcription",
+              "Intelligent question generation",
+              "Invisible mode for screen sharing",
+              "Topic detection and categorization",
+              "Screenshot capture with context",
+              "Multi-platform support",
+              "Automatic updates"
+            ]
+          },
+          {
+            "@type": "Organization",
+            "name": "ExtraBrain",
+            "url": "https://extrabrain.app",
+            "logo": "https://extrabrain.app/assets/images/logo-512.png",
+            "sameAs": [
+              "https://github.com/ExtraBrainApp/ExtraBrain-releases"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "info@extrabrain.app",
+              "contactType": "customer service"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "name": "ExtraBrain",
+            "url": "https://extrabrain.app"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is ExtraBrain?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ExtraBrain is a free AI-powered meeting assistant that helps you excel in meetings and interviews. It provides real-time transcription, intelligent question generation, topic detection, and runs in invisible mode so it's hidden from screen sharing and video calls."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is ExtraBrain free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, ExtraBrain is free to download and use. We also offer an optional Pro version that adds extra capabilities, while the core app remains fully usable for free."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does invisible mode work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ExtraBrain uses a special window mode that makes it invisible to screen sharing applications, screenshots, and video call software. This means you can use it during meetings without others seeing the app on your screen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What platforms does ExtraBrain support?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ExtraBrain is currently available for macOS. Windows and Linux versions are coming soon."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does ExtraBrain provide AI services or subscriptions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No, ExtraBrain does not provide any AI services or subscriptions. The app allows you to enter your own API keys and use your own AI subscriptions from providers like OpenAI or Anthropic. You have full control over your AI usage and costs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does ExtraBrain collect user data?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No, we do not collect any user data. ExtraBrain processes everything locally on your device. Your conversations, transcriptions, and API keys never leave your computer."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body x-data="releasePage()" class="antialiased font-sans text-white bg-black selection:bg-white/20 selection:text-white">
+    <!-- Background -->
+    <div class="fixed inset-0 -z-10">
+      <div class="absolute inset-0 bg-black"></div>
+      <div
+        class="absolute -top-32 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-white/[0.03] bg-blob"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute top-[600px] left-[15%] h-[400px] w-[500px] rounded-full bg-white/[0.02] bg-blob"
+        aria-hidden="true"
+        style="animation-delay: -4s"
+      ></div>
+      <div class="absolute inset-0 bg-grid opacity-15" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-noise" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="min-h-screen">
+      <!-- Hero Section -->
+      <section class="container mx-auto px-4 py-6 md:py-10 lg:py-14">
+        <div
+          class="relative max-w-4xl mx-auto text-center rounded-3xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-2xl shadow-glow px-6 sm:px-10 py-8 sm:py-12 overflow-hidden"
+        >
+          <div class="absolute inset-0 overflow-hidden rounded-3xl" aria-hidden="true">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+          </div>
+
+          <!-- Logo -->
+          <div class="relative mb-10 flex justify-center">
+            <div class="relative">
+              <div
+                class="absolute -inset-6 rounded-full bg-white/[0.06] blur-3xl"
+                aria-hidden="true"
+              ></div>
+              <img
+                src="assets/images/logo-512.png"
+                alt="ExtraBrain AI Meeting Assistant Logo"
+                class="relative w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 drop-shadow-2xl"
+                width="512"
+                height="512"
+              />
+            </div>
+          </div>
+
+          <!-- Title -->
+          <h1 class="relative text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent">
+            ExtraBrain
+          </h1>
+
+          <!-- Tagline -->
+          <p class="text-xl md:text-2xl lg:text-3xl mb-6 text-white/80 font-medium tracking-tight">
+            Your AI Assistant for Meetings and Interviews
+          </p>
+
+          <!-- Description -->
+          <p class="text-base md:text-lg mb-12 text-white/50 max-w-2xl mx-auto leading-relaxed">
+            Real-time analysis during meetings and interviews.
+            Invisible to screen sharing. Transcribes conversations.
+            Generates intelligent questions to enhance your understanding.
+          </p>
+
+          <!-- Download CTA & FREE Badge -->
+          <div class="relative flex flex-col items-center gap-5 mb-5">
+            <template x-if="loading">
+              <button
+                class="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 text-white px-8 py-4 text-lg font-semibold cursor-wait border border-white/10"
+              >
+                <svg class="animate-spin h-5 w-5 text-white/60" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                Loading...
+              </button>
+            </template>
+
+            <template x-if="!loading">
+              <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a
+                  :href="downloadUrl"
+                  @click="trackDownloadClick()"
+                  data-attr="download-cta"
+                  class="group relative isolate inline-flex items-center justify-center overflow-hidden rounded-xl px-8 py-4 text-lg font-semibold text-black focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-black transition-all duration-300"
+                >
+                  <span
+                    class="absolute inset-0 z-0 rounded-xl bg-white transition-all duration-300 group-hover:bg-white/90"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="absolute -inset-1 z-0 rounded-xl bg-white/20 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    aria-hidden="true"
+                  ></span>
+                  <span
+                    class="relative z-10 flex items-center gap-2"
+                  >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    <span x-text="'Download v' + version + ' for macOS'">Download for macOS</span>
+                  </span>
+                </a>
+
+              </div>
+            </template>
+          </div>
+
+          <div class="relative z-10 flex justify-center mb-6">
+            <button
+              type="button"
+              x-ref="heroFeedbackTrigger"
+              @click="openFeedback('heroFeedbackTrigger')"
+              class="relative z-10 cursor-pointer text-sm text-white/45 underline decoration-white/15 underline-offset-4 transition hover:text-white/80 hover:decoration-white/40 focus:outline-none rounded-sm"
+            >
+              Found a bug or <span class="font-semibold text-amber-300/95">have an idea</span>? Leave feedback
+            </button>
+          </div>
+
+          <div
+            x-cloak
+            x-show="feedbackOpen"
+            x-transition.opacity
+            @keydown.escape.window="closeFeedback()"
+            class="fixed inset-0 z-50 flex items-center justify-center px-4 py-8"
+            aria-modal="true"
+            role="dialog"
+            aria-labelledby="feedback-modal-title"
+          >
+            <div class="absolute inset-0 bg-black/70 backdrop-blur-md" @click="closeFeedback()"></div>
+            <div
+              class="relative w-full max-w-xl rounded-3xl border border-white/[0.08] bg-[#0b0b0b]/95 shadow-glow overflow-hidden"
+              @click.stop
+            >
+              <div class="flex items-start justify-between gap-6 px-6 pt-6 sm:px-8 sm:pt-8">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.24em] text-amber-300/85">Feedback</p>
+                  <h2 id="feedback-modal-title" class="mt-3 text-2xl font-bold tracking-tight text-white">
+                    Tell us what to improve
+                  </h2>
+                  <p class="mt-3 text-sm text-white/55 leading-relaxed">
+                    Share what’s working, what feels broken, or what you’d like us to build next.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  @click="closeFeedback()"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-amber-300/20 text-amber-200/75 transition hover:border-amber-300/45 hover:text-amber-200"
+                  aria-label="Close feedback form"
+                >
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <form class="px-6 pb-6 pt-6 sm:px-8 sm:pb-8" @submit.prevent="submit()">
+                <div>
+                  <label for="feedback-message" class="mb-2 block text-sm font-medium text-white/80">
+                    What should we improve?
+                  </label>
+                  <textarea
+                    id="feedback-message"
+                    x-ref="feedbackMessage"
+                    x-model="message"
+                    rows="5"
+                    maxlength="2000"
+                    required
+                    class="w-full rounded-2xl border border-white/[0.08] bg-black/20 px-4 py-3 text-sm text-white placeholder:text-white/25 outline-none transition focus:border-amber-300/50 focus:ring-2 focus:ring-amber-300/20"
+                    placeholder="Tell us what you like, what feels broken, or what you'd love to see next..."
+                  ></textarea>
+                </div>
+
+                <div class="mt-4">
+                  <label for="feedback-email" class="mb-2 block text-sm font-medium text-white/80">
+                    Email (optional)
+                  </label>
+                  <input
+                    id="feedback-email"
+                    x-model="email"
+                    type="email"
+                    inputmode="email"
+                    maxlength="320"
+                    class="w-full rounded-2xl border border-white/[0.08] bg-black/20 px-4 py-3 text-sm text-white placeholder:text-white/25 outline-none transition focus:border-amber-300/50 focus:ring-2 focus:ring-amber-300/20"
+                    placeholder="you@example.com"
+                  />
+                </div>
+
+                <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div class="min-h-[20px] text-sm text-left">
+                    <p x-show="status === 'success'" class="text-emerald-300">
+                      Thanks — your feedback was sent.
+                    </p>
+                    <p x-show="status === 'error'" class="text-rose-300" x-text="errorMessage"></p>
+                  </div>
+
+                  <button
+                    type="submit"
+                    :disabled="isSubmitting"
+                    class="inline-flex items-center justify-center rounded-2xl bg-amber-300 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-200 disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    <span x-show="!isSubmitting">Send feedback</span>
+                    <span x-show="isSubmitting">Sending...</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Platform Note -->
+          <p class="text-sm text-white/40">
+            Currently available for macOS · Windows & Linux coming soon
+          </p>
+        </div>
+      </section>
+
+      <!-- Screenshots Section -->
+      <section class="container mx-auto px-4 py-10 md:py-14" x-data="screenshotLightbox()">
+        <div class="max-w-5xl mx-auto">
+          <p class="text-sm font-medium tracking-widest uppercase text-white/30 text-center mb-4">App Preview</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
+            See it in action
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+            <template x-for="(src, index) in screenshots" :key="index">
+              <button
+                type="button"
+                @click="open(index)"
+                class="group relative rounded-2xl overflow-hidden border border-white/[0.08] bg-white/[0.02] transition-all duration-300 hover:border-white/[0.18] hover:bg-white/[0.05] focus:outline-none focus:ring-2 focus:ring-white/20"
+              >
+                <img
+                  :src="src"
+                  :alt="'App screenshot ' + (index + 1)"
+                  class="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
+                  <div class="rounded-full bg-white/10 border border-white/20 p-3 backdrop-blur-sm">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            </template>
+          </div>
+        </div>
+
+        <!-- Lightbox Overlay -->
+        <div
+          x-cloak
+          x-show="lightboxOpen"
+          x-transition.opacity
+          @keydown.escape.window="close()"
+          @keydown.arrow-left.window="prev()"
+          @keydown.arrow-right.window="next()"
+          class="fixed inset-0 z-50 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Screenshot preview"
+        >
+          <div class="absolute inset-0 bg-black/85 backdrop-blur-md" @click="close()"></div>
+
+          <div class="relative z-10 max-w-5xl w-full flex items-center gap-3">
+            <button
+              type="button"
+              @click="prev()"
+              class="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/15 text-white/70 transition hover:bg-white/20 hover:text-white focus:outline-none"
+              aria-label="Previous screenshot"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+
+            <div class="flex-1 rounded-2xl overflow-hidden border border-white/[0.1] shadow-glowLg">
+              <img
+                :src="screenshots[current]"
+                :alt="'App screenshot ' + (current + 1)"
+                class="w-full h-auto block"
+              />
+            </div>
+
+            <button
+              type="button"
+              @click="next()"
+              class="flex-shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/15 text-white/70 transition hover:bg-white/20 hover:text-white focus:outline-none"
+              aria-label="Next screenshot"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+
+          <button
+            type="button"
+            @click="close()"
+            class="absolute top-4 right-4 z-10 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/15 text-white/70 transition hover:bg-white/20 hover:text-white focus:outline-none"
+            aria-label="Close preview"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
+            <template x-for="(_, i) in screenshots" :key="i">
+              <button
+                type="button"
+                @click="current = i"
+                :class="i === current ? 'bg-white w-5' : 'bg-white/30 w-2'"
+                class="h-2 rounded-full transition-all duration-300 focus:outline-none"
+                :aria-label="'Go to screenshot ' + (i + 1)"
+              ></button>
+            </template>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="container mx-auto px-4 py-10 md:py-14">
+        <div class="max-w-6xl mx-auto">
+          <p class="text-sm font-medium tracking-widest uppercase text-white/30 text-center mb-4">Features</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
+            Everything you need
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            <!-- Feature Card 1: Screen Recording -->
+            <div
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
+                  >
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Screen Recording</h3>
+                  <p class="text-white/40 text-sm">Capture your screen with intelligent session management</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 2: AI Analysis -->
+            <div
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
+                  >
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">AI-Powered Analysis</h3>
+                  <p class="text-white/40 text-sm">Intelligent analysis of recorded content with insights</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 3: Transcription -->
+            <div
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
+                  >
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                    ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Real-Time Transcription</h3>
+                  <p class="text-white/40 text-sm">Accurate voice-to-text transcription as you speak</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 4: Screenshots -->
+            <div
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
+                  >
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Screenshot Capture</h3>
+                  <p class="text-white/40 text-sm">Capture and store important moments with context</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 5: Topic Detection -->
+            <div
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
+                  >
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                    ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Topic Detection</h3>
+                  <p class="text-white/40 text-sm">Automatically identify and categorize conversation topics</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 6: Question Generation -->
+            <div
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
+                  >
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Question Generation</h3>
+                  <p class="text-white/40 text-sm">Smart follow-up questions based on conversation flow</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 7: Multi-Platform -->
+            <div
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
+                  >
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Multi-Platform Support</h3>
+                  <p class="text-white/40 text-sm">Works on macOS, Windows, and Linux (coming soon)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 8: Invisible Mode -->
+            <div
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
+                  >
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
+                    ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Invisible Mode</h3>
+                  <p class="text-white/40 text-sm">Hidden from screen sharing, screenshots, and video calls</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Card 9: Auto-Updates -->
+            <div
+              class="group relative rounded-2xl p-6 bg-white/[0.02] border border-white/[0.06] transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div
+                    class="rounded-xl p-2.5 bg-white/[0.06] border border-white/[0.08]"
+                  >
+                    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    ></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold mb-1.5 text-white/90">Auto-Updates</h3>
+                  <p class="text-white/40 text-sm">Always stay up-to-date with the latest features</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="container mx-auto px-4 py-10 md:py-14">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-sm font-medium tracking-widest uppercase text-white/30 text-center mb-4">How it works</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
+            Three simple steps
+          </h2>
+
+          <div class="relative grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+            <div class="hidden md:block absolute top-8 left-[20%] right-[20%] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" aria-hidden="true"></div>
+
+            <div class="text-center">
+              <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/[0.05] border border-white/[0.1] mb-5">
+                <span class="text-2xl font-bold text-white/80">1</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-white/90">Start Recording</h3>
+              <p class="text-white/40 text-sm leading-relaxed">Launch ExtraBrain and begin your meeting or interview. The app stays invisible to others.</p>
+            </div>
+
+            <div class="text-center">
+              <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/[0.05] border border-white/[0.1] mb-5">
+                <span class="text-2xl font-bold text-white/80">2</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-white/90">AI Analyzes in Real-Time</h3>
+              <p class="text-white/40 text-sm leading-relaxed">ExtraBrain transcribes the conversation and identifies key topics as they're discussed.</p>
+            </div>
+
+            <div class="text-center">
+              <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/[0.05] border border-white/[0.1] mb-5">
+                <span class="text-2xl font-bold text-white/80">3</span>
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-white/90">Get Smart Questions</h3>
+              <p class="text-white/40 text-sm leading-relaxed">Receive intelligent follow-up questions and insights to enhance your understanding.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="container mx-auto px-4 py-10 md:py-14">
+        <div class="max-w-2xl mx-auto">
+          <p class="text-sm font-medium tracking-widest uppercase text-white/30 text-center mb-4">FAQ</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
+            Common questions
+          </h2>
+
+          <div class="space-y-3" x-data="{ active: null }">
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200" :class="active === 1 ? 'border-white/[0.12]' : ''">
+              <button @click="active = active === 1 ? null : 1" class="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group">
+                <h3 class="text-base font-semibold text-white/90 group-hover:text-white transition-colors">What is ExtraBrain?</h3>
+                <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 1 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div x-show="active === 1" x-collapse>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">ExtraBrain is a free AI-powered meeting assistant that helps you excel in meetings and interviews. It provides real-time transcription, intelligent question generation, topic detection, and runs in invisible mode so it's hidden from screen sharing and video calls.</p>
+              </div>
+            </div>
+
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200" :class="active === 2 ? 'border-white/[0.12]' : ''">
+              <button @click="active = active === 2 ? null : 2" class="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group">
+                <h3 class="text-base font-semibold text-white/90 group-hover:text-white transition-colors">Is ExtraBrain free?</h3>
+                <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 2 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div x-show="active === 2" x-collapse>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">Yes, ExtraBrain is free to download and use. We also offer an optional Pro version that adds extra capabilities, while the core app remains fully usable for free.</p>
+              </div>
+            </div>
+
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200" :class="active === 3 ? 'border-white/[0.12]' : ''">
+              <button @click="active = active === 3 ? null : 3" class="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group">
+                <h3 class="text-base font-semibold text-white/90 group-hover:text-white transition-colors">How does invisible mode work?</h3>
+                <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 3 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div x-show="active === 3" x-collapse>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">ExtraBrain uses a special window mode that makes it invisible to screen sharing applications, screenshots, and video call software. This means you can use it during meetings without others seeing the app on your screen.</p>
+              </div>
+            </div>
+
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200" :class="active === 4 ? 'border-white/[0.12]' : ''">
+              <button @click="active = active === 4 ? null : 4" class="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group">
+                <h3 class="text-base font-semibold text-white/90 group-hover:text-white transition-colors">What platforms does ExtraBrain support?</h3>
+                <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 4 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div x-show="active === 4" x-collapse>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">ExtraBrain is currently available for macOS. Windows and Linux versions are coming soon.</p>
+              </div>
+            </div>
+
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200" :class="active === 5 ? 'border-white/[0.12]' : ''">
+              <button @click="active = active === 5 ? null : 5" class="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group">
+                <h3 class="text-base font-semibold text-white/90 group-hover:text-white transition-colors">Does ExtraBrain provide AI services or subscriptions?</h3>
+                <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 5 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div x-show="active === 5" x-collapse>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">No, ExtraBrain does not provide any AI services or subscriptions. The app allows you to enter your own API keys and use your own AI subscriptions from providers like OpenAI or Anthropic. You have full control over your AI usage and costs.</p>
+              </div>
+            </div>
+
+            <div class="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors duration-200" :class="active === 6 ? 'border-white/[0.12]' : ''">
+              <button @click="active = active === 6 ? null : 6" class="w-full flex items-center justify-between px-6 py-5 text-left focus:outline-none group">
+                <h3 class="text-base font-semibold text-white/90 group-hover:text-white transition-colors">Does ExtraBrain collect user data?</h3>
+                <svg class="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-200" :class="active === 6 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div x-show="active === 6" x-collapse>
+                <p class="px-6 pb-5 text-sm text-white/40 leading-relaxed">ExtraBrain does not collect your conversations, transcriptions, or API keys. That content stays on your device. Our website may collect anonymous analytics, such as page visits and download clicks, to help us improve the landing page and release experience.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="container mx-auto px-4 py-8 border-t border-white/[0.06]">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-8 mb-8">
+          <a
+            href="https://github.com/ExtraBrainApp/ExtraBrain-releases/releases"
+            onclick="window.trackExtraBrainLinkClick && window.trackExtraBrainLinkClick('all_releases_clicked', { target: 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases' })"
+            class="text-white/40 hover:text-white/80 transition-colors duration-200 flex items-center gap-2 text-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+              ></path>
+            </svg>
+            All Releases
+          </a>
+          <a
+            href="mailto:info@extrabrain.app"
+            onclick="window.trackExtraBrainLinkClick && window.trackExtraBrainLinkClick('contact_email_clicked', { target: 'mailto:info@extrabrain.app' })"
+            class="text-white/40 hover:text-white/80 transition-colors duration-200 flex items-center gap-2 text-sm"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+            info@extrabrain.app
+          </a>
+          <button
+            type="button"
+            x-ref="footerFeedbackTrigger"
+            @click="openFeedback('footerFeedbackTrigger')"
+            class="cursor-pointer text-white/40 hover:text-white/80 transition-colors duration-200 flex items-center gap-2 text-sm focus:outline-none rounded-sm"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-4l-4 4v-4z"></path>
+            </svg>
+            Leave feedback
+          </button>
+        </div>
+        <p
+          class="text-white/25 text-xs"
+          x-data
+          x-text="'© ' + new Date().getFullYear() + ' ExtraBrain. All rights reserved.'"
+        >
+          © 2025 ExtraBrain. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Alpine.js Release Data Component -->
+    <script>
+      function screenshotLightbox() {
+        return {
+          screenshots: [
+            'assets/screenshots/image1.png',
+            'assets/screenshots/image2.png',
+            'assets/screenshots/image3.png',
+            'assets/screenshots/image4.png',
+          ],
+          lightboxOpen: false,
+          current: 0,
+          open(index) {
+            this.current = index
+            this.lightboxOpen = true
+            document.body.style.overflow = 'hidden'
+          },
+          close() {
+            this.lightboxOpen = false
+            document.body.style.overflow = ''
+          },
+          prev() {
+            this.current = (this.current - 1 + this.screenshots.length) % this.screenshots.length
+          },
+          next() {
+            this.current = (this.current + 1) % this.screenshots.length
+          },
+        }
+      }
+    </script>
+
+    <script>
+      window.trackExtraBrainLinkClick = function (eventName, properties = {}) {
+        if (window.posthog && typeof window.posthog.capture === 'function') {
+          window.posthog.capture(eventName, properties)
+        }
+      }
+
+      function feedbackForm() {
+        return {
+          feedbackOpen: false,
+          lastFeedbackTrigger: 'heroFeedbackTrigger',
+          message: '',
+          email: '',
+          isSubmitting: false,
+          status: 'idle',
+          errorMessage: '',
+
+          openFeedback(triggerRef = 'heroFeedbackTrigger') {
+            this.lastFeedbackTrigger = triggerRef
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+            this.feedbackOpen = true
+            this.status = 'idle'
+            this.errorMessage = ''
+            document.body.style.overflow = 'hidden'
+            this.$nextTick(() => this.$refs.feedbackMessage?.focus())
+          },
+
+          closeFeedback() {
+            this.feedbackOpen = false
+            this.isSubmitting = false
+            this.status = 'idle'
+            this.errorMessage = ''
+            document.body.style.overflow = ''
+            this.$nextTick(() => this.$refs[this.lastFeedbackTrigger]?.focus())
+          },
+
+          submit() {
+            const feedback = this.message.trim()
+            const email = this.email.trim()
+
+            if (!feedback) {
+              this.status = 'error'
+              this.errorMessage = 'Please enter your feedback before submitting.'
+              return
+            }
+
+            if (!window.posthog || typeof window.posthog.capture !== 'function') {
+              this.status = 'error'
+              this.errorMessage = 'Feedback is temporarily unavailable. Please try again later.'
+              return
+            }
+
+            this.isSubmitting = true
+            this.status = 'idle'
+            this.errorMessage = ''
+
+            try {
+              window.posthog.capture('feedback_submitted', {
+                feedback,
+                email: email || undefined,
+                source: 'web-browser',
+                page: window.location.pathname
+              })
+
+              this.message = ''
+              this.email = ''
+              this.status = 'success'
+            } catch (error) {
+              this.status = 'error'
+              this.errorMessage = 'Something went wrong while sending feedback.'
+              console.error('Feedback submission failed:', error)
+            } finally {
+              this.isSubmitting = false
+            }
+          }
+        }
+      }
+
+      function releasePage() {
+        return {
+          ...releaseData(),
+          ...feedbackForm()
+        }
+      }
+
+      function releaseData() {
+        return {
+          loading: true,
+          version: '0.0.26',
+          downloadUrl: '',
+
+          trackEvent(eventName, properties = {}) {
+            if (window.posthog && typeof window.posthog.capture === 'function') {
+              window.posthog.capture(eventName, properties)
+            }
+          },
+
+          trackDownloadClick() {
+            this.trackEvent('download_cta_clicked', {
+              version: this.version,
+              target: this.downloadUrl,
+              fallback: !this.downloadUrl.match(/\.dmg($|[?#])/i)
+            })
+          },
+
+          async init() {
+            try {
+              const cached = this.getCached()
+              if (cached) {
+                Object.assign(this, cached)
+                this.loading = false
+                return
+              }
+
+              const res = await fetch(
+                'https://api.github.com/repos/ExtraBrainApp/ExtraBrain-releases/releases/latest'
+              )
+
+              if (!res.ok) {
+                throw new Error(`GitHub API error: ${res.status}`)
+              }
+
+              const data = await res.json()
+
+              this.version = data.tag_name.replace(/^v/, '')
+              const dmgAsset = data.assets.find((a) => a.name.match(/\.dmg$/i))
+              this.downloadUrl = dmgAsset?.browser_download_url || data.html_url
+
+              this.trackEvent('release_fetch_succeeded', {
+                version: this.version,
+                has_dmg_asset: Boolean(dmgAsset),
+                target: this.downloadUrl
+              })
+
+              if (!dmgAsset) {
+                this.trackEvent('download_link_fallback_used', {
+                  reason: 'missing_dmg_asset',
+                  version: this.version,
+                  target: this.downloadUrl
+                })
+              }
+
+              this.cache({ version: this.version, downloadUrl: this.downloadUrl, isDirect: Boolean(dmgAsset) })
+            } catch (error) {
+              console.error('Failed to fetch release:', error)
+              this.downloadUrl =
+                'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest'
+
+              this.trackEvent('release_fetch_failed', {
+                message: error instanceof Error ? error.message : String(error)
+              })
+              this.trackEvent('download_link_fallback_used', {
+                reason: 'release_fetch_failed',
+                version: this.version,
+                target: this.downloadUrl
+              })
+            } finally {
+              this.loading = false
+            }
+          },
+
+          getCached() {
+            try {
+              const cached = localStorage.getItem('extrabrain_release_data')
+              if (!cached) return null
+
+              const { data, timestamp } = JSON.parse(cached)
+              const age = Date.now() - timestamp
+              const maxAge = data.isDirect === false ? 300000 : 3600000
+
+              if (age < maxAge) {
+                return data
+              }
+
+              localStorage.removeItem('extrabrain_release_data')
+              return null
+            } catch (error) {
+              console.error('Cache read error:', error)
+              return null
+            }
+          },
+
+          cache(data) {
+            try {
+              const cacheEntry = {
+                data,
+                timestamp: Date.now()
+              }
+              localStorage.setItem('extrabrain_release_data', JSON.stringify(cacheEntry))
+            } catch (error) {
+              console.error('Cache write error:', error)
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
