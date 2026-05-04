@@ -1,0 +1,247 @@
+---
+import MarketingLayout from './MarketingLayout.astro';
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  faqSchema,
+  githubUrl,
+  homepageFaq,
+  howToInstallSchema,
+  organizationSchema,
+  productCategory,
+  productName,
+  softwareApplicationSchema,
+  type MarketingPage,
+  websiteSchema,
+} from '../data/product';
+
+interface Props {
+  page: MarketingPage;
+}
+
+const { page } = Astro.props;
+const faq = page.faq ?? homepageFaq.slice(0, 4);
+const schemaGraph: Array<Record<string, unknown>> = [
+  softwareApplicationSchema(page.description, absoluteUrl('/download/')),
+  organizationSchema(),
+  websiteSchema(),
+  breadcrumbSchema(page),
+];
+
+if (page.schemaType === 'HowTo') schemaGraph.push(howToInstallSchema());
+if (faq.length > 0) schemaGraph.push(faqSchema(faq));
+
+const hasReleaseMetadata = page.slug === 'download';
+const hasSources = Boolean(page.sources?.length);
+const contentBandStart = hasReleaseMetadata ? 1 : 0;
+const sourcesBandIndex = contentBandStart + page.sections.length;
+const faqBandIndex = sourcesBandIndex + (hasSources ? 1 : 0);
+const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--odd' : 'section-band--even');
+---
+
+<MarketingLayout title={`${page.title} | ${productName}`} description={page.description} schemaGraph={schemaGraph}>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="brand" aria-label="ExtraBrain home">
+        <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="34" height="34" />
+        <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
+          <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/download/">Download</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/help/">Help</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn primary" href="/download/" data-track="download_nav_clicked">Download for Mac</a>
+      </div>
+      <a class="btn primary mobile-only" href="/download/" data-track="download_nav_clicked">Download</a>
+    </div>
+  </header>
+
+  <main id="top" class="page-main">
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <div class="hero-kicker">{page.eyebrow}</div>
+          <h1>{page.h1}</h1>
+          <p class="lead">{page.lead}</p>
+          <div class="hero-ctas">
+            {page.primaryCta && <a class="btn primary" href={page.primaryCta.href} data-track="page_primary_cta_clicked">{page.primaryCta.label}</a>}
+            {page.secondaryCta && <a class="btn ghost" href={page.secondaryCta.href} data-track="page_secondary_cta_clicked">{page.secondaryCta.label}</a>}
+          </div>
+        </div>
+        <aside class="page-fact-panel" aria-label="ExtraBrain product facts">
+          <p class="panel-label">{productCategory}</p>
+          <ul>
+            <li>Available for Mac today, with Windows and Linux planned</li>
+            <li>Apple Silicon and Intel Mac support</li>
+            <li>On-device AI on compatible hardware</li>
+            <li>Local Parakeet transcription and optional Deepgram</li>
+            <li>Optional OpenAI, Anthropic, Claude, Codex, or compatible provider access</li>
+            <li>Responsible-use guidance for interviews and workplace policies</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    {page.slug === 'download' && (
+      <section class:list={['light-section', 'page-release-section', sectionBandClass(0)]} aria-labelledby="latest-release-title">
+        <div class="container page-card">
+          <div>
+            <span class="eyebrow">Latest release</span>
+            <h2 id="latest-release-title">Current macOS build</h2>
+            <p class="lead light">
+              This block reads GitHub release metadata in the browser. If that request fails, the download button still points to the latest official release page.
+            </p>
+          </div>
+          <div class="release-panel" data-release-panel>
+            <p class="panel-label">Release metadata</p>
+            <dl>
+              <div><dt>Version</dt><dd data-release-version>Loading latest release...</dd></div>
+              <div><dt>Published</dt><dd data-release-date>Loading</dd></div>
+              <div><dt>Asset</dt><dd data-release-asset>Loading</dd></div>
+              <div><dt>SHA-256</dt><dd data-release-digest>Shown when published by GitHub release metadata.</dd></div>
+              <div><dt>Signing</dt><dd>Verify signing and notarization details in the current release notes.</dd></div>
+            </dl>
+            <a class="btn primary" href={page.primaryCta?.href ?? githubUrl} data-release-download data-download>Download latest release</a>
+          </div>
+        </div>
+      </section>
+    )}
+
+    {page.sections.map((section, index) => (
+      <section class:list={['light-section', 'page-content-section', sectionBandClass(contentBandStart + index)]}>
+        <div class="container page-section-stack">
+          <article class="page-section-block">
+            <div class="section-head compact">
+              <span class="eyebrow">{page.eyebrow}</span>
+              <h2>{section.title}</h2>
+              {section.body && <p class="lead light">{section.body}</p>}
+            </div>
+            {section.items && (
+              <div class="page-grid">
+                {section.items.map((item) => (
+                  <div class="page-info-card">
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </article>
+        </div>
+      </section>
+    ))}
+
+    {page.sources && page.sources.length > 0 && (
+      <section class:list={['light-section', 'page-content-section', sectionBandClass(sourcesBandIndex)]}>
+        <div class="container page-section-stack">
+          <article class="page-section-block source-block">
+            <div class="section-head compact">
+              <span class="eyebrow">Sources</span>
+              <h2>Public comparison sources</h2>
+              <p class="lead light">Competitor facts should be checked against these public pages before editing claims.</p>
+            </div>
+            <div class="source-list">
+              {page.sources.map((source) => <a href={source.href}>{source.label}</a>)}
+            </div>
+          </article>
+        </div>
+      </section>
+    )}
+
+    {faq.length > 0 && (
+      <section class:list={['light-section', 'faq-section', 'page-faq-section', sectionBandClass(faqBandIndex)]} id="faq">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">FAQ</span>
+            <h2>Common questions.</h2>
+            <p class="lead light">Short answers for people and crawlers comparing ExtraBrain with other live AI assistants.</p>
+          </div>
+          <div class="faq-list">
+            {faq.map((item, index) => (
+              <details class="faq-item" name="page-faq" open={index === 0}>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a href="/" class="brand footer-brand">
+          <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="36" height="36" />
+          <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
+            <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
+          </span>
+        </a>
+        <p>{productCategory}. Available for Mac today, with Windows and Linux planned.</p>
+      </div>
+      <div>
+        <h2 class="footer-heading">Product</h2>
+        <a href="/download/">Download</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/about/">About</a>
+      </div>
+      <div>
+        <h2 class="footer-heading">Trust</h2>
+        <a href="/privacy/">Privacy</a>
+        <a href="/security/">Security</a>
+        <a href="/responsible-use/">Responsible use</a>
+      </div>
+      <div>
+        <h2 class="footer-heading">Support</h2>
+        <a href="/help/">Help center</a>
+        <a href="/providers/">Providers</a>
+        <a href="/contact/">Contact</a>
+        <a href={githubUrl}>GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  {page.slug === 'download' && (
+    <script is:inline>
+      (function () {
+        var fallback = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest';
+        var panel = document.querySelector('[data-release-panel]');
+        if (!panel) return;
+
+        function text(sel, value) {
+          var el = panel.querySelector(sel);
+          if (el) el.textContent = value;
+        }
+
+        fetch('https://api.github.com/repos/ExtraBrainApp/ExtraBrain-releases/releases/latest')
+          .then(function (res) {
+            if (!res.ok) throw new Error('GitHub API error: ' + res.status);
+            return res.json();
+          })
+          .then(function (release) {
+            var asset = (release.assets || []).find(function (item) { return /\.dmg$/i.test(item.name); }) || (release.assets || [])[0];
+            var download = asset ? asset.browser_download_url : release.html_url || fallback;
+            text('[data-release-version]', release.tag_name || 'Latest release');
+            text('[data-release-date]', release.published_at ? new Date(release.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : 'See release notes');
+            text('[data-release-asset]', asset ? asset.name + ' (' + Math.round((asset.size || 0) / 1024 / 1024) + ' MB)' : 'See release notes');
+            text('[data-release-digest]', asset && asset.digest ? asset.digest : 'Not published in GitHub release metadata.');
+            document.querySelectorAll('[data-release-download], [data-download]').forEach(function (el) {
+              el.setAttribute('href', download);
+            });
+          })
+          .catch(function () {
+            text('[data-release-version]', 'Latest release');
+            text('[data-release-date]', 'See GitHub release notes');
+            text('[data-release-asset]', 'See GitHub release assets');
+            text('[data-release-digest]', 'Not available.');
+          });
+      })();
+    </script>
+  )}
+</MarketingLayout>

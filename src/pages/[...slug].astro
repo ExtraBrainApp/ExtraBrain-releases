@@ -1,0 +1,19 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { marketingPages, pageBySlug } from '../data/product';
+
+export function getStaticPaths() {
+  return marketingPages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const page = Astro.props.page ?? pageBySlug(Astro.params.slug ?? '');
+
+if (!page) {
+  return Astro.redirect('/404.html');
+}
+---
+
+<PageLayout page={page} />

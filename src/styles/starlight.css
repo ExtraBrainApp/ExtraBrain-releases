@@ -1,0 +1,38 @@
+:root {
+  --sl-font: 'Geist', system-ui, sans-serif;
+  --sl-font-system: 'Geist', system-ui, sans-serif;
+  --sl-font-mono: 'SFMono-Regular', ui-monospace, monospace;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #0e3332;
+  --sl-color-accent: #65d7c7;
+  --sl-color-accent-high: #a9f1e7;
+}
+
+:root[data-theme='light'] {
+  --sl-color-accent-low: #ddf6f2;
+  --sl-color-accent: #0e6972;
+  --sl-color-accent-high: #0a5961;
+}
+
+.site-title {
+  gap: 0.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.site-title img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0;
+  object-fit: contain;
+  box-shadow: none;
+}
+
+/* Starlight already renders the document title from frontmatter. Hide any
+   accidental body-level H1 copied into markdown so docs cannot show duplicates. */
+.sl-markdown-content > .sl-heading-wrapper.level-h1,
+.sl-markdown-content > h1 {
+  display: none;
+}

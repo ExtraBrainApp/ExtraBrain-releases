@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Playwright
+.playwright-mcp/
+
+# Astro
+node_modules/
+dist/
+.astro/
+.frase-audit/
+
+# Env files
+.env

@@ -1,0 +1,661 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import {
+  absoluteUrl,
+  faqSchema,
+  homepageFaq,
+  organizationSchema,
+  pricingTiers,
+  productCategory,
+  softwareApplicationSchema,
+  websiteSchema,
+} from '../data/product';
+
+const pageTitle = 'ExtraBrain - Local-First AI Interview & Meeting Copilot';
+const pageDescription =
+  'Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI where supported, and BYO providers.';
+
+const downloadHref = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest';
+
+const faqItems = homepageFaq;
+
+const schemaGraph = [
+  softwareApplicationSchema(pageDescription, absoluteUrl('/download/')),
+  organizationSchema(),
+  websiteSchema(),
+  faqSchema(faqItems),
+];
+
+const overviewCards = [
+  {
+    number: '01',
+    title: 'Live interview and meeting context',
+    body: 'Capture transcripts, prompts, screenshots, constraints, and follow-up questions while the call is still moving.',
+  },
+  {
+    number: '02',
+    title: 'Interview answers with structure',
+    body: 'Turn coding, system design, and behavioral prompts into clarifying questions, baselines, tradeoffs, and follow-up points.',
+  },
+  {
+    number: '03',
+    title: 'Choose local AI or providers you control',
+    body: 'Use on-device AI on compatible hardware, or connect OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, or Codex Subscription modes.',
+  },
+  {
+    number: '04',
+    title: 'Local-first by design',
+    body: 'Keep transcripts, prompts, screenshots, and notes on your Mac in a fully local setup, or explicitly send selected content to external providers when you choose them.',
+  },
+];
+
+const steps = [
+  {
+    title: 'Start the Mac app',
+    body: 'Download the latest release, open ExtraBrain before the interview or meeting, and confirm microphone, transcription, and provider settings.',
+    image: '/assets/screenshots/empty_state.png',
+    imageAlt: 'ExtraBrain app empty state with recording controls ready',
+  },
+  {
+    title: 'Follow the live signal',
+    body: 'Use transcript-aware prompts for coding interviews, system design rounds, product meetings, lectures, and research calls.',
+    image: '/assets/screenshots/live_session.png',
+    imageAlt: 'ExtraBrain live session with transcript-aware assistant output',
+  },
+  {
+    title: 'Leave with useful context',
+    body: 'Generate summaries, action items, edge cases, unresolved risks, and post-answer feedback before the session context fades.',
+    image: '/assets/screenshots/sessions_history.png',
+    imageAlt: 'ExtraBrain sessions history with saved facts',
+  },
+];
+
+const promptCards = [
+  {
+    label: 'Candidate',
+    prompt: 'Summarize the coding prompt, list edge cases, and outline a clean baseline before I start.',
+    tone: 'lavender',
+  },
+  {
+    label: 'System design',
+    prompt: 'Turn these requirements into components, tradeoffs, and follow-up questions.',
+    tone: 'slate',
+  },
+  {
+    label: 'Meeting lead',
+    prompt: 'Extract decisions, risks, owners, and follow-ups from this call.',
+    tone: 'mint',
+  },
+  {
+    label: 'Customer research',
+    prompt: 'Highlight customer pain points and quotes I can use in roadmap notes.',
+    tone: 'cobalt',
+  },
+  {
+    label: 'Lecture mode',
+    prompt: 'Convert this explanation into concepts, examples, and review questions.',
+    tone: 'coral',
+  },
+];
+
+const trustCards = [
+  {
+    title: 'You choose what to capture',
+    body: 'ExtraBrain is a desktop app, not a meeting bot joining the room. Keep session scope, prompts, and outputs in your control.',
+  },
+  {
+    title: 'Your model choice stays yours',
+    body: 'The app does not force a single hosted AI vendor. Use on-device AI where compatible hardware supports it, or connect the provider subscriptions, accounts, or API keys you trust.',
+  },
+  {
+    title: 'Use it within the rules',
+    body: 'Interview and workplace policies vary. ExtraBrain should support your thinking, notes, and preparation without misrepresenting your skills.',
+  },
+];
+
+const pricingCards = pricingTiers.map((tier) => ({
+  name: tier.name,
+  body: tier.summary,
+  price: tier.price,
+  suffix: '',
+  features: tier.features,
+  href: tier.name === 'Free' ? downloadHref : tier.name === 'Pro' ? '/pricing/' : 'mailto:info@extrabrain.app?subject=ExtraBrain%20enterprise%20inquiry',
+  cta: tier.name === 'Free' ? 'Download for Mac' : tier.name === 'Pro' ? 'View pricing details' : 'Talk to us',
+  featured: tier.name === 'Pro',
+}));
+
+const pathCards = [
+  {
+    eyebrow: 'Interview workflow',
+    title: 'Use ExtraBrain in interviews responsibly',
+    body: 'Prepare for coding, system design, and behavioral interviews while staying aligned with company and platform policies.',
+    href: '/help/using-extrabrain-in-interviews/',
+    cta: 'Explore interview guide',
+  },
+  {
+    eyebrow: 'Installation and setup',
+    title: 'Get from download to first live session',
+    body: 'Install the app, connect your keys, and verify the workflow before a high-stakes call.',
+    href: '/download/',
+    cta: 'Open download page',
+  },
+  {
+    eyebrow: 'Privacy and control',
+    title: 'Understand local and external data paths',
+    body: 'Review fully local setup, on-device AI hardware requirements, provider data flow, API key handling, and sensible operating practices.',
+    href: '/privacy/',
+    cta: 'Read privacy notes',
+  },
+];
+
+const compatibilityPlatforms = [
+  'Zoom',
+  'Google Meet',
+  'Microsoft Teams',
+  'Cisco Webex',
+  'Amazon Chime',
+  'Lark / Feishu',
+  'Slack Huddles',
+  'Discord',
+  'HackerRank',
+  'CoderPad',
+  'Codility',
+  'CodeSignal',
+];
+
+---
+
+<MarketingLayout title={pageTitle} description={pageDescription} schemaGraph={schemaGraph}>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="ExtraBrain home">
+        <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="34" height="34" />
+        <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
+          <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#overview">Product</a>
+        <a href="#workflows">Use cases</a>
+        <a href="/download/">Download</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn primary" href={downloadHref} data-download>
+          Download for Mac
+        </a>
+      </div>
+      <a class="btn primary mobile-only" href={downloadHref} data-download>
+        Download for Mac
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-kicker">Free local-first desktop copilot</div>
+          <h1 id="hero-title">Desktop AI interview and meeting copilot.</h1>
+          <p class="lead">
+            ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It helps engineers,
+            candidates, students, founders, and meeting leads follow live conversations with transcription,
+            screen-aware context, on-device AI where hardware supports it, BYO AI providers, and privacy controls.
+            Available for Mac today, with Windows and Linux planned.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn primary" href={downloadHref} data-download>
+              Download for Mac
+            </a>
+            <a class="btn ghost" href="#overview">
+              See overview
+            </a>
+          </div>
+          <div class="hero-mini" aria-label="Product highlights">
+            <span>Local Parakeet transcription</span>
+            <span>On-device AI on compatible hardware</span>
+            <span>Optional Deepgram</span>
+            <span>OpenAI, Anthropic, Claude, Codex</span>
+            <span>Available for Mac today</span>
+            <span>Windows &amp; Linux planned</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="ExtraBrain product mockup">
+          <div class="product-stack">
+            <div class="product-stack-scale">
+              <div class="product-card card-top">
+                <div class="pc-top-content">
+                  <span class="live-dot" aria-hidden="true"></span>
+                  <div>
+                    <div class="lbl">Live session</div>
+                    <div class="val">System design interview · live</div>
+                  </div>
+                  <div class="time-code">14:02</div>
+                </div>
+              </div>
+
+              <div class="product-card card-main">
+                <div class="pc-head">
+                  <span class="d"></span><span class="d"></span><span class="d"></span>
+                  <span class="title">ExtraBrain · live transcript</span>
+                  <span class="live"><span class="pulse"></span>Listening · 14:02</span>
+                </div>
+                <div class="pc-body">
+                  <div class="pc-line">
+                    <span class="ts">14:02:10</span><span class="sp">Host</span>
+                    <span class="t">Design a rate limiter for a public API with <span class="hl">regional spikes</span> and abusive bursts.</span>
+                  </div>
+                  <div class="pc-line">
+                    <span class="ts">14:02:18</span><span class="sp me">You</span>
+                    <span class="t">Should limits be per user, per IP, or per endpoint?</span>
+                  </div>
+                  <div class="pc-line">
+                    <span class="ts">14:02:24</span><span class="sp">Host</span>
+                    <span class="t">Start with per-user and per-endpoint limits. We care about <span class="hl">burst traffic</span> and graceful fallback.</span>
+                  </div>
+                </div>
+                <div class="pc-answer">
+                  <div class="q">Answer · 2 sources · 0.6s</div>
+                  <div class="a">
+                    Start with token buckets at the edge for burst tolerance, then coordinate counters through
+                    Redis or another distributed store. Call out <b>fail-open vs fail-closed</b>.
+                  </div>
+                  <div class="srcs">
+                    <span>transcript · 14:02:10</span>
+                    <span>transcript · 14:02:24</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card card-side">
+                <div class="pc-side-content">
+                  <div class="lbl">Saved facts</div>
+                  <div class="fact"><b>Rate limiter</b> · public API</div>
+                  <div class="fact">Burst traffic: <b>edge token buckets</b></div>
+                  <div class="fact">Tradeoff: fail-open vs fail-closed</div>
+                </div>
+              </div>
+
+              <div class="stat-float">
+                <div class="label">Session memory</div>
+                <div class="value">Live context</div>
+                <div class="sub">Transcript-aware answers, saved facts, and follow-ups while the call is still active.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="proof-strip">
+      <div class="container proof-card">
+        <p>
+          <strong>Built for high-stakes live thinking.</strong>
+          {productCategory}. Available for Mac today, with local AI where supported and provider access you control.
+        </p>
+        <div class="audience-row" aria-label="Target audiences">
+          <span>Engineers</span>
+          <span>PMs</span>
+          <span>Founders</span>
+          <span>Students</span>
+          <span>Research teams</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="light-section section-band--odd" id="overview">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Overview</span>
+          <h2>An invisible AI copilot for interviews, meetings, lectures, and research.</h2>
+          <p class="lead light">
+            ExtraBrain turns live audio, transcript text, screenshots, and selected context into organized prompts,
+            answer structures, and session memory while keeping local AI availability, provider choice, costs, and privacy boundaries visible.
+          </p>
+        </div>
+        <div class="benefit-grid">
+          {overviewCards.map((card) => (
+            <article class="benefit-card">
+              <div class="icon-bubble">{card.number}</div>
+              <h3>{card.title}</h3>
+              <p>{card.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="light-section section-band--even" id="how">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How it works</span>
+          <h2>From download to live support in three steps.</h2>
+          <p class="lead light">
+            Keep the setup path simple: install the Mac app, choose local or cloud transcription, select on-device AI
+            when your hardware supports it or connect provider access, and rehearse once before a real interview, meeting, or lecture.
+          </p>
+        </div>
+        <div class="steps-grid">
+          {steps.map((step) => (
+            <article class="step-card">
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+              <figure class="step-art">
+                <img src={step.image} alt={step.imageAlt} width="800" height="353" loading="lazy" decoding="async" />
+              </figure>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="light-section workflows-section section-band--odd" id="workflows">
+      <div class="container">
+        <div class="workflow-cloud-intro">
+          <span class="eyebrow">Use cases</span>
+          <h2>Designed for moments where context moves faster than notes.</h2>
+          <p class="lead light">
+            Use ExtraBrain as a private thinking layer during high-pressure live work: interviews, meetings,
+            customer calls, lectures, and research conversations.
+          </p>
+        </div>
+
+        <div class="prompt-cloud" aria-label="ExtraBrain prompt cards by workflow">
+          {promptCards.map((card) => (
+            <article class={`prompt-card prompt-card--${card.tone}`}>
+              <span class="prompt-card-label">{card.label}</span>
+              <p>{card.prompt}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section compatibility-section section-band--even" id="compatibility">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Compatibility</span>
+          <h2>Works invisibly across the interview and meeting platforms people actually use.</h2>
+          <p class="lead">
+            ExtraBrain is designed to stay hidden from screen sharing and screen recording on major video call
+            tools and coding interview environments, while remaining available on your own Mac. Always follow the
+            rules of the interview, employer, school, meeting, or platform.
+          </p>
+        </div>
+        <div class="compatibility-grid" aria-label="Supported meeting and interview platforms">
+          {compatibilityPlatforms.map((platform) => (
+            <div class="platform-chip">{platform}</div>
+          ))}
+        </div>
+        <p class="compatibility-note">
+          Built for live coding interviews, LeetCode-style prompts, system design rounds, behavioral interviews,
+          product interviews, data and ML interviews, consulting cases, lectures, and research calls.
+        </p>
+      </div>
+    </section>
+
+    <section class="dark-section section-band--odd" id="trust">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Trust and control</span>
+          <h2>Local-first control belongs in the main product story.</h2>
+          <p class="lead">
+            ExtraBrain can keep requests on your device when you use on-device AI and local transcription. Privacy still
+            depends on your selected setup, including what you send to optional model and transcription providers.
+          </p>
+        </div>
+        <div class="security-grid">
+          {trustCards.map((card) => (
+            <article class="security-card">
+              <h3>{card.title}</h3>
+              <p>{card.body}</p>
+            </article>
+          ))}
+        </div>
+        <div class="quote-card">
+          <img class="quote-logo" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="96" height="96" />
+          <div>
+            <blockquote>
+              ExtraBrain should support your thinking, notes, and preparation. You are still responsible for
+              following interview, workplace, and platform policies.
+            </blockquote>
+            <cite>Interview policy reminder</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="light-section section-band--even" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Pricing structure</span>
+          <h2>Free to start. Use local AI or your current provider access.</h2>
+          <p class="lead light">
+            Free core access, on-device AI on compatible hardware, BYO provider subscriptions or API keys, Pro workflow tools, and enterprise support by contact.
+          </p>
+        </div>
+        <div class="pricing-grid">
+          {pricingCards.map((card) => (
+            <article class:list={['price-card', card.featured && 'featured']}>
+              <h3>{card.name}</h3>
+              <p>{card.body}</p>
+              <div class="price">
+                {card.price}
+                {card.suffix && <span>{card.suffix}</span>}
+              </div>
+              <ul class="price-list">
+                {card.features.map((feature) => <li>{feature}</li>)}
+              </ul>
+              <a class:list={['btn', card.featured ? 'primary' : 'ghost dark']} href={card.href} data-download={card.href === downloadHref ? '' : undefined}>{card.cta}</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="light-section section-band--odd">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Discovery pages</span>
+          <h2>Specific pages for the questions people and AI search systems ask.</h2>
+          <p class="lead light">
+            ExtraBrain has first-party pages for downloads, privacy, providers, local transcription, use cases,
+            comparisons, release notes, and responsible use.
+          </p>
+        </div>
+        <div class="related-grid">
+          <article class="related-card">
+            <div>
+              <small>Use cases</small>
+              <h3>Interview and meeting workflows</h3>
+              <p>Coding interviews, system design interviews, behavioral interviews, and desktop meeting copilot workflows.</p>
+            </div>
+            <a href="/use-cases/coding-interviews/">Open use cases</a>
+          </article>
+          <article class="related-card">
+            <div>
+              <small>Features</small>
+              <h3>Local AI, transcription, and BYO providers</h3>
+              <p>On-device AI where compatible hardware supports it, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.</p>
+            </div>
+            <a href="/features/bring-your-own-provider/">Review providers</a>
+          </article>
+          <article class="related-card">
+            <div>
+              <small>Comparisons</small>
+              <h3>Compare ExtraBrain with alternatives</h3>
+              <p>Factual comparison pages for Cluely, InterviewCoder, and Final Round AI with tradeoffs and source links.</p>
+            </div>
+            <a href="/compare/cluely/">Read comparisons</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="light-section related-section section-band--even">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Pick your path</span>
+          <h2>Get set up with the guide that matches your workflow.</h2>
+          <p class="lead light">
+            The help center keeps installation, local AI availability, provider access, privacy, billing, and interview workflow details
+            crawlable and easy to reach from the homepage.
+          </p>
+        </div>
+        <div class="related-grid">
+          {pathCards.map((card) => (
+            <article class="related-card">
+              <div>
+                <small>{card.eyebrow}</small>
+                <h3>{card.title}</h3>
+                <p>{card.body}</p>
+              </div>
+              <a href={card.href}>
+                {card.cta}
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="light-section faq-section section-band--odd" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Common questions about ExtraBrain.</h2>
+          <p class="lead light">
+            Direct answers for searchers comparing invisible AI interview assistants, meeting copilots,
+            on-device AI, provider-connected tools, and local-first desktop apps.
+          </p>
+        </div>
+        <div class="faq-list">
+          {faqItems.map((item, index) => (
+            <details class="faq-item" name="homepage-faq" open={index === 0}>
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+      <script is:inline>
+        document.querySelectorAll('details[name="homepage-faq"]').forEach((detail) => {
+          detail.addEventListener('toggle', () => {
+            if (!detail.open) return;
+            document.querySelectorAll('details[name="homepage-faq"]').forEach((other) => {
+              if (other !== detail) other.removeAttribute('open');
+            });
+          });
+        });
+      </script>
+    </section>
+
+    <section class="final-cta" id="cta">
+      <div class="container cta-card">
+        <div>
+          <span class="eyebrow">Ready when the conversation starts</span>
+          <h2>Download the free Mac app before the call starts.</h2>
+          <p class="lead">
+            ExtraBrain gives you a private live workspace for interview prompts, meeting notes, structured answers,
+            and post-session summaries, all in a desktop app you control.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn primary" href={downloadHref} data-download>
+            Download latest release
+          </a>
+          <a class="btn ghost" href="/help/">Open help center</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a href="#top" class="brand footer-brand">
+          <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="36" height="36" />
+          <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
+            <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
+          </span>
+        </a>
+        <p>Free, local-first desktop AI interview and meeting copilot. Available for Mac today, with Windows and Linux planned.</p>
+      </div>
+      <div>
+        <h2 class="footer-heading">Product</h2>
+        <a href="/download/">Download</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/about/">About</a>
+      </div>
+      <div>
+        <h2 class="footer-heading">Trust</h2>
+        <a href="/privacy/">Privacy</a>
+        <a href="/security/">Security</a>
+        <a href="/responsible-use/">Responsible use</a>
+      </div>
+      <div>
+        <h2 class="footer-heading">Support</h2>
+        <a href="/help/getting-started/">Getting started</a>
+        <a href="/help/troubleshooting/">Troubleshooting</a>
+        <a href="/providers/">Providers</a>
+        <a href="https://github.com/ExtraBrainApp/ExtraBrain-releases" data-track="all_releases_clicked">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    (function () {
+      function trackEvent(name, props) {
+        if (window.posthog && typeof window.posthog.capture === 'function') {
+          window.posthog.capture(name, props || {});
+        }
+      }
+
+      document.querySelectorAll('[data-download]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          trackEvent('download_cta_clicked', {
+            target: el.getAttribute('href')
+          });
+        });
+      });
+
+      function resolveLatestDownload() {
+        fetch('https://api.github.com/repos/ExtraBrainApp/ExtraBrain-releases/releases/latest')
+          .then(function (res) {
+            if (!res.ok) throw new Error('GitHub API error: ' + res.status);
+            return res.json();
+          })
+          .then(function (release) {
+            var asset = (release.assets || []).find(function (item) {
+              return /\.dmg$/i.test(item.name || '') && item.browser_download_url;
+            });
+            if (!asset) return;
+
+            document.querySelectorAll('[data-download]').forEach(function (el) {
+              el.setAttribute('href', asset.browser_download_url);
+            });
+          })
+          .catch(function () {
+            // Keep the GitHub latest-release fallback href.
+          });
+      }
+
+      document.querySelectorAll('[data-track]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          trackEvent(el.getAttribute('data-track'), {
+            target: el.getAttribute('href')
+          });
+        });
+      });
+
+      if (document.readyState === 'complete') {
+        resolveLatestDownload();
+      } else {
+        window.addEventListener('load', resolveLatestDownload, { once: true });
+      }
+    })();
+  </script>
+</MarketingLayout>

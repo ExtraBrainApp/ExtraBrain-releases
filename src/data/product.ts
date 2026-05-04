@@ -1,0 +1,1164 @@
+export const siteUrl = 'https://extrabrain.app';
+export const githubUrl = 'https://github.com/ExtraBrainApp/ExtraBrain-releases';
+export const latestReleaseUrl = `${githubUrl}/releases/latest`;
+export const productName = 'ExtraBrain';
+export const brandAliases = ['Extra Brain'];
+export const productCategory = 'Free, local-first desktop AI interview and meeting copilot';
+export const productDescription =
+  'ExtraBrain is a free, local-first desktop AI interview assistant and meeting copilot for Mac with live transcription, screen-aware context, on-device AI where hardware supports it, bring-your-own AI providers, and clear privacy controls. Use it for coding interviews, system design rounds, behavioral interviews, meetings, lectures, and research calls, with Windows and Linux planned.';
+export const contactEmail = 'info@extrabrain.app';
+
+export const productFacts = [
+  'Brand: ExtraBrain is the official product name. Extra Brain is a common spaced search alias for the same app.',
+  'Platform: Available for Mac today, including Apple Silicon and Intel Macs. Windows and Linux are planned.',
+  'Category: AI interview assistant, AI meeting copilot, live desktop AI assistant.',
+  'Use cases: coding interviews, system design interviews, behavioral interviews, product interviews, customer calls, lectures, and research meetings.',
+  'Core model: free desktop app with on-device AI where compatible hardware supports it, plus bring-your-own provider setup.',
+  'Transcription: local NVIDIA Parakeet and optional Deepgram.',
+  'Providers: on-device AI, Anthropic, OpenAI, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription.',
+  'Local AI availability: on-device AI requires compatible hardware and may not be available on every Mac or customer environment.',
+  'Privacy: with on-device AI and local transcription, model and transcription requests can stay on the Mac. Prompts, transcript text, screenshots, or audio may leave the device when sent to selected external providers.',
+  'Screen sharing: ExtraBrain is designed to stay hidden from screen sharing and screen recording on major meeting tools, while users remain responsible for following all rules.',
+  'Responsible use: users must follow interview, workplace, employer, school, and platform rules.',
+];
+
+export const essentialPages = [
+  { title: 'Overview', href: '/' },
+  { title: 'Download', href: '/download/' },
+  { title: 'Pricing', href: '/pricing/' },
+  { title: 'Privacy', href: '/privacy/' },
+  { title: 'Getting started', href: '/help/getting-started/' },
+  { title: 'Installation', href: '/help/installation/' },
+  { title: 'AI providers', href: '/help/setup-api-keys/' },
+  { title: 'Interview guide', href: '/help/using-extrabrain-in-interviews/' },
+  { title: 'Billing', href: '/help/billing-pro-plan/' },
+];
+
+export const pricingTiers = [
+  {
+    name: 'Free',
+    price: 'Always free',
+    summary: 'Core desktop app, live workflow support, on-device AI where supported, and BYO provider setup.',
+    features: [
+      'Download and use the Mac app',
+      'Use on-device AI on compatible hardware, or connect OpenAI, Anthropic, Claude, Codex, or compatible provider access',
+      'Local-first transcripts, prompts, screenshots, notes, and session context',
+      'Local Parakeet transcription and optional Deepgram setup',
+      'Help center, setup, privacy, and troubleshooting guides',
+    ],
+  },
+  {
+    name: 'Pro',
+    price: 'Workflow upgrade',
+    summary: 'More control for repeated interview, meeting, and research workflows.',
+    features: [
+      'Everything in Free',
+      'Saved prompt presets and custom profiles',
+      'Richer session history across transcripts, notes, screenshots, and saved facts',
+      'Post-session summaries for decisions, risks, follow-ups, and review',
+      'Premium model and advanced workflow controls where enabled',
+    ],
+  },
+  {
+    name: 'Enterprise',
+    price: 'Custom',
+    summary: 'Policy, deployment, privacy, and workflow support for teams.',
+    features: [
+      'Team rollout planning',
+      'Responsible-use and policy guidance',
+      'Security and deployment review',
+      'Custom workflow support for team requirements',
+    ],
+  },
+];
+
+export const homepageFaq = [
+  {
+    question: 'What is ExtraBrain?',
+    answer:
+      'ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It provides live transcription, screen-aware context, structured prompts, question generation, on-device AI where hardware supports it, and a desktop window designed for private live workflows. It is available for Mac today, with Windows and Linux planned.',
+  },
+  {
+    question: 'Is ExtraBrain the same as Extra Brain?',
+    answer:
+      'Yes. ExtraBrain is the official product name, and Extra Brain is a common spaced search people may use for the same Mac AI interview assistant and meeting copilot.',
+  },
+  {
+    question: 'Is ExtraBrain free?',
+    answer:
+      'Yes. ExtraBrain is free to download and use. Pro adds saved prompt presets, custom profiles, richer session history, post-session summaries, premium model controls where enabled, and advanced workflow tools.',
+  },
+  {
+    question: 'What platforms does ExtraBrain support?',
+    answer:
+      'ExtraBrain is available for Mac today, including Apple Silicon Macs such as M1, M2, M3, and M4, plus Intel Macs. Windows and Linux are planned, not current release targets.',
+  },
+  {
+    question: 'Which AI providers does ExtraBrain support?',
+    answer:
+      'ExtraBrain supports on-device AI on compatible hardware, plus provider access you control: OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription modes.',
+  },
+  {
+    question: 'Can I bring my own OpenAI or Anthropic key?',
+    answer:
+      'Yes. ExtraBrain is built around provider access you control. You can use on-device AI where hardware supports it, or connect your own OpenAI, Anthropic, custom OpenAI-compatible endpoint, Claude Subscription, or Codex Subscription setup.',
+  },
+  {
+    question: 'How does transcription work?',
+    answer:
+      'ExtraBrain supports local NVIDIA Parakeet transcription and optional Deepgram. Your exact data flow depends on whether you choose local transcription, on-device AI, or external providers.',
+  },
+  {
+    question: 'Does ExtraBrain collect user data?',
+    answer:
+      'ExtraBrain is designed as a local-first app. With on-device AI and local transcription, model and transcription requests can stay on your Mac. Content may leave your device only when you choose optional external providers such as cloud model APIs or Deepgram.',
+  },
+  {
+    question: 'Is using ExtraBrain in interviews allowed or considered cheating?',
+    answer:
+      'ExtraBrain is a tool, and you are responsible for following the policies of the company, interviewer, school, employer, or platform you are working with. Use it to support thinking, notes, accessibility, and preparation without misrepresenting your skills.',
+  },
+  {
+    question: 'Can interviewers detect ExtraBrain on Zoom, Google Meet, or Microsoft Teams?',
+    answer:
+      'ExtraBrain is designed to stay hidden from screen sharing and screen recording on major meeting tools. You should still follow all interview, workplace, school, and platform rules.',
+  },
+  {
+    question: 'Does ExtraBrain join the meeting as a bot?',
+    answer:
+      'No. ExtraBrain runs as a desktop app on your Mac rather than joining Zoom, Google Meet, Microsoft Teams, or other calls as another participant.',
+  },
+  {
+    question: 'Does ExtraBrain help with LeetCode and coding interviews?',
+    answer:
+      'Yes. ExtraBrain is built for coding interviews and LeetCode-style sessions on HackerRank, CoderPad, Codility, CodeSignal, and similar platforms. It can help capture prompts, reason through edge cases, and structure complexity tradeoffs.',
+  },
+  {
+    question: 'Can ExtraBrain help after a meeting or interview?',
+    answer:
+      'Yes. ExtraBrain can help turn session context into notes, decisions, action items, unresolved risks, follow-up questions, saved facts, and review material while keeping the workflow in a desktop app you control.',
+  },
+  {
+    question: 'Is ExtraBrain more like an interview assistant or a meeting notetaker?',
+    answer:
+      'ExtraBrain sits between those categories. It supports live interview workflows, meeting notes, local transcription, screen-aware context, and post-session review without joining the call as a meeting bot.',
+  },
+  {
+    question: 'Can ExtraBrain run without sending content to the cloud?',
+    answer:
+      'A fully local posture is possible when local transcription and on-device AI are available on compatible hardware and you do not choose external model or transcription providers. Downloads, updates, website analytics, and external providers use network services.',
+  },
+  {
+    question: 'How is ExtraBrain different from InterviewCoder, Cluely, or Final Round AI?',
+    answer:
+      'ExtraBrain is local-first, free to start, desktop-native, and built around on-device AI where supported plus provider access you control. It is available for Mac today, with Windows and Linux planned. It emphasizes model choice, data-flow clarity, responsible use, and live interview or meeting context rather than bundled AI credits alone.',
+  },
+];
+
+export type MarketingPage = {
+  slug: string;
+  title: string;
+  description: string;
+  eyebrow: string;
+  h1: string;
+  lead: string;
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+  sections: Array<{
+    title: string;
+    body?: string;
+    items?: Array<{ title: string; body: string }>;
+  }>;
+  faq?: Array<{ question: string; answer: string }>;
+  schemaType?: 'SoftwareApplication' | 'FAQPage' | 'HowTo' | 'Article';
+  sources?: Array<{ label: string; href: string }>;
+};
+
+const defaultCta = { label: 'Download for Mac', href: '/download/' };
+
+export const marketingPages: MarketingPage[] = [
+  {
+    slug: 'download',
+    title: 'Download ExtraBrain for macOS',
+    description:
+      'Download the latest ExtraBrain macOS release, review Apple Silicon and Intel Mac compatibility, install steps, checksum availability, signing notes, and release notes.',
+    eyebrow: 'Download',
+    h1: 'Download the free ExtraBrain macOS app.',
+    lead:
+      'Use this first-party download page as the canonical place for the latest ExtraBrain Mac release, platform requirements, installation steps, release integrity notes, and troubleshooting before a live interview or meeting.',
+    primaryCta: { label: 'Download latest release', href: latestReleaseUrl },
+    secondaryCta: { label: 'Read installation guide', href: '/help/installation/' },
+    schemaType: 'HowTo',
+    sections: [
+      {
+        title: 'Compatibility',
+        items: [
+          { title: 'Operating system', body: 'macOS on Apple Silicon and Intel Macs.' },
+          { title: 'Planned platforms', body: 'Windows and Linux are planned, not current release targets.' },
+          { title: 'AI options', body: 'Use on-device AI on compatible hardware, or bring OpenAI, Anthropic, Claude Subscription, Codex Subscription, or custom OpenAI-compatible access.' },
+          { title: 'Best first test', body: 'Run a short rehearsal after installation to confirm window behavior, microphone access, transcription, local AI availability, and provider routing.' },
+        ],
+      },
+      {
+        title: 'Install steps',
+        items: [
+          { title: 'Download', body: 'Open the latest GitHub release and download the current macOS build.' },
+          { title: 'Install', body: 'Open the installer or app bundle and move ExtraBrain into Applications if the release instructions call for it.' },
+          { title: 'Launch', body: 'Open ExtraBrain once, grant required macOS permissions, and confirm settings are reachable.' },
+          { title: 'Verify', body: 'Run a short rehearsal before using ExtraBrain in a live interview or meeting.' },
+          { title: 'Keep notes nearby', body: 'Open the getting started, provider setup, privacy, and troubleshooting guides before your first high-stakes session.' },
+        ],
+      },
+      {
+        title: 'Release integrity',
+        body:
+          'GitHub release metadata is the source of truth for asset names, dates, file sizes, and published digests. When a SHA-256 digest is available in GitHub metadata, the download page can surface it. If a release does not publish signing or notarization details, verify those details in the release notes before relying on them.',
+      },
+    ],
+    faq: [
+      { question: 'Where is the latest ExtraBrain download?', answer: 'The canonical download link is /download/, which points to the latest GitHub release for the macOS app.' },
+      { question: 'Does ExtraBrain support Intel Macs?', answer: 'Yes. ExtraBrain supports macOS on Apple Silicon and Intel Macs.' },
+      { question: 'Is ExtraBrain available for Windows or Linux?', answer: 'Not today. ExtraBrain is available for Mac now, and Windows and Linux are planned future platforms.' },
+      { question: 'What should I test after downloading ExtraBrain?', answer: 'Launch the app, confirm settings and permissions, test transcription, verify local AI or provider access, and rehearse before using it in an interview or meeting.' },
+      { question: 'Is the app notarized?', answer: 'Do not assume notarization from this page alone. Check the current release notes when signing or notarization status matters.' },
+    ],
+  },
+  {
+    slug: 'pricing',
+    title: 'ExtraBrain Pricing for AI Interviews',
+    description:
+      'Understand ExtraBrain Free, Pro, and Enterprise pricing, including on-device AI, BYO provider costs, external AI billing, and free Mac app access.',
+    eyebrow: 'Pricing',
+    h1: 'Free to start. Choose local AI or provider access you control.',
+    lead:
+      'ExtraBrain separates the desktop app from model usage. The core Mac app is free today, Pro adds workflow controls, on-device AI can run locally on compatible hardware, and external AI usage is billed by the providers you choose.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Read billing notes', href: '/help/billing-pro-plan/' },
+    sections: [
+      {
+        title: 'Plans',
+        items: pricingTiers.map((tier) => ({
+          title: `${tier.name}: ${tier.price}`,
+          body: `${tier.summary} ${tier.features.join(' ')}`,
+        })),
+      },
+      {
+        title: 'Local AI and provider costs',
+        body:
+          'On-device AI requires compatible hardware and may not be available in every customer environment. OpenAI, Anthropic, Deepgram, Claude, Codex, or compatible-provider costs are managed through those providers. ExtraBrain does not turn provider usage into bundled AI credits unless a future product plan says so explicitly.',
+      },
+      {
+        title: 'What to compare against paid interview assistants',
+        items: [
+          { title: 'App price versus model price', body: 'Some live AI interview tools bundle model usage into subscriptions, credits, or lifetime plans. ExtraBrain keeps current app access separate from external provider billing so you can see which account pays for each request.' },
+          { title: 'Usage limits', body: 'Before comparing any plan, check whether interview minutes, AI messages, screenshots, mock interviews, premium models, transcription, or support are metered separately.' },
+          { title: 'Data path', body: 'A lower sticker price is not the whole privacy story. Compare whether transcripts, audio, screenshots, and answers stay local, go to a hosted service, or go to provider accounts you control.' },
+        ],
+      },
+      {
+        title: 'How to choose a plan',
+        items: [
+          { title: 'Choose Free', body: 'Use Free when you want the Mac app, live interview and meeting support, local transcription, on-device AI where supported, and BYO provider setup.' },
+          { title: 'Choose Pro', body: 'Use Pro when repeated workflows need saved prompt presets, custom profiles, richer session history, post-session summaries, and advanced model controls where enabled.' },
+          { title: 'Choose Enterprise', body: 'Use Enterprise when a team needs rollout planning, policy review, security input, privacy requirements, deployment support, or custom workflow guidance.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac product is free to download and use today.' },
+      { question: 'What does Pro add?', answer: 'Pro adds saved prompt presets, custom profiles, richer history, summaries, premium model controls where enabled, and advanced workflow controls.' },
+      { question: 'Do I still pay my AI provider?', answer: 'Only when you use an external provider. On-device AI runs locally on compatible hardware, while provider usage remains separate from ExtraBrain pricing.' },
+      { question: 'Does ExtraBrain include bundled AI credits?', answer: 'No. ExtraBrain separates app features from external model usage unless a future plan explicitly says otherwise.' },
+      { question: 'How should I compare ExtraBrain with monthly or lifetime interview tools?', answer: 'Compare the app price, model and transcription billing, usage limits, platform support, privacy path, cancellation terms, and whether you want a bundled hosted service or provider access you control.' },
+      { question: 'Can a team buy Enterprise support?', answer: 'Yes. Enterprise is for rollout planning, responsible-use policy, security and privacy review, deployment constraints, and custom workflow support.' },
+    ],
+  },
+  {
+    slug: 'privacy',
+    title: 'ExtraBrain Privacy and Data Flow',
+    description:
+      'How ExtraBrain handles local storage, on-device AI, local transcription, screenshots, prompts, external providers, Deepgram, API keys, and privacy controls.',
+    eyebrow: 'Privacy',
+    h1: 'Fully local when your setup stays local.',
+    lead:
+      'ExtraBrain can keep model and transcription requests on your Mac when you use on-device AI and local transcription. External model or transcription providers receive only the content required for requests you choose to send.',
+    primaryCta: { label: 'Read help privacy guide', href: '/help/privacy-data-handling/' },
+    secondaryCta: { label: 'Review providers', href: '/providers/' },
+    sections: [
+      {
+        title: 'What stays local by default',
+        items: [
+          { title: 'Desktop app state', body: 'The app runs on your Mac rather than a hosted browser dashboard.' },
+          { title: 'Fully local mode', body: 'With on-device AI and local transcription, transcripts, prompts, screenshots, notes, and saved facts can stay on your Mac.' },
+          { title: 'Hardware requirement', body: 'On-device AI requires compatible hardware and may not be available on every Mac or customer environment.' },
+          { title: 'Credentials', body: 'Provider credentials should stay in the app-controlled storage path and should be rotated if a device or account is compromised.' },
+        ],
+      },
+      {
+        title: 'What can leave your device',
+        items: [
+          { title: 'External model requests', body: 'Prompt text, transcript excerpts, screenshots, and context can be sent to OpenAI, Anthropic, Claude, Codex, or a custom endpoint when you ask ExtraBrain to use that provider.' },
+          { title: 'Transcription', body: 'Local Parakeet can keep transcription on-device. Optional Deepgram can receive audio or transcription data depending on setup.' },
+          { title: 'Analytics', body: 'The public website tracks page and download interactions. The app privacy posture should be reviewed separately from website analytics.' },
+        ],
+      },
+      {
+        title: 'User control',
+        body:
+          'Use only providers you trust, send the minimum context required, rehearse with non-sensitive material, and avoid using ExtraBrain where interview, employer, school, or platform policies prohibit assistance.',
+      },
+      {
+        title: 'Local-first comparison questions',
+        items: [
+          { title: 'Meeting bot or desktop app', body: 'Ask whether the assistant joins calls as a participant, records through a cloud bot, or runs as a desktop app that you control locally.' },
+          { title: 'Audio and transcript routing', body: 'Check whether raw audio, transcript text, screenshots, and summaries stay on the device, go to a vendor backend, or go directly to external providers you configured.' },
+          { title: 'Provider retention', body: 'When external AI or transcription is enabled, review each provider account for retention, training, logging, billing, and deletion settings.' },
+        ],
+      },
+      {
+        title: 'Privacy checklist before a sensitive session',
+        items: [
+          { title: 'Pick the data path', body: 'Decide whether the session should use on-device AI, local transcription, external model providers, optional Deepgram, or a mixed setup.' },
+          { title: 'Limit context', body: 'Send only the transcript excerpts, screenshots, notes, or prompts that the task requires.' },
+          { title: 'Review provider policies', body: 'External model and transcription providers control their own retention, billing, and account settings.' },
+          { title: 'Rehearse safely', body: 'Test privacy-sensitive workflows with realistic but non-confidential material before a real interview or meeting.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Is ExtraBrain local-first?', answer: 'Yes. ExtraBrain is a local-first desktop app. With on-device AI and local transcription, requests can stay on your Mac today; external providers receive content only when you choose features that use them.' },
+      { question: 'Can screenshots leave my device?', answer: 'Yes, if you include screenshots in a provider request. Only send screenshots when the provider and situation are appropriate.' },
+      { question: 'Is on-device AI available to everyone?', answer: 'Not always. On-device AI requires compatible hardware and may not be available on every Mac or customer environment.' },
+      { question: 'Can I use local transcription?', answer: 'Yes. ExtraBrain supports local NVIDIA Parakeet transcription, with optional Deepgram available when configured.' },
+      { question: 'Can API keys leave my control?', answer: 'Provider credentials should stay in app-controlled storage. Rotate or revoke keys if a device, account, or provider credential may have been exposed.' },
+      { question: 'What is the safest ExtraBrain setup?', answer: 'The strictest posture is local transcription plus on-device AI on compatible hardware, with no external provider requests for sensitive content.' },
+      { question: 'How is ExtraBrain different from cloud meeting agents?', answer: 'ExtraBrain runs as a desktop app and can keep transcription and model requests local when your setup is fully local. Cloud meeting agents may join meetings, store transcripts in a vendor workspace, or process content through vendor infrastructure.' },
+    ],
+  },
+  {
+    slug: 'use-cases/coding-interviews',
+    title: 'AI Coding Interview Assistant',
+    description:
+      'Use ExtraBrain responsibly during coding interviews, LeetCode-style prompts, HackerRank, CoderPad, Codility, and CodeSignal.',
+    eyebrow: 'Use case',
+    h1: 'A local-first desktop coding interview copilot.',
+    lead:
+      'ExtraBrain helps you capture prompts, clarify constraints, reason through edge cases, discuss complexity, and recover structure during live technical interviews.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Interview guide', href: '/help/using-extrabrain-in-interviews/' },
+    sections: [
+      {
+        title: 'Where it helps',
+        items: [
+          { title: 'Prompt capture', body: 'Turn spoken or on-screen instructions into a clean problem statement.' },
+          { title: 'Edge cases', body: 'Keep boundary cases, empty inputs, duplicates, and complexity tradeoffs visible.' },
+          { title: 'Communication', body: 'Ask for clarifying questions and a short implementation outline before coding.' },
+        ],
+      },
+      {
+        title: 'Responsible use',
+        body:
+          'Use ExtraBrain only within the rules of the interview, employer, school, or platform. It should support your reasoning and notes, not misrepresent your skills.',
+      },
+      {
+        title: 'Strong coding interview prompts',
+        items: [
+          { title: 'Clarify the problem', body: 'Ask for inputs, outputs, constraints, examples, edge cases, and assumptions before writing code.' },
+          { title: 'Compare approaches', body: 'Ask for a brute-force baseline, a better approach, complexity tradeoffs, and likely failure modes.' },
+          { title: 'Review the solution', body: 'Ask for test cases, boundary conditions, dry runs, and concise ways to explain time and space complexity.' },
+        ],
+      },
+      {
+        title: 'Coding copilot comparison checklist',
+        items: [
+          { title: 'Beyond LeetCode', body: 'Compare whether the tool helps with spoken clarifications, system design follow-ups, debugging discussion, and tradeoff explanations instead of only returning a code answer.' },
+          { title: 'Screen and transcript context', body: 'Check how much context the assistant needs from screenshots, audio, pasted prompts, and transcript excerpts, then decide what is appropriate to share under the interview rules.' },
+          { title: 'Policy fit', body: 'Review whether the interviewer, employer, school, or platform allows live assistance before using any real-time coding interview tool.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain work with HackerRank and CoderPad?', answer: 'ExtraBrain is designed for live coding workflows across HackerRank, CoderPad, Codility, CodeSignal, and similar tools.' },
+      { question: 'Can it solve LeetCode problems for me?', answer: 'ExtraBrain can help structure prompts and edge cases, but you remain responsible for your own work and for following interview rules.' },
+      { question: 'How should I use ExtraBrain in a coding interview?', answer: 'Use it to capture the prompt, identify constraints, structure edge cases, compare approaches, and explain complexity without reading generated answers verbatim.' },
+      { question: 'Does ExtraBrain support system design follow-ups during coding rounds?', answer: 'Yes. It can keep follow-up questions, tradeoffs, and implementation risks visible when an interviewer shifts from code to architecture.' },
+      { question: 'How should I compare coding interview copilots?', answer: 'Compare workflow scope, platform support, data flow, provider control, whether answers include reasoning, and whether the tool fits the rules of the interview.' },
+    ],
+  },
+  {
+    slug: 'use-cases/system-design-interviews',
+    title: 'AI System Design Interview Assistant',
+    description:
+      'Use ExtraBrain to organize requirements, constraints, scale, tradeoffs, and follow-up questions during system design interviews.',
+    eyebrow: 'Use case',
+    h1: 'Keep system design tradeoffs visible while you think.',
+    lead:
+      'ExtraBrain turns live discussion into requirements, assumptions, components, risks, and follow-up questions without forcing you to leave the conversation.',
+    primaryCta: defaultCta,
+    sections: [
+      {
+        title: 'System design support',
+        items: [
+          { title: 'Requirements', body: 'Capture functional and non-functional requirements as they are spoken.' },
+          { title: 'Architecture', body: 'Keep candidate components, API boundaries, storage choices, queues, caches, and failure modes organized.' },
+          { title: 'Tradeoffs', body: 'Prompt for latency, availability, consistency, cost, operations, and privacy tradeoffs.' },
+        ],
+      },
+      {
+        title: 'Best fit',
+        body:
+          'ExtraBrain is best used as a private structure layer for requirements and tradeoffs, not as a script to read verbatim. It helps you keep the discussion organized while you make the architecture decisions, explain assumptions, and adapt to interviewer feedback.',
+      },
+      {
+        title: 'Useful system design prompts',
+        items: [
+          { title: 'Requirements', body: 'Ask ExtraBrain to separate functional requirements, non-functional requirements, assumptions, and open questions.' },
+          { title: 'Architecture tradeoffs', body: 'Prompt for storage choices, API boundaries, queues, caches, indexing, rate limits, and failure modes.' },
+          { title: 'Follow-up readiness', body: 'Keep scale estimates, bottlenecks, observability, privacy, and rollout risks visible as the interviewer probes deeper.' },
+        ],
+      },
+      {
+        title: 'System design comparison gaps',
+        items: [
+          { title: 'Tradeoff quality', body: 'Look for support that explains latency, availability, consistency, privacy, cost, rollout, and operations tradeoffs instead of only naming components.' },
+          { title: 'Follow-up depth', body: 'System design rounds often move from broad architecture to bottlenecks and failure cases. Keep prompts ready for scale estimates, data model changes, and operational risks.' },
+          { title: 'Your decision layer', body: 'Use AI output as a checklist, then make and defend your own design decisions in the interview.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help in system design interviews?', answer: 'Yes. ExtraBrain can organize requirements, scale assumptions, components, APIs, storage choices, tradeoffs, and follow-up questions during live system design rounds.' },
+      { question: 'Should I read ExtraBrain answers verbatim?', answer: 'No. Use ExtraBrain as a structure layer while you make and explain your own design decisions.' },
+      { question: 'What system design topics can ExtraBrain track?', answer: 'It can keep latency, availability, consistency, cost, privacy, failure modes, rollout constraints, and observability tradeoffs visible.' },
+      { question: 'Is ExtraBrain only for coding interviews?', answer: 'No. ExtraBrain supports system design, behavioral, meeting, lecture, customer call, and research workflows in addition to coding interviews.' },
+    ],
+  },
+  {
+    slug: 'use-cases/behavioral-interviews',
+    title: 'Behavioral Interview AI Assistant',
+    description:
+      'Use ExtraBrain to keep STAR stories, follow-up questions, and interview context organized during behavioral interviews.',
+    eyebrow: 'Use case',
+    h1: 'Bring the right story forward at the right moment.',
+    lead:
+      'ExtraBrain helps organize behavioral interview context, story selection, STAR framing, follow-up questions, and concise post-interview notes.',
+    primaryCta: defaultCta,
+    sections: [
+      {
+        title: 'Behavioral support',
+        items: [
+          { title: 'Story recall', body: 'Keep relevant projects, lessons, conflicts, and outcomes close while the conversation shifts.' },
+          { title: 'STAR framing', body: 'Convert a broad answer into situation, task, action, result, and reflection.' },
+          { title: 'Follow-ups', body: 'Track interviewer questions and tighten the next answer without losing the thread.' },
+        ],
+      },
+      {
+        title: 'Use with care',
+        body:
+          'Do not fabricate experience. Use ExtraBrain to organize true examples, choose the story that fits the question, and communicate clearly within the interview rules. The strongest behavioral answers still come from accurate details, concrete impact, and honest reflection.',
+      },
+      {
+        title: 'Behavioral interview preparation',
+        items: [
+          { title: 'Story library', body: 'Keep real examples for leadership, conflict, failure, ownership, ambiguity, collaboration, and impact.' },
+          { title: 'Concise framing', body: 'Ask for STAR structure, sharper transitions, and follow-up questions without inventing details.' },
+          { title: 'Post-interview notes', body: 'Capture themes, unresolved questions, and follow-ups while the conversation is still fresh.' },
+        ],
+      },
+      {
+        title: 'Behavioral assistant comparison checklist',
+        items: [
+          { title: 'Truthfulness', body: 'A useful behavioral assistant should organize real experience and constraints, not create fake accomplishments or unverifiable stories.' },
+          { title: 'Role context', body: 'Keep resume, job description, company context, and interviewer follow-ups separate so you can adapt without losing the thread.' },
+          { title: 'After-action review', body: 'Post-session notes should help you improve future answers, track follow-ups, and remember what was actually discussed.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with behavioral interviews?', answer: 'Yes. It can organize real stories, STAR framing, follow-up questions, and concise notes while you remain responsible for truthful answers.' },
+      { question: 'Does ExtraBrain write fake interview stories?', answer: 'No. ExtraBrain should help structure true examples, not fabricate experience or misrepresent your background.' },
+      { question: 'What behavioral topics work well with ExtraBrain?', answer: 'Leadership, conflict, failure, ownership, ambiguity, collaboration, prioritization, and impact stories all benefit from a clear structure.' },
+      { question: 'Can ExtraBrain help with post-interview review?', answer: 'Yes. It can help turn session context into themes, follow-up questions, notes to improve next time, and reminders about what was asked.' },
+    ],
+  },
+  {
+    slug: 'use-cases/meetings',
+    title: 'AI Meeting Copilot for Mac',
+    description:
+      'ExtraBrain is a local-first desktop AI meeting copilot that helps with live notes, decisions, risks, and follow-ups without joining as a meeting bot.',
+    eyebrow: 'Use case',
+    h1: 'A meeting copilot that runs on your Mac.',
+    lead:
+      'ExtraBrain helps with decisions, action items, objections, research evidence, and next steps while keeping the assistant in a desktop app you control.',
+    primaryCta: defaultCta,
+    sections: [
+      {
+        title: 'Meeting workflows',
+        items: [
+          { title: 'Live notes', body: 'Capture important points, decisions, risks, owners, objections, customer pain points, and unresolved questions while the meeting is still moving.' },
+          { title: 'No meeting bot required', body: 'ExtraBrain is a desktop app rather than another participant joining the room, which helps keep the workflow private and under your control.' },
+          { title: 'Post-session memory', body: 'Turn the session into summaries, follow-ups, saved facts, action items, review notes, and context for the next customer, product, or research conversation.' },
+        ],
+      },
+      {
+        title: 'Where a desktop meeting copilot helps',
+        items: [
+          { title: 'Customer calls', body: 'Track pain points, objections, quotes, next steps, and roadmap signals without adding a meeting bot.' },
+          { title: 'Internal decisions', body: 'Separate decisions, owners, blockers, risks, and follow-up questions during fast-moving team discussions.' },
+          { title: 'Research and lectures', body: 'Turn dense explanations into concepts, examples, review questions, and saved context for later.' },
+        ],
+      },
+      {
+        title: 'Desktop app versus meeting agent',
+        items: [
+          { title: 'Participant list', body: 'ExtraBrain does not join the meeting as another attendee. This is different from notetakers that join Zoom, Google Meet, or Teams as a bot.' },
+          { title: 'Local mode', body: 'Use local transcription and on-device AI where compatible hardware supports it when the meeting data path should stay on the Mac.' },
+          { title: 'Collaboration tradeoff', body: 'A bot-based meeting agent can be better for shared team workspaces, automatic distribution, or admin-managed archives. ExtraBrain is built for a user-controlled desktop workflow.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Is ExtraBrain a meeting bot?', answer: 'No. ExtraBrain runs as a desktop app on your Mac instead of joining the meeting as another participant.' },
+      { question: 'What can ExtraBrain capture in meetings?', answer: 'It can help with live notes, decisions, owners, risks, action items, customer pain points, follow-ups, and post-session summaries.' },
+      { question: 'Can ExtraBrain work with Zoom, Google Meet, and Teams?', answer: 'ExtraBrain is designed for major meeting tools while remaining a desktop app you control. Always follow workplace and meeting policies.' },
+      { question: 'How is ExtraBrain different from Otter or other meeting agents?', answer: 'Otter-style tools are usually team meeting agents and transcription workspaces. ExtraBrain focuses on a desktop copilot that can support meetings and interviews without joining the call as a bot.' },
+    ],
+  },
+  {
+    slug: 'features/local-transcription',
+    title: 'Local Transcription for AI Meetings and Interviews',
+    description:
+      'Use ExtraBrain local NVIDIA Parakeet transcription, on-device AI where supported, and optional Deepgram for interviews and meetings.',
+    eyebrow: 'Feature',
+    h1: 'Local transcription when privacy matters.',
+    lead:
+      'ExtraBrain supports local NVIDIA Parakeet transcription for on-device workflows, on-device AI where compatible hardware supports it, and optional Deepgram when you choose cloud transcription.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Read privacy details', href: '/privacy/' },
+    sections: [
+      {
+        title: 'Transcription choices',
+        items: [
+          { title: 'Local Parakeet', body: 'Use local transcription when you want the strictest default data-flow posture.' },
+          { title: 'On-device AI', body: 'Use on-device AI on compatible hardware when model requests should stay local.' },
+          { title: 'Optional Deepgram', body: 'Use Deepgram when cloud transcription quality, language support, or workflow needs make sense for the session.' },
+          { title: 'Provider-aware prompts', body: 'Transcript text can stay local with on-device AI or be sent to the configured model provider when you request external AI help.' },
+        ],
+      },
+      {
+        title: 'How transcription supports live workflows',
+        items: [
+          { title: 'Interview prompts', body: 'Turn spoken instructions, clarifications, and constraints into structured notes before you answer.' },
+          { title: 'Meeting memory', body: 'Keep decisions, risks, owners, blockers, and follow-ups connected to the live conversation.' },
+          { title: 'Privacy posture', body: 'Choose local transcription when audio should remain on the device, or optional Deepgram when cloud transcription fits the session.' },
+        ],
+      },
+      {
+        title: 'Local transcription comparison checklist',
+        items: [
+          { title: 'Local versus cloud', body: 'Confirm whether audio is transcribed on your device, uploaded to a transcription service, or processed by a meeting bot vendor.' },
+          { title: 'Offline expectations', body: 'Local transcription can reduce cloud dependency, but model downloads, app updates, external providers, and optional cloud transcription still require network access.' },
+          { title: 'Summary path', body: 'A transcript can be local while the summary is cloud-generated if you send it to an external model provider. Pick both paths deliberately.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain support local transcription?', answer: 'Yes. ExtraBrain supports local NVIDIA Parakeet transcription for workflows where transcription should stay on the Mac.' },
+      { question: 'Can I use Deepgram with ExtraBrain?', answer: 'Yes. Deepgram is optional and should be used only when its cloud transcription path fits your session and privacy requirements.' },
+      { question: 'Does transcript text always stay local?', answer: 'Transcript text can stay local with local transcription and on-device AI, but it can be sent to external providers when you choose provider-backed requests.' },
+      { question: 'Is local transcription the same as a fully local AI workflow?', answer: 'No. Local transcription only covers the speech-to-text path. A fully local posture also requires on-device AI on compatible hardware and no external provider requests.' },
+    ],
+  },
+  {
+    slug: 'features/bring-your-own-provider',
+    title: 'Bring Your Own AI Provider',
+    description:
+      'Use ExtraBrain with on-device AI where hardware supports it, or connect OpenAI, Anthropic, Claude, Codex, or compatible provider access.',
+    eyebrow: 'Feature',
+    h1: 'Use local AI or provider access you already control.',
+    lead:
+      'ExtraBrain supports on-device AI for compatible hardware and BYO provider setup for cloud or subscription modes, so model choice, credentials, cost controls, and retention settings stay under your control.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Set up providers', href: '/help/setup-api-keys/' },
+    sections: [
+      {
+        title: 'Supported provider patterns',
+        items: [
+          { title: 'On-device AI', body: 'Run AI locally when compatible hardware is available; this option may not be available for every Mac or customer environment.' },
+          { title: 'API providers', body: 'Connect OpenAI, Anthropic, or custom OpenAI-compatible endpoints.' },
+          { title: 'Subscription modes', body: 'Use Claude Subscription and Codex Subscription modes where configured.' },
+          { title: 'Cost control', body: 'Provider usage is governed by your provider account, quota, billing, and retention settings.' },
+        ],
+      },
+      {
+        title: 'Why bring your own provider',
+        items: [
+          { title: 'Model choice', body: 'Use the model family, subscription mode, or compatible endpoint that fits your interview or meeting workflow.' },
+          { title: 'Cost visibility', body: 'Keep external AI billing tied to provider accounts you already manage instead of bundled credits.' },
+          { title: 'Operational backup', body: 'Configure a tested fallback so quota, availability, or local hardware limits do not derail a live session.' },
+        ],
+      },
+      {
+        title: 'Provider model comparison',
+        items: [
+          { title: 'Bundled AI plans', body: 'Some assistants sell access to selected hosted models inside their own subscription. That can be convenient, but pricing, quotas, and model choice are tied to that vendor.' },
+          { title: 'BYO providers', body: 'ExtraBrain emphasizes provider access you control, including local AI where supported and external accounts or subscriptions when cloud models fit the task.' },
+          { title: 'Retention boundaries', body: 'With BYO providers, review your provider account settings directly because retention, logging, training, and billing are governed outside ExtraBrain.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What AI providers does ExtraBrain support?', answer: 'ExtraBrain supports on-device AI where hardware supports it, OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription modes.' },
+      { question: 'Can I bring my own API key?', answer: 'Yes. You can connect provider access you control, including API-key based providers where supported.' },
+      { question: 'Does ExtraBrain pay for my model usage?', answer: 'No. External provider usage is governed by your provider account, quota, retention settings, and billing.' },
+      { question: 'Why not use one bundled AI plan?', answer: 'Bundled plans can be simpler, but ExtraBrain is designed for people who want model choice, cost visibility, and direct control over provider accounts or local AI where supported.' },
+    ],
+  },
+  {
+    slug: 'compare/cluely',
+    title: 'ExtraBrain vs Cluely Comparison',
+    description:
+      'Compare ExtraBrain and Cluely for live meetings, screen-share invisibility, on-device AI, BYO providers, local-first desktop workflows, and pricing models.',
+    eyebrow: 'Comparison',
+    h1: 'ExtraBrain vs Cluely.',
+    lead:
+      'Cluely publicly positions itself as an undetectable AI for meetings with real-time answers and meeting notes. ExtraBrain focuses on local-first desktop interview and meeting workflows with on-device AI where supported and BYO provider control. ExtraBrain is available for Mac today, with Windows and Linux planned.',
+    primaryCta: defaultCta,
+    sections: [
+      {
+        title: 'Choose ExtraBrain when',
+        items: [
+          { title: 'Model control matters', body: 'You want on-device AI where compatible hardware supports it, or OpenAI, Anthropic, Claude, Codex, or compatible-provider control instead of bundled AI access.' },
+          { title: 'Interview workflows matter', body: 'You need coding, system design, behavioral, and meeting support in the same local-first desktop app.' },
+          { title: 'Data-flow clarity matters', body: 'You want explicit privacy, provider, and local transcription documentation on the first-party site.' },
+        ],
+      },
+      {
+        title: 'Choose Cluely when',
+        body:
+          'You specifically want Cluely’s meeting-focused product, pricing model, App Store distribution, and its own bundled real-time meeting assistant experience.',
+      },
+      {
+        title: 'Comparison factors',
+        items: [
+          { title: 'Workflow scope', body: 'Compare meeting assistance against ExtraBrain workflows for coding, system design, behavioral interviews, research, lectures, and meetings.' },
+          { title: 'Provider model', body: 'Check whether you prefer bundled AI access or on-device AI and provider access you control.' },
+          { title: 'Privacy documentation', body: 'Review what each product says about local processing, external providers, transcripts, screenshots, and meeting data.' },
+        ],
+      },
+      {
+        title: 'Questions to ask before choosing',
+        items: [
+          { title: 'Do you need meeting notes, interview help, or both?', body: 'Cluely is publicly framed around meeting assistance and screen-share undetectability. ExtraBrain covers meeting support plus coding, system design, behavioral, lecture, and research workflows.' },
+          { title: 'Who controls model access?', body: 'Review whether you want a vendor-managed model bundle or ExtraBrain provider setup with local AI where supported and external providers you choose.' },
+          { title: 'What happens to session content?', body: 'Compare what each product says about meeting audio, transcript text, screenshots, uploaded files, notes, and past-meeting history before using sensitive content.' },
+        ],
+      },
+    ],
+    sources: [
+      { label: 'Cluely homepage', href: 'https://cluely.com/' },
+      { label: 'Cluely pricing', href: 'https://cluely.com/pricing' },
+    ],
+    faq: [
+      { question: 'How is ExtraBrain different from Cluely?', answer: 'ExtraBrain focuses on a local-first Mac desktop workflow with on-device AI where supported, BYO providers, local transcription, and interview plus meeting use cases.' },
+      { question: 'Is ExtraBrain only for meetings?', answer: 'No. ExtraBrain supports meetings, coding interviews, system design interviews, behavioral interviews, lectures, customer calls, and research workflows.' },
+      { question: 'Which should I choose?', answer: 'Choose based on workflow scope, provider control, pricing model, privacy posture, platform support, and the product experience you want to rely on.' },
+      { question: 'Does ExtraBrain copy Cluely pricing or bundled AI access?', answer: 'No. ExtraBrain currently separates the free Mac app and future workflow upgrades from external provider billing instead of copying a bundled meeting AI subscription model.' },
+    ],
+  },
+  {
+    slug: 'compare/interviewcoder',
+    title: 'ExtraBrain vs InterviewCoder',
+    description:
+      'Compare ExtraBrain and InterviewCoder for coding interviews, undetectability claims, pricing, on-device AI, BYO providers, and local-first desktop workflows.',
+    eyebrow: 'Comparison',
+    h1: 'ExtraBrain vs InterviewCoder.',
+    lead:
+      'InterviewCoder publicly focuses on technical interviews and extensive undetectability features. ExtraBrain focuses on local-first desktop interviews and meetings with on-device AI where supported and provider access you control. ExtraBrain is available for Mac today, with Windows and Linux planned.',
+    primaryCta: defaultCta,
+    sections: [
+      {
+        title: 'Choose ExtraBrain when',
+        items: [
+          { title: 'Free core access matters', body: 'You want a free core app and separate provider billing.' },
+          { title: 'Broader workflows matter', body: 'You want coding, system design, behavioral, product, research, lecture, and meeting support.' },
+          { title: 'Model control matters', body: 'You want on-device AI where compatible hardware supports it, or your own OpenAI, Anthropic, Claude, Codex, or compatible provider setup.' },
+        ],
+      },
+      {
+        title: 'Choose InterviewCoder when',
+        body:
+          'You specifically want a tool marketed around technical interview stealth features, its bundled AI plans, and its own pricing model.',
+      },
+      {
+        title: 'Comparison factors',
+        items: [
+          { title: 'Interview types', body: 'ExtraBrain covers coding, system design, behavioral, product, meeting, lecture, and research workflows in one desktop app.' },
+          { title: 'Local-first posture', body: 'ExtraBrain emphasizes on-device AI where supported, local transcription, and first-party privacy and data-flow pages.' },
+          { title: 'Cost model', body: 'ExtraBrain separates app access from external provider billing instead of assuming one bundled AI plan.' },
+        ],
+      },
+      {
+        title: 'Other technical interview tools to compare',
+        items: [
+          { title: 'LockedIn AI', body: 'Public pages emphasize real-time answers, coding help, remote assist, editor integrations, and a broader career ecosystem. Compare that against ExtraBrain if you want human-assist or resume/job-search features.' },
+          { title: 'Ultracode and Linkjob', body: 'These SERP rivals emphasize coding, system design, platform coverage, and subscription or lifetime pricing. Compare plan limits, refund terms, model claims, and whether their workflow fits your interview rules.' },
+          { title: 'InterviewBee, ParakeetAI, and Beyz AI', body: 'These pages emphasize real-time interview help, desktop invisibility, coding support, or platform breadth. Use them as a checklist for platform support, privacy, pricing, and workflow scope.' },
+        ],
+      },
+    ],
+    sources: [
+      { label: 'InterviewCoder homepage', href: 'https://www.interviewcoder.co/' },
+      { label: 'LockedIn AI homepage', href: 'https://www.lockedinai.com/' },
+      { label: 'Ultracode homepage', href: 'https://ultracode.ai/' },
+      { label: 'Linkjob pricing', href: 'https://www.linkjob.ai/pricing/' },
+      { label: 'InterviewBee desktop assistant', href: 'https://interviewbee.ai/desktop-ai-interview-assistant' },
+      { label: 'ParakeetAI homepage', href: 'https://www.parakeet-ai.com/' },
+      { label: 'Beyz AI homepage', href: 'https://beyz.ai/' },
+    ],
+    faq: [
+      { question: 'How is ExtraBrain different from InterviewCoder?', answer: 'ExtraBrain is a local-first Mac desktop assistant for interviews and meetings, with on-device AI where supported and BYO provider access you control.' },
+      { question: 'Does ExtraBrain help with coding interviews?', answer: 'Yes. ExtraBrain supports LeetCode-style prompts, HackerRank, CoderPad, Codility, CodeSignal, edge cases, complexity discussion, and follow-up questions.' },
+      { question: 'Does ExtraBrain support non-coding workflows?', answer: 'Yes. It also supports system design, behavioral interviews, meetings, lectures, customer calls, and research sessions.' },
+      { question: 'What should I compare against InterviewCoder-style tools?', answer: 'Compare coding depth, system design support, data flow, platform claims, pricing, provider control, support for non-coding workflows, and whether live assistance is allowed in your interview.' },
+    ],
+  },
+  {
+    slug: 'compare/final-round-ai',
+    title: 'ExtraBrain vs Final Round AI',
+    description:
+      'Compare ExtraBrain and Final Round AI for live interview assistance, interview preparation, privacy, on-device AI, BYO providers, and macOS desktop workflows.',
+    eyebrow: 'Comparison',
+    h1: 'ExtraBrain vs Final Round AI.',
+    lead:
+      'Final Round AI publicly positions itself around interview preparation and real-time interview help across many roles. ExtraBrain focuses on local-first desktop live workflows with on-device AI where supported and BYO provider control. ExtraBrain is available for Mac today, with Windows and Linux planned.',
+    primaryCta: defaultCta,
+    sections: [
+      {
+        title: 'Choose ExtraBrain when',
+        items: [
+          { title: 'Desktop-native control matters', body: 'You want a desktop app with local-first session context and privacy documentation. ExtraBrain is available for Mac today.' },
+          { title: 'Provider choice matters', body: 'You want on-device AI where compatible hardware supports it, or OpenAI, Anthropic, Claude, Codex, or custom provider access you control.' },
+          { title: 'Meetings matter too', body: 'You want one assistant for interviews, technical meetings, research calls, and lectures.' },
+        ],
+      },
+      {
+        title: 'Choose Final Round AI when',
+        body:
+          'You want a broader interview-preparation suite with resume, practice, and job-search oriented features in addition to live interview help.',
+      },
+      {
+        title: 'Comparison factors',
+        items: [
+          { title: 'Live desktop workflow', body: 'ExtraBrain is built around a Mac desktop app for live sessions rather than a broad job-search preparation suite.' },
+          { title: 'Provider choice', body: 'ExtraBrain lets you use on-device AI where supported or connect provider access you control.' },
+          { title: 'Data-flow clarity', body: 'ExtraBrain publishes dedicated privacy, provider, local transcription, and responsible-use pages for people comparing live AI tools.' },
+        ],
+      },
+      {
+        title: 'Job-search suite comparison',
+        items: [
+          { title: 'Before, during, and after interviews', body: 'Final Round AI publicly describes preparation, live Interview Copilot, and post-interview feedback. ExtraBrain focuses on live desktop context and post-session review, not automated applications or resume tooling.' },
+          { title: 'Privacy and compliance signals', body: 'Review each vendor page for security badges, recording behavior, transcript storage, and whether audio is stored or processed after a session.' },
+          { title: 'Role coverage', body: 'Compare whether you need broad career workflow support across industries or a desktop assistant for interviews, meetings, lectures, research, and provider-controlled AI.' },
+        ],
+      },
+    ],
+    sources: [
+      { label: 'Final Round AI homepage', href: 'https://www.finalroundai.com/' },
+      { label: 'Final Round AI pricing/product page', href: 'https://www.finalroundai.com/pricing' },
+      { label: 'Final Round AI FAQ', href: 'https://www.finalroundai.com/frequently-asked-questions' },
+    ],
+    faq: [
+      { question: 'How is ExtraBrain different from Final Round AI?', answer: 'ExtraBrain focuses on local-first desktop live workflows for interviews and meetings, with on-device AI where supported and BYO providers.' },
+      { question: 'Is ExtraBrain a full job-search suite?', answer: 'No. ExtraBrain is focused on the live interview and meeting copilot workflow rather than resume, job application, or job-search automation.' },
+      { question: 'Can ExtraBrain support interview preparation?', answer: 'Yes. ExtraBrain can help rehearse prompts, organize stories, capture session context, and review notes, but its core experience is the live desktop workflow.' },
+      { question: 'Does ExtraBrain include auto-apply or resume-builder features?', answer: 'No. ExtraBrain does not position itself as an auto-apply or resume-builder suite; it focuses on live context, transcription, provider choice, and review workflows.' },
+    ],
+  },
+  {
+    slug: 'security',
+    title: 'ExtraBrain Security and Privacy Controls',
+    description:
+      'Security expectations for ExtraBrain: local-first storage, on-device AI, provider credentials, release verification, and safe operating practices.',
+    eyebrow: 'Trust',
+    h1: 'Security starts with local-first control and clear provider boundaries.',
+    lead:
+      'ExtraBrain keeps the live workflow on your Mac and can run AI locally on compatible hardware, but users should still treat provider credentials, screenshots, transcripts, audio, and release verification carefully.',
+    primaryCta: { label: 'Read privacy', href: '/privacy/' },
+    sections: [
+      {
+        title: 'Security practices',
+        items: [
+          { title: 'Local AI availability', body: 'Use on-device AI when compatible hardware is available and your workflow requires local model requests.' },
+          { title: 'Provider keys', body: 'Use dedicated provider keys or accounts where possible for external providers, and rotate them after suspected exposure.' },
+          { title: 'Release checks', body: 'Download from the first-party download page or official GitHub releases and review published digests when available.' },
+          { title: 'Sensitive sessions', body: 'Avoid sending regulated, confidential, or policy-restricted content to external providers unless you have approval.' },
+        ],
+      },
+      {
+        title: 'Security review checklist',
+        items: [
+          { title: 'Before install', body: 'Confirm the release source, asset name, version, checksum availability, and current release notes.' },
+          { title: 'Before provider setup', body: 'Use scoped provider credentials where possible and document which external services can receive prompts, screenshots, transcript text, or audio.' },
+          { title: 'Before team rollout', body: 'Map interview, workplace, privacy, and compliance expectations before recommending any live AI assistant workflow.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Is ExtraBrain secure by default?', answer: 'ExtraBrain is local-first and can keep requests on-device with local transcription and on-device AI where hardware supports it, but security depends on setup, provider choices, credentials, and session content.' },
+      { question: 'How should I handle provider keys?', answer: 'Use provider credentials you control, store them only where the app expects them, and rotate or revoke keys after suspected exposure.' },
+      { question: 'Where should I download ExtraBrain?', answer: 'Use the first-party download page or the official GitHub Releases page, then review release notes and published digests when available.' },
+    ],
+  },
+  {
+    slug: 'providers',
+    title: 'ExtraBrain AI Providers and Local Models',
+    description:
+      'How ExtraBrain works with on-device AI, OpenAI, Anthropic, Claude Subscription, Codex Subscription, custom endpoints, Deepgram, and local transcription.',
+    eyebrow: 'Providers',
+    h1: 'Local AI and provider access stay under your control.',
+    lead:
+      'ExtraBrain is designed for model choice: use on-device AI when compatible hardware supports it, bring your own model access when cloud or subscription modes fit, and keep a backup before high-stakes sessions.',
+    primaryCta: { label: 'Setup guide', href: '/help/setup-api-keys/' },
+    sections: [
+      {
+        title: 'Provider options',
+        items: [
+          { title: 'On-device AI', body: 'Local AI can keep model requests on your Mac, but it requires compatible hardware and may not be available in every customer environment.' },
+          { title: 'Model providers', body: 'OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription modes.' },
+          { title: 'Transcription providers', body: 'Local NVIDIA Parakeet and optional Deepgram.' },
+          { title: 'Retention and billing', body: 'Provider policies, retention settings, and usage costs are controlled through provider accounts.' },
+        ],
+      },
+      {
+        title: 'Provider setup priorities',
+        items: [
+          { title: 'Start local when possible', body: 'Use on-device AI and local transcription when compatible hardware and workflow requirements support it.' },
+          { title: 'Pick a primary provider', body: 'Choose the model or subscription you trust for normal interviews, meetings, lectures, and research calls.' },
+          { title: 'Keep a backup', body: 'Configure a second tested provider or local option for quota, outage, or quality issues before high-stakes sessions.' },
+        ],
+      },
+      {
+        title: 'When a hosted meeting assistant may fit better',
+        items: [
+          { title: 'Shared team notes', body: 'Choose a hosted meeting agent when automatic team sharing, admin workspaces, CRM sync, or searchable company meeting archives matter more than a local desktop workflow.' },
+          { title: 'Managed compliance', body: 'Choose an enterprise meeting platform when your organization requires centralized policy controls, SSO, eDiscovery, legal holds, or admin-managed retention.' },
+          { title: 'Personal control', body: 'Choose ExtraBrain when you want the live workflow on your Mac with explicit provider choices and a clear path to local transcription and on-device AI where supported.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Which providers can ExtraBrain use?', answer: 'ExtraBrain supports on-device AI where hardware supports it, OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, Codex Subscription, local NVIDIA Parakeet transcription, and optional Deepgram.' },
+      { question: 'Can provider data leave my Mac?', answer: 'Yes. External model providers can receive prompts, transcript excerpts, screenshots, notes, or context you choose to send. Optional Deepgram can receive audio or transcription data depending on setup.' },
+      { question: 'Why keep a backup provider?', answer: 'A backup helps when local hardware support, provider quota, network availability, or model behavior changes before a live session.' },
+      { question: 'Can ExtraBrain replace Otter or Meetily?', answer: 'Not always. ExtraBrain is a desktop copilot for interviews and meetings. Otter-style tools are meeting workspaces, while Meetily-style tools focus on local meeting transcription; choose based on workflow and data path.' },
+    ],
+  },
+  {
+    slug: 'data-flow',
+    title: 'ExtraBrain Data Flow and Privacy Paths',
+    description:
+      'A plain-language data-flow explanation for ExtraBrain local storage, on-device AI, transcription, screenshots, prompts, AI providers, and optional Deepgram.',
+    eyebrow: 'Data flow',
+    h1: 'Know which path each piece of session data can take.',
+    lead:
+      'Live audio, transcripts, screenshots, prompts, and generated notes have different privacy implications depending on whether you use on-device AI, local transcription, or optional external providers.',
+    primaryCta: { label: 'Read privacy', href: '/privacy/' },
+    sections: [
+      {
+        title: 'Data-flow map',
+        items: [
+          { title: 'Audio', body: 'Audio can be transcribed locally with Parakeet or sent to optional Deepgram when configured.' },
+          { title: 'Transcript text', body: 'Transcript text can stay local with on-device AI or be included in model prompts sent to your selected external provider.' },
+          { title: 'Screenshots', body: 'Screenshots stay local unless you include them in a provider request.' },
+          { title: 'Hardware', body: 'On-device AI requires compatible hardware and may not be available on every Mac or customer environment.' },
+          { title: 'Outputs', body: 'Answers, notes, summaries, and saved facts are stored in the app workflow and can be reviewed after the session.' },
+        ],
+      },
+      {
+        title: 'How to choose a data path',
+        items: [
+          { title: 'Fully local target', body: 'Use local transcription and on-device AI where compatible hardware supports it when prompts and transcription should stay on the Mac.' },
+          { title: 'External model target', body: 'Use OpenAI, Anthropic, Claude, Codex, or a custom-compatible provider when cloud or subscription models fit the session.' },
+          { title: 'Cloud transcription target', body: 'Use optional Deepgram only when its transcription path is appropriate for the session content and policies.' },
+        ],
+      },
+      {
+        title: 'Data-flow questions for any AI assistant',
+        items: [
+          { title: 'Who receives raw audio', body: 'Find out whether raw audio is kept local, sent to a transcription provider, or captured by a meeting bot service.' },
+          { title: 'Who receives screenshots', body: 'Screenshots can contain private code, documents, names, and chats. Only include them in provider requests when the session rules and provider policies allow it.' },
+          { title: 'Who stores transcripts', body: 'Compare local app storage, vendor cloud storage, team workspaces, provider logs, and export or deletion controls before using sensitive content.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What data can ExtraBrain process?', answer: 'Depending on setup, ExtraBrain can use live audio, transcript text, screenshots, prompts, generated notes, saved facts, and provider responses.' },
+      { question: 'When does data leave the device?', answer: 'Data can leave the device when you use external model providers or optional Deepgram, and only the content needed for those selected requests should be sent.' },
+      { question: 'Can ExtraBrain run fully local?', answer: 'A fully local posture is possible when local transcription and on-device AI are available on compatible hardware and no external provider requests are used.' },
+      { question: 'Does local-first mean no network is ever used?', answer: 'No. Local-first describes the app posture and available local paths. Downloads, updates, website analytics, optional cloud transcription, and external model providers use network services.' },
+    ],
+  },
+  {
+    slug: 'responsible-use',
+    title: 'Responsible Use of ExtraBrain',
+    description:
+      'Responsible-use guidance for using ExtraBrain in interviews, meetings, classes, research calls, and workplace settings.',
+    eyebrow: 'Responsible use',
+    h1: 'Use live AI assistance only where the rules allow it.',
+    lead:
+      'ExtraBrain can support accessibility, note-taking, preparation, and live reasoning. It should not be used to deceive interviewers, employers, schools, or platforms.',
+    primaryCta: { label: 'Interview guide', href: '/help/using-extrabrain-in-interviews/' },
+    sections: [
+      {
+        title: 'Checklist',
+        items: [
+          { title: 'Know the rules', body: 'Review interview, workplace, school, meeting, and platform policies before using any AI assistant.' },
+          { title: 'Disclose when required', body: 'If the policy requires disclosure or approval, get it before the session.' },
+          { title: 'Do your own work', body: 'Use ExtraBrain to organize thinking and notes, not to misrepresent skills or authorship.' },
+          { title: 'Keep prompts appropriate', body: 'Ask for structure, clarification, notes, review, and tradeoffs instead of using assistance to hide policy violations.' },
+        ],
+      },
+      {
+        title: 'Responsible workflows',
+        items: [
+          { title: 'Interviews', body: 'Use ExtraBrain to support note-taking, accessibility, prompt recall, and structured reasoning within the rules of the process.' },
+          { title: 'Meetings', body: 'Follow workplace policies for recording, transcription, AI assistance, confidential content, and participant expectations.' },
+          { title: 'Classes and research', body: 'Respect instructor, institutional, participant, and data-handling rules before using any AI assistant.' },
+        ],
+      },
+      {
+        title: 'Questions raised by live AI assistants',
+        items: [
+          { title: 'Disclosure', body: 'If a policy requires disclosure of AI assistance, recording, transcription, or notes, get approval before the session starts.' },
+          { title: 'Authorship', body: 'Do not represent AI-generated answers, code, stories, or analysis as solely your own work when the rules do not allow assistance.' },
+          { title: 'Sensitive content', body: 'Avoid sending confidential, regulated, unreleased, or third-party content to external providers unless the data owner and applicable policy allow it.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Is using ExtraBrain cheating?', answer: 'ExtraBrain is a tool. Whether a specific use is allowed depends on the interview, workplace, school, employer, or platform rules you must follow.' },
+      { question: 'When should I disclose ExtraBrain?', answer: 'Disclose or get approval whenever the applicable policy, meeting norms, workplace rules, school rules, or platform terms require it.' },
+      { question: 'What is an appropriate use of ExtraBrain?', answer: 'Appropriate uses include note support, accessibility, preparation, prompt organization, follow-up tracking, and structured reasoning where assistance is allowed.' },
+    ],
+  },
+  {
+    slug: 'about',
+    title: 'About ExtraBrain AI Copilot',
+    description:
+      'ExtraBrain builds a local-first Mac AI interview assistant and meeting copilot with on-device AI where supported, provider choice, and privacy controls.',
+    eyebrow: 'About',
+    h1: 'ExtraBrain helps people stay present during high-stakes live work.',
+    lead:
+      'The product is built for interviews, technical discussions, customer calls, lectures, and research conversations where context moves faster than notes.',
+    primaryCta: defaultCta,
+    sections: [
+      {
+        title: 'Product principles',
+        items: [
+          { title: 'Local-first', body: 'Keep the live workflow on the user’s Mac whenever possible, including local transcription and on-device AI on compatible hardware.' },
+          { title: 'Provider choice', body: 'Let users choose local or external model and transcription providers they trust, including OpenAI, Anthropic, Claude, Codex, Deepgram, and compatible endpoints.' },
+          { title: 'Responsible use', body: 'Make policy boundaries, privacy tradeoffs, interview expectations, workplace rules, and external provider data flow visible before high-stakes sessions.' },
+        ],
+      },
+      {
+        title: 'What ExtraBrain builds for',
+        items: [
+          { title: 'High-stakes conversations', body: 'Interviews, meetings, research calls, lectures, customer calls, and technical discussions where context changes quickly and notes alone are not enough.' },
+          { title: 'Desktop-native control', body: 'A Mac app workflow for people who want private live support without another participant joining the call, changing meeting dynamics, or relying only on a hosted browser dashboard.' },
+          { title: 'Clear tradeoffs', body: 'Public pages explain local AI availability, provider data flow, pricing boundaries, and responsible-use expectations.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What is ExtraBrain?', answer: 'ExtraBrain is a free, local-first desktop AI interview assistant and meeting copilot for Mac.' },
+      { question: 'Is the product called ExtraBrain or Extra Brain?', answer: 'The official spelling is ExtraBrain. Extra Brain is a spaced alias people may type when searching for the same product.' },
+      { question: 'Who is ExtraBrain for?', answer: 'It is for candidates, engineers, founders, students, meeting leads, researchers, and teams who need structured live context while staying mindful of privacy and policy boundaries.' },
+      { question: 'What platforms does ExtraBrain support?', answer: 'ExtraBrain is available for Mac today, including Apple Silicon and Intel Macs. Windows and Linux are planned.' },
+    ],
+  },
+  {
+    slug: 'contact',
+    title: 'Contact ExtraBrain Support',
+    description:
+      'Contact ExtraBrain for support, enterprise rollout, privacy questions, security review, billing, and product inquiries.',
+    eyebrow: 'Contact',
+    h1: 'Contact ExtraBrain.',
+    lead:
+      'For product questions, enterprise rollout, policy review, deployment support, privacy, security, or billing, email the ExtraBrain team.',
+    primaryCta: { label: 'Email ExtraBrain', href: `mailto:${contactEmail}` },
+    secondaryCta: { label: 'Open help center', href: '/help/' },
+    sections: [
+      {
+        title: 'Contact paths',
+        items: [
+          { title: 'Support', body: `Email ${contactEmail} for help with setup, installation, provider configuration, local transcription, optional Deepgram, on-device AI availability, or troubleshooting.` },
+          { title: 'Enterprise', body: `Email ${contactEmail} for team rollout, responsible-use policy, deployment, privacy, security, provider data-flow review, and workflow support.` },
+          { title: 'GitHub', body: `Release notes, current Mac downloads, asset metadata, checksums when published, and public release history are published at ${githubUrl} for review.` },
+        ],
+      },
+      {
+        title: 'What to include',
+        items: [
+          { title: 'Support requests', body: 'Include your macOS version, ExtraBrain release, provider setup, transcription mode, whether on-device AI is available, the meeting or interview workflow you are testing, and a concise description of the issue.' },
+          { title: 'Enterprise requests', body: 'Include team size, workflow type, platform requirements, privacy constraints, deployment expectations, procurement needs, and policy questions.' },
+          { title: 'Security or privacy questions', body: 'Describe the data categories, providers, transcription mode, on-device AI expectations, deployment expectations, and review timeline that matter for your environment.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'How do I contact ExtraBrain?', answer: `Email ${contactEmail} for support, enterprise rollout, privacy, security, billing, or product questions.` },
+      { question: 'Where do I report setup problems?', answer: 'Start with the help center and troubleshooting guide, then email support with your macOS version, release, provider setup, and transcription mode if you are still blocked.' },
+      { question: 'Can teams ask for rollout help?', answer: 'Yes. Enterprise conversations can cover team rollout, policy, deployment, privacy, security, and custom workflow needs.' },
+    ],
+  },
+];
+
+export const allPublicRoutes = [
+  '/',
+  ...marketingPages.map((page) => `/${page.slug}/`),
+  '/help/',
+  '/help/billing-pro-plan/',
+  '/help/getting-started/',
+  '/help/installation/',
+  '/help/privacy-data-handling/',
+  '/help/setup-api-keys/',
+  '/help/troubleshooting/',
+  '/help/using-extrabrain-in-interviews/',
+  '/llms.txt',
+  '/llms-full.txt',
+];
+
+export function absoluteUrl(path: string) {
+  return new URL(path, siteUrl).href;
+}
+
+export function pageBySlug(slug: string) {
+  return marketingPages.find((page) => page.slug === slug);
+}
+
+export function softwareApplicationSchema(description = productDescription, downloadUrl = absoluteUrl('/download/')) {
+  return {
+    '@type': 'SoftwareApplication',
+    name: productName,
+    alternateName: brandAliases,
+    applicationCategory: 'ProductivityApplication',
+    applicationSubCategory: 'AI interview and meeting copilot',
+    operatingSystem: 'macOS',
+    url: siteUrl,
+    image: absoluteUrl('/assets/images/logo-512.png'),
+    screenshot: [
+      absoluteUrl('/assets/screenshots/empty_state.png'),
+      absoluteUrl('/assets/screenshots/live_session.png'),
+      absoluteUrl('/assets/screenshots/sessions_history.png'),
+    ],
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+    },
+    downloadUrl,
+    releaseNotes: latestReleaseUrl,
+    description,
+    softwareRequirements: 'macOS on Apple Silicon or Intel Mac; on-device AI requires compatible hardware',
+    author: {
+      '@type': 'Organization',
+      name: productName,
+      alternateName: brandAliases,
+      url: siteUrl,
+    },
+    featureList: [
+      'Free, local-first desktop AI interview and meeting copilot',
+      'Live coding, system design, behavioral interview, and meeting support',
+      'Screen-aware desktop workflow for live calls',
+      'On-device AI where compatible hardware supports it',
+      'Local NVIDIA Parakeet transcription and optional Deepgram',
+      'Bring your own OpenAI, Anthropic, Claude, Codex, or compatible provider access',
+      'Local-first transcripts, prompts, screenshots, notes, and session history',
+      'Available for Mac today, with Windows and Linux planned',
+      'Apple Silicon and Intel Mac support',
+      'Responsible-use and privacy controls',
+    ],
+  };
+}
+
+export function organizationSchema() {
+  return {
+    '@type': 'Organization',
+    name: productName,
+    alternateName: brandAliases,
+    url: siteUrl,
+    logo: absoluteUrl('/assets/images/logo-512.png'),
+    sameAs: [githubUrl],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: contactEmail,
+      contactType: 'customer service',
+    },
+  };
+}
+
+export function websiteSchema() {
+  return {
+    '@type': 'WebSite',
+    name: productName,
+    alternateName: brandAliases,
+    url: siteUrl,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteUrl}/help/search/?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
+export function faqSchema(faq: Array<{ question: string; answer: string }>) {
+  return {
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+export function breadcrumbSchema(page: MarketingPage) {
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: page.h1.replace(/\.$/, ''),
+        item: absoluteUrl(`/${page.slug}/`),
+      },
+    ],
+  };
+}
+
+export function howToInstallSchema() {
+  return {
+    '@type': 'HowTo',
+    name: 'Install ExtraBrain for macOS',
+    description: 'Download, install, launch, and verify ExtraBrain before a live interview or meeting.',
+    step: [
+      { '@type': 'HowToStep', name: 'Download', text: 'Open the latest ExtraBrain release and download the current macOS build.' },
+      { '@type': 'HowToStep', name: 'Install', text: 'Open the installer or app bundle and move ExtraBrain into Applications if instructed.' },
+      { '@type': 'HowToStep', name: 'Launch', text: 'Launch ExtraBrain and grant required macOS permissions.' },
+      { '@type': 'HowToStep', name: 'Verify', text: 'Run a short rehearsal to verify audio, transcription, local AI or providers, and window placement.' },
+    ],
+    tool: [{ '@type': 'HowToTool', name: 'macOS Mac' }],
+  };
+}

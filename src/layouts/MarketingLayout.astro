@@ -1,0 +1,203 @@
+---
+import { brandAliases } from '../data/product';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  schemaGraph?: Array<Record<string, unknown>>;
+}
+
+const { title, description, ogImage = '/assets/images/logo-512.png', schemaGraph } = Astro.props;
+const siteUrl = Astro.site ?? new URL('https://extrabrain.app');
+const canonical = new URL(Astro.url.pathname, siteUrl);
+const downloadUrl = new URL('/download/', siteUrl).href;
+const defaultSchemaGraph = [
+  {
+    '@type': 'SoftwareApplication',
+    name: 'ExtraBrain',
+    alternateName: brandAliases,
+    applicationCategory: 'ProductivityApplication',
+    applicationSubCategory: 'AI interview and meeting copilot',
+    operatingSystem: 'macOS',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    author: {
+      '@type': 'Organization',
+      name: 'ExtraBrain',
+      alternateName: brandAliases,
+      url: 'https://extrabrain.app',
+    },
+    downloadUrl,
+    description,
+    featureList: [
+      'Free, local-first desktop AI interview and meeting copilot',
+      'Live interview, meeting, lecture, and research support',
+      'On-device AI where compatible hardware supports it',
+      'Local NVIDIA Parakeet transcription and optional Deepgram',
+      'Use your current OpenAI, Anthropic, Claude, Codex, or compatible provider access when external providers fit your workflow',
+      'Local-first transcripts, prompts, screenshots, and session notes',
+      'Available for Mac today, with Windows and Linux planned',
+      'Apple Silicon and Intel Mac support',
+    ],
+  },
+  {
+    '@type': 'Organization',
+    name: 'ExtraBrain',
+    alternateName: brandAliases,
+    url: 'https://extrabrain.app',
+    logo: new URL('/assets/images/logo-512.png', siteUrl).href,
+    sameAs: ['https://github.com/ExtraBrainApp/ExtraBrain-releases'],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'info@extrabrain.app',
+      contactType: 'customer service',
+    },
+  },
+  {
+    '@type': 'WebSite',
+    name: 'ExtraBrain',
+    alternateName: brandAliases,
+    url: 'https://extrabrain.app',
+  },
+];
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': schemaGraph ?? defaultSchemaGraph,
+};
+const criticalCss = `
+:root{--ink:#121821;--text-secondary:#495461;--text-subtle:#5f6a75;--warm-bone:#f6f4ef;--section-band-odd:rgba(253,246,235,.62);--section-band-even:rgba(238,243,242,.58);--editorial-canvas:#f5f0e8;--editorial-canvas-alt:#fbf7f0;--editorial-purple:#8d68ff;--editorial-purple-deep:#6f47f6;--editorial-cobalt:#2f6bff;--signal-mint:#65d7c7;--font-sans:'Geist',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;--font-serif:'Instrument Serif',ui-serif,Georgia,'Times New Roman',serif;--font-mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;--brand-wordmark-font:'Inter Tight','Inter','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--shadow-editorial-soft:0 16px 40px rgba(16,24,40,.08);--shadow-editorial-glow:0 0 0 1px rgba(141,104,255,.18),0 18px 48px rgba(111,71,246,.18);--gradient-editorial:linear-gradient(135deg,#8d68ff 0%,#2f6bff 100%);--ease-standard:cubic-bezier(.2,0,0,1);--max:1200px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:88px}
+body{margin:0;color:var(--ink);font-family:var(--font-sans);line-height:1.5;background:linear-gradient(180deg,var(--editorial-canvas-alt),var(--editorial-canvas));overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.site-shell{position:relative;z-index:1;width:100%}
+.container{width:min(var(--max),calc(100vw - clamp(28px,6vw,48px)));margin:0 auto}
+.skip-link{position:fixed;top:12px;left:12px;z-index:100;transform:translateY(-140%);padding:10px 14px;border-radius:999px;background:var(--signal-mint);color:#071015;font-weight:800;box-shadow:var(--shadow-editorial-soft);transition:transform .18s var(--ease-standard)}
+.skip-link:focus-visible{transform:translateY(0)}
+.site-header{position:sticky;top:20px;z-index:50;padding-top:20px;background:transparent;pointer-events:none}
+.nav{display:flex;align-items:center;justify-content:flex-start;gap:12px;padding:12px 14px 12px 18px;color:var(--ink);background:rgba(255,249,240,.74);border:1px solid rgba(16,24,40,.08);border-radius:999px;backdrop-filter:blur(18px);box-shadow:var(--shadow-editorial-soft);pointer-events:auto}
+.brand{display:inline-flex;align-items:center;gap:12px;color:var(--ink);font-family:var(--font-sans);font-size:16px;font-weight:600}
+.brand-icon{width:34px;height:34px;object-fit:contain}
+.brand-wordmark{color:#142033;font-family:var(--brand-wordmark-font);white-space:nowrap;text-rendering:geometricPrecision}
+.brand-wordmark--nav{font-size:22px;font-weight:700;line-height:1;letter-spacing:-.012em}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:auto;color:var(--text-subtle);font-family:var(--font-sans);font-size:13px;font-weight:600;line-height:1}
+.nav-links a{display:inline-flex;align-items:center;min-height:38px;padding:0 11px;border-radius:999px}
+.nav-actions{margin-left:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:999px;gap:10px;font-family:var(--font-sans);font-size:15px;font-weight:600;border:1px solid transparent;white-space:nowrap}
+.btn.primary{background:var(--gradient-editorial);color:#fff;box-shadow:var(--shadow-editorial-glow)}
+.btn.ghost{color:var(--ink);background:rgba(255,255,255,.48);border-color:rgba(16,24,40,.12)}
+.btn.mobile-only{display:none}
+.hero{padding:48px 0 80px;color:var(--ink);background:transparent}
+.section-band--odd{background:var(--section-band-odd)}
+.section-band--even{background:var(--section-band-even)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);align-items:center;gap:clamp(28px,3.4vw,44px);padding:0}
+.hero-copy,.hero-visual{min-width:0}
+.hero-kicker{display:inline-flex;align-items:center;padding:6px 11px;border-radius:10px;background:rgba(255,255,255,.58);border:1px solid rgba(16,24,40,.1);color:var(--text-secondary);font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase}
+h1{max-width:min(100%,560px);margin:0 0 22px;color:var(--ink);font-family:var(--font-serif);font-size:clamp(48px,5.8vw,82px);font-weight:400;line-height:1.02;letter-spacing:0;text-wrap:balance}
+.hero-kicker+h1{margin-top:20px}
+.hero h1 em{color:var(--editorial-purple-deep);font-style:italic;font-weight:400}
+p{margin-top:0;color:var(--text-secondary)}
+.lead{max-width:560px;color:var(--text-secondary);font-size:clamp(16px,1.6vw,19px);line-height:1.6}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 38px}
+.hero-mini{display:flex;flex-wrap:wrap;gap:10px 20px;max-width:560px;margin-top:24px;color:var(--text-subtle);font-family:var(--font-mono);font-size:13.5px}
+.hero-visual{--product-scale:1;position:relative;min-height:calc(560px * var(--product-scale))}
+.product-stack{position:relative;width:calc(550px * var(--product-scale));min-height:calc(540px * var(--product-scale));margin-left:auto}
+@media (max-width:1180px){.hero-grid{grid-template-columns:minmax(0,.95fr) minmax(360px,1.05fr);gap:28px}.hero-visual{--product-scale:.76}.hero-ctas .btn{min-height:48px;padding:0 16px;font-size:14px}}
+@media (max-width:860px){.site-header{top:12px;padding-top:12px}.nav{flex-wrap:wrap;min-height:64px;gap:8px 10px;padding:10px 12px;border-radius:24px}.nav-actions{display:none}.brand{order:1}.btn.mobile-only{order:2;display:inline-flex;margin-left:auto}.nav-links{order:3;display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;width:100%;margin-left:0;padding-top:6px;border-top:1px solid rgba(16,24,40,.08);overflow:visible}.nav-links a{flex:0 1 auto;min-height:34px;padding:0 10px;font-size:12.5px;white-space:nowrap}.hero{padding-top:36px}.hero-grid{grid-template-columns:1fr;gap:34px}.hero-visual{--product-scale:.74}}
+@media (max-width:700px){.hero{padding:28px 0 56px}.hero h1{font-size:clamp(44px,12vw,54px)}.hero-kicker+h1{margin-top:16px}.hero .lead{font-size:17px}.hero-ctas{align-items:stretch;flex-direction:column}.hero-ctas .btn{width:100%}.hero-visual{--product-scale:.58}}
+@media (max-width:560px){.site-header{top:10px;padding-top:10px}.nav{gap:8px;padding:10px 12px}.brand{gap:10px}.btn.mobile-only{min-height:44px;padding:0 14px;font-size:13px}.hero-visual{--product-scale:.48}}
+`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="ExtraBrain, Extra Brain, Extra Brain app, AI interview assistant, AI meeting copilot, desktop AI copilot, local-first AI assistant, on-device AI assistant, Mac AI interview assistant, AI for coding interviews, LeetCode AI helper, system design interview AI, behavioral interview AI, AI meeting assistant, local transcription meeting assistant, bring your own OpenAI key, bring your own Anthropic key, Claude subscription AI assistant, Codex subscription AI assistant, InterviewCoder alternative, Cluely alternative, Final Round AI alternative, AI HackerRank assistant, AI CoderPad assistant, AI Codility assistant, real-time interview transcription, free AI interview helper for Mac"
+    />
+    <meta name="theme-color" content="#FBF7F0" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="ExtraBrain" />
+    <link rel="canonical" href={canonical.href} />
+    <style is:inline set:html={criticalCss} />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preload" href="/assets/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/instrument-serif-italic-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, siteUrl).href} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonical.href} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(ogImage, siteUrl).href} />
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to content</a>
+    <div class="site-shell">
+      <slot />
+    </div>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script is:inline>
+      (function () {
+        var started = false;
+        var initPostHog = function () {
+          if (started) return;
+          started = true;
+          !function(t,e){var o,n,p,r;e.__SV||(window.posthog&&window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init rs ls yi ns us ts ss capture calculateEventProperties vs register register_once register_for_session unregister unregister_for_session gs getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getFeatureFlagPayload getFeatureFlagResult identify reset get_distinct_id get_session_id captureException opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing is_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+          posthog.init('phc_sXYeYYxL93wov0PTZ9ERSbuvNWlaULK3lSDkqhajz8u', {
+            api_host: 'https://us.i.posthog.com',
+            defaults: '2025-11-30',
+            person_profiles: 'identified_only',
+            capture_pageview: true,
+            capture_pageleave: false,
+            autocapture: false,
+            rageclick: false,
+            disable_session_recording: true,
+            disable_surveys: true,
+            disable_web_experiments: true,
+            disable_external_dependency_loading: true,
+            disable_scroll_properties: true,
+            capture_performance: false,
+            capture_dead_clicks: false,
+            capture_heatmaps: false,
+            enable_heatmaps: false
+          });
+        };
+        var scheduleIdle = function () {
+          if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(initPostHog, { timeout: 2500 });
+          } else {
+            window.setTimeout(initPostHog, 1200);
+          }
+        };
+        if (document.readyState === 'complete') {
+          scheduleIdle();
+        } else {
+          window.addEventListener('load', scheduleIdle, { once: true });
+          window.setTimeout(initPostHog, 3500);
+        }
+      })();
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
