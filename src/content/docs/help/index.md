@@ -1,6 +1,6 @@
 ---
 title: Help Center
-description: Start here for installation, setup, interview workflows, troubleshooting, privacy expectations, and billing guidance for ExtraBrain.
+description: ExtraBrain help for macOS live interviews, meetings, transcription, screenshots, AI providers, privacy, settings, and troubleshooting.
 sidebar:
   label: Overview
   order: 1
@@ -12,46 +12,50 @@ next: false
 lastUpdated: 2026-04-29
 ---
 
-Use this help center as the public support entry point for the app. Start with the path that matches where you are in the workflow.
+ExtraBrain is a macOS-first live AI assistant for interviews, meetings, coding rounds, system design discussions, behavioral interviews, troubleshooting, and dense technical conversations. Use this help center to set up the app, choose providers, understand privacy, and recover from common permission or provider issues.
 
-## Start here
+![ExtraBrain expanded live session with transcript and analysis panels](/assets/screenshots/help/dark/main-analysis-followups.png)
 
-- [Getting started](/help/getting-started/) for the fastest path from download to first session.
-- [Installation](/help/installation/) for platform and release details.
-- [Set up AI providers](/help/setup-api-keys/) if you want to use on-device AI where hardware supports it or connect your current provider subscription, account, or API key.
-- [Using ExtraBrain in interviews](/help/using-extrabrain-in-interviews/) for practical live workflow guidance.
-- [Troubleshooting](/help/troubleshooting/) if the app is not behaving as expected.
-- [Privacy and data handling](/help/privacy-data-handling/) for local-first expectations, fully local setup, and external provider data flow.
-- [Billing and Pro plan](/help/billing-pro-plan/) for what is and is not included.
+## Start Here
 
-## What ExtraBrain is for
+- [What is ExtraBrain?](/help/getting-started/what-is-extrabrain/) explains the app, live transcription, screenshots, profiles, follow-ups, and session history.
+- [Set up ExtraBrain for the first time](/help/getting-started/first-run-setup/) walks through onboarding from welcome to provider setup.
+- [Grant macOS permissions](/help/getting-started/macos-permissions/) explains microphone, screen recording, and system audio access.
+- [Choose Parakeet or Deepgram transcription](/help/providers/transcription-parakeet-vs-deepgram/) compares local and cloud transcription.
+- [Connect an AI provider](/help/providers/connect-ai-provider/) covers OpenAI, Anthropic, subscriptions, and custom endpoints.
 
-ExtraBrain is designed for live conversations where you need fast recall, structured prompts, and private AI assistance in a desktop app. It is available for Mac today, with Windows and Linux planned. On compatible hardware, on-device AI can keep model requests local; external providers remain optional. Common use cases include:
+## Use ExtraBrain Live
 
-- coding interviews
-- system design rounds
-- behavioral loops
-- dense customer or stakeholder meetings
-- lectures, research calls, and fast technical discussions
+- [Start recording and ask for analysis](/help/using-extrabrain/start-recording-and-analysis/) covers the main live controls.
+- [Use screenshots and screen context](/help/using-extrabrain/screenshots-screen-context/) explains capture modes and screenshot context.
+- [Use follow-up questions](/help/using-extrabrain/follow-up-questions/) explains suggested follow-ups and custom questions.
+- [Analyze detected topics and questions](/help/using-extrabrain/detected-topics-questions/) explains transcript topic and question cards.
 
-ExtraBrain is not a hosted meeting bot. It runs on your Mac, can use local NVIDIA Parakeet transcription, can use on-device AI when hardware supports it, and can connect to providers you control when external AI makes sense for the session.
+## Privacy, Settings, And History
 
-## Fast answers
+- [How ExtraBrain handles data](/help/privacy-security/how-extrabrain-handles-data/) gives the clearest local-vs-provider data flow.
+- [Privacy controls](/help/privacy-security/privacy-controls/) covers overlay hiding, click-through, app visibility, and usage sharing.
+- [Settings overview](/help/settings/) links to every public settings tab.
+- [Configure audio settings](/help/settings/audio-settings/) covers transcription provider, microphone, voice trigger, and transcript cleanup controls.
+- [Use ExtraBrain profiles](/help/settings/profiles/) explains automatic, pinned, system, and custom profile behavior.
+- [Keyboard shortcuts](/help/settings/keyboard-shortcuts/) lists the default shortcuts and where to edit them.
+- [View and delete session history](/help/sessions-history/view-delete-session-history/) covers transcripts, analyses, facts, screenshots, and deletion.
+- [Activate ExtraBrain Pro](/help/billing-pro/activate-license/) explains license activation and deactivation.
 
-### Is ExtraBrain free?
+## Troubleshooting
 
-Yes. The core Mac app is free to download and use. Pro adds workflow controls such as saved prompt presets, custom profiles, richer session history, post-session summaries, and advanced model controls where enabled.
+Start with [Troubleshooting](/help/troubleshooting/) if microphone permission, screen recording, system audio, API key validation, Deepgram validation, screenshots, hidden windows, or session deletion is not working as expected.
 
-### Can ExtraBrain run locally?
+## Common Questions
 
-ExtraBrain can keep model and transcription requests on the Mac when you use local transcription and on-device AI on compatible hardware. If you choose external providers such as OpenAI, Anthropic, Claude, Codex, custom endpoints, or optional Deepgram, selected prompts, transcript text, screenshots, notes, or audio can leave the device.
+### Does ExtraBrain send everything to a server?
 
-### Is ExtraBrain allowed in interviews?
+No. ExtraBrain stores settings, API keys, local session history, and local Parakeet transcription data on your Mac. When you use a cloud LLM provider, relevant text, transcript context, screenshot-derived context, and prompts may be sent to the provider you selected. When you choose Deepgram, audio is sent to Deepgram for transcription.
 
-That depends on the company, interviewer, school, employer, or platform policy. Use ExtraBrain for note support, accessibility, preparation, and structured reasoning only where assistance is allowed.
+### Does ExtraBrain support Windows or Linux?
 
-## Common next reads
+ExtraBrain is macOS-first today. Windows and Linux are planned, not current public release targets.
 
-- [Billing and Pro plan](/help/billing-pro-plan/) to clarify what is free, what is local, what is provider-billed, and where Pro fits.
-- [Privacy and data handling](/help/privacy-data-handling/) if you need a precise explanation of what stays local and what does not.
-- [Troubleshooting](/help/troubleshooting/) if anything feels unstable right before a call.
+### Is the Remote settings tab public?
+
+No. The Remote tab is development-only and is not documented as a public feature.
