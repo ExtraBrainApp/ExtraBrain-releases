@@ -3,8 +3,75 @@ import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom';
 
+const siteUrl = 'https://extrabrain.app';
+const defaultOgImage = `${siteUrl}/assets/images/logo-512.png`;
+const helpStructuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'ExtraBrain',
+      alternateName: ['Extra Brain'],
+      url: siteUrl,
+      logo: defaultOgImage,
+      sameAs: ['https://github.com/ExtraBrainApp/ExtraBrain-releases'],
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'ExtraBrain',
+      alternateName: ['Extra Brain'],
+      applicationCategory: 'ProductivityApplication',
+      applicationSubCategory: 'AI interview and meeting copilot',
+      operatingSystem: 'macOS',
+      url: siteUrl,
+      image: defaultOgImage,
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+      featureList: [
+        'Free, local-first desktop AI interview and meeting copilot',
+        'Local NVIDIA Parakeet transcription and optional Deepgram',
+        'On-device AI where compatible hardware supports it',
+        'OpenAI, Anthropic, Claude Subscription, Codex Subscription, and custom endpoint setup',
+        'Apple Silicon and Intel Mac support',
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What is ExtraBrain?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'ExtraBrain is a free, local-first Mac desktop AI interview assistant and meeting copilot with live transcription, screenshots, provider setup, and privacy controls.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does ExtraBrain support local transcription?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. ExtraBrain supports local NVIDIA Parakeet transcription and optional Deepgram cloud transcription.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Which platforms does ExtraBrain support?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'ExtraBrain is available for Mac today, including Apple Silicon and Intel Macs. Windows and Linux are planned.',
+          },
+        },
+      ],
+    },
+  ],
+});
+
 export default defineConfig({
-  site: 'https://extrabrain.app',
+  site: siteUrl,
   integrations: [
     sitemap(),
     starlight({
@@ -98,6 +165,27 @@ export default defineConfig({
             name: 'theme-color',
             content: '#0B0F14',
           },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image',
+            content: defaultOgImage,
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'twitter:image',
+            content: defaultOgImage,
+          },
+        },
+        {
+          tag: 'script',
+          attrs: {
+            type: 'application/ld+json',
+          },
+          content: helpStructuredData,
         },
         {
           tag: 'script',

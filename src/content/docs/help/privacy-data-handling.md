@@ -10,6 +10,15 @@ This privacy overview points to the current detailed privacy guides and summariz
 
 ![ExtraBrain privacy settings tab](/assets/screenshots/help/dark/settings-privacy.png)
 
+## Key Takeaways
+
+ExtraBrain privacy is controlled by the data path you choose for transcription, screenshots, prompts, model requests, provider credentials, and local session history.
+
+- Local Parakeet transcription can keep speech-to-text work on the Mac.
+- On-device AI can keep model requests local when compatible hardware supports that path.
+- External model providers can receive transcript text, screenshot-derived context, prompts, and notes when you ask ExtraBrain to use them.
+- Optional Deepgram can receive audio for cloud transcription when you configure it.
+
 - [How ExtraBrain handles data](/help/privacy-security/how-extrabrain-handles-data/)
 - [Privacy controls](/help/privacy-security/privacy-controls/)
 

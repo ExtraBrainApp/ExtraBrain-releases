@@ -172,6 +172,8 @@ export type MarketingPage = {
   faq?: Array<{ question: string; answer: string }>;
   schemaType?: 'SoftwareApplication' | 'FAQPage' | 'HowTo' | 'Article';
   sources?: Array<{ label: string; href: string }>;
+  comparisonHub?: unknown;
+  comparison?: unknown;
 };
 
 const defaultCta = { label: 'Download for Mac', href: '/download/' };
@@ -181,7 +183,7 @@ export const marketingPages: MarketingPage[] = [
     slug: 'download',
     title: 'Download ExtraBrain for macOS',
     description:
-      'Download the latest ExtraBrain macOS release, review Apple Silicon and Intel Mac compatibility, install steps, checksum availability, signing notes, and release notes.',
+      'Download the latest ExtraBrain macOS release, review Mac compatibility, install steps, checksum notes, signing guidance, and release metadata.',
     eyebrow: 'Download',
     h1: 'Download the free ExtraBrain macOS app.',
     lead:
@@ -526,7 +528,7 @@ export const marketingPages: MarketingPage[] = [
   },
   {
     slug: 'features/local-transcription',
-    title: 'Local Transcription for AI Meetings and Interviews',
+    title: 'Local Transcription for ExtraBrain',
     description:
       'Use ExtraBrain local NVIDIA Parakeet transcription, on-device AI where supported, and optional Deepgram for interviews and meetings.',
     eyebrow: 'Feature',

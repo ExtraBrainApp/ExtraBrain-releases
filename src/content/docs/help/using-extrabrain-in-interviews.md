@@ -8,6 +8,15 @@ lastUpdated: 2026-04-29
 
 ExtraBrain is most useful when you decide in advance what kind of support you want from it. Treat it as a fast private assistant, not as an excuse to improvise your entire interview strategy.
 
+## Key Takeaways
+
+ExtraBrain interview support is a live workflow for organizing prompts, constraints, transcript context, screenshots, edge cases, tradeoffs, STAR stories, and follow-up questions while you remain responsible for the actual answer.
+
+- Coding interviews benefit from prompt restatement, edge-case lists, tests, complexity notes, and clarifying questions.
+- System design rounds benefit from separating requirements, components, data flow, bottlenecks, and operational tradeoffs.
+- Behavioral interviews benefit from truthful story recall, STAR structure, concise follow-ups, and post-interview review.
+- Responsible use means following the company, interviewer, employer, school, or platform rules before using live AI help.
+
 ## Coding interviews
 
 Use the app for:
