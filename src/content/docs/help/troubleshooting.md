@@ -1,72 +1,84 @@
 ---
 title: Troubleshooting
-description: Fix ExtraBrain setup, transcription, provider, on-device AI, and live-session issues before an interview, meeting, lecture, or research call.
+description: Fix ExtraBrain microphone, screen recording, system audio, API key, Deepgram, screenshot, hidden-window, and session-history issues.
 sidebar:
   order: 6
 lastUpdated: 2026-04-29
 ---
 
-This page covers the first things to check when ExtraBrain is not behaving the way you expect.
+Use this page when ExtraBrain is not capturing audio, cannot validate a provider, misses screenshots, or is hard to recover during a live session.
 
-## The app launches but does not respond well
+![ExtraBrain permissions step for troubleshooting microphone, screen, and system audio access](/assets/screenshots/help/dark/onboarding-permissions.png)
 
-- Restart the app.
-- Confirm on-device AI is available if you selected a local model, or confirm your provider subscription, account, or API key is present and valid.
-- Confirm your network connection is healthy enough to reach any external model providers you configured.
-- Run a short test session with a minimal prompt.
-- Switch to the simplest tested provider or local model if you are close to a live call.
+## Microphone Permission Required
 
-## Transcription quality is poor
+If microphone capture does not start:
 
-- Check microphone selection.
-- Reduce background noise when possible.
-- Rehearse with the same headphones and room you plan to use live.
-- Confirm whether you are using local NVIDIA Parakeet transcription or optional Deepgram.
-- Try a short rehearsal with slower speech and a known script so you can separate microphone issues from model behavior.
+1. Open **System Settings -> Privacy & Security -> Microphone**.
+2. Enable ExtraBrain.
+3. Quit and reopen ExtraBrain if macOS asks.
+4. Start a short test session.
 
-## The wrong provider seems to be answering
+See [Grant macOS permissions](/help/getting-started/macos-permissions/).
 
-- Re-open settings and verify the selected local model or provider.
-- Confirm the model choice for the current workflow.
-- Remove stale or invalid credentials and save again.
-- Check whether the current workflow is using on-device AI, OpenAI, Anthropic, Claude, Codex, a custom-compatible endpoint, or another configured provider mode.
+## Screen Recording Or System Audio Is Not Working
 
-## On-device AI is not available
+Screen Recording controls screenshots and screen context. System Audio controls meeting, call, video, or shared-audio transcription when supported.
 
-- Confirm the Mac has compatible hardware for local AI.
-- Switch to a configured external provider if the current hardware cannot run on-device AI.
-- Keep a tested backup option ready before high-stakes sessions.
+Check for warning chips such as "Mic stopped", "System audio stopped", or "Audio stopped". Then reopen macOS Privacy & Security settings, grant access, and restart ExtraBrain if needed.
 
-## You are close to an interview and something still feels unstable
+## API Key Validation Failed
 
-Use the safest fallback:
+For OpenAI, Anthropic, or a custom endpoint:
 
-1. switch to the local model or provider that worked during your last rehearsal
-2. simplify the prompt set
-3. reduce your workflow to the smallest dependable setup
+- confirm the key is current
+- remove extra spaces
+- confirm the selected model is available to the account
+- confirm a custom endpoint has a base URL and model name
+- check proxy or organization restrictions
 
-:::caution
-If the app is unstable minutes before a real interview, do not keep debugging indefinitely. Fall back to the simplest workflow you already tested.
-:::
+Then validate again in **Settings -> LLM Providers**.
 
-## Still blocked?
+## Deepgram Validation Failed
 
-Review:
+Deepgram requires a valid Deepgram API key. If validation fails, paste a fresh key, retry validation, or switch back to Local Parakeet from onboarding or **Settings -> Audio**.
 
-- [Installation](/help/installation/)
-- [Set up AI providers](/help/setup-api-keys/)
-- [Privacy and data handling](/help/privacy-data-handling/)
+## Screenshots Are Not Appearing In Analysis
 
-## Common troubleshooting questions
+Check that:
 
-### Why is on-device AI unavailable?
+- a session is active
+- Screen Recording permission is granted
+- the capture mode in **Settings -> Screenshot** matches what you expect
+- the screenshot entry appears in the transcript panel
 
-On-device AI requires compatible hardware and may not be available on every Mac or customer environment. Use a configured external provider as a fallback when local AI is not available.
+Screenshots are local session artifacts. Screenshot-derived context may be sent when you ask a cloud LLM provider for analysis.
 
-### Why is transcription not useful enough?
+## Main Window Is Hidden Or Hard To Click
 
-Check microphone selection, room noise, headset behavior, transcription mode, and whether you are using local Parakeet or optional Deepgram. Run a short test with predictable speech before a real session.
+If the overlay is hidden or click-through makes it hard to interact:
 
-### What should I do minutes before an interview?
+1. Use the toggle window shortcut.
+2. Disable click-through in **Settings -> Privacy**.
+3. Re-enable Dock or menu bar visibility if you need a visible recovery path.
 
-Use the simplest setup that worked in your last rehearsal. Avoid changing providers, prompts, permissions, or transcription mode right before a high-stakes call unless the current setup is unusable.
+## Session History Delete Is Disabled
+
+Active sessions cannot be deleted. Stop recording first, then return to **Settings -> Sessions** and delete the session.
+
+## Related Guides
+
+- [Set up ExtraBrain for the first time](/help/getting-started/first-run-setup/)
+- [Connect an AI provider](/help/providers/connect-ai-provider/)
+- [Choose Parakeet or Deepgram transcription](/help/providers/transcription-parakeet-vs-deepgram/)
+- [Privacy controls](/help/privacy-security/privacy-controls/)
+
+## Troubleshooting Questions
+
+### What should I check first if ExtraBrain is not recording?
+
+Check microphone permission, system audio permission, the selected audio device, and whether a session is already starting or stopping.
+
+### What should I check first if analysis fails?
+
+Check the selected AI provider, API key or subscription status, custom endpoint fields, and whether the current session has transcript or screenshot context to analyze.

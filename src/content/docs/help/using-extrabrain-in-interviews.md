@@ -62,7 +62,7 @@ You are responsible for following the policies and expectations of the company o
 
 - rehearse once with the exact microphone and display setup you plan to use
 - preload the stories, projects, or talking points you expect to reference
-- verify local AI availability or provider access and your backup plan
+- verify provider access and your backup plan
 
 ## During the interview
 

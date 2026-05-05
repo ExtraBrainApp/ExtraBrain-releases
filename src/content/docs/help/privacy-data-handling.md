@@ -1,58 +1,34 @@
 ---
-title: Privacy and Data Handling
-description: Understand the local-first privacy posture of ExtraBrain, on-device AI, and how connected AI providers affect data flow.
+title: Privacy And Data Handling
+description: Review ExtraBrain privacy guidance for local storage, provider data flow, screenshots, Deepgram audio, and privacy controls.
 sidebar:
-  order: 7
+  order: 99
 lastUpdated: 2026-04-29
 ---
 
-ExtraBrain is a **local-first desktop app**. It is available for Mac today, with Windows and Linux planned. The app experience is designed to keep your workspace, prompts, screenshots, transcripts, notes, and session context under your control rather than routing everything through a proprietary hosted dashboard. With on-device AI and local transcription, requests can stay on your Mac.
+This privacy overview points to the current detailed privacy guides and summarizes the most important data-flow distinction.
 
-## What local-first means here
+![ExtraBrain privacy settings tab](/assets/screenshots/help/dark/settings-privacy.png)
 
-- your app runs on your machine
-- your provider credentials are yours
-- on-device AI can keep model requests local when compatible hardware is available
-- local NVIDIA Parakeet transcription can keep transcription on-device
-- transcripts, prompts, screenshots, and notes are intended to stay local unless you explicitly send content to an external model or transcription provider
+- [How ExtraBrain handles data](/help/privacy-security/how-extrabrain-handles-data/)
+- [Privacy controls](/help/privacy-security/privacy-controls/)
 
-On-device AI requires compatible hardware and may not be available on every Mac or customer environment.
+ExtraBrain stores settings, API keys, local session history, and local Parakeet transcription data on your Mac. When you use a cloud LLM provider, relevant text, transcript context, screenshot-derived context, and prompts may be sent to the provider you selected. When you choose Deepgram, audio is sent to Deepgram for transcription. Anonymous usage sharing can be disabled.
 
-## What still leaves your device
+## Privacy Checklist
 
-When you ask ExtraBrain to use an external connected model or provider, the prompt content needed for that request is sent to the provider you configured. That can include transcript excerpts, screenshots, notes, or other context you choose to include.
+- Use Local Parakeet when audio transcription should stay on the Mac.
+- Review the LLM provider you select before sending sensitive transcript or screenshot-derived context.
+- Disable anonymous usage sharing if you do not want usage data shared.
+- Delete local session history you no longer need.
+- Follow interview, workplace, school, and customer policies before using AI assistance.
 
-If you configure optional Deepgram, audio or transcription data can be sent to Deepgram depending on your setup. OpenAI, Anthropic, Claude, Codex, or custom-compatible provider requests are governed by those providers' policies, retention settings, and account controls.
-
-## Sensible operating practices
-
-- use on-device AI and local transcription when you need requests to stay on your Mac and your hardware supports it
-- use only the external provider subscriptions, accounts, or API keys you trust
-- avoid sharing more sensitive content than the situation requires
-- rotate keys if a device or account is compromised
-- prefer local transcription for sessions where audio should not leave the device
-- rehearse with realistic but non-sensitive material before live use
-- review workplace, school, interview, meeting, or customer rules before using AI assistance in sensitive contexts
-- decide in advance which screenshots, transcript excerpts, or notes should never be sent to external providers
-
-:::tip
-If you need the strictest possible privacy posture, use local transcription and on-device AI where compatible hardware supports it, then map your prompt flow carefully and decide what categories of conversation should never be sent to any external provider.
-:::
-
-## Common privacy questions
+## Privacy Questions
 
 ### Does ExtraBrain send everything to a server?
 
-No. ExtraBrain is designed as a local-first desktop app. With local transcription and on-device AI where compatible hardware supports it, requests can stay on your Mac. External providers receive content only when you choose workflows that use them.
+No. ExtraBrain stores settings, API keys, and local session history on your Mac. Cloud providers receive context only when your selected workflow sends content to them.
 
-### Can screenshots leave the device?
+### Can screenshot context leave my Mac?
 
-Yes, if you include screenshots in an external provider request. Screenshots should stay local unless the provider, policy, and situation make sharing appropriate.
-
-### Can audio leave the device?
-
-Audio can stay local when you use local transcription. Audio or transcription data can be sent to optional Deepgram depending on your setup.
-
-### Who controls external provider retention?
-
-External provider retention, billing, quota, and account controls are governed by the provider you choose, such as OpenAI, Anthropic, Claude, Codex, Deepgram, or a custom-compatible endpoint.
+Yes, screenshot-derived context may be sent when you ask a cloud LLM provider for analysis. Use privacy controls and provider choice to match the session.
