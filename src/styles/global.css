@@ -948,6 +948,12 @@ cite {
   font-weight: 850;
 }
 
+.faq-item summary h3 {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
 .faq-item summary::-webkit-details-marker {
   display: none;
 }

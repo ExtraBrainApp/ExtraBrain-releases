@@ -21,6 +21,12 @@ interface Props {
 
 const { page } = Astro.props;
 const faq = page.faq ?? homepageFaq.slice(0, 4);
+const pageSubject = page.title.replace(/\s+Comparison$/, '');
+const summaryFacts = [
+  page.lead,
+  'ExtraBrain has 1 current public platform family, macOS, with support for 2 Mac CPU families: Apple Silicon and Intel.',
+  'ExtraBrain has 3 configurable data paths to review before sensitive work: local Parakeet transcription, on-device AI where supported, and external providers you choose.',
+];
 const schemaGraph: Array<Record<string, unknown>> = [
   softwareApplicationSchema(page.description, absoluteUrl('/download/')),
   organizationSchema(),
@@ -33,7 +39,9 @@ if (faq.length > 0) schemaGraph.push(faqSchema(faq));
 
 const hasReleaseMetadata = page.slug === 'download';
 const hasSources = Boolean(page.sources?.length);
-const contentBandStart = hasReleaseMetadata ? 1 : 0;
+const summaryBandIndex = 0;
+const releaseBandIndex = 1;
+const contentBandStart = hasReleaseMetadata ? 2 : 1;
 const sourcesBandIndex = contentBandStart + page.sections.length;
 const faqBandIndex = sourcesBandIndex + (hasSources ? 1 : 0);
 const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--odd' : 'section-band--even');
@@ -87,8 +95,30 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
       </div>
     </section>
 
+    <section class:list={['light-section', 'page-summary-section', sectionBandClass(summaryBandIndex)]} aria-labelledby="page-summary-title">
+      <div class="container page-section-stack">
+        <article class="page-section-block">
+          <div class="section-head compact">
+            <span class="eyebrow">Summary</span>
+            <h2 id="page-summary-title">Key takeaways</h2>
+            <p class="lead light">
+              {pageSubject} is part of ExtraBrain's local-first Mac workflow for live interviews, meetings, transcription, provider control, and responsible AI use.
+            </p>
+          </div>
+          <div class="page-grid">
+            {summaryFacts.map((fact, index) => (
+              <div class="page-info-card">
+                <h3>{index === 0 ? 'Page focus' : index === 1 ? 'Platform fact' : 'Data-flow fact'}</h3>
+                <p>{fact}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+      </div>
+    </section>
+
     {page.slug === 'download' && (
-      <section class:list={['light-section', 'page-release-section', sectionBandClass(0)]} aria-labelledby="latest-release-title">
+      <section class:list={['light-section', 'page-release-section', sectionBandClass(releaseBandIndex)]} aria-labelledby="latest-release-title">
         <div class="container page-card">
           <div>
             <span class="eyebrow">Latest release</span>
@@ -164,7 +194,7 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
           <div class="faq-list">
             {faq.map((item, index) => (
               <details class="faq-item" name="page-faq" open={index === 0}>
-                <summary>{item.question}</summary>
+                <summary><h3>{item.question}</h3></summary>
                 <p>{item.answer}</p>
               </details>
             ))}
@@ -189,11 +219,14 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
         <h2 class="footer-heading">Product</h2>
         <a href="/download/">Download</a>
         <a href="/pricing/">Pricing</a>
+        <a href="/features/local-transcription/">Local transcription</a>
+        <a href="/features/bring-your-own-provider/">BYO providers</a>
         <a href="/about/">About</a>
       </div>
       <div>
         <h2 class="footer-heading">Trust</h2>
         <a href="/privacy/">Privacy</a>
+        <a href="/data-flow/">Data flow</a>
         <a href="/security/">Security</a>
         <a href="/responsible-use/">Responsible use</a>
       </div>
@@ -201,6 +234,9 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
         <h2 class="footer-heading">Support</h2>
         <a href="/help/">Help center</a>
         <a href="/providers/">Providers</a>
+        <a href="/compare/cluely/">Compare Cluely</a>
+        <a href="/compare/interviewcoder/">Compare InterviewCoder</a>
+        <a href="/compare/final-round-ai/">Compare Final Round AI</a>
         <a href="/contact/">Contact</a>
         <a href={githubUrl}>GitHub</a>
       </div>

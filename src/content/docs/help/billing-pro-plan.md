@@ -10,6 +10,15 @@ ExtraBrain's core Mac app can be used separately from provider billing. External
 
 ![ExtraBrain license settings tab](/assets/screenshots/help/dark/settings-license.png)
 
+## Key Takeaways
+
+ExtraBrain billing separates the Mac app workflow from external model and transcription accounts, so app access, Pro features, and provider usage should be reviewed as separate cost categories.
+
+- The core Mac workflow is free to use.
+- Provider costs are controlled by OpenAI, Anthropic, Deepgram, Claude, Codex, or the custom endpoint you connect.
+- Pro is for workflow controls such as custom profiles and premium controls where enabled.
+- Provider retention, logging, quota, and billing do not automatically change when you activate Pro.
+
 ## Free Core Product
 
 The free core workflow covers the desktop app, local session flow, BYO provider setup, Local Parakeet transcription, screenshots, and basic live analysis controls. This is the right path when you want to use your own provider access and keep ExtraBrain itself separate from model billing.

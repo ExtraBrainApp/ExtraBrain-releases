@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: Start ExtraBrain setup on macOS with the current onboarding, permissions, transcription, AI provider, privacy, and first-session guides.
+description: Start ExtraBrain on macOS with onboarding, permissions, transcription, AI provider setup, privacy controls, and first-session checks.
 sidebar:
   order: 99
 lastUpdated: 2026-04-29
@@ -9,6 +9,15 @@ lastUpdated: 2026-04-29
 Start here if you are setting up ExtraBrain for the first time on macOS. The focused guides below cover the shortest path from launch to a successful live session.
 
 ![ExtraBrain onboarding welcome screen](/assets/screenshots/help/dark/onboarding-welcome.png)
+
+## Key Takeaways
+
+Getting started with ExtraBrain is a 6-step macOS setup flow: launch the app, grant permissions, choose transcription, connect an AI provider, review privacy controls, and run one short rehearsal.
+
+- ExtraBrain is available for Mac today, including Apple Silicon and Intel Macs.
+- Local Parakeet transcription keeps the transcription path local; Deepgram is optional.
+- Provider setup can use OpenAI, Anthropic, Claude Subscription, Codex Subscription, or a custom OpenAI-compatible endpoint.
+- A first rehearsal should test recording, screenshots, transcription, and one analysis before a real interview or meeting.
 
 - [What is ExtraBrain?](/help/getting-started/what-is-extrabrain/)
 - [Set up ExtraBrain for the first time](/help/getting-started/first-run-setup/)

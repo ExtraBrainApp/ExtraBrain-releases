@@ -14,6 +14,15 @@ Use the official macOS release when you need the desktop overlay, live recording
 
 ![ExtraBrain onboarding welcome screen after installation](/assets/screenshots/help/dark/onboarding-welcome.png)
 
+## Key Takeaways
+
+ExtraBrain installation is the macOS setup path that gets the desktop app, live recording controls, local session history, screenshots, transcription, and AI provider access ready before a live session.
+
+- ExtraBrain supports Mac today, including Apple Silicon and Intel Macs.
+- Windows and Linux are planned, not current public release targets.
+- A reliable first setup has 5 checks: app launch, microphone permission, Screen Recording permission, transcription choice, and provider validation.
+- Local Parakeet transcription does not require a Deepgram API key; optional Deepgram uses your Deepgram account.
+
 ## Install From GitHub Releases
 
 1. Open the [ExtraBrain download page](/download/).

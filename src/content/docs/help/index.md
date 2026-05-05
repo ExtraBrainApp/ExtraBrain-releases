@@ -16,6 +16,15 @@ ExtraBrain is a macOS-first live AI assistant for interviews, meetings, coding r
 
 ![ExtraBrain expanded live session with transcript and analysis panels](/assets/screenshots/help/dark/main-analysis-followups.png)
 
+## Key Takeaways
+
+ExtraBrain is a free, local-first Mac desktop AI interview assistant and meeting copilot for live transcription, screenshots, provider-backed analysis, on-device AI where supported, and post-session review.
+
+- Use the help center to move through 4 setup areas: installation, permissions, transcription, and AI provider access.
+- ExtraBrain supports Mac today, including Apple Silicon and Intel Macs.
+- The app supports local NVIDIA Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude Subscription, Codex Subscription, and custom OpenAI-compatible endpoints.
+- Privacy depends on the selected data path: local transcription and on-device AI can stay on the Mac, while cloud providers receive the context you choose to send.
+
 ## Start Here
 
 - [What is ExtraBrain?](/help/getting-started/what-is-extrabrain/) explains the app, live transcription, screenshots, profiles, follow-ups, and session history.

@@ -10,6 +10,15 @@ Use this page when ExtraBrain is not capturing audio, cannot validate a provider
 
 ![ExtraBrain permissions step for troubleshooting microphone, screen, and system audio access](/assets/screenshots/help/dark/onboarding-permissions.png)
 
+## Key Takeaways
+
+ExtraBrain troubleshooting is the recovery path for the 6 most common blockers: microphone permission, Screen Recording permission, system audio, provider validation, Deepgram validation, and window visibility.
+
+- Most capture problems start in macOS Privacy & Security, then require quitting and reopening ExtraBrain.
+- Provider failures usually involve the selected model, API key, subscription access, base URL, quota, or network access.
+- Screenshot analysis requires an active session, Screen Recording permission, and the expected capture mode.
+- Active sessions cannot be deleted until recording stops.
+
 ## Microphone Permission Required
 
 If microphone capture does not start:
