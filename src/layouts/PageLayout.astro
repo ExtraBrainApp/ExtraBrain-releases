@@ -63,9 +63,9 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
         <a href="/help/">Help</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn primary" href="/download/" data-track="download_nav_clicked">Download for Mac</a>
+        <a class="btn primary" href="/download/" data-track="download_nav_clicked" data-attr="download-cta">Download for Mac</a>
       </div>
-      <a class="btn primary mobile-only" href="/download/" data-track="download_nav_clicked">Download</a>
+      <a class="btn primary mobile-only" href="/download/" data-track="download_nav_clicked" data-attr="download-cta">Download</a>
     </div>
   </header>
 
@@ -77,7 +77,7 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
           <h1>{page.h1}</h1>
           <p class="lead">{page.lead}</p>
           <div class="hero-ctas">
-            {page.primaryCta && <a class="btn primary" href={page.primaryCta.href} data-track="page_primary_cta_clicked">{page.primaryCta.label}</a>}
+            {page.primaryCta && <a class="btn primary" href={page.primaryCta.href} data-track="page_primary_cta_clicked" data-attr={page.primaryCta.href === '/download/' || page.primaryCta.href === githubUrl ? 'download-cta' : undefined}>{page.primaryCta.label}</a>}
             {page.secondaryCta && <a class="btn ghost" href={page.secondaryCta.href} data-track="page_secondary_cta_clicked">{page.secondaryCta.label}</a>}
           </div>
         </div>
@@ -136,7 +136,7 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
               <div><dt>SHA-256</dt><dd data-release-digest>Shown when published by GitHub release metadata.</dd></div>
               <div><dt>Signing</dt><dd>Verify signing and notarization details in the current release notes.</dd></div>
             </dl>
-            <a class="btn primary" href={page.primaryCta?.href ?? githubUrl} data-release-download data-download>Download latest release</a>
+            <a class="btn primary" href={page.primaryCta?.href ?? githubUrl} data-release-download data-download data-attr="download-cta">Download latest release</a>
           </div>
         </div>
       </section>
