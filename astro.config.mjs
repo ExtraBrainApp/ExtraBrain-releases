@@ -14,7 +14,7 @@ const helpStructuredData = JSON.stringify({
       alternateName: ['Extra Brain'],
       url: siteUrl,
       logo: defaultOgImage,
-      sameAs: ['https://github.com/ExtraBrainApp/ExtraBrain-releases'],
+      sameAs: ['https://github.com/ExtraBrainApp/ExtraBrain-releases/releases'],
     },
     {
       '@type': 'SoftwareApplication',
@@ -150,7 +150,7 @@ export default defineConfig({
         {
           icon: 'github',
           label: 'GitHub',
-          href: 'https://github.com/ExtraBrainApp/ExtraBrain-releases',
+          href: 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases',
         },
       ],
       plugins: [starlightImageZoom()],

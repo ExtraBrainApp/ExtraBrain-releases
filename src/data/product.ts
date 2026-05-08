@@ -1,6 +1,6 @@
 export const siteUrl = 'https://extrabrain.app';
-export const githubUrl = 'https://github.com/ExtraBrainApp/ExtraBrain-releases';
-export const latestReleaseUrl = `${githubUrl}/releases/latest`;
+export const githubUrl = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases';
+export const latestReleaseUrl = `${githubUrl}/latest`;
 export const productName = 'ExtraBrain';
 export const brandAliases = ['Extra Brain'];
 export const productCategory = 'Free, local-first desktop AI interview and meeting copilot';
