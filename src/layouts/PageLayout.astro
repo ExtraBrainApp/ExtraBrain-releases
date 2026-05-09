@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from './MarketingLayout.astro';
+import FeedbackForm from '../components/FeedbackForm.astro';
 import {
   absoluteUrl,
   breadcrumbSchema,
@@ -239,9 +240,12 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
         <a href="/compare/final-round-ai/">Compare Final Round AI</a>
         <a href="/contact/">Contact</a>
         <a href={githubUrl}>GitHub</a>
+        <a href="#feedback" data-feedback-trigger>Send Feedback</a>
       </div>
     </div>
   </footer>
+
+  <FeedbackForm />
 
   {page.slug === 'download' && (
     <script is:inline>

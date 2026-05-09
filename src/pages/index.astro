@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '../layouts/MarketingLayout.astro';
+import FeedbackForm from '../components/FeedbackForm.astro';
 import {
   absoluteUrl,
   faqSchema,
@@ -602,9 +603,12 @@ const compatibilityPlatforms = [
         <a href="/help/troubleshooting/">Troubleshooting</a>
         <a href="/providers/">Providers</a>
         <a href="https://github.com/ExtraBrainApp/ExtraBrain-releases/releases" data-track="all_releases_clicked">GitHub</a>
+        <a href="#feedback" data-feedback-trigger>Send Feedback</a>
       </div>
     </div>
   </footer>
+
+  <FeedbackForm />
 
   <script is:inline>
     (function () {
