@@ -79,9 +79,10 @@
     var email = form.querySelector('#feedback-email').value.trim();
     if (!message) return;
 
-    captureEvent('website_feedback_submitted', {
-      message: message,
-      email: email || null,
+    captureEvent('feedback_submitted', {
+      feedback: message,
+      email: email || undefined,
+      source: 'web-browser',
       page: window.location.pathname
     });
 
