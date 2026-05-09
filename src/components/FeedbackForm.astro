@@ -2,54 +2,59 @@
 ---
 
 <dialog class="feedback-dialog" id="feedback-dialog">
-  <form class="feedback-form" id="feedback-form" method="dialog">
-    <div class="feedback-header">
-      <h2 class="feedback-title">Send feedback</h2>
-      <button type="button" class="feedback-close" id="feedback-close" aria-label="Close feedback form">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-          <path d="M4.5 4.5L13.5 13.5M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-      </button>
+  <div class="feedback-form" id="feedback-form">
+    <div class="feedback-body" id="feedback-body">
+      <div class="feedback-header">
+        <h2 class="feedback-title">Send feedback</h2>
+        <button type="button" class="feedback-close" id="feedback-close" aria-label="Close feedback form">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M4.5 4.5L13.5 13.5M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <p class="feedback-description">We'd love to hear from you. Share a suggestion, report an issue, or just say hi.</p>
+      <label class="feedback-label" for="feedback-message">Message</label>
+      <textarea
+        class="feedback-textarea"
+        id="feedback-message"
+        name="message"
+        rows="4"
+        required
+        placeholder="What's on your mind?"
+      ></textarea>
+      <label class="feedback-label" for="feedback-email">Email <span class="feedback-optional">(optional)</span></label>
+      <input
+        class="feedback-input"
+        id="feedback-email"
+        name="email"
+        type="email"
+        placeholder="you@example.com"
+        autocomplete="email"
+      />
+      <div class="feedback-actions">
+        <button type="button" class="btn primary feedback-submit" id="feedback-submit">Send feedback</button>
+      </div>
     </div>
-    <p class="feedback-description">We'd love to hear from you. Share a suggestion, report an issue, or just say hi.</p>
-    <label class="feedback-label" for="feedback-message">Message</label>
-    <textarea
-      class="feedback-textarea"
-      id="feedback-message"
-      name="message"
-      rows="4"
-      required
-      placeholder="What's on your mind?"
-    ></textarea>
-    <label class="feedback-label" for="feedback-email">Email <span class="feedback-optional">(optional)</span></label>
-    <input
-      class="feedback-input"
-      id="feedback-email"
-      name="email"
-      type="email"
-      placeholder="you@example.com"
-      autocomplete="email"
-    />
-    <div class="feedback-actions">
-      <button type="submit" class="btn primary feedback-submit">Send feedback</button>
-    </div>
-    <div class="feedback-success" id="feedback-success" hidden>
+    <div class="feedback-success" id="feedback-success" style="display:none;">
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
         <circle cx="14" cy="14" r="13" stroke="var(--signal-mint, #65d7c7)" stroke-width="2"/>
         <path d="M9 14.5L12.5 18L19 11" stroke="var(--signal-mint, #65d7c7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <p>Thank you for your feedback!</p>
     </div>
-  </form>
+  </div>
 </dialog>
 
 <script is:inline>
 (function () {
   var dialog = document.getElementById('feedback-dialog');
-  var form = document.getElementById('feedback-form');
+  var body = document.getElementById('feedback-body');
+  var submitBtn = document.getElementById('feedback-submit');
   var closeBtn = document.getElementById('feedback-close');
   var successEl = document.getElementById('feedback-success');
-  if (!dialog || !form) return;
+  var messageEl = document.getElementById('feedback-message');
+  var emailEl = document.getElementById('feedback-email');
+  if (!dialog || !body || !submitBtn) return;
 
   function captureEvent(name, props) {
     if (window.posthog && typeof window.posthog.capture === 'function') {
@@ -57,9 +62,17 @@
     }
   }
 
+  function resetForm() {
+    body.style.display = '';
+    successEl.style.display = 'none';
+    messageEl.value = '';
+    emailEl.value = '';
+  }
+
   document.querySelectorAll('[data-feedback-trigger]').forEach(function (trigger) {
     trigger.addEventListener('click', function (e) {
       e.preventDefault();
+      resetForm();
       dialog.showModal();
       captureEvent('website_feedback_opened', { page: window.location.pathname });
     });
@@ -73,11 +86,13 @@
     if (e.target === dialog) dialog.close();
   });
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var message = form.querySelector('#feedback-message').value.trim();
-    var email = form.querySelector('#feedback-email').value.trim();
-    if (!message) return;
+  submitBtn.addEventListener('click', function () {
+    var message = messageEl.value.trim();
+    var email = emailEl.value.trim();
+    if (!message) {
+      messageEl.focus();
+      return;
+    }
 
     captureEvent('feedback_submitted', {
       feedback: message,
@@ -86,22 +101,12 @@
       page: window.location.pathname
     });
 
-    form.querySelector('.feedback-header').hidden = true;
-    form.querySelector('.feedback-description').hidden = true;
-    form.querySelectorAll('.feedback-label, .feedback-textarea, .feedback-input, .feedback-actions').forEach(function (el) {
-      el.hidden = true;
-    });
-    successEl.hidden = false;
+    body.style.display = 'none';
+    successEl.style.display = '';
 
     setTimeout(function () {
       dialog.close();
-      form.reset();
-      form.querySelector('.feedback-header').hidden = false;
-      form.querySelector('.feedback-description').hidden = false;
-      form.querySelectorAll('.feedback-label, .feedback-textarea, .feedback-input, .feedback-actions').forEach(function (el) {
-        el.hidden = false;
-      });
-      successEl.hidden = true;
+      resetForm();
     }, 2000);
   });
 })();
@@ -130,10 +135,13 @@
   }
 
   .feedback-form {
+    padding: 28px;
+  }
+
+  .feedback-body {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 28px;
   }
 
   .feedback-header {
