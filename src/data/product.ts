@@ -52,14 +52,13 @@ export const pricingTiers = [
   {
     name: 'Pro',
     price: '$10 / month',
-    summary: 'Unlock custom profiles and premium cast files for tailored interview and meeting workflows.',
+    summary: 'Premium model and advanced workflow controls where enabled. Custom profiles for tailored interview and meeting workflows.',
     features: [
       'Everything in Free',
       'Custom profiles for tailored interview and meeting workflows',
-      'Premium cast files for enhanced interview and meeting preparation',
+      'Premium model and advanced workflow controls where enabled',
       'Richer session history across transcripts, notes, screenshots, and saved facts',
       'Post-session summaries for decisions, risks, follow-ups, and review',
-      'Advanced workflow controls where enabled',
     ],
   },
   {
@@ -92,7 +91,7 @@ export const homepageFaq = [
   {
     question: 'Is ExtraBrain free?',
     answer:
-      'Yes. ExtraBrain is free to download and use. Pro adds saved prompt presets, custom profiles, premium cast files, richer session history, post-session summaries, and advanced workflow tools.',
+      'Yes. ExtraBrain is free to download and use. Pro adds saved prompt presets, custom profiles, richer session history, post-session summaries, and advanced workflow tools, with premium model and advanced workflow controls where enabled.',
   },
   {
     question: 'What platforms does ExtraBrain support?',
@@ -239,7 +238,7 @@ export const marketingPages: MarketingPage[] = [
     eyebrow: 'Pricing',
     h1: 'Free to start. Pro for $10/month.',
     lead:
-      'ExtraBrain is freemium: most features are free. Pro is $10/month and unlocks custom profiles plus premium cast files for enhanced workflows. External provider usage is billed separately by the providers you choose.',
+      'ExtraBrain is freemium: most features are free. Pro is $10/month and unlocks custom profiles with premium model and advanced workflow controls where enabled. External provider usage is billed separately by the providers you choose.',
     primaryCta: defaultCta,
     secondaryCta: { label: 'Read billing notes', href: '/help/billing-pro-plan/' },
     sections: [
@@ -267,14 +266,14 @@ export const marketingPages: MarketingPage[] = [
         title: 'How to choose a plan',
         items: [
           { title: 'Choose Free', body: 'Use Free when you want the Mac app, live interview and meeting support, local transcription, on-device AI where supported, and BYO provider setup.' },
-          { title: 'Choose Pro ($10/month)', body: 'Use Pro when you want custom profiles for tailored workflows, premium cast files, richer session history, post-session summaries, and advanced workflow controls.' },
+          { title: 'Choose Pro ($10/month)', body: 'Use Pro when you want custom profiles for tailored workflows, richer session history, post-session summaries, and premium model and advanced workflow controls where enabled.' },
           { title: 'Choose Enterprise', body: 'Use Enterprise when a team needs rollout planning, policy review, security input, privacy requirements, deployment support, or custom workflow guidance.' },
         ],
       },
     ],
     faq: [
-      { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac app is free with most features included. Pro is $10/month for custom profiles and premium cast files.' },
-      { question: 'What does Pro cost and what does it add?', answer: 'Pro is $10/month. It adds custom profiles for tailored workflows and premium cast files, plus richer history, post-session summaries, and advanced workflow controls.' },
+      { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac app is free with most features included. Pro is $10/month for custom profiles with premium model and advanced workflow controls where enabled.' },
+      { question: 'What does Pro cost and what does it add?', answer: 'Pro is $10/month. It adds custom profiles for tailored workflows, richer history, post-session summaries, and premium model and advanced workflow controls where enabled.' },
       { question: 'Do I still pay my AI provider?', answer: 'Only when you use an external provider. On-device AI runs locally on compatible hardware, while provider usage remains separate from ExtraBrain pricing.' },
       { question: 'Does ExtraBrain include bundled AI credits?', answer: 'No. ExtraBrain separates app features from external model usage unless a future plan explicitly says otherwise.' },
       { question: 'How should I compare ExtraBrain with monthly or lifetime interview tools?', answer: 'Compare the app price, model and transcription billing, usage limits, platform support, privacy path, cancellation terms, and whether you want a bundled hosted service or provider access you control.' },
