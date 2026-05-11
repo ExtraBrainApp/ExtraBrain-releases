@@ -82,6 +82,9 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
             {page.primaryCta && <a class="btn primary" href={page.primaryCta.href} data-track="page_primary_cta_clicked" data-attr={page.primaryCta.href === '/download/' || page.primaryCta.href === githubUrl ? 'download-cta' : undefined}>{page.primaryCta.label}</a>}
             {page.secondaryCta && <a class="btn ghost" href={page.secondaryCta.href} data-track="page_secondary_cta_clicked">{page.secondaryCta.label}</a>}
           </div>
+          <div class="hero-mini">
+            <a href="#feedback" data-feedback-trigger class="hero-feedback-link">Send Feedback</a>
+          </div>
         </div>
         <aside class="page-fact-panel" aria-label="ExtraBrain product facts">
           <p class="panel-label">{productCategory}</p>
