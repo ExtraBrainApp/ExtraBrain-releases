@@ -37,26 +37,29 @@ export const essentialPages = [
 export const pricingTiers = [
   {
     name: 'Free',
-    price: 'Always free',
-    summary: 'Core desktop app, live workflow support, on-device AI where supported, and BYO provider setup.',
+    price: 'Free',
+    summary: 'Most features included at no cost. Core desktop app, live workflow support, on-device AI where supported, and BYO provider setup.',
     features: [
-      'Download and use the Mac app',
-      'Use on-device AI on compatible hardware, or connect OpenAI, Anthropic, Claude, Codex, or compatible provider access',
-      'Local-first transcripts, prompts, screenshots, notes, and session context',
+      'Download and use the Mac app for free',
+      'On-device AI on compatible hardware',
+      'Connect OpenAI, Anthropic, Claude, Codex, or any compatible provider with your own API keys',
+      'Live transcription, prompts, screenshots, notes, and session context',
       'Local Parakeet transcription and optional Deepgram setup',
+      'Session history, keyboard shortcuts, and UI customization',
       'Help center, setup, privacy, and troubleshooting guides',
     ],
   },
   {
     name: 'Pro',
-    price: 'Workflow upgrade',
-    summary: 'More control for repeated interview, meeting, and research workflows.',
+    price: '$10 / month',
+    summary: 'Unlock custom profiles and access to the latest OpenAI and Anthropic models within ExtraBrain.',
     features: [
       'Everything in Free',
-      'Saved prompt presets and custom profiles',
+      'Custom profiles for tailored interview and meeting workflows',
+      'Access to latest OpenAI and Anthropic models through ExtraBrain',
       'Richer session history across transcripts, notes, screenshots, and saved facts',
       'Post-session summaries for decisions, risks, follow-ups, and review',
-      'Premium model and advanced workflow controls where enabled',
+      'Advanced workflow controls where enabled',
     ],
   },
   {
@@ -64,6 +67,7 @@ export const pricingTiers = [
     price: 'Custom',
     summary: 'Policy, deployment, privacy, and workflow support for teams.',
     features: [
+      'Everything in Pro',
       'Team rollout planning',
       'Responsible-use and policy guidance',
       'Security and deployment review',
@@ -231,9 +235,9 @@ export const marketingPages: MarketingPage[] = [
     description:
       'Understand ExtraBrain Free, Pro, and Enterprise pricing, including on-device AI, BYO provider costs, external AI billing, and free Mac app access.',
     eyebrow: 'Pricing',
-    h1: 'Free to start. Choose local AI or provider access you control.',
+    h1: 'Free to start. Pro for $10/month.',
     lead:
-      'ExtraBrain separates the desktop app from model usage. The core Mac app is free today, Pro adds workflow controls, on-device AI can run locally on compatible hardware, and external AI usage is billed by the providers you choose.',
+      'ExtraBrain is freemium: most features are free. Pro is $10/month and unlocks custom profiles plus access to the latest OpenAI and Anthropic models. External provider usage is billed separately by the providers you choose.',
     primaryCta: defaultCta,
     secondaryCta: { label: 'Read billing notes', href: '/help/billing-pro-plan/' },
     sections: [
@@ -261,14 +265,14 @@ export const marketingPages: MarketingPage[] = [
         title: 'How to choose a plan',
         items: [
           { title: 'Choose Free', body: 'Use Free when you want the Mac app, live interview and meeting support, local transcription, on-device AI where supported, and BYO provider setup.' },
-          { title: 'Choose Pro', body: 'Use Pro when repeated workflows need saved prompt presets, custom profiles, richer session history, post-session summaries, and advanced model controls where enabled.' },
+          { title: 'Choose Pro ($10/month)', body: 'Use Pro when you want custom profiles for tailored workflows, access to the latest OpenAI and Anthropic models, richer session history, post-session summaries, and advanced workflow controls.' },
           { title: 'Choose Enterprise', body: 'Use Enterprise when a team needs rollout planning, policy review, security input, privacy requirements, deployment support, or custom workflow guidance.' },
         ],
       },
     ],
     faq: [
-      { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac product is free to download and use today.' },
-      { question: 'What does Pro add?', answer: 'Pro adds saved prompt presets, custom profiles, richer history, summaries, premium model controls where enabled, and advanced workflow controls.' },
+      { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac app is free with most features included. Pro is $10/month for custom profiles and access to the latest OpenAI and Anthropic models.' },
+      { question: 'What does Pro cost and what does it add?', answer: 'Pro is $10/month. It adds custom profiles for tailored workflows and access to the latest OpenAI and Anthropic models, plus richer history, post-session summaries, and advanced workflow controls.' },
       { question: 'Do I still pay my AI provider?', answer: 'Only when you use an external provider. On-device AI runs locally on compatible hardware, while provider usage remains separate from ExtraBrain pricing.' },
       { question: 'Does ExtraBrain include bundled AI credits?', answer: 'No. ExtraBrain separates app features from external model usage unless a future plan explicitly says otherwise.' },
       { question: 'How should I compare ExtraBrain with monthly or lifetime interview tools?', answer: 'Compare the app price, model and transcription billing, usage limits, platform support, privacy path, cancellation terms, and whether you want a bundled hosted service or provider access you control.' },
