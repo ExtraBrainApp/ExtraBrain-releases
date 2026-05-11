@@ -52,11 +52,11 @@ export const pricingTiers = [
   {
     name: 'Pro',
     price: '$10 / month',
-    summary: 'Unlock custom profiles and access to the latest OpenAI and Anthropic models within ExtraBrain.',
+    summary: 'Unlock custom profiles and premium cast files for tailored interview and meeting workflows.',
     features: [
       'Everything in Free',
       'Custom profiles for tailored interview and meeting workflows',
-      'Access to latest OpenAI and Anthropic models through ExtraBrain',
+      'Premium cast files for enhanced interview and meeting preparation',
       'Richer session history across transcripts, notes, screenshots, and saved facts',
       'Post-session summaries for decisions, risks, follow-ups, and review',
       'Advanced workflow controls where enabled',
@@ -65,13 +65,15 @@ export const pricingTiers = [
   {
     name: 'Enterprise',
     price: 'Custom',
-    summary: 'Policy, deployment, privacy, and workflow support for teams.',
+    summary: 'Tailored rollout, dedicated support, and custom workflows for teams that need privacy, compliance, and deployment confidence at scale.',
     features: [
       'Everything in Pro',
-      'Team rollout planning',
-      'Responsible-use and policy guidance',
-      'Security and deployment review',
-      'Custom workflow support for team requirements',
+      'Dedicated team rollout and onboarding planning',
+      'Responsible-use policy and compliance guidance',
+      'Security, privacy, and deployment review',
+      'Custom workflow configuration for team requirements',
+      'Priority support and success management',
+      'Contact info@extrabrain.app for pricing',
     ],
   },
 ];
@@ -90,7 +92,7 @@ export const homepageFaq = [
   {
     question: 'Is ExtraBrain free?',
     answer:
-      'Yes. ExtraBrain is free to download and use. Pro adds saved prompt presets, custom profiles, richer session history, post-session summaries, premium model controls where enabled, and advanced workflow tools.',
+      'Yes. ExtraBrain is free to download and use. Pro adds saved prompt presets, custom profiles, premium cast files, richer session history, post-session summaries, and advanced workflow tools.',
   },
   {
     question: 'What platforms does ExtraBrain support?',
@@ -237,7 +239,7 @@ export const marketingPages: MarketingPage[] = [
     eyebrow: 'Pricing',
     h1: 'Free to start. Pro for $10/month.',
     lead:
-      'ExtraBrain is freemium: most features are free. Pro is $10/month and unlocks custom profiles plus access to the latest OpenAI and Anthropic models. External provider usage is billed separately by the providers you choose.',
+      'ExtraBrain is freemium: most features are free. Pro is $10/month and unlocks custom profiles plus premium cast files for enhanced workflows. External provider usage is billed separately by the providers you choose.',
     primaryCta: defaultCta,
     secondaryCta: { label: 'Read billing notes', href: '/help/billing-pro-plan/' },
     sections: [
@@ -265,18 +267,18 @@ export const marketingPages: MarketingPage[] = [
         title: 'How to choose a plan',
         items: [
           { title: 'Choose Free', body: 'Use Free when you want the Mac app, live interview and meeting support, local transcription, on-device AI where supported, and BYO provider setup.' },
-          { title: 'Choose Pro ($10/month)', body: 'Use Pro when you want custom profiles for tailored workflows, access to the latest OpenAI and Anthropic models, richer session history, post-session summaries, and advanced workflow controls.' },
+          { title: 'Choose Pro ($10/month)', body: 'Use Pro when you want custom profiles for tailored workflows, premium cast files, richer session history, post-session summaries, and advanced workflow controls.' },
           { title: 'Choose Enterprise', body: 'Use Enterprise when a team needs rollout planning, policy review, security input, privacy requirements, deployment support, or custom workflow guidance.' },
         ],
       },
     ],
     faq: [
-      { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac app is free with most features included. Pro is $10/month for custom profiles and access to the latest OpenAI and Anthropic models.' },
-      { question: 'What does Pro cost and what does it add?', answer: 'Pro is $10/month. It adds custom profiles for tailored workflows and access to the latest OpenAI and Anthropic models, plus richer history, post-session summaries, and advanced workflow controls.' },
+      { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac app is free with most features included. Pro is $10/month for custom profiles and premium cast files.' },
+      { question: 'What does Pro cost and what does it add?', answer: 'Pro is $10/month. It adds custom profiles for tailored workflows and premium cast files, plus richer history, post-session summaries, and advanced workflow controls.' },
       { question: 'Do I still pay my AI provider?', answer: 'Only when you use an external provider. On-device AI runs locally on compatible hardware, while provider usage remains separate from ExtraBrain pricing.' },
       { question: 'Does ExtraBrain include bundled AI credits?', answer: 'No. ExtraBrain separates app features from external model usage unless a future plan explicitly says otherwise.' },
       { question: 'How should I compare ExtraBrain with monthly or lifetime interview tools?', answer: 'Compare the app price, model and transcription billing, usage limits, platform support, privacy path, cancellation terms, and whether you want a bundled hosted service or provider access you control.' },
-      { question: 'Can a team buy Enterprise support?', answer: 'Yes. Enterprise is for rollout planning, responsible-use policy, security and privacy review, deployment constraints, and custom workflow support.' },
+      { question: 'Can a team buy Enterprise support?', answer: 'Yes. Enterprise includes dedicated rollout planning, compliance guidance, security and privacy review, deployment support, and custom workflows. Contact info@extrabrain.app to start the conversation.' },
     ],
   },
   {
@@ -1000,7 +1002,7 @@ export const marketingPages: MarketingPage[] = [
         title: 'Contact paths',
         items: [
           { title: 'Support', body: `Email ${contactEmail} for help with setup, installation, provider configuration, local transcription, optional Deepgram, on-device AI availability, or troubleshooting.` },
-          { title: 'Enterprise', body: `Email ${contactEmail} for team rollout, responsible-use policy, deployment, privacy, security, provider data-flow review, and workflow support.` },
+          { title: 'Enterprise', body: `Contact ${contactEmail} for team rollout, responsible-use policy, deployment, privacy, security, provider data-flow review, and workflow support.` },
           { title: 'GitHub', body: `Release notes, current Mac downloads, asset metadata, checksums when published, and public release history are published at ${githubUrl} for review.` },
         ],
       },
