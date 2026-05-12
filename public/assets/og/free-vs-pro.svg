@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">ExtraBrain Free vs Pro</title>
+  <desc id="desc">Branded social image for ExtraBrain Free vs Pro.</desc>
+  <rect width="1200" height="630" fill="#f3f7f6"/>
+  <rect x="72" y="72" width="1056" height="486" rx="32" fill="#ffffff" stroke="#cbd8d5" stroke-width="2"/>
+  <circle cx="140" cy="140" r="36" fill="#65d7c7"/>
+  <text x="196" y="151" fill="#121821" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">ExtraBrain</text>
+  <text x="120" y="278" fill="#121821" font-family="Georgia, serif" font-size="76">Free vs Pro</text>
+  <text x="124" y="344" fill="#495461" font-family="Inter, Arial, sans-serif" font-size="30">Features, pricing, provider costs, and workflow controls</text>
+  <text x="124" y="438" fill="#18756d" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Compare custom profiles, summaries, history, and Gemma 4 setup</text>
+</svg>

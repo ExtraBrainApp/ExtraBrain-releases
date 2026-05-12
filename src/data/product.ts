@@ -1,3 +1,5 @@
+import { comparisonMarketingPages } from './comparisons';
+
 export const siteUrl = 'https://extrabrain.app';
 export const githubUrl = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases';
 export const latestReleaseUrl = `${githubUrl}/latest`;
@@ -5,19 +7,23 @@ export const productName = 'ExtraBrain';
 export const brandAliases = ['Extra Brain'];
 export const productCategory = 'Free, local-first desktop AI interview and meeting copilot';
 export const productDescription =
-  'ExtraBrain is a free, local-first desktop AI interview assistant and meeting copilot for Mac with live transcription, screen-aware context, on-device AI where hardware supports it, bring-your-own AI providers, and clear privacy controls. Use it for coding interviews, system design rounds, behavioral interviews, meetings, lectures, and research calls, with Windows and Linux planned.';
+  'ExtraBrain is a free, local-first desktop AI interview assistant and meeting copilot for Mac with live transcription, screen-aware context, local Gemma 4 on-device AI where installed and compatible, bring-your-own AI providers, and clear privacy controls. Use it for coding interviews, system design rounds, behavioral interviews, meetings, lectures, and research calls, with Windows and Linux planned.';
 export const contactEmail = 'info@extrabrain.app';
+export const lemonSqueezyCheckoutLinks = {
+  proMonthlyFounder:
+    'https://extrabrain.lemonsqueezy.com/checkout/buy/f5618066-dfaf-419e-ac49-a05ffa5e30d9?checkout%5Bdiscount_code%5D=EARLYBIRD&prefill=earlybird',
+} as const;
 
 export const productFacts = [
   'Brand: ExtraBrain is the official product name. Extra Brain is a common spaced search alias for the same app.',
   'Platform: Available for Mac today, including Apple Silicon and Intel Macs. Windows and Linux are planned.',
   'Category: AI interview assistant, AI meeting copilot, live desktop AI assistant.',
   'Use cases: coding interviews, system design interviews, behavioral interviews, product interviews, customer calls, lectures, and research meetings.',
-  'Core model: free desktop app with on-device AI where compatible hardware supports it, plus bring-your-own provider setup.',
+  'Core model: free desktop app with local Gemma 4 on-device AI where installed and compatible, plus bring-your-own provider setup. ExtraBrain Pro is $9.99/month regular ($6.99 Founder pricing), $79/year, or $149 Lifetime (launch price).',
   'Transcription: local NVIDIA Parakeet and optional Deepgram.',
-  'Providers: on-device AI, Anthropic, OpenAI, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription.',
-  'Local AI availability: on-device AI requires compatible hardware and may not be available on every Mac or customer environment.',
-  'Privacy: with on-device AI and local transcription, model and transcription requests can stay on the Mac. Prompts, transcript text, screenshots, or audio may leave the device when sent to selected external providers.',
+  'Providers: Google Gemma 4 local AI, Anthropic, OpenAI, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription.',
+  'Local Gemma 4 availability: local Gemma 4 requires installation and compatible hardware and may not be available on every Mac or customer environment.',
+  'Privacy: with local Gemma 4 and local Parakeet transcription, transcription and AI prompts can stay local. Prompts, transcript text, screenshots, or audio may leave the device when sent to selected external providers.',
   'Screen sharing: ExtraBrain is designed to stay hidden from screen sharing and screen recording on major meeting tools, while users remain responsible for following all rules.',
   'Responsible use: users must follow interview, workplace, employer, school, and platform rules.',
 ];
@@ -26,6 +32,7 @@ export const essentialPages = [
   { title: 'Overview', href: '/' },
   { title: 'Download', href: '/download/' },
   { title: 'Pricing', href: '/pricing/' },
+  { title: 'Free vs Pro', href: '/pricing/free-vs-pro/' },
   { title: 'Privacy', href: '/privacy/' },
   { title: 'Getting started', href: '/help/getting-started/' },
   { title: 'Installation', href: '/help/installation/' },
@@ -38,10 +45,10 @@ export const pricingTiers = [
   {
     name: 'Free',
     price: 'Always free',
-    summary: 'Core desktop app, live workflow support, on-device AI where supported, and BYO provider setup.',
+    summary: 'Core desktop app, live workflow support, local Gemma 4 on-device AI where installed and compatible, and BYO provider setup.',
     features: [
       'Download and use the Mac app',
-      'Use on-device AI on compatible hardware, or connect OpenAI, Anthropic, Claude, Codex, or compatible provider access',
+      'Use local Gemma 4 on-device AI where installed and compatible, or connect OpenAI, Anthropic, Claude, Codex, or compatible provider access',
       'Local-first transcripts, prompts, screenshots, notes, and session context',
       'Local Parakeet transcription and optional Deepgram setup',
       'Help center, setup, privacy, and troubleshooting guides',
@@ -49,14 +56,31 @@ export const pricingTiers = [
   },
   {
     name: 'Pro',
-    price: 'Workflow upgrade',
-    summary: 'More control for repeated interview, meeting, and research workflows.',
+    price: 'From $6.99/mo',
+    summary: 'Advanced controls for repeated interview, meeting, and research workflows. Pick the billing option that fits your timeline.',
+    primaryCta: {
+      label: 'Start Pro for $6.99/mo',
+      href: lemonSqueezyCheckoutLinks.proMonthlyFounder,
+    },
+    billingOptions: [
+      {
+        label: 'Monthly',
+        price: '$6.99/mo',
+        originalPrice: '$9.99/mo',
+        badge: 'Founder',
+        note: 'Early-adopter price with code EARLYBIRD applied.',
+      },
+      { label: 'Yearly', price: '$79/yr', note: 'About $6.58/mo. Save 34% vs monthly.' },
+      { label: 'Lifetime', price: '$149', originalPrice: '$179', badge: 'Launch' },
+    ],
     features: [
       'Everything in Free',
-      'Saved prompt presets and custom profiles',
+      'Custom profiles with reusable prompt guidance',
+      'Profile-specific workflow controls for analysis behavior',
       'Richer session history across transcripts, notes, screenshots, and saved facts',
       'Post-session summaries for decisions, risks, follow-ups, and review',
       'Premium model and advanced workflow controls where enabled',
+      'Purchase and activate from Settings -> License inside the app',
     ],
   },
   {
@@ -76,7 +100,7 @@ export const homepageFaq = [
   {
     question: 'What is ExtraBrain?',
     answer:
-      'ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It provides live transcription, screen-aware context, structured prompts, question generation, on-device AI where hardware supports it, and a desktop window designed for private live workflows. It is available for Mac today, with Windows and Linux planned.',
+      'ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It provides live transcription, screen-aware context, structured prompts, question generation, local Gemma 4 on-device AI where installed and compatible, and a desktop window designed for private live workflows. It is available for Mac today, with Windows and Linux planned.',
   },
   {
     question: 'Is ExtraBrain the same as Extra Brain?',
@@ -86,7 +110,7 @@ export const homepageFaq = [
   {
     question: 'Is ExtraBrain free?',
     answer:
-      'Yes. ExtraBrain is free to download and use. Pro adds saved prompt presets, custom profiles, richer session history, post-session summaries, premium model controls where enabled, and advanced workflow tools.',
+      'Yes. ExtraBrain is free to download and use. ExtraBrain Pro starts at $6.99/month (Founder pricing, regular $9.99), with $79/year, and a $149 Lifetime launch option. Pro adds custom profiles, reusable prompt guidance, richer session history, post-session summaries, premium model controls where enabled, and advanced workflow tools.',
   },
   {
     question: 'What platforms does ExtraBrain support?',
@@ -96,22 +120,22 @@ export const homepageFaq = [
   {
     question: 'Which AI providers does ExtraBrain support?',
     answer:
-      'ExtraBrain supports on-device AI on compatible hardware, plus provider access you control: OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription modes.',
+      'ExtraBrain supports Google Gemma 4 local AI where installed and compatible, plus provider access you control: OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription modes.',
   },
   {
     question: 'Can I bring my own OpenAI or Anthropic key?',
     answer:
-      'Yes. ExtraBrain is built around provider access you control. You can use on-device AI where hardware supports it, or connect your own OpenAI, Anthropic, custom OpenAI-compatible endpoint, Claude Subscription, or Codex Subscription setup.',
+      'Yes. ExtraBrain is built around provider access you control. You can use local Gemma 4 where installed and compatible, or connect your own OpenAI, Anthropic, custom OpenAI-compatible endpoint, Claude Subscription, or Codex Subscription setup.',
   },
   {
     question: 'How does transcription work?',
     answer:
-      'ExtraBrain supports local NVIDIA Parakeet transcription and optional Deepgram. Your exact data flow depends on whether you choose local transcription, on-device AI, or external providers.',
+      'ExtraBrain supports local NVIDIA Parakeet transcription and optional Deepgram. Your exact data flow depends on whether you choose local Parakeet transcription, local Gemma 4, or external providers.',
   },
   {
     question: 'Does ExtraBrain collect user data?',
     answer:
-      'ExtraBrain is designed as a local-first app. With on-device AI and local transcription, model and transcription requests can stay on your Mac. Content may leave your device only when you choose optional external providers such as cloud model APIs or Deepgram.',
+      'ExtraBrain is designed as a local-first app. With local Gemma 4 and local Parakeet transcription, transcription and AI prompts can stay on your Mac. Content may leave your device only when you choose optional external providers such as cloud model APIs or Deepgram.',
   },
   {
     question: 'Is using ExtraBrain in interviews allowed or considered cheating?',
@@ -146,14 +170,38 @@ export const homepageFaq = [
   {
     question: 'Can ExtraBrain run without sending content to the cloud?',
     answer:
-      'A fully local posture is possible when local transcription and on-device AI are available on compatible hardware and you do not choose external model or transcription providers. Downloads, updates, website analytics, and external providers use network services.',
+      'A fully local posture is possible when local Parakeet transcription and local Gemma 4 are installed, compatible, and you do not choose external model or transcription providers. Downloads, updates, website analytics, and external providers use network services.',
   },
   {
     question: 'How is ExtraBrain different from InterviewCoder, Cluely, or Final Round AI?',
     answer:
-      'ExtraBrain is local-first, free to start, desktop-native, and built around on-device AI where supported plus provider access you control. It is available for Mac today, with Windows and Linux planned. It emphasizes model choice, data-flow clarity, responsible use, and live interview or meeting context rather than bundled AI credits alone.',
+      'ExtraBrain is local-first, free to start, desktop-native, and built around local Gemma 4 on-device AI where installed and compatible plus provider access you control. It is available for Mac today, with Windows and Linux planned. It emphasizes model choice, data-flow clarity, responsible use, and live interview or meeting context rather than bundled AI credits alone.',
   },
 ];
+
+type FreeVsProComparisonStatus = 'same' | 'pro-unlock' | 'cost-note';
+type FreeVsProComparisonValue = string | string[];
+
+type FreeVsProComparison = {
+  caption: string;
+  plans: Array<{
+    name: string;
+    price: string;
+    summary: string;
+    cta: { label: string; href: string; variant: 'primary' | 'secondary' };
+    highlight?: boolean;
+  }>;
+  groups: Array<{
+    title: string;
+    rows: Array<{
+      label: string;
+      free: FreeVsProComparisonValue;
+      pro: FreeVsProComparisonValue;
+      difference: string;
+      status: FreeVsProComparisonStatus;
+    }>;
+  }>;
+};
 
 export type MarketingPage = {
   slug: string;
@@ -162,12 +210,20 @@ export type MarketingPage = {
   eyebrow: string;
   h1: string;
   lead: string;
+  ogImage?: string;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  hideSummary?: boolean;
   sections: Array<{
     title: string;
     body?: string;
-    items?: Array<{ title: string; body: string }>;
+    items?: Array<{ title: string; body: string; href?: string }>;
+    freeVsProComparison?: FreeVsProComparison;
+    table?: {
+      columns: string[];
+      rows: Array<{ label: string; cells: string[] }>;
+    };
+    media?: Array<{ src: string; alt: string; caption?: string; width?: number; height?: number }>;
   }>;
   faq?: Array<{ question: string; answer: string }>;
   schemaType?: 'SoftwareApplication' | 'FAQPage' | 'HowTo' | 'Article';
@@ -178,7 +234,7 @@ export type MarketingPage = {
 
 const defaultCta = { label: 'Download for Mac', href: '/download/' };
 
-export const marketingPages: MarketingPage[] = [
+const baseMarketingPages: MarketingPage[] = [
   {
     slug: 'download',
     title: 'Download ExtraBrain for macOS',
@@ -197,8 +253,8 @@ export const marketingPages: MarketingPage[] = [
         items: [
           { title: 'Operating system', body: 'macOS on Apple Silicon and Intel Macs.' },
           { title: 'Planned platforms', body: 'Windows and Linux are planned, not current release targets.' },
-          { title: 'AI options', body: 'Use on-device AI on compatible hardware, or bring OpenAI, Anthropic, Claude Subscription, Codex Subscription, or custom OpenAI-compatible access.' },
-          { title: 'Best first test', body: 'Run a short rehearsal after installation to confirm window behavior, microphone access, transcription, local AI availability, and provider routing.' },
+          { title: 'AI options', body: 'Use local Gemma 4 on-device AI where installed and compatible, or bring OpenAI, Anthropic, Claude Subscription, Codex Subscription, or custom OpenAI-compatible access.' },
+          { title: 'Best first test', body: 'Run a short rehearsal after installation to confirm window behavior, microphone access, transcription, Gemma 4 availability, and provider routing.' },
         ],
       },
       {
@@ -221,21 +277,23 @@ export const marketingPages: MarketingPage[] = [
       { question: 'Where is the latest ExtraBrain download?', answer: 'The canonical download link is /download/, which points to the latest GitHub release for the macOS app.' },
       { question: 'Does ExtraBrain support Intel Macs?', answer: 'Yes. ExtraBrain supports macOS on Apple Silicon and Intel Macs.' },
       { question: 'Is ExtraBrain available for Windows or Linux?', answer: 'Not today. ExtraBrain is available for Mac now, and Windows and Linux are planned future platforms.' },
-      { question: 'What should I test after downloading ExtraBrain?', answer: 'Launch the app, confirm settings and permissions, test transcription, verify local AI or provider access, and rehearse before using it in an interview or meeting.' },
+      { question: 'What should I test after downloading ExtraBrain?', answer: 'Launch the app, confirm settings and permissions, test transcription, verify local Gemma 4 or provider access, and rehearse before using it in an interview or meeting.' },
       { question: 'Is the app notarized?', answer: 'Do not assume notarization from this page alone. Check the current release notes when signing or notarization status matters.' },
     ],
   },
   {
     slug: 'pricing',
-    title: 'ExtraBrain Pricing for AI Interviews',
+    title: 'ExtraBrain Pricing: Free & Pro Plans for Mac AI Copilot',
     description:
-      'Understand ExtraBrain Free, Pro, and Enterprise pricing, including on-device AI, BYO provider costs, external AI billing, and free Mac app access.',
+      'ExtraBrain pricing: Free, Pro at $9.99/month ($6.99 Founder), $79/year, $149 Lifetime, BYO provider costs, and Enterprise.',
     eyebrow: 'Pricing',
-    h1: 'Free to start. Choose local AI or provider access you control.',
+    h1: 'Free to start. Pro from $6.99/month, $79/year, or $149 lifetime.',
     lead:
-      'ExtraBrain separates the desktop app from model usage. The core Mac app is free today, Pro adds workflow controls, on-device AI can run locally on compatible hardware, and external AI usage is billed by the providers you choose.',
+      'ExtraBrain separates app features from model usage. The core Mac app is free, Pro unlocks advanced workflow controls, and external AI usage is billed by the providers you choose.',
+    ogImage: '/assets/og/pricing.svg',
     primaryCta: defaultCta,
-    secondaryCta: { label: 'Read billing notes', href: '/help/billing-pro-plan/' },
+    secondaryCta: { label: 'Compare Free and Pro', href: '/pricing/free-vs-pro/' },
+    hideSummary: true,
     sections: [
       {
         title: 'Plans',
@@ -245,9 +303,24 @@ export const marketingPages: MarketingPage[] = [
         })),
       },
       {
-        title: 'Local AI and provider costs',
+        title: 'What Pro unlocks',
         body:
-          'On-device AI requires compatible hardware and may not be available in every customer environment. OpenAI, Anthropic, Deepgram, Claude, Codex, or compatible-provider costs are managed through those providers. ExtraBrain does not turn provider usage into bundled AI credits unless a future product plan says so explicitly.',
+          'ExtraBrain Pro is for users who repeat high-stakes workflows and want more control over how the app responds before, during, and after a session.',
+        items: [
+          { title: 'Custom profiles', body: 'Save reusable prompt guidance for a specific interview style, meeting format, research workflow, or response preference.' },
+          { title: 'Profile workflow controls', body: 'Configure profile behavior such as expanding the window on analysis, analyzing after a region screenshot, and using fuller session context.' },
+          { title: 'Richer follow-through', body: 'Use advanced history, summaries, saved facts, and review-oriented controls where the current release exposes them.' },
+          { title: 'In-app license flow', body: 'Open Settings -> License in ExtraBrain to purchase, activate, view, or deactivate Pro.' },
+        ],
+      },
+      {
+        title: 'Gemma 4 and provider costs',
+        body: 'How model and transcription costs work alongside the ExtraBrain app and Pro license.',
+        items: [
+          { title: 'Local Gemma 4', body: 'Runs locally when Gemma 4 is installed and compatible with the Mac. No external model provider fees apply to local Gemma 4 requests.' },
+          { title: 'External providers', body: 'OpenAI, Anthropic, Deepgram, Claude, Codex, and compatible-provider usage is billed directly by those providers under your own account.' },
+          { title: 'No bundled credits', body: 'ExtraBrain Pro is an app license, not an AI credit pack. It does not include or replace external provider billing.' },
+        ],
       },
       {
         title: 'What to compare against paid interview assistants',
@@ -260,39 +333,205 @@ export const marketingPages: MarketingPage[] = [
       {
         title: 'How to choose a plan',
         items: [
-          { title: 'Choose Free', body: 'Use Free when you want the Mac app, live interview and meeting support, local transcription, on-device AI where supported, and BYO provider setup.' },
-          { title: 'Choose Pro', body: 'Use Pro when repeated workflows need saved prompt presets, custom profiles, richer session history, post-session summaries, and advanced model controls where enabled.' },
+          { title: 'Choose Free', body: 'Use Free when you want the Mac app, live interview and meeting support, local Parakeet transcription, local Gemma 4 where installed and compatible, and BYO provider setup.' },
+          { title: 'Choose Pro', body: 'Use Pro when repeated workflows need custom profiles, reusable prompt guidance, richer session context and history, post-session summaries, and advanced model controls where enabled.' },
           { title: 'Choose Enterprise', body: 'Use Enterprise when a team needs rollout planning, policy review, security input, privacy requirements, deployment support, or custom workflow guidance.' },
         ],
       },
     ],
     faq: [
       { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac product is free to download and use today.' },
-      { question: 'What does Pro add?', answer: 'Pro adds saved prompt presets, custom profiles, richer history, summaries, premium model controls where enabled, and advanced workflow controls.' },
-      { question: 'Do I still pay my AI provider?', answer: 'Only when you use an external provider. On-device AI runs locally on compatible hardware, while provider usage remains separate from ExtraBrain pricing.' },
+      { question: 'What does ExtraBrain Pro cost?', answer: 'ExtraBrain Pro is $9.99/month regular with $6.99/month Founder pricing for early users, $79/year, or $149 Lifetime (launch price).' },
+      { question: 'What does ExtraBrain Pro include?', answer: 'Pro adds custom profiles, reusable prompt guidance, profile-specific workflow controls, richer history, summaries, premium model controls where enabled, and advanced workflow controls.' },
+      { question: 'Where do I buy ExtraBrain Pro?', answer: 'Open Settings -> License inside the ExtraBrain app to purchase, activate, view, or deactivate Pro.' },
+      { question: 'Do I still pay my AI provider?', answer: 'Only when you use an external provider. Local Gemma 4 runs locally when installed and compatible, while provider usage remains separate from ExtraBrain pricing.' },
       { question: 'Does ExtraBrain include bundled AI credits?', answer: 'No. ExtraBrain separates app features from external model usage unless a future plan explicitly says otherwise.' },
       { question: 'How should I compare ExtraBrain with monthly or lifetime interview tools?', answer: 'Compare the app price, model and transcription billing, usage limits, platform support, privacy path, cancellation terms, and whether you want a bundled hosted service or provider access you control.' },
       { question: 'Can a team buy Enterprise support?', answer: 'Yes. Enterprise is for rollout planning, responsible-use policy, security and privacy review, deployment constraints, and custom workflow support.' },
     ],
   },
   {
+    slug: 'pricing/free-vs-pro',
+    title: 'ExtraBrain Free vs Pro: Features, Pricing & Provider Costs',
+    description:
+      'Compare ExtraBrain Free and Pro for custom profiles, workflow controls, session context, summaries, screenshots, provider costs, and licensing.',
+    eyebrow: 'Free vs Pro',
+    h1: 'ExtraBrain vs ExtraBrain Pro.',
+    lead:
+      'ExtraBrain Free gives you the core Mac live assistant. ExtraBrain Pro adds advanced workflow controls for people who reuse profiles, session context, summaries, and premium controls across repeated interviews, meetings, and research calls.',
+    ogImage: '/assets/og/free-vs-pro.svg',
+    primaryCta: { label: 'Download Free', href: '/download/' },
+    secondaryCta: { label: 'Open Settings -> License', href: '/help/billing-pro/activate-license/' },
+    hideSummary: true,
+    sections: [
+      {
+        title: 'Plan comparison',
+        body:
+          'Start with the upgrades, then confirm what stays the same. ExtraBrain Pro changes app workflow controls; AI provider usage remains separate for both plans.',
+        freeVsProComparison: {
+          caption: 'ExtraBrain Free and ExtraBrain Pro plan comparison',
+          plans: [
+            {
+              name: 'Free',
+              price: '$0',
+              summary: 'Best for trying the core Mac live assistant with built-in profiles and your own provider setup.',
+              cta: { label: 'Download Free', href: '/download/', variant: 'secondary' },
+            },
+            {
+              name: 'ExtraBrain Pro',
+              price: 'From $6.99/mo',
+              summary: 'Best for repeated interviews, meetings, and research workflows that need reusable controls.',
+              cta: { label: 'Start Pro', href: lemonSqueezyCheckoutLinks.proMonthlyFounder, variant: 'primary' },
+              highlight: true,
+            },
+          ],
+          groups: [
+            {
+              title: 'Pro unlocks',
+              rows: [
+                {
+                  label: 'Custom profiles',
+                  free: 'Not included',
+                  pro: 'Reusable prompt profiles',
+                  difference: 'Upgrade when you need saved guidance for a specific role, interview loop, meeting format, or response style.',
+                  status: 'pro-unlock',
+                },
+                {
+                  label: 'Workflow controls',
+                  free: 'Built-in defaults',
+                  pro: 'Per-profile behavior',
+                  difference: 'Pro lets custom profiles control analysis behavior, screenshot follow-up, and context use.',
+                  status: 'pro-unlock',
+                },
+                {
+                  label: 'Session review',
+                  free: 'Standard local history',
+                  pro: 'Richer context and summaries',
+                  difference: 'Pro is better when repeated sessions need saved facts, summaries, and review controls.',
+                  status: 'pro-unlock',
+                },
+                {
+                  label: 'Premium controls',
+                  free: 'Core controls',
+                  pro: 'Advanced controls where enabled',
+                  difference: 'Pro receives premium workflow and model controls as they ship in the app.',
+                  status: 'pro-unlock',
+                },
+              ],
+            },
+            {
+              title: 'Included in both',
+              rows: [
+                {
+                  label: 'Core Mac app',
+                  free: 'Included',
+                  pro: 'Included',
+                  difference: 'Same desktop app foundation for live interviews, meetings, lectures, and research calls.',
+                  status: 'same',
+                },
+                {
+                  label: 'Live transcription and analysis',
+                  free: 'Local or configured providers',
+                  pro: 'Local or configured providers',
+                  difference: 'Same provider choice and local-first workflow model.',
+                  status: 'same',
+                },
+                {
+                  label: 'Built-in profiles',
+                  free: 'Assistant, Coding, System Design, Behavioral, Meeting',
+                  pro: 'Assistant, Coding, System Design, Behavioral, Meeting',
+                  difference: 'Same starter profile set for common live workflows.',
+                  status: 'same',
+                },
+              ],
+            },
+            {
+              title: 'Costs and setup',
+              rows: [
+                {
+                  label: 'App price',
+                  free: '$0',
+                  pro: ['Founder monthly: $6.99/mo', 'Yearly: $79/yr', 'Lifetime: $149'],
+                  difference: 'Pro adds app workflow features, not bundled AI credits.',
+                  status: 'cost-note',
+                },
+                {
+                  label: 'Provider costs',
+                  free: 'Separate',
+                  pro: 'Separate',
+                  difference: 'OpenAI, Anthropic, Deepgram, Claude, Codex, or custom provider billing remains separate.',
+                  status: 'cost-note',
+                },
+                {
+                  label: 'Purchase path',
+                  free: 'No purchase',
+                  pro: 'Settings -> License or checkout',
+                  difference: 'Use Pro only when workflow controls save meaningful setup and review time.',
+                  status: 'cost-note',
+                },
+              ],
+            },
+          ],
+        },
+      },
+      {
+        title: 'What Free includes',
+        items: [
+          { title: 'Core desktop workflow', body: 'Download and use the Mac app for live interviews, meetings, lectures, research calls, and technical discussions.' },
+          { title: 'Provider choice', body: 'Use local Gemma 4 on-device AI where installed and compatible, or connect OpenAI, Anthropic, Claude, Codex, Deepgram, or compatible provider access.' },
+          { title: 'Built-in profiles', body: 'Use Assistant, Coding, System Design, Behavioral, and Meeting profiles for common live workflows.' },
+          { title: 'Local-first history', body: 'Keep local transcripts, screenshots, notes, analyses, and saved facts on your Mac unless you delete them or send content to a selected provider.' },
+        ],
+        media: [
+          { src: '/assets/screenshots/help/dark/settings-profiles.png', alt: 'ExtraBrain profiles settings showing built-in profile controls', caption: 'Free includes the built-in profile system for common workflows.' },
+          { src: '/assets/screenshots/help/dark/settings-sessions.png', alt: 'ExtraBrain settings sessions tab showing local session history controls', caption: 'Session history stays local and can be reviewed or deleted from Settings.' },
+        ],
+      },
+      {
+        title: 'What Pro adds',
+        items: [
+          { title: 'Custom profiles', body: 'Save reusable prompt guidance for a specific role, interview loop, meeting format, study workflow, or response style.' },
+          { title: 'Workflow behavior per profile', body: 'Control whether a custom profile expands the window on analysis, starts analysis after a region screenshot, or uses fuller session context.' },
+          { title: 'Richer follow-through', body: 'Use advanced history, post-session summaries, saved facts, review controls, and premium model controls where enabled by the current release.' },
+          { title: 'Simple license management', body: 'Purchase, activate, view status, and deactivate Pro from Settings -> License inside the app.' },
+        ],
+        media: [
+          { src: '/assets/screenshots/help/dark/settings-custom-profiles.png', alt: 'ExtraBrain custom profile controls in Settings', caption: 'Pro unlocks custom profiles with reusable prompt guidance and per-profile behavior.' },
+          { src: '/assets/screenshots/help/dark/settings-license.png', alt: 'ExtraBrain license settings tab for Pro activation', caption: 'Pro purchase and activation happen in Settings -> License.' },
+        ],
+      },
+      {
+        title: 'Provider billing stays separate',
+        body:
+          'ExtraBrain Pro changes app workflow features, not your external provider billing. OpenAI, Anthropic, Deepgram, Claude, Codex, or custom provider costs, quotas, retention, and model access remain governed by those provider accounts.',
+      },
+    ],
+    faq: [
+      { question: 'Do I need Pro to use ExtraBrain?', answer: 'No. The core Mac app is free to download and use.' },
+      { question: 'How much is ExtraBrain Pro?', answer: 'ExtraBrain Pro is $9.99/month regular with $6.99/month Founder pricing for early users, $79/year, or $149 Lifetime (launch price).' },
+      { question: 'What is the biggest reason to upgrade?', answer: 'Upgrade when you need custom profiles, reusable prompt guidance, profile-specific workflow controls, richer session context, summaries, and premium controls where enabled.' },
+      { question: 'Where do I buy Pro?', answer: 'Open Settings -> License inside the ExtraBrain app to purchase, activate, view, or deactivate Pro.' },
+      { question: 'Does Pro include AI credits?', answer: 'No. External AI and transcription provider usage remains separate from ExtraBrain Pro.' },
+    ],
+  },
+  {
     slug: 'privacy',
     title: 'ExtraBrain Privacy and Data Flow',
     description:
-      'How ExtraBrain handles local storage, on-device AI, local transcription, screenshots, prompts, external providers, Deepgram, API keys, and privacy controls.',
+      'How ExtraBrain handles local storage, local Gemma 4, local Parakeet transcription, screenshots, prompts, external providers, Deepgram, API keys, and privacy controls.',
     eyebrow: 'Privacy',
     h1: 'Fully local when your setup stays local.',
     lead:
-      'ExtraBrain can keep model and transcription requests on your Mac when you use on-device AI and local transcription. External model or transcription providers receive only the content required for requests you choose to send.',
+      'ExtraBrain can keep transcription and AI prompts on your Mac when you use local Parakeet transcription plus local Gemma 4. External model or transcription providers receive only the content required for requests you choose to send.',
     primaryCta: { label: 'Read help privacy guide', href: '/help/privacy-data-handling/' },
-    secondaryCta: { label: 'Review providers', href: '/providers/' },
+    secondaryCta: { label: 'Review data flow', href: '/data-flow/' },
     sections: [
       {
         title: 'What stays local by default',
         items: [
           { title: 'Desktop app state', body: 'The app runs on your Mac rather than a hosted browser dashboard.' },
-          { title: 'Fully local mode', body: 'With on-device AI and local transcription, transcripts, prompts, screenshots, notes, and saved facts can stay on your Mac.' },
-          { title: 'Hardware requirement', body: 'On-device AI requires compatible hardware and may not be available on every Mac or customer environment.' },
+          { title: 'Fully local mode', body: 'With local Gemma 4 and local Parakeet transcription, transcripts, prompts, screenshots, notes, and saved facts can stay on your Mac.' },
+          { title: 'Hardware requirement', body: 'Local Gemma 4 requires installation and compatible hardware and may not be available on every Mac or customer environment.' },
           { title: 'Credentials', body: 'Provider credentials should stay in the app-controlled storage path and should be rotated if a device or account is compromised.' },
         ],
       },
@@ -302,6 +541,7 @@ export const marketingPages: MarketingPage[] = [
           { title: 'External model requests', body: 'Prompt text, transcript excerpts, screenshots, and context can be sent to OpenAI, Anthropic, Claude, Codex, or a custom endpoint when you ask ExtraBrain to use that provider.' },
           { title: 'Transcription', body: 'Local Parakeet can keep transcription on-device. Optional Deepgram can receive audio or transcription data depending on setup.' },
           { title: 'Analytics', body: 'The public website tracks page and download interactions. The app privacy posture should be reviewed separately from website analytics.' },
+          { title: 'Pricing boundary', body: 'Use the pricing page to separate ExtraBrain app features from external provider billing and retention settings.', href: '/pricing/' },
         ],
       },
       {
@@ -320,7 +560,7 @@ export const marketingPages: MarketingPage[] = [
       {
         title: 'Privacy checklist before a sensitive session',
         items: [
-          { title: 'Pick the data path', body: 'Decide whether the session should use on-device AI, local transcription, external model providers, optional Deepgram, or a mixed setup.' },
+          { title: 'Pick the data path', body: 'Decide whether the session should use local Gemma 4, local Parakeet transcription, external model providers, optional Deepgram, or a mixed setup.' },
           { title: 'Limit context', body: 'Send only the transcript excerpts, screenshots, notes, or prompts that the task requires.' },
           { title: 'Review provider policies', body: 'External model and transcription providers control their own retention, billing, and account settings.' },
           { title: 'Rehearse safely', body: 'Test privacy-sensitive workflows with realistic but non-confidential material before a real interview or meeting.' },
@@ -328,12 +568,12 @@ export const marketingPages: MarketingPage[] = [
       },
     ],
     faq: [
-      { question: 'Is ExtraBrain local-first?', answer: 'Yes. ExtraBrain is a local-first desktop app. With on-device AI and local transcription, requests can stay on your Mac today; external providers receive content only when you choose features that use them.' },
+      { question: 'Is ExtraBrain local-first?', answer: 'Yes. ExtraBrain is a local-first desktop app. With local Gemma 4 and local Parakeet transcription, transcription and AI prompts can stay on your Mac; external providers receive content only when you choose features that use them.' },
       { question: 'Can screenshots leave my device?', answer: 'Yes, if you include screenshots in a provider request. Only send screenshots when the provider and situation are appropriate.' },
-      { question: 'Is on-device AI available to everyone?', answer: 'Not always. On-device AI requires compatible hardware and may not be available on every Mac or customer environment.' },
+      { question: 'Is local Gemma 4 available to everyone?', answer: 'Not always. Local Gemma 4 requires installation and compatible hardware and may not be available on every Mac or customer environment.' },
       { question: 'Can I use local transcription?', answer: 'Yes. ExtraBrain supports local NVIDIA Parakeet transcription, with optional Deepgram available when configured.' },
       { question: 'Can API keys leave my control?', answer: 'Provider credentials should stay in app-controlled storage. Rotate or revoke keys if a device, account, or provider credential may have been exposed.' },
-      { question: 'What is the safest ExtraBrain setup?', answer: 'The strictest posture is local transcription plus on-device AI on compatible hardware, with no external provider requests for sensitive content.' },
+      { question: 'What is the safest ExtraBrain setup?', answer: 'The strictest posture is local Parakeet transcription plus local Gemma 4 where installed and compatible, with no external provider requests for sensitive content.' },
       { question: 'How is ExtraBrain different from cloud meeting agents?', answer: 'ExtraBrain runs as a desktop app and can keep transcription and model requests local when your setup is fully local. Cloud meeting agents may join meetings, store transcripts in a vendor workspace, or process content through vendor infrastructure.' },
     ],
   },
@@ -514,7 +754,7 @@ export const marketingPages: MarketingPage[] = [
         title: 'Desktop app versus meeting agent',
         items: [
           { title: 'Participant list', body: 'ExtraBrain does not join the meeting as another attendee. This is different from notetakers that join Zoom, Google Meet, or Teams as a bot.' },
-          { title: 'Local mode', body: 'Use local transcription and on-device AI where compatible hardware supports it when the meeting data path should stay on the Mac.' },
+          { title: 'Local mode', body: 'Use local Parakeet transcription and local Gemma 4 on-device AI where installed and compatible when the meeting data path should stay on the Mac.' },
           { title: 'Collaboration tradeoff', body: 'A bot-based meeting agent can be better for shared team workspaces, automatic distribution, or admin-managed archives. ExtraBrain is built for a user-controlled desktop workflow.' },
         ],
       },
@@ -530,11 +770,11 @@ export const marketingPages: MarketingPage[] = [
     slug: 'features/local-transcription',
     title: 'Local Transcription for ExtraBrain',
     description:
-      'Use ExtraBrain local NVIDIA Parakeet transcription, on-device AI where supported, and optional Deepgram for interviews and meetings.',
+      'Use ExtraBrain local NVIDIA Parakeet transcription, local Gemma 4 where installed and compatible, and optional Deepgram for interviews and meetings.',
     eyebrow: 'Feature',
     h1: 'Local transcription when privacy matters.',
     lead:
-      'ExtraBrain supports local NVIDIA Parakeet transcription for on-device workflows, on-device AI where compatible hardware supports it, and optional Deepgram when you choose cloud transcription.',
+      'ExtraBrain supports local NVIDIA Parakeet transcription for on-device workflows, local Gemma 4 on-device AI where installed and compatible, and optional Deepgram when you choose cloud transcription.',
     primaryCta: defaultCta,
     secondaryCta: { label: 'Read privacy details', href: '/privacy/' },
     sections: [
@@ -542,9 +782,9 @@ export const marketingPages: MarketingPage[] = [
         title: 'Transcription choices',
         items: [
           { title: 'Local Parakeet', body: 'Use local transcription when you want the strictest default data-flow posture.' },
-          { title: 'On-device AI', body: 'Use on-device AI on compatible hardware when model requests should stay local.' },
+          { title: 'Local Gemma 4', body: 'Use local Gemma 4 where installed and compatible when model requests should stay local.' },
           { title: 'Optional Deepgram', body: 'Use Deepgram when cloud transcription quality, language support, or workflow needs make sense for the session.' },
-          { title: 'Provider-aware prompts', body: 'Transcript text can stay local with on-device AI or be sent to the configured model provider when you request external AI help.' },
+          { title: 'Provider-aware prompts', body: 'Transcript text can stay local with local Gemma 4 or be sent to the configured model provider when you request external AI help.' },
         ],
       },
       {
@@ -567,26 +807,26 @@ export const marketingPages: MarketingPage[] = [
     faq: [
       { question: 'Does ExtraBrain support local transcription?', answer: 'Yes. ExtraBrain supports local NVIDIA Parakeet transcription for workflows where transcription should stay on the Mac.' },
       { question: 'Can I use Deepgram with ExtraBrain?', answer: 'Yes. Deepgram is optional and should be used only when its cloud transcription path fits your session and privacy requirements.' },
-      { question: 'Does transcript text always stay local?', answer: 'Transcript text can stay local with local transcription and on-device AI, but it can be sent to external providers when you choose provider-backed requests.' },
-      { question: 'Is local transcription the same as a fully local AI workflow?', answer: 'No. Local transcription only covers the speech-to-text path. A fully local posture also requires on-device AI on compatible hardware and no external provider requests.' },
+      { question: 'Does transcript text always stay local?', answer: 'Transcript text can stay local with local Parakeet transcription and local Gemma 4, but it can be sent to external providers when you choose provider-backed requests.' },
+      { question: 'Is local transcription the same as a fully local AI workflow?', answer: 'No. Local transcription only covers the speech-to-text path. A fully local posture also requires local Gemma 4 where installed and compatible and no external provider requests.' },
     ],
   },
   {
     slug: 'features/bring-your-own-provider',
     title: 'Bring Your Own AI Provider',
     description:
-      'Use ExtraBrain with on-device AI where hardware supports it, or connect OpenAI, Anthropic, Claude, Codex, or compatible provider access.',
+      'Use ExtraBrain with local Gemma 4 where installed and compatible, or connect OpenAI, Anthropic, Claude, Codex, or compatible provider access.',
     eyebrow: 'Feature',
-    h1: 'Use local AI or provider access you already control.',
+    h1: 'Use local Gemma 4 or provider access you already control.',
     lead:
-      'ExtraBrain supports on-device AI for compatible hardware and BYO provider setup for cloud or subscription modes, so model choice, credentials, cost controls, and retention settings stay under your control.',
+      'ExtraBrain supports local Gemma 4 for compatible hardware and BYO provider setup for cloud or subscription modes, so model choice, credentials, cost controls, and retention settings stay under your control.',
     primaryCta: defaultCta,
-    secondaryCta: { label: 'Set up providers', href: '/help/setup-api-keys/' },
+    secondaryCta: { label: 'Compare app pricing', href: '/pricing/' },
     sections: [
       {
         title: 'Supported provider patterns',
         items: [
-          { title: 'On-device AI', body: 'Run AI locally when compatible hardware is available; this option may not be available for every Mac or customer environment.' },
+          { title: 'Local Gemma 4', body: 'Run AI locally when compatible hardware is available; this option may not be available for every Mac or customer environment.' },
           { title: 'API providers', body: 'Connect OpenAI, Anthropic, or custom OpenAI-compatible endpoints.' },
           { title: 'Subscription modes', body: 'Use Claude Subscription and Codex Subscription modes where configured.' },
           { title: 'Cost control', body: 'Provider usage is governed by your provider account, quota, billing, and retention settings.' },
@@ -597,6 +837,7 @@ export const marketingPages: MarketingPage[] = [
         items: [
           { title: 'Model choice', body: 'Use the model family, subscription mode, or compatible endpoint that fits your interview or meeting workflow.' },
           { title: 'Cost visibility', body: 'Keep external AI billing tied to provider accounts you already manage instead of bundled credits.' },
+          { title: 'Pricing separation', body: 'Review ExtraBrain pricing to compare app workflow controls separately from provider account costs.', href: '/pricing/' },
           { title: 'Operational backup', body: 'Configure a tested fallback so quota, availability, or local hardware limits do not derail a live session.' },
         ],
       },
@@ -604,33 +845,33 @@ export const marketingPages: MarketingPage[] = [
         title: 'Provider model comparison',
         items: [
           { title: 'Bundled AI plans', body: 'Some assistants sell access to selected hosted models inside their own subscription. That can be convenient, but pricing, quotas, and model choice are tied to that vendor.' },
-          { title: 'BYO providers', body: 'ExtraBrain emphasizes provider access you control, including local AI where supported and external accounts or subscriptions when cloud models fit the task.' },
+          { title: 'BYO providers', body: 'ExtraBrain emphasizes provider access you control, including local Gemma 4 where installed and compatible and external accounts or subscriptions when cloud models fit the task.' },
           { title: 'Retention boundaries', body: 'With BYO providers, review your provider account settings directly because retention, logging, training, and billing are governed outside ExtraBrain.' },
         ],
       },
     ],
     faq: [
-      { question: 'What AI providers does ExtraBrain support?', answer: 'ExtraBrain supports on-device AI where hardware supports it, OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription modes.' },
+      { question: 'What AI providers does ExtraBrain support?', answer: 'ExtraBrain supports local Gemma 4 where installed and compatible, OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription modes.' },
       { question: 'Can I bring my own API key?', answer: 'Yes. You can connect provider access you control, including API-key based providers where supported.' },
       { question: 'Does ExtraBrain pay for my model usage?', answer: 'No. External provider usage is governed by your provider account, quota, retention settings, and billing.' },
-      { question: 'Why not use one bundled AI plan?', answer: 'Bundled plans can be simpler, but ExtraBrain is designed for people who want model choice, cost visibility, and direct control over provider accounts or local AI where supported.' },
+      { question: 'Why not use one bundled AI plan?', answer: 'Bundled plans can be simpler, but ExtraBrain is designed for people who want model choice, cost visibility, and direct control over provider accounts or local Gemma 4 where installed and compatible.' },
     ],
   },
   {
     slug: 'compare/cluely',
     title: 'ExtraBrain vs Cluely Comparison',
     description:
-      'Compare ExtraBrain and Cluely for live meetings, screen-share invisibility, on-device AI, BYO providers, local-first desktop workflows, and pricing models.',
+      'Compare ExtraBrain and Cluely for live meetings, screen-share invisibility, local Gemma 4, BYO providers, local-first desktop workflows, and pricing models.',
     eyebrow: 'Comparison',
     h1: 'ExtraBrain vs Cluely.',
     lead:
-      'Cluely publicly positions itself as an undetectable AI for meetings with real-time answers and meeting notes. ExtraBrain focuses on local-first desktop interview and meeting workflows with on-device AI where supported and BYO provider control. ExtraBrain is available for Mac today, with Windows and Linux planned.',
+      'Cluely publicly positions itself as an undetectable AI for meetings with real-time answers and meeting notes. ExtraBrain focuses on local-first desktop interview and meeting workflows with local Gemma 4 where installed and compatible and BYO provider control. ExtraBrain is available for Mac today, with Windows and Linux planned.',
     primaryCta: defaultCta,
     sections: [
       {
         title: 'Choose ExtraBrain when',
         items: [
-          { title: 'Model control matters', body: 'You want on-device AI where compatible hardware supports it, or OpenAI, Anthropic, Claude, Codex, or compatible-provider control instead of bundled AI access.' },
+          { title: 'Model control matters', body: 'You want local Gemma 4 on-device AI where installed and compatible, or OpenAI, Anthropic, Claude, Codex, or compatible-provider control instead of bundled AI access.' },
           { title: 'Interview workflows matter', body: 'You need coding, system design, behavioral, and meeting support in the same local-first desktop app.' },
           { title: 'Data-flow clarity matters', body: 'You want explicit privacy, provider, and local transcription documentation on the first-party site.' },
         ],
@@ -644,7 +885,7 @@ export const marketingPages: MarketingPage[] = [
         title: 'Comparison factors',
         items: [
           { title: 'Workflow scope', body: 'Compare meeting assistance against ExtraBrain workflows for coding, system design, behavioral interviews, research, lectures, and meetings.' },
-          { title: 'Provider model', body: 'Check whether you prefer bundled AI access or on-device AI and provider access you control.' },
+          { title: 'Provider model', body: 'Check whether you prefer bundled AI access or local Gemma 4 and provider access you control.' },
           { title: 'Privacy documentation', body: 'Review what each product says about local processing, external providers, transcripts, screenshots, and meeting data.' },
         ],
       },
@@ -652,7 +893,7 @@ export const marketingPages: MarketingPage[] = [
         title: 'Questions to ask before choosing',
         items: [
           { title: 'Do you need meeting notes, interview help, or both?', body: 'Cluely is publicly framed around meeting assistance and screen-share undetectability. ExtraBrain covers meeting support plus coding, system design, behavioral, lecture, and research workflows.' },
-          { title: 'Who controls model access?', body: 'Review whether you want a vendor-managed model bundle or ExtraBrain provider setup with local AI where supported and external providers you choose.' },
+          { title: 'Who controls model access?', body: 'Review whether you want a vendor-managed model bundle or ExtraBrain provider setup with local Gemma 4 where installed and compatible and external providers you choose.' },
           { title: 'What happens to session content?', body: 'Compare what each product says about meeting audio, transcript text, screenshots, uploaded files, notes, and past-meeting history before using sensitive content.' },
         ],
       },
@@ -662,29 +903,29 @@ export const marketingPages: MarketingPage[] = [
       { label: 'Cluely pricing', href: 'https://cluely.com/pricing' },
     ],
     faq: [
-      { question: 'How is ExtraBrain different from Cluely?', answer: 'ExtraBrain focuses on a local-first Mac desktop workflow with on-device AI where supported, BYO providers, local transcription, and interview plus meeting use cases.' },
+      { question: 'How is ExtraBrain different from Cluely?', answer: 'ExtraBrain focuses on a local-first Mac desktop workflow with local Gemma 4 where installed and compatible, BYO providers, local transcription, and interview plus meeting use cases.' },
       { question: 'Is ExtraBrain only for meetings?', answer: 'No. ExtraBrain supports meetings, coding interviews, system design interviews, behavioral interviews, lectures, customer calls, and research workflows.' },
       { question: 'Which should I choose?', answer: 'Choose based on workflow scope, provider control, pricing model, privacy posture, platform support, and the product experience you want to rely on.' },
-      { question: 'Does ExtraBrain copy Cluely pricing or bundled AI access?', answer: 'No. ExtraBrain currently separates the free Mac app and future workflow upgrades from external provider billing instead of copying a bundled meeting AI subscription model.' },
+      { question: 'Does ExtraBrain copy Cluely pricing or bundled AI access?', answer: 'No. ExtraBrain keeps the core Mac app free, prices Pro at $9.99/month ($6.99 Founder), $79/year, or $149 Lifetime, and separates external provider billing instead of copying a bundled meeting AI subscription model.' },
     ],
   },
   {
     slug: 'compare/interviewcoder',
     title: 'ExtraBrain vs InterviewCoder',
     description:
-      'Compare ExtraBrain and InterviewCoder for coding interviews, undetectability claims, pricing, on-device AI, BYO providers, and local-first desktop workflows.',
+      'Compare ExtraBrain and InterviewCoder for coding interviews, undetectability claims, pricing, local Gemma 4, BYO providers, and local-first desktop workflows.',
     eyebrow: 'Comparison',
     h1: 'ExtraBrain vs InterviewCoder.',
     lead:
-      'InterviewCoder publicly focuses on technical interviews and extensive undetectability features. ExtraBrain focuses on local-first desktop interviews and meetings with on-device AI where supported and provider access you control. ExtraBrain is available for Mac today, with Windows and Linux planned.',
+      'InterviewCoder publicly focuses on technical interviews and extensive undetectability features. ExtraBrain focuses on local-first desktop interviews and meetings with local Gemma 4 where installed and compatible and provider access you control. ExtraBrain is available for Mac today, with Windows and Linux planned.',
     primaryCta: defaultCta,
     sections: [
       {
         title: 'Choose ExtraBrain when',
         items: [
-          { title: 'Free core access matters', body: 'You want a free core app and separate provider billing.' },
+          { title: 'Clear plan pricing matters', body: 'You want a free core app, optional $9.99/month ($6.99 Founder), $79/year, or $149 Lifetime Pro controls, and separate provider billing.' },
           { title: 'Broader workflows matter', body: 'You want coding, system design, behavioral, product, research, lecture, and meeting support.' },
-          { title: 'Model control matters', body: 'You want on-device AI where compatible hardware supports it, or your own OpenAI, Anthropic, Claude, Codex, or compatible provider setup.' },
+          { title: 'Model control matters', body: 'You want local Gemma 4 on-device AI where installed and compatible, or your own OpenAI, Anthropic, Claude, Codex, or compatible provider setup.' },
         ],
       },
       {
@@ -696,7 +937,7 @@ export const marketingPages: MarketingPage[] = [
         title: 'Comparison factors',
         items: [
           { title: 'Interview types', body: 'ExtraBrain covers coding, system design, behavioral, product, meeting, lecture, and research workflows in one desktop app.' },
-          { title: 'Local-first posture', body: 'ExtraBrain emphasizes on-device AI where supported, local transcription, and first-party privacy and data-flow pages.' },
+          { title: 'Local-first posture', body: 'ExtraBrain emphasizes local Gemma 4 where installed and compatible, local transcription, and first-party privacy and data-flow pages.' },
           { title: 'Cost model', body: 'ExtraBrain separates app access from external provider billing instead of assuming one bundled AI plan.' },
         ],
       },
@@ -719,7 +960,7 @@ export const marketingPages: MarketingPage[] = [
       { label: 'Beyz AI homepage', href: 'https://beyz.ai/' },
     ],
     faq: [
-      { question: 'How is ExtraBrain different from InterviewCoder?', answer: 'ExtraBrain is a local-first Mac desktop assistant for interviews and meetings, with on-device AI where supported and BYO provider access you control.' },
+      { question: 'How is ExtraBrain different from InterviewCoder?', answer: 'ExtraBrain is a local-first Mac desktop assistant for interviews and meetings, with local Gemma 4 where installed and compatible and BYO provider access you control.' },
       { question: 'Does ExtraBrain help with coding interviews?', answer: 'Yes. ExtraBrain supports LeetCode-style prompts, HackerRank, CoderPad, Codility, CodeSignal, edge cases, complexity discussion, and follow-up questions.' },
       { question: 'Does ExtraBrain support non-coding workflows?', answer: 'Yes. It also supports system design, behavioral interviews, meetings, lectures, customer calls, and research sessions.' },
       { question: 'What should I compare against InterviewCoder-style tools?', answer: 'Compare coding depth, system design support, data flow, platform claims, pricing, provider control, support for non-coding workflows, and whether live assistance is allowed in your interview.' },
@@ -729,18 +970,18 @@ export const marketingPages: MarketingPage[] = [
     slug: 'compare/final-round-ai',
     title: 'ExtraBrain vs Final Round AI',
     description:
-      'Compare ExtraBrain and Final Round AI for live interview assistance, interview preparation, privacy, on-device AI, BYO providers, and macOS desktop workflows.',
+      'Compare ExtraBrain and Final Round AI for live interview assistance, interview preparation, privacy, local Gemma 4, BYO providers, and macOS desktop workflows.',
     eyebrow: 'Comparison',
     h1: 'ExtraBrain vs Final Round AI.',
     lead:
-      'Final Round AI publicly positions itself around interview preparation and real-time interview help across many roles. ExtraBrain focuses on local-first desktop live workflows with on-device AI where supported and BYO provider control. ExtraBrain is available for Mac today, with Windows and Linux planned.',
+      'Final Round AI publicly positions itself around interview preparation and real-time interview help across many roles. ExtraBrain focuses on local-first desktop live workflows with local Gemma 4 where installed and compatible and BYO provider control. ExtraBrain is available for Mac today, with Windows and Linux planned.',
     primaryCta: defaultCta,
     sections: [
       {
         title: 'Choose ExtraBrain when',
         items: [
           { title: 'Desktop-native control matters', body: 'You want a desktop app with local-first session context and privacy documentation. ExtraBrain is available for Mac today.' },
-          { title: 'Provider choice matters', body: 'You want on-device AI where compatible hardware supports it, or OpenAI, Anthropic, Claude, Codex, or custom provider access you control.' },
+          { title: 'Provider choice matters', body: 'You want local Gemma 4 on-device AI where installed and compatible, or OpenAI, Anthropic, Claude, Codex, or custom provider access you control.' },
           { title: 'Meetings matter too', body: 'You want one assistant for interviews, technical meetings, research calls, and lectures.' },
         ],
       },
@@ -753,7 +994,7 @@ export const marketingPages: MarketingPage[] = [
         title: 'Comparison factors',
         items: [
           { title: 'Live desktop workflow', body: 'ExtraBrain is built around a Mac desktop app for live sessions rather than a broad job-search preparation suite.' },
-          { title: 'Provider choice', body: 'ExtraBrain lets you use on-device AI where supported or connect provider access you control.' },
+          { title: 'Provider choice', body: 'ExtraBrain lets you use local Gemma 4 where installed and compatible or connect provider access you control.' },
           { title: 'Data-flow clarity', body: 'ExtraBrain publishes dedicated privacy, provider, local transcription, and responsible-use pages for people comparing live AI tools.' },
         ],
       },
@@ -772,7 +1013,7 @@ export const marketingPages: MarketingPage[] = [
       { label: 'Final Round AI FAQ', href: 'https://www.finalroundai.com/frequently-asked-questions' },
     ],
     faq: [
-      { question: 'How is ExtraBrain different from Final Round AI?', answer: 'ExtraBrain focuses on local-first desktop live workflows for interviews and meetings, with on-device AI where supported and BYO providers.' },
+      { question: 'How is ExtraBrain different from Final Round AI?', answer: 'ExtraBrain focuses on local-first desktop live workflows for interviews and meetings, with local Gemma 4 where installed and compatible and BYO providers.' },
       { question: 'Is ExtraBrain a full job-search suite?', answer: 'No. ExtraBrain is focused on the live interview and meeting copilot workflow rather than resume, job application, or job-search automation.' },
       { question: 'Can ExtraBrain support interview preparation?', answer: 'Yes. ExtraBrain can help rehearse prompts, organize stories, capture session context, and review notes, but its core experience is the live desktop workflow.' },
       { question: 'Does ExtraBrain include auto-apply or resume-builder features?', answer: 'No. ExtraBrain does not position itself as an auto-apply or resume-builder suite; it focuses on live context, transcription, provider choice, and review workflows.' },
@@ -782,7 +1023,7 @@ export const marketingPages: MarketingPage[] = [
     slug: 'security',
     title: 'ExtraBrain Security and Privacy Controls',
     description:
-      'Security expectations for ExtraBrain: local-first storage, on-device AI, provider credentials, release verification, and safe operating practices.',
+      'Security expectations for ExtraBrain: local-first storage, local Gemma 4, provider credentials, release verification, and safe operating practices.',
     eyebrow: 'Trust',
     h1: 'Security starts with local-first control and clear provider boundaries.',
     lead:
@@ -792,7 +1033,7 @@ export const marketingPages: MarketingPage[] = [
       {
         title: 'Security practices',
         items: [
-          { title: 'Local AI availability', body: 'Use on-device AI when compatible hardware is available and your workflow requires local model requests.' },
+          { title: 'Local Gemma 4 availability', body: 'Use local Gemma 4 when compatible hardware is available and your workflow requires local model requests.' },
           { title: 'Provider keys', body: 'Use dedicated provider keys or accounts where possible for external providers, and rotate them after suspected exposure.' },
           { title: 'Release checks', body: 'Download from the first-party download page or official GitHub releases and review published digests when available.' },
           { title: 'Sensitive sessions', body: 'Avoid sending regulated, confidential, or policy-restricted content to external providers unless you have approval.' },
@@ -808,7 +1049,7 @@ export const marketingPages: MarketingPage[] = [
       },
     ],
     faq: [
-      { question: 'Is ExtraBrain secure by default?', answer: 'ExtraBrain is local-first and can keep requests on-device with local transcription and on-device AI where hardware supports it, but security depends on setup, provider choices, credentials, and session content.' },
+      { question: 'Is ExtraBrain secure by default?', answer: 'ExtraBrain is local-first and can keep requests on-device with local transcription and local Gemma 4 where installed and compatible, but security depends on setup, provider choices, credentials, and session content.' },
       { question: 'How should I handle provider keys?', answer: 'Use provider credentials you control, store them only where the app expects them, and rotate or revoke keys after suspected exposure.' },
       { question: 'Where should I download ExtraBrain?', answer: 'Use the first-party download page or the official GitHub Releases page, then review release notes and published digests when available.' },
     ],
@@ -817,17 +1058,17 @@ export const marketingPages: MarketingPage[] = [
     slug: 'providers',
     title: 'ExtraBrain AI Providers and Local Models',
     description:
-      'How ExtraBrain works with on-device AI, OpenAI, Anthropic, Claude Subscription, Codex Subscription, custom endpoints, Deepgram, and local transcription.',
+      'How ExtraBrain works with local Gemma 4, OpenAI, Anthropic, Claude Subscription, Codex Subscription, custom endpoints, Deepgram, and local transcription.',
     eyebrow: 'Providers',
-    h1: 'Local AI and provider access stay under your control.',
+    h1: 'Gemma 4 and provider access stay under your control.',
     lead:
-      'ExtraBrain is designed for model choice: use on-device AI when compatible hardware supports it, bring your own model access when cloud or subscription modes fit, and keep a backup before high-stakes sessions.',
+      'ExtraBrain is designed for model choice: use local Gemma 4 when compatible hardware supports it, bring your own model access when cloud or subscription modes fit, and keep a backup before high-stakes sessions.',
     primaryCta: { label: 'Setup guide', href: '/help/setup-api-keys/' },
     sections: [
       {
         title: 'Provider options',
         items: [
-          { title: 'On-device AI', body: 'Local AI can keep model requests on your Mac, but it requires compatible hardware and may not be available in every customer environment.' },
+          { title: 'Local Gemma 4', body: 'Local Gemma 4 can keep AI prompts on your Mac, but it requires compatible hardware and may not be available in every customer environment.' },
           { title: 'Model providers', body: 'OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription modes.' },
           { title: 'Transcription providers', body: 'Local NVIDIA Parakeet and optional Deepgram.' },
           { title: 'Retention and billing', body: 'Provider policies, retention settings, and usage costs are controlled through provider accounts.' },
@@ -836,7 +1077,7 @@ export const marketingPages: MarketingPage[] = [
       {
         title: 'Provider setup priorities',
         items: [
-          { title: 'Start local when possible', body: 'Use on-device AI and local transcription when compatible hardware and workflow requirements support it.' },
+          { title: 'Start local when possible', body: 'Use local Gemma 4 and local Parakeet transcription when compatible hardware and workflow requirements support it.' },
           { title: 'Pick a primary provider', body: 'Choose the model or subscription you trust for normal interviews, meetings, lectures, and research calls.' },
           { title: 'Keep a backup', body: 'Configure a second tested provider or local option for quota, outage, or quality issues before high-stakes sessions.' },
         ],
@@ -846,12 +1087,12 @@ export const marketingPages: MarketingPage[] = [
         items: [
           { title: 'Shared team notes', body: 'Choose a hosted meeting agent when automatic team sharing, admin workspaces, CRM sync, or searchable company meeting archives matter more than a local desktop workflow.' },
           { title: 'Managed compliance', body: 'Choose an enterprise meeting platform when your organization requires centralized policy controls, SSO, eDiscovery, legal holds, or admin-managed retention.' },
-          { title: 'Personal control', body: 'Choose ExtraBrain when you want the live workflow on your Mac with explicit provider choices and a clear path to local transcription and on-device AI where supported.' },
+          { title: 'Personal control', body: 'Choose ExtraBrain when you want the live workflow on your Mac with explicit provider choices and a clear path to local transcription and local Gemma 4 where installed and compatible.' },
         ],
       },
     ],
     faq: [
-      { question: 'Which providers can ExtraBrain use?', answer: 'ExtraBrain supports on-device AI where hardware supports it, OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, Codex Subscription, local NVIDIA Parakeet transcription, and optional Deepgram.' },
+      { question: 'Which providers can ExtraBrain use?', answer: 'ExtraBrain supports local Gemma 4 where installed and compatible, OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, Codex Subscription, local NVIDIA Parakeet transcription, and optional Deepgram.' },
       { question: 'Can provider data leave my Mac?', answer: 'Yes. External model providers can receive prompts, transcript excerpts, screenshots, notes, or context you choose to send. Optional Deepgram can receive audio or transcription data depending on setup.' },
       { question: 'Why keep a backup provider?', answer: 'A backup helps when local hardware support, provider quota, network availability, or model behavior changes before a live session.' },
       { question: 'Can ExtraBrain replace Otter or Meetily?', answer: 'Not always. ExtraBrain is a desktop copilot for interviews and meetings. Otter-style tools are meeting workspaces, while Meetily-style tools focus on local meeting transcription; choose based on workflow and data path.' },
@@ -861,27 +1102,27 @@ export const marketingPages: MarketingPage[] = [
     slug: 'data-flow',
     title: 'ExtraBrain Data Flow and Privacy Paths',
     description:
-      'A plain-language data-flow explanation for ExtraBrain local storage, on-device AI, transcription, screenshots, prompts, AI providers, and optional Deepgram.',
+      'A plain-language data-flow explanation for ExtraBrain local storage, local Gemma 4, transcription, screenshots, prompts, AI providers, and optional Deepgram.',
     eyebrow: 'Data flow',
     h1: 'Know which path each piece of session data can take.',
     lead:
-      'Live audio, transcripts, screenshots, prompts, and generated notes have different privacy implications depending on whether you use on-device AI, local transcription, or optional external providers.',
+      'Live audio, transcripts, screenshots, prompts, and generated notes have different privacy implications depending on whether you use local Gemma 4, local Parakeet transcription, or optional external providers.',
     primaryCta: { label: 'Read privacy', href: '/privacy/' },
     sections: [
       {
         title: 'Data-flow map',
         items: [
           { title: 'Audio', body: 'Audio can be transcribed locally with Parakeet or sent to optional Deepgram when configured.' },
-          { title: 'Transcript text', body: 'Transcript text can stay local with on-device AI or be included in model prompts sent to your selected external provider.' },
+          { title: 'Transcript text', body: 'Transcript text can stay local with local Gemma 4 or be included in model prompts sent to your selected external provider.' },
           { title: 'Screenshots', body: 'Screenshots stay local unless you include them in a provider request.' },
-          { title: 'Hardware', body: 'On-device AI requires compatible hardware and may not be available on every Mac or customer environment.' },
+          { title: 'Hardware', body: 'Local Gemma 4 requires installation and compatible hardware and may not be available on every Mac or customer environment.' },
           { title: 'Outputs', body: 'Answers, notes, summaries, and saved facts are stored in the app workflow and can be reviewed after the session.' },
         ],
       },
       {
         title: 'How to choose a data path',
         items: [
-          { title: 'Fully local target', body: 'Use local transcription and on-device AI where compatible hardware supports it when prompts and transcription should stay on the Mac.' },
+          { title: 'Fully local target', body: 'Use local Parakeet transcription and local Gemma 4 on-device AI where installed and compatible when prompts and transcription should stay on the Mac.' },
           { title: 'External model target', body: 'Use OpenAI, Anthropic, Claude, Codex, or a custom-compatible provider when cloud or subscription models fit the session.' },
           { title: 'Cloud transcription target', body: 'Use optional Deepgram only when its transcription path is appropriate for the session content and policies.' },
         ],
@@ -898,7 +1139,7 @@ export const marketingPages: MarketingPage[] = [
     faq: [
       { question: 'What data can ExtraBrain process?', answer: 'Depending on setup, ExtraBrain can use live audio, transcript text, screenshots, prompts, generated notes, saved facts, and provider responses.' },
       { question: 'When does data leave the device?', answer: 'Data can leave the device when you use external model providers or optional Deepgram, and only the content needed for those selected requests should be sent.' },
-      { question: 'Can ExtraBrain run fully local?', answer: 'A fully local posture is possible when local transcription and on-device AI are available on compatible hardware and no external provider requests are used.' },
+      { question: 'Can ExtraBrain run fully local?', answer: 'A fully local posture is possible when local Parakeet transcription and local Gemma 4 are available on compatible hardware and no external provider requests are used.' },
       { question: 'Does local-first mean no network is ever used?', answer: 'No. Local-first describes the app posture and available local paths. Downloads, updates, website analytics, optional cloud transcription, and external model providers use network services.' },
     ],
   },
@@ -949,7 +1190,7 @@ export const marketingPages: MarketingPage[] = [
     slug: 'about',
     title: 'About ExtraBrain AI Copilot',
     description:
-      'ExtraBrain builds a local-first Mac AI interview assistant and meeting copilot with on-device AI where supported, provider choice, and privacy controls.',
+      'ExtraBrain builds a local-first Mac AI interview assistant and meeting copilot with local Gemma 4 where installed and compatible, provider choice, and privacy controls.',
     eyebrow: 'About',
     h1: 'ExtraBrain helps people stay present during high-stakes live work.',
     lead:
@@ -959,7 +1200,7 @@ export const marketingPages: MarketingPage[] = [
       {
         title: 'Product principles',
         items: [
-          { title: 'Local-first', body: 'Keep the live workflow on the user’s Mac whenever possible, including local transcription and on-device AI on compatible hardware.' },
+          { title: 'Local-first', body: 'Keep the live workflow on the user’s Mac whenever possible, including local transcription and local Gemma 4 where installed and compatible.' },
           { title: 'Provider choice', body: 'Let users choose local or external model and transcription providers they trust, including OpenAI, Anthropic, Claude, Codex, Deepgram, and compatible endpoints.' },
           { title: 'Responsible use', body: 'Make policy boundaries, privacy tradeoffs, interview expectations, workplace rules, and external provider data flow visible before high-stakes sessions.' },
         ],
@@ -969,7 +1210,7 @@ export const marketingPages: MarketingPage[] = [
         items: [
           { title: 'High-stakes conversations', body: 'Interviews, meetings, research calls, lectures, customer calls, and technical discussions where context changes quickly and notes alone are not enough.' },
           { title: 'Desktop-native control', body: 'A Mac app workflow for people who want private live support without another participant joining the call, changing meeting dynamics, or relying only on a hosted browser dashboard.' },
-          { title: 'Clear tradeoffs', body: 'Public pages explain local AI availability, provider data flow, pricing boundaries, and responsible-use expectations.' },
+          { title: 'Clear tradeoffs', body: 'Public pages explain local Gemma 4 availability, provider data flow, pricing boundaries, and responsible-use expectations.' },
         ],
       },
     ],
@@ -995,7 +1236,7 @@ export const marketingPages: MarketingPage[] = [
       {
         title: 'Contact paths',
         items: [
-          { title: 'Support', body: `Email ${contactEmail} for help with setup, installation, provider configuration, local transcription, optional Deepgram, on-device AI availability, or troubleshooting.` },
+          { title: 'Support', body: `Email ${contactEmail} for help with setup, installation, provider configuration, local transcription, optional Deepgram, local Gemma 4 availability, or troubleshooting.` },
           { title: 'Enterprise', body: `Email ${contactEmail} for team rollout, responsible-use policy, deployment, privacy, security, provider data-flow review, and workflow support.` },
           { title: 'GitHub', body: `Release notes, current Mac downloads, asset metadata, checksums when published, and public release history are published at ${githubUrl} for review.` },
         ],
@@ -1003,9 +1244,9 @@ export const marketingPages: MarketingPage[] = [
       {
         title: 'What to include',
         items: [
-          { title: 'Support requests', body: 'Include your macOS version, ExtraBrain release, provider setup, transcription mode, whether on-device AI is available, the meeting or interview workflow you are testing, and a concise description of the issue.' },
+          { title: 'Support requests', body: 'Include your macOS version, ExtraBrain release, provider setup, transcription mode, whether local Gemma 4 is available, the meeting or interview workflow you are testing, and a concise description of the issue.' },
           { title: 'Enterprise requests', body: 'Include team size, workflow type, platform requirements, privacy constraints, deployment expectations, procurement needs, and policy questions.' },
-          { title: 'Security or privacy questions', body: 'Describe the data categories, providers, transcription mode, on-device AI expectations, deployment expectations, and review timeline that matter for your environment.' },
+          { title: 'Security or privacy questions', body: 'Describe the data categories, providers, transcription mode, local Gemma 4 expectations, deployment expectations, and review timeline that matter for your environment.' },
         ],
       },
     ],
@@ -1015,6 +1256,13 @@ export const marketingPages: MarketingPage[] = [
       { question: 'Can teams ask for rollout help?', answer: 'Yes. Enterprise conversations can cover team rollout, policy, deployment, privacy, security, and custom workflow needs.' },
     ],
   },
+];
+
+const comparisonSlugs = new Set(comparisonMarketingPages.map((page) => page.slug));
+
+export const marketingPages: MarketingPage[] = [
+  ...baseMarketingPages.filter((page) => !comparisonSlugs.has(page.slug)),
+  ...comparisonMarketingPages,
 ];
 
 export const allPublicRoutes = [
@@ -1055,16 +1303,44 @@ export function softwareApplicationSchema(description = productDescription, down
       absoluteUrl('/assets/screenshots/live_session.png'),
       absoluteUrl('/assets/screenshots/sessions_history.png'),
     ],
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-      availability: 'https://schema.org/InStock',
-    },
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'ExtraBrain Free',
+        price: '0',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: absoluteUrl('/download/'),
+      },
+      {
+        '@type': 'Offer',
+        name: 'ExtraBrain Pro Founder Monthly',
+        price: '6.99',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: lemonSqueezyCheckoutLinks.proMonthlyFounder,
+      },
+      {
+        '@type': 'Offer',
+        name: 'ExtraBrain Pro Yearly',
+        price: '79',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: absoluteUrl('/pricing/'),
+      },
+      {
+        '@type': 'Offer',
+        name: 'ExtraBrain Pro Lifetime',
+        price: '149',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: absoluteUrl('/pricing/'),
+      },
+    ],
     downloadUrl,
     releaseNotes: latestReleaseUrl,
     description,
-    softwareRequirements: 'macOS on Apple Silicon or Intel Mac; on-device AI requires compatible hardware',
+    softwareRequirements: 'macOS on Apple Silicon or Intel Mac; local Gemma 4 requires installation and compatible hardware',
     author: {
       '@type': 'Organization',
       name: productName,
@@ -1075,9 +1351,10 @@ export function softwareApplicationSchema(description = productDescription, down
       'Free, local-first desktop AI interview and meeting copilot',
       'Live coding, system design, behavioral interview, and meeting support',
       'Screen-aware desktop workflow for live calls',
-      'On-device AI where compatible hardware supports it',
+      'Local Gemma 4 on-device AI where installed and compatible',
       'Local NVIDIA Parakeet transcription and optional Deepgram',
       'Bring your own OpenAI, Anthropic, Claude, Codex, or compatible provider access',
+      'ExtraBrain Pro custom profiles and workflow controls',
       'Local-first transcripts, prompts, screenshots, notes, and session history',
       'Available for Mac today, with Windows and Linux planned',
       'Apple Silicon and Intel Mac support',
@@ -1159,7 +1436,7 @@ export function howToInstallSchema() {
       { '@type': 'HowToStep', name: 'Download', text: 'Open the latest ExtraBrain release and download the current macOS build.' },
       { '@type': 'HowToStep', name: 'Install', text: 'Open the installer or app bundle and move ExtraBrain into Applications if instructed.' },
       { '@type': 'HowToStep', name: 'Launch', text: 'Launch ExtraBrain and grant required macOS permissions.' },
-      { '@type': 'HowToStep', name: 'Verify', text: 'Run a short rehearsal to verify audio, transcription, local AI or providers, and window placement.' },
+      { '@type': 'HowToStep', name: 'Verify', text: 'Run a short rehearsal to verify audio, transcription, local Gemma 4 or providers, and window placement.' },
     ],
     tool: [{ '@type': 'HowToTool', name: 'macOS Mac' }],
   };

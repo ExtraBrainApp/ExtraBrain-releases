@@ -1,6 +1,6 @@
 ---
 title: Billing And Pro Plan
-description: Understand ExtraBrain free core access, provider-side costs, Pro license activation, custom profiles, and premium controls.
+description: Understand ExtraBrain free core access, ExtraBrain Pro pricing, provider-side costs, Pro license activation, custom profiles, and premium controls.
 sidebar:
   order: 8
 lastUpdated: 2026-04-29
@@ -15,8 +15,10 @@ ExtraBrain's core Mac app can be used separately from provider billing. External
 ExtraBrain billing separates the Mac app workflow from external model and transcription accounts, so app access, Pro features, and provider usage should be reviewed as separate cost categories.
 
 - The core Mac workflow is free to use.
+- ExtraBrain Pro is $9.99/month regular ($6.99/month Founder pricing for early users), $79/year, or $149 Lifetime (launch price).
+- Purchase, activation, status, and deactivation are handled in **Settings -> License** inside the app.
 - Provider costs are controlled by OpenAI, Anthropic, Deepgram, Claude, Codex, or the custom endpoint you connect.
-- Pro is for workflow controls such as custom profiles and premium controls where enabled.
+- Pro is for workflow controls such as custom profiles, reusable prompt guidance, richer session context, summaries, and premium controls where enabled.
 - Provider retention, logging, quota, and billing do not automatically change when you activate Pro.
 
 ## Free Core Product
@@ -29,9 +31,9 @@ Provider billing is separate from ExtraBrain. When you use a cloud LLM provider,
 
 ## Pro
 
-Pro can unlock workflow features such as custom profiles and premium model controls where enabled. Pro is for users who want repeatable interview, meeting, and analysis workflows with more control over how ExtraBrain behaves.
+Pro is $9.99/month ($6.99 Founder), $79/year, or $149 Lifetime. Pro can unlock workflow features such as custom profiles, reusable prompt guidance, profile-specific behavior, richer session context, post-session summaries, and premium model controls where enabled. Pro is for users who want repeatable interview, meeting, and analysis workflows with more control over how ExtraBrain behaves.
 
-Use [Activate ExtraBrain Pro](/help/billing-pro/activate-license/) for license setup.
+Open **Settings -> License** in the app to purchase, activate, view status, or deactivate Pro. Use [Activate ExtraBrain Pro](/help/billing-pro/activate-license/) for license setup, or compare [ExtraBrain Free and Pro](/pricing/free-vs-pro/).
 
 ## Cost Checklist
 
@@ -40,6 +42,7 @@ Use [Activate ExtraBrain Pro](/help/billing-pro/activate-license/) for license s
 - Deepgram usage is controlled by your Deepgram account.
 - OpenAI, Anthropic, Claude, Codex, and custom endpoint usage is controlled by those providers.
 - Pro unlocks ExtraBrain workflow features; it does not automatically change provider retention or billing.
+- Free vs Pro details are published at [ExtraBrain Free vs Pro](/pricing/free-vs-pro/).
 
 ## Enterprise
 

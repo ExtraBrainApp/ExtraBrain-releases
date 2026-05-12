@@ -3,6 +3,10 @@
 
 # Playwright
 .playwright-mcp/
+.playwright-cli/
+
+# Local agent worktrees
+.claude/
 
 # Astro
 node_modules/

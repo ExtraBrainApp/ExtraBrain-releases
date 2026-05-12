@@ -7,7 +7,7 @@ sidebar:
 lastUpdated: 2026-04-30
 ---
 
-Custom profiles are a Pro feature for saving reusable prompt guidance. Use them when a built-in profile is close but you want more specific behavior.
+Custom profiles are a Pro feature for saving reusable prompt guidance. Use them when a built-in profile is close but you want more specific behavior. ExtraBrain Pro is $9.99/month ($6.99 Founder), $79/year, or $149 Lifetime, with purchase and activation in **Settings -> License**.
 
 ![ExtraBrain profiles settings focused on custom profile Pro controls](/assets/screenshots/help/dark/settings-custom-profiles.png)
 
@@ -46,6 +46,7 @@ Custom profile text is stored in local settings. When you run cloud-provider ana
 ## Related
 
 - [Use ExtraBrain profiles](/help/settings/profiles/)
+- [Compare ExtraBrain Free and Pro](/pricing/free-vs-pro/)
 - [Activate ExtraBrain Pro](/help/billing-pro/activate-license/)
 - [How ExtraBrain handles data](/help/privacy-security/how-extrabrain-handles-data/)
 
