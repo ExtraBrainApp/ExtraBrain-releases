@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">ExtraBrain Comparison Hub</title>
+  <desc id="desc">Branded social image for ExtraBrain AI interview assistant comparisons.</desc>
+  <rect width="1200" height="630" fill="#f5f0e8"/>
+  <rect x="72" y="72" width="1056" height="486" rx="32" fill="#fffaf2" stroke="#d8d0c2" stroke-width="2"/>
+  <circle cx="140" cy="140" r="36" fill="#2f6bff"/>
+  <text x="196" y="151" fill="#121821" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">ExtraBrain</text>
+  <text x="120" y="278" fill="#121821" font-family="Georgia, serif" font-size="72">AI interview assistant comparisons</text>
+  <text x="124" y="344" fill="#495461" font-family="Inter, Arial, sans-serif" font-size="30">Compare pricing, privacy, provider control, and workflow fit</text>
+  <text x="124" y="438" fill="#2f6bff" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Cluely · InterviewCoder · Final Round AI · more</text>
+</svg>

@@ -41,6 +41,7 @@ Auto mode is useful when a session moves between topics. Pinned mode is better w
 
 - [Set up general context and coding language](/help/settings/general-context-language/)
 - [Create custom profiles in ExtraBrain Pro](/help/billing-pro/custom-profiles/)
+- [Compare Free and Pro workflow controls](/pricing/free-vs-pro/)
 - [Use follow-up questions](/help/using-extrabrain/follow-up-questions/)
 
 ## Common Questions

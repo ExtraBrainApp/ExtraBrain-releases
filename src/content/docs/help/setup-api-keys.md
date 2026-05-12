@@ -14,7 +14,7 @@ Use this overview when you need to choose which provider guide matches your setu
 
 An ExtraBrain AI provider is the model path the app uses when it turns transcript, prompt, screenshot, or session context into live analysis.
 
-- ExtraBrain supports 5 model-provider patterns: on-device AI where supported, OpenAI, Anthropic, Claude Subscription, Codex Subscription, and custom OpenAI-compatible endpoints.
+- ExtraBrain supports Google Gemma 4 local AI, OpenAI, Anthropic, Claude Subscription, Codex Subscription, and custom OpenAI-compatible endpoints.
 - API key modes require current provider credentials; subscription modes use the signed-in subscription path supported by the app.
 - Provider validation should be tested once before a live interview, meeting, lecture, or research call.
 - Provider billing, retention, model access, and quota are controlled by the provider account you choose.
@@ -24,6 +24,7 @@ An ExtraBrain AI provider is the model path the app uses when it turns transcrip
 - [Connect Anthropic or Claude Subscription](/help/providers/anthropic-claude-setup/)
 - [Use a custom OpenAI-compatible endpoint](/help/providers/custom-openai-compatible-endpoint/)
 - [Choose Parakeet or Deepgram transcription](/help/providers/transcription-parakeet-vs-deepgram/)
+- [Compare app pricing and provider costs](/pricing/)
 
 ## Provider Setup Checklist
 

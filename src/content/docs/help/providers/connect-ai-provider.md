@@ -38,6 +38,7 @@ When you ask ExtraBrain for analysis with a cloud provider, relevant prompts, tr
 - [Connect OpenAI or Codex Subscription](/help/providers/openai-codex-setup/)
 - [Connect Anthropic or Claude Subscription](/help/providers/anthropic-claude-setup/)
 - [Use a custom OpenAI-compatible endpoint](/help/providers/custom-openai-compatible-endpoint/)
+- [Review ExtraBrain pricing and provider cost separation](/pricing/)
 
 ## AI Provider Questions
 

@@ -15,12 +15,13 @@ This privacy overview points to the current detailed privacy guides and summariz
 ExtraBrain privacy is controlled by the data path you choose for transcription, screenshots, prompts, model requests, provider credentials, and local session history.
 
 - Local Parakeet transcription can keep speech-to-text work on the Mac.
-- On-device AI can keep model requests local when compatible hardware supports that path.
+- Local Gemma 4 can keep AI prompts local when it is installed and compatible with the Mac.
 - External model providers can receive transcript text, screenshot-derived context, prompts, and notes when you ask ExtraBrain to use them.
 - Optional Deepgram can receive audio for cloud transcription when you configure it.
 
 - [How ExtraBrain handles data](/help/privacy-security/how-extrabrain-handles-data/)
 - [Privacy controls](/help/privacy-security/privacy-controls/)
+- [Compare app pricing and provider costs](/pricing/)
 
 ExtraBrain stores settings, API keys, local session history, and local Parakeet transcription data on your Mac. When you use a cloud LLM provider, relevant text, transcript context, screenshot-derived context, and prompts may be sent to the provider you selected. When you choose Deepgram, audio is sent to Deepgram for transcription. Anonymous usage sharing can be disabled.
 

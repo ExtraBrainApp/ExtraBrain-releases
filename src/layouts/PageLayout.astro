@@ -1,14 +1,15 @@
 ---
 import MarketingLayout from './MarketingLayout.astro';
-import FeedbackForm from '../components/FeedbackForm.astro';
 import {
   absoluteUrl,
   breadcrumbSchema,
+  contactEmail,
   faqSchema,
   githubUrl,
   homepageFaq,
   howToInstallSchema,
   organizationSchema,
+  pricingTiers,
   productCategory,
   productName,
   softwareApplicationSchema,
@@ -16,17 +17,121 @@ import {
   websiteSchema,
 } from '../data/product';
 
+const iconSvg = (path: string) =>
+  `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
+
+const pricingItemIcons: Record<string, string> = {
+  // What Pro unlocks
+  'Custom profiles': iconSvg('<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/>'),
+  'Profile workflow controls': iconSvg('<line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="9" cy="6" r="2" fill="currentColor"/><circle cx="15" cy="12" r="2" fill="currentColor"/><circle cx="8" cy="18" r="2" fill="currentColor"/>'),
+  'Richer follow-through': iconSvg('<path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/><path d="M12 7v5l3 2"/>'),
+  'In-app license flow': iconSvg('<circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 8.2-8.2"/><path d="m17 6 3 3"/><path d="m14 9 3 3"/>'),
+  // Gemma 4 and provider costs
+  'Local Gemma 4': iconSvg('<rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v4"/><path d="M15 1v4"/><path d="M9 19v4"/><path d="M15 19v4"/><path d="M1 9h4"/><path d="M1 15h4"/><path d="M19 9h4"/><path d="M19 15h4"/>'),
+  'External providers': iconSvg('<path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.7 1.5A4 4 0 0 0 6.5 19Z"/>'),
+  'No bundled credits': iconSvg('<circle cx="12" cy="12" r="9"/><line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/>'),
+  // What to compare against paid interview assistants
+  'App price versus model price': iconSvg('<path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/>'),
+  'Usage limits': iconSvg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
+  'Data path': iconSvg('<circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/><path d="M15 18H9a3 3 0 0 1-3-3V9"/>'),
+  // How to choose a plan
+  'Choose Free': iconSvg('<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>'),
+  'Choose Pro': iconSvg('<path d="m12 2 2.4 5 5.6.8-4 3.9.9 5.6L12 14.8 7.1 17.3 8 11.7 4 7.8l5.6-.8L12 2Z"/>'),
+  'Choose Enterprise': iconSvg('<path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/><path d="M3 21h18"/>'),
+  // Free vs Pro supporting cards
+  'Core desktop workflow': iconSvg('<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/>'),
+  'Provider choice': iconSvg('<path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.7 1.5A4 4 0 0 0 6.5 19Z"/><path d="M9 15h6"/><path d="m12 12 3 3-3 3"/>'),
+  'Built-in profiles': iconSvg('<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8"/><path d="M8 13h6"/><path d="M8 17h4"/>'),
+  'Local-first history': iconSvg('<path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/><path d="M12 8v5l3 2"/>'),
+  'Workflow behavior per profile': iconSvg('<line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="9" cy="6" r="2" fill="currentColor"/><circle cx="15" cy="12" r="2" fill="currentColor"/><circle cx="8" cy="18" r="2" fill="currentColor"/>'),
+  'Simple license management': iconSvg('<circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 8.2-8.2"/><path d="m17 6 3 3"/><path d="m14 9 3 3"/>'),
+};
+
+const pricingSectionAccents: Record<string, { accent: string }> = {
+  'What Pro unlocks': { accent: 'iris' },
+  'Gemma 4 and provider costs': { accent: 'teal' },
+  'What to compare against paid interview assistants': { accent: 'iris' },
+  'How to choose a plan': { accent: 'mint' },
+  'What Free includes': { accent: 'mint' },
+  'What Pro adds': { accent: 'iris' },
+};
+
+const colorizePricingH1 = (h1: string) =>
+  h1.replace(/\$\d+(?:\.\d+)?(?:\/month|\/year)?/g, (match) => `<span class="price-highlight">${match}</span>`);
+
+type BillingOption = { label: string; price: string; originalPrice?: string; note?: string; badge?: string };
+type PricingTierCta = { label: string; href: string };
+type PricingTierExtras = { billingOptions?: BillingOption[]; primaryCta?: PricingTierCta };
+type ComparisonHub = {
+  checkedAt: string;
+  entries: Array<{ name: string; href: string; summary: string; pricing: string }>;
+};
+type ComparisonContent = {
+  checkedAt: string;
+  competitorName: string;
+  competitorSummary: string;
+  pricingSnapshot: string;
+  bestForExtraBrain: string[];
+  bestForCompetitor: string[];
+  atAGlance: Array<{ label: string; extraBrain: string; competitor: string }>;
+  featureRows: Array<{ feature: string; extraBrain: string; competitor: string; note: string }>;
+  extraBrainAdvantages: Array<{ title: string; body: string }>;
+  chooseCompetitorWhen: Array<{ title: string; body: string }>;
+  responsibleUse: string;
+};
+
+const pricingTierMeta: Record<string, { tagline: string; icon: string; href: string; cta: string; featured?: boolean }> = {
+  Free: {
+    tagline: 'Best for trying ExtraBrain end-to-end',
+    icon: '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 3 7v6c0 5 3.5 8.5 9 10 5.5-1.5 9-5 9-10V7l-9-4Z"/></svg>',
+    href: '/download/',
+    cta: 'Download for Mac',
+  },
+  Pro: {
+    tagline: 'For repeated interview and meeting workflows',
+    icon: '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 2.4 5 5.6.8-4 3.9.9 5.6L12 14.8 7.1 17.3 8 11.7 4 7.8l5.6-.8L12 2Z"/></svg>',
+    href: '/pricing/free-vs-pro/',
+    cta: 'Compare Free and Pro',
+    featured: true,
+  },
+  Enterprise: {
+    tagline: 'For team rollout, policy, and security review',
+    icon: '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/><path d="M3 21h18"/></svg>',
+    href: 'mailto:info@extrabrain.app?subject=ExtraBrain%20enterprise%20inquiry',
+    cta: 'Talk to us',
+  },
+};
+
+const freeVsProPlanIcons: Record<string, string> = {
+  Free: iconSvg('<path d="M12 3 3 7v6c0 5 3.5 8.5 9 10 5.5-1.5 9-5 9-10V7l-9-4Z"/><path d="m9 12 2 2 4-5"/>'),
+  'ExtraBrain Pro': iconSvg('<path d="m12 2 2.4 5 5.6.8-4 3.9.9 5.6L12 14.8 7.1 17.3 8 11.7 4 7.8l5.6-.8L12 2Z"/>'),
+};
+
 interface Props {
   page: MarketingPage;
 }
 
-const { page } = Astro.props;
+const { page } = Astro.props as Props;
+const comparisonHub = page.comparisonHub as ComparisonHub | undefined;
+const comparison = page.comparison as ComparisonContent | undefined;
 const faq = page.faq ?? homepageFaq.slice(0, 4);
 const pageSubject = page.title.replace(/\s+Comparison$/, '');
+const comparisonStatusLabels = {
+  same: 'Same in both',
+  'pro-unlock': 'Pro unlock',
+  'cost-note': 'Cost note',
+};
+const comparisonValueItems = (value: string | string[]) => (Array.isArray(value) ? value : [value]);
+const isPerformanceDiscoveryPage =
+  page.slug === 'pricing' ||
+  page.slug === 'pricing/free-vs-pro' ||
+  page.slug === 'compare' ||
+  page.slug.startsWith('compare/');
+const feedbackHref = `mailto:${contactEmail}?subject=ExtraBrain%20feedback`;
 const summaryFacts = [
   page.lead,
   'ExtraBrain has 1 current public platform family, macOS, with support for 2 Mac CPU families: Apple Silicon and Intel.',
-  'ExtraBrain has 3 configurable data paths to review before sensitive work: local Parakeet transcription, on-device AI where supported, and external providers you choose.',
+  'ExtraBrain has 3 configurable data paths to review before sensitive work: local Parakeet transcription, local Gemma 4 where installed and compatible, and external providers you choose.',
 ];
 const schemaGraph: Array<Record<string, unknown>> = [
   softwareApplicationSchema(page.description, absoluteUrl('/download/')),
@@ -36,19 +141,42 @@ const schemaGraph: Array<Record<string, unknown>> = [
 ];
 
 if (page.schemaType === 'HowTo') schemaGraph.push(howToInstallSchema());
+if (comparisonHub) {
+  schemaGraph.push({
+    '@type': 'ItemList',
+    name: 'ExtraBrain comparison pages',
+    itemListElement: comparisonHub.entries.map((entry, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: entry.name,
+      url: absoluteUrl(entry.href),
+      description: entry.summary,
+    })),
+  });
+}
 if (faq.length > 0) schemaGraph.push(faqSchema(faq));
 
 const hasReleaseMetadata = page.slug === 'download';
 const hasSources = Boolean(page.sources?.length);
+const showSummary = page.hideSummary !== true;
 const summaryBandIndex = 0;
-const releaseBandIndex = 1;
-const contentBandStart = hasReleaseMetadata ? 2 : 1;
+const releaseBandIndex = showSummary ? 1 : 0;
+const contentBandStart = (showSummary ? 1 : 0) + (hasReleaseMetadata ? 1 : 0);
 const sourcesBandIndex = contentBandStart + page.sections.length;
 const faqBandIndex = sourcesBandIndex + (hasSources ? 1 : 0);
 const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--odd' : 'section-band--even');
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  ...(page.slug.startsWith('compare/')
+    ? [{ label: 'Compare', href: '/compare/' }]
+    : page.slug.startsWith('pricing/')
+      ? [{ label: 'Pricing', href: '/pricing/' }]
+      : []),
+  { label: page.h1.replace(/\.$/, ''), href: `/${page.slug}/` },
+];
 ---
 
-<MarketingLayout title={`${page.title} | ${productName}`} description={page.description} schemaGraph={schemaGraph}>
+<MarketingLayout title={`${page.title} | ${productName}`} description={page.description} ogImage={page.ogImage} schemaGraph={schemaGraph} enableAnalytics={!isPerformanceDiscoveryPage}>
   <header class="site-header">
     <div class="container nav">
       <a href="/" class="brand" aria-label="ExtraBrain home">
@@ -62,7 +190,7 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
         <a href="/pricing/">Pricing</a>
         <a href="/privacy/">Privacy</a>
         <a href="/help/">Help</a>
-        <a href="#feedback" data-feedback-trigger>Feedback</a>
+        <a href={feedbackHref}>Feedback</a>
       </nav>
       <div class="nav-actions">
         <a class="btn primary" href="/download/" data-track="download_nav_clicked" data-attr="download-cta">Download for Mac</a>
@@ -75,8 +203,19 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
     <section class="page-hero">
       <div class="container page-hero-grid">
         <div>
+          {(page.slug === 'pricing' || page.slug.startsWith('pricing/') || page.slug === 'compare' || page.slug.startsWith('compare/')) && (
+            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+              <ol>
+                {breadcrumbItems.map((item, index) => (
+                  <li>
+                    {index < breadcrumbItems.length - 1 ? <a href={item.href}>{item.label}</a> : <span aria-current="page">{item.label}</span>}
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )}
           <div class="hero-kicker">{page.eyebrow}</div>
-          <h1>{page.h1}</h1>
+          {page.slug === 'pricing' ? <h1 set:html={colorizePricingH1(page.h1)} /> : <h1>{page.h1}</h1>}
           <p class="lead">{page.lead}</p>
           <div class="hero-ctas">
             {page.primaryCta && <a class="btn primary" href={page.primaryCta.href} data-track="page_primary_cta_clicked" data-attr={page.primaryCta.href === '/download/' || page.primaryCta.href === githubUrl ? 'download-cta' : undefined}>{page.primaryCta.label}</a>}
@@ -88,7 +227,7 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
           <ul>
             <li>Available for Mac today, with Windows and Linux planned</li>
             <li>Apple Silicon and Intel Mac support</li>
-            <li>On-device AI on compatible hardware</li>
+            <li>Local Gemma 4 when installed and compatible</li>
             <li>Local Parakeet transcription and optional Deepgram</li>
             <li>Optional OpenAI, Anthropic, Claude, Codex, or compatible provider access</li>
             <li>Responsible-use guidance for interviews and workplace policies</li>
@@ -97,27 +236,103 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
       </div>
     </section>
 
-    <section class:list={['light-section', 'page-summary-section', sectionBandClass(summaryBandIndex)]} aria-labelledby="page-summary-title">
-      <div class="container page-section-stack">
-        <article class="page-section-block">
-          <div class="section-head compact">
-            <span class="eyebrow">Summary</span>
-            <h2 id="page-summary-title">Key takeaways</h2>
-            <p class="lead light">
-              {pageSubject} is part of ExtraBrain's local-first Mac workflow for live interviews, meetings, transcription, provider control, and responsible AI use.
-            </p>
-          </div>
-          <div class="page-grid">
-            {summaryFacts.map((fact, index) => (
-              <div class="page-info-card">
-                <h3>{index === 0 ? 'Page focus' : index === 1 ? 'Platform fact' : 'Data-flow fact'}</h3>
-                <p>{fact}</p>
+    {showSummary && (
+      <section class:list={['light-section', 'page-summary-section', sectionBandClass(summaryBandIndex)]} aria-labelledby="page-summary-title">
+        <div class="container page-section-stack">
+          <article class="page-section-block">
+            <div class="section-head compact">
+              <span class="eyebrow">Summary</span>
+              <h2 id="page-summary-title">Key takeaways</h2>
+              <p class="lead light">
+                {pageSubject} is part of ExtraBrain's local-first Mac workflow for live interviews, meetings, transcription, provider control, and responsible AI use.
+              </p>
+            </div>
+            <div class="page-grid">
+              {summaryFacts.map((fact, index) => (
+                <div class="page-info-card">
+                  <h3>{index === 0 ? 'Page focus' : index === 1 ? 'Platform fact' : 'Data-flow fact'}</h3>
+                  <p>{fact}</p>
+                </div>
+              ))}
+            </div>
+          </article>
+        </div>
+      </section>
+    )}
+
+    {comparisonHub && (
+      <section class:list={['light-section', 'page-content-section', sectionBandClass(contentBandStart)]}>
+        <div class="container page-section-stack">
+          <article class="page-section-block">
+            <div class="section-head compact">
+              <span class="eyebrow">Last checked: {comparisonHub.checkedAt}</span>
+              <h2>Comparison pages</h2>
+              <p class="lead light">Use these source-backed pages to compare pricing, platform support, provider control, and responsible-use tradeoffs.</p>
+            </div>
+            <div class="page-grid page-grid--accent-iris">
+              {comparisonHub.entries.map((entry) => (
+                <a class="page-info-card page-info-card--accent comparison-card-link" href={entry.href}>
+                  <h3>{entry.name}</h3>
+                  <p>{entry.summary}</p>
+                  <p class="comparison-pricing-note">{entry.pricing}</p>
+                </a>
+              ))}
+            </div>
+          </article>
+        </div>
+      </section>
+    )}
+
+    {comparison && (
+      <section class:list={['light-section', 'page-content-section', sectionBandClass(contentBandStart)]}>
+        <div class="container page-section-stack">
+          <article class="page-section-block">
+            <div class="section-head compact">
+              <span class="eyebrow">Last checked: {comparison.checkedAt}</span>
+              <h2>At a glance</h2>
+              <p class="lead light">{comparison.competitorSummary}</p>
+              <p class="lead light"><strong>Pricing snapshot:</strong> {comparison.pricingSnapshot}</p>
+            </div>
+            <div class="page-table-wrap">
+              <table class="page-comparison-table comparison-feature-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Feature</th>
+                    <th scope="col">ExtraBrain</th>
+                    <th scope="col">{comparison.competitorName}</th>
+                    <th scope="col">Note</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparison.featureRows.map((row) => (
+                    <tr>
+                      <th scope="row">{row.feature}</th>
+                      <td>{row.extraBrain}</td>
+                      <td>{row.competitor}</td>
+                      <td>{row.note}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div class="page-grid page-grid--accent-mint comparison-grid">
+              <div class="page-info-card page-info-card--accent">
+                <h3>Best for ExtraBrain</h3>
+                <ul>{comparison.bestForExtraBrain.map((item) => <li>{item}</li>)}</ul>
               </div>
-            ))}
-          </div>
-        </article>
-      </div>
-    </section>
+              <div class="page-info-card page-info-card--accent">
+                <h3>Best for {comparison.competitorName}</h3>
+                <ul>{comparison.bestForCompetitor.map((item) => <li>{item}</li>)}</ul>
+              </div>
+              <div class="page-info-card page-info-card--accent">
+                <h3>Responsible use</h3>
+                <p>{comparison.responsibleUse}</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    )}
 
     {page.slug === 'download' && (
       <section class:list={['light-section', 'page-release-section', sectionBandClass(releaseBandIndex)]} aria-labelledby="latest-release-title">
@@ -144,7 +359,11 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
       </section>
     )}
 
-    {page.sections.map((section, index) => (
+    {page.sections.map((section, index) => {
+      const isPricingPlans = page.slug === 'pricing' && section.title === 'Plans';
+      const supportsPricingIcons = page.slug === 'pricing' || page.slug === 'pricing/free-vs-pro';
+      const sectionAccent = supportsPricingIcons ? pricingSectionAccents[section.title] : undefined;
+      return (
       <section class:list={['light-section', 'page-content-section', sectionBandClass(contentBandStart + index)]}>
         <div class="container page-section-stack">
           <article class="page-section-block">
@@ -153,20 +372,214 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
               <h2>{section.title}</h2>
               {section.body && <p class="lead light">{section.body}</p>}
             </div>
-            {section.items && (
-              <div class="page-grid">
-                {section.items.map((item) => (
-                  <div class="page-info-card">
-                    <h3>{item.title}</h3>
-                    <p>{item.body}</p>
-                  </div>
+            {isPricingPlans && (
+              <div class="pricing-grid pricing-grid--page">
+                {pricingTiers.map((tier) => {
+                  const meta = pricingTierMeta[tier.name];
+                  const tierExtras = tier as PricingTierExtras;
+                  const billingOptions = tierExtras.billingOptions;
+                  const ctaHref = tierExtras.primaryCta?.href ?? meta?.href ?? '/download/';
+                  const ctaLabel = tierExtras.primaryCta?.label ?? meta?.cta ?? 'Learn more';
+                  return (
+                    <article class:list={['price-card', meta?.featured && 'featured']}>
+                      {meta?.featured && <span class="price-badge">Most popular</span>}
+                      <div class:list={['price-card-icon', meta?.featured && 'price-card-icon--featured']} set:html={meta?.icon ?? ''} />
+                      <h3>{tier.name}</h3>
+                      {meta?.tagline && <p class="price-tagline">{meta.tagline}</p>}
+                      {!billingOptions && <div class="price">{tier.price}</div>}
+                      <p class="price-summary">{tier.summary}</p>
+                      {billingOptions && (
+                        <ul class="billing-options">
+                          {billingOptions.map((opt) => (
+                            <li class="billing-option">
+                              <div class="billing-option-head">
+                                <span class="billing-option-label">{opt.label}</span>
+                                {opt.badge && <span class="billing-option-badge">{opt.badge}</span>}
+                              </div>
+                              <div class="billing-option-price">
+                                <strong>{opt.price}</strong>
+                                {opt.originalPrice && <s class="billing-option-strike">{opt.originalPrice}</s>}
+                              </div>
+                              {opt.note && <p class="billing-option-note">{opt.note}</p>}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      <ul class="price-list">
+                        {tier.features.map((feature) => <li>{feature}</li>)}
+                      </ul>
+                      <a class:list={['btn', meta?.featured ? 'primary' : 'ghost dark']} href={ctaHref} data-attr={ctaHref === '/download/' ? 'download-cta' : undefined}>{ctaLabel}</a>
+                    </article>
+                  );
+                })}
+              </div>
+            )}
+            {!isPricingPlans && section.items && (
+              <div class:list={['page-grid', sectionAccent && `page-grid--accent-${sectionAccent.accent}`]}>
+                {section.items.map((item) => {
+                  const itemIcon = supportsPricingIcons ? pricingItemIcons[item.title] : undefined;
+                  const cardContent = (
+                    <>
+                      {itemIcon && (
+                        <span class:list={['info-card-icon', sectionAccent && `info-card-icon--${sectionAccent.accent}`]} set:html={itemIcon} />
+                      )}
+                      <h3>{item.title}</h3>
+                      <p>{item.body}</p>
+                    </>
+                  );
+                  return item.href ? (
+                    <a class:list={['page-info-card', sectionAccent && 'page-info-card--accent', 'comparison-card-link']} href={item.href}>
+                      {cardContent}
+                    </a>
+                  ) : (
+                    <div class:list={['page-info-card', sectionAccent && 'page-info-card--accent']}>
+                      {cardContent}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+            {!isPricingPlans && section.freeVsProComparison && (
+              <div class="free-pro-compare">
+                <div class="free-pro-plan-strip" aria-label="Plan summary">
+                  {section.freeVsProComparison.plans.map((plan) => (
+                    <article class:list={['free-pro-plan-card', plan.highlight && 'free-pro-plan-card--highlight']}>
+                      <div>
+                        <div class="free-pro-plan-heading">
+                          <span class:list={['free-pro-plan-icon', plan.highlight && 'free-pro-plan-icon--highlight']} set:html={freeVsProPlanIcons[plan.name] ?? freeVsProPlanIcons.Free} />
+                          <p class="free-pro-plan-label">{plan.name}</p>
+                        </div>
+                        <p class="free-pro-plan-price">{plan.price}</p>
+                        <p class="free-pro-plan-summary">{plan.summary}</p>
+                      </div>
+                      <a class:list={['btn', plan.cta.variant === 'primary' ? 'primary' : 'ghost dark']} href={plan.cta.href} data-attr={plan.cta.href === '/download/' ? 'download-cta' : undefined}>{plan.cta.label}</a>
+                    </article>
+                  ))}
+                </div>
+
+                <div class="free-pro-table-shell">
+                  <table class="free-pro-table">
+                    <caption>{section.freeVsProComparison.caption}</caption>
+                    <colgroup>
+                      <col class="free-pro-col-feature" />
+                      <col class="free-pro-col-free" />
+                      <col class="free-pro-col-pro" />
+                      <col class="free-pro-col-diff" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">Capability</th>
+                        <th scope="col">Free</th>
+                        <th scope="col">ExtraBrain Pro</th>
+                        <th scope="col">Difference</th>
+                      </tr>
+                    </thead>
+                    {section.freeVsProComparison.groups.map((group) => (
+                      <tbody>
+                        <tr class="free-pro-group-row">
+                          <th scope="rowgroup" colspan="4">{group.title}</th>
+                        </tr>
+                        {group.rows.map((row) => (
+                          <tr class:list={['free-pro-row', `free-pro-row--${row.status}`]}>
+                            <th scope="row">{row.label}</th>
+                            <td>
+                              {Array.isArray(row.free) ? (
+                                <ul class="free-pro-value-list">
+                                  {row.free.map((item) => <li>{item}</li>)}
+                                </ul>
+                              ) : row.free}
+                            </td>
+                            <td class="free-pro-table-pro-cell">
+                              {Array.isArray(row.pro) ? (
+                                <ul class="free-pro-value-list">
+                                  {row.pro.map((item) => <li>{item}</li>)}
+                                </ul>
+                              ) : row.pro}
+                            </td>
+                            <td>
+                              <span class:list={['free-pro-status', `free-pro-status--${row.status}`]}>{comparisonStatusLabels[row.status]}</span>
+                              <span>{row.difference}</span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    ))}
+                  </table>
+                </div>
+
+                <div class="free-pro-mobile-list" aria-label="Free vs Pro comparison details">
+                  {section.freeVsProComparison.groups.map((group) => (
+                    <section class="free-pro-mobile-group" aria-labelledby={`free-pro-mobile-${group.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
+                      <h3 id={`free-pro-mobile-${group.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>{group.title}</h3>
+                      <div class="free-pro-mobile-cards">
+                        {group.rows.map((row) => (
+                          <article class:list={['free-pro-mobile-card', `free-pro-mobile-card--${row.status}`]}>
+                            <div class="free-pro-mobile-card-head">
+                              <h4>{row.label}</h4>
+                              <span class:list={['free-pro-status', `free-pro-status--${row.status}`]}>{comparisonStatusLabels[row.status]}</span>
+                            </div>
+                            <div class="free-pro-mobile-values">
+                              <div>
+                                <span>Free</span>
+                                {Array.isArray(row.free) ? (
+                                  <ul class="free-pro-value-list free-pro-value-list--mobile">
+                                    {comparisonValueItems(row.free).map((item) => <li>{item}</li>)}
+                                  </ul>
+                                ) : <strong>{row.free}</strong>}
+                              </div>
+                              <div>
+                                <span>ExtraBrain Pro</span>
+                                {Array.isArray(row.pro) ? (
+                                  <ul class="free-pro-value-list free-pro-value-list--mobile">
+                                    {comparisonValueItems(row.pro).map((item) => <li>{item}</li>)}
+                                  </ul>
+                                ) : <strong>{row.pro}</strong>}
+                              </div>
+                            </div>
+                            <p>{row.difference}</p>
+                          </article>
+                        ))}
+                      </div>
+                    </section>
+                  ))}
+                </div>
+              </div>
+            )}
+            {section.table && (
+              <div class="page-table-wrap">
+                <table class="page-comparison-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Feature</th>
+                      {section.table.columns.map((column) => <th scope="col">{column}</th>)}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {section.table.rows.map((row) => (
+                      <tr>
+                        <th scope="row">{row.label}</th>
+                        {row.cells.map((cell) => <td>{cell}</td>)}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+            {section.media && (
+              <div class="page-media-grid">
+                {section.media.map((asset) => (
+                  <figure class="page-media-card">
+                    <img src={asset.src} alt={asset.alt} width={asset.width ?? 1280} height={asset.height ?? 800} loading="lazy" decoding="async" />
+                    {asset.caption && <figcaption>{asset.caption}</figcaption>}
+                  </figure>
                 ))}
               </div>
             )}
           </article>
         </div>
       </section>
-    ))}
+      );
+    })}
 
     {page.sources && page.sources.length > 0 && (
       <section class:list={['light-section', 'page-content-section', sectionBandClass(sourcesBandIndex)]}>
@@ -174,7 +587,7 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
           <article class="page-section-block source-block">
             <div class="section-head compact">
               <span class="eyebrow">Sources</span>
-              <h2>Public comparison sources</h2>
+              <h2>Public sources</h2>
               <p class="lead light">Competitor facts should be checked against these public pages before editing claims.</p>
             </div>
             <div class="source-list">
@@ -221,6 +634,7 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
         <h2 class="footer-heading">Product</h2>
         <a href="/download/">Download</a>
         <a href="/pricing/">Pricing</a>
+        <a href="/pricing/free-vs-pro/">Free vs Pro</a>
         <a href="/features/local-transcription/">Local transcription</a>
         <a href="/features/bring-your-own-provider/">BYO providers</a>
         <a href="/about/">About</a>
@@ -241,12 +655,10 @@ const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--od
         <a href="/compare/final-round-ai/">Compare Final Round AI</a>
         <a href="/contact/">Contact</a>
         <a href={githubUrl}>GitHub</a>
-        <a href="#feedback" data-feedback-trigger>Send Feedback</a>
+        <a href={feedbackHref}>Send Feedback</a>
       </div>
     </div>
   </footer>
-
-  <FeedbackForm />
 
   {page.slug === 'download' && (
     <script is:inline>

@@ -8,6 +8,8 @@ import {
   productDescription,
 } from '../data/product';
 
+const formatComparisonValue = (value: string | string[]) => (Array.isArray(value) ? value.join(', ') : value);
+
 export function GET() {
   const essentials = essentialPages.map((page) => `- ${page.title}: ${absoluteUrl(page.href)}`).join('\n');
   const facts = productFacts.map((fact) => `- ${fact}`).join('\n');
@@ -18,8 +20,32 @@ export function GET() {
     .map((page) => {
       const sections = page.sections
         .map((section) => {
+          const freeVsProComparison = section.freeVsProComparison
+            ? [
+                section.freeVsProComparison.plans
+                  .map((plan) => `- ${plan.name}: ${plan.price}. ${plan.summary}`)
+                  .join('\n'),
+                section.freeVsProComparison.groups
+                  .map((group) =>
+                    `#### ${group.title}\n${group.rows
+                      .map(
+                        (row) =>
+                          `- ${row.label}: Free: ${formatComparisonValue(row.free)}; ExtraBrain Pro: ${formatComparisonValue(row.pro)}; Difference: ${row.difference}`,
+                      )
+                      .join('\n')}`,
+                  )
+                  .join('\n'),
+              ].join('\n')
+            : '';
           const items = section.items?.map((item) => `- ${item.title}: ${item.body}`).join('\n') ?? '';
-          return `### ${section.title}\n${section.body ?? ''}${section.body && items ? '\n' : ''}${items}`;
+          const table = section.table
+            ? section.table.rows
+                .map((row) => `- ${row.label}: ${section.table?.columns.map((column, index) => `${column}: ${row.cells[index]}`).join('; ')}`)
+                .join('\n')
+            : '';
+          const media = section.media?.map((asset) => `- Screenshot: ${asset.alt}${asset.caption ? ` (${asset.caption})` : ''}`).join('\n') ?? '';
+          const parts = [section.body, freeVsProComparison, items, table, media].filter(Boolean).join('\n');
+          return `### ${section.title}\n${parts}`;
         })
         .join('\n\n');
       return `## ${page.h1.replace(/\.$/, '')}\nURL: ${absoluteUrl(`/${page.slug}/`)}\n${page.lead}\n\n${sections}`;
@@ -38,6 +64,18 @@ ${essentials}
 ## Product facts
 
 ${facts}
+
+## Last updated
+
+May 12, 2026
+
+## Source of truth
+
+Use the pricing page for current public pricing and the help center for setup, privacy, provider, local Gemma 4, transcription, and billing details.
+
+## Accuracy note
+
+Do not describe ExtraBrain as fully local unless the user uses local Parakeet transcription plus local Gemma 4 on-device AI where installed and compatible. External providers may receive prompts, transcript text, screenshots, or audio depending on configuration.
 
 ## Pricing and plans
 

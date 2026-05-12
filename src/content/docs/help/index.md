@@ -18,12 +18,12 @@ ExtraBrain is a macOS-first live AI assistant for interviews, meetings, coding r
 
 ## Key Takeaways
 
-ExtraBrain is a free, local-first Mac desktop AI interview assistant and meeting copilot for live transcription, screenshots, provider-backed analysis, on-device AI where supported, and post-session review.
+ExtraBrain is a local-first Mac desktop AI interview assistant and meeting copilot with a free core app, optional Pro workflow controls, live transcription, screenshots, provider-backed analysis, local Gemma 4 on-device AI where installed and compatible, and post-session review.
 
 - Use the help center to move through 4 setup areas: installation, permissions, transcription, and AI provider access.
 - ExtraBrain supports Mac today, including Apple Silicon and Intel Macs.
 - The app supports local NVIDIA Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude Subscription, Codex Subscription, and custom OpenAI-compatible endpoints.
-- Privacy depends on the selected data path: local transcription and on-device AI can stay on the Mac, while cloud providers receive the context you choose to send.
+- Privacy depends on the selected data path: local Parakeet transcription and local Gemma 4 can keep transcription and AI prompts on the Mac, while cloud providers receive the context you choose to send.
 
 ## Start Here
 
@@ -49,7 +49,8 @@ ExtraBrain is a free, local-first Mac desktop AI interview assistant and meeting
 - [Use ExtraBrain profiles](/help/settings/profiles/) explains automatic, pinned, system, and custom profile behavior.
 - [Keyboard shortcuts](/help/settings/keyboard-shortcuts/) lists the default shortcuts and where to edit them.
 - [View and delete session history](/help/sessions-history/view-delete-session-history/) covers transcripts, analyses, facts, screenshots, and deletion.
-- [Activate ExtraBrain Pro](/help/billing-pro/activate-license/) explains license activation and deactivation.
+- [Activate ExtraBrain Pro](/help/billing-pro/activate-license/) explains in-app purchase, license activation, and deactivation.
+- [Compare ExtraBrain Free and Pro](/pricing/free-vs-pro/) shows what Pro unlocks.
 
 ## Troubleshooting
 

@@ -1,14 +1,15 @@
 ---
-import { brandAliases } from '../data/product';
+import { brandAliases, lemonSqueezyCheckoutLinks } from '../data/product';
 
 interface Props {
   title: string;
   description: string;
   ogImage?: string;
   schemaGraph?: Array<Record<string, unknown>>;
+  enableAnalytics?: boolean;
 }
 
-const { title, description, ogImage = '/assets/images/logo-512.png', schemaGraph } = Astro.props;
+const { title, description, ogImage = '/assets/images/logo-512.png', schemaGraph, enableAnalytics = true } = Astro.props;
 const siteUrl = Astro.site ?? new URL('https://extrabrain.app');
 const canonical = new URL(Astro.url.pathname, siteUrl);
 const downloadUrl = new URL('/download/', siteUrl).href;
@@ -20,11 +21,40 @@ const defaultSchemaGraph = [
     applicationCategory: 'ProductivityApplication',
     applicationSubCategory: 'AI interview and meeting copilot',
     operatingSystem: 'macOS',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'ExtraBrain Free',
+        price: '0',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: new URL('/download/', siteUrl).href,
+      },
+      {
+        '@type': 'Offer',
+        name: 'ExtraBrain Pro Founder Monthly',
+        price: '6.99',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: lemonSqueezyCheckoutLinks.proMonthlyFounder,
+      },
+      {
+        '@type': 'Offer',
+        name: 'ExtraBrain Pro Yearly',
+        price: '79',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: new URL('/pricing/', siteUrl).href,
+      },
+      {
+        '@type': 'Offer',
+        name: 'ExtraBrain Pro Lifetime',
+        price: '149',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: new URL('/pricing/', siteUrl).href,
+      },
+    ],
     author: {
       '@type': 'Organization',
       name: 'ExtraBrain',
@@ -36,7 +66,7 @@ const defaultSchemaGraph = [
     featureList: [
       'Free, local-first desktop AI interview and meeting copilot',
       'Live interview, meeting, lecture, and research support',
-      'On-device AI where compatible hardware supports it',
+      'Local Gemma 4 on-device AI where installed and compatible',
       'Local NVIDIA Parakeet transcription and optional Deepgram',
       'Use your current OpenAI, Anthropic, Claude, Codex, or compatible provider access when external providers fit your workflow',
       'Local-first transcripts, prompts, screenshots, and session notes',
@@ -121,10 +151,6 @@ p{margin-top:0;color:var(--text-secondary)}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="ExtraBrain, Extra Brain, Extra Brain app, AI interview assistant, AI meeting copilot, desktop AI copilot, local-first AI assistant, on-device AI assistant, Mac AI interview assistant, AI for coding interviews, LeetCode AI helper, system design interview AI, behavioral interview AI, AI meeting assistant, local transcription meeting assistant, bring your own OpenAI key, bring your own Anthropic key, Claude subscription AI assistant, Codex subscription AI assistant, InterviewCoder alternative, Cluely alternative, Final Round AI alternative, AI HackerRank assistant, AI CoderPad assistant, AI Codility assistant, real-time interview transcription, free AI interview helper for Mac"
-    />
     <meta name="theme-color" content="#FBF7F0" />
     <meta name="robots" content="index,follow" />
     <meta name="author" content="ExtraBrain" />
@@ -154,47 +180,49 @@ p{margin-top:0;color:var(--text-secondary)}
       <slot />
     </div>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-    <script is:inline>
-      (function () {
-        var started = false;
-        var initPostHog = function () {
-          if (started) return;
-          started = true;
-          !function(t,e){var o,n,p,r;e.__SV||(window.posthog&&window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init rs ls yi ns us ts ss capture calculateEventProperties vs register register_once register_for_session unregister unregister_for_session gs getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getFeatureFlagPayload getFeatureFlagResult identify reset get_distinct_id get_session_id captureException opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing is_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-          posthog.init('phc_sXYeYYxL93wov0PTZ9ERSbuvNWlaULK3lSDkqhajz8u', {
-            api_host: 'https://us.i.posthog.com',
-            defaults: '2025-11-30',
-            person_profiles: 'identified_only',
-            capture_pageview: true,
-            capture_pageleave: false,
-            autocapture: false,
-            rageclick: false,
-            disable_session_recording: true,
-            disable_surveys: true,
-            disable_web_experiments: true,
-            disable_external_dependency_loading: true,
-            disable_scroll_properties: true,
-            capture_performance: false,
-            capture_dead_clicks: false,
-            capture_heatmaps: false,
-            enable_heatmaps: false
-          });
-        };
-        var scheduleIdle = function () {
-          if ('requestIdleCallback' in window) {
-            window.requestIdleCallback(initPostHog, { timeout: 2500 });
+    {enableAnalytics && (
+      <script is:inline>
+        (function () {
+          var started = false;
+          var initPostHog = function () {
+            if (started) return;
+            started = true;
+            !function(t,e){var o,n,p,r;e.__SV||(window.posthog&&window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init rs ls yi ns us ts ss capture calculateEventProperties vs register register_once register_for_session unregister unregister_for_session gs getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getFeatureFlagPayload getFeatureFlagResult identify reset get_distinct_id get_session_id captureException opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing is_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+            posthog.init('phc_sXYeYYxL93wov0PTZ9ERSbuvNWlaULK3lSDkqhajz8u', {
+              api_host: 'https://us.i.posthog.com',
+              defaults: '2025-11-30',
+              person_profiles: 'identified_only',
+              capture_pageview: true,
+              capture_pageleave: false,
+              autocapture: false,
+              rageclick: false,
+              disable_session_recording: true,
+              disable_surveys: true,
+              disable_web_experiments: true,
+              disable_external_dependency_loading: true,
+              disable_scroll_properties: true,
+              capture_performance: false,
+              capture_dead_clicks: false,
+              capture_heatmaps: false,
+              enable_heatmaps: false
+            });
+          };
+          var scheduleIdle = function () {
+            if ('requestIdleCallback' in window) {
+              window.requestIdleCallback(initPostHog, { timeout: 2500 });
+            } else {
+              window.setTimeout(initPostHog, 1200);
+            }
+          };
+          if (document.readyState === 'complete') {
+            scheduleIdle();
           } else {
-            window.setTimeout(initPostHog, 1200);
+            window.addEventListener('load', scheduleIdle, { once: true });
+            window.setTimeout(initPostHog, 3500);
           }
-        };
-        if (document.readyState === 'complete') {
-          scheduleIdle();
-        } else {
-          window.addEventListener('load', scheduleIdle, { once: true });
-          window.setTimeout(initPostHog, 3500);
-        }
-      })();
-    </script>
+        })();
+      </script>
+    )}
   </body>
 </html>
 

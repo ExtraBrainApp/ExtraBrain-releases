@@ -5,6 +5,8 @@ import starlightImageZoom from 'starlight-image-zoom';
 
 const siteUrl = 'https://extrabrain.app';
 const defaultOgImage = `${siteUrl}/assets/images/logo-512.png`;
+const proMonthlyFounderCheckout =
+  'https://extrabrain.lemonsqueezy.com/checkout/buy/f5618066-dfaf-419e-ac49-a05ffa5e30d9?checkout%5Bdiscount_code%5D=EARLYBIRD&prefill=earlybird';
 const helpStructuredData = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
@@ -25,15 +27,44 @@ const helpStructuredData = JSON.stringify({
       operatingSystem: 'macOS',
       url: siteUrl,
       image: defaultOgImage,
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'USD',
-      },
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'ExtraBrain Free',
+          price: '0',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+          url: `${siteUrl}/download/`,
+        },
+        {
+          '@type': 'Offer',
+          name: 'ExtraBrain Pro Founder Monthly',
+          price: '6.99',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+          url: proMonthlyFounderCheckout,
+        },
+        {
+          '@type': 'Offer',
+          name: 'ExtraBrain Pro Yearly',
+          price: '79',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+          url: `${siteUrl}/pricing/`,
+        },
+        {
+          '@type': 'Offer',
+          name: 'ExtraBrain Pro Lifetime',
+          price: '149',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+          url: `${siteUrl}/pricing/`,
+        },
+      ],
       featureList: [
         'Free, local-first desktop AI interview and meeting copilot',
         'Local NVIDIA Parakeet transcription and optional Deepgram',
-        'On-device AI where compatible hardware supports it',
+        'Local Gemma 4 on-device AI where installed and compatible',
         'OpenAI, Anthropic, Claude Subscription, Codex Subscription, and custom endpoint setup',
         'Apple Silicon and Intel Mac support',
       ],
