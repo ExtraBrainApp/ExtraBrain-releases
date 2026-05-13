@@ -186,6 +186,9 @@ export default defineConfig({
       ],
       plugins: [starlightImageZoom()],
       customCss: ['./src/styles/starlight.css'],
+      components: {
+        Sidebar: './src/components/starlight/Sidebar.astro',
+      },
       editLink: {
         baseUrl: 'https://github.com/ExtraBrainApp/ExtraBrain-releases/edit/master/',
       },
