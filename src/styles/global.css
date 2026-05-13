@@ -1895,6 +1895,19 @@ footer p {
     gap: 24px;
   }
 
+  .page-hero h1 {
+    max-width: 100%;
+    font-size: clamp(38px, 11vw, 46px);
+    overflow-wrap: break-word;
+  }
+
+  .page-fact-panel,
+  .page-fact-panel li,
+  .panel-label {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
   .page-card,
   .page-fact-panel,
   .release-panel,
