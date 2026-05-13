@@ -352,13 +352,13 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'pricing/free-vs-pro',
-    title: 'ExtraBrain Free vs Pro: Features, Pricing & Provider Costs',
+    title: 'ExtraBrain Free vs Pro: Features, Models, Profiles & Provider Costs',
     description:
-      'Compare ExtraBrain Free and Pro for custom profiles, workflow controls, session context, summaries, screenshots, provider costs, and licensing.',
+      'Compare ExtraBrain Free and Pro for live interview workflows, stealth mode, AI models, providers, interview domains, custom profiles, provider costs, and licensing.',
     eyebrow: 'Free vs Pro',
     h1: 'ExtraBrain vs ExtraBrain Pro.',
     lead:
-      'ExtraBrain Free gives you the core Mac live assistant. ExtraBrain Pro adds advanced workflow controls for people who reuse profiles, session context, summaries, and premium controls across repeated interviews, meetings, and research calls.',
+      'ExtraBrain Free gives you the core Mac live assistant, local-first workflow, built-in domains, and bring-your-own provider setup. ExtraBrain Pro adds advanced controls for people who reuse profiles, session context, summaries, and premium settings across repeated interviews, meetings, and research calls.',
     ogImage: '/assets/og/free-vs-pro.svg',
     primaryCta: { label: 'Download Free', href: '/download/' },
     secondaryCta: { label: 'Open Settings -> License', href: '/help/billing-pro/activate-license/' },
@@ -367,7 +367,7 @@ const baseMarketingPages: MarketingPage[] = [
       {
         title: 'Plan comparison',
         body:
-          'Start with the upgrades, then confirm what stays the same. ExtraBrain Pro changes app workflow controls; AI provider usage remains separate for both plans.',
+          'Compare the app workflow, model paths, interview domains, and costs together. ExtraBrain Pro changes app controls and reusable workflow behavior; AI provider usage remains separate for both plans.',
         freeVsProComparison: {
           caption: 'ExtraBrain Free and ExtraBrain Pro plan comparison',
           plans: [
@@ -420,28 +420,150 @@ const baseMarketingPages: MarketingPage[] = [
               ],
             },
             {
-              title: 'Included in both',
+              title: 'Live interview workflow',
               rows: [
                 {
-                  label: 'Core Mac app',
+                  label: 'Live session workflow',
                   free: 'Included',
                   pro: 'Included',
                   difference: 'Same desktop app foundation for live interviews, meetings, lectures, and research calls.',
                   status: 'same',
                 },
                 {
-                  label: 'Live transcription and analysis',
-                  free: 'Local or configured providers',
-                  pro: 'Local or configured providers',
-                  difference: 'Same provider choice and local-first workflow model.',
+                  label: 'Live transcription',
+                  free: 'Local Parakeet or optional Deepgram',
+                  pro: 'Local Parakeet or optional Deepgram',
+                  difference: 'Same transcription choices; Deepgram costs and data handling remain separate from the app plan.',
                   status: 'same',
                 },
                 {
-                  label: 'Built-in profiles',
-                  free: 'Assistant, Coding, System Design, Behavioral, Meeting',
-                  pro: 'Assistant, Coding, System Design, Behavioral, Meeting',
-                  difference: 'Same starter profile set for common live workflows.',
+                  label: 'Transcript and context intelligence',
+                  free: 'Transcript, notes, screenshots, and prompts',
+                  pro: 'Richer context controls where enabled',
+                  difference: 'Free includes core live context; Pro is better when repeated workflows need fuller session context and saved facts.',
+                  status: 'pro-unlock',
+                },
+                {
+                  label: 'Screen and screenshot context',
+                  free: 'Screenshot capture and screen context',
+                  pro: 'Screenshot capture plus profile-specific follow-up controls',
+                  difference: 'Core screenshot workflows are available in Free; Pro can reuse profile behavior for analysis after region screenshots.',
+                  status: 'pro-unlock',
+                },
+                {
+                  label: 'Stealth mode',
+                  free: 'Designed to stay hidden from screen sharing and screen recording on major meeting tools',
+                  pro: 'Same base visibility behavior, plus reusable workflow controls',
+                  difference: 'Stealth is not a separate paid feature. You remain responsible for interview, workplace, school, and platform rules.',
                   status: 'same',
+                },
+                {
+                  label: 'Desktop overlay and privacy controls',
+                  free: 'Window, opacity, screenshot protection, click-through, and app visibility controls',
+                  pro: 'Same controls with reusable profile workflows where enabled',
+                  difference: 'The desktop privacy foundation stays in the core app; Pro adds repeatable workflow configuration.',
+                  status: 'pro-unlock',
+                },
+                {
+                  label: 'Local session history',
+                  free: 'Local transcripts, analyses, screenshots, notes, and saved facts',
+                  pro: 'Richer review, summaries, and saved context controls where enabled',
+                  difference: 'Both plans keep session records local unless you send content to a selected provider or delete the local record.',
+                  status: 'pro-unlock',
+                },
+              ],
+            },
+            {
+              title: 'AI models and providers',
+              rows: [
+                {
+                  label: 'Local Gemma 4',
+                  free: 'Available where installed and compatible',
+                  pro: 'Available where installed and compatible',
+                  difference: 'Local Gemma 4 availability depends on installation and compatible hardware, not the app plan.',
+                  status: 'same',
+                },
+                {
+                  label: 'OpenAI, Anthropic, and custom endpoints',
+                  free: 'Bring your own API key or compatible endpoint',
+                  pro: 'Bring your own API key or compatible endpoint',
+                  difference: 'Both plans use provider access you control; provider billing, quota, retention, and model access stay with that provider.',
+                  status: 'same',
+                },
+                {
+                  label: 'Claude Subscription',
+                  free: 'Use supported Claude subscription mode',
+                  pro: 'Use supported Claude subscription mode',
+                  difference: 'Claude subscription access is a provider path, not bundled ExtraBrain Pro AI credit.',
+                  status: 'same',
+                },
+                {
+                  label: 'Codex Subscription',
+                  free: 'Use supported Codex subscription mode',
+                  pro: 'Use supported Codex subscription mode',
+                  difference: 'Codex subscription access stays tied to the provider account and is separate from ExtraBrain billing.',
+                  status: 'same',
+                },
+                {
+                  label: 'Model selection and reasoning controls',
+                  free: 'Core provider model choices where available',
+                  pro: 'Premium model and advanced workflow controls where enabled',
+                  difference: 'Pro receives advanced controls as they ship, while underlying model access still depends on the selected provider.',
+                  status: 'pro-unlock',
+                },
+                {
+                  label: 'Bundled AI credits',
+                  free: 'Not included',
+                  pro: 'Not included',
+                  difference: 'ExtraBrain separates app features from external model and transcription usage unless a future plan explicitly says otherwise.',
+                  status: 'cost-note',
+                },
+              ],
+            },
+            {
+              title: 'Interview domains and profiles',
+              rows: [
+                {
+                  label: 'Coding interviews',
+                  free: 'Built-in Coding profile',
+                  pro: 'Custom coding profiles for reusable guidance',
+                  difference: 'Free covers common coding prompts; Pro helps when you want saved role, stack, or answer-style guidance.',
+                  status: 'pro-unlock',
+                },
+                {
+                  label: 'System design interviews',
+                  free: 'Built-in System Design profile',
+                  pro: 'Custom architecture and tradeoff profiles',
+                  difference: 'Pro can preserve reusable prompts for scale, tradeoffs, APIs, data modeling, and follow-up structure.',
+                  status: 'pro-unlock',
+                },
+                {
+                  label: 'Behavioral interviews',
+                  free: 'Built-in Behavioral profile',
+                  pro: 'Custom STAR, leadership, and role-specific profiles',
+                  difference: 'Free supports general behavioral structure; Pro is for repeatable guidance tailored to a target role or company loop.',
+                  status: 'pro-unlock',
+                },
+                {
+                  label: 'Meeting copilot',
+                  free: 'Built-in Meeting profile',
+                  pro: 'Custom meeting and follow-through profiles',
+                  difference: 'Pro helps recurring meeting workflows reuse note, risk, decision, and follow-up preferences.',
+                  status: 'pro-unlock',
+                },
+                {
+                  label: 'Product, research, and general workflows',
+                  free: 'Assistant profile and general prompts',
+                  pro: 'Reusable custom profiles for specialized domains',
+                  difference: 'Use Pro when you want persistent domain guidance beyond the built-in profile set.',
+                  status: 'pro-unlock',
+                },
+                {
+                  label: 'Custom domain guidance',
+                  free: 'Manual prompt each time',
+                  pro: 'Saved custom profile guidance',
+                  difference: 'Pro replaces repeated one-off setup with reusable instructions for the domains you use most.',
+                  status: 'pro-unlock',
                 },
               ],
             },
@@ -478,13 +600,10 @@ const baseMarketingPages: MarketingPage[] = [
         title: 'What Free includes',
         items: [
           { title: 'Core desktop workflow', body: 'Download and use the Mac app for live interviews, meetings, lectures, research calls, and technical discussions.' },
-          { title: 'Provider choice', body: 'Use local Gemma 4 on-device AI where installed and compatible, or connect OpenAI, Anthropic, Claude, Codex, Deepgram, or compatible provider access.' },
-          { title: 'Built-in profiles', body: 'Use Assistant, Coding, System Design, Behavioral, and Meeting profiles for common live workflows.' },
+          { title: 'Provider choice', body: 'Use local Gemma 4 on-device AI where installed and compatible, or connect OpenAI, Anthropic, Claude Subscription, Codex Subscription, Deepgram, or compatible provider access.' },
+          { title: 'Built-in domains', body: 'Use Assistant, Coding, System Design, Behavioral, and Meeting profiles for common interview, meeting, and research workflows.' },
+          { title: 'Stealth and screen context', body: 'Use the desktop overlay, screenshot capture, privacy controls, and screen-share visibility behavior built into the core Mac app.' },
           { title: 'Local-first history', body: 'Keep local transcripts, screenshots, notes, analyses, and saved facts on your Mac unless you delete them or send content to a selected provider.' },
-        ],
-        media: [
-          { src: '/assets/screenshots/help/dark/settings-profiles.png', alt: 'ExtraBrain profiles settings showing built-in profile controls', caption: 'Free includes the built-in profile system for common workflows.' },
-          { src: '/assets/screenshots/help/dark/settings-sessions.png', alt: 'ExtraBrain settings sessions tab showing local session history controls', caption: 'Session history stays local and can be reviewed or deleted from Settings.' },
         ],
       },
       {
@@ -492,12 +611,9 @@ const baseMarketingPages: MarketingPage[] = [
         items: [
           { title: 'Custom profiles', body: 'Save reusable prompt guidance for a specific role, interview loop, meeting format, study workflow, or response style.' },
           { title: 'Workflow behavior per profile', body: 'Control whether a custom profile expands the window on analysis, starts analysis after a region screenshot, or uses fuller session context.' },
+          { title: 'Domain-specific reuse', body: 'Turn repeated coding, system design, behavioral, meeting, product, research, or custom-domain guidance into saved profiles.' },
           { title: 'Richer follow-through', body: 'Use advanced history, post-session summaries, saved facts, review controls, and premium model controls where enabled by the current release.' },
           { title: 'Simple license management', body: 'Purchase, activate, view status, and deactivate Pro from Settings -> License inside the app.' },
-        ],
-        media: [
-          { src: '/assets/screenshots/help/dark/settings-custom-profiles.png', alt: 'ExtraBrain custom profile controls in Settings', caption: 'Pro unlocks custom profiles with reusable prompt guidance and per-profile behavior.' },
-          { src: '/assets/screenshots/help/dark/settings-license.png', alt: 'ExtraBrain license settings tab for Pro activation', caption: 'Pro purchase and activation happen in Settings -> License.' },
         ],
       },
       {
