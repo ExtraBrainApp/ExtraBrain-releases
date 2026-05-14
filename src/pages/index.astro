@@ -202,11 +202,11 @@ const compatibilityPlatforms = [
         <a href="#feedback" data-feedback-trigger>Feedback</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn primary" href={downloadHref} data-download data-attr="download-cta">
+        <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-home-nav">
           Download for Mac
         </a>
       </div>
-      <a class="btn primary mobile-only" href={downloadHref} data-download data-attr="download-cta">
+      <a class="btn primary mobile-only" href={downloadHref} data-download data-attr="download-cta-home-nav-mobile">
         Download for Mac
       </a>
     </div>
@@ -225,7 +225,7 @@ const compatibilityPlatforms = [
             Available for Mac today, with Windows and Linux planned.
           </p>
           <div class="hero-ctas">
-            <a class="btn primary" href={downloadHref} data-download data-attr="download-cta">
+            <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-hero">
               Download for Mac
             </a>
             <a class="btn ghost" href="#overview">
@@ -487,7 +487,7 @@ const compatibilityPlatforms = [
               <ul class="price-list">
                 {card.features.map((feature) => <li>{feature}</li>)}
               </ul>
-              <a class:list={['btn', card.featured ? 'primary' : 'ghost dark']} href={card.href} data-download={card.href === downloadHref ? '' : undefined} data-attr={card.href === downloadHref ? 'download-cta' : undefined}>{card.cta}</a>
+              <a class:list={['btn', card.featured ? 'primary' : 'ghost dark']} href={card.href} data-download={card.href === downloadHref ? '' : undefined} data-attr={card.href === downloadHref ? 'download-cta-pricing-card' : undefined}>{card.cta}</a>
             </article>
           ))}
         </div>
@@ -602,7 +602,7 @@ const compatibilityPlatforms = [
           </p>
         </div>
         <div class="cta-actions">
-          <a class="btn primary" href={downloadHref} data-download data-attr="download-cta">
+          <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-final">
             Download latest release
           </a>
           <a class="btn ghost" href="/help/">Open help center</a>
