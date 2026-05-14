@@ -200,9 +200,9 @@ const breadcrumbItems = [
         <a href={feedbackHref}>Feedback</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn primary" href="/download/" data-track="download_nav_clicked" data-attr="download-cta">Download for Mac</a>
+        <a class="btn primary" href="/download/" data-track="download_nav_clicked" data-attr="download-cta-nav">Download for Mac</a>
       </div>
-      <a class="btn primary mobile-only" href="/download/" data-track="download_nav_clicked" data-attr="download-cta">Download</a>
+      <a class="btn primary mobile-only" href="/download/" data-track="download_nav_clicked" data-attr="download-cta-nav-mobile">Download</a>
     </div>
   </header>
 
@@ -225,7 +225,7 @@ const breadcrumbItems = [
           {page.slug === 'pricing' || page.slug === 'pricing/free-vs-pro' ? <h1 set:html={colorizePricingH1(page.h1, page.slug)} /> : <h1>{page.h1}</h1>}
           <p class="lead">{page.lead}</p>
           <div class="hero-ctas">
-            {page.primaryCta && <a class="btn primary" href={page.primaryCta.href} data-track="page_primary_cta_clicked" data-attr={page.primaryCta.href === '/download/' || page.primaryCta.href === githubUrl ? 'download-cta' : undefined}>{page.primaryCta.label}</a>}
+            {page.primaryCta && <a class="btn primary" href={page.primaryCta.href} data-track="page_primary_cta_clicked" data-attr={page.primaryCta.href === '/download/' || page.primaryCta.href === githubUrl ? 'download-cta-hero' : undefined}>{page.primaryCta.label}</a>}
             {page.secondaryCta && <a class="btn ghost" href={page.secondaryCta.href} data-track="page_secondary_cta_clicked">{page.secondaryCta.label}</a>}
           </div>
         </div>
@@ -360,7 +360,7 @@ const breadcrumbItems = [
               <div><dt>SHA-256</dt><dd data-release-digest>Shown when published by GitHub release metadata.</dd></div>
               <div><dt>Signing</dt><dd>Verify signing and notarization details in the current release notes.</dd></div>
             </dl>
-            <a class="btn primary" href={page.primaryCta?.href ?? githubUrl} data-release-download data-download data-attr="download-cta">Download latest release</a>
+            <a class="btn primary" href={page.primaryCta?.href ?? githubUrl} data-release-download data-download data-attr="download-cta-release-panel">Download latest release</a>
           </div>
         </div>
       </section>
@@ -415,7 +415,7 @@ const breadcrumbItems = [
                       <ul class="price-list">
                         {tier.features.map((feature) => <li>{feature}</li>)}
                       </ul>
-                      <a class:list={['btn', meta?.featured ? 'primary' : 'ghost dark']} href={ctaHref} data-attr={ctaHref === '/download/' ? 'download-cta' : undefined}>{ctaLabel}</a>
+                      <a class:list={['btn', meta?.featured ? 'primary' : 'ghost dark']} href={ctaHref} data-attr={ctaHref === '/download/' ? 'download-cta-pricing-card' : undefined}>{ctaLabel}</a>
                     </article>
                   );
                 })}
@@ -459,7 +459,7 @@ const breadcrumbItems = [
                         <p class="free-pro-plan-price">{plan.price}</p>
                         <p class="free-pro-plan-summary">{plan.summary}</p>
                       </div>
-                      <a class:list={['btn', plan.cta.variant === 'primary' ? 'primary' : 'ghost dark']} href={plan.cta.href} data-attr={plan.cta.href === '/download/' ? 'download-cta' : undefined}>{plan.cta.label}</a>
+                      <a class:list={['btn', plan.cta.variant === 'primary' ? 'primary' : 'ghost dark']} href={plan.cta.href} data-attr={plan.cta.href === '/download/' ? 'download-cta-free-vs-pro-card' : undefined}>{plan.cta.label}</a>
                     </article>
                   ))}
                 </div>
