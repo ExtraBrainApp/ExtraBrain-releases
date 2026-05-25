@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from './MarketingLayout.astro';
+import BacklinksFooter from '../components/BacklinksFooter.astro';
 import {
   absoluteUrl,
   breadcrumbSchema,
@@ -665,6 +666,7 @@ const breadcrumbItems = [
         <a href={feedbackHref}>Send Feedback</a>
       </div>
     </div>
+    <BacklinksFooter />
   </footer>
 
   {page.slug === 'download' && (
