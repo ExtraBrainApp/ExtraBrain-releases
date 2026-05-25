@@ -1,6 +1,7 @@
 ---
 import MarketingLayout from '../layouts/MarketingLayout.astro';
 import FeedbackForm from '../components/FeedbackForm.astro';
+import BacklinksFooter from '../components/BacklinksFooter.astro';
 import {
   absoluteUrl,
   faqSchema,
@@ -644,13 +645,7 @@ const compatibilityPlatforms = [
         <a href="#feedback" data-feedback-trigger>Send Feedback</a>
       </div>
     </div>
-    <div style="opacity:0; height:0">
-      <a href="https://soproduct.com" target="_blank" rel="noopener noreferrer"> 
-          <img src="https://soproduct.com/badages-awards.svg"
-          alt="Featured on So Product" style="height: 54px; width: auto;"/>
-      </a>
-      <a href="https://startupfa.me/s/extrabrain?utm_source=extrabrain.app" target="_blank"><img src="https://startupfa.me/badges/featured-badge.webp" alt="ExtraBrain - Featured on Startup Fame" width="171" height="54" /></a>
-    </div>  
+    <BacklinksFooter />
 </footer>
 
   <FeedbackForm />
