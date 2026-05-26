@@ -8,3 +8,4 @@ export const collections = {
     schema: docsSchema(),
   }),
 };
+
