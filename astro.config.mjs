@@ -107,6 +107,7 @@ export default defineConfig({
     sitemap(),
     starlight({
       title: 'ExtraBrain Help Center',
+      favicon: '/assets/images/favicon-32x32.png',
       sidebar: [
         {
           label: 'Start Here',
