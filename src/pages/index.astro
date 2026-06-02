@@ -4,6 +4,7 @@ import FeedbackForm from '../components/FeedbackForm.astro';
 import BacklinksFooter from '../components/BacklinksFooter.astro';
 import {
   absoluteUrl,
+  contactEmail,
   faqSchema,
   homepageFaq,
   organizationSchema,
@@ -16,17 +17,78 @@ import {
 type BillingOption = { label: string; price: string; originalPrice?: string; note?: string; badge?: string };
 type PricingTierCta = { label: string; href: string };
 type PricingTierExtras = { billingOptions?: BillingOption[]; primaryCta?: PricingTierCta };
+type HomepagePricingCopy = { summary?: string; features?: string[] };
 
 const pageTitle = 'ExtraBrain - Local-First AI Interview & Meeting Copilot';
 const pageDescription =
-  'Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, local Gemma 4 on-device AI where installed and compatible, and BYO providers.';
+  'Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.';
 
 const downloadHref = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest';
+const feedbackHref = `mailto:${contactEmail}?subject=ExtraBrain%20feedback`;
 
-const faqItems = homepageFaq;
+const homepageFeatureList = [
+  'Free, local-first desktop AI interview and meeting copilot',
+  'Live coding, system design, behavioral interview, and meeting support',
+  'Screen-aware desktop workflow for live calls',
+  'On-device AI powered by Gemma',
+  'Local NVIDIA Parakeet transcription and optional Deepgram',
+  'Bring your own OpenAI, Anthropic, Claude, Codex, or compatible provider access',
+  'ExtraBrain Pro custom profiles and workflow controls',
+  'Local-first transcripts, prompts, screenshots, notes, and session history',
+  'Available for Mac today, with Windows and Linux planned',
+  'Apple Silicon and Intel Mac support',
+  'Responsible-use and privacy controls',
+];
+
+const homepageFaqAnswerOverrides: Record<string, string> = {
+  'What is ExtraBrain?':
+    'ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It provides live transcription, screen-aware context, structured prompts, question generation, on-device AI powered by Gemma, and a desktop window designed for private live workflows. It is available for Mac today, with Windows and Linux planned.',
+  'Is ExtraBrain free?':
+    'Yes. ExtraBrain is free to download and use. ExtraBrain Pro starts at $6.99/month (Founder pricing, regular $9.99), with $79/year, and a $149 Lifetime launch option. Pro adds custom profiles, reusable prompt guidance, richer session history, post-session summaries, premium model controls, and advanced workflow tools.',
+  'Which AI providers does ExtraBrain support?':
+    'ExtraBrain supports on-device AI powered by Gemma, plus provider access you control: OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription modes.',
+  'Can I bring my own OpenAI or Anthropic key?':
+    'Yes. ExtraBrain is built around provider access you control. You can use on-device AI powered by Gemma, or connect your own OpenAI, Anthropic, custom OpenAI-compatible endpoint, Claude Subscription, or Codex Subscription setup.',
+  'How is ExtraBrain different from InterviewCoder, Cluely, or Final Round AI?':
+    'ExtraBrain is local-first, free to start, desktop-native, and built around on-device AI powered by Gemma plus provider access you control. It is available for Mac today, with Windows and Linux planned. It emphasizes model choice, data-flow clarity, responsible use, and live interview or meeting context rather than bundled AI credits alone.',
+};
+
+const homepagePricingCopy: Record<string, HomepagePricingCopy> = {
+  Free: {
+    summary: 'Core desktop app, live workflow support, on-device AI powered by Gemma, and BYO provider setup.',
+    features: [
+      'Download and use the Mac app',
+      'Use on-device AI powered by Gemma, or connect OpenAI, Anthropic, Claude, Codex, or compatible provider access',
+      'Local-first transcripts, prompts, screenshots, notes, and session context',
+      'Local Parakeet transcription and optional Deepgram setup',
+      'Help center, setup, privacy, and troubleshooting guides',
+    ],
+  },
+  Pro: {
+    features: [
+      'Everything in Free',
+      'Custom profiles with reusable prompt guidance',
+      'Profile-specific workflow controls for analysis behavior',
+      'Richer session history across transcripts, notes, screenshots, and saved facts',
+      'Post-session summaries for decisions, risks, follow-ups, and review',
+      'Premium model and advanced workflow controls',
+      'Purchase and activate from Settings -> License inside the app',
+    ],
+  },
+};
+
+const homepageSoftwareSchema = softwareApplicationSchema(pageDescription, absoluteUrl('/download/'));
+const faqItems = homepageFaq.map((item) => ({
+  ...item,
+  answer: homepageFaqAnswerOverrides[item.question] ?? item.answer,
+}));
 
 const schemaGraph = [
-  softwareApplicationSchema(pageDescription, absoluteUrl('/download/')),
+  {
+    ...homepageSoftwareSchema,
+    softwareRequirements: 'macOS on Apple Silicon or Intel Mac',
+    featureList: homepageFeatureList,
+  },
   organizationSchema(),
   websiteSchema(),
   faqSchema(faqItems),
@@ -45,8 +107,8 @@ const overviewCards = [
   },
   {
     number: '03',
-    title: 'Choose local Gemma 4 or providers you control',
-    body: 'Use local Gemma 4 on-device AI where installed and compatible, or connect OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, or Codex Subscription modes.',
+    title: 'Choose Gemma-powered AI or providers you control',
+    body: 'Use on-device AI powered by Gemma, or connect OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, or Codex Subscription modes.',
   },
   {
     number: '04',
@@ -111,7 +173,7 @@ const trustCards = [
   },
   {
     title: 'Your model choice stays yours',
-    body: 'The app does not force a single hosted AI vendor. Use local Gemma 4 on-device AI where installed and compatible, or connect the provider subscriptions, accounts, or API keys you trust.',
+    body: 'The app does not force a single hosted AI vendor. Use on-device AI powered by Gemma, or connect the provider subscriptions, accounts, or API keys you trust.',
   },
   {
     title: 'Use it within the rules',
@@ -121,6 +183,7 @@ const trustCards = [
 
 const pricingCards = pricingTiers.map((tier) => {
   const tierExtras = tier as PricingTierExtras;
+  const homepageCopy = homepagePricingCopy[tier.name];
   const fallbackHref =
     tier.name === 'Free'
       ? downloadHref
@@ -132,11 +195,11 @@ const pricingCards = pricingTiers.map((tier) => {
 
   return {
     name: tier.name,
-    body: tier.summary,
+    body: homepageCopy?.summary ?? tier.summary,
     price: tier.price,
     billingOptions: tierExtras.billingOptions,
     suffix: '',
-    features: tier.features,
+    features: homepageCopy?.features ?? tier.features,
     href: tierExtras.primaryCta?.href ?? fallbackHref,
     cta: tierExtras.primaryCta?.label ?? fallbackCta,
     featured: tier.name === 'Pro',
@@ -161,7 +224,7 @@ const pathCards = [
   {
     eyebrow: 'Privacy and control',
     title: 'Understand local and external data paths',
-    body: 'Review fully local setup, local Gemma 4 hardware requirements, provider data flow, API key handling, and sensible operating practices.',
+    body: 'Review local setup, provider data flow, API key handling, and sensible operating practices.',
     href: '/privacy/',
     cta: 'Read privacy notes',
   },
@@ -200,7 +263,7 @@ const compatibilityPlatforms = [
         <a href="/pricing/">Pricing</a>
         <a href="/privacy/">Privacy</a>
         <a href="#faq">FAQ</a>
-        <a href="#feedback" data-feedback-trigger>Feedback</a>
+        <a href={feedbackHref} data-feedback-trigger>Feedback</a>
       </nav>
       <div class="nav-actions">
         <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-home-nav">
@@ -218,12 +281,12 @@ const compatibilityPlatforms = [
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="hero-kicker">Free local-first desktop copilot</div>
-          <h1 id="hero-title">Desktop AI interview and meeting copilot.</h1>
+          <h1 id="hero-title">Desktop AI <span class="hero-title-accent">interview</span> and meeting copilot.</h1>
           <p class="lead">
-            ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It helps engineers,
-            candidates, students, founders, and meeting leads follow live conversations with transcription,
-            screen-aware context, local Gemma 4 where installed and compatible, BYO AI providers, and privacy controls.
-            Available for Mac today, with Windows and Linux planned.
+            ExtraBrain is a <strong class="hero-lead-accent">free, local-first</strong> desktop AI interview and meeting copilot. It helps engineers,
+            candidates, students, founders, and meeting leads follow <strong class="hero-lead-accent">live conversations</strong> with transcription,
+            <strong class="hero-lead-accent">screen-aware context</strong>, on-device AI powered by Gemma, <strong class="hero-lead-accent">BYO AI providers</strong>,
+            and <strong class="hero-lead-accent">privacy controls</strong>. Available for Mac today, with Windows and Linux planned.
           </p>
           <div class="hero-ctas">
             <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-hero">
@@ -235,7 +298,7 @@ const compatibilityPlatforms = [
           </div>
           <div class="hero-mini" aria-label="Product highlights">
             <span>Local Parakeet transcription</span>
-            <span>Local Gemma 4 when installed and compatible</span>
+            <span>Gemma-powered on-device AI</span>
             <span>Optional Deepgram</span>
             <span>OpenAI, Anthropic, Claude, Codex</span>
             <span>Available for Mac today</span>
@@ -314,7 +377,7 @@ const compatibilityPlatforms = [
       <div class="container proof-card">
         <p>
           <strong>Built for high-stakes live thinking.</strong>
-          {productCategory}. Available for Mac today, with local Gemma 4 on-device AI where installed and compatible and provider access you control.
+          {productCategory}. Available for Mac today, with on-device AI powered by Gemma and provider access you control.
         </p>
         <div class="audience-row" aria-label="Target audiences">
           <span>Engineers</span>
@@ -333,7 +396,7 @@ const compatibilityPlatforms = [
           <h2>An invisible AI copilot for interviews, meetings, lectures, and research.</h2>
           <p class="lead light">
             ExtraBrain turns live audio, transcript text, screenshots, and selected context into organized prompts,
-            answer structures, and session memory while keeping local Gemma 4 availability, provider choice, costs, and privacy boundaries visible.
+            answer structures, and session memory while keeping provider choice, costs, and privacy boundaries visible.
           </p>
         </div>
         <div class="benefit-grid">
@@ -354,8 +417,8 @@ const compatibilityPlatforms = [
           <span class="eyebrow">How it works</span>
           <h2>From download to live support in three steps.</h2>
           <p class="lead light">
-            Keep the setup path simple: install the Mac app, choose local or cloud transcription, select local Gemma 4
-            when your hardware supports it or connect provider access, and rehearse once before a real interview, meeting, or lecture.
+            Keep the setup path simple: install the Mac app, choose local or cloud transcription, choose on-device AI or provider access,
+            and rehearse once before a real interview, meeting, or lecture.
           </p>
         </div>
         <div class="steps-grid">
@@ -423,7 +486,7 @@ const compatibilityPlatforms = [
           <span class="eyebrow">Trust and control</span>
           <h2>Local-first control belongs in the main product story.</h2>
           <p class="lead">
-            ExtraBrain can keep requests on your device when you use local Gemma 4 and local Parakeet transcription. Privacy still
+            ExtraBrain can keep requests on your device when you use Gemma-powered on-device AI and local Parakeet transcription. Privacy still
             depends on your selected setup, including what you send to optional model and transcription providers.
           </p>
         </div>
@@ -454,7 +517,7 @@ const compatibilityPlatforms = [
           <span class="eyebrow">Pricing structure</span>
           <h2>Free to start. Pro from $6.99/month, $79/year, or $149 lifetime.</h2>
           <p class="lead light">
-            Free core access, local Gemma 4 on-device AI where installed and compatible, BYO provider subscriptions or API keys, Pro workflow tools, and enterprise support by contact.
+            Free core access, on-device AI powered by Gemma, BYO provider subscriptions or API keys, Pro workflow tools, and enterprise support by contact.
           </p>
         </div>
         <div class="pricing-grid">
@@ -517,8 +580,8 @@ const compatibilityPlatforms = [
           <article class="related-card">
             <div>
               <small>Features</small>
-              <h3>Local Gemma 4, transcription, and BYO providers</h3>
-              <p>Local Gemma 4 on-device AI where installed and compatible, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.</p>
+              <h3>Gemma-powered AI, transcription, and BYO providers</h3>
+              <p>On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.</p>
             </div>
             <a href="/features/bring-your-own-provider/">Review providers</a>
           </article>
@@ -540,7 +603,7 @@ const compatibilityPlatforms = [
           <span class="eyebrow">Pick your path</span>
           <h2>Get set up with the guide that matches your workflow.</h2>
           <p class="lead light">
-            The help center keeps installation, local Gemma 4 availability, provider access, privacy, billing, and interview workflow details
+            The help center keeps installation, provider access, privacy, billing, and interview workflow details
             crawlable and easy to reach from the homepage.
           </p>
         </div>
@@ -568,7 +631,7 @@ const compatibilityPlatforms = [
           <h2>Common questions about ExtraBrain.</h2>
           <p class="lead light">
             Direct answers for searchers comparing invisible AI interview assistants, meeting copilots,
-            local Gemma 4, provider-connected tools, and local-first desktop apps.
+            Gemma-powered on-device AI, provider-connected tools, and local-first desktop apps.
           </p>
         </div>
         <div class="faq-list">
@@ -642,7 +705,7 @@ const compatibilityPlatforms = [
         <a href="/help/troubleshooting/">Troubleshooting</a>
         <a href="/providers/">Providers</a>
         <a href="https://github.com/ExtraBrainApp/ExtraBrain-releases/releases" data-track="all_releases_clicked">GitHub</a>
-        <a href="#feedback" data-feedback-trigger>Send Feedback</a>
+        <a href={feedbackHref} data-feedback-trigger>Send Feedback</a>
       </div>
     </div>
     <BacklinksFooter />
