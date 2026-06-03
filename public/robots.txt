@@ -35,4 +35,3 @@ User-agent: CCBot
 Allow: /
 
 Sitemap: https://extrabrain.app/sitemap-index.xml
-Sitemap: https://extrabrain.app/sitemap.xml

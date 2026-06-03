@@ -2,9 +2,11 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom';
+import { allPublicRoutes, absoluteUrl } from './src/data/product';
 
 const siteUrl = 'https://extrabrain.app';
-const defaultOgImage = `${siteUrl}/assets/images/logo-512.png`;
+const defaultOgImage = `${siteUrl}/assets/og/extrabrain-share-card.svg`;
+const sitemapLastmod = new Date('2026-06-03T00:00:00.000Z');
 const proMonthlyFounderCheckout =
   'https://extrabrain.lemonsqueezy.com/checkout/buy/f5618066-dfaf-419e-ac49-a05ffa5e30d9?checkout%5Bdiscount_code%5D=EARLYBIRD&prefill=earlybird';
 const helpStructuredData = JSON.stringify({
@@ -104,7 +106,15 @@ const helpStructuredData = JSON.stringify({
 export default defineConfig({
   site: siteUrl,
   integrations: [
-    sitemap(),
+    sitemap({
+      lastmod: sitemapLastmod,
+      customPages: allPublicRoutes.map((route) => absoluteUrl(route)),
+      filter: (page) => page !== `${siteUrl}/sitemap.xml`,
+      serialize: (item) => ({
+        ...item,
+        lastmod: item.lastmod ?? sitemapLastmod.toISOString(),
+      }),
+    }),
     starlight({
       title: 'ExtraBrain Help Center',
       sidebar: [
@@ -218,21 +228,21 @@ export default defineConfig({
           tag: 'meta',
           attrs: {
             property: 'og:image:width',
-            content: '512',
+            content: '1200',
           },
         },
         {
           tag: 'meta',
           attrs: {
             property: 'og:image:height',
-            content: '512',
+            content: '630',
           },
         },
         {
           tag: 'meta',
           attrs: {
             name: 'twitter:card',
-            content: 'summary',
+            content: 'summary_large_image',
           },
         },
         {

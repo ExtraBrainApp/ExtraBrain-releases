@@ -9,7 +9,7 @@ interface Props {
   enableAnalytics?: boolean;
 }
 
-const { title, description, ogImage = '/assets/images/logo-512.png', schemaGraph, enableAnalytics = true } = Astro.props;
+const { title, description, ogImage = '/assets/og/extrabrain-share-card.svg', schemaGraph, enableAnalytics = true } = Astro.props;
 const siteUrl = Astro.site ?? new URL('https://extrabrain.app');
 const canonical = new URL(Astro.url.pathname, siteUrl);
 const downloadUrl = new URL('/download/', siteUrl).href;
@@ -171,11 +171,13 @@ p{margin-top:0;color:var(--text-secondary)}
     <meta property="og:image" content={new URL(ogImage, siteUrl).href} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ExtraBrain Mac AI interview assistant with live transcript, screenshots, local AI, and provider controls" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonical.href} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, siteUrl).href} />
+    <meta name="twitter:image:alt" content="ExtraBrain Mac AI interview assistant with live transcript, screenshots, local AI, and provider controls" />
   </head>
   <body>
     <a class="skip-link" href="#top">Skip to content</a>

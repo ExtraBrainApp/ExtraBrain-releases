@@ -1376,9 +1376,298 @@ const baseMarketingPages: MarketingPage[] = [
 
 const comparisonSlugs = new Set(comparisonMarketingPages.map((page) => page.slug));
 
+export const seoLandingPages: MarketingPage[] = [
+  {
+    slug: 'ai-interview-assistant-mac',
+    title: 'AI Interview Assistant for Mac',
+    description:
+      'ExtraBrain is a free Mac AI interview assistant for coding, system design, behavioral, and meeting workflows with local-first privacy and BYO providers.',
+    eyebrow: 'Mac interview assistant',
+    h1: 'A Mac AI interview assistant for live technical conversations.',
+    lead:
+      'ExtraBrain gives Mac users a desktop AI workspace for live interview prompts, transcript-aware answers, screenshots, local Gemma 4 where installed and compatible, and provider access they control.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Read interview guide', href: '/help/using-extrabrain-in-interviews/' },
+    sections: [
+      {
+        title: 'Why Mac candidates use ExtraBrain',
+        items: [
+          { title: 'Desktop-native workflow', body: 'Run ExtraBrain beside Zoom, Google Meet, CoderPad, HackerRank, CodeSignal, docs, and notes without adding a meeting bot to the call.' },
+          { title: 'Live interview context', body: 'Use transcript text, screenshot context, saved facts, and follow-up prompts to keep coding, system design, and behavioral conversations structured.' },
+          { title: 'Local-first options', body: 'Use local Parakeet transcription and local Gemma 4 where installed and compatible, or choose OpenAI, Anthropic, Claude, Codex, Deepgram, or a compatible endpoint.' },
+        ],
+      },
+      {
+        title: 'Best-fit interview workflows',
+        items: [
+          { title: 'Coding interviews', body: 'Capture problem statements, constraints, edge cases, complexity notes, and test cases during LeetCode-style interviews.' },
+          { title: 'System design rounds', body: 'Keep requirements, components, bottlenecks, tradeoffs, and clarifying questions visible while the design evolves.' },
+          { title: 'Behavioral interviews', body: 'Use structured notes to organize STAR stories, leadership examples, risks, and follow-up questions.' },
+        ],
+      },
+      {
+        title: 'Responsible use checklist',
+        items: [
+          { title: 'Check rules first', body: 'Interview policies differ. Use ExtraBrain only where live notes, transcription, or AI assistance are allowed.' },
+          { title: 'Keep provider routing clear', body: 'Decide before the session whether transcript text, screenshots, or prompts can leave your Mac for selected external providers.' },
+          { title: 'Rehearse before the call', body: 'Test microphone permissions, transcription, provider access, screenshot behavior, and window visibility before a high-stakes interview.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Is ExtraBrain an AI interview assistant for Mac?', answer: 'Yes. ExtraBrain is available for Mac today and supports coding, system design, behavioral, meeting, lecture, and research workflows.' },
+      { question: 'Can ExtraBrain run locally?', answer: 'A local setup is possible when local Parakeet transcription and local Gemma 4 are installed and compatible, and you do not send content to external providers.' },
+      { question: 'Does ExtraBrain work with coding interview platforms?', answer: 'ExtraBrain runs as a desktop app and can support interviews that use tools such as CoderPad, HackerRank, CodeSignal, Codility, Zoom, Google Meet, and Microsoft Teams.' },
+    ],
+  },
+  {
+    slug: 'platforms/coderpad-interview-assistant',
+    title: 'CoderPad Interview Assistant for Mac',
+    description:
+      'Use ExtraBrain as a Mac desktop assistant for CoderPad interviews with live transcription, screenshots, coding prompts, edge cases, and BYO AI providers.',
+    eyebrow: 'Platform workflow',
+    h1: 'ExtraBrain for CoderPad interviews.',
+    lead:
+      'ExtraBrain helps you keep a CoderPad interview organized by turning spoken prompts and screen context into constraints, edge cases, clarifying questions, and review notes.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Open coding interview page', href: '/use-cases/coding-interviews/' },
+    sections: [
+      {
+        title: 'CoderPad workflow support',
+        items: [
+          { title: 'Prompt capture', body: 'Use live transcript and screenshot context to restate the task, examples, inputs, outputs, and constraints before coding.' },
+          { title: 'Implementation structure', body: 'Ask for a baseline, optimized approach, edge cases, and concise complexity explanation while keeping your own reasoning central.' },
+          { title: 'Local-first setup', body: 'Keep the workflow on your Mac with local transcription and local Gemma 4 where compatible, or use provider access you control.' },
+        ],
+      },
+      {
+        title: 'Before the interview',
+        items: [
+          { title: 'Test permissions', body: 'Verify microphone, screenshots, and provider routing with a non-sensitive practice problem.' },
+          { title: 'Know the policy', body: 'Use ExtraBrain only when the interviewer, company, school, or platform rules allow assistance or notes.' },
+          { title: 'Prepare prompts', body: 'Save prompts for clarifying requirements, enumerating edge cases, reviewing tests, and explaining time and space complexity.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain integrate directly with CoderPad?', answer: 'ExtraBrain is a Mac desktop assistant rather than a CoderPad plugin. It can use transcript and screenshot context while you work in CoderPad.' },
+      { question: 'Can ExtraBrain solve CoderPad prompts for me?', answer: 'Use ExtraBrain responsibly to structure thinking, notes, edge cases, and review within the rules of the interview.' },
+      { question: 'Which providers can I use during CoderPad practice?', answer: 'You can use local Gemma 4 where installed and compatible, OpenAI, Anthropic, Claude, Codex, Deepgram, or a custom compatible endpoint depending on setup.' },
+    ],
+  },
+  {
+    slug: 'platforms/hackerrank-interview-assistant',
+    title: 'HackerRank Interview Assistant for Mac',
+    description:
+      'ExtraBrain supports HackerRank coding interviews with live transcript context, screenshots, edge cases, test planning, local transcription, and BYO providers.',
+    eyebrow: 'Platform workflow',
+    h1: 'ExtraBrain for HackerRank interviews.',
+    lead:
+      'Use ExtraBrain to keep HackerRank prompts, examples, hidden edge cases, complexity tradeoffs, and interviewer feedback organized during a live technical interview.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Review responsible use', href: '/responsible-use/' },
+    sections: [
+      {
+        title: 'HackerRank workflow support',
+        items: [
+          { title: 'Understand the problem', body: 'Capture prompt details, constraints, sample inputs, outputs, and follow-up clarifications before implementation.' },
+          { title: 'Plan tests', body: 'Generate boundary cases, failure modes, and dry-run notes so you can explain why your solution works.' },
+          { title: 'Explain tradeoffs', body: 'Keep time complexity, space complexity, alternative approaches, and interviewer feedback visible.' },
+        ],
+      },
+      {
+        title: 'Privacy and policy reminders',
+        items: [
+          { title: 'Follow the rules', body: 'Use live AI assistance only when the interview process permits it.' },
+          { title: 'Pick a data path', body: 'Choose local transcription and local AI when available for sensitive practice, or route selected prompts to providers you trust.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Is ExtraBrain a HackerRank extension?', answer: 'No. ExtraBrain is a Mac desktop app that can support HackerRank workflows through transcription, screenshots, and provider-controlled prompts.' },
+      { question: 'Can ExtraBrain help with hidden test cases?', answer: 'ExtraBrain can help brainstorm categories of edge cases and test planning, but you remain responsible for your own solution and interview rules.' },
+      { question: 'Does ExtraBrain work for non-coding HackerRank rounds?', answer: 'Yes. ExtraBrain also supports system design, behavioral, meeting, lecture, and research workflows.' },
+    ],
+  },
+  {
+    slug: 'platforms/codesignal-interview-assistant',
+    title: 'CodeSignal Interview Assistant for Mac',
+    description:
+      'Use ExtraBrain with CodeSignal-style technical interviews for transcript-aware prompts, screenshots, edge cases, complexity review, and local-first privacy choices.',
+    eyebrow: 'Platform workflow',
+    h1: 'ExtraBrain for CodeSignal interviews.',
+    lead:
+      'ExtraBrain supports CodeSignal-style sessions by helping you capture requirements, reason through examples, track edge cases, and summarize solution tradeoffs from a Mac desktop app.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Open coding workflow', href: '/use-cases/coding-interviews/' },
+    sections: [
+      {
+        title: 'CodeSignal workflow support',
+        items: [
+          { title: 'Keep requirements visible', body: 'Use transcript and screenshot context to preserve problem details while the timer and interviewer move quickly.' },
+          { title: 'Review before submitting', body: 'Ask for test cases, off-by-one checks, empty input handling, duplicates, and complexity wording.' },
+          { title: 'Use your own providers', body: 'Choose local Gemma 4 where compatible, OpenAI, Anthropic, Claude, Codex, or a custom endpoint based on your policy and privacy needs.' },
+        ],
+      },
+      {
+        title: 'Responsible interview prep',
+        items: [
+          { title: 'Practice openly', body: 'Use ExtraBrain for mock sessions, notes, accessibility, and structured review.' },
+          { title: 'Confirm live-session rules', body: 'Do not use ExtraBrain in a live assessment where AI assistance or transcription is prohibited.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain connect directly to CodeSignal?', answer: 'ExtraBrain is not a CodeSignal plugin. It runs as a desktop assistant that can use transcript and screenshot context.' },
+      { question: 'Can ExtraBrain help with CodeSignal practice?', answer: 'Yes. It can help organize prompts, tests, edge cases, complexity explanations, and post-session review.' },
+      { question: 'Is CodeSignal support Mac-only?', answer: 'ExtraBrain is available for Mac today, with Windows and Linux planned.' },
+    ],
+  },
+  {
+    slug: 'meetings/zoom-ai-meeting-copilot',
+    title: 'Zoom AI Meeting Copilot for Mac',
+    description:
+      'ExtraBrain is a local-first Mac desktop meeting copilot for Zoom calls with live transcription, notes, screenshots, local AI options, and BYO providers.',
+    eyebrow: 'Meeting workflow',
+    h1: 'A Zoom meeting copilot that stays on your Mac.',
+    lead:
+      'ExtraBrain supports Zoom calls without joining as another participant, helping you track transcript context, decisions, risks, action items, screenshots, and follow-up questions.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Open meeting use case', href: '/use-cases/meetings/' },
+    sections: [
+      {
+        title: 'Zoom workflow support',
+        items: [
+          { title: 'Desktop app, not a meeting bot', body: 'ExtraBrain runs on your Mac and does not need to appear as a separate participant in the Zoom meeting.' },
+          { title: 'Live notes and follow-ups', body: 'Capture transcript context, decisions, action items, risks, and unanswered questions during the call.' },
+          { title: 'Local-first data path', body: 'Use local Parakeet transcription and local Gemma 4 where compatible, or choose external providers when the meeting content allows it.' },
+        ],
+      },
+      {
+        title: 'When to use it',
+        items: [
+          { title: 'Customer calls', body: 'Summarize pain points, objections, quotes, and follow-ups after the call.' },
+          { title: 'Technical meetings', body: 'Track decisions, tradeoffs, owners, risks, and implementation notes.' },
+          { title: 'Interviews', body: 'Use interview workflows only when meeting and interview policies allow notes, transcription, or AI assistance.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain join my Zoom call?', answer: 'No. ExtraBrain runs as a Mac desktop app rather than joining Zoom as a bot participant.' },
+      { question: 'Can Zoom meeting content stay local?', answer: 'A local posture is possible with local Parakeet transcription and local Gemma 4 where installed and compatible, if you do not send content to external providers.' },
+      { question: 'Can I use ExtraBrain for Zoom interviews?', answer: 'Only use it where interview, workplace, school, and platform rules allow notes, transcription, or AI assistance.' },
+    ],
+  },
+  {
+    slug: 'meetings/google-meet-ai-copilot',
+    title: 'Google Meet AI Copilot for Mac',
+    description:
+      'Use ExtraBrain as a Mac Google Meet copilot for live transcription, meeting notes, local-first privacy, screenshots, and provider-controlled AI prompts.',
+    eyebrow: 'Meeting workflow',
+    h1: 'A Google Meet AI copilot for local-first live notes.',
+    lead:
+      'ExtraBrain helps you keep Google Meet discussions organized with transcript-aware notes, screenshots, decisions, risks, follow-up questions, and local or BYO AI provider choices.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Read privacy notes', href: '/privacy/' },
+    sections: [
+      {
+        title: 'Google Meet workflow support',
+        items: [
+          { title: 'No bot participant required', body: 'ExtraBrain runs as a desktop app on your Mac rather than joining the meeting as a visible assistant.' },
+          { title: 'Live context', body: 'Use transcripts, screenshots, prompts, and saved facts to follow decisions, action items, objections, and open questions.' },
+          { title: 'Provider choice', body: 'Use local Gemma 4 where compatible, or connect OpenAI, Anthropic, Claude, Codex, Deepgram, or a compatible endpoint.' },
+        ],
+      },
+      {
+        title: 'Data-flow questions',
+        items: [
+          { title: 'Who can receive transcript text?', body: 'Local setups can keep prompts on the Mac. External model providers receive selected prompts and context when you choose them.' },
+          { title: 'Who can receive audio?', body: 'Local Parakeet keeps transcription local; optional Deepgram can receive audio or transcription data depending on setup.' },
+          { title: 'What should be disclosed?', body: 'Follow workplace, meeting, interview, research, school, and platform policies for recording, transcription, and AI assistance.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Is ExtraBrain a Google Meet bot?', answer: 'No. ExtraBrain is a Mac desktop app and does not join Google Meet as another participant.' },
+      { question: 'Can I use ExtraBrain for Google Meet notes?', answer: 'Yes, when your meeting rules allow transcription, notes, screenshots, or AI assistance.' },
+      { question: 'Does ExtraBrain support local AI for Google Meet?', answer: 'Yes, local Gemma 4 can be used where installed and compatible. External providers are optional paths you control.' },
+    ],
+  },
+  {
+    slug: 'providers/openai-interview-assistant',
+    title: 'OpenAI Interview Assistant with BYO Provider Control',
+    description:
+      'ExtraBrain lets you use OpenAI provider access you control for Mac interview workflows while keeping app features, provider billing, and data routing clear.',
+    eyebrow: 'Provider workflow',
+    h1: 'Use OpenAI with a Mac interview assistant you control.',
+    lead:
+      'ExtraBrain separates the desktop app workflow from provider access, so you can connect OpenAI for selected interview or meeting prompts while understanding billing, retention, and data-flow boundaries.',
+    primaryCta: { label: 'Set up providers', href: '/help/setup-api-keys/' },
+    secondaryCta: { label: 'Compare providers', href: '/providers/' },
+    sections: [
+      {
+        title: 'Why bring your own OpenAI access',
+        items: [
+          { title: 'Provider billing stays separate', body: 'OpenAI usage is governed by your OpenAI account, quota, model access, retention settings, and billing rather than being bundled into ExtraBrain Pro.' },
+          { title: 'Use only selected context', body: 'Choose when transcript text, screenshots, prompts, or notes should be sent to OpenAI instead of staying local.' },
+          { title: 'Keep a fallback', body: 'Configure local Gemma 4 where compatible or another provider path for quota, outage, policy, or model-quality concerns.' },
+        ],
+      },
+      {
+        title: 'Best-fit workflows',
+        items: [
+          { title: 'Coding interviews', body: 'Ask for constraints, edge cases, baseline approaches, optimized solutions, and complexity explanations.' },
+          { title: 'System design', body: 'Ask for components, APIs, storage options, bottlenecks, tradeoffs, and follow-up questions.' },
+          { title: 'Meeting summaries', body: 'Turn transcript context into decisions, risks, owners, and next steps when meeting rules allow it.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain include OpenAI credits?', answer: 'No. ExtraBrain does not bundle provider credits; OpenAI billing and quotas stay with your OpenAI account.' },
+      { question: 'Can OpenAI prompts stay local?', answer: 'No. Prompts sent to OpenAI leave the device. Use local Gemma 4 where installed and compatible when prompts need to stay local.' },
+      { question: 'Can I use a custom OpenAI-compatible endpoint?', answer: 'Yes. ExtraBrain supports custom OpenAI-compatible endpoint setup where supported by the app.' },
+    ],
+  },
+  {
+    slug: 'providers/claude-interview-assistant',
+    title: 'Claude Interview Assistant with Anthropic or Subscription Access',
+    description:
+      'ExtraBrain supports Claude and Anthropic provider workflows for Mac interviews, meetings, local-first transcription, screenshots, and provider-controlled AI requests.',
+    eyebrow: 'Provider workflow',
+    h1: 'Use Claude with ExtraBrain interview workflows.',
+    lead:
+      'ExtraBrain can route selected interview and meeting prompts to Claude or Anthropic provider access you control, while keeping local transcription, local AI options, and provider boundaries visible.',
+    primaryCta: { label: 'Set up Claude', href: '/help/providers/anthropic-claude-setup/' },
+    secondaryCta: { label: 'Open provider overview', href: '/providers/' },
+    sections: [
+      {
+        title: 'Claude workflow support',
+        items: [
+          { title: 'Provider choice', body: 'Use Anthropic, Claude Subscription mode where supported, local Gemma 4 where compatible, or another configured provider.' },
+          { title: 'Interview structure', body: 'Ask for clarifying questions, edge cases, system design tradeoffs, STAR story structure, or meeting follow-up summaries.' },
+          { title: 'Data-flow clarity', body: 'Transcript text, screenshots, and prompts sent to Claude leave the Mac and are governed by provider account settings.' },
+        ],
+      },
+      {
+        title: 'When to choose local instead',
+        items: [
+          { title: 'Sensitive content', body: 'Use local transcription and local Gemma 4 where compatible when policy or confidentiality requires content to stay on the Mac.' },
+          { title: 'Provider limits', body: 'Keep a backup provider or local path ready for model availability, quota, or network issues.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain use Claude?', answer: 'Yes. ExtraBrain supports Anthropic and Claude Subscription provider paths where configured.' },
+      { question: 'Does ExtraBrain bundle Claude usage?', answer: 'No. Claude or Anthropic access, billing, quotas, and retention settings stay with the provider account or subscription.' },
+      { question: 'What can I use Claude for in interviews?', answer: 'Use it responsibly for structure, clarifying questions, edge cases, tradeoffs, notes, and review where policies allow AI assistance.' },
+    ],
+  },
+];
+
 export const marketingPages: MarketingPage[] = [
   ...baseMarketingPages.filter((page) => !comparisonSlugs.has(page.slug)),
   ...comparisonMarketingPages,
+  ...seoLandingPages,
 ];
 
 export const allPublicRoutes = [
