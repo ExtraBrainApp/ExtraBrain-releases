@@ -18,6 +18,7 @@ const isInterviewGuideRoute = (route: string) => {
     '/meetings/',
     '/providers/',
     '/use-cases/',
+    '/interview-guides/',
   ].some((prefix) => route.startsWith(prefix));
 };
 
