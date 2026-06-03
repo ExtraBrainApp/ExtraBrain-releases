@@ -109,7 +109,6 @@ export default defineConfig({
     sitemap({
       lastmod: sitemapLastmod,
       customPages: allPublicRoutes.map((route) => absoluteUrl(route)),
-      filter: (page) => page !== `${siteUrl}/sitemap.xml`,
       serialize: (item) => ({
         ...item,
         lastmod: item.lastmod ?? sitemapLastmod.toISOString(),
