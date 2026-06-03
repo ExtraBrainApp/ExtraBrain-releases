@@ -1,3 +1,4 @@
+import { seoMarketingPages } from './seo-pages';
 import { comparisonMarketingPages } from './comparisons';
 
 export const siteUrl = 'https://extrabrain.app';
@@ -1379,6 +1380,7 @@ const comparisonSlugs = new Set(comparisonMarketingPages.map((page) => page.slug
 export const marketingPages: MarketingPage[] = [
   ...baseMarketingPages.filter((page) => !comparisonSlugs.has(page.slug)),
   ...comparisonMarketingPages,
+  ...seoMarketingPages,
 ];
 
 export const allPublicRoutes = [
