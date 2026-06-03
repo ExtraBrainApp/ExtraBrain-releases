@@ -1664,10 +1664,333 @@ export const seoLandingPages: MarketingPage[] = [
   },
 ];
 
+const companyInterviewGuidePages: MarketingPage[] = [
+  {
+    slug: 'interview-guides',
+    title: 'AI Interview Guides for Software Engineering Loops',
+    description:
+      'Company-by-company interview guides for OpenAI, Anthropic, Google, Meta, Amazon, Microsoft, Cursor, Databricks, Stripe, and Netflix with responsible ExtraBrain workflows.',
+    eyebrow: 'Interview guides',
+    h1: 'Company interview guides for high-signal engineering loops.',
+    lead:
+      'Use these guides to prepare for the shape of modern software engineering interviews: coding, system design, behavioral depth, product judgment, AI-native work, and thoughtful follow-up. ExtraBrain can keep transcripts, screenshots, notes, and practice prompts organized while you stay responsible for the work you present.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Read responsible use', href: '/responsible-use/' },
+    schemaType: 'Article',
+    sections: [
+      {
+        title: 'How to use these guides',
+        body:
+          'Each page focuses on preparation rather than shortcuts. Start with the role expectations, build a small practice loop, rehearse aloud, and decide in advance which data path is appropriate for notes, transcription, screenshots, and provider-backed prompts. Company processes change, so verify the current recruiter guidance before relying on any fixed sequence.',
+      },
+      {
+        title: 'Company guides',
+        items: [
+          { title: 'OpenAI interview guide', body: 'Prepare for coding, systems, model-aware product judgment, research taste, and clear ownership stories.', href: '/interview-guides/openai/' },
+          { title: 'Anthropic interview guide', body: 'Practice careful reasoning, safety-minded product thinking, technical depth, and crisp communication.', href: '/interview-guides/anthropic/' },
+          { title: 'Google interview guide', body: 'Build repeatable habits for algorithms, system design, leadership examples, and collaborative problem solving.', href: '/interview-guides/google/' },
+          { title: 'Meta interview guide', body: 'Prepare for fast coding rounds, production-scale systems, behavioral signals, and execution tradeoffs.', href: '/interview-guides/meta/' },
+          { title: 'Amazon interview guide', body: 'Pair technical practice with leadership-principle stories, ownership examples, and operational judgment.', href: '/interview-guides/amazon/' },
+          { title: 'Microsoft interview guide', body: 'Practice coding, design, product sense, collaboration, and growth-mindset stories.', href: '/interview-guides/microsoft/' },
+          { title: 'Cursor interview guide', body: 'Prepare for AI-native engineering discussions, editor workflows, product taste, and shipping judgment.', href: '/interview-guides/cursor/' },
+          { title: 'Databricks interview guide', body: 'Focus on distributed systems, data infrastructure, reliability tradeoffs, and clear problem decomposition.', href: '/interview-guides/databricks/' },
+          { title: 'Stripe interview guide', body: 'Practice API design, correctness, product clarity, debugging, and user-focused engineering judgment.', href: '/interview-guides/stripe/' },
+          { title: 'Netflix interview guide', body: 'Prepare for autonomy, high ownership, distributed systems, culture fit, and business-aware tradeoffs.', href: '/interview-guides/netflix/' },
+        ],
+      },
+      {
+        title: 'Responsible ExtraBrain setup',
+        items: [
+          { title: 'Preparation mode', body: 'Use ExtraBrain freely for mock interviews, transcript review, story libraries, prompt cleanup, and post-practice feedback.' },
+          { title: 'Live interview mode', body: 'Only use live transcription, screenshots, or AI assistance when the company, interviewer, school, employer, and platform rules allow it.' },
+          { title: 'Provider choice', body: 'Use local Parakeet and local Gemma 4 where installed and compatible for the strictest local path, or choose OpenAI, Anthropic, Claude, Codex, Deepgram, or compatible endpoints deliberately.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Are these official company interview pages?', answer: 'No. These are ExtraBrain preparation guides. Always follow current recruiter instructions and official company guidance for the role.' },
+      { question: 'Can I use ExtraBrain during a live interview?', answer: 'Only when the relevant company, interviewer, employer, school, or platform rules allow notes, transcription, or AI assistance.' },
+      { question: 'What should I practice first?', answer: 'Start with the highest-frequency loop for your role, usually coding and behavioral stories, then add system design, product judgment, or AI-native discussions as needed.' },
+    ],
+  },
+  ...[
+    {
+      company: 'OpenAI',
+      slug: 'openai',
+      angle: 'AI-native engineering, product judgment, systems thinking, research taste, and high-ownership collaboration',
+      coding: 'Practice clean implementations, edge-case reasoning, model-adjacent product constraints, and explaining tradeoffs without hiding behind jargon.',
+      system: 'Prepare to discuss reliable AI product architecture, evaluation loops, latency, privacy, safety boundaries, data handling, and rollout risk.',
+      behavioral: 'Build stories around ambiguity, careful judgment, collaboration with research or product partners, user empathy, and learning quickly from feedback.',
+    },
+    {
+      company: 'Anthropic',
+      slug: 'anthropic',
+      angle: 'careful reasoning, safety-minded product work, technical depth, and written clarity',
+      coding: 'Practice readable solutions, explicit assumptions, test planning, and concise explanations of complexity and failure modes.',
+      system: 'Prepare for conversations about reliability, alignment-sensitive features, evaluation quality, user trust, privacy, and operational safeguards.',
+      behavioral: 'Choose stories that show judgment under uncertainty, collaborative disagreement, principled tradeoffs, and a willingness to slow down when safety or quality demands it.',
+    },
+    {
+      company: 'Google',
+      slug: 'google',
+      angle: 'algorithms, scalable design, collaboration, and structured problem solving',
+      coding: 'Practice data structures, algorithms, dry runs, edge cases, time and space complexity, and explaining your thought process as you iterate.',
+      system: 'Prepare to move from requirements to APIs, storage, caches, queues, observability, reliability targets, privacy constraints, and scale bottlenecks.',
+      behavioral: 'Use stories about leadership, cross-functional communication, conflict resolution, inclusion, ownership, and learning from launch or operational outcomes.',
+    },
+    {
+      company: 'Meta',
+      slug: 'meta',
+      angle: 'fast execution, product-scale systems, coding fluency, and impact-focused ownership',
+      coding: 'Practice quickly recognizing patterns, verbalizing constraints, testing boundary cases, and keeping your implementation simple enough to debug under time pressure.',
+      system: 'Prepare for high-traffic consumer or infrastructure systems, ranking or feed-style tradeoffs, reliability, experimentation, privacy, and operational cost.',
+      behavioral: 'Prepare concise examples of moving fast responsibly, resolving disagreement, measuring impact, handling ambiguity, and learning from production feedback.',
+    },
+    {
+      company: 'Amazon',
+      slug: 'amazon',
+      angle: 'leadership principles, operational ownership, customer obsession, and pragmatic technical judgment',
+      coding: 'Practice clear problem statements, testable solutions, edge-case coverage, and explaining tradeoffs in a way that an interviewer can follow step by step.',
+      system: 'Prepare for service boundaries, APIs, queues, databases, failure recovery, cost control, monitoring, on-call reality, and customer-facing reliability.',
+      behavioral: 'Map true stories to ownership, customer obsession, bias for action, learning from failure, diving deep, disagreeing constructively, and delivering results.',
+    },
+    {
+      company: 'Microsoft',
+      slug: 'microsoft',
+      angle: 'collaboration, product-minded engineering, platform thinking, and growth mindset',
+      coding: 'Practice readable implementations, clarifying questions, test cases, debugging narration, and adapting when the interviewer changes constraints.',
+      system: 'Prepare to discuss cloud services, developer platforms, enterprise requirements, security, accessibility, reliability, and maintainable interfaces.',
+      behavioral: 'Use stories that show learning, teamwork, customer empathy, inclusive collaboration, and how you respond to feedback or shifting priorities.',
+    },
+    {
+      company: 'Cursor',
+      slug: 'cursor',
+      angle: 'AI-native developer tools, product taste, editor workflows, and shipping speed',
+      coding: 'Practice building small features cleanly, reasoning about developer experience, debugging unfamiliar code, and communicating tradeoffs in product terms.',
+      system: 'Prepare to discuss latency-sensitive AI workflows, editor integrations, context retrieval, privacy, local versus cloud model paths, and reliability for daily developer use.',
+      behavioral: 'Pick stories about craft, product taste, speed, technical judgment, customer empathy for developers, and improving a workflow you use yourself.',
+    },
+    {
+      company: 'Databricks',
+      slug: 'databricks',
+      angle: 'distributed systems, data infrastructure, reliability, and customer-scale engineering',
+      coding: 'Practice algorithms plus data-heavy edge cases, concurrency reasoning, correctness under load, and clear explanation of failure scenarios.',
+      system: 'Prepare for storage layers, distributed compute, query performance, data governance, scaling bottlenecks, observability, and cost-performance tradeoffs.',
+      behavioral: 'Use examples about ownership, customer impact, deep debugging, cross-team work, operational maturity, and balancing speed with correctness.',
+    },
+    {
+      company: 'Stripe',
+      slug: 'stripe',
+      angle: 'API design, correctness, product clarity, reliability, and user-focused engineering',
+      coding: 'Practice precise requirements, robust edge-case handling, clean tests, idempotency-style thinking, and readable code that communicates intent.',
+      system: 'Prepare for payment-like correctness, API ergonomics, data consistency, privacy, fraud or risk boundaries, observability, and graceful failure handling.',
+      behavioral: 'Prepare stories about user empathy, high standards, incident learning, written communication, and making complex systems simpler for customers or teammates.',
+    },
+    {
+      company: 'Netflix',
+      slug: 'netflix',
+      angle: 'autonomy, high ownership, distributed systems, business-aware tradeoffs, and culture fit',
+      coding: 'Practice direct communication, simple implementation choices, strong testing instincts, and explaining how your solution behaves under failure or scale.',
+      system: 'Prepare for streaming-scale architecture, personalization, reliability, experimentation, cloud cost, observability, and graceful degradation.',
+      behavioral: 'Choose stories that show judgment, autonomy, candor, responsibility, decision quality, and the ability to connect engineering choices to business outcomes.',
+    },
+  ].map(({ company, slug, angle, coding, system, behavioral }) => ({
+    slug: `interview-guides/${slug}`,
+    title: `${company} Software Engineering Interview Guide`,
+    description: `Prepare for ${company} software engineering interviews with coding, system design, behavioral stories, responsible AI practice, and ExtraBrain setup guidance.`,
+    eyebrow: 'Company interview guide',
+    h1: `${company} interview preparation for software engineers.`,
+    lead: `A practical guide for preparing for ${company} engineering interviews, with emphasis on ${angle}. Use ExtraBrain for practice notes, transcript review, screenshots, and structured prompts while following every interview rule.`,
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'All interview guides', href: '/interview-guides/' },
+    schemaType: 'Article' as const,
+    sections: [
+      {
+        title: `What ${company} preparation should cover`,
+        body: `Treat the loop as a portfolio of signals rather than one magic question list. Build a weekly plan that includes timed coding, architecture discussion, truthful behavioral stories, and a short retrospective after each practice session. ExtraBrain can help keep your practice transcript, screen context, saved facts, and follow-up prompts in one local-first workspace so you can review the session instead of relying on memory.`,
+      },
+      {
+        title: 'Coding practice',
+        body: coding,
+        items: [
+          { title: 'Clarify first', body: 'Restate inputs, outputs, constraints, examples, and assumptions before writing code.' },
+          { title: 'Narrate tradeoffs', body: 'Compare a baseline approach with the optimized path and name the complexity, memory, and failure-mode tradeoffs.' },
+          { title: 'Review before finalizing', body: 'Run through empty inputs, duplicates, large values, ordering, off-by-one cases, and one realistic dry run.' },
+        ],
+      },
+      {
+        title: 'System design and product judgment',
+        body: system,
+        items: [
+          { title: 'Start from requirements', body: 'Separate functional requirements, non-functional requirements, constraints, assumptions, and open questions.' },
+          { title: 'Choose boundaries deliberately', body: 'Discuss APIs, data models, storage, queues, caches, consistency, observability, privacy, and rollout risks.' },
+          { title: 'Defend decisions', body: 'Explain why one design is appropriate now and what would change at higher scale, stricter latency, or stronger reliability requirements.' },
+        ],
+      },
+      {
+        title: 'Behavioral stories',
+        body: behavioral,
+        items: [
+          { title: 'Use real examples', body: 'Prepare true stories with situation, task, action, result, reflection, and what you would do differently.' },
+          { title: 'Keep details specific', body: 'Name your role, the constraint, the decision, the measurable outcome, and what changed because of your work.' },
+          { title: 'Avoid scripts', body: 'Use notes to remember structure, not to fabricate experience or read a canned answer.' },
+        ],
+      },
+      {
+        title: 'ExtraBrain practice workflow',
+        items: [
+          { title: 'Mock session capture', body: 'Record a practice run, capture screenshots of prompts or diagrams, and ask ExtraBrain for clarifying questions, missing tests, and follow-up topics.' },
+          { title: 'Local-first review', body: 'Use local Parakeet transcription and local Gemma 4 where installed and compatible when you want the strictest local practice setup.' },
+          { title: 'Live-session boundary', body: 'Do not use live AI help unless the interviewer and platform rules permit it. When in doubt, use ExtraBrain before and after the interview instead.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: `Is this an official ${company} interview process page?`, answer: `No. This is an ExtraBrain preparation guide. Always follow current ${company} recruiter instructions and official role guidance.` },
+      { question: `Can ExtraBrain help me prepare for ${company}?`, answer: 'Yes. Use it for mock interviews, transcript review, prompt cleanup, story organization, screenshot-based practice, and post-session feedback.' },
+      { question: 'Should I use AI during the live interview?', answer: 'Only if the company, interviewer, employer, school, and platform rules explicitly allow notes, transcription, or AI assistance.' },
+    ],
+  })),
+];
+
+const additionalAlternativePages: MarketingPage[] = [
+  {
+    slug: 'compare/ultracode',
+    title: 'ExtraBrain vs Ultracode Alternative',
+    description:
+      'Compare ExtraBrain and Ultracode for coding interviews, system design practice, local-first Mac workflows, BYO AI providers, pricing, and responsible use.',
+    eyebrow: 'Alternative',
+    h1: 'ExtraBrain as an Ultracode alternative.',
+    lead:
+      'Ultracode-style tools focus on technical interview assistance. ExtraBrain is a Mac desktop AI interview and meeting copilot with local transcription, local Gemma 4 where installed and compatible, and provider access you control.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Compare all alternatives', href: '/compare/' },
+    schemaType: 'Article',
+    sections: [
+      {
+        title: 'Choose ExtraBrain when',
+        items: [
+          { title: 'You want a desktop workflow', body: 'ExtraBrain runs on your Mac and supports coding interviews, system design, behavioral interviews, meetings, lectures, and research calls.' },
+          { title: 'Provider control matters', body: 'Use local Gemma 4 where compatible, OpenAI, Anthropic, Claude, Codex, Deepgram, or a custom compatible endpoint instead of depending only on one bundled model path.' },
+          { title: 'Data flow matters', body: 'Review local transcription, provider routing, screenshots, and privacy pages before using any live AI assistant with sensitive content.' },
+        ],
+      },
+      {
+        title: 'What to compare',
+        items: [
+          { title: 'Coding depth', body: 'Compare how each tool handles requirements, edge cases, tests, complexity, debugging, and explaining your reasoning.' },
+          { title: 'System design depth', body: 'Look beyond code answers and compare requirements gathering, API boundaries, storage, bottlenecks, operational risk, and tradeoff quality.' },
+          { title: 'Policy fit', body: 'Confirm whether live assistance is allowed for your specific interview or assessment before using either tool.' },
+        ],
+      },
+    ],
+    sources: [{ label: 'Ultracode homepage', href: 'https://ultracode.ai/' }],
+    faq: [
+      { question: 'Is ExtraBrain an Ultracode alternative?', answer: 'Yes, ExtraBrain can be evaluated as an alternative when you want a Mac desktop assistant with local-first options and BYO provider control.' },
+      { question: 'Does ExtraBrain only help with coding?', answer: 'No. ExtraBrain also supports system design, behavioral interviews, meetings, lectures, research calls, and post-session review.' },
+      { question: 'Which should I choose?', answer: 'Choose based on workflow scope, data flow, provider control, pricing, platform support, and whether the tool fits the rules of your interview.' },
+    ],
+  },
+  {
+    slug: 'compare/meetily',
+    title: 'ExtraBrain vs Meetily Alternative',
+    description:
+      'Compare ExtraBrain and Meetily for local meeting transcription, desktop AI meeting support, interview workflows, local AI options, and provider-controlled prompts.',
+    eyebrow: 'Alternative',
+    h1: 'ExtraBrain as a Meetily alternative for interviews and meetings.',
+    lead:
+      'Meetily-style tools appeal to people who want local meeting transcription. ExtraBrain adds a broader Mac desktop copilot workflow for interviews, meetings, screenshots, provider choice, and post-session review.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Open meeting copilot page', href: '/use-cases/meetings/' },
+    schemaType: 'Article',
+    sections: [
+      {
+        title: 'Choose ExtraBrain when',
+        items: [
+          { title: 'You need live assistance, not just notes', body: 'ExtraBrain can turn transcript and screenshot context into clarifying questions, interview structure, decisions, risks, action items, and review notes.' },
+          { title: 'Interviews and meetings both matter', body: 'Use one app for coding, system design, behavioral interviews, customer calls, lectures, and research sessions.' },
+          { title: 'Provider flexibility matters', body: 'Use local Gemma 4 where installed and compatible, or choose external providers only when the session rules and data sensitivity allow it.' },
+        ],
+      },
+      {
+        title: 'What to compare',
+        items: [
+          { title: 'Transcription path', body: 'Confirm whether audio stays on device, goes to a transcription provider, or is stored in a vendor workspace.' },
+          { title: 'AI summary path', body: 'A transcript can be local while summaries or answers use a cloud model. Compare where prompts, transcript text, and screenshots go.' },
+          { title: 'Collaboration needs', body: 'Choose a team meeting workspace when shared archives and admin controls matter more than a private desktop workflow.' },
+        ],
+      },
+    ],
+    sources: [{ label: 'Meetily homepage', href: 'https://meetily.com/' }],
+    faq: [
+      { question: 'Is ExtraBrain a Meetily alternative?', answer: 'ExtraBrain can be compared with Meetily when you want a Mac desktop copilot that supports local transcription plus interviews, screenshots, AI prompts, and meeting review.' },
+      { question: 'Does ExtraBrain join calls as a bot?', answer: 'No. ExtraBrain runs as a desktop app rather than joining the meeting as another participant.' },
+      { question: 'Can meeting data stay local?', answer: 'A local posture is possible with local Parakeet transcription and local Gemma 4 where installed and compatible, as long as you do not send content to external providers.' },
+    ],
+  },
+];
+
+const seoResourceHubPages: MarketingPage[] = [
+  {
+    slug: 'resources',
+    title: 'ExtraBrain Resources for AI Interviews, Meetings, and Alternatives',
+    description:
+      'Browse ExtraBrain SEO resources: Mac AI interview assistant pages, coding platforms, meeting copilots, BYO providers, local transcription, company guides, and alternatives.',
+    eyebrow: 'Resources',
+    h1: 'Guides for choosing and using a local-first AI interview assistant.',
+    lead:
+      'This hub organizes the practical pages people need before a live interview, technical screen, system design round, meeting, or comparison search. Start with the workflow you actually have, then review privacy, provider routing, local transcription, and responsible-use boundaries before using any assistant in a real session.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Read responsible use', href: '/responsible-use/' },
+    schemaType: 'Article',
+    sections: [
+      {
+        title: 'Commercial workflow pages',
+        body:
+          'Use these pages when you already know the workflow: Mac interview assistant, coding interviews, system design, CoderPad, HackerRank, CodeSignal, Zoom, Google Meet, OpenAI, Claude, bring-your-own providers, and local transcription. Each page explains where ExtraBrain fits, what to test before the session, and how to keep provider routing clear.',
+        items: [
+          { title: 'Mac AI interview assistant', body: 'Start here for a broad overview of the ExtraBrain Mac desktop interview workflow.', href: '/ai-interview-assistant-mac/' },
+          { title: 'Coding interview assistant', body: 'Use this for LeetCode-style prompts, edge cases, complexity review, and platform workflows.', href: '/use-cases/coding-interviews/' },
+          { title: 'System design assistant', body: 'Use this for requirements, APIs, storage, queues, tradeoffs, bottlenecks, and follow-up questions.', href: '/use-cases/system-design-interviews/' },
+          { title: 'Local transcription', body: 'Compare local Parakeet transcription, optional Deepgram, and the model path used for summaries.', href: '/features/local-transcription/' },
+        ],
+      },
+      {
+        title: 'Company interview guides',
+        body:
+          'The company guides focus on preparation habits rather than leaked questions. Use them to plan coding practice, system design drills, behavioral story libraries, and AI-native product judgment for different interview loops.',
+        items: [
+          { title: 'OpenAI, Anthropic, and Cursor', body: 'Prepare for AI-native engineering, careful reasoning, developer tooling judgment, and product-quality tradeoffs.', href: '/interview-guides/' },
+          { title: 'Google, Meta, Amazon, and Microsoft', body: 'Practice algorithms, scalable design, leadership stories, collaboration, execution, and customer-focused engineering.', href: '/interview-guides/' },
+          { title: 'Databricks, Stripe, and Netflix', body: 'Prepare for infrastructure depth, API correctness, autonomy, reliability, and business-aware tradeoffs.', href: '/interview-guides/' },
+        ],
+      },
+      {
+        title: 'Alternative and comparison pages',
+        body:
+          'Comparison pages are written for people evaluating ExtraBrain against visible alternatives. Use them to compare workflow scope, platform support, pricing boundaries, data flow, provider control, local options, and whether the product fits your interview or workplace rules.',
+        items: [
+          { title: 'Compare ExtraBrain alternatives', body: 'Open the main comparison hub for Cluely, InterviewCoder, Final Round AI, LockedIn AI, Parakeet AI, Linkjob AI, Beyz AI, InterviewBee, Ultracode, and Meetily.', href: '/compare/' },
+          { title: 'Provider and privacy pages', body: 'Review BYO providers, local Gemma 4 availability, data flow, security, and responsible use before comparing prices alone.', href: '/providers/' },
+          { title: 'Help center', body: 'Use setup guides for installation, permissions, providers, shortcuts, screenshots, and troubleshooting.', href: '/help/' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What is the best first page for ExtraBrain?', answer: 'Start with the Mac AI interview assistant page if you are evaluating the product, or the download page if you are ready to test the app.' },
+      { question: 'Are the company guides official?', answer: 'No. They are preparation guides from ExtraBrain. Always verify current recruiter and company instructions.' },
+      { question: 'Why include alternatives?', answer: 'People comparing live AI tools need to evaluate data flow, provider control, pricing, platform support, and policy fit rather than only feature lists.' },
+    ],
+  },
+];
+
 export const marketingPages: MarketingPage[] = [
   ...baseMarketingPages.filter((page) => !comparisonSlugs.has(page.slug)),
   ...comparisonMarketingPages,
   ...seoLandingPages,
+  ...companyInterviewGuidePages,
+  ...additionalAlternativePages,
+  ...seoResourceHubPages,
 ];
 
 export const allPublicRoutes = [
