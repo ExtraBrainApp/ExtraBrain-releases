@@ -203,6 +203,13 @@ export default defineConfig({
         {
           tag: 'meta',
           attrs: {
+            property: 'og:site_name',
+            content: 'ExtraBrain',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
             property: 'og:image',
             content: defaultOgImage,
           },
@@ -210,7 +217,28 @@ export default defineConfig({
         {
           tag: 'meta',
           attrs: {
-            property: 'twitter:image',
+            property: 'og:image:width',
+            content: '512',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image:height',
+            content: '512',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:card',
+            content: 'summary',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:image',
             content: defaultOgImage,
           },
         },
