@@ -57,3 +57,37 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          INDEXNOW_HOST: extrabrain.app
+          INDEXNOW_KEY: e16d23bc33b94802ae3e36f59bea8a6a
+          INDEXNOW_KEY_LOCATION: https://extrabrain.app/e16d23bc33b94802ae3e36f59bea8a6a.txt
+          SITEMAP_URL: https://extrabrain.app/sitemap.xml
+        run: |
+          set -euo pipefail
+
+          sitemap=$(curl --fail --silent --show-error --location "$SITEMAP_URL")
+          url_list=$(printf '%s' "$sitemap" | grep -oE '<loc>[^<]+</loc>' | sed -E 's#</?loc>##g' | jq -R . | jq -s .)
+          url_count=$(printf '%s' "$url_list" | jq 'length')
+
+          if [ "$url_count" -eq 0 ]; then
+            echo "No URLs found in $SITEMAP_URL; skipping IndexNow submission."
+            exit 0
+          fi
+
+          jq -n \
+            --arg host "$INDEXNOW_HOST" \
+            --arg key "$INDEXNOW_KEY" \
+            --arg keyLocation "$INDEXNOW_KEY_LOCATION" \
+            --argjson urlList "$url_list" \
+            '{ host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList }' \
+            > indexnow-payload.json
+
+          curl --fail --silent --show-error \
+            --request POST \
+            --header 'Content-Type: application/json; charset=utf-8' \
+            --data @indexnow-payload.json \
+            https://api.indexnow.org/IndexNow
+
+          echo "Submitted $url_count URLs to IndexNow."
