@@ -84,10 +84,21 @@ jobs:
             '{ host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList }' \
             > indexnow-payload.json
 
-          curl --fail --silent --show-error \
+          response_file=$(mktemp)
+          status_code=$(curl --silent --show-error \
+            --output "$response_file" \
+            --write-out '%{http_code}' \
             --request POST \
             --header 'Content-Type: application/json; charset=utf-8' \
             --data @indexnow-payload.json \
-            https://api.indexnow.org/IndexNow
+            https://api.indexnow.org/IndexNow)
 
-          echo "Submitted $url_count URLs to IndexNow."
+          if [ "$status_code" != "200" ]; then
+            echo "IndexNow submission failed with HTTP $status_code."
+            echo "Submitted URL count: $url_count"
+            echo "Response body:"
+            cat "$response_file"
+            exit 1
+          fi
+
+          echo "Submitted $url_count URLs to IndexNow with HTTP $status_code."
