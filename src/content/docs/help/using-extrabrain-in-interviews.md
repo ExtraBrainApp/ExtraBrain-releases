@@ -1,5 +1,5 @@
 ---
-title: Using ExtraBrain in Interviews
+title: Using ExtraBrain In Interviews — Coding, System Design & Behavioral
 description: Use ExtraBrain responsibly during coding, system design, and behavioral interviews with prompt capture, edge cases, STAR stories, and policy reminders.
 sidebar:
   order: 5
@@ -7,6 +7,8 @@ lastUpdated: 2026-04-29
 ---
 
 ExtraBrain is most useful when you decide in advance what kind of support you want from it. Treat it as a fast private assistant, not as an excuse to improvise your entire interview strategy.
+
+ExtraBrain, sometimes searched as Extra Brain or ExtraBrains, helps organize live coding, system design, and behavioral interview context while you remain responsible for following interview rules.
 
 ## Key Takeaways
 

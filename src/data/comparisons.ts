@@ -480,13 +480,13 @@ export const comparisonMarketingPages: MarketingPage[] = [
   }),
   comparisonPage({
     slug: 'compare/beyz-ai',
-    title: 'ExtraBrain vs Beyz AI Assistant',
+    title: 'Beyz AI vs ExtraBrain — Desktop Interview Assistant Comparison',
     description:
-      'Compare ExtraBrain and Beyz AI for invisible desktop interview help, real-time suggestions, coding, meetings, pricing, platforms, and provider control.',
+      'Compare the Beyz AI desktop app and ExtraBrain for invisible desktop interview help, real-time suggestions, coding, meetings, pricing, platforms, and provider control.',
     eyebrow: 'Comparison',
     h1: 'ExtraBrain vs Beyz AI.',
     lead:
-      'Beyz AI positions itself as an invisible desktop interview assistant with real-time suggestions, LeetCode support, cheat sheets, meeting assistance, and paid plans. ExtraBrain focuses on local-first Mac workflows and BYO provider control.',
+      'If you are comparing the Beyz AI desktop app with ExtraBrain, this guide explains differences in Mac workflow, provider control, pricing, privacy, and interview support. Beyz AI positions itself as an invisible desktop interview assistant with real-time suggestions, LeetCode support, cheat sheets, meeting assistance, and paid plans. ExtraBrain focuses on local-first Mac workflows and BYO provider control.',
     primaryCta: defaultCta,
     sections: [
       { title: 'Summary', body: 'Compare Beyz’s invisible desktop interview suite against ExtraBrain’s local-first Mac copilot.' },

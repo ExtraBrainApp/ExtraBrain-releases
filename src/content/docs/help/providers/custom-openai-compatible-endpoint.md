@@ -1,6 +1,6 @@
 ---
-title: Use A Custom OpenAI-Compatible Endpoint
-description: Configure a custom OpenAI-compatible endpoint in ExtraBrain with base URL, API key, model name, validation, and troubleshooting.
+title: Set Up A Custom OpenAI-Compatible API Endpoint
+description: Learn how to set up a custom OpenAI-compatible API endpoint in ExtraBrain using a base URL, API key, model name, validation steps, and troubleshooting tips.
 sidebar:
   order: 5
 lastUpdated: 2026-04-29
@@ -8,13 +8,17 @@ lastUpdated: 2026-04-29
 
 Use a custom OpenAI-compatible endpoint when your provider or proxy exposes an OpenAI-style API.
 
+## How To Set Up A Custom OpenAI API Endpoint
+
+To set up a custom OpenAI-compatible API endpoint in ExtraBrain, enter the provider base URL, API key, and exact model name in **Settings -> LLM Providers**, then validate the configuration with a short test analysis.
+
 ![ExtraBrain custom OpenAI-compatible provider settings with Base URL and model name fields](/assets/screenshots/help/dark/settings-custom-provider.png)
 
 ## Required Fields
 
 | Field | What To Enter |
 | --- | --- |
-| Base URL | The provider or proxy API base URL. |
+| Base URL | The provider or proxy API base URL, such as `https://api.example.com/v1`, a local proxy URL, or a hosted gateway URL. |
 | API key | The key required by that endpoint. |
 | Model name | The exact model identifier the endpoint expects. |
 

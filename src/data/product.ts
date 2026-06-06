@@ -104,9 +104,9 @@ export const homepageFaq = [
       'ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It provides live transcription, screen-aware context, structured prompts, question generation, local Gemma 4 on-device AI where installed and compatible, and a desktop window designed for private live workflows. It is available for Mac today, with Windows and Linux planned.',
   },
   {
-    question: 'Is ExtraBrain the same as Extra Brain?',
+    question: 'Is it ExtraBrain, Extra Brain, or ExtraBrains?',
     answer:
-      'Yes. ExtraBrain is the official product name, and Extra Brain is a common spaced search people may use for the same Mac AI interview assistant and meeting copilot.',
+      'ExtraBrain is the official product name. Some people search for Extra Brain or ExtraBrains, but they refer to the same Mac AI interview assistant and meeting copilot.',
   },
   {
     question: 'Is ExtraBrain free?',
@@ -238,7 +238,7 @@ const defaultCta = { label: 'Download for Mac', href: '/download/' };
 const baseMarketingPages: MarketingPage[] = [
   {
     slug: 'download',
-    title: 'Download ExtraBrain for macOS',
+    title: 'Install ExtraBrain on Mac — Download & Setup Guide',
     description:
       'Download the latest ExtraBrain macOS release, review Mac compatibility, install steps, checksum notes, signing guidance, and release metadata.',
     eyebrow: 'Download',
@@ -276,6 +276,7 @@ const baseMarketingPages: MarketingPage[] = [
     ],
     faq: [
       { question: 'Where is the latest ExtraBrain download?', answer: 'The canonical download link is /download/, which points to the latest GitHub release for the macOS app.' },
+      { question: 'Is this the right app if I searched for Extra Brain or ExtraBrains?', answer: 'Yes. ExtraBrain is the official app name, while Extra Brain and ExtraBrains are common search variants for the same Mac AI interview assistant and meeting copilot.' },
       { question: 'Does ExtraBrain support Intel Macs?', answer: 'Yes. ExtraBrain supports macOS on Apple Silicon and Intel Macs.' },
       { question: 'Is ExtraBrain available for Windows or Linux?', answer: 'Not today. ExtraBrain is available for Mac now, and Windows and Linux are planned future platforms.' },
       { question: 'What should I test after downloading ExtraBrain?', answer: 'Launch the app, confirm settings and permissions, test transcription, verify local Gemma 4 or provider access, and rehearse before using it in an interview or meeting.' },
@@ -842,13 +843,13 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'use-cases/meetings',
-    title: 'AI Meeting Copilot for Mac',
+    title: 'AI Meeting Assistant for Mac — Local-First Meeting Copilot',
     description:
-      'ExtraBrain is a local-first desktop AI meeting copilot that helps with live notes, decisions, risks, and follow-ups without joining as a meeting bot.',
+      'ExtraBrain is a local-first AI meeting assistant for Mac that helps with live notes, decisions, risks, and follow-ups without joining as a meeting bot.',
     eyebrow: 'Use case',
-    h1: 'A meeting copilot that runs on your Mac.',
+    h1: 'AI meeting assistant for Mac.',
     lead:
-      'ExtraBrain helps with decisions, action items, objections, research evidence, and next steps while keeping the assistant in a desktop app you control.',
+      'ExtraBrain helps with decisions, action items, objections, research evidence, and next steps while keeping the meeting assistant in a desktop app you control.',
     primaryCta: defaultCta,
     sections: [
       {
@@ -856,6 +857,7 @@ const baseMarketingPages: MarketingPage[] = [
         items: [
           { title: 'Live notes', body: 'Capture important points, decisions, risks, owners, objections, customer pain points, and unresolved questions while the meeting is still moving.' },
           { title: 'No meeting bot required', body: 'ExtraBrain is a desktop app rather than another participant joining the room, which helps keep the workflow private and under your control.' },
+          { title: 'Mac meeting assistant workflow', body: 'Use ExtraBrain during Zoom, Google Meet, Microsoft Teams, customer calls, research calls, and internal meetings on Mac without adding a visible bot participant.' },
           { title: 'Post-session memory', body: 'Turn the session into summaries, follow-ups, saved facts, action items, review notes, and context for the next customer, product, or research conversation.' },
         ],
       },
@@ -1305,9 +1307,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'about',
-    title: 'About ExtraBrain AI Copilot',
+    title: 'About ExtraBrain — Mac AI Interview & Meeting Copilot',
     description:
-      'ExtraBrain builds a local-first Mac AI interview assistant and meeting copilot with local Gemma 4 where installed and compatible, provider choice, and privacy controls.',
+      'Learn about ExtraBrain, the local-first Mac AI interview assistant and meeting copilot. Extra Brain and ExtraBrains are common ways people search for the same product.',
     eyebrow: 'About',
     h1: 'ExtraBrain helps people stay present during high-stakes live work.',
     lead:
@@ -1333,7 +1335,7 @@ const baseMarketingPages: MarketingPage[] = [
     ],
     faq: [
       { question: 'What is ExtraBrain?', answer: 'ExtraBrain is a free, local-first desktop AI interview assistant and meeting copilot for Mac.' },
-      { question: 'Is the product called ExtraBrain or Extra Brain?', answer: 'The official spelling is ExtraBrain. Extra Brain is a spaced alias people may type when searching for the same product.' },
+      { question: 'Is the product called ExtraBrain, Extra Brain, or ExtraBrains?', answer: 'The official spelling is ExtraBrain. If you searched for Extra Brain or ExtraBrains, you are in the right place: those are common ways people look for the same Mac AI interview assistant and meeting copilot.' },
       { question: 'Who is ExtraBrain for?', answer: 'It is for candidates, engineers, founders, students, meeting leads, researchers, and teams who need structured live context while staying mindful of privacy and policy boundaries.' },
       { question: 'What platforms does ExtraBrain support?', answer: 'ExtraBrain is available for Mac today, including Apple Silicon and Intel Macs. Windows and Linux are planned.' },
     ],
