@@ -842,11 +842,11 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'use-cases/ai-assistant-for-meetings',
-    title: 'AI Assistant for Meetings — ExtraBrain',
+    title: 'AI Meeting Assistant for Mac — ExtraBrain',
     description:
-      'Use ExtraBrain as an AI assistant for meetings with live transcription, screen context, decisions, risks, follow-ups, private notes, and a Mac desktop workflow.',
-    eyebrow: 'AI assistant for meetings',
-    h1: 'AI assistant for meetings that runs on your Mac.',
+      'Use ExtraBrain as an AI meeting assistant for Mac with live transcription, screen context, meeting notes, decisions, risks, follow-ups, private local history, and no meeting bot.',
+    eyebrow: 'AI meeting assistant for Mac',
+    h1: 'AI meeting assistant for Mac that runs on your desktop.',
     lead:
       'ExtraBrain helps you follow live meetings, capture context, organize decisions, and prepare follow-ups from a desktop assistant instead of a bot that joins the call.',
     primaryCta: defaultCta,
@@ -888,11 +888,11 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'use-cases/meeting-copilot',
-    title: 'Meeting Copilot for Mac — ExtraBrain',
+    title: 'AI Meeting Copilot for Mac — ExtraBrain',
     description:
-      'ExtraBrain is a meeting copilot for Mac that captures live notes, decisions, risks, owners, objections, summaries, and follow-ups without joining as a bot.',
-    eyebrow: 'Meeting copilot',
-    h1: 'Meeting copilot for live decisions, notes, and follow-ups.',
+      'ExtraBrain is an AI meeting copilot for Mac that captures live notes, decisions, risks, owners, objections, summaries, and follow-ups without joining as a bot.',
+    eyebrow: 'AI meeting copilot',
+    h1: 'AI meeting copilot for live decisions, notes, and follow-ups.',
     lead:
       'Use ExtraBrain as a desktop meeting copilot when you need help staying present, tracking decisions, and turning fast conversation into useful notes.',
     primaryCta: defaultCta,
@@ -933,11 +933,11 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'use-cases/ai-note-taker-for-mac',
-    title: 'AI Note Taker for Mac — ExtraBrain',
+    title: 'AI Note Taker for Mac — Private Meeting Notes with ExtraBrain',
     description:
-      'Use ExtraBrain as an AI note taker for Mac with live transcription, private session history, meeting summaries, screen context, and local-first controls.',
+      'Use ExtraBrain as a private AI note taker for Mac with live transcription, AI meeting notes, screen context, summaries, local session history, and no meeting bot.',
     eyebrow: 'AI note taker for Mac',
-    h1: 'AI note taker for Mac meetings, interviews, and calls.',
+    h1: 'Private AI note taker for Mac meetings, interviews, and calls.',
     lead:
       'ExtraBrain turns live conversation into structured notes, summaries, action items, and saved context while keeping the workflow in a Mac desktop app.',
     primaryCta: defaultCta,
@@ -978,11 +978,11 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'use-cases/ai-assistant-for-video-calls',
-    title: 'AI Assistant for Video Calls — ExtraBrain',
+    title: 'AI Assistant for Video Calls, Zoom, Meet & Teams — ExtraBrain',
     description:
-      'Use ExtraBrain as an AI assistant for video calls across Zoom, Google Meet, Microsoft Teams, Webex, Slack Huddles, and Discord with live transcription and screen context.',
+      'Use ExtraBrain as an AI assistant for video calls across Zoom, Google Meet, Microsoft Teams, Webex, Slack Huddles, and Discord with live transcription, screen context, and private notes.',
     eyebrow: 'AI assistant for video calls',
-    h1: 'AI assistant for video calls on your Mac.',
+    h1: 'AI assistant for video calls, Zoom, Meet, and Teams.',
     lead:
       'ExtraBrain helps you follow live video calls, capture transcript context, and organize notes while staying available in your own desktop workflow.',
     primaryCta: defaultCta,
@@ -1023,11 +1023,11 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'features/private-ai-assistant',
-    title: 'Private AI Assistant for Mac — ExtraBrain',
+    title: 'Private AI Assistant for Mac — Local-First ExtraBrain',
     description:
-      'ExtraBrain is a private AI assistant for Mac with local-first storage, local transcription options, on-device AI where configured, BYO providers, and data-path controls.',
-    eyebrow: 'Private AI assistant',
-    h1: 'Private AI assistant with local-first controls.',
+      'ExtraBrain is a private AI assistant for Mac with local-first storage, local transcription, on-device AI where configured, BYO AI providers, privacy controls, and data-path clarity.',
+    eyebrow: 'Private AI assistant for Mac',
+    h1: 'Private AI assistant for Mac with local-first controls.',
     lead:
       'ExtraBrain is built for people who want a desktop AI assistant for meetings, interviews, notes, and calls while keeping control over what is captured and which providers are used.',
     primaryCta: defaultCta,
@@ -1068,11 +1068,11 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'features/live-transcription-ai-assistant',
-    title: 'Live Transcription AI Assistant — ExtraBrain',
+    title: 'Live Transcription AI Assistant for Meetings & Interviews — ExtraBrain',
     description:
-      'Use ExtraBrain as a live transcription AI assistant for meetings, interviews, video calls, lectures, and research with local Parakeet or optional Deepgram.',
+      'Use ExtraBrain as a live transcription AI assistant for meetings, interviews, video calls, lectures, and research with real-time transcription, local Parakeet, or optional Deepgram.',
     eyebrow: 'Live transcription AI assistant',
-    h1: 'Live transcription AI assistant for calls and interviews.',
+    h1: 'Live transcription AI assistant for meetings, calls, and interviews.',
     lead:
       'ExtraBrain combines live transcription with prompts, notes, screen context, and provider choice so you can follow fast conversations without losing structure.',
     primaryCta: defaultCta,
@@ -1113,11 +1113,11 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'features/bring-your-own-ai-provider',
-    title: 'Bring Your Own AI Provider — ExtraBrain',
+    title: 'Bring Your Own AI Provider — OpenAI, Claude, Anthropic & Custom Endpoints',
     description:
-      'Bring your own AI provider to ExtraBrain with OpenAI, Anthropic, Claude, Codex, custom endpoints, local Gemma 4, and provider-controlled billing and data paths.',
+      'Bring your own AI provider to ExtraBrain with OpenAI, Anthropic, Claude, Codex, custom OpenAI-compatible endpoints, local Gemma 4, and provider-controlled billing and data paths.',
     eyebrow: 'Bring your own AI provider',
-    h1: 'Bring your own AI provider to your desktop assistant.',
+    h1: 'Bring your own AI provider, API key, or custom endpoint.',
     lead:
       'ExtraBrain lets you choose the AI provider path for meetings, interviews, notes, and calls instead of forcing a single hosted model account.',
     primaryCta: defaultCta,
@@ -1158,11 +1158,11 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'features/screen-context-ai-assistant',
-    title: 'Screen Context AI Assistant — ExtraBrain',
+    title: 'Screen Context AI Assistant for Mac — ExtraBrain',
     description:
-      'ExtraBrain is a screen context AI assistant that combines live transcription, screenshots, visible documents, code, meeting slides, and local-first provider controls.',
-    eyebrow: 'Screen context AI assistant',
-    h1: 'Screen context AI assistant for live work.',
+      'ExtraBrain is a screen context AI assistant for Mac that combines live transcription, screenshots, visible documents, code, meeting slides, and local-first provider controls.',
+    eyebrow: 'Screen context AI assistant for Mac',
+    h1: 'Screen context AI assistant for Mac live work.',
     lead:
       'ExtraBrain helps your AI prompts use both what is being said and what is visible on screen, so meetings, interviews, documents, and code stay connected.',
     primaryCta: defaultCta,
