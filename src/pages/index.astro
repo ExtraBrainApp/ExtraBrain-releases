@@ -19,9 +19,9 @@ type PricingTierCta = { label: string; href: string };
 type PricingTierExtras = { billingOptions?: BillingOption[]; primaryCta?: PricingTierCta };
 type HomepagePricingCopy = { summary?: string; features?: string[] };
 
-const pageTitle = 'ExtraBrain — Free Mac AI Interview & Meeting Copilot';
+const pageTitle = 'ExtraBrain — Free AI Interview Assistant & Meeting Copilot for Mac';
 const pageDescription =
-  'Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.';
+  'ExtraBrain is a free AI interview assistant and meeting copilot for Mac with live transcription, screen-aware context, local-first privacy, on-device AI, and BYO providers.';
 
 const downloadHref = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest';
 const feedbackHref = `mailto:${contactEmail}?subject=ExtraBrain%20feedback`;
@@ -78,10 +78,31 @@ const homepagePricingCopy: Record<string, HomepagePricingCopy> = {
 };
 
 const homepageSoftwareSchema = softwareApplicationSchema(pageDescription, absoluteUrl('/download/'));
-const faqItems = homepageFaq.map((item) => ({
-  ...item,
-  answer: homepageFaqAnswerOverrides[item.question] ?? item.answer,
-}));
+const broadSearchFaq = [
+  {
+    question: 'What is an AI interview assistant?',
+    answer:
+      'An AI interview assistant helps capture interview context, transcribe questions, organize prompts, and provide structure for coding, system design, behavioral, and technical discussions. ExtraBrain is a local-first Mac AI interview assistant built for responsible use, preparation, live context, and post-session review.',
+  },
+  {
+    question: 'Can ExtraBrain help with coding and system design interviews?',
+    answer:
+      'Yes. ExtraBrain can capture coding prompts, constraints, edge cases, system design requirements, tradeoffs, and follow-up questions while you remain responsible for your own answers and for following interview rules.',
+  },
+  {
+    question: 'Does ExtraBrain work as an AI meeting assistant for Mac?',
+    answer:
+      'Yes. ExtraBrain can run as an AI meeting assistant for Mac with live transcription, screen-aware context, notes, decisions, risks, and follow-ups for Zoom, Google Meet, Microsoft Teams, lectures, research calls, and customer conversations.',
+  },
+];
+
+const faqItems = [
+  ...broadSearchFaq,
+  ...homepageFaq.map((item) => ({
+    ...item,
+    answer: homepageFaqAnswerOverrides[item.question] ?? item.answer,
+  })),
+];
 
 const schemaGraph = [
   {
@@ -102,8 +123,8 @@ const overviewCards = [
   },
   {
     number: '02',
-    title: 'Interview answers with structure',
-    body: 'Turn coding, system design, and behavioral prompts into clarifying questions, baselines, tradeoffs, and follow-up points.',
+    title: 'AI interview assistant with structure',
+    body: 'Turn coding interview prompts, system design requirements, and behavioral questions into clarifying questions, baselines, tradeoffs, and follow-up points.',
   },
   {
     number: '03',
@@ -126,7 +147,7 @@ const steps = [
   },
   {
     title: 'Follow the live signal',
-    body: 'Use transcript-aware prompts for coding interviews, system design rounds, product meetings, lectures, and research calls.',
+    body: 'Use transcript-aware prompts for coding interviews, system design rounds, behavioral interviews, product meetings, lectures, and research calls.',
     image: '/assets/screenshots/live_session.png',
     imageAlt: 'ExtraBrain live session with transcript-aware assistant output',
   },
@@ -208,25 +229,25 @@ const pricingCards = pricingTiers.map((tier) => {
 
 const pathCards = [
   {
-    eyebrow: 'Interview workflow',
+    eyebrow: 'AI interview assistant',
     title: 'Use ExtraBrain in interviews responsibly',
-    body: 'Prepare for coding, system design, and behavioral interviews while staying aligned with company and platform policies.',
-    href: '/help/using-extrabrain-in-interviews/',
-    cta: 'Explore interview guide',
+    body: 'Prepare for coding, system design, and behavioral interviews with live transcription, screen-aware context, and clear responsible-use boundaries.',
+    href: '/use-cases/ai-interview-assistant/',
+    cta: 'Explore AI interview assistant',
   },
   {
-    eyebrow: 'Installation and setup',
-    title: 'Get from download to first live session',
-    body: 'Install the app, connect your keys, and verify the workflow before a high-stakes call.',
-    href: '/download/',
-    cta: 'Open download page',
+    eyebrow: 'AI meeting assistant for Mac',
+    title: 'Capture meetings without adding a bot',
+    body: 'Use ExtraBrain as a Mac meeting copilot for Zoom, Google Meet, Teams, lectures, research calls, and customer conversations.',
+    href: '/use-cases/ai-meeting-assistant-mac/',
+    cta: 'Open meeting assistant page',
   },
   {
-    eyebrow: 'Privacy and control',
-    title: 'Understand local and external data paths',
-    body: 'Review local setup, provider data flow, API key handling, and sensible operating practices.',
-    href: '/privacy/',
-    cta: 'Read privacy notes',
+    eyebrow: 'Privacy and providers',
+    title: 'Local transcription and BYO AI providers',
+    body: 'Review local transcription, on-device AI, custom OpenAI-compatible endpoints, API key handling, and provider data paths.',
+    href: '/features/local-transcription-mac/',
+    cta: 'Review private setup',
   },
 ];
 
@@ -280,13 +301,13 @@ const compatibilityPlatforms = [
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="hero-kicker">Free local-first desktop copilot</div>
-          <h1 id="hero-title">Desktop AI <span class="hero-title-accent">interview</span> and meeting copilot.</h1>
+          <div class="hero-kicker">Free local-first Mac AI assistant</div>
+          <h1 id="hero-title">AI <span class="hero-title-accent">interview assistant</span> and meeting copilot for Mac.</h1>
           <p class="lead">
-            ExtraBrain is a <strong class="hero-lead-accent">free, local-first</strong> desktop AI interview and meeting copilot. It helps engineers,
+            ExtraBrain is a <strong class="hero-lead-accent">free, local-first</strong> AI interview assistant and meeting copilot for Mac. It helps engineers,
             candidates, students, founders, and meeting leads follow <strong class="hero-lead-accent">live conversations</strong> with transcription,
             <strong class="hero-lead-accent">screen-aware context</strong>, on-device AI powered by Gemma, <strong class="hero-lead-accent">BYO AI providers</strong>,
-            and <strong class="hero-lead-accent">privacy controls</strong>. Available for Mac today, with Windows and Linux planned.
+            and <strong class="hero-lead-accent">privacy controls</strong> for coding interviews, system design interviews, behavioral interviews, and meetings.
           </p>
           <div class="hero-ctas">
             <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-hero">
@@ -411,7 +432,41 @@ const compatibilityPlatforms = [
       </div>
     </section>
 
-    <section class="light-section section-band--even" id="how">
+    <section class="light-section section-band--even" id="interview-assistant">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">AI interview assistant</span>
+          <h2>Live support for coding, system design, and behavioral interviews.</h2>
+          <p class="lead light">
+            ExtraBrain helps you capture the question, organize constraints, follow screen context, and review the session after the call. Use it as a responsible AI interview assistant for Mac when your interview, employer, school, or platform rules allow live tools.
+          </p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <div class="icon-bubble">A</div>
+            <h3>Coding interview context</h3>
+            <p>Turn spoken prompts, visible code, examples, and edge cases into a clearer problem-solving checklist.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="icon-bubble">B</div>
+            <h3>System design structure</h3>
+            <p>Keep requirements, scale assumptions, APIs, storage choices, tradeoffs, risks, and follow-up questions visible.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="icon-bubble">C</div>
+            <h3>Behavioral interview review</h3>
+            <p>Organize real STAR stories, follow-up questions, and post-session notes without inventing experience.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="icon-bubble">D</div>
+            <h3>Meeting copilot for Mac</h3>
+            <p>Use the same live transcription and screen-aware context for Zoom, Google Meet, Teams, lectures, and research calls.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="light-section section-band--odd" id="how">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">How it works</span>
@@ -435,7 +490,7 @@ const compatibilityPlatforms = [
       </div>
     </section>
 
-    <section class="light-section workflows-section section-band--odd" id="workflows">
+    <section class="light-section workflows-section section-band--even" id="workflows">
       <div class="container">
         <div class="workflow-cloud-intro">
           <span class="eyebrow">Use cases</span>
@@ -457,7 +512,7 @@ const compatibilityPlatforms = [
       </div>
     </section>
 
-    <section class="dark-section compatibility-section section-band--even" id="compatibility">
+    <section class="dark-section compatibility-section section-band--odd" id="compatibility">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Compatibility</span>
@@ -572,18 +627,18 @@ const compatibilityPlatforms = [
           <article class="related-card">
             <div>
               <small>Use cases</small>
-              <h3>Interview and meeting workflows</h3>
-              <p>Coding interviews, system design interviews, behavioral interviews, and desktop meeting copilot workflows.</p>
+              <h3>AI interview assistant workflows</h3>
+              <p>Coding interview assistant, system design interview assistant, behavioral interview, and desktop meeting copilot workflows.</p>
             </div>
-            <a href="/use-cases/coding-interviews/">Open use cases</a>
+            <a href="/use-cases/ai-interview-assistant/">Open AI interview assistant guide</a>
           </article>
           <article class="related-card">
             <div>
               <small>Features</small>
-              <h3>Gemma-powered AI, transcription, and BYO providers</h3>
-              <p>On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.</p>
+              <h3>Local transcription, screen-aware AI, and BYO providers</h3>
+              <p>On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and custom OpenAI-compatible endpoints.</p>
             </div>
-            <a href="/features/bring-your-own-provider/">Review providers</a>
+            <a href="/features/custom-openai-compatible-endpoint/">Review custom endpoints</a>
           </article>
           <article class="related-card">
             <div>

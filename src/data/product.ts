@@ -696,6 +696,50 @@ const baseMarketingPages: MarketingPage[] = [
     ],
   },
   {
+    slug: 'use-cases/ai-interview-assistant',
+    title: 'AI Interview Assistant for Mac — ExtraBrain',
+    description:
+      'Use ExtraBrain as a responsible AI interview assistant for Mac with live transcription, screen-aware context, coding interview support, system design structure, behavioral interview review, and local-first privacy.',
+    eyebrow: 'AI interview assistant',
+    h1: 'AI interview assistant for Mac.',
+    lead:
+      'ExtraBrain helps you capture live interview questions, organize coding and system design context, structure behavioral answers, and review sessions afterward while keeping responsible-use boundaries clear.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Read responsible-use guide', href: '/help/using-extrabrain-in-interviews/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'What you get',
+        items: [
+          { title: 'Coding interview assistant', body: 'Capture prompts, constraints, examples, visible code, edge cases, complexity tradeoffs, and clarifying questions during technical interviews.', href: '/use-cases/coding-interviews/' },
+          { title: 'System design interview assistant', body: 'Keep requirements, scale assumptions, APIs, storage choices, failure modes, tradeoffs, and interviewer follow-ups organized.', href: '/use-cases/system-design-interviews/' },
+          { title: 'Behavioral interview support', body: 'Organize truthful STAR stories, role context, follow-up questions, and post-interview notes without inventing experience.', href: '/use-cases/behavioral-interviews/' },
+          { title: 'Mac desktop workflow', body: 'Run ExtraBrain locally on Mac with live transcription, screen-aware context, local history, privacy controls, and provider access you choose.' },
+        ],
+      },
+      {
+        title: 'Workflow',
+        items: [
+          { title: 'Prepare the profile', body: 'Choose or create a profile for coding, system design, behavioral, product, data, frontend, backend, or another interview style.' },
+          { title: 'Capture the live interview', body: 'Use live transcription and visible screen context to track the question, assumptions, and key details as the conversation changes.' },
+          { title: 'Review after the call', body: 'Turn the session into notes, follow-up questions, improvement areas, and reusable context for the next round.' },
+        ],
+      },
+      {
+        title: 'Responsible use',
+        body:
+          'Use ExtraBrain only where interview, employer, school, and platform rules allow live tools. It should support your thinking, preparation, notes, and review without misrepresenting your skills, authorship, or experience.',
+      },
+    ],
+    faq: [
+      { question: 'What is an AI interview assistant?', answer: 'An AI interview assistant helps capture interview context, transcribe questions, organize prompts, and structure responses for technical and behavioral discussions. ExtraBrain focuses on responsible live context and review on Mac.' },
+      { question: 'Can ExtraBrain help with coding interviews?', answer: 'Yes. ExtraBrain can capture coding prompts, visible code, constraints, edge cases, examples, and complexity discussion while you remain responsible for your own work.' },
+      { question: 'Can ExtraBrain help with system design interviews?', answer: 'Yes. ExtraBrain can organize requirements, scale assumptions, APIs, storage options, tradeoffs, risks, and follow-up questions during system design rounds.' },
+      { question: 'Is ExtraBrain allowed in interviews?', answer: 'Rules vary by interviewer, employer, school, and platform. Use ExtraBrain only when live assistance is allowed and never to misrepresent your skills or authorship.' },
+      { question: 'Does ExtraBrain work on Mac?', answer: 'Yes. ExtraBrain is available for Mac today and supports Apple Silicon and Intel Macs.' },
+    ],
+  },
+  {
     slug: 'use-cases/coding-interviews',
     title: 'AI Coding Interview Assistant',
     description:
@@ -842,6 +886,49 @@ const baseMarketingPages: MarketingPage[] = [
     ],
   },
   {
+    slug: 'use-cases/ai-meeting-assistant-mac',
+    title: 'AI Meeting Assistant for Mac — ExtraBrain',
+    description:
+      'Use ExtraBrain as an AI meeting assistant for Mac with live transcription, screen-aware context, private notes, follow-ups, local-first options, and no meeting bot required.',
+    eyebrow: 'AI meeting assistant for Mac',
+    h1: 'AI meeting assistant for Mac.',
+    lead:
+      'ExtraBrain runs as a Mac desktop meeting copilot for Zoom, Google Meet, Microsoft Teams, customer calls, lectures, and research conversations without adding another bot participant.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Review privacy controls', href: '/privacy/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'What you get',
+        items: [
+          { title: 'Live meeting transcription', body: 'Capture live discussion with local Parakeet transcription or optional Deepgram depending on your setup.' },
+          { title: 'Screen-aware meeting context', body: 'Connect transcript details, screenshots, visible documents, decisions, risks, objections, and follow-up questions.' },
+          { title: 'Private desktop workflow', body: 'Use a desktop app on your Mac instead of a meeting bot that joins the attendee list.' },
+          { title: 'Post-session review', body: 'Turn meetings into summaries, saved facts, action items, decisions, risks, and context for the next call.' },
+        ],
+      },
+      {
+        title: 'Workflow',
+        items: [
+          { title: 'Start before the call', body: 'Open ExtraBrain, choose your transcription and AI provider path, and confirm the session scope.' },
+          { title: 'Stay present live', body: 'Use live transcription and screen context to follow decisions, risks, follow-ups, and unresolved questions.' },
+          { title: 'Review after', body: 'Use local session history and summaries to prepare follow-up notes while the conversation is still fresh.' },
+        ],
+      },
+      {
+        title: 'Privacy fit',
+        body:
+          'ExtraBrain can use local transcription and local AI where installed and compatible, or connect external providers you choose. Review provider retention, billing, and policy settings before sensitive meetings.',
+      },
+    ],
+    faq: [
+      { question: 'What is an AI meeting assistant for Mac?', answer: 'An AI meeting assistant for Mac captures meeting context, transcribes live conversation, organizes notes, and helps create summaries or follow-ups from a desktop workflow.' },
+      { question: 'Does ExtraBrain join meetings as a bot?', answer: 'No. ExtraBrain runs as a Mac desktop app instead of joining calls as a meeting participant.' },
+      { question: 'Does ExtraBrain work with Zoom, Google Meet, and Teams?', answer: 'Yes. ExtraBrain is designed for Zoom, Google Meet, Microsoft Teams, and similar live meeting tools on Mac.' },
+      { question: 'Can ExtraBrain keep meeting transcription local?', answer: 'Yes. ExtraBrain supports local Parakeet transcription, with optional Deepgram available when configured.' },
+    ],
+  },
+  {
     slug: 'use-cases/meetings',
     title: 'AI Meeting Assistant for Mac — Private Meeting Copilot',
     description:
@@ -943,6 +1030,115 @@ const baseMarketingPages: MarketingPage[] = [
       { question: 'Can I use Deepgram with ExtraBrain?', answer: 'Yes. Deepgram is optional and should be used only when its cloud transcription path fits your session and privacy requirements.' },
       { question: 'Does transcript text always stay local?', answer: 'Transcript text can stay local with local Parakeet transcription and local Gemma 4, but it can be sent to external providers when you choose provider-backed requests.' },
       { question: 'Is local transcription the same as a fully local AI workflow?', answer: 'No. Local transcription only covers the speech-to-text path. A fully local posture also requires local Gemma 4 where installed and compatible and no external provider requests.' },
+    ],
+  },
+  {
+    slug: 'features/local-transcription-mac',
+    title: 'Local Transcription App for Mac — ExtraBrain',
+    description:
+      'Use ExtraBrain for local transcription on Mac with NVIDIA Parakeet, local-first session history, optional Deepgram, screen-aware context, and private AI meeting notes.',
+    eyebrow: 'Local transcription',
+    h1: 'Local transcription app for Mac.',
+    lead:
+      'ExtraBrain supports local Parakeet transcription so interview, meeting, lecture, and research call transcripts can stay on your Mac when your AI setup also stays local.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Read privacy guide', href: '/privacy/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'What you get',
+        items: [
+          { title: 'Local Parakeet transcription', body: 'Use local transcription for live interviews, meetings, lectures, and research calls when your Mac setup supports it.' },
+          { title: 'Private AI notes', body: 'Keep transcripts, prompts, screenshots, notes, saved facts, and session history local unless you send selected context to a provider.' },
+          { title: 'Optional Deepgram', body: 'Use Deepgram when you want a cloud transcription option and are comfortable with its provider account, billing, and data path.' },
+          { title: 'Mac desktop context', body: 'Pair transcription with screen-aware context from visible documents, code, meeting slides, or interview platforms.' },
+        ],
+      },
+      {
+        title: 'Workflow',
+        items: [
+          { title: 'Choose transcription', body: 'Select local Parakeet or optional Deepgram based on privacy, accuracy, latency, and setup requirements.' },
+          { title: 'Capture the session', body: 'Record live conversation with the desktop app while preserving the transcript and session context on your Mac where configured.' },
+          { title: 'Review safely', body: 'Delete local records you no longer need and send only necessary context to external providers.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain transcribe locally on Mac?', answer: 'Yes. ExtraBrain supports local NVIDIA Parakeet transcription, with optional Deepgram available when configured.' },
+      { question: 'Is ExtraBrain fully local?', answer: 'It can be fully local when you use local Parakeet transcription plus local Gemma 4 where installed and compatible. External providers may receive content when you choose them.' },
+      { question: 'What can I use local transcription for?', answer: 'Use local transcription for interviews, meetings, lectures, customer calls, research calls, and post-session review.' },
+    ],
+  },
+  {
+    slug: 'features/screen-aware-ai-assistant',
+    title: 'Screen-Aware AI Assistant for Mac — ExtraBrain',
+    description:
+      'ExtraBrain is a screen-aware AI assistant for Mac that combines live transcription, screenshots, visible context, local-first privacy, and BYO AI providers for interviews and meetings.',
+    eyebrow: 'Screen-aware AI',
+    h1: 'Screen-aware AI assistant for Mac.',
+    lead:
+      'ExtraBrain helps live AI responses use both the conversation and visible screen context, so coding prompts, system design diagrams, meeting slides, notes, and documents stay connected.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Review provider setup', href: '/features/custom-openai-compatible-endpoint/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'What you get',
+        items: [
+          { title: 'Visible context', body: 'Use screenshots and selected screen context from coding tools, meeting apps, documents, notes, or browser pages.' },
+          { title: 'Transcript-aware answers', body: 'Combine live transcript details with screen context for more grounded interview, meeting, lecture, and research support.' },
+          { title: 'Provider control', body: 'Choose local AI where installed and compatible, or connect OpenAI, Anthropic, Claude, Codex, or a custom OpenAI-compatible endpoint.' },
+        ],
+      },
+      {
+        title: 'Workflow',
+        items: [
+          { title: 'Capture context intentionally', body: 'Use screen context and screenshots only when they are relevant and allowed for the session.' },
+          { title: 'Ask for structure', body: 'Turn visible material into requirements, edge cases, notes, decisions, tradeoffs, or follow-up questions.' },
+          { title: 'Review data paths', body: 'Understand whether selected screen context stays local or is sent to an external provider you configured.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What is a screen-aware AI assistant?', answer: 'A screen-aware AI assistant can use selected visible screen context alongside transcript text to produce more relevant prompts, summaries, or structured notes.' },
+      { question: 'Can screenshots leave my Mac?', answer: 'Yes, if you include screenshots in an external provider request. Use only providers you trust and send only context that is appropriate.' },
+      { question: 'What workflows benefit from screen-aware AI?', answer: 'Coding interviews, system design discussions, meetings, lectures, research calls, customer calls, and document-heavy conversations can all benefit from screen context.' },
+    ],
+  },
+  {
+    slug: 'features/custom-openai-compatible-endpoint',
+    title: 'Custom OpenAI-Compatible Endpoint Setup — ExtraBrain',
+    description:
+      'Connect a custom OpenAI-compatible endpoint to ExtraBrain. Bring your own AI provider, OpenAI API key, Anthropic key, Claude or Codex subscription mode, and local-first Mac workflow.',
+    eyebrow: 'Custom endpoint',
+    h1: 'Custom OpenAI-compatible endpoint for ExtraBrain.',
+    lead:
+      'ExtraBrain supports provider access you control, including OpenAI-compatible endpoints for users who want to route AI requests through their own account, gateway, proxy, or compatible provider.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Provider setup help', href: '/help/providers/custom-openai-compatible-endpoint/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'What you get',
+        items: [
+          { title: 'Bring your own AI provider', body: 'Connect provider access you control instead of depending on bundled AI credits.' },
+          { title: 'OpenAI-compatible routing', body: 'Use a compatible endpoint when your provider, proxy, gateway, or self-hosted path follows OpenAI-style API behavior.' },
+          { title: 'Cost and data-path clarity', body: 'Provider billing, quota, retention, model access, and logs remain governed by the provider or gateway you configure.' },
+        ],
+      },
+      {
+        title: 'Workflow',
+        items: [
+          { title: 'Confirm compatibility', body: 'Verify the endpoint, model name, authentication method, and request behavior before a live interview or meeting.' },
+          { title: 'Add credentials', body: 'Store provider access in the app-controlled setup flow and rotate keys if a device or account is compromised.' },
+          { title: 'Test with safe content', body: 'Run a non-sensitive rehearsal before sending real transcript text, screenshots, prompts, or session context.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What is a custom OpenAI-compatible endpoint?', answer: 'It is an API endpoint that follows OpenAI-style request behavior, often provided by a compatible model host, proxy, gateway, or self-hosted service.' },
+      { question: 'Can I bring my own OpenAI API key?', answer: 'Yes. ExtraBrain supports provider access you control, including OpenAI, Anthropic, and compatible endpoint paths.' },
+      { question: 'Does ExtraBrain include AI credits?', answer: 'No. External provider usage, quota, retention, and billing remain separate from the ExtraBrain app license.' },
     ],
   },
   {
