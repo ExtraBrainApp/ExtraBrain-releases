@@ -101,9 +101,9 @@ const comparisonPage = (page: Omit<MarketingPage, 'schemaType'> & { comparison: 
 export const comparisonMarketingPages: MarketingPage[] = [
   {
     slug: 'compare',
-    title: 'AI Interview Assistant Comparisons: ExtraBrain vs Alternatives',
+    title: 'Compare AI Interview Assistants — ExtraBrain vs Alternatives',
     description:
-      'Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, and InterviewBee.',
+      'Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, and InterviewBee for interviews and meetings.',
     eyebrow: 'Comparisons',
     h1: 'Compare ExtraBrain with live AI interview assistants.',
     lead:

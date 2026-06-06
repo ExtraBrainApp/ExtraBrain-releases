@@ -238,9 +238,9 @@ const defaultCta = { label: 'Download for Mac', href: '/download/' };
 const baseMarketingPages: MarketingPage[] = [
   {
     slug: 'download',
-    title: 'Install ExtraBrain on Mac — Download & Setup Guide',
+    title: 'Download ExtraBrain for Mac — Free Local-First AI Copilot',
     description:
-      'Download the latest ExtraBrain macOS release, review Mac compatibility, install steps, checksum notes, signing guidance, and release metadata.',
+      'Download ExtraBrain for Mac, the free local-first AI interview assistant and meeting copilot with live transcription, screen context, and BYO providers.',
     eyebrow: 'Download',
     h1: 'Download the free ExtraBrain macOS app.',
     lead:
@@ -285,9 +285,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'pricing',
-    title: 'ExtraBrain Pricing: Free & Pro Plans for Mac AI Copilot',
+    title: 'ExtraBrain Pricing — Free Local-First AI Interview Assistant',
     description:
-      'ExtraBrain pricing: Free, Pro at $9.99/month ($6.99 Founder), $79/year, $149 Lifetime, BYO provider costs, and Enterprise.',
+      'See ExtraBrain pricing for the free Mac AI interview assistant, Pro plans, lifetime access, BYO provider costs, local Gemma 4, and team options.',
     eyebrow: 'Pricing',
     h1: 'Free to start. Pro from $6.99/month, $79/year, or $149 lifetime.',
     lead:
@@ -843,46 +843,61 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'use-cases/meetings',
-    title: 'AI Meeting Assistant for Mac — Local-First Meeting Copilot',
+    title: 'AI Meeting Assistant for Mac — Private Meeting Copilot',
     description:
-      'ExtraBrain is a local-first AI meeting assistant for Mac that helps with live notes, decisions, risks, and follow-ups without joining as a meeting bot.',
+      'ExtraBrain is an AI meeting assistant for Mac with live notes, local-first transcription options, screen context, follow-ups, and no meeting bot joining the call.',
     eyebrow: 'Use case',
     h1: 'AI meeting assistant for Mac.',
     lead:
-      'ExtraBrain helps with decisions, action items, objections, research evidence, and next steps while keeping the meeting assistant in a desktop app you control.',
+      'Use ExtraBrain as a Mac meeting copilot for Zoom, Google Meet, Microsoft Teams, customer calls, lectures, and research conversations without adding another bot participant to the room.',
     primaryCta: defaultCta,
+    secondaryCta: { label: 'Review privacy controls', href: '/privacy/' },
     sections: [
       {
-        title: 'Meeting workflows',
+        title: 'Mac meeting assistant workflows',
+        body:
+          'ExtraBrain helps you stay present in live meetings while keeping notes, questions, decisions, and context in a desktop app you control.',
         items: [
-          { title: 'Live notes', body: 'Capture important points, decisions, risks, owners, objections, customer pain points, and unresolved questions while the meeting is still moving.' },
-          { title: 'No meeting bot required', body: 'ExtraBrain is a desktop app rather than another participant joining the room, which helps keep the workflow private and under your control.' },
-          { title: 'Mac meeting assistant workflow', body: 'Use ExtraBrain during Zoom, Google Meet, Microsoft Teams, customer calls, research calls, and internal meetings on Mac without adding a visible bot participant.' },
-          { title: 'Post-session memory', body: 'Turn the session into summaries, follow-ups, saved facts, action items, review notes, and context for the next customer, product, or research conversation.' },
+          { title: 'Live meeting notes', body: 'Capture important points, decisions, risks, owners, objections, customer pain points, and unresolved questions while the meeting is still moving.' },
+          { title: 'Mac meeting copilot', body: 'Use ExtraBrain during Zoom, Google Meet, Microsoft Teams, customer calls, research calls, lectures, and internal meetings on Mac.' },
+          { title: 'Screen-aware context', body: 'Bring transcript notes, screenshots, and visible context together when you need help clarifying a topic, summarizing a decision, or preparing a follow-up.' },
+          { title: 'Post-session follow-through', body: 'Turn the session into summaries, follow-ups, saved facts, action items, review notes, and context for the next customer, product, or research conversation.' },
+        ],
+      },
+      {
+        title: 'Private meeting copilot, not a meeting bot',
+        items: [
+          { title: 'No meeting bot required', body: 'ExtraBrain runs as a desktop app instead of joining the meeting as another attendee, which keeps the workflow user-controlled and avoids changing the participant list.' },
+          { title: 'Local-first options', body: 'Use local Parakeet transcription and local Gemma 4 on-device AI where installed and compatible when meeting data should stay on the Mac.', href: '/features/local-transcription/' },
+          { title: 'Bring your own provider', body: 'Connect OpenAI, Anthropic, Claude Subscription, Codex Subscription, Deepgram, or a custom OpenAI-compatible endpoint when you choose an external provider path.', href: '/features/bring-your-own-provider/' },
+          { title: 'Privacy controls', body: 'Review which transcripts, prompts, screenshots, and provider requests can stay local or leave the device before using ExtraBrain in sensitive meetings.', href: '/privacy/' },
         ],
       },
       {
         title: 'Where a desktop meeting copilot helps',
         items: [
-          { title: 'Customer calls', body: 'Track pain points, objections, quotes, next steps, and roadmap signals without adding a meeting bot.' },
+          { title: 'Customer calls', body: 'Track pain points, objections, quotes, next steps, and roadmap signals without adding a visible meeting notetaker.' },
           { title: 'Internal decisions', body: 'Separate decisions, owners, blockers, risks, and follow-up questions during fast-moving team discussions.' },
           { title: 'Research and lectures', body: 'Turn dense explanations into concepts, examples, review questions, and saved context for later.' },
+          { title: 'Interview debriefs', body: 'Summarize notes, concerns, follow-ups, and decision criteria after hiring loops or technical discussions.' },
         ],
       },
       {
         title: 'Desktop app versus meeting agent',
         items: [
           { title: 'Participant list', body: 'ExtraBrain does not join the meeting as another attendee. This is different from notetakers that join Zoom, Google Meet, or Teams as a bot.' },
-          { title: 'Local mode', body: 'Use local Parakeet transcription and local Gemma 4 on-device AI where installed and compatible when the meeting data path should stay on the Mac.' },
-          { title: 'Collaboration tradeoff', body: 'A bot-based meeting agent can be better for shared team workspaces, automatic distribution, or admin-managed archives. ExtraBrain is built for a user-controlled desktop workflow.' },
+          { title: 'Data path', body: 'A bot-based meeting agent usually routes content through a shared workspace or vendor backend. ExtraBrain can use local transcription and local model paths when your setup supports them.' },
+          { title: 'Collaboration tradeoff', body: 'A bot-based meeting agent can be better for shared team archives, automatic distribution, or admin-managed records. ExtraBrain is built for a user-controlled desktop workflow.' },
         ],
       },
     ],
     faq: [
+      { question: 'What is the best AI meeting assistant for Mac if I do not want a bot in the call?', answer: 'ExtraBrain is built for a desktop workflow on Mac. It helps with live notes, summaries, action items, and follow-ups without joining the meeting as another participant.' },
       { question: 'Is ExtraBrain a meeting bot?', answer: 'No. ExtraBrain runs as a desktop app on your Mac instead of joining the meeting as another participant.' },
-      { question: 'What can ExtraBrain capture in meetings?', answer: 'It can help with live notes, decisions, owners, risks, action items, customer pain points, follow-ups, and post-session summaries.' },
+      { question: 'What can ExtraBrain capture in meetings?', answer: 'It can help with live notes, decisions, owners, risks, action items, customer pain points, follow-ups, screenshots, and post-session summaries.' },
       { question: 'Can ExtraBrain work with Zoom, Google Meet, and Teams?', answer: 'ExtraBrain is designed for major meeting tools while remaining a desktop app you control. Always follow workplace and meeting policies.' },
-      { question: 'How is ExtraBrain different from Otter or other meeting agents?', answer: 'Otter-style tools are usually team meeting agents and transcription workspaces. ExtraBrain focuses on a desktop copilot that can support meetings and interviews without joining the call as a bot.' },
+      { question: 'Can meeting notes stay local on my Mac?', answer: 'ExtraBrain can use local Parakeet transcription and local Gemma 4 where installed and compatible. External providers receive content only when you choose a provider path that sends requests to them.' },
+      { question: 'How is ExtraBrain different from Otter or other meeting agents?', answer: 'Otter-style tools are usually team meeting agents and transcription workspaces. ExtraBrain focuses on a Mac desktop copilot that can support meetings and interviews without joining the call as a bot.' },
     ],
   },
   {
@@ -1307,9 +1322,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'about',
-    title: 'About ExtraBrain — Mac AI Interview & Meeting Copilot',
+    title: 'About ExtraBrain — Private AI Copilot for Interviews and Meetings',
     description:
-      'Learn about ExtraBrain, the local-first Mac AI interview assistant and meeting copilot. Extra Brain and ExtraBrains are common ways people search for the same product.',
+      'Learn about ExtraBrain, the local-first Mac AI interview assistant and meeting copilot. Extra Brain and ExtraBrains are common search variants.',
     eyebrow: 'About',
     h1: 'ExtraBrain helps people stay present during high-stakes live work.',
     lead:

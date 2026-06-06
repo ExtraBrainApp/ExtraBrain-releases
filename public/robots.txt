@@ -13,5 +13,4 @@ User-agent: CCBot
 Allow: /
 Disallow: /index.html
 
-Sitemap: https://extrabrain.app/sitemap-index.xml
 Sitemap: https://extrabrain.app/sitemap.xml
