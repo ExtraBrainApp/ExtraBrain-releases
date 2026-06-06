@@ -1,28 +1,32 @@
 ---
+import { getLocaleFromPathname } from '../i18n/locales';
+import { t } from '../i18n/translate';
+
+const locale = getLocaleFromPathname(Astro.url.pathname);
 ---
 
 <dialog class="feedback-dialog" id="feedback-dialog">
   <div class="feedback-form" id="feedback-form">
     <div class="feedback-body" id="feedback-body">
       <div class="feedback-header">
-        <h2 class="feedback-title">Send feedback</h2>
-        <button type="button" class="feedback-close" id="feedback-close" aria-label="Close feedback form">
+        <h2 class="feedback-title">{t(locale, 'Send feedback')}</h2>
+        <button type="button" class="feedback-close" id="feedback-close" aria-label={t(locale, 'Close feedback form')}>
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
             <path d="M4.5 4.5L13.5 13.5M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
         </button>
       </div>
-      <p class="feedback-description">We'd love to hear from you. Share a suggestion, report an issue, or just say hi.</p>
-      <label class="feedback-label" for="feedback-message">Message</label>
+      <p class="feedback-description">{t(locale, "We'd love to hear from you. Share a suggestion, report an issue, or just say hi.")}</p>
+      <label class="feedback-label" for="feedback-message">{t(locale, 'Message')}</label>
       <textarea
         class="feedback-textarea"
         id="feedback-message"
         name="message"
         rows="4"
         required
-        placeholder="What's on your mind?"
+        placeholder={t(locale, "What's on your mind?")}
       ></textarea>
-      <label class="feedback-label" for="feedback-email">Email <span class="feedback-optional">(optional)</span></label>
+      <label class="feedback-label" for="feedback-email">{t(locale, 'Email')} <span class="feedback-optional">{t(locale, '(optional)')}</span></label>
       <input
         class="feedback-input"
         id="feedback-email"
@@ -32,7 +36,7 @@
         autocomplete="email"
       />
       <div class="feedback-actions">
-        <button type="button" class="btn primary feedback-submit" id="feedback-submit">Send feedback</button>
+        <button type="button" class="btn primary feedback-submit" id="feedback-submit">{t(locale, 'Send feedback')}</button>
       </div>
     </div>
     <div class="feedback-success" id="feedback-success" style="display:none;">
@@ -40,7 +44,7 @@
         <circle cx="14" cy="14" r="13" stroke="var(--signal-mint, #65d7c7)" stroke-width="2"/>
         <path d="M9 14.5L12.5 18L19 11" stroke="var(--signal-mint, #65d7c7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <p>Thank you for your feedback!</p>
+      <p>{t(locale, 'Thank you for your feedback!')}</p>
     </div>
   </div>
 </dialog>

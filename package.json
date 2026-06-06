@@ -8,7 +8,13 @@
     "typecheck": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
-    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check"
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "i18n:extract": "node scripts/i18n/extract-site-strings.mjs",
+    "i18n:translate": "node scripts/i18n/translate-site.mjs",
+    "i18n:repair": "node scripts/i18n/repair-site-i18n.mjs",
+    "i18n:build-translations": "node scripts/i18n/build-site-translations.mjs",
+    "i18n:validate": "node scripts/i18n/validate-site-i18n.mjs",
+    "i18n:validate:built": "node scripts/i18n/validate-site-i18n.mjs --strict --built"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",

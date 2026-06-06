@@ -6,6 +6,8 @@ on:
     paths:
       - 'src/**'
       - 'public/**'
+      - 'reports/i18n/**'
+      - 'scripts/i18n/**'
       - 'astro.config.mjs'
       - 'package.json'
       - 'package-lock.json'
@@ -39,8 +41,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate i18n source and translations
+        run: npm run i18n:validate -- --strict
+
+      - name: Check Astro project
+        run: npm run check
+
       - name: Build site
         run: npm run build
+
+      - name: Validate built localized output
+        run: npm run i18n:validate:built
 
       - name: Sanitize branch name
         id: sanitize

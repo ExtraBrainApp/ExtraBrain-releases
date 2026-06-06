@@ -2,6 +2,8 @@
 import MarketingLayout from '../layouts/MarketingLayout.astro';
 import FeedbackForm from '../components/FeedbackForm.astro';
 import BacklinksFooter from '../components/BacklinksFooter.astro';
+import { defaultLocale, localizePath, type Locale } from '../i18n/locales';
+import { t, translateValue } from '../i18n/translate';
 import {
   absoluteUrl,
   contactEmail,
@@ -19,9 +21,12 @@ type PricingTierCta = { label: string; href: string };
 type PricingTierExtras = { billingOptions?: BillingOption[]; primaryCta?: PricingTierCta };
 type HomepagePricingCopy = { summary?: string; features?: string[] };
 
-const pageTitle = 'ExtraBrain - Local-First AI Interview & Meeting Copilot';
-const pageDescription =
-  'Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.';
+const locale = (Astro.props.locale ?? defaultLocale) as Locale;
+const link = (path: string) => localizePath(path, locale);
+const text = (source: string) => t(locale, source);
+
+const pageTitle = text('ExtraBrain - Local-First AI Interview & Meeting Copilot');
+const pageDescription = text('Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.');
 
 const downloadHref = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest';
 const feedbackHref = `mailto:${contactEmail}?subject=ExtraBrain%20feedback`;
@@ -77,24 +82,25 @@ const homepagePricingCopy: Record<string, HomepagePricingCopy> = {
   },
 };
 
-const homepageSoftwareSchema = softwareApplicationSchema(pageDescription, absoluteUrl('/download/'));
-const faqItems = homepageFaq.map((item) => ({
+const homepageFaqSourceItems = homepageFaq.map((item) => ({
   ...item,
   answer: homepageFaqAnswerOverrides[item.question] ?? item.answer,
 }));
+const faqItems = translateValue(homepageFaqSourceItems, locale);
+const homepageSoftwareSchema = softwareApplicationSchema(pageDescription, absoluteUrl(link('/download/')));
 
 const schemaGraph = [
   {
     ...homepageSoftwareSchema,
-    softwareRequirements: 'macOS on Apple Silicon or Intel Mac',
-    featureList: homepageFeatureList,
+    softwareRequirements: text('macOS on Apple Silicon or Intel Mac'),
+    featureList: translateValue(homepageFeatureList, locale),
   },
   organizationSchema(),
   websiteSchema(),
   faqSchema(faqItems),
 ];
 
-const overviewCards = [
+const overviewCards = translateValue([
   {
     number: '01',
     title: 'Live interview and meeting context',
@@ -115,9 +121,9 @@ const overviewCards = [
     title: 'Local-first by design',
     body: 'Keep transcripts, prompts, screenshots, and notes on your Mac in a fully local setup, or explicitly send selected content to external providers when you choose them.',
   },
-];
+], locale);
 
-const steps = [
+const steps = translateValue([
   {
     title: 'Start the Mac app',
     body: 'Download the latest release, open ExtraBrain before the interview or meeting, and confirm microphone, transcription, and provider settings.',
@@ -136,9 +142,9 @@ const steps = [
     image: '/assets/screenshots/sessions_history.png',
     imageAlt: 'ExtraBrain sessions history with saved facts',
   },
-];
+], locale);
 
-const promptCards = [
+const promptCards = translateValue([
   {
     label: 'Candidate',
     prompt: 'Summarize the coding prompt, list edge cases, and outline a clean baseline before I start.',
@@ -164,9 +170,9 @@ const promptCards = [
     prompt: 'Convert this explanation into concepts, examples, and review questions.',
     tone: 'coral',
   },
-];
+], locale);
 
-const trustCards = [
+const trustCards = translateValue([
   {
     title: 'You choose what to capture',
     body: 'ExtraBrain is a desktop app, not a meeting bot joining the room. Keep session scope, prompts, and outputs in your control.',
@@ -179,19 +185,24 @@ const trustCards = [
     title: 'Use it within the rules',
     body: 'Interview and workplace policies vary. ExtraBrain should support your thinking, notes, and preparation without misrepresenting your skills.',
   },
-];
+], locale);
 
-const pricingCards = pricingTiers.map((tier) => {
+const pricingCards = pricingTiers.map((sourceTier) => {
+  const tier = translateValue(sourceTier, locale);
   const tierExtras = tier as PricingTierExtras;
-  const homepageCopy = homepagePricingCopy[tier.name];
+  const homepageCopy = translateValue(homepagePricingCopy[sourceTier.name] ?? {}, locale) as HomepagePricingCopy;
   const fallbackHref =
-    tier.name === 'Free'
+    sourceTier.name === 'Free'
       ? downloadHref
-      : tier.name === 'Pro'
-        ? '/pricing/free-vs-pro/'
+      : sourceTier.name === 'Pro'
+        ? link('/pricing/free-vs-pro/')
         : 'mailto:info@extrabrain.app?subject=ExtraBrain%20enterprise%20inquiry';
   const fallbackCta =
-    tier.name === 'Free' ? 'Download for Mac' : tier.name === 'Pro' ? 'Compare Free and Pro' : 'Talk to us';
+    sourceTier.name === 'Free'
+      ? text('Download for Mac')
+      : sourceTier.name === 'Pro'
+        ? text('Compare Free and Pro')
+        : text('Talk to us');
 
   return {
     name: tier.name,
@@ -202,33 +213,33 @@ const pricingCards = pricingTiers.map((tier) => {
     features: homepageCopy?.features ?? tier.features,
     href: tierExtras.primaryCta?.href ?? fallbackHref,
     cta: tierExtras.primaryCta?.label ?? fallbackCta,
-    featured: tier.name === 'Pro',
+    featured: sourceTier.name === 'Pro',
   };
 });
 
-const pathCards = [
+const pathCards = translateValue([
   {
     eyebrow: 'Interview workflow',
     title: 'Use ExtraBrain in interviews responsibly',
     body: 'Prepare for coding, system design, and behavioral interviews while staying aligned with company and platform policies.',
-    href: '/help/using-extrabrain-in-interviews/',
+    href: link('/help/using-extrabrain-in-interviews/'),
     cta: 'Explore interview guide',
   },
   {
     eyebrow: 'Installation and setup',
     title: 'Get from download to first live session',
     body: 'Install the app, connect your keys, and verify the workflow before a high-stakes call.',
-    href: '/download/',
+    href: link('/download/'),
     cta: 'Open download page',
   },
   {
     eyebrow: 'Privacy and control',
     title: 'Understand local and external data paths',
     body: 'Review local setup, provider data flow, API key handling, and sensible operating practices.',
-    href: '/privacy/',
+    href: link('/privacy/'),
     cta: 'Read privacy notes',
   },
-];
+], locale);
 
 const compatibilityPlatforms = [
   'Zoom',
@@ -247,31 +258,31 @@ const compatibilityPlatforms = [
 
 ---
 
-<MarketingLayout title={pageTitle} description={pageDescription} schemaGraph={schemaGraph}>
+<MarketingLayout title={pageTitle} description={pageDescription} schemaGraph={schemaGraph} locale={locale}>
   <header class="site-header">
     <div class="container nav">
-      <a href="#top" class="brand" aria-label="ExtraBrain home">
+      <a href="#top" class="brand" aria-label={text('ExtraBrain home')}>
         <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="34" height="34" />
         <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
           <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
         </span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#overview">Product</a>
-        <a href="#workflows">Use cases</a>
-        <a href="/download/">Download</a>
-        <a href="/pricing/">Pricing</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="#faq">FAQ</a>
-        <a href={feedbackHref} data-feedback-trigger>Feedback</a>
+      <nav class="nav-links" aria-label={text('Primary navigation')}>
+        <a href="#overview">{text('Product')}</a>
+        <a href="#workflows">{text('Use cases')}</a>
+        <a href={link('/download/')}>{text('Download')}</a>
+        <a href={link('/pricing/')}>{text('Pricing')}</a>
+        <a href={link('/privacy/')}>{text('Privacy')}</a>
+        <a href="#faq">{text('FAQ')}</a>
+        <a href={feedbackHref} data-feedback-trigger>{text('Feedback')}</a>
       </nav>
       <div class="nav-actions">
         <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-home-nav">
-          Download for Mac
+          {text('Download for Mac')}
         </a>
       </div>
       <a class="btn primary mobile-only" href={downloadHref} data-download data-attr="download-cta-home-nav-mobile">
-        Download for Mac
+        {text('Download for Mac')}
       </a>
     </div>
   </header>
@@ -280,41 +291,38 @@ const compatibilityPlatforms = [
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="hero-kicker">Free local-first desktop copilot</div>
-          <h1 id="hero-title">Desktop AI <span class="hero-title-accent">interview</span> and meeting copilot.</h1>
+          <div class="hero-kicker">{text('Free local-first desktop copilot')}</div>
+          <h1 id="hero-title">{text('Desktop AI interview and meeting copilot.')}</h1>
           <p class="lead">
-            ExtraBrain is a <strong class="hero-lead-accent">free, local-first</strong> desktop AI interview and meeting copilot. It helps engineers,
-            candidates, students, founders, and meeting leads follow <strong class="hero-lead-accent">live conversations</strong> with transcription,
-            <strong class="hero-lead-accent">screen-aware context</strong>, on-device AI powered by Gemma, <strong class="hero-lead-accent">BYO AI providers</strong>,
-            and <strong class="hero-lead-accent">privacy controls</strong>. Available for Mac today, with Windows and Linux planned.
+            {text('ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow live conversations with transcription, screen-aware context, on-device AI powered by Gemma, BYO AI providers, and privacy controls. Available for Mac today, with Windows and Linux planned.')}
           </p>
           <div class="hero-ctas">
             <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-hero">
-              Download for Mac
+              {text('Download for Mac')}
             </a>
             <a class="btn ghost" href="#overview">
-              See overview
+              {text('See overview')}
             </a>
           </div>
-          <div class="hero-mini" aria-label="Product highlights">
-            <span>Local Parakeet transcription</span>
-            <span>Gemma-powered on-device AI</span>
-            <span>Optional Deepgram</span>
-            <span>OpenAI, Anthropic, Claude, Codex</span>
-            <span>Available for Mac today</span>
-            <span>Windows &amp; Linux planned</span>
+          <div class="hero-mini" aria-label={text('Product highlights')}>
+            <span>{text('Local Parakeet transcription')}</span>
+            <span>{text('Gemma-powered on-device AI')}</span>
+            <span>{text('Optional Deepgram')}</span>
+            <span>{text('OpenAI, Anthropic, Claude, Codex')}</span>
+            <span>{text('Available for Mac today')}</span>
+            <span>{text('Windows & Linux planned')}</span>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="ExtraBrain product mockup">
+        <div class="hero-visual" aria-label={text('ExtraBrain product mockup')}>
           <div class="product-stack">
             <div class="product-stack-scale">
               <div class="product-card card-top">
                 <div class="pc-top-content">
                   <span class="live-dot" aria-hidden="true"></span>
                   <div>
-                    <div class="lbl">Live session</div>
-                    <div class="val">System design interview · live</div>
+                    <div class="lbl">{text('Live session')}</div>
+                    <div class="val">{text('System design interview · live')}</div>
                   </div>
                   <div class="time-code">14:02</div>
                 </div>
@@ -323,49 +331,48 @@ const compatibilityPlatforms = [
               <div class="product-card card-main">
                 <div class="pc-head">
                   <span class="d"></span><span class="d"></span><span class="d"></span>
-                  <span class="title">ExtraBrain · live transcript</span>
-                  <span class="live"><span class="pulse"></span>Listening · 14:02</span>
+                  <span class="title">{text('ExtraBrain · live transcript')}</span>
+                  <span class="live"><span class="pulse"></span>{text('Listening')} · 14:02</span>
                 </div>
                 <div class="pc-body">
                   <div class="pc-line">
-                    <span class="ts">14:02:10</span><span class="sp">Host</span>
-                    <span class="t">Design a rate limiter for a public API with <span class="hl">regional spikes</span> and abusive bursts.</span>
+                    <span class="ts">14:02:10</span><span class="sp">{text('Host')}</span>
+                    <span class="t">{text('Design a rate limiter for a public API with')} <span class="hl">{text('regional spikes')}</span> {text('and abusive bursts.')}</span>
                   </div>
                   <div class="pc-line">
-                    <span class="ts">14:02:18</span><span class="sp me">You</span>
-                    <span class="t">Should limits be per user, per IP, or per endpoint?</span>
+                    <span class="ts">14:02:18</span><span class="sp me">{text('You')}</span>
+                    <span class="t">{text('Should limits be per user, per IP, or per endpoint?')}</span>
                   </div>
                   <div class="pc-line">
-                    <span class="ts">14:02:24</span><span class="sp">Host</span>
-                    <span class="t">Start with per-user and per-endpoint limits. We care about <span class="hl">burst traffic</span> and graceful fallback.</span>
+                    <span class="ts">14:02:24</span><span class="sp">{text('Host')}</span>
+                    <span class="t">{text('Start with per-user and per-endpoint limits. We care about')} <span class="hl">{text('burst traffic')}</span> {text('and graceful fallback.')}</span>
                   </div>
                 </div>
                 <div class="pc-answer">
-                  <div class="q">Answer · 2 sources · 0.6s</div>
+                  <div class="q">{text('Answer')} · 2 {text('sources')} · 0.6s</div>
                   <div class="a">
-                    Start with token buckets at the edge for burst tolerance, then coordinate counters through
-                    Redis or another distributed store. Call out <b>fail-open vs fail-closed</b>.
+                    {text('Start with token buckets at the edge for burst tolerance, then coordinate counters through Redis or another distributed store. Call out')} <b>{text('fail-open vs fail-closed')}</b>.
                   </div>
                   <div class="srcs">
-                    <span>transcript · 14:02:10</span>
-                    <span>transcript · 14:02:24</span>
+                    <span>{text('transcript')} · 14:02:10</span>
+                    <span>{text('transcript')} · 14:02:24</span>
                   </div>
                 </div>
               </div>
 
               <div class="product-card card-side">
                 <div class="pc-side-content">
-                  <div class="lbl">Saved facts</div>
-                  <div class="fact"><b>Rate limiter</b> · public API</div>
-                  <div class="fact">Burst traffic: <b>edge token buckets</b></div>
-                  <div class="fact">Tradeoff: fail-open vs fail-closed</div>
+                  <div class="lbl">{text('Saved facts')}</div>
+                  <div class="fact"><b>{text('Rate limiter')}</b> · {text('public API')}</div>
+                  <div class="fact">{text('Burst traffic')}: <b>{text('edge token buckets')}</b></div>
+                  <div class="fact">{text('Tradeoff')}: {text('fail-open vs fail-closed')}</div>
                 </div>
               </div>
 
               <div class="stat-float">
-                <div class="label">Session memory</div>
-                <div class="value">Live context</div>
-                <div class="sub">Transcript-aware answers, saved facts, and follow-ups while the call is still active.</div>
+                <div class="label">{text('Session memory')}</div>
+                <div class="value">{text('Live context')}</div>
+                <div class="sub">{text('Transcript-aware answers, saved facts, and follow-ups while the call is still active.')}</div>
               </div>
             </div>
           </div>
@@ -376,15 +383,15 @@ const compatibilityPlatforms = [
     <div class="proof-strip">
       <div class="container proof-card">
         <p>
-          <strong>Built for high-stakes live thinking.</strong>
-          {productCategory}. Available for Mac today, with on-device AI powered by Gemma and provider access you control.
+          <strong>{text('Built for high-stakes live thinking.')}</strong>
+          {text(productCategory)}. {text('Available for Mac today, with on-device AI powered by Gemma and provider access you control.')}
         </p>
-        <div class="audience-row" aria-label="Target audiences">
-          <span>Engineers</span>
-          <span>PMs</span>
-          <span>Founders</span>
-          <span>Students</span>
-          <span>Research teams</span>
+        <div class="audience-row" aria-label={text('Target audiences')}>
+          <span>{text('Engineers')}</span>
+          <span>{text('PMs')}</span>
+          <span>{text('Founders')}</span>
+          <span>{text('Students')}</span>
+          <span>{text('Research teams')}</span>
         </div>
       </div>
     </div>
@@ -392,11 +399,10 @@ const compatibilityPlatforms = [
     <section class="light-section section-band--odd" id="overview">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Overview</span>
-          <h2>An invisible AI copilot for interviews, meetings, lectures, and research.</h2>
+          <span class="eyebrow">{text('Overview')}</span>
+          <h2>{text('An invisible AI copilot for interviews, meetings, lectures, and research.')}</h2>
           <p class="lead light">
-            ExtraBrain turns live audio, transcript text, screenshots, and selected context into organized prompts,
-            answer structures, and session memory while keeping provider choice, costs, and privacy boundaries visible.
+            {text('ExtraBrain turns live audio, transcript text, screenshots, and selected context into organized prompts, answer structures, and session memory while keeping provider choice, costs, and privacy boundaries visible.')}
           </p>
         </div>
         <div class="benefit-grid">
@@ -414,11 +420,10 @@ const compatibilityPlatforms = [
     <section class="light-section section-band--even" id="how">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">How it works</span>
-          <h2>From download to live support in three steps.</h2>
+          <span class="eyebrow">{text('How it works')}</span>
+          <h2>{text('From download to live support in three steps.')}</h2>
           <p class="lead light">
-            Keep the setup path simple: install the Mac app, choose local or cloud transcription, choose on-device AI or provider access,
-            and rehearse once before a real interview, meeting, or lecture.
+            {text('Keep the setup path simple: install the Mac app, choose local or cloud transcription, choose on-device AI or provider access, and rehearse once before a real interview, meeting, or lecture.')}
           </p>
         </div>
         <div class="steps-grid">
@@ -438,15 +443,14 @@ const compatibilityPlatforms = [
     <section class="light-section workflows-section section-band--odd" id="workflows">
       <div class="container">
         <div class="workflow-cloud-intro">
-          <span class="eyebrow">Use cases</span>
-          <h2>Designed for moments where context moves faster than notes.</h2>
+          <span class="eyebrow">{text('Use cases')}</span>
+          <h2>{text('Designed for moments where context moves faster than notes.')}</h2>
           <p class="lead light">
-            Use ExtraBrain as a private thinking layer during high-pressure live work: interviews, meetings,
-            customer calls, lectures, and research conversations.
+            {text('Use ExtraBrain as a private thinking layer during high-pressure live work: interviews, meetings, customer calls, lectures, and research conversations.')}
           </p>
         </div>
 
-        <div class="prompt-cloud" aria-label="ExtraBrain prompt cards by workflow">
+        <div class="prompt-cloud" aria-label={text('ExtraBrain prompt cards by workflow')}>
           {promptCards.map((card) => (
             <article class={`prompt-card prompt-card--${card.tone}`}>
               <span class="prompt-card-label">{card.label}</span>
@@ -460,22 +464,19 @@ const compatibilityPlatforms = [
     <section class="dark-section compatibility-section section-band--even" id="compatibility">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Compatibility</span>
-          <h2>Works invisibly across the interview and meeting platforms people actually use.</h2>
+          <span class="eyebrow">{text('Compatibility')}</span>
+          <h2>{text('Works invisibly across the interview and meeting platforms people actually use.')}</h2>
           <p class="lead">
-            ExtraBrain is designed to stay hidden from screen sharing and screen recording on major video call
-            tools and coding interview environments, while remaining available on your own Mac. Always follow the
-            rules of the interview, employer, school, meeting, or platform.
+            {text('ExtraBrain is designed to stay hidden from screen sharing and screen recording on major video call tools and coding interview environments, while remaining available on your own Mac. Always follow the rules of the interview, employer, school, meeting, or platform.')}
           </p>
         </div>
-        <div class="compatibility-grid" aria-label="Supported meeting and interview platforms">
+        <div class="compatibility-grid" aria-label={text('Supported meeting and interview platforms')}>
           {compatibilityPlatforms.map((platform) => (
             <div class="platform-chip">{platform}</div>
           ))}
         </div>
         <p class="compatibility-note">
-          Built for live coding interviews, LeetCode-style prompts, system design rounds, behavioral interviews,
-          product interviews, data and ML interviews, consulting cases, lectures, and research calls.
+          {text('Built for live coding interviews, LeetCode-style prompts, system design rounds, behavioral interviews, product interviews, data and ML interviews, consulting cases, lectures, and research calls.')}
         </p>
       </div>
     </section>
@@ -483,11 +484,10 @@ const compatibilityPlatforms = [
     <section class="dark-section section-band--odd" id="trust">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Trust and control</span>
-          <h2>Local-first control belongs in the main product story.</h2>
+          <span class="eyebrow">{text('Trust and control')}</span>
+          <h2>{text('Local-first control belongs in the main product story.')}</h2>
           <p class="lead">
-            ExtraBrain can keep requests on your device when you use Gemma-powered on-device AI and local Parakeet transcription. Privacy still
-            depends on your selected setup, including what you send to optional model and transcription providers.
+            {text('ExtraBrain can keep requests on your device when you use Gemma-powered on-device AI and local Parakeet transcription. Privacy still depends on your selected setup, including what you send to optional model and transcription providers.')}
           </p>
         </div>
         <div class="security-grid">
@@ -502,10 +502,9 @@ const compatibilityPlatforms = [
           <img class="quote-logo" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="96" height="96" />
           <div>
             <blockquote>
-              ExtraBrain should support your thinking, notes, and preparation. You are still responsible for
-              following interview, workplace, and platform policies.
+              {text('ExtraBrain should support your thinking, notes, and preparation. You are still responsible for following interview, workplace, and platform policies.')}
             </blockquote>
-            <cite>Interview policy reminder</cite>
+            <cite>{text('Interview policy reminder')}</cite>
           </div>
         </div>
       </div>
@@ -514,10 +513,10 @@ const compatibilityPlatforms = [
     <section class="light-section section-band--even" id="pricing">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Pricing structure</span>
-          <h2>Free to start. Pro from $6.99/month, $79/year, or $149 lifetime.</h2>
+          <span class="eyebrow">{text('Pricing structure')}</span>
+          <h2>{text('Free to start. Pro from $6.99/month, $79/year, or $149 lifetime.')}</h2>
           <p class="lead light">
-            Free core access, on-device AI powered by Gemma, BYO provider subscriptions or API keys, Pro workflow tools, and enterprise support by contact.
+            {text('Free core access, on-device AI powered by Gemma, BYO provider subscriptions or API keys, Pro workflow tools, and enterprise support by contact.')}
           </p>
         </div>
         <div class="pricing-grid">
@@ -561,37 +560,36 @@ const compatibilityPlatforms = [
     <section class="light-section section-band--odd">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Discovery pages</span>
-          <h2>Specific pages for the questions people and AI search systems ask.</h2>
+          <span class="eyebrow">{text('Discovery pages')}</span>
+          <h2>{text('Specific pages for the questions people and AI search systems ask.')}</h2>
           <p class="lead light">
-            ExtraBrain has first-party pages for downloads, privacy, providers, local transcription, use cases,
-            comparisons, release notes, and responsible use.
+            {text('ExtraBrain has first-party pages for downloads, privacy, providers, local transcription, use cases, comparisons, release notes, and responsible use.')}
           </p>
         </div>
         <div class="related-grid">
           <article class="related-card">
             <div>
-              <small>Use cases</small>
-              <h3>Interview and meeting workflows</h3>
-              <p>Coding interviews, system design interviews, behavioral interviews, and desktop meeting copilot workflows.</p>
+              <small>{text('Use cases')}</small>
+              <h3>{text('Interview and meeting workflows')}</h3>
+              <p>{text('Coding interviews, system design interviews, behavioral interviews, and desktop meeting copilot workflows.')}</p>
             </div>
-            <a href="/use-cases/coding-interviews/">Open use cases</a>
+            <a href={link('/use-cases/coding-interviews/')}>{text('Open use cases')}</a>
           </article>
           <article class="related-card">
             <div>
-              <small>Features</small>
-              <h3>Gemma-powered AI, transcription, and BYO providers</h3>
-              <p>On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.</p>
+              <small>{text('Features')}</small>
+              <h3>{text('Gemma-powered AI, transcription, and BYO providers')}</h3>
+              <p>{text('On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.')}</p>
             </div>
-            <a href="/features/bring-your-own-provider/">Review providers</a>
+            <a href={link('/features/bring-your-own-provider/')}>{text('Review providers')}</a>
           </article>
           <article class="related-card">
             <div>
-              <small>Comparisons</small>
-              <h3>Compare ExtraBrain with alternatives</h3>
-              <p>Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, InterviewBee, and other AI interview assistants.</p>
+              <small>{text('Comparisons')}</small>
+              <h3>{text('Compare ExtraBrain with alternatives')}</h3>
+              <p>{text('Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, InterviewBee, and other AI interview assistants.')}</p>
             </div>
-            <a href="/compare/">Read comparisons</a>
+            <a href={link('/compare/')}>{text('Read comparisons')}</a>
           </article>
         </div>
       </div>
@@ -600,11 +598,10 @@ const compatibilityPlatforms = [
     <section class="light-section related-section section-band--even">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Pick your path</span>
-          <h2>Get set up with the guide that matches your workflow.</h2>
+          <span class="eyebrow">{text('Pick your path')}</span>
+          <h2>{text('Get set up with the guide that matches your workflow.')}</h2>
           <p class="lead light">
-            The help center keeps installation, provider access, privacy, billing, and interview workflow details
-            crawlable and easy to reach from the homepage.
+            {text('The help center keeps installation, provider access, privacy, billing, and interview workflow details crawlable and easy to reach from the homepage.')}
           </p>
         </div>
         <div class="related-grid">
@@ -627,11 +624,10 @@ const compatibilityPlatforms = [
     <section class="light-section faq-section section-band--odd" id="faq">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">FAQ</span>
-          <h2>Common questions about ExtraBrain.</h2>
+          <span class="eyebrow">{text('FAQ')}</span>
+          <h2>{text('Common questions about ExtraBrain.')}</h2>
           <p class="lead light">
-            Direct answers for searchers comparing invisible AI interview assistants, meeting copilots,
-            Gemma-powered on-device AI, provider-connected tools, and local-first desktop apps.
+            {text('Direct answers for searchers comparing invisible AI interview assistants, meeting copilots, Gemma-powered on-device AI, provider-connected tools, and local-first desktop apps.')}
           </p>
         </div>
         <div class="faq-list">
@@ -658,18 +654,17 @@ const compatibilityPlatforms = [
     <section class="final-cta" id="cta">
       <div class="container cta-card">
         <div>
-          <span class="eyebrow">Ready when the conversation starts</span>
-          <h2>Download the free Mac app before the call starts.</h2>
+          <span class="eyebrow">{text('Ready when the conversation starts')}</span>
+          <h2>{text('Download the free Mac app before the call starts.')}</h2>
           <p class="lead">
-            ExtraBrain gives you a private live workspace for interview prompts, meeting notes, structured answers,
-            and post-session summaries, all in a desktop app you control.
+            {text('ExtraBrain gives you a private live workspace for interview prompts, meeting notes, structured answers, and post-session summaries, all in a desktop app you control.')}
           </p>
         </div>
         <div class="cta-actions">
           <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-final">
-            Download latest release
+            {text('Download latest release')}
           </a>
-          <a class="btn ghost" href="/help/">Open help center</a>
+          <a class="btn ghost" href={link('/help/')}>{text('Open help center')}</a>
         </div>
       </div>
     </section>
@@ -684,28 +679,28 @@ const compatibilityPlatforms = [
             <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
           </span>
         </a>
-        <p>Free, local-first desktop AI interview and meeting copilot. Available for Mac today, with Windows and Linux planned.</p>
+        <p>{text('Free, local-first desktop AI interview and meeting copilot')}. {text('Available for Mac today, with Windows and Linux planned')}.</p>
       </div>
       <div>
-        <h2 class="footer-heading">Product</h2>
-        <a href="/download/">Download</a>
-        <a href="/pricing/">Pricing</a>
-        <a href="/pricing/free-vs-pro/">Free vs Pro</a>
-        <a href="/about/">About</a>
+        <h2 class="footer-heading">{text('Product')}</h2>
+        <a href={link('/download/')}>{text('Download')}</a>
+        <a href={link('/pricing/')}>{text('Pricing')}</a>
+        <a href={link('/pricing/free-vs-pro/')}>{text('Free vs Pro')}</a>
+        <a href={link('/about/')}>{text('About')}</a>
       </div>
       <div>
-        <h2 class="footer-heading">Trust</h2>
-        <a href="/privacy/">Privacy</a>
-        <a href="/security/">Security</a>
-        <a href="/responsible-use/">Responsible use</a>
+        <h2 class="footer-heading">{text('Trust')}</h2>
+        <a href={link('/privacy/')}>{text('Privacy')}</a>
+        <a href={link('/security/')}>{text('Security')}</a>
+        <a href={link('/responsible-use/')}>{text('Responsible use')}</a>
       </div>
       <div>
-        <h2 class="footer-heading">Support</h2>
-        <a href="/help/getting-started/">Getting started</a>
-        <a href="/help/troubleshooting/">Troubleshooting</a>
-        <a href="/providers/">Providers</a>
+        <h2 class="footer-heading">{text('Support')}</h2>
+        <a href={link('/help/getting-started/')}>{text('Getting started')}</a>
+        <a href={link('/help/troubleshooting/')}>{text('Troubleshooting')}</a>
+        <a href={link('/providers/')}>{text('Providers')}</a>
         <a href="https://github.com/ExtraBrainApp/ExtraBrain-releases/releases" data-track="all_releases_clicked">GitHub</a>
-        <a href={feedbackHref} data-feedback-trigger>Send Feedback</a>
+        <a href={feedbackHref} data-feedback-trigger>{text('Send Feedback')}</a>
       </div>
     </div>
     <BacklinksFooter />

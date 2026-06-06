@@ -1,5 +1,8 @@
 ---
 import { brandAliases, lemonSqueezyCheckoutLinks } from '../data/product';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import { alternateLinks, getLocaleFromPathname, localizePath, siteLocales, type Locale } from '../i18n/locales';
+import { t } from '../i18n/translate';
 
 interface Props {
   title: string;
@@ -7,19 +10,30 @@ interface Props {
   ogImage?: string;
   schemaGraph?: Array<Record<string, unknown>>;
   enableAnalytics?: boolean;
+  locale?: Locale;
 }
 
-const { title, description, ogImage = '/assets/images/logo-512.png', schemaGraph, enableAnalytics = true } = Astro.props;
+const {
+  title,
+  description,
+  ogImage = '/assets/images/logo-512.png',
+  schemaGraph,
+  enableAnalytics = true,
+  locale = getLocaleFromPathname(Astro.url.pathname),
+} = Astro.props;
 const siteUrl = Astro.site ?? new URL('https://extrabrain.app');
 const canonical = new URL(Astro.url.pathname, siteUrl);
-const downloadUrl = new URL('/download/', siteUrl).href;
+const localeConfig = siteLocales[locale];
+const localizedAlternates = alternateLinks(Astro.url.pathname, siteUrl);
+const rootAlternate = localizedAlternates.find((alternate) => alternate.locale === 'en');
+const downloadUrl = new URL(localizePath('/download/', locale), siteUrl).href;
 const defaultSchemaGraph = [
   {
     '@type': 'SoftwareApplication',
     name: 'ExtraBrain',
     alternateName: brandAliases,
     applicationCategory: 'ProductivityApplication',
-    applicationSubCategory: 'AI interview and meeting copilot',
+    applicationSubCategory: t(locale, 'AI interview and meeting copilot'),
     operatingSystem: 'macOS',
     offers: [
       {
@@ -44,7 +58,7 @@ const defaultSchemaGraph = [
         price: '79',
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
-        url: new URL('/pricing/', siteUrl).href,
+        url: new URL(localizePath('/pricing/', locale), siteUrl).href,
       },
       {
         '@type': 'Offer',
@@ -52,7 +66,7 @@ const defaultSchemaGraph = [
         price: '149',
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
-        url: new URL('/pricing/', siteUrl).href,
+        url: new URL(localizePath('/pricing/', locale), siteUrl).href,
       },
     ],
     author: {
@@ -64,14 +78,14 @@ const defaultSchemaGraph = [
     downloadUrl,
     description,
     featureList: [
-      'Free, local-first desktop AI interview and meeting copilot',
-      'Live interview, meeting, lecture, and research support',
-      'Local Gemma 4 on-device AI where installed and compatible',
-      'Local NVIDIA Parakeet transcription and optional Deepgram',
-      'Use your current OpenAI, Anthropic, Claude, Codex, or compatible provider access when external providers fit your workflow',
-      'Local-first transcripts, prompts, screenshots, and session notes',
-      'Available for Mac today, with Windows and Linux planned',
-      'Apple Silicon and Intel Mac support',
+      t(locale, 'Free, local-first desktop AI interview and meeting copilot'),
+      t(locale, 'Live interview, meeting, lecture, and research support'),
+      t(locale, 'Local Gemma 4 on-device AI where installed and compatible'),
+      t(locale, 'Local NVIDIA Parakeet transcription and optional Deepgram'),
+      t(locale, 'Use your current OpenAI, Anthropic, Claude, Codex, or compatible provider access when external providers fit your workflow'),
+      t(locale, 'Local-first transcripts, prompts, screenshots, and session notes'),
+      t(locale, 'Available for Mac today, with Windows and Linux planned'),
+      t(locale, 'Apple Silicon and Intel Mac support'),
     ],
   },
   {
@@ -84,7 +98,7 @@ const defaultSchemaGraph = [
     contactPoint: {
       '@type': 'ContactPoint',
       email: 'info@extrabrain.app',
-      contactType: 'customer service',
+      contactType: t(locale, 'customer service'),
     },
   },
   {
@@ -147,7 +161,7 @@ p{margin-top:0;color:var(--text-secondary)}
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={localeConfig.lang} dir={localeConfig.dir}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -157,6 +171,10 @@ p{margin-top:0;color:var(--text-secondary)}
     <meta name="robots" content="index,follow" />
     <meta name="author" content="ExtraBrain" />
     <link rel="canonical" href={canonical.href} />
+    {localizedAlternates.map((alternate) => (
+      <link rel="alternate" hreflang={alternate.hreflang} href={alternate.href} />
+    ))}
+    {rootAlternate && <link rel="alternate" hreflang="x-default" href={rootAlternate.href} />}
     <style is:inline set:html={criticalCss} />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
@@ -167,6 +185,7 @@ p{margin-top:0;color:var(--text-secondary)}
     <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ExtraBrain" />
+    <meta property="og:locale" content={localeConfig.lang.replace('-', '_')} />
     <meta property="og:url" content={canonical.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -180,10 +199,11 @@ p{margin-top:0;color:var(--text-secondary)}
     <meta name="twitter:image" content={new URL(ogImage, siteUrl).href} />
   </head>
   <body>
-    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="skip-link" href="#top">{t(locale, 'Skip to content')}</a>
     <div class="site-shell">
       <slot />
     </div>
+    <LanguageSwitcher locale={locale} />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     {enableAnalytics && (
       <script is:inline>
