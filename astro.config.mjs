@@ -7,6 +7,114 @@ const siteUrl = 'https://extrabrain.app';
 const defaultOgImage = `${siteUrl}/assets/images/logo-512.png`;
 const proMonthlyFounderCheckout =
   'https://extrabrain.lemonsqueezy.com/checkout/buy/f5618066-dfaf-419e-ac49-a05ffa5e30d9?checkout%5Bdiscount_code%5D=EARLYBIRD&prefill=earlybird';
+const starlightLocales = {
+  root: { label: 'English', lang: 'en' },
+  es: { label: 'Español', lang: 'es' },
+  fr: { label: 'Français', lang: 'fr' },
+  de: { label: 'Deutsch', lang: 'de' },
+  pt: { label: 'Português', lang: 'pt' },
+  zh: { label: '简体中文', lang: 'zh-CN' },
+  ja: { label: '日本語', lang: 'ja' },
+  ko: { label: '한국어', lang: 'ko' },
+  hi: { label: 'हिन्दी', lang: 'hi' },
+  ar: { label: 'العربية', lang: 'ar', dir: 'rtl' },
+  uk: { label: 'Українська', lang: 'uk' },
+  be: { label: 'Беларуская', lang: 'be' },
+};
+const starlightTitles = {
+  en: 'ExtraBrain Help Center',
+  es: 'Centro de ayuda de ExtraBrain',
+  fr: 'Centre d’aide ExtraBrain',
+  de: 'ExtraBrain Hilfezentrum',
+  pt: 'Central de Ajuda do ExtraBrain',
+  'zh-CN': 'ExtraBrain 帮助中心',
+  ja: 'ExtraBrain ヘルプセンター',
+  ko: 'ExtraBrain 도움말 센터',
+  hi: 'ExtraBrain सहायता केंद्र',
+  ar: 'مركز مساعدة ExtraBrain',
+  uk: 'Довідковий центр ExtraBrain',
+  be: 'Даведачны цэнтр ExtraBrain',
+};
+const sidebarTranslations = {
+  overview: {
+    es: 'Resumen',
+    fr: 'Aperçu',
+    de: 'Übersicht',
+    pt: 'Visão geral',
+    'zh-CN': '概览',
+    ja: '概要',
+    ko: '개요',
+    hi: 'अवलोकन',
+    ar: 'نظرة عامة',
+    uk: 'Огляд',
+    be: 'Агляд',
+  },
+  startHere: {
+    es: 'Empieza aquí',
+    fr: 'Commencer ici',
+    de: 'Hier starten',
+    pt: 'Comece aqui',
+    'zh-CN': '从这里开始',
+    ja: 'ここから開始',
+    ko: '여기서 시작',
+    hi: 'यहाँ से शुरू करें',
+    ar: 'ابدأ هنا',
+    uk: 'Почніть тут',
+    be: 'Пачніце тут',
+  },
+  providers: {
+    es: 'Proveedores',
+    fr: 'Fournisseurs',
+    de: 'Anbieter',
+    pt: 'Provedores',
+    'zh-CN': '提供商',
+    ja: 'プロバイダー',
+    ko: '제공업체',
+    hi: 'प्रदाता',
+    ar: 'المزوّدون',
+    uk: 'Постачальники',
+    be: 'Пастаўшчыкі',
+  },
+  usingExtraBrain: {
+    es: 'Usar ExtraBrain',
+    fr: 'Utiliser ExtraBrain',
+    de: 'ExtraBrain verwenden',
+    pt: 'Usar o ExtraBrain',
+    'zh-CN': '使用 ExtraBrain',
+    ja: 'ExtraBrain を使う',
+    ko: 'ExtraBrain 사용',
+    hi: 'ExtraBrain का उपयोग',
+    ar: 'استخدام ExtraBrain',
+    uk: 'Використання ExtraBrain',
+    be: 'Выкарыстанне ExtraBrain',
+  },
+  privacyAndSettings: {
+    es: 'Privacidad y ajustes',
+    fr: 'Confidentialité et réglages',
+    de: 'Datenschutz und Einstellungen',
+    pt: 'Privacidade e configurações',
+    'zh-CN': '隐私和设置',
+    ja: 'プライバシーと設定',
+    ko: '개인정보 및 설정',
+    hi: 'गोपनीयता और सेटिंग्स',
+    ar: 'الخصوصية والإعدادات',
+    uk: 'Приватність і налаштування',
+    be: 'Прыватнасць і налады',
+  },
+  billingAndSupport: {
+    es: 'Facturación y soporte',
+    fr: 'Facturation et assistance',
+    de: 'Abrechnung und Support',
+    pt: 'Cobrança e suporte',
+    'zh-CN': '账单和支持',
+    ja: '請求とサポート',
+    ko: '결제 및 지원',
+    hi: 'बिलिंग और सहायता',
+    ar: 'الفوترة والدعم',
+    uk: 'Оплата й підтримка',
+    be: 'Аплата і падтрымка',
+  },
+};
 const helpStructuredData = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
@@ -106,14 +214,16 @@ export default defineConfig({
   integrations: [
     sitemap(),
     starlight({
-      title: 'ExtraBrain Help Center',
+      title: starlightTitles,
       favicon: '/assets/images/favicon-32x32.png',
+      locales: starlightLocales,
       sidebar: [
         {
           label: 'Start Here',
+          translations: sidebarTranslations.startHere,
           collapsed: false,
           items: [
-            { slug: 'help', label: 'Overview' },
+            { slug: 'help', label: 'Overview', translations: sidebarTranslations.overview },
             'help/getting-started/what-is-extrabrain',
             'help/getting-started/first-run-setup',
             'help/getting-started/macos-permissions',
@@ -122,6 +232,7 @@ export default defineConfig({
         },
         {
           label: 'Providers',
+          translations: sidebarTranslations.providers,
           collapsed: false,
           items: [
             'help/providers/transcription-parakeet-vs-deepgram',
@@ -133,6 +244,7 @@ export default defineConfig({
         },
         {
           label: 'Using ExtraBrain',
+          translations: sidebarTranslations.usingExtraBrain,
           collapsed: false,
           items: [
             'help/using-extrabrain/start-recording-and-analysis',
@@ -144,6 +256,7 @@ export default defineConfig({
         },
         {
           label: 'Privacy And Settings',
+          translations: sidebarTranslations.privacyAndSettings,
           collapsed: false,
           items: [
             'help/privacy-security/how-extrabrain-handles-data',
@@ -165,6 +278,7 @@ export default defineConfig({
         },
         {
           label: 'Billing And Support',
+          translations: sidebarTranslations.billingAndSupport,
           collapsed: false,
           items: [
             'help/billing-pro/activate-license',

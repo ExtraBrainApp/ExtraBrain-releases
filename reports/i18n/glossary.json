@@ -1,0 +1,76 @@
+{
+  "projectTone": "Polished SaaS marketing and help-center copy for a privacy-aware Mac app. Prefer natural target-language phrasing over literal word order.",
+  "protectedTerms": [
+    "ExtraBrain",
+    "ExtraBrain Pro",
+    "OpenAI",
+    "ChatGPT",
+    "Anthropic",
+    "Claude",
+    "Codex",
+    "Gemini",
+    "Gemma",
+    "Deepgram",
+    "NVIDIA",
+    "NVIDIA Parakeet",
+    "Parakeet",
+    "API",
+    "OAuth",
+    "macOS",
+    "Mac",
+    "TypeScript",
+    "React",
+    "Claude Code",
+    "Codex CLI",
+    "Gemini CLI",
+    "Pro",
+    "BYO"
+  ],
+  "doNotLiteralize": [
+    {
+      "term": "copilot",
+      "meaning": "An AI assistant that supports the user during live work. Translate as a natural assistant/helper phrase if a literal aviation metaphor sounds odd."
+    },
+    {
+      "term": "local-first",
+      "meaning": "Designed to keep work on the user's device by default. Translate the concept, not the English compound."
+    },
+    {
+      "term": "sticker price",
+      "meaning": "The apparent advertised price. Use a natural phrase for surface price or listed price."
+    },
+    {
+      "term": "posture",
+      "meaning": "A privacy/security operating mode or stance. Do not translate as physical body posture."
+    },
+    {
+      "term": "dry run",
+      "meaning": "A practice run or rehearsal. Use the local idiom for trial run."
+    },
+    {
+      "term": "provider",
+      "meaning": "A model, transcription, or service provider. Use the normal technology/business term in the target language."
+    },
+    {
+      "term": "live support",
+      "meaning": "Real-time assistance during a call, interview, or meeting. Do not imply customer support chat unless the context says that."
+    },
+    {
+      "term": "workflow",
+      "meaning": "The user's sequence of work steps in the app. Translate naturally for product UX copy."
+    },
+    {
+      "term": "meeting dynamics",
+      "meaning": "How the conversation feels and behaves when participants know a tool or bot has joined. Paraphrase naturally."
+    },
+    {
+      "term": "fallback",
+      "meaning": "A backup path used when the preferred path is unavailable. Avoid awkward literal fallback imagery."
+    }
+  ],
+  "reviewRubric": {
+    "meaningScore": "5 means all product/legal/privacy meaning is preserved; 4 means minor wording changes only; 3 or lower fails.",
+    "fluencyScore": "5 means native-quality product copy; 4 means natural and professional; 3 or lower sounds literal, awkward, or machine-translated.",
+    "literalnessRisk": "1 means no literalness risk; 2 acceptable; 3 or higher fails and needs repair."
+  }
+}

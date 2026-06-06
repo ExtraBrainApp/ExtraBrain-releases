@@ -1,9 +1,10 @@
 ---
 import MarketingLayout from './MarketingLayout.astro';
 import BacklinksFooter from '../components/BacklinksFooter.astro';
+import { defaultLocale, localizePath, type Locale } from '../i18n/locales';
+import { t, translateValue } from '../i18n/translate';
 import {
   absoluteUrl,
-  breadcrumbSchema,
   contactEmail,
   faqSchema,
   githubUrl,
@@ -117,18 +118,23 @@ const freeVsProPlanIcons: Record<string, string> = {
 
 interface Props {
   page: MarketingPage;
+  locale?: Locale;
 }
 
-const { page } = Astro.props as Props;
+const { page: sourcePage, locale = defaultLocale } = Astro.props as Props;
+const page = translateValue(sourcePage, locale);
+const link = (path: string) => localizePath(path, locale);
+const text = (source: string) => t(locale, source);
 const comparisonHub = page.comparisonHub as ComparisonHub | undefined;
 const comparison = page.comparison as ComparisonContent | undefined;
-const faq = page.faq ?? homepageFaq.slice(0, 4);
+const faq = page.faq ?? translateValue(homepageFaq.slice(0, 4), locale);
 const pageSubject = page.title.replace(/\s+Comparison$/, '');
 const comparisonStatusLabels = {
-  same: 'Same in both',
-  'pro-unlock': 'Pro unlock',
-  'cost-note': 'Cost note',
+  same: text('Same in both'),
+  'pro-unlock': text('Pro unlock'),
+  'cost-note': text('Cost note'),
 };
+const summaryLabels = [text('Page focus'), text('Platform fact'), text('Data-flow fact')];
 const comparisonValueItems = (value: string | string[]) => (Array.isArray(value) ? value : [value]);
 const isPerformanceDiscoveryPage =
   page.slug === 'pricing' ||
@@ -136,33 +142,51 @@ const isPerformanceDiscoveryPage =
   page.slug === 'compare' ||
   page.slug.startsWith('compare/');
 const feedbackHref = `mailto:${contactEmail}?subject=ExtraBrain%20feedback`;
-const summaryFacts = [
+const summaryFacts = translateValue([
   page.lead,
   'ExtraBrain has 1 current public platform family, macOS, with support for 2 Mac CPU families: Apple Silicon and Intel.',
   'ExtraBrain has 3 configurable data paths to review before sensitive work: local Parakeet transcription, local Gemma 4 where installed and compatible, and external providers you choose.',
-];
-const schemaGraph: Array<Record<string, unknown>> = [
-  softwareApplicationSchema(page.description, absoluteUrl('/download/')),
+], locale);
+const sourceSchemaGraph: Array<Record<string, unknown>> = [
+  softwareApplicationSchema(page.description, absoluteUrl(link('/download/'))),
   organizationSchema(),
   websiteSchema(),
-  breadcrumbSchema(page),
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: text('Home'),
+        item: absoluteUrl(link('/')),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: page.h1.replace(/\.$/, ''),
+        item: absoluteUrl(link(`/${sourcePage.slug}/`)),
+      },
+    ],
+  },
 ];
 
-if (page.schemaType === 'HowTo') schemaGraph.push(howToInstallSchema());
+if (sourcePage.schemaType === 'HowTo') sourceSchemaGraph.push(howToInstallSchema());
 if (comparisonHub) {
-  schemaGraph.push({
+  sourceSchemaGraph.push({
     '@type': 'ItemList',
     name: 'ExtraBrain comparison pages',
     itemListElement: comparisonHub.entries.map((entry, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       name: entry.name,
-      url: absoluteUrl(entry.href),
+      url: absoluteUrl(link(entry.href)),
       description: entry.summary,
     })),
   });
 }
-if (faq.length > 0) schemaGraph.push(faqSchema(faq));
+if (faq.length > 0) sourceSchemaGraph.push(faqSchema(faq));
+
+const schemaGraph = translateValue(sourceSchemaGraph, locale) as Array<Record<string, unknown>>;
 
 const hasReleaseMetadata = page.slug === 'download';
 const hasSources = Boolean(page.sources?.length);
@@ -174,36 +198,36 @@ const sourcesBandIndex = contentBandStart + page.sections.length;
 const faqBandIndex = sourcesBandIndex + (hasSources ? 1 : 0);
 const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--odd' : 'section-band--even');
 const breadcrumbItems = [
-  { label: 'Home', href: '/' },
-  ...(page.slug.startsWith('compare/')
-    ? [{ label: 'Compare', href: '/compare/' }]
-    : page.slug.startsWith('pricing/')
-      ? [{ label: 'Pricing', href: '/pricing/' }]
+  { label: text('Home'), href: link('/') },
+  ...(sourcePage.slug.startsWith('compare/')
+    ? [{ label: text('Compare'), href: link('/compare/') }]
+    : sourcePage.slug.startsWith('pricing/')
+      ? [{ label: text('Pricing'), href: link('/pricing/') }]
       : []),
-  { label: page.h1.replace(/\.$/, ''), href: `/${page.slug}/` },
+  { label: page.h1.replace(/\.$/, ''), href: link(`/${sourcePage.slug}/`) },
 ];
 ---
 
-<MarketingLayout title={`${page.title} | ${productName}`} description={page.description} ogImage={page.ogImage} schemaGraph={schemaGraph} enableAnalytics={!isPerformanceDiscoveryPage}>
+<MarketingLayout title={`${page.title} | ${productName}`} description={page.description} ogImage={page.ogImage} schemaGraph={schemaGraph} enableAnalytics={!isPerformanceDiscoveryPage} locale={locale}>
   <header class="site-header">
     <div class="container nav">
-      <a href="/" class="brand" aria-label="ExtraBrain home">
+      <a href={link('/')} class="brand" aria-label={text('ExtraBrain home')}>
         <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="34" height="34" />
         <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
           <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
         </span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="/download/">Download</a>
-        <a href="/pricing/">Pricing</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/help/">Help</a>
-        <a href={feedbackHref}>Feedback</a>
+      <nav class="nav-links" aria-label={text('Primary navigation')}>
+        <a href={link('/download/')}>{text('Download')}</a>
+        <a href={link('/pricing/')}>{text('Pricing')}</a>
+        <a href={link('/privacy/')}>{text('Privacy')}</a>
+        <a href={link('/help/')}>{text('Help')}</a>
+        <a href={feedbackHref}>{text('Feedback')}</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn primary" href="/download/" data-track="download_nav_clicked" data-attr="download-cta-nav">Download for Mac</a>
+        <a class="btn primary" href={link('/download/')} data-track="download_nav_clicked" data-attr="download-cta-nav">{text('Download for Mac')}</a>
       </div>
-      <a class="btn primary mobile-only" href="/download/" data-track="download_nav_clicked" data-attr="download-cta-nav-mobile">Download</a>
+      <a class="btn primary mobile-only" href={link('/download/')} data-track="download_nav_clicked" data-attr="download-cta-nav-mobile">{text('Download')}</a>
     </div>
   </header>
 
@@ -212,7 +236,7 @@ const breadcrumbItems = [
       <div class="container page-hero-grid">
         <div>
           {(page.slug === 'pricing' || page.slug.startsWith('pricing/') || page.slug === 'compare' || page.slug.startsWith('compare/')) && (
-            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <nav class="breadcrumb-nav" aria-label={text('Breadcrumb')}>
               <ol>
                 {breadcrumbItems.map((item, index) => (
                   <li>
@@ -226,19 +250,19 @@ const breadcrumbItems = [
           {page.slug === 'pricing' || page.slug === 'pricing/free-vs-pro' ? <h1 set:html={colorizePricingH1(page.h1, page.slug)} /> : <h1>{page.h1}</h1>}
           <p class="lead">{page.lead}</p>
           <div class="hero-ctas">
-            {page.primaryCta && <a class="btn primary" href={page.primaryCta.href} data-track="page_primary_cta_clicked" data-attr={page.primaryCta.href === '/download/' || page.primaryCta.href === githubUrl ? 'download-cta-hero' : undefined}>{page.primaryCta.label}</a>}
-            {page.secondaryCta && <a class="btn ghost" href={page.secondaryCta.href} data-track="page_secondary_cta_clicked">{page.secondaryCta.label}</a>}
+            {page.primaryCta && <a class="btn primary" href={link(page.primaryCta.href)} data-track="page_primary_cta_clicked" data-attr={page.primaryCta.href === '/download/' || page.primaryCta.href === githubUrl ? 'download-cta-hero' : undefined}>{page.primaryCta.label}</a>}
+            {page.secondaryCta && <a class="btn ghost" href={link(page.secondaryCta.href)} data-track="page_secondary_cta_clicked">{page.secondaryCta.label}</a>}
           </div>
         </div>
-        <aside class="page-fact-panel" aria-label="ExtraBrain product facts">
-          <p class="panel-label">{productCategory}</p>
+        <aside class="page-fact-panel" aria-label={text('ExtraBrain product facts')}>
+          <p class="panel-label">{text(productCategory)}</p>
           <ul>
-            <li>Available for Mac today, with Windows and Linux planned</li>
-            <li>Apple Silicon and Intel Mac support</li>
-            <li>Local Gemma 4 when installed and compatible</li>
-            <li>Local Parakeet transcription and optional Deepgram</li>
-            <li>Optional OpenAI, Anthropic, Claude, Codex, or compatible provider access</li>
-            <li>Responsible-use guidance for interviews and workplace policies</li>
+            <li>{text('Available for Mac today, with Windows and Linux planned')}</li>
+            <li>{text('Apple Silicon and Intel Mac support')}</li>
+            <li>{text('Local Gemma 4 when installed and compatible')}</li>
+            <li>{text('Local Parakeet transcription and optional Deepgram')}</li>
+            <li>{text('Optional OpenAI, Anthropic, Claude, Codex, or compatible provider access')}</li>
+            <li>{text('Responsible-use guidance for interviews and workplace policies')}</li>
           </ul>
         </aside>
       </div>
@@ -249,16 +273,16 @@ const breadcrumbItems = [
         <div class="container page-section-stack">
           <article class="page-section-block">
             <div class="section-head compact">
-              <span class="eyebrow">Summary</span>
-              <h2 id="page-summary-title">Key takeaways</h2>
+              <span class="eyebrow">{text('Summary')}</span>
+              <h2 id="page-summary-title">{text('Key takeaways')}</h2>
               <p class="lead light">
-                {pageSubject} is part of ExtraBrain's local-first Mac workflow for live interviews, meetings, transcription, provider control, and responsible AI use.
+                {text(`${pageSubject} is part of ExtraBrain's local-first Mac workflow for live interviews, meetings, transcription, provider control, and responsible AI use.`)}
               </p>
             </div>
             <div class="page-grid">
               {summaryFacts.map((fact, index) => (
                 <div class="page-info-card">
-                  <h3>{index === 0 ? 'Page focus' : index === 1 ? 'Platform fact' : 'Data-flow fact'}</h3>
+                  <h3>{summaryLabels[index]}</h3>
                   <p>{fact}</p>
                 </div>
               ))}
@@ -273,13 +297,13 @@ const breadcrumbItems = [
         <div class="container page-section-stack">
           <article class="page-section-block">
             <div class="section-head compact">
-              <span class="eyebrow">Last checked: {comparisonHub.checkedAt}</span>
-              <h2>Comparison pages</h2>
-              <p class="lead light">Use these source-backed pages to compare pricing, platform support, provider control, and responsible-use tradeoffs.</p>
+              <span class="eyebrow">{text('Last checked')}: {comparisonHub.checkedAt}</span>
+              <h2>{text('Comparison pages')}</h2>
+              <p class="lead light">{text('Use these source-backed pages to compare pricing, platform support, provider control, and responsible-use tradeoffs.')}</p>
             </div>
             <div class="page-grid page-grid--accent-iris">
               {comparisonHub.entries.map((entry) => (
-                <a class="page-info-card page-info-card--accent comparison-card-link" href={entry.href}>
+                <a class="page-info-card page-info-card--accent comparison-card-link" href={link(entry.href)}>
                   <h3>{entry.name}</h3>
                   <p>{entry.summary}</p>
                   <p class="comparison-pricing-note">{entry.pricing}</p>
@@ -296,19 +320,19 @@ const breadcrumbItems = [
         <div class="container page-section-stack">
           <article class="page-section-block">
             <div class="section-head compact">
-              <span class="eyebrow">Last checked: {comparison.checkedAt}</span>
-              <h2>At a glance</h2>
+              <span class="eyebrow">{text('Last checked')}: {comparison.checkedAt}</span>
+              <h2>{text('At a glance')}</h2>
               <p class="lead light">{comparison.competitorSummary}</p>
-              <p class="lead light"><strong>Pricing snapshot:</strong> {comparison.pricingSnapshot}</p>
+              <p class="lead light"><strong>{text('Pricing snapshot')}:</strong> {comparison.pricingSnapshot}</p>
             </div>
             <div class="page-table-wrap">
               <table class="page-comparison-table comparison-feature-table">
                 <thead>
                   <tr>
-                    <th scope="col">Feature</th>
+                    <th scope="col">{text('Feature')}</th>
                     <th scope="col">ExtraBrain</th>
                     <th scope="col">{comparison.competitorName}</th>
-                    <th scope="col">Note</th>
+                    <th scope="col">{text('Note')}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -325,15 +349,15 @@ const breadcrumbItems = [
             </div>
             <div class="page-grid page-grid--accent-mint comparison-grid">
               <div class="page-info-card page-info-card--accent">
-                <h3>Best for ExtraBrain</h3>
+                <h3>{text('Best for ExtraBrain')}</h3>
                 <ul>{comparison.bestForExtraBrain.map((item) => <li>{item}</li>)}</ul>
               </div>
               <div class="page-info-card page-info-card--accent">
-                <h3>Best for {comparison.competitorName}</h3>
+                <h3>{text('Best for')} {comparison.competitorName}</h3>
                 <ul>{comparison.bestForCompetitor.map((item) => <li>{item}</li>)}</ul>
               </div>
               <div class="page-info-card page-info-card--accent">
-                <h3>Responsible use</h3>
+                <h3>{text('Responsible use')}</h3>
                 <p>{comparison.responsibleUse}</p>
               </div>
             </div>
@@ -346,31 +370,32 @@ const breadcrumbItems = [
       <section class:list={['light-section', 'page-release-section', sectionBandClass(releaseBandIndex)]} aria-labelledby="latest-release-title">
         <div class="container page-card">
           <div>
-            <span class="eyebrow">Latest release</span>
-            <h2 id="latest-release-title">Current macOS build</h2>
+              <span class="eyebrow">{text('Latest release')}</span>
+            <h2 id="latest-release-title">{text('Current macOS build')}</h2>
             <p class="lead light">
-              This block reads GitHub release metadata in the browser. If that request fails, the download button still points to the latest official release page.
+              {text('This block reads GitHub release metadata in the browser. If that request fails, the download button still points to the latest official release page.')}
             </p>
           </div>
           <div class="release-panel" data-release-panel>
-            <p class="panel-label">Release metadata</p>
+            <p class="panel-label">{text('Release metadata')}</p>
             <dl>
-              <div><dt>Version</dt><dd data-release-version>Loading latest release...</dd></div>
-              <div><dt>Published</dt><dd data-release-date>Loading</dd></div>
-              <div><dt>Asset</dt><dd data-release-asset>Loading</dd></div>
-              <div><dt>SHA-256</dt><dd data-release-digest>Shown when published by GitHub release metadata.</dd></div>
-              <div><dt>Signing</dt><dd>Verify signing and notarization details in the current release notes.</dd></div>
+              <div><dt>{text('Version')}</dt><dd data-release-version>{text('Loading latest release...')}</dd></div>
+              <div><dt>{text('Published')}</dt><dd data-release-date>{text('Loading')}</dd></div>
+              <div><dt>{text('Asset')}</dt><dd data-release-asset>{text('Loading')}</dd></div>
+              <div><dt>{text('SHA-256')}</dt><dd data-release-digest>{text('Shown when published by GitHub release metadata.')}</dd></div>
+              <div><dt>{text('Signing')}</dt><dd>{text('Verify signing and notarization details in the current release notes.')}</dd></div>
             </dl>
-            <a class="btn primary" href={page.primaryCta?.href ?? githubUrl} data-release-download data-download data-attr="download-cta-release-panel">Download latest release</a>
+            <a class="btn primary" href={link(page.primaryCta?.href ?? githubUrl)} data-release-download data-download data-attr="download-cta-release-panel">{text('Download latest release')}</a>
           </div>
         </div>
       </section>
     )}
 
     {page.sections.map((section, index) => {
-      const isPricingPlans = page.slug === 'pricing' && section.title === 'Plans';
+      const sourceSection = sourcePage.sections[index];
+      const isPricingPlans = page.slug === 'pricing' && sourceSection?.title === 'Plans';
       const supportsPricingIcons = page.slug === 'pricing' || page.slug === 'pricing/free-vs-pro';
-      const sectionAccent = supportsPricingIcons ? pricingSectionAccents[section.title] : undefined;
+      const sectionAccent = supportsPricingIcons && sourceSection ? pricingSectionAccents[sourceSection.title] : undefined;
       return (
       <section class:list={['light-section', 'page-content-section', sectionBandClass(contentBandStart + index)]}>
         <div class="container page-section-stack">
@@ -390,33 +415,33 @@ const breadcrumbItems = [
                   const ctaLabel = tierExtras.primaryCta?.label ?? meta?.cta ?? 'Learn more';
                   return (
                     <article class:list={['price-card', meta?.featured && 'featured']}>
-                      {meta?.featured && <span class="price-badge">Most popular</span>}
+                      {meta?.featured && <span class="price-badge">{text('Most popular')}</span>}
                       <div class:list={['price-card-icon', meta?.featured && 'price-card-icon--featured']} set:html={meta?.icon ?? ''} />
-                      <h3>{tier.name}</h3>
-                      {meta?.tagline && <p class="price-tagline">{meta.tagline}</p>}
-                      {!billingOptions && <div class="price">{tier.price}</div>}
-                      <p class="price-summary">{tier.summary}</p>
+                      <h3>{text(tier.name)}</h3>
+                      {meta?.tagline && <p class="price-tagline">{text(meta.tagline)}</p>}
+                      {!billingOptions && <div class="price">{text(tier.price)}</div>}
+                      <p class="price-summary">{text(tier.summary)}</p>
                       {billingOptions && (
                         <ul class="billing-options">
                           {billingOptions.map((opt) => (
                             <li class="billing-option">
                               <div class="billing-option-head">
-                                <span class="billing-option-label">{opt.label}</span>
-                                {opt.badge && <span class="billing-option-badge">{opt.badge}</span>}
+                                <span class="billing-option-label">{text(opt.label)}</span>
+                                {opt.badge && <span class="billing-option-badge">{text(opt.badge)}</span>}
                               </div>
                               <div class="billing-option-price">
                                 <strong>{opt.price}</strong>
                                 {opt.originalPrice && <s class="billing-option-strike">{opt.originalPrice}</s>}
                               </div>
-                              {opt.note && <p class="billing-option-note">{opt.note}</p>}
+                              {opt.note && <p class="billing-option-note">{text(opt.note)}</p>}
                             </li>
                           ))}
                         </ul>
                       )}
                       <ul class="price-list">
-                        {tier.features.map((feature) => <li>{feature}</li>)}
+                        {tier.features.map((feature) => <li>{text(feature)}</li>)}
                       </ul>
-                      <a class:list={['btn', meta?.featured ? 'primary' : 'ghost dark']} href={ctaHref} data-attr={ctaHref === '/download/' ? 'download-cta-pricing-card' : undefined}>{ctaLabel}</a>
+                      <a class:list={['btn', meta?.featured ? 'primary' : 'ghost dark']} href={link(ctaHref)} data-attr={ctaHref === '/download/' ? 'download-cta-pricing-card' : undefined}>{text(ctaLabel)}</a>
                     </article>
                   );
                 })}
@@ -424,8 +449,10 @@ const breadcrumbItems = [
             )}
             {!isPricingPlans && section.items && (
               <div class:list={['page-grid', sectionAccent && `page-grid--accent-${sectionAccent.accent}`]}>
-                {section.items.map((item) => {
-                  const itemIcon = supportsPricingIcons ? pricingItemIcons[item.title] : undefined;
+                {section.items.map((item, itemIndex) => {
+                  const sourceItems = sourcePage.sections[index]?.items;
+                  const sourceItem = sourceItems?.find((candidate) => candidate.href === item.href) ?? sourceItems?.[itemIndex];
+                  const itemIcon = supportsPricingIcons && sourceItem ? pricingItemIcons[sourceItem.title] : undefined;
                   const cardContent = (
                     <>
                       {itemIcon && (
@@ -436,7 +463,7 @@ const breadcrumbItems = [
                     </>
                   );
                   return item.href ? (
-                    <a class:list={['page-info-card', sectionAccent && 'page-info-card--accent', 'comparison-card-link']} href={item.href}>
+                    <a class:list={['page-info-card', sectionAccent && 'page-info-card--accent', 'comparison-card-link']} href={link(item.href)}>
                       {cardContent}
                     </a>
                   ) : (
@@ -449,7 +476,7 @@ const breadcrumbItems = [
             )}
             {!isPricingPlans && section.freeVsProComparison && (
               <div class="free-pro-compare">
-                <div class="free-pro-plan-strip" aria-label="Plan summary">
+                <div class="free-pro-plan-strip" aria-label={text('Plan summary')}>
                   {section.freeVsProComparison.plans.map((plan) => (
                     <article class:list={['free-pro-plan-card', plan.highlight && 'free-pro-plan-card--highlight']}>
                       <div>
@@ -460,7 +487,7 @@ const breadcrumbItems = [
                         <p class="free-pro-plan-price">{plan.price}</p>
                         <p class="free-pro-plan-summary">{plan.summary}</p>
                       </div>
-                      <a class:list={['btn', plan.cta.variant === 'primary' ? 'primary' : 'ghost dark']} href={plan.cta.href} data-attr={plan.cta.href === '/download/' ? 'download-cta-free-vs-pro-card' : undefined}>{plan.cta.label}</a>
+                      <a class:list={['btn', plan.cta.variant === 'primary' ? 'primary' : 'ghost dark']} href={link(plan.cta.href)} data-attr={plan.cta.href === '/download/' ? 'download-cta-free-vs-pro-card' : undefined}>{plan.cta.label}</a>
                     </article>
                   ))}
                 </div>
@@ -476,10 +503,10 @@ const breadcrumbItems = [
                     </colgroup>
                     <thead>
                       <tr>
-                        <th scope="col">Capability</th>
-                        <th scope="col">Free</th>
+                        <th scope="col">{text('Capability')}</th>
+                        <th scope="col">{text('Free')}</th>
                         <th scope="col">ExtraBrain Pro</th>
-                        <th scope="col">Difference</th>
+                        <th scope="col">{text('Difference')}</th>
                       </tr>
                     </thead>
                     {section.freeVsProComparison.groups.map((group) => (
@@ -515,7 +542,7 @@ const breadcrumbItems = [
                   </table>
                 </div>
 
-                <div class="free-pro-mobile-list" aria-label="Free vs Pro comparison details">
+                <div class="free-pro-mobile-list" aria-label={text('Free vs Pro comparison details')}>
                   {section.freeVsProComparison.groups.map((group) => (
                     <section class="free-pro-mobile-group" aria-labelledby={`free-pro-mobile-${group.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
                       <h3 id={`free-pro-mobile-${group.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>{group.title}</h3>
@@ -528,7 +555,7 @@ const breadcrumbItems = [
                             </div>
                             <div class="free-pro-mobile-values">
                               <div>
-                                <span>Free</span>
+                                <span>{text('Free')}</span>
                                 {Array.isArray(row.free) ? (
                                   <ul class="free-pro-value-list free-pro-value-list--mobile">
                                     {comparisonValueItems(row.free).map((item) => <li>{item}</li>)}
@@ -558,7 +585,7 @@ const breadcrumbItems = [
                 <table class="page-comparison-table">
                   <thead>
                     <tr>
-                      <th scope="col">Feature</th>
+                      <th scope="col">{text('Feature')}</th>
                       {section.table.columns.map((column) => <th scope="col">{column}</th>)}
                     </tr>
                   </thead>
@@ -594,9 +621,9 @@ const breadcrumbItems = [
         <div class="container page-section-stack">
           <article class="page-section-block source-block">
             <div class="section-head compact">
-              <span class="eyebrow">Sources</span>
-              <h2>Public sources</h2>
-              <p class="lead light">Competitor facts should be checked against these public pages before editing claims.</p>
+              <span class="eyebrow">{text('Sources')}</span>
+              <h2>{text('Public sources')}</h2>
+              <p class="lead light">{text('Competitor facts should be checked against these public pages before editing claims.')}</p>
             </div>
             <div class="source-list">
               {page.sources.map((source) => <a href={source.href}>{source.label}</a>)}
@@ -610,9 +637,9 @@ const breadcrumbItems = [
       <section class:list={['light-section', 'faq-section', 'page-faq-section', sectionBandClass(faqBandIndex)]} id="faq">
         <div class="container">
           <div class="section-head">
-            <span class="eyebrow">FAQ</span>
-            <h2>Common questions.</h2>
-            <p class="lead light">Short answers for people and crawlers comparing ExtraBrain with other live AI assistants.</p>
+            <span class="eyebrow">{text('FAQ')}</span>
+            <h2>{text('Common questions.')}</h2>
+            <p class="lead light">{text('Short answers for people and crawlers comparing ExtraBrain with other live AI assistants.')}</p>
           </div>
           <div class="faq-list">
             {faq.map((item, index) => (
@@ -630,52 +657,52 @@ const breadcrumbItems = [
   <footer>
     <div class="container footer-grid">
       <div>
-        <a href="/" class="brand footer-brand">
+        <a href={link('/')} class="brand footer-brand">
           <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="36" height="36" />
           <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
             <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
           </span>
         </a>
-        <p>{productCategory}. Available for Mac today, with Windows and Linux planned.</p>
+        <p>{text(productCategory)}. {text('Available for Mac today, with Windows and Linux planned')}.</p>
       </div>
       <div>
-        <h2 class="footer-heading">Product</h2>
-        <a href="/download/">Download</a>
-        <a href="/pricing/">Pricing</a>
-        <a href="/pricing/free-vs-pro/">Free vs Pro</a>
-        <a href="/features/local-transcription/">Local transcription</a>
-        <a href="/features/bring-your-own-provider/">BYO providers</a>
-        <a href="/about/">About</a>
+        <h2 class="footer-heading">{text('Product')}</h2>
+        <a href={link('/download/')}>{text('Download')}</a>
+        <a href={link('/pricing/')}>{text('Pricing')}</a>
+        <a href={link('/pricing/free-vs-pro/')}>{text('Free vs Pro')}</a>
+        <a href={link('/features/local-transcription/')}>{text('Local transcription')}</a>
+        <a href={link('/features/bring-your-own-provider/')}>{text('BYO providers')}</a>
+        <a href={link('/about/')}>{text('About')}</a>
       </div>
       <div>
-        <h2 class="footer-heading">Trust</h2>
-        <a href="/privacy/">Privacy</a>
-        <a href="/data-flow/">Data flow</a>
-        <a href="/security/">Security</a>
-        <a href="/responsible-use/">Responsible use</a>
+        <h2 class="footer-heading">{text('Trust')}</h2>
+        <a href={link('/privacy/')}>{text('Privacy')}</a>
+        <a href={link('/data-flow/')}>{text('Data flow')}</a>
+        <a href={link('/security/')}>{text('Security')}</a>
+        <a href={link('/responsible-use/')}>{text('Responsible use')}</a>
       </div>
       <div>
-        <h2 class="footer-heading">Use cases</h2>
-        <a href="/use-cases/coding-interviews/">Coding interviews</a>
-        <a href="/use-cases/system-design-interviews/">System design</a>
-        <a href="/use-cases/behavioral-interviews/">Behavioral interviews</a>
-        <a href="/use-cases/meetings/">Meetings</a>
-        <a href="/platforms/zoom/">Zoom</a>
-        <a href="/platforms/google-meet/">Google Meet</a>
-        <a href="/platforms/coderpad/">CoderPad</a>
-        <a href="/interview-guides/google/">Google interviews</a>
-        <a href="/interview-guides/meta/">Meta interviews</a>
+        <h2 class="footer-heading">{text('Use cases')}</h2>
+        <a href={link('/use-cases/coding-interviews/')}>{text('Coding interviews')}</a>
+        <a href={link('/use-cases/system-design-interviews/')}>{text('System design')}</a>
+        <a href={link('/use-cases/behavioral-interviews/')}>{text('Behavioral interviews')}</a>
+        <a href={link('/use-cases/meetings/')}>{text('Meetings')}</a>
+        <a href={link('/platforms/zoom/')}>{text('Zoom')}</a>
+        <a href={link('/platforms/google-meet/')}>{text('Google Meet')}</a>
+        <a href={link('/platforms/coderpad/')}>{text('CoderPad')}</a>
+        <a href={link('/interview-guides/google/')}>{text('Google interviews')}</a>
+        <a href={link('/interview-guides/meta/')}>{text('Meta interviews')}</a>
       </div>
       <div>
-        <h2 class="footer-heading">Support</h2>
-        <a href="/help/">Help center</a>
-        <a href="/providers/">Providers</a>
-        <a href="/compare/cluely/">Compare Cluely</a>
-        <a href="/compare/interviewcoder/">Compare InterviewCoder</a>
-        <a href="/compare/final-round-ai/">Compare Final Round AI</a>
-        <a href="/contact/">Contact</a>
+        <h2 class="footer-heading">{text('Support')}</h2>
+        <a href={link('/help/')}>{text('Help center')}</a>
+        <a href={link('/providers/')}>{text('Providers')}</a>
+        <a href={link('/compare/cluely/')}>{text('Compare Cluely')}</a>
+        <a href={link('/compare/interviewcoder/')}>{text('Compare InterviewCoder')}</a>
+        <a href={link('/compare/final-round-ai/')}>{text('Compare Final Round AI')}</a>
+        <a href={link('/contact/')}>{text('Contact')}</a>
         <a href={githubUrl}>GitHub</a>
-        <a href={feedbackHref}>Send Feedback</a>
+        <a href={feedbackHref}>{text('Send Feedback')}</a>
       </div>
     </div>
     <BacklinksFooter />
@@ -688,7 +715,7 @@ const breadcrumbItems = [
         var panel = document.querySelector('[data-release-panel]');
         if (!panel) return;
 
-        function text(sel, value) {
+        function setReleaseText(sel, value) {
           var el = panel.querySelector(sel);
           if (el) el.textContent = value;
         }
@@ -701,19 +728,19 @@ const breadcrumbItems = [
           .then(function (release) {
             var asset = (release.assets || []).find(function (item) { return /\.dmg$/i.test(item.name); }) || (release.assets || [])[0];
             var download = asset ? asset.browser_download_url : release.html_url || fallback;
-            text('[data-release-version]', release.tag_name || 'Latest release');
-            text('[data-release-date]', release.published_at ? new Date(release.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : 'See release notes');
-            text('[data-release-asset]', asset ? asset.name + ' (' + Math.round((asset.size || 0) / 1024 / 1024) + ' MB)' : 'See release notes');
-            text('[data-release-digest]', asset && asset.digest ? asset.digest : 'Not published in GitHub release metadata.');
+            setReleaseText('[data-release-version]', release.tag_name || 'Latest release');
+            setReleaseText('[data-release-date]', release.published_at ? new Date(release.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : 'See release notes');
+            setReleaseText('[data-release-asset]', asset ? asset.name + ' (' + Math.round((asset.size || 0) / 1024 / 1024) + ' MB)' : 'See release notes');
+            setReleaseText('[data-release-digest]', asset && asset.digest ? asset.digest : 'Not published in GitHub release metadata.');
             document.querySelectorAll('[data-release-download], [data-download]').forEach(function (el) {
               el.setAttribute('href', download);
             });
           })
           .catch(function () {
-            text('[data-release-version]', 'Latest release');
-            text('[data-release-date]', 'See GitHub release notes');
-            text('[data-release-asset]', 'See GitHub release assets');
-            text('[data-release-digest]', 'Not available.');
+            setReleaseText('[data-release-version]', 'Latest release');
+            setReleaseText('[data-release-date]', 'See GitHub release notes');
+            setReleaseText('[data-release-asset]', 'See GitHub release assets');
+            setReleaseText('[data-release-digest]', 'Not available.');
           });
       })();
     </script>

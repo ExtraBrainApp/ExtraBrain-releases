@@ -1,0 +1,28 @@
+---
+import Home from '../index.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+import { marketingPages } from '../../data/product';
+import { prefixedLocaleCodes, type PrefixedLocale } from '../../i18n/locales';
+
+export function getStaticPaths() {
+  return prefixedLocaleCodes.flatMap((locale) => [
+    {
+      params: { locale, slug: undefined },
+      props: { locale },
+    },
+    ...marketingPages.map((page) => ({
+      params: { locale, slug: page.slug },
+      props: { locale, page },
+    })),
+  ]);
+}
+
+const locale = Astro.props.locale as PrefixedLocale;
+const page = Astro.props.page;
+
+if (Astro.params.slug && !page) {
+  return Astro.redirect('/404.html');
+}
+---
+
+{page ? <PageLayout page={page} locale={locale} /> : <Home locale={locale} />}

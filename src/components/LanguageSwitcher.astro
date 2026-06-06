@@ -1,0 +1,82 @@
+---
+import {
+  getLocaleFromPathname,
+  localeCodes,
+  localizedPathForLocale,
+  siteLocales,
+  type Locale,
+} from '../i18n/locales';
+import { t } from '../i18n/translate';
+
+interface Props {
+  locale?: Locale;
+}
+
+const currentLocale = Astro.props.locale ?? getLocaleFromPathname(Astro.url.pathname);
+const options = localeCodes.map((locale) => ({
+  locale,
+  label: siteLocales[locale].nativeLabel,
+  href: localizedPathForLocale(Astro.url.pathname, locale),
+}));
+---
+
+<form class="language-switcher" aria-label={t(currentLocale, 'Website language')}>
+  <label class="sr-only" for="website-language">{t(currentLocale, 'Website language')}</label>
+  <select id="website-language" name="language" data-language-switcher>
+    {options.map((option) => (
+      <option value={option.href} selected={option.locale === currentLocale}>
+        {option.label}
+      </option>
+    ))}
+  </select>
+</form>
+
+<script is:inline>
+  document.addEventListener('change', function (event) {
+    var target = event.target;
+    if (!(target instanceof HTMLSelectElement) || !target.matches('[data-language-switcher]')) return;
+    var nextPath = target.value;
+    if (nextPath && nextPath !== window.location.pathname) {
+      window.location.href = nextPath;
+    }
+  });
+</script>
+
+<style>
+  .language-switcher {
+    position: fixed;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    z-index: 80;
+  }
+
+  :global([dir='rtl']) .language-switcher {
+    right: auto;
+    left: max(16px, env(safe-area-inset-left));
+  }
+
+  .language-switcher select {
+    max-width: min(48vw, 13rem);
+    min-height: 2.5rem;
+    padding: 0 2.2rem 0 0.85rem;
+    border: 1px solid rgba(16, 24, 40, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 249, 240, 0.88);
+    color: var(--ink, #121821);
+    box-shadow: 0 12px 32px rgba(16, 24, 33, 0.12);
+    backdrop-filter: blur(18px);
+    font: 650 0.8125rem/1 var(--font-sans, system-ui, sans-serif);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
