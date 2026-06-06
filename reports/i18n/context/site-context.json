@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-06T07:23:32.881Z",
-  "sourceHash": "ece4e890143e5efb3dbb2d3c8ea0cce6a8d131d544828aa89b6f767146c35382",
+  "generatedAt": "2026-06-06T07:53:58.979Z",
+  "sourceHash": "4b19e013b1d4a1792a52bcaa61bd661d630882369c6a92a376163c4ad2aa6c74",
   "locales": [
     "es",
     "fr",
@@ -890,14 +890,14 @@
       "kind": "string",
       "sourceText": "An invisible AI copilot for interviews, meetings, lectures, and research.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 403,
+      "sourceLine": 438,
       "routes": [
         "/"
       ],
       "section": "<div class=\"audience-row\" aria-label={text('Target audiences')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "400:       <div class=\"container\">\n401:         <div class=\"section-head\">\n402:           <span class=\"eyebrow\">{text('Overview')}</span>\n403:           <h2>{text('An invisible AI copilot for interviews, meetings, lectures, and research.')}</h2>\n404:           <p class=\"lead light\">\n405:             {text('ExtraBrain turns live audio, transcript text, screenshots, and selected context into organized prompts, answer structures, and session memory while keeping provider choice, costs, and privacy boundaries visible.')}\n406:           </p>",
+      "surroundingCopy": "435:       <div class=\"container\">\n436:         <div class=\"section-head\">\n437:           <span class=\"eyebrow\">{text('Overview')}</span>\n438:           <h2>{text('An invisible AI copilot for interviews, meetings, lectures, and research.')}</h2>\n439:           <p class=\"lead light\">\n440:             {text('ExtraBrain turns live audio, transcript text, screenshots, and selected context into organized prompts, answer structures, and session memory while keeping provider choice, costs, and privacy boundaries visible.')}\n441:           </p>",
       "meaningNote": "Translate as natural product copy for interview and meeting workflows, not as generic HR or customer-support copy.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -931,14 +931,14 @@
       "kind": "string",
       "sourceText": "and abusive bursts.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 340,
+      "sourceLine": 375,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-visual\" aria-label={text('ExtraBrain product mockup')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "337:                 <div class=\"pc-body\">\n338:                   <div class=\"pc-line\">\n339:                     <span class=\"ts\">14:02:10</span><span class=\"sp\">{text('Host')}</span>\n340:                     <span class=\"t\">{text('Design a rate limiter for a public API with')} <span class=\"hl\">{text('regional spikes')}</span> {text('and abusive bursts.')}</span>\n341:                   </div>\n342:                   <div class=\"pc-line\">\n343:                     <span class=\"ts\">14:02:18</span><span class=\"sp me\">{text('You')}</span>",
+      "surroundingCopy": "372:                 <div class=\"pc-body\">\n373:                   <div class=\"pc-line\">\n374:                     <span class=\"ts\">14:02:10</span><span class=\"sp\">{text('Host')}</span>\n375:                     <span class=\"t\">{text('Design a rate limiter for a public API with')} <span class=\"hl\">{text('regional spikes')}</span> {text('and abusive bursts.')}</span>\n376:                   </div>\n377:                   <div class=\"pc-line\">\n378:                     <span class=\"ts\">14:02:18</span><span class=\"sp me\">{text('You')}</span>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -949,13 +949,13 @@
       "kind": "string",
       "sourceText": "and graceful fallback.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 348,
+      "sourceLine": 383,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "345:                   </div>\n346:                   <div class=\"pc-line\">\n347:                     <span class=\"ts\">14:02:24</span><span class=\"sp\">{text('Host')}</span>\n348:                     <span class=\"t\">{text('Start with per-user and per-endpoint limits. We care about')} <span class=\"hl\">{text('burst traffic')}</span> {text('and graceful fallback.')}</span>\n349:                   </div>\n350:                 </div>\n351:                 <div class=\"pc-answer\">",
+      "surroundingCopy": "380:                   </div>\n381:                   <div class=\"pc-line\">\n382:                     <span class=\"ts\">14:02:24</span><span class=\"sp\">{text('Host')}</span>\n383:                     <span class=\"t\">{text('Start with per-user and per-endpoint limits. We care about')} <span class=\"hl\">{text('burst traffic')}</span> {text('and graceful fallback.')}</span>\n384:                   </div>\n385:                 </div>\n386:                 <div class=\"pc-answer\">",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -971,13 +971,13 @@
       "kind": "string",
       "sourceText": "Answer",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 48,
+      "sourceLine": 73,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "45:   'Responsible-use and privacy controls',\n46: ];\n47: \n48: const homepageFaqAnswerOverrides: Record<string, string> = {\n49:   'What is ExtraBrain?':\n50:     'ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It provides live transcription, screen-aware context, structured prompts, question generation, on-device AI powered by Gemma, and a desktop window designed for private live workflows. It is available for Mac today, with Windows and Linux planned.',\n51:   'Is ExtraBrain free?':",
+      "surroundingCopy": "70:   'Responsible-use and privacy controls',\n71: ];\n72: \n73: const homepageFaqAnswerOverrides: Record<string, string> = {\n74:   'What is ExtraBrain?':\n75:     'ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It provides live transcription, screen-aware context, structured prompts, question generation, on-device AI powered by Gemma, and a desktop window designed for private live workflows. It is available for Mac today, with Windows and Linux planned.',\n76:   'Is ExtraBrain free?':",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -1442,14 +1442,13 @@
       "kind": "string",
       "sourceText": "Available for Mac today",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 43,
+      "sourceLine": 52,
       "routes": [
         "/"
       ],
-      "section": "type PricingTierCta = { label: string; href: string };",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "40:   'Bring your own OpenAI, Anthropic, Claude, Codex, or compatible provider access',\n41:   'ExtraBrain Pro custom profiles and workflow controls',\n42:   'Local-first transcripts, prompts, screenshots, notes, and session history',\n43:   'Available for Mac today, with Windows and Linux planned',\n44:   'Apple Silicon and Intel Mac support',\n45:   'Responsible-use and privacy controls',\n46: ];",
+      "surroundingCopy": "49: const heroTitleSegments = accentedSegments(text('Desktop AI [[accent]]interview[[/accent]] and meeting copilot.'));\n50: const heroLeadSegments = accentedSegments(\n51:   text(\n52:     'ExtraBrain is a [[accent]]free, local-first[[/accent]] desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow [[accent]]live conversations[[/accent]] with transcription, [[accent]]screen-aware context[[/accent]], on-device AI powered by Gemma, [[accent]]BYO AI providers[[/accent]], and [[accent]]privacy controls[[/accent]]. Available for Mac today, with Windows and Linux planned.'\n53:   )\n54: );\n55: ",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [
         "Mac"
@@ -1462,13 +1461,13 @@
       "kind": "string",
       "sourceText": "Available for Mac today, with on-device AI powered by Gemma and provider access you control.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 387,
+      "sourceLine": 422,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "384:       <div class=\"container proof-card\">\n385:         <p>\n386:           <strong>{text('Built for high-stakes live thinking.')}</strong>\n387:           {text(productCategory)}. {text('Available for Mac today, with on-device AI powered by Gemma and provider access you control.')}\n388:         </p>\n389:         <div class=\"audience-row\" aria-label={text('Target audiences')}>\n390:           <span>{text('Engineers')}</span>",
+      "surroundingCopy": "419:       <div class=\"container proof-card\">\n420:         <p>\n421:           <strong>{text('Built for high-stakes live thinking.')}</strong>\n422:           {text(productCategory)}. {text('Available for Mac today, with on-device AI powered by Gemma and provider access you control.')}\n423:         </p>\n424:         <div class=\"audience-row\" aria-label={text('Target audiences')}>\n425:           <span>{text('Engineers')}</span>",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "Gemma",
@@ -2405,13 +2404,13 @@
       "kind": "string",
       "sourceText": "Built for high-stakes live thinking.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 386,
+      "sourceLine": 421,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "383:     <div class=\"proof-strip\">\n384:       <div class=\"container proof-card\">\n385:         <p>\n386:           <strong>{text('Built for high-stakes live thinking.')}</strong>\n387:           {text(productCategory)}. {text('Available for Mac today, with on-device AI powered by Gemma and provider access you control.')}\n388:         </p>\n389:         <div class=\"audience-row\" aria-label={text('Target audiences')}>",
+      "surroundingCopy": "418:     <div class=\"proof-strip\">\n419:       <div class=\"container proof-card\">\n420:         <p>\n421:           <strong>{text('Built for high-stakes live thinking.')}</strong>\n422:           {text(productCategory)}. {text('Available for Mac today, with on-device AI powered by Gemma and provider access you control.')}\n423:         </p>\n424:         <div class=\"audience-row\" aria-label={text('Target audiences')}>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -2422,14 +2421,14 @@
       "kind": "string",
       "sourceText": "Built for live coding interviews, LeetCode-style prompts, system design rounds, behavioral interviews, product interviews, data and ML interviews, consulting cases, lectures, and research calls.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 479,
+      "sourceLine": 514,
       "routes": [
         "/"
       ],
       "section": "<div class=\"compatibility-grid\" aria-label={text('Supported meeting and interview platforms')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "476:           ))}\n477:         </div>\n478:         <p class=\"compatibility-note\">\n479:           {text('Built for live coding interviews, LeetCode-style prompts, system design rounds, behavioral interviews, product interviews, data and ML interviews, consulting cases, lectures, and research calls.')}\n480:         </p>\n481:       </div>\n482:     </section>",
+      "surroundingCopy": "511:           ))}\n512:         </div>\n513:         <p class=\"compatibility-note\">\n514:           {text('Built for live coding interviews, LeetCode-style prompts, system design rounds, behavioral interviews, product interviews, data and ML interviews, consulting cases, lectures, and research calls.')}\n515:         </p>\n516:       </div>\n517:     </section>",
       "meaningNote": "Preserve pricing, plan names, billing cadence, and purchase meaning exactly.",
       "protectedTerms": [
         "LeetCode"
@@ -2612,13 +2611,13 @@
       "kind": "string",
       "sourceText": "burst traffic",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 348,
+      "sourceLine": 383,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "345:                   </div>\n346:                   <div class=\"pc-line\">\n347:                     <span class=\"ts\">14:02:24</span><span class=\"sp\">{text('Host')}</span>\n348:                     <span class=\"t\">{text('Start with per-user and per-endpoint limits. We care about')} <span class=\"hl\">{text('burst traffic')}</span> {text('and graceful fallback.')}</span>\n349:                   </div>\n350:                 </div>\n351:                 <div class=\"pc-answer\">",
+      "surroundingCopy": "380:                   </div>\n381:                   <div class=\"pc-line\">\n382:                     <span class=\"ts\">14:02:24</span><span class=\"sp\">{text('Host')}</span>\n383:                     <span class=\"t\">{text('Start with per-user and per-endpoint limits. We care about')} <span class=\"hl\">{text('burst traffic')}</span> {text('and graceful fallback.')}</span>\n384:                   </div>\n385:                 </div>\n386:                 <div class=\"pc-answer\">",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -2629,13 +2628,13 @@
       "kind": "string",
       "sourceText": "Burst traffic",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 367,
+      "sourceLine": 402,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "364:                 <div class=\"pc-side-content\">\n365:                   <div class=\"lbl\">{text('Saved facts')}</div>\n366:                   <div class=\"fact\"><b>{text('Rate limiter')}</b> · {text('public API')}</div>\n367:                   <div class=\"fact\">{text('Burst traffic')}: <b>{text('edge token buckets')}</b></div>\n368:                   <div class=\"fact\">{text('Tradeoff')}: {text('fail-open vs fail-closed')}</div>\n369:                 </div>\n370:               </div>",
+      "surroundingCopy": "399:                 <div class=\"pc-side-content\">\n400:                   <div class=\"lbl\">{text('Saved facts')}</div>\n401:                   <div class=\"fact\"><b>{text('Rate limiter')}</b> · {text('public API')}</div>\n402:                   <div class=\"fact\">{text('Burst traffic')}: <b>{text('edge token buckets')}</b></div>\n403:                   <div class=\"fact\">{text('Tradeoff')}: {text('fail-open vs fail-closed')}</div>\n404:                 </div>\n405:               </div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -4349,13 +4348,13 @@
       "kind": "string",
       "sourceText": "Coding interviews, system design interviews, behavioral interviews, and desktop meeting copilot workflows.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 574,
+      "sourceLine": 609,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "571:             <div>\n572:               <small>{text('Use cases')}</small>\n573:               <h3>{text('Interview and meeting workflows')}</h3>\n574:               <p>{text('Coding interviews, system design interviews, behavioral interviews, and desktop meeting copilot workflows.')}</p>\n575:             </div>\n576:             <a href={link('/use-cases/coding-interviews/')}>{text('Open use cases')}</a>\n577:           </article>",
+      "surroundingCopy": "606:             <div>\n607:               <small>{text('Use cases')}</small>\n608:               <h3>{text('Interview and meeting workflows')}</h3>\n609:               <p>{text('Coding interviews, system design interviews, behavioral interviews, and desktop meeting copilot workflows.')}</p>\n610:             </div>\n611:             <a href={link('/use-cases/coding-interviews/')}>{text('Open use cases')}</a>\n612:           </article>",
       "meaningNote": "Translate as natural product copy for interview and meeting workflows, not as generic HR or customer-support copy.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -4429,13 +4428,13 @@
       "kind": "string",
       "sourceText": "Common questions about ExtraBrain.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 628,
+      "sourceLine": 663,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "625:       <div class=\"container\">\n626:         <div class=\"section-head\">\n627:           <span class=\"eyebrow\">{text('FAQ')}</span>\n628:           <h2>{text('Common questions about ExtraBrain.')}</h2>\n629:           <p class=\"lead light\">\n630:             {text('Direct answers for searchers comparing invisible AI interview assistants, meeting copilots, Gemma-powered on-device AI, provider-connected tools, and local-first desktop apps.')}\n631:           </p>",
+      "surroundingCopy": "660:       <div class=\"container\">\n661:         <div class=\"section-head\">\n662:           <span class=\"eyebrow\">{text('FAQ')}</span>\n663:           <h2>{text('Common questions about ExtraBrain.')}</h2>\n664:           <p class=\"lead light\">\n665:             {text('Direct answers for searchers comparing invisible AI interview assistants, meeting copilots, Gemma-powered on-device AI, provider-connected tools, and local-first desktop apps.')}\n666:           </p>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [
         "ExtraBrain"
@@ -5151,13 +5150,13 @@
       "kind": "string",
       "sourceText": "Compare ExtraBrain with alternatives",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 589,
+      "sourceLine": 624,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "586:           <article class=\"related-card\">\n587:             <div>\n588:               <small>{text('Comparisons')}</small>\n589:               <h3>{text('Compare ExtraBrain with alternatives')}</h3>\n590:               <p>{text('Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, InterviewBee, and other AI interview assistants.')}</p>\n591:             </div>\n592:             <a href={link('/compare/')}>{text('Read comparisons')}</a>",
+      "surroundingCopy": "621:           <article class=\"related-card\">\n622:             <div>\n623:               <small>{text('Comparisons')}</small>\n624:               <h3>{text('Compare ExtraBrain with alternatives')}</h3>\n625:               <p>{text('Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, InterviewBee, and other AI interview assistants.')}</p>\n626:             </div>\n627:             <a href={link('/compare/')}>{text('Read comparisons')}</a>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [
         "ExtraBrain"
@@ -5199,13 +5198,13 @@
       "kind": "string",
       "sourceText": "Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, InterviewBee, and other AI interview assistants.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 590,
+      "sourceLine": 625,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "587:             <div>\n588:               <small>{text('Comparisons')}</small>\n589:               <h3>{text('Compare ExtraBrain with alternatives')}</h3>\n590:               <p>{text('Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, InterviewBee, and other AI interview assistants.')}</p>\n591:             </div>\n592:             <a href={link('/compare/')}>{text('Read comparisons')}</a>\n593:           </article>",
+      "surroundingCopy": "622:             <div>\n623:               <small>{text('Comparisons')}</small>\n624:               <h3>{text('Compare ExtraBrain with alternatives')}</h3>\n625:               <p>{text('Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, InterviewBee, and other AI interview assistants.')}</p>\n626:             </div>\n627:             <a href={link('/compare/')}>{text('Read comparisons')}</a>\n628:           </article>",
       "meaningNote": "Translate as natural product copy for interview and meeting workflows, not as generic HR or customer-support copy.",
       "protectedTerms": [
         "ExtraBrain",
@@ -6780,14 +6779,14 @@
       "kind": "string",
       "sourceText": "Design a rate limiter for a public API with",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 340,
+      "sourceLine": 375,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-visual\" aria-label={text('ExtraBrain product mockup')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "337:                 <div class=\"pc-body\">\n338:                   <div class=\"pc-line\">\n339:                     <span class=\"ts\">14:02:10</span><span class=\"sp\">{text('Host')}</span>\n340:                     <span class=\"t\">{text('Design a rate limiter for a public API with')} <span class=\"hl\">{text('regional spikes')}</span> {text('and abusive bursts.')}</span>\n341:                   </div>\n342:                   <div class=\"pc-line\">\n343:                     <span class=\"ts\">14:02:18</span><span class=\"sp me\">{text('You')}</span>",
+      "surroundingCopy": "372:                 <div class=\"pc-body\">\n373:                   <div class=\"pc-line\">\n374:                     <span class=\"ts\">14:02:10</span><span class=\"sp\">{text('Host')}</span>\n375:                     <span class=\"t\">{text('Design a rate limiter for a public API with')} <span class=\"hl\">{text('regional spikes')}</span> {text('and abusive bursts.')}</span>\n376:                   </div>\n377:                   <div class=\"pc-line\">\n378:                     <span class=\"ts\">14:02:18</span><span class=\"sp me\">{text('You')}</span>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [
         "API"
@@ -6800,13 +6799,13 @@
       "kind": "string",
       "sourceText": "Designed for moments where context moves faster than notes.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 447,
+      "sourceLine": 482,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "444:       <div class=\"container\">\n445:         <div class=\"workflow-cloud-intro\">\n446:           <span class=\"eyebrow\">{text('Use cases')}</span>\n447:           <h2>{text('Designed for moments where context moves faster than notes.')}</h2>\n448:           <p class=\"lead light\">\n449:             {text('Use ExtraBrain as a private thinking layer during high-pressure live work: interviews, meetings, customer calls, lectures, and research conversations.')}\n450:           </p>",
+      "surroundingCopy": "479:       <div class=\"container\">\n480:         <div class=\"workflow-cloud-intro\">\n481:           <span class=\"eyebrow\">{text('Use cases')}</span>\n482:           <h2>{text('Designed for moments where context moves faster than notes.')}</h2>\n483:           <p class=\"lead light\">\n484:             {text('Use ExtraBrain as a private thinking layer during high-pressure live work: interviews, meetings, customer calls, lectures, and research conversations.')}\n485:           </p>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -6833,18 +6832,21 @@
     {
       "id": "string:0320",
       "kind": "string",
-      "sourceText": "Desktop AI interview and meeting copilot.",
+      "sourceText": "Desktop AI [[accent]]interview[[/accent]] and meeting copilot.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 295,
+      "sourceLine": 49,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "292:       <div class=\"container hero-grid\">\n293:         <div class=\"hero-copy\">\n294:           <div class=\"hero-kicker\">{text('Free local-first desktop copilot')}</div>\n295:           <h1 id=\"hero-title\">{text('Desktop AI interview and meeting copilot.')}</h1>\n296:           <p class=\"lead\">\n297:             {text('ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow live conversations with transcription, screen-aware context, on-device AI powered by Gemma, BYO AI providers, and privacy controls. Available for Mac today, with Windows and Linux planned.')}\n298:           </p>",
+      "surroundingCopy": "46: \n47: const pageTitle = text('ExtraBrain - Local-First AI Interview & Meeting Copilot');\n48: const pageDescription = text('Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.');\n49: const heroTitleSegments = accentedSegments(text('Desktop AI [[accent]]interview[[/accent]] and meeting copilot.'));\n50: const heroLeadSegments = accentedSegments(\n51:   text(\n52:     'ExtraBrain is a [[accent]]free, local-first[[/accent]] desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow [[accent]]live conversations[[/accent]] with transcription, [[accent]]screen-aware context[[/accent]], on-device AI powered by Gemma, [[accent]]BYO AI providers[[/accent]], and [[accent]]privacy controls[[/accent]]. Available for Mac today, with Windows and Linux planned.'",
       "meaningNote": "Translate as natural product copy for interview and meeting workflows, not as generic HR or customer-support copy.",
       "protectedTerms": [],
-      "protectedInlineTokens": [],
+      "protectedInlineTokens": [
+        "[[accent]]",
+        "[[/accent]]"
+      ],
       "literalizationRisks": [
         {
           "term": "copilot",
@@ -7003,13 +7005,13 @@
       "kind": "string",
       "sourceText": "Direct answers for searchers comparing invisible AI interview assistants, meeting copilots, Gemma-powered on-device AI, provider-connected tools, and local-first desktop apps.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 630,
+      "sourceLine": 665,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "627:           <span class=\"eyebrow\">{text('FAQ')}</span>\n628:           <h2>{text('Common questions about ExtraBrain.')}</h2>\n629:           <p class=\"lead light\">\n630:             {text('Direct answers for searchers comparing invisible AI interview assistants, meeting copilots, Gemma-powered on-device AI, provider-connected tools, and local-first desktop apps.')}\n631:           </p>\n632:         </div>\n633:         <div class=\"faq-list\">",
+      "surroundingCopy": "662:           <span class=\"eyebrow\">{text('FAQ')}</span>\n663:           <h2>{text('Common questions about ExtraBrain.')}</h2>\n664:           <p class=\"lead light\">\n665:             {text('Direct answers for searchers comparing invisible AI interview assistants, meeting copilots, Gemma-powered on-device AI, provider-connected tools, and local-first desktop apps.')}\n666:           </p>\n667:         </div>\n668:         <div class=\"faq-list\">",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "Gemma"
@@ -7952,14 +7954,14 @@
       "kind": "string",
       "sourceText": "Download the free Mac app before the call starts.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 658,
+      "sourceLine": 693,
       "routes": [
         "/"
       ],
       "section": "document.querySelectorAll('details[name=\"homepage-faq\"]').forEach((other) => {",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "655:       <div class=\"container cta-card\">\n656:         <div>\n657:           <span class=\"eyebrow\">{text('Ready when the conversation starts')}</span>\n658:           <h2>{text('Download the free Mac app before the call starts.')}</h2>\n659:           <p class=\"lead\">\n660:             {text('ExtraBrain gives you a private live workspace for interview prompts, meeting notes, structured answers, and post-session summaries, all in a desktop app you control.')}\n661:           </p>",
+      "surroundingCopy": "690:       <div class=\"container cta-card\">\n691:         <div>\n692:           <span class=\"eyebrow\">{text('Ready when the conversation starts')}</span>\n693:           <h2>{text('Download the free Mac app before the call starts.')}</h2>\n694:           <p class=\"lead\">\n695:             {text('ExtraBrain gives you a private live workspace for interview prompts, meeting notes, structured answers, and post-session summaries, all in a desktop app you control.')}\n696:           </p>",
       "meaningNote": "Preserve pricing, plan names, billing cadence, and purchase meaning exactly.",
       "protectedTerms": [
         "Mac"
@@ -8052,13 +8054,13 @@
       "kind": "string",
       "sourceText": "edge token buckets",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 367,
+      "sourceLine": 402,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "364:                 <div class=\"pc-side-content\">\n365:                   <div class=\"lbl\">{text('Saved facts')}</div>\n366:                   <div class=\"fact\"><b>{text('Rate limiter')}</b> · {text('public API')}</div>\n367:                   <div class=\"fact\">{text('Burst traffic')}: <b>{text('edge token buckets')}</b></div>\n368:                   <div class=\"fact\">{text('Tradeoff')}: {text('fail-open vs fail-closed')}</div>\n369:                 </div>\n370:               </div>",
+      "surroundingCopy": "399:                 <div class=\"pc-side-content\">\n400:                   <div class=\"lbl\">{text('Saved facts')}</div>\n401:                   <div class=\"fact\"><b>{text('Rate limiter')}</b> · {text('public API')}</div>\n402:                   <div class=\"fact\">{text('Burst traffic')}: <b>{text('edge token buckets')}</b></div>\n403:                   <div class=\"fact\">{text('Tradeoff')}: {text('fail-open vs fail-closed')}</div>\n404:                 </div>\n405:               </div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -8107,14 +8109,14 @@
       "kind": "string",
       "sourceText": "Engineers",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 390,
+      "sourceLine": 425,
       "routes": [
         "/"
       ],
       "section": "<div class=\"audience-row\" aria-label={text('Target audiences')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "387:           {text(productCategory)}. {text('Available for Mac today, with on-device AI powered by Gemma and provider access you control.')}\n388:         </p>\n389:         <div class=\"audience-row\" aria-label={text('Target audiences')}>\n390:           <span>{text('Engineers')}</span>\n391:           <span>{text('PMs')}</span>\n392:           <span>{text('Founders')}</span>\n393:           <span>{text('Students')}</span>",
+      "surroundingCopy": "422:           {text(productCategory)}. {text('Available for Mac today, with on-device AI powered by Gemma and provider access you control.')}\n423:         </p>\n424:         <div class=\"audience-row\" aria-label={text('Target audiences')}>\n425:           <span>{text('Engineers')}</span>\n426:           <span>{text('PMs')}</span>\n427:           <span>{text('Founders')}</span>\n428:           <span>{text('Students')}</span>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -8351,14 +8353,13 @@
       "kind": "string",
       "sourceText": "ExtraBrain - Local-First AI Interview & Meeting Copilot",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 28,
+      "sourceLine": 47,
       "routes": [
         "/"
       ],
-      "section": "type PricingTierCta = { label: string; href: string };",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "25: const link = (path: string) => localizePath(path, locale);\n26: const text = (source: string) => t(locale, source);\n27: \n28: const pageTitle = text('ExtraBrain - Local-First AI Interview & Meeting Copilot');\n29: const pageDescription = text('Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.');\n30: \n31: const downloadHref = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest';",
+      "surroundingCopy": "44:   return segments.length > 0 ? segments : [{ text: source, accented: false }];\n45: }\n46: \n47: const pageTitle = text('ExtraBrain - Local-First AI Interview & Meeting Copilot');\n48: const pageDescription = text('Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.');\n49: const heroTitleSegments = accentedSegments(text('Desktop AI [[accent]]interview[[/accent]] and meeting copilot.'));\n50: const heroLeadSegments = accentedSegments(",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "ExtraBrain"
@@ -8380,14 +8381,14 @@
       "kind": "string",
       "sourceText": "ExtraBrain · live transcript",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 334,
+      "sourceLine": 369,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-visual\" aria-label={text('ExtraBrain product mockup')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "331:               <div class=\"product-card card-main\">\n332:                 <div class=\"pc-head\">\n333:                   <span class=\"d\"></span><span class=\"d\"></span><span class=\"d\"></span>\n334:                   <span class=\"title\">{text('ExtraBrain · live transcript')}</span>\n335:                   <span class=\"live\"><span class=\"pulse\"></span>{text('Listening')} · 14:02</span>\n336:                 </div>\n337:                 <div class=\"pc-body\">",
+      "surroundingCopy": "366:               <div class=\"product-card card-main\">\n367:                 <div class=\"pc-head\">\n368:                   <span class=\"d\"></span><span class=\"d\"></span><span class=\"d\"></span>\n369:                   <span class=\"title\">{text('ExtraBrain · live transcript')}</span>\n370:                   <span class=\"live\"><span class=\"pulse\"></span>{text('Listening')} · 14:02</span>\n371:                 </div>\n372:                 <div class=\"pc-body\">",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "ExtraBrain"
@@ -8481,14 +8482,14 @@
       "kind": "string",
       "sourceText": "ExtraBrain can keep requests on your device when you use Gemma-powered on-device AI and local Parakeet transcription. Privacy still depends on your selected setup, including what you send to optional model and transcription providers.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 490,
+      "sourceLine": 525,
       "routes": [
         "/"
       ],
       "section": "<div class=\"compatibility-grid\" aria-label={text('Supported meeting and interview platforms')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "487:           <span class=\"eyebrow\">{text('Trust and control')}</span>\n488:           <h2>{text('Local-first control belongs in the main product story.')}</h2>\n489:           <p class=\"lead\">\n490:             {text('ExtraBrain can keep requests on your device when you use Gemma-powered on-device AI and local Parakeet transcription. Privacy still depends on your selected setup, including what you send to optional model and transcription providers.')}\n491:           </p>\n492:         </div>\n493:         <div class=\"security-grid\">",
+      "surroundingCopy": "522:           <span class=\"eyebrow\">{text('Trust and control')}</span>\n523:           <h2>{text('Local-first control belongs in the main product story.')}</h2>\n524:           <p class=\"lead\">\n525:             {text('ExtraBrain can keep requests on your device when you use Gemma-powered on-device AI and local Parakeet transcription. Privacy still depends on your selected setup, including what you send to optional model and transcription providers.')}\n526:           </p>\n527:         </div>\n528:         <div class=\"security-grid\">",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "ExtraBrain",
@@ -8967,14 +8968,14 @@
       "kind": "string",
       "sourceText": "ExtraBrain gives you a private live workspace for interview prompts, meeting notes, structured answers, and post-session summaries, all in a desktop app you control.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 660,
+      "sourceLine": 695,
       "routes": [
         "/"
       ],
       "section": "document.querySelectorAll('details[name=\"homepage-faq\"]').forEach((other) => {",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "657:           <span class=\"eyebrow\">{text('Ready when the conversation starts')}</span>\n658:           <h2>{text('Download the free Mac app before the call starts.')}</h2>\n659:           <p class=\"lead\">\n660:             {text('ExtraBrain gives you a private live workspace for interview prompts, meeting notes, structured answers, and post-session summaries, all in a desktop app you control.')}\n661:           </p>\n662:         </div>\n663:         <div class=\"cta-actions\">",
+      "surroundingCopy": "692:           <span class=\"eyebrow\">{text('Ready when the conversation starts')}</span>\n693:           <h2>{text('Download the free Mac app before the call starts.')}</h2>\n694:           <p class=\"lead\">\n695:             {text('ExtraBrain gives you a private live workspace for interview prompts, meeting notes, structured answers, and post-session summaries, all in a desktop app you control.')}\n696:           </p>\n697:         </div>\n698:         <div class=\"cta-actions\">",
       "meaningNote": "Preserve pricing, plan names, billing cadence, and purchase meaning exactly.",
       "protectedTerms": [
         "ExtraBrain"
@@ -9015,13 +9016,13 @@
       "kind": "string",
       "sourceText": "ExtraBrain has first-party pages for downloads, privacy, providers, local transcription, use cases, comparisons, release notes, and responsible use.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 566,
+      "sourceLine": 601,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "563:           <span class=\"eyebrow\">{text('Discovery pages')}</span>\n564:           <h2>{text('Specific pages for the questions people and AI search systems ask.')}</h2>\n565:           <p class=\"lead light\">\n566:             {text('ExtraBrain has first-party pages for downloads, privacy, providers, local transcription, use cases, comparisons, release notes, and responsible use.')}\n567:           </p>\n568:         </div>\n569:         <div class=\"related-grid\">",
+      "surroundingCopy": "598:           <span class=\"eyebrow\">{text('Discovery pages')}</span>\n599:           <h2>{text('Specific pages for the questions people and AI search systems ask.')}</h2>\n600:           <p class=\"lead light\">\n601:             {text('ExtraBrain has first-party pages for downloads, privacy, providers, local transcription, use cases, comparisons, release notes, and responsible use.')}\n602:           </p>\n603:         </div>\n604:         <div class=\"related-grid\">",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "ExtraBrain"
@@ -9119,14 +9120,14 @@
       "kind": "string",
       "sourceText": "ExtraBrain home",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 264,
+      "sourceLine": 289,
       "routes": [
         "/"
       ],
       "section": "<a href=\"#top\" class=\"brand\" aria-label={text('ExtraBrain home')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "261: <MarketingLayout title={pageTitle} description={pageDescription} schemaGraph={schemaGraph} locale={locale}>\n262:   <header class=\"site-header\">\n263:     <div class=\"container nav\">\n264:       <a href=\"#top\" class=\"brand\" aria-label={text('ExtraBrain home')}>\n265:         <img class=\"brand-icon\" src=\"/assets/images/logo-192.png\" alt=\"ExtraBrain logo\" width=\"34\" height=\"34\" />\n266:         <span class=\"brand-wordmark brand-wordmark--nav\" aria-hidden=\"true\">\n267:           <span class=\"brand-extra\">Extra</span><span class=\"brand-brain\">Brain</span>",
+      "surroundingCopy": "286: <MarketingLayout title={pageTitle} description={pageDescription} schemaGraph={schemaGraph} locale={locale}>\n287:   <header class=\"site-header\">\n288:     <div class=\"container nav\">\n289:       <a href=\"#top\" class=\"brand\" aria-label={text('ExtraBrain home')}>\n290:         <img class=\"brand-icon\" src=\"/assets/images/logo-192.png\" alt=\"ExtraBrain logo\" width=\"34\" height=\"34\" />\n291:         <span class=\"brand-wordmark brand-wordmark--nav\" aria-hidden=\"true\">\n292:           <span class=\"brand-extra\">Extra</span><span class=\"brand-brain\">Brain</span>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [
         "ExtraBrain"
@@ -9136,6 +9137,54 @@
     },
     {
       "id": "string:0428",
+      "kind": "string",
+      "sourceText": "ExtraBrain is a [[accent]]free, local-first[[/accent]] desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow [[accent]]live conversations[[/accent]] with transcription, [[accent]]screen-aware context[[/accent]], on-device AI powered by Gemma, [[accent]]BYO AI providers[[/accent]], and [[accent]]privacy controls[[/accent]]. Available for Mac today, with Windows and Linux planned.",
+      "sourceFile": "src/pages/index.astro",
+      "sourceLine": 52,
+      "routes": [
+        "/"
+      ],
+      "contentType": "homepage marketing copy",
+      "audience": "website visitor, buyer, developer, or help-center reader",
+      "surroundingCopy": "49: const heroTitleSegments = accentedSegments(text('Desktop AI [[accent]]interview[[/accent]] and meeting copilot.'));\n50: const heroLeadSegments = accentedSegments(\n51:   text(\n52:     'ExtraBrain is a [[accent]]free, local-first[[/accent]] desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow [[accent]]live conversations[[/accent]] with transcription, [[accent]]screen-aware context[[/accent]], on-device AI powered by Gemma, [[accent]]BYO AI providers[[/accent]], and [[accent]]privacy controls[[/accent]]. Available for Mac today, with Windows and Linux planned.'\n53:   )\n54: );\n55: ",
+      "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
+      "protectedTerms": [
+        "ExtraBrain",
+        "Gemma",
+        "Mac",
+        "Windows",
+        "Linux",
+        "BYO"
+      ],
+      "protectedInlineTokens": [
+        "[[accent]]",
+        "[[/accent]]",
+        "[[accent]]",
+        "[[/accent]]",
+        "[[accent]]",
+        "[[/accent]]",
+        "[[accent]]",
+        "[[/accent]]",
+        "[[accent]]",
+        "[[/accent]]"
+      ],
+      "literalizationRisks": [
+        {
+          "term": "copilot",
+          "meaning": "An AI assistant that supports the user during live work. Translate as a natural assistant/helper phrase if a literal aviation metaphor sounds odd."
+        },
+        {
+          "term": "local-first",
+          "meaning": "Designed to keep work on the user's device by default. Translate the concept, not the English compound."
+        },
+        {
+          "term": "provider",
+          "meaning": "A model, transcription, or service provider. Use the normal technology/business term in the target language."
+        }
+      ]
+    },
+    {
+      "id": "string:0429",
       "kind": "string",
       "sourceText": "ExtraBrain is a desktop app rather than another participant joining the room, which helps keep the workflow private and under your control.",
       "sourceFile": "src/data/product.ts",
@@ -9156,43 +9205,6 @@
         {
           "term": "workflow",
           "meaning": "The user's sequence of work steps in the app. Translate naturally for product UX copy."
-        }
-      ]
-    },
-    {
-      "id": "string:0429",
-      "kind": "string",
-      "sourceText": "ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow live conversations with transcription, screen-aware context, on-device AI powered by Gemma, BYO AI providers, and privacy controls. Available for Mac today, with Windows and Linux planned.",
-      "sourceFile": "src/pages/index.astro",
-      "sourceLine": 297,
-      "routes": [
-        "/"
-      ],
-      "contentType": "homepage marketing copy",
-      "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "294:           <div class=\"hero-kicker\">{text('Free local-first desktop copilot')}</div>\n295:           <h1 id=\"hero-title\">{text('Desktop AI interview and meeting copilot.')}</h1>\n296:           <p class=\"lead\">\n297:             {text('ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow live conversations with transcription, screen-aware context, on-device AI powered by Gemma, BYO AI providers, and privacy controls. Available for Mac today, with Windows and Linux planned.')}\n298:           </p>\n299:           <div class=\"hero-ctas\">\n300:             <a class=\"btn primary\" href={downloadHref} data-download data-attr=\"download-cta-hero\">",
-      "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
-      "protectedTerms": [
-        "ExtraBrain",
-        "Gemma",
-        "Mac",
-        "Windows",
-        "Linux",
-        "BYO"
-      ],
-      "protectedInlineTokens": [],
-      "literalizationRisks": [
-        {
-          "term": "copilot",
-          "meaning": "An AI assistant that supports the user during live work. Translate as a natural assistant/helper phrase if a literal aviation metaphor sounds odd."
-        },
-        {
-          "term": "local-first",
-          "meaning": "Designed to keep work on the user's device by default. Translate the concept, not the English compound."
-        },
-        {
-          "term": "provider",
-          "meaning": "A model, transcription, or service provider. Use the normal technology/business term in the target language."
         }
       ]
     },
@@ -9667,14 +9679,14 @@
       "kind": "string",
       "sourceText": "ExtraBrain is designed to stay hidden from screen sharing and screen recording on major video call tools and coding interview environments, while remaining available on your own Mac. Always follow the rules of the interview, employer, school, meeting, or platform.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 470,
+      "sourceLine": 505,
       "routes": [
         "/"
       ],
       "section": "<div class=\"prompt-cloud\" aria-label={text('ExtraBrain prompt cards by workflow')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "467:           <span class=\"eyebrow\">{text('Compatibility')}</span>\n468:           <h2>{text('Works invisibly across the interview and meeting platforms people actually use.')}</h2>\n469:           <p class=\"lead\">\n470:             {text('ExtraBrain is designed to stay hidden from screen sharing and screen recording on major video call tools and coding interview environments, while remaining available on your own Mac. Always follow the rules of the interview, employer, school, meeting, or platform.')}\n471:           </p>\n472:         </div>\n473:         <div class=\"compatibility-grid\" aria-label={text('Supported meeting and interview platforms')}>",
+      "surroundingCopy": "502:           <span class=\"eyebrow\">{text('Compatibility')}</span>\n503:           <h2>{text('Works invisibly across the interview and meeting platforms people actually use.')}</h2>\n504:           <p class=\"lead\">\n505:             {text('ExtraBrain is designed to stay hidden from screen sharing and screen recording on major video call tools and coding interview environments, while remaining available on your own Mac. Always follow the rules of the interview, employer, school, meeting, or platform.')}\n506:           </p>\n507:         </div>\n508:         <div class=\"compatibility-grid\" aria-label={text('Supported meeting and interview platforms')}>",
       "meaningNote": "Translate as natural product copy for interview and meeting workflows, not as generic HR or customer-support copy.",
       "protectedTerms": [
         "ExtraBrain",
@@ -10371,14 +10383,14 @@
       "kind": "string",
       "sourceText": "ExtraBrain product mockup",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 317,
+      "sourceLine": 352,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-visual\" aria-label={text('ExtraBrain product mockup')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "314:           </div>\n315:         </div>\n316: \n317:         <div class=\"hero-visual\" aria-label={text('ExtraBrain product mockup')}>\n318:           <div class=\"product-stack\">\n319:             <div class=\"product-stack-scale\">\n320:               <div class=\"product-card card-top\">",
+      "surroundingCopy": "349:           </div>\n350:         </div>\n351: \n352:         <div class=\"hero-visual\" aria-label={text('ExtraBrain product mockup')}>\n353:           <div class=\"product-stack\">\n354:             <div class=\"product-stack-scale\">\n355:               <div class=\"product-card card-top\">",
       "meaningNote": "Preserve pricing, plan names, billing cadence, and purchase meaning exactly.",
       "protectedTerms": [
         "ExtraBrain"
@@ -10391,14 +10403,14 @@
       "kind": "string",
       "sourceText": "ExtraBrain prompt cards by workflow",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 453,
+      "sourceLine": 488,
       "routes": [
         "/"
       ],
       "section": "<div class=\"prompt-cloud\" aria-label={text('ExtraBrain prompt cards by workflow')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "450:           </p>\n451:         </div>\n452: \n453:         <div class=\"prompt-cloud\" aria-label={text('ExtraBrain prompt cards by workflow')}>\n454:           {promptCards.map((card) => (\n455:             <article class={`prompt-card prompt-card--${card.tone}`}>\n456:               <span class=\"prompt-card-label\">{card.label}</span>",
+      "surroundingCopy": "485:           </p>\n486:         </div>\n487: \n488:         <div class=\"prompt-cloud\" aria-label={text('ExtraBrain prompt cards by workflow')}>\n489:           {promptCards.map((card) => (\n490:             <article class={`prompt-card prompt-card--${card.tone}`}>\n491:               <span class=\"prompt-card-label\">{card.label}</span>",
       "meaningNote": "Preserve pricing, plan names, billing cadence, and purchase meaning exactly.",
       "protectedTerms": [
         "ExtraBrain"
@@ -10583,13 +10595,13 @@
       "kind": "string",
       "sourceText": "ExtraBrain should support your thinking, notes, and preparation. You are still responsible for following interview, workplace, and platform policies.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 505,
+      "sourceLine": 540,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "502:           <img class=\"quote-logo\" src=\"/assets/images/logo-192.png\" alt=\"ExtraBrain logo\" width=\"96\" height=\"96\" />\n503:           <div>\n504:             <blockquote>\n505:               {text('ExtraBrain should support your thinking, notes, and preparation. You are still responsible for following interview, workplace, and platform policies.')}\n506:             </blockquote>\n507:             <cite>{text('Interview policy reminder')}</cite>\n508:           </div>",
+      "surroundingCopy": "537:           <img class=\"quote-logo\" src=\"/assets/images/logo-192.png\" alt=\"ExtraBrain logo\" width=\"96\" height=\"96\" />\n538:           <div>\n539:             <blockquote>\n540:               {text('ExtraBrain should support your thinking, notes, and preparation. You are still responsible for following interview, workplace, and platform policies.')}\n541:             </blockquote>\n542:             <cite>{text('Interview policy reminder')}</cite>\n543:           </div>",
       "meaningNote": "Translate as natural product copy for interview and meeting workflows, not as generic HR or customer-support copy.",
       "protectedTerms": [
         "ExtraBrain"
@@ -10799,14 +10811,14 @@
       "kind": "string",
       "sourceText": "ExtraBrain turns live audio, transcript text, screenshots, and selected context into organized prompts, answer structures, and session memory while keeping provider choice, costs, and privacy boundaries visible.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 405,
+      "sourceLine": 440,
       "routes": [
         "/"
       ],
       "section": "<div class=\"audience-row\" aria-label={text('Target audiences')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "402:           <span class=\"eyebrow\">{text('Overview')}</span>\n403:           <h2>{text('An invisible AI copilot for interviews, meetings, lectures, and research.')}</h2>\n404:           <p class=\"lead light\">\n405:             {text('ExtraBrain turns live audio, transcript text, screenshots, and selected context into organized prompts, answer structures, and session memory while keeping provider choice, costs, and privacy boundaries visible.')}\n406:           </p>\n407:         </div>\n408:         <div class=\"benefit-grid\">",
+      "surroundingCopy": "437:           <span class=\"eyebrow\">{text('Overview')}</span>\n438:           <h2>{text('An invisible AI copilot for interviews, meetings, lectures, and research.')}</h2>\n439:           <p class=\"lead light\">\n440:             {text('ExtraBrain turns live audio, transcript text, screenshots, and selected context into organized prompts, answer structures, and session memory while keeping provider choice, costs, and privacy boundaries visible.')}\n441:           </p>\n442:         </div>\n443:         <div class=\"benefit-grid\">",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "ExtraBrain"
@@ -11320,13 +11332,13 @@
       "kind": "string",
       "sourceText": "fail-open vs fail-closed",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 354,
+      "sourceLine": 389,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "351:                 <div class=\"pc-answer\">\n352:                   <div class=\"q\">{text('Answer')} · 2 {text('sources')} · 0.6s</div>\n353:                   <div class=\"a\">\n354:                     {text('Start with token buckets at the edge for burst tolerance, then coordinate counters through Redis or another distributed store. Call out')} <b>{text('fail-open vs fail-closed')}</b>.\n355:                   </div>\n356:                   <div class=\"srcs\">\n357:                     <span>{text('transcript')} · 14:02:10</span>",
+      "surroundingCopy": "386:                 <div class=\"pc-answer\">\n387:                   <div class=\"q\">{text('Answer')} · 2 {text('sources')} · 0.6s</div>\n388:                   <div class=\"a\">\n389:                     {text('Start with token buckets at the edge for burst tolerance, then coordinate counters through Redis or another distributed store. Call out')} <b>{text('fail-open vs fail-closed')}</b>.\n390:                   </div>\n391:                   <div class=\"srcs\">\n392:                     <span>{text('transcript')} · 14:02:10</span>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -11337,14 +11349,14 @@
       "kind": "string",
       "sourceText": "FAQ",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 276,
+      "sourceLine": 301,
       "routes": [
         "/"
       ],
       "section": "<nav class=\"nav-links\" aria-label={text('Primary navigation')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "273:         <a href={link('/download/')}>{text('Download')}</a>\n274:         <a href={link('/pricing/')}>{text('Pricing')}</a>\n275:         <a href={link('/privacy/')}>{text('Privacy')}</a>\n276:         <a href=\"#faq\">{text('FAQ')}</a>\n277:         <a href={feedbackHref} data-feedback-trigger>{text('Feedback')}</a>\n278:       </nav>\n279:       <div class=\"nav-actions\">",
+      "surroundingCopy": "298:         <a href={link('/download/')}>{text('Download')}</a>\n299:         <a href={link('/pricing/')}>{text('Pricing')}</a>\n300:         <a href={link('/privacy/')}>{text('Privacy')}</a>\n301:         <a href=\"#faq\">{text('FAQ')}</a>\n302:         <a href={feedbackHref} data-feedback-trigger>{text('Feedback')}</a>\n303:       </nav>\n304:       <div class=\"nav-actions\">",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -11391,13 +11403,13 @@
       "kind": "string",
       "sourceText": "Features",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 580,
+      "sourceLine": 615,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "577:           </article>\n578:           <article class=\"related-card\">\n579:             <div>\n580:               <small>{text('Features')}</small>\n581:               <h3>{text('Gemma-powered AI, transcription, and BYO providers')}</h3>\n582:               <p>{text('On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.')}</p>\n583:             </div>",
+      "surroundingCopy": "612:           </article>\n613:           <article class=\"related-card\">\n614:             <div>\n615:               <small>{text('Features')}</small>\n616:               <h3>{text('Gemma-powered AI, transcription, and BYO providers')}</h3>\n617:               <p>{text('On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.')}</p>\n618:             </div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -11853,14 +11865,14 @@
       "kind": "string",
       "sourceText": "Founders",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 392,
+      "sourceLine": 427,
       "routes": [
         "/"
       ],
       "section": "<div class=\"audience-row\" aria-label={text('Target audiences')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "389:         <div class=\"audience-row\" aria-label={text('Target audiences')}>\n390:           <span>{text('Engineers')}</span>\n391:           <span>{text('PMs')}</span>\n392:           <span>{text('Founders')}</span>\n393:           <span>{text('Students')}</span>\n394:           <span>{text('Research teams')}</span>\n395:         </div>",
+      "surroundingCopy": "424:         <div class=\"audience-row\" aria-label={text('Target audiences')}>\n425:           <span>{text('Engineers')}</span>\n426:           <span>{text('PMs')}</span>\n427:           <span>{text('Founders')}</span>\n428:           <span>{text('Students')}</span>\n429:           <span>{text('Research teams')}</span>\n430:         </div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -11888,13 +11900,13 @@
       "kind": "string",
       "sourceText": "Free core access, on-device AI powered by Gemma, BYO provider subscriptions or API keys, Pro workflow tools, and enterprise support by contact.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 519,
+      "sourceLine": 554,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "516:           <span class=\"eyebrow\">{text('Pricing structure')}</span>\n517:           <h2>{text('Free to start. Pro from $6.99/month, $79/year, or $149 lifetime.')}</h2>\n518:           <p class=\"lead light\">\n519:             {text('Free core access, on-device AI powered by Gemma, BYO provider subscriptions or API keys, Pro workflow tools, and enterprise support by contact.')}\n520:           </p>\n521:         </div>\n522:         <div class=\"pricing-grid\">",
+      "surroundingCopy": "551:           <span class=\"eyebrow\">{text('Pricing structure')}</span>\n552:           <h2>{text('Free to start. Pro from $6.99/month, $79/year, or $149 lifetime.')}</h2>\n553:           <p class=\"lead light\">\n554:             {text('Free core access, on-device AI powered by Gemma, BYO provider subscriptions or API keys, Pro workflow tools, and enterprise support by contact.')}\n555:           </p>\n556:         </div>\n557:         <div class=\"pricing-grid\">",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "Gemma",
@@ -12095,14 +12107,14 @@
       "kind": "string",
       "sourceText": "Free local-first desktop copilot",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 294,
+      "sourceLine": 319,
       "routes": [
         "/"
       ],
       "section": "<nav class=\"nav-links\" aria-label={text('Primary navigation')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "291:     <section class=\"hero\" aria-labelledby=\"hero-title\">\n292:       <div class=\"container hero-grid\">\n293:         <div class=\"hero-copy\">\n294:           <div class=\"hero-kicker\">{text('Free local-first desktop copilot')}</div>\n295:           <h1 id=\"hero-title\">{text('Desktop AI interview and meeting copilot.')}</h1>\n296:           <p class=\"lead\">\n297:             {text('ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow live conversations with transcription, screen-aware context, on-device AI powered by Gemma, BYO AI providers, and privacy controls. Available for Mac today, with Windows and Linux planned.')}",
+      "surroundingCopy": "316:     <section class=\"hero\" aria-labelledby=\"hero-title\">\n317:       <div class=\"container hero-grid\">\n318:         <div class=\"hero-copy\">\n319:           <div class=\"hero-kicker\">{text('Free local-first desktop copilot')}</div>\n320:           <h1 id=\"hero-title\">\n321:             {\n322:               heroTitleSegments.map((segment) =>",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -12122,14 +12134,13 @@
       "kind": "string",
       "sourceText": "Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 29,
+      "sourceLine": 48,
       "routes": [
         "/"
       ],
-      "section": "type PricingTierCta = { label: string; href: string };",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "26: const text = (source: string) => t(locale, source);\n27: \n28: const pageTitle = text('ExtraBrain - Local-First AI Interview & Meeting Copilot');\n29: const pageDescription = text('Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.');\n30: \n31: const downloadHref = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest';\n32: const feedbackHref = `mailto:${contactEmail}?subject=ExtraBrain%20feedback`;",
+      "surroundingCopy": "45: }\n46: \n47: const pageTitle = text('ExtraBrain - Local-First AI Interview & Meeting Copilot');\n48: const pageDescription = text('Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.');\n49: const heroTitleSegments = accentedSegments(text('Desktop AI [[accent]]interview[[/accent]] and meeting copilot.'));\n50: const heroLeadSegments = accentedSegments(\n51:   text(",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "Gemma",
@@ -12474,13 +12485,13 @@
       "kind": "string",
       "sourceText": "From download to live support in three steps.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 424,
+      "sourceLine": 459,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "421:       <div class=\"container\">\n422:         <div class=\"section-head\">\n423:           <span class=\"eyebrow\">{text('How it works')}</span>\n424:           <h2>{text('From download to live support in three steps.')}</h2>\n425:           <p class=\"lead light\">\n426:             {text('Keep the setup path simple: install the Mac app, choose local or cloud transcription, choose on-device AI or provider access, and rehearse once before a real interview, meeting, or lecture.')}\n427:           </p>",
+      "surroundingCopy": "456:       <div class=\"container\">\n457:         <div class=\"section-head\">\n458:           <span class=\"eyebrow\">{text('How it works')}</span>\n459:           <h2>{text('From download to live support in three steps.')}</h2>\n460:           <p class=\"lead light\">\n461:             {text('Keep the setup path simple: install the Mac app, choose local or cloud transcription, choose on-device AI or provider access, and rehearse once before a real interview, meeting, or lecture.')}\n462:           </p>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -12654,13 +12665,13 @@
       "kind": "string",
       "sourceText": "Gemma-powered AI, transcription, and BYO providers",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 581,
+      "sourceLine": 616,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "578:           <article class=\"related-card\">\n579:             <div>\n580:               <small>{text('Features')}</small>\n581:               <h3>{text('Gemma-powered AI, transcription, and BYO providers')}</h3>\n582:               <p>{text('On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.')}</p>\n583:             </div>\n584:             <a href={link('/features/bring-your-own-provider/')}>{text('Review providers')}</a>",
+      "surroundingCopy": "613:           <article class=\"related-card\">\n614:             <div>\n615:               <small>{text('Features')}</small>\n616:               <h3>{text('Gemma-powered AI, transcription, and BYO providers')}</h3>\n617:               <p>{text('On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.')}</p>\n618:             </div>\n619:             <a href={link('/features/bring-your-own-provider/')}>{text('Review providers')}</a>",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "Gemma",
@@ -12679,14 +12690,14 @@
       "kind": "string",
       "sourceText": "Gemma-powered on-device AI",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 309,
+      "sourceLine": 344,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-mini\" aria-label={text('Product highlights')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "306:           </div>\n307:           <div class=\"hero-mini\" aria-label={text('Product highlights')}>\n308:             <span>{text('Local Parakeet transcription')}</span>\n309:             <span>{text('Gemma-powered on-device AI')}</span>\n310:             <span>{text('Optional Deepgram')}</span>\n311:             <span>{text('OpenAI, Anthropic, Claude, Codex')}</span>\n312:             <span>{text('Available for Mac today')}</span>",
+      "surroundingCopy": "341:           </div>\n342:           <div class=\"hero-mini\" aria-label={text('Product highlights')}>\n343:             <span>{text('Local Parakeet transcription')}</span>\n344:             <span>{text('Gemma-powered on-device AI')}</span>\n345:             <span>{text('Optional Deepgram')}</span>\n346:             <span>{text('OpenAI, Anthropic, Claude, Codex')}</span>\n347:             <span>{text('Available for Mac today')}</span>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [
         "Gemma"
@@ -12699,13 +12710,13 @@
       "kind": "string",
       "sourceText": "Get set up with the guide that matches your workflow.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 602,
+      "sourceLine": 637,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "599:       <div class=\"container\">\n600:         <div class=\"section-head\">\n601:           <span class=\"eyebrow\">{text('Pick your path')}</span>\n602:           <h2>{text('Get set up with the guide that matches your workflow.')}</h2>\n603:           <p class=\"lead light\">\n604:             {text('The help center keeps installation, provider access, privacy, billing, and interview workflow details crawlable and easy to reach from the homepage.')}\n605:           </p>",
+      "surroundingCopy": "634:       <div class=\"container\">\n635:         <div class=\"section-head\">\n636:           <span class=\"eyebrow\">{text('Pick your path')}</span>\n637:           <h2>{text('Get set up with the guide that matches your workflow.')}</h2>\n638:           <p class=\"lead light\">\n639:             {text('The help center keeps installation, provider access, privacy, billing, and interview workflow details crawlable and easy to reach from the homepage.')}\n640:           </p>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -12985,14 +12996,14 @@
       "kind": "string",
       "sourceText": "Host",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 339,
+      "sourceLine": 374,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-visual\" aria-label={text('ExtraBrain product mockup')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "336:                 </div>\n337:                 <div class=\"pc-body\">\n338:                   <div class=\"pc-line\">\n339:                     <span class=\"ts\">14:02:10</span><span class=\"sp\">{text('Host')}</span>\n340:                     <span class=\"t\">{text('Design a rate limiter for a public API with')} <span class=\"hl\">{text('regional spikes')}</span> {text('and abusive bursts.')}</span>\n341:                   </div>\n342:                   <div class=\"pc-line\">",
+      "surroundingCopy": "371:                 </div>\n372:                 <div class=\"pc-body\">\n373:                   <div class=\"pc-line\">\n374:                     <span class=\"ts\">14:02:10</span><span class=\"sp\">{text('Host')}</span>\n375:                     <span class=\"t\">{text('Design a rate limiter for a public API with')} <span class=\"hl\">{text('regional spikes')}</span> {text('and abusive bursts.')}</span>\n376:                   </div>\n377:                   <div class=\"pc-line\">",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -13278,13 +13289,13 @@
       "kind": "string",
       "sourceText": "How it works",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 423,
+      "sourceLine": 458,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "420:     <section class=\"light-section section-band--even\" id=\"how\">\n421:       <div class=\"container\">\n422:         <div class=\"section-head\">\n423:           <span class=\"eyebrow\">{text('How it works')}</span>\n424:           <h2>{text('From download to live support in three steps.')}</h2>\n425:           <p class=\"lead light\">\n426:             {text('Keep the setup path simple: install the Mac app, choose local or cloud transcription, choose on-device AI or provider access, and rehearse once before a real interview, meeting, or lecture.')}",
+      "surroundingCopy": "455:     <section class=\"light-section section-band--even\" id=\"how\">\n456:       <div class=\"container\">\n457:         <div class=\"section-head\">\n458:           <span class=\"eyebrow\">{text('How it works')}</span>\n459:           <h2>{text('From download to live support in three steps.')}</h2>\n460:           <p class=\"lead light\">\n461:             {text('Keep the setup path simple: install the Mac app, choose local or cloud transcription, choose on-device AI or provider access, and rehearse once before a real interview, meeting, or lecture.')}",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -13737,13 +13748,13 @@
       "kind": "string",
       "sourceText": "Interview and meeting workflows",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 573,
+      "sourceLine": 608,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "570:           <article class=\"related-card\">\n571:             <div>\n572:               <small>{text('Use cases')}</small>\n573:               <h3>{text('Interview and meeting workflows')}</h3>\n574:               <p>{text('Coding interviews, system design interviews, behavioral interviews, and desktop meeting copilot workflows.')}</p>\n575:             </div>\n576:             <a href={link('/use-cases/coding-interviews/')}>{text('Open use cases')}</a>",
+      "surroundingCopy": "605:           <article class=\"related-card\">\n606:             <div>\n607:               <small>{text('Use cases')}</small>\n608:               <h3>{text('Interview and meeting workflows')}</h3>\n609:               <p>{text('Coding interviews, system design interviews, behavioral interviews, and desktop meeting copilot workflows.')}</p>\n610:             </div>\n611:             <a href={link('/use-cases/coding-interviews/')}>{text('Open use cases')}</a>",
       "meaningNote": "Translate as natural product copy for interview and meeting workflows, not as generic HR or customer-support copy.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -13909,13 +13920,13 @@
       "kind": "string",
       "sourceText": "Interview policy reminder",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 507,
+      "sourceLine": 542,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "504:             <blockquote>\n505:               {text('ExtraBrain should support your thinking, notes, and preparation. You are still responsible for following interview, workplace, and platform policies.')}\n506:             </blockquote>\n507:             <cite>{text('Interview policy reminder')}</cite>\n508:           </div>\n509:         </div>\n510:       </div>",
+      "surroundingCopy": "539:             <blockquote>\n540:               {text('ExtraBrain should support your thinking, notes, and preparation. You are still responsible for following interview, workplace, and platform policies.')}\n541:             </blockquote>\n542:             <cite>{text('Interview policy reminder')}</cite>\n543:           </div>\n544:         </div>\n545:       </div>",
       "meaningNote": "Translate as natural product copy for interview and meeting workflows, not as generic HR or customer-support copy.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -15369,13 +15380,13 @@
       "kind": "string",
       "sourceText": "Keep the setup path simple: install the Mac app, choose local or cloud transcription, choose on-device AI or provider access, and rehearse once before a real interview, meeting, or lecture.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 426,
+      "sourceLine": 461,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "423:           <span class=\"eyebrow\">{text('How it works')}</span>\n424:           <h2>{text('From download to live support in three steps.')}</h2>\n425:           <p class=\"lead light\">\n426:             {text('Keep the setup path simple: install the Mac app, choose local or cloud transcription, choose on-device AI or provider access, and rehearse once before a real interview, meeting, or lecture.')}\n427:           </p>\n428:         </div>\n429:         <div class=\"steps-grid\">",
+      "surroundingCopy": "458:           <span class=\"eyebrow\">{text('How it works')}</span>\n459:           <h2>{text('From download to live support in three steps.')}</h2>\n460:           <p class=\"lead light\">\n461:             {text('Keep the setup path simple: install the Mac app, choose local or cloud transcription, choose on-device AI or provider access, and rehearse once before a real interview, meeting, or lecture.')}\n462:           </p>\n463:         </div>\n464:         <div class=\"steps-grid\">",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "Mac"
@@ -15826,14 +15837,14 @@
       "kind": "string",
       "sourceText": "Listening",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 335,
+      "sourceLine": 370,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-visual\" aria-label={text('ExtraBrain product mockup')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "332:                 <div class=\"pc-head\">\n333:                   <span class=\"d\"></span><span class=\"d\"></span><span class=\"d\"></span>\n334:                   <span class=\"title\">{text('ExtraBrain · live transcript')}</span>\n335:                   <span class=\"live\"><span class=\"pulse\"></span>{text('Listening')} · 14:02</span>\n336:                 </div>\n337:                 <div class=\"pc-body\">\n338:                   <div class=\"pc-line\">",
+      "surroundingCopy": "367:                 <div class=\"pc-head\">\n368:                   <span class=\"d\"></span><span class=\"d\"></span><span class=\"d\"></span>\n369:                   <span class=\"title\">{text('ExtraBrain · live transcript')}</span>\n370:                   <span class=\"live\"><span class=\"pulse\"></span>{text('Listening')} · 14:02</span>\n371:                 </div>\n372:                 <div class=\"pc-body\">\n373:                   <div class=\"pc-line\">",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -15888,13 +15899,13 @@
       "kind": "string",
       "sourceText": "Live context",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 374,
+      "sourceLine": 409,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "371: \n372:               <div class=\"stat-float\">\n373:                 <div class=\"label\">{text('Session memory')}</div>\n374:                 <div class=\"value\">{text('Live context')}</div>\n375:                 <div class=\"sub\">{text('Transcript-aware answers, saved facts, and follow-ups while the call is still active.')}</div>\n376:               </div>\n377:             </div>",
+      "surroundingCopy": "406: \n407:               <div class=\"stat-float\">\n408:                 <div class=\"label\">{text('Session memory')}</div>\n409:                 <div class=\"value\">{text('Live context')}</div>\n410:                 <div class=\"sub\">{text('Transcript-aware answers, saved facts, and follow-ups while the call is still active.')}</div>\n411:               </div>\n412:             </div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -16086,14 +16097,14 @@
       "kind": "string",
       "sourceText": "Live session",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 324,
+      "sourceLine": 359,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-visual\" aria-label={text('ExtraBrain product mockup')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "321:                 <div class=\"pc-top-content\">\n322:                   <span class=\"live-dot\" aria-hidden=\"true\"></span>\n323:                   <div>\n324:                     <div class=\"lbl\">{text('Live session')}</div>\n325:                     <div class=\"val\">{text('System design interview · live')}</div>\n326:                   </div>\n327:                   <div class=\"time-code\">14:02</div>",
+      "surroundingCopy": "356:                 <div class=\"pc-top-content\">\n357:                   <span class=\"live-dot\" aria-hidden=\"true\"></span>\n358:                   <div>\n359:                     <div class=\"lbl\">{text('Live session')}</div>\n360:                     <div class=\"val\">{text('System design interview · live')}</div>\n361:                   </div>\n362:                   <div class=\"time-code\">14:02</div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -16534,13 +16545,13 @@
       "kind": "string",
       "sourceText": "Local Parakeet transcription",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 68,
+      "sourceLine": 93,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "65:       'Download and use the Mac app',\n66:       'Use on-device AI powered by Gemma, or connect OpenAI, Anthropic, Claude, Codex, or compatible provider access',\n67:       'Local-first transcripts, prompts, screenshots, notes, and session context',\n68:       'Local Parakeet transcription and optional Deepgram setup',\n69:       'Help center, setup, privacy, and troubleshooting guides',\n70:     ],\n71:   },",
+      "surroundingCopy": "90:       'Download and use the Mac app',\n91:       'Use on-device AI powered by Gemma, or connect OpenAI, Anthropic, Claude, Codex, or compatible provider access',\n92:       'Local-first transcripts, prompts, screenshots, notes, and session context',\n93:       'Local Parakeet transcription and optional Deepgram setup',\n94:       'Help center, setup, privacy, and troubleshooting guides',\n95:     ],\n96:   },",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "Parakeet"
@@ -16836,14 +16847,14 @@
       "kind": "string",
       "sourceText": "Local-first control belongs in the main product story.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 488,
+      "sourceLine": 523,
       "routes": [
         "/"
       ],
       "section": "<div class=\"compatibility-grid\" aria-label={text('Supported meeting and interview platforms')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "485:       <div class=\"container\">\n486:         <div class=\"section-head\">\n487:           <span class=\"eyebrow\">{text('Trust and control')}</span>\n488:           <h2>{text('Local-first control belongs in the main product story.')}</h2>\n489:           <p class=\"lead\">\n490:             {text('ExtraBrain can keep requests on your device when you use Gemma-powered on-device AI and local Parakeet transcription. Privacy still depends on your selected setup, including what you send to optional model and transcription providers.')}\n491:           </p>",
+      "surroundingCopy": "520:       <div class=\"container\">\n521:         <div class=\"section-head\">\n522:           <span class=\"eyebrow\">{text('Trust and control')}</span>\n523:           <h2>{text('Local-first control belongs in the main product story.')}</h2>\n524:           <p class=\"lead\">\n525:             {text('ExtraBrain can keep requests on your device when you use Gemma-powered on-device AI and local Parakeet transcription. Privacy still depends on your selected setup, including what you send to optional model and transcription providers.')}\n526:           </p>",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -17352,13 +17363,13 @@
       "kind": "string",
       "sourceText": "macOS on Apple Silicon or Intel Mac",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 95,
+      "sourceLine": 120,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "92: const schemaGraph = [\n93:   {\n94:     ...homepageSoftwareSchema,\n95:     softwareRequirements: text('macOS on Apple Silicon or Intel Mac'),\n96:     featureList: translateValue(homepageFeatureList, locale),\n97:   },\n98:   organizationSchema(),",
+      "surroundingCopy": "117: const schemaGraph = [\n118:   {\n119:     ...homepageSoftwareSchema,\n120:     softwareRequirements: text('macOS on Apple Silicon or Intel Mac'),\n121:     featureList: translateValue(homepageFeatureList, locale),\n122:   },\n123:   organizationSchema(),",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [
         "macOS",
@@ -18564,13 +18575,13 @@
       "kind": "string",
       "sourceText": "On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 582,
+      "sourceLine": 617,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "579:             <div>\n580:               <small>{text('Features')}</small>\n581:               <h3>{text('Gemma-powered AI, transcription, and BYO providers')}</h3>\n582:               <p>{text('On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.')}</p>\n583:             </div>\n584:             <a href={link('/features/bring-your-own-provider/')}>{text('Review providers')}</a>\n585:           </article>",
+      "surroundingCopy": "614:             <div>\n615:               <small>{text('Features')}</small>\n616:               <h3>{text('Gemma-powered AI, transcription, and BYO providers')}</h3>\n617:               <p>{text('On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.')}</p>\n618:             </div>\n619:             <a href={link('/features/bring-your-own-provider/')}>{text('Review providers')}</a>\n620:           </article>",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [
         "OpenAI",
@@ -18819,13 +18830,13 @@
       "kind": "string",
       "sourceText": "Open use cases",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 576,
+      "sourceLine": 611,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "573:               <h3>{text('Interview and meeting workflows')}</h3>\n574:               <p>{text('Coding interviews, system design interviews, behavioral interviews, and desktop meeting copilot workflows.')}</p>\n575:             </div>\n576:             <a href={link('/use-cases/coding-interviews/')}>{text('Open use cases')}</a>\n577:           </article>\n578:           <article class=\"related-card\">\n579:             <div>",
+      "surroundingCopy": "608:               <h3>{text('Interview and meeting workflows')}</h3>\n609:               <p>{text('Coding interviews, system design interviews, behavioral interviews, and desktop meeting copilot workflows.')}</p>\n610:             </div>\n611:             <a href={link('/use-cases/coding-interviews/')}>{text('Open use cases')}</a>\n612:           </article>\n613:           <article class=\"related-card\">\n614:             <div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -18857,14 +18868,13 @@
       "kind": "string",
       "sourceText": "OpenAI, Anthropic, Claude, Codex",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 40,
+      "sourceLine": 65,
       "routes": [
         "/"
       ],
-      "section": "type PricingTierCta = { label: string; href: string };",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "37:   'Screen-aware desktop workflow for live calls',\n38:   'On-device AI powered by Gemma',\n39:   'Local NVIDIA Parakeet transcription and optional Deepgram',\n40:   'Bring your own OpenAI, Anthropic, Claude, Codex, or compatible provider access',\n41:   'ExtraBrain Pro custom profiles and workflow controls',\n42:   'Local-first transcripts, prompts, screenshots, notes, and session history',\n43:   'Available for Mac today, with Windows and Linux planned',",
+      "surroundingCopy": "62:   'Screen-aware desktop workflow for live calls',\n63:   'On-device AI powered by Gemma',\n64:   'Local NVIDIA Parakeet transcription and optional Deepgram',\n65:   'Bring your own OpenAI, Anthropic, Claude, Codex, or compatible provider access',\n66:   'ExtraBrain Pro custom profiles and workflow controls',\n67:   'Local-first transcripts, prompts, screenshots, notes, and session history',\n68:   'Available for Mac today, with Windows and Linux planned',",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [
         "OpenAI",
@@ -19994,13 +20004,13 @@
       "kind": "string",
       "sourceText": "Pick your path",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 601,
+      "sourceLine": 636,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "598:     <section class=\"light-section related-section section-band--even\">\n599:       <div class=\"container\">\n600:         <div class=\"section-head\">\n601:           <span class=\"eyebrow\">{text('Pick your path')}</span>\n602:           <h2>{text('Get set up with the guide that matches your workflow.')}</h2>\n603:           <p class=\"lead light\">\n604:             {text('The help center keeps installation, provider access, privacy, billing, and interview workflow details crawlable and easy to reach from the homepage.')}",
+      "surroundingCopy": "633:     <section class=\"light-section related-section section-band--even\">\n634:       <div class=\"container\">\n635:         <div class=\"section-head\">\n636:           <span class=\"eyebrow\">{text('Pick your path')}</span>\n637:           <h2>{text('Get set up with the guide that matches your workflow.')}</h2>\n638:           <p class=\"lead light\">\n639:             {text('The help center keeps installation, provider access, privacy, billing, and interview workflow details crawlable and easy to reach from the homepage.')}",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -20157,14 +20167,14 @@
       "kind": "string",
       "sourceText": "PMs",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 391,
+      "sourceLine": 426,
       "routes": [
         "/"
       ],
       "section": "<div class=\"audience-row\" aria-label={text('Target audiences')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "388:         </p>\n389:         <div class=\"audience-row\" aria-label={text('Target audiences')}>\n390:           <span>{text('Engineers')}</span>\n391:           <span>{text('PMs')}</span>\n392:           <span>{text('Founders')}</span>\n393:           <span>{text('Students')}</span>\n394:           <span>{text('Research teams')}</span>",
+      "surroundingCopy": "423:         </p>\n424:         <div class=\"audience-row\" aria-label={text('Target audiences')}>\n425:           <span>{text('Engineers')}</span>\n426:           <span>{text('PMs')}</span>\n427:           <span>{text('Founders')}</span>\n428:           <span>{text('Students')}</span>\n429:           <span>{text('Research teams')}</span>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -20604,13 +20614,13 @@
       "kind": "string",
       "sourceText": "Pricing structure",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 516,
+      "sourceLine": 551,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "513:     <section class=\"light-section section-band--even\" id=\"pricing\">\n514:       <div class=\"container\">\n515:         <div class=\"section-head\">\n516:           <span class=\"eyebrow\">{text('Pricing structure')}</span>\n517:           <h2>{text('Free to start. Pro from $6.99/month, $79/year, or $149 lifetime.')}</h2>\n518:           <p class=\"lead light\">\n519:             {text('Free core access, on-device AI powered by Gemma, BYO provider subscriptions or API keys, Pro workflow tools, and enterprise support by contact.')}",
+      "surroundingCopy": "548:     <section class=\"light-section section-band--even\" id=\"pricing\">\n549:       <div class=\"container\">\n550:         <div class=\"section-head\">\n551:           <span class=\"eyebrow\">{text('Pricing structure')}</span>\n552:           <h2>{text('Free to start. Pro from $6.99/month, $79/year, or $149 lifetime.')}</h2>\n553:           <p class=\"lead light\">\n554:             {text('Free core access, on-device AI powered by Gemma, BYO provider subscriptions or API keys, Pro workflow tools, and enterprise support by contact.')}",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -20639,14 +20649,14 @@
       "kind": "string",
       "sourceText": "Primary navigation",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 270,
+      "sourceLine": 295,
       "routes": [
         "/"
       ],
       "section": "<nav class=\"nav-links\" aria-label={text('Primary navigation')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "267:           <span class=\"brand-extra\">Extra</span><span class=\"brand-brain\">Brain</span>\n268:         </span>\n269:       </a>\n270:       <nav class=\"nav-links\" aria-label={text('Primary navigation')}>\n271:         <a href=\"#overview\">{text('Product')}</a>\n272:         <a href=\"#workflows\">{text('Use cases')}</a>\n273:         <a href={link('/download/')}>{text('Download')}</a>",
+      "surroundingCopy": "292:           <span class=\"brand-extra\">Extra</span><span class=\"brand-brain\">Brain</span>\n293:         </span>\n294:       </a>\n295:       <nav class=\"nav-links\" aria-label={text('Primary navigation')}>\n296:         <a href=\"#overview\">{text('Product')}</a>\n297:         <a href=\"#workflows\">{text('Use cases')}</a>\n298:         <a href={link('/download/')}>{text('Download')}</a>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -21062,14 +21072,14 @@
       "kind": "string",
       "sourceText": "Product",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 271,
+      "sourceLine": 296,
       "routes": [
         "/"
       ],
       "section": "<nav class=\"nav-links\" aria-label={text('Primary navigation')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "268:         </span>\n269:       </a>\n270:       <nav class=\"nav-links\" aria-label={text('Primary navigation')}>\n271:         <a href=\"#overview\">{text('Product')}</a>\n272:         <a href=\"#workflows\">{text('Use cases')}</a>\n273:         <a href={link('/download/')}>{text('Download')}</a>\n274:         <a href={link('/pricing/')}>{text('Pricing')}</a>",
+      "surroundingCopy": "293:         </span>\n294:       </a>\n295:       <nav class=\"nav-links\" aria-label={text('Primary navigation')}>\n296:         <a href=\"#overview\">{text('Product')}</a>\n297:         <a href=\"#workflows\">{text('Use cases')}</a>\n298:         <a href={link('/download/')}>{text('Download')}</a>\n299:         <a href={link('/pricing/')}>{text('Pricing')}</a>",
       "meaningNote": "Preserve pricing, plan names, billing cadence, and purchase meaning exactly.",
       "protectedTerms": [
         "Pro"
@@ -21102,14 +21112,14 @@
       "kind": "string",
       "sourceText": "Product highlights",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 307,
+      "sourceLine": 342,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-mini\" aria-label={text('Product highlights')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "304:               {text('See overview')}\n305:             </a>\n306:           </div>\n307:           <div class=\"hero-mini\" aria-label={text('Product highlights')}>\n308:             <span>{text('Local Parakeet transcription')}</span>\n309:             <span>{text('Gemma-powered on-device AI')}</span>\n310:             <span>{text('Optional Deepgram')}</span>",
+      "surroundingCopy": "339:               {text('See overview')}\n340:             </a>\n341:           </div>\n342:           <div class=\"hero-mini\" aria-label={text('Product highlights')}>\n343:             <span>{text('Local Parakeet transcription')}</span>\n344:             <span>{text('Gemma-powered on-device AI')}</span>\n345:             <span>{text('Optional Deepgram')}</span>",
       "meaningNote": "Preserve pricing, plan names, billing cadence, and purchase meaning exactly.",
       "protectedTerms": [
         "Pro"
@@ -21840,14 +21850,14 @@
       "kind": "string",
       "sourceText": "public API",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 340,
+      "sourceLine": 375,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-visual\" aria-label={text('ExtraBrain product mockup')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "337:                 <div class=\"pc-body\">\n338:                   <div class=\"pc-line\">\n339:                     <span class=\"ts\">14:02:10</span><span class=\"sp\">{text('Host')}</span>\n340:                     <span class=\"t\">{text('Design a rate limiter for a public API with')} <span class=\"hl\">{text('regional spikes')}</span> {text('and abusive bursts.')}</span>\n341:                   </div>\n342:                   <div class=\"pc-line\">\n343:                     <span class=\"ts\">14:02:18</span><span class=\"sp me\">{text('You')}</span>",
+      "surroundingCopy": "372:                 <div class=\"pc-body\">\n373:                   <div class=\"pc-line\">\n374:                     <span class=\"ts\">14:02:10</span><span class=\"sp\">{text('Host')}</span>\n375:                     <span class=\"t\">{text('Design a rate limiter for a public API with')} <span class=\"hl\">{text('regional spikes')}</span> {text('and abusive bursts.')}</span>\n376:                   </div>\n377:                   <div class=\"pc-line\">\n378:                     <span class=\"ts\">14:02:18</span><span class=\"sp me\">{text('You')}</span>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [
         "API"
@@ -22093,13 +22103,13 @@
       "kind": "string",
       "sourceText": "Rate limiter",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 366,
+      "sourceLine": 401,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "363:               <div class=\"product-card card-side\">\n364:                 <div class=\"pc-side-content\">\n365:                   <div class=\"lbl\">{text('Saved facts')}</div>\n366:                   <div class=\"fact\"><b>{text('Rate limiter')}</b> · {text('public API')}</div>\n367:                   <div class=\"fact\">{text('Burst traffic')}: <b>{text('edge token buckets')}</b></div>\n368:                   <div class=\"fact\">{text('Tradeoff')}: {text('fail-open vs fail-closed')}</div>\n369:                 </div>",
+      "surroundingCopy": "398:               <div class=\"product-card card-side\">\n399:                 <div class=\"pc-side-content\">\n400:                   <div class=\"lbl\">{text('Saved facts')}</div>\n401:                   <div class=\"fact\"><b>{text('Rate limiter')}</b> · {text('public API')}</div>\n402:                   <div class=\"fact\">{text('Burst traffic')}: <b>{text('edge token buckets')}</b></div>\n403:                   <div class=\"fact\">{text('Tradeoff')}: {text('fail-open vs fail-closed')}</div>\n404:                 </div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -22110,13 +22120,13 @@
       "kind": "string",
       "sourceText": "Read comparisons",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 592,
+      "sourceLine": 627,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "589:               <h3>{text('Compare ExtraBrain with alternatives')}</h3>\n590:               <p>{text('Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, InterviewBee, and other AI interview assistants.')}</p>\n591:             </div>\n592:             <a href={link('/compare/')}>{text('Read comparisons')}</a>\n593:           </article>\n594:         </div>\n595:       </div>",
+      "surroundingCopy": "624:               <h3>{text('Compare ExtraBrain with alternatives')}</h3>\n625:               <p>{text('Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, InterviewBee, and other AI interview assistants.')}</p>\n626:             </div>\n627:             <a href={link('/compare/')}>{text('Read comparisons')}</a>\n628:           </article>\n629:         </div>\n630:       </div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -22217,14 +22227,14 @@
       "kind": "string",
       "sourceText": "Ready when the conversation starts",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 657,
+      "sourceLine": 692,
       "routes": [
         "/"
       ],
       "section": "document.querySelectorAll('details[name=\"homepage-faq\"]').forEach((other) => {",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "654:     <section class=\"final-cta\" id=\"cta\">\n655:       <div class=\"container cta-card\">\n656:         <div>\n657:           <span class=\"eyebrow\">{text('Ready when the conversation starts')}</span>\n658:           <h2>{text('Download the free Mac app before the call starts.')}</h2>\n659:           <p class=\"lead\">\n660:             {text('ExtraBrain gives you a private live workspace for interview prompts, meeting notes, structured answers, and post-session summaries, all in a desktop app you control.')}",
+      "surroundingCopy": "689:     <section class=\"final-cta\" id=\"cta\">\n690:       <div class=\"container cta-card\">\n691:         <div>\n692:           <span class=\"eyebrow\">{text('Ready when the conversation starts')}</span>\n693:           <h2>{text('Download the free Mac app before the call starts.')}</h2>\n694:           <p class=\"lead\">\n695:             {text('ExtraBrain gives you a private live workspace for interview prompts, meeting notes, structured answers, and post-session summaries, all in a desktop app you control.')}",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -22312,14 +22322,14 @@
       "kind": "string",
       "sourceText": "regional spikes",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 340,
+      "sourceLine": 375,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-visual\" aria-label={text('ExtraBrain product mockup')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "337:                 <div class=\"pc-body\">\n338:                   <div class=\"pc-line\">\n339:                     <span class=\"ts\">14:02:10</span><span class=\"sp\">{text('Host')}</span>\n340:                     <span class=\"t\">{text('Design a rate limiter for a public API with')} <span class=\"hl\">{text('regional spikes')}</span> {text('and abusive bursts.')}</span>\n341:                   </div>\n342:                   <div class=\"pc-line\">\n343:                     <span class=\"ts\">14:02:18</span><span class=\"sp me\">{text('You')}</span>",
+      "surroundingCopy": "372:                 <div class=\"pc-body\">\n373:                   <div class=\"pc-line\">\n374:                     <span class=\"ts\">14:02:10</span><span class=\"sp\">{text('Host')}</span>\n375:                     <span class=\"t\">{text('Design a rate limiter for a public API with')} <span class=\"hl\">{text('regional spikes')}</span> {text('and abusive bursts.')}</span>\n376:                   </div>\n377:                   <div class=\"pc-line\">\n378:                     <span class=\"ts\">14:02:18</span><span class=\"sp me\">{text('You')}</span>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -22437,14 +22447,14 @@
       "kind": "string",
       "sourceText": "Research teams",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 394,
+      "sourceLine": 429,
       "routes": [
         "/"
       ],
       "section": "<div class=\"audience-row\" aria-label={text('Target audiences')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "391:           <span>{text('PMs')}</span>\n392:           <span>{text('Founders')}</span>\n393:           <span>{text('Students')}</span>\n394:           <span>{text('Research teams')}</span>\n395:         </div>\n396:       </div>\n397:     </div>",
+      "surroundingCopy": "426:           <span>{text('PMs')}</span>\n427:           <span>{text('Founders')}</span>\n428:           <span>{text('Students')}</span>\n429:           <span>{text('Research teams')}</span>\n430:         </div>\n431:       </div>\n432:     </div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -22822,13 +22832,13 @@
       "kind": "string",
       "sourceText": "Review providers",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 584,
+      "sourceLine": 619,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "581:               <h3>{text('Gemma-powered AI, transcription, and BYO providers')}</h3>\n582:               <p>{text('On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.')}</p>\n583:             </div>\n584:             <a href={link('/features/bring-your-own-provider/')}>{text('Review providers')}</a>\n585:           </article>\n586:           <article class=\"related-card\">\n587:             <div>",
+      "surroundingCopy": "616:               <h3>{text('Gemma-powered AI, transcription, and BYO providers')}</h3>\n617:               <p>{text('On-device AI powered by Gemma, local Parakeet transcription, optional Deepgram, OpenAI, Anthropic, Claude, Codex, and compatible endpoints.')}</p>\n618:             </div>\n619:             <a href={link('/features/bring-your-own-provider/')}>{text('Review providers')}</a>\n620:           </article>\n621:           <article class=\"related-card\">\n622:             <div>",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -23336,13 +23346,13 @@
       "kind": "string",
       "sourceText": "Saved facts",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 365,
+      "sourceLine": 400,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "362: \n363:               <div class=\"product-card card-side\">\n364:                 <div class=\"pc-side-content\">\n365:                   <div class=\"lbl\">{text('Saved facts')}</div>\n366:                   <div class=\"fact\"><b>{text('Rate limiter')}</b> · {text('public API')}</div>\n367:                   <div class=\"fact\">{text('Burst traffic')}: <b>{text('edge token buckets')}</b></div>\n368:                   <div class=\"fact\">{text('Tradeoff')}: {text('fail-open vs fail-closed')}</div>",
+      "surroundingCopy": "397: \n398:               <div class=\"product-card card-side\">\n399:                 <div class=\"pc-side-content\">\n400:                   <div class=\"lbl\">{text('Saved facts')}</div>\n401:                   <div class=\"fact\"><b>{text('Rate limiter')}</b> · {text('public API')}</div>\n402:                   <div class=\"fact\">{text('Burst traffic')}: <b>{text('edge token buckets')}</b></div>\n403:                   <div class=\"fact\">{text('Tradeoff')}: {text('fail-open vs fail-closed')}</div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -23550,13 +23560,13 @@
       "kind": "string",
       "sourceText": "Security",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 694,
+      "sourceLine": 729,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "691:       <div>\n692:         <h2 class=\"footer-heading\">{text('Trust')}</h2>\n693:         <a href={link('/privacy/')}>{text('Privacy')}</a>\n694:         <a href={link('/security/')}>{text('Security')}</a>\n695:         <a href={link('/responsible-use/')}>{text('Responsible use')}</a>\n696:       </div>\n697:       <div>",
+      "surroundingCopy": "726:       <div>\n727:         <h2 class=\"footer-heading\">{text('Trust')}</h2>\n728:         <a href={link('/privacy/')}>{text('Privacy')}</a>\n729:         <a href={link('/security/')}>{text('Security')}</a>\n730:         <a href={link('/responsible-use/')}>{text('Responsible use')}</a>\n731:       </div>\n732:       <div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -23696,13 +23706,13 @@
       "kind": "string",
       "sourceText": "See overview",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 304,
+      "sourceLine": 339,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "301:               {text('Download for Mac')}\n302:             </a>\n303:             <a class=\"btn ghost\" href=\"#overview\">\n304:               {text('See overview')}\n305:             </a>\n306:           </div>\n307:           <div class=\"hero-mini\" aria-label={text('Product highlights')}>",
+      "surroundingCopy": "336:               {text('Download for Mac')}\n337:             </a>\n338:             <a class=\"btn ghost\" href=\"#overview\">\n339:               {text('See overview')}\n340:             </a>\n341:           </div>\n342:           <div class=\"hero-mini\" aria-label={text('Product highlights')}>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -23730,13 +23740,13 @@
       "kind": "string",
       "sourceText": "Send Feedback",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 703,
+      "sourceLine": 738,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "700:         <a href={link('/help/troubleshooting/')}>{text('Troubleshooting')}</a>\n701:         <a href={link('/providers/')}>{text('Providers')}</a>\n702:         <a href=\"https://github.com/ExtraBrainApp/ExtraBrain-releases/releases\" data-track=\"all_releases_clicked\">GitHub</a>\n703:         <a href={feedbackHref} data-feedback-trigger>{text('Send Feedback')}</a>\n704:       </div>\n705:     </div>\n706:     <BacklinksFooter />",
+      "surroundingCopy": "735:         <a href={link('/help/troubleshooting/')}>{text('Troubleshooting')}</a>\n736:         <a href={link('/providers/')}>{text('Providers')}</a>\n737:         <a href=\"https://github.com/ExtraBrainApp/ExtraBrain-releases/releases\" data-track=\"all_releases_clicked\">GitHub</a>\n738:         <a href={feedbackHref} data-feedback-trigger>{text('Send Feedback')}</a>\n739:       </div>\n740:     </div>\n741:     <BacklinksFooter />",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -23855,13 +23865,13 @@
       "kind": "string",
       "sourceText": "Session memory",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 373,
+      "sourceLine": 408,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "370:               </div>\n371: \n372:               <div class=\"stat-float\">\n373:                 <div class=\"label\">{text('Session memory')}</div>\n374:                 <div class=\"value\">{text('Live context')}</div>\n375:                 <div class=\"sub\">{text('Transcript-aware answers, saved facts, and follow-ups while the call is still active.')}</div>\n376:               </div>",
+      "surroundingCopy": "405:               </div>\n406: \n407:               <div class=\"stat-float\">\n408:                 <div class=\"label\">{text('Session memory')}</div>\n409:                 <div class=\"value\">{text('Live context')}</div>\n410:                 <div class=\"sub\">{text('Transcript-aware answers, saved facts, and follow-ups while the call is still active.')}</div>\n411:               </div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -24002,13 +24012,13 @@
       "kind": "string",
       "sourceText": "Should limits be per user, per IP, or per endpoint?",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 344,
+      "sourceLine": 379,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "341:                   </div>\n342:                   <div class=\"pc-line\">\n343:                     <span class=\"ts\">14:02:18</span><span class=\"sp me\">{text('You')}</span>\n344:                     <span class=\"t\">{text('Should limits be per user, per IP, or per endpoint?')}</span>\n345:                   </div>\n346:                   <div class=\"pc-line\">\n347:                     <span class=\"ts\">14:02:24</span><span class=\"sp\">{text('Host')}</span>",
+      "surroundingCopy": "376:                   </div>\n377:                   <div class=\"pc-line\">\n378:                     <span class=\"ts\">14:02:18</span><span class=\"sp me\">{text('You')}</span>\n379:                     <span class=\"t\">{text('Should limits be per user, per IP, or per endpoint?')}</span>\n380:                   </div>\n381:                   <div class=\"pc-line\">\n382:                     <span class=\"ts\">14:02:24</span><span class=\"sp\">{text('Host')}</span>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -24152,13 +24162,13 @@
       "kind": "string",
       "sourceText": "sources",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 352,
+      "sourceLine": 387,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "349:                   </div>\n350:                 </div>\n351:                 <div class=\"pc-answer\">\n352:                   <div class=\"q\">{text('Answer')} · 2 {text('sources')} · 0.6s</div>\n353:                   <div class=\"a\">\n354:                     {text('Start with token buckets at the edge for burst tolerance, then coordinate counters through Redis or another distributed store. Call out')} <b>{text('fail-open vs fail-closed')}</b>.\n355:                   </div>",
+      "surroundingCopy": "384:                   </div>\n385:                 </div>\n386:                 <div class=\"pc-answer\">\n387:                   <div class=\"q\">{text('Answer')} · 2 {text('sources')} · 0.6s</div>\n388:                   <div class=\"a\">\n389:                     {text('Start with token buckets at the edge for burst tolerance, then coordinate counters through Redis or another distributed store. Call out')} <b>{text('fail-open vs fail-closed')}</b>.\n390:                   </div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -24187,13 +24197,13 @@
       "kind": "string",
       "sourceText": "Specific pages for the questions people and AI search systems ask.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 564,
+      "sourceLine": 599,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "561:       <div class=\"container\">\n562:         <div class=\"section-head\">\n563:           <span class=\"eyebrow\">{text('Discovery pages')}</span>\n564:           <h2>{text('Specific pages for the questions people and AI search systems ask.')}</h2>\n565:           <p class=\"lead light\">\n566:             {text('ExtraBrain has first-party pages for downloads, privacy, providers, local transcription, use cases, comparisons, release notes, and responsible use.')}\n567:           </p>",
+      "surroundingCopy": "596:       <div class=\"container\">\n597:         <div class=\"section-head\">\n598:           <span class=\"eyebrow\">{text('Discovery pages')}</span>\n599:           <h2>{text('Specific pages for the questions people and AI search systems ask.')}</h2>\n600:           <p class=\"lead light\">\n601:             {text('ExtraBrain has first-party pages for downloads, privacy, providers, local transcription, use cases, comparisons, release notes, and responsible use.')}\n602:           </p>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -24300,13 +24310,13 @@
       "kind": "string",
       "sourceText": "Start with per-user and per-endpoint limits. We care about",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 348,
+      "sourceLine": 383,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "345:                   </div>\n346:                   <div class=\"pc-line\">\n347:                     <span class=\"ts\">14:02:24</span><span class=\"sp\">{text('Host')}</span>\n348:                     <span class=\"t\">{text('Start with per-user and per-endpoint limits. We care about')} <span class=\"hl\">{text('burst traffic')}</span> {text('and graceful fallback.')}</span>\n349:                   </div>\n350:                 </div>\n351:                 <div class=\"pc-answer\">",
+      "surroundingCopy": "380:                   </div>\n381:                   <div class=\"pc-line\">\n382:                     <span class=\"ts\">14:02:24</span><span class=\"sp\">{text('Host')}</span>\n383:                     <span class=\"t\">{text('Start with per-user and per-endpoint limits. We care about')} <span class=\"hl\">{text('burst traffic')}</span> {text('and graceful fallback.')}</span>\n384:                   </div>\n385:                 </div>\n386:                 <div class=\"pc-answer\">",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -24369,13 +24379,13 @@
       "kind": "string",
       "sourceText": "Start with token buckets at the edge for burst tolerance, then coordinate counters through Redis or another distributed store. Call out",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 354,
+      "sourceLine": 389,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "351:                 <div class=\"pc-answer\">\n352:                   <div class=\"q\">{text('Answer')} · 2 {text('sources')} · 0.6s</div>\n353:                   <div class=\"a\">\n354:                     {text('Start with token buckets at the edge for burst tolerance, then coordinate counters through Redis or another distributed store. Call out')} <b>{text('fail-open vs fail-closed')}</b>.\n355:                   </div>\n356:                   <div class=\"srcs\">\n357:                     <span>{text('transcript')} · 14:02:10</span>",
+      "surroundingCopy": "386:                 <div class=\"pc-answer\">\n387:                   <div class=\"q\">{text('Answer')} · 2 {text('sources')} · 0.6s</div>\n388:                   <div class=\"a\">\n389:                     {text('Start with token buckets at the edge for burst tolerance, then coordinate counters through Redis or another distributed store. Call out')} <b>{text('fail-open vs fail-closed')}</b>.\n390:                   </div>\n391:                   <div class=\"srcs\">\n392:                     <span>{text('transcript')} · 14:02:10</span>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -24517,14 +24527,14 @@
       "kind": "string",
       "sourceText": "Students",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 393,
+      "sourceLine": 428,
       "routes": [
         "/"
       ],
       "section": "<div class=\"audience-row\" aria-label={text('Target audiences')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "390:           <span>{text('Engineers')}</span>\n391:           <span>{text('PMs')}</span>\n392:           <span>{text('Founders')}</span>\n393:           <span>{text('Students')}</span>\n394:           <span>{text('Research teams')}</span>\n395:         </div>\n396:       </div>",
+      "surroundingCopy": "425:           <span>{text('Engineers')}</span>\n426:           <span>{text('PMs')}</span>\n427:           <span>{text('Founders')}</span>\n428:           <span>{text('Students')}</span>\n429:           <span>{text('Research teams')}</span>\n430:         </div>\n431:       </div>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -24660,14 +24670,14 @@
       "kind": "string",
       "sourceText": "Supported meeting and interview platforms",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 473,
+      "sourceLine": 508,
       "routes": [
         "/"
       ],
       "section": "<div class=\"compatibility-grid\" aria-label={text('Supported meeting and interview platforms')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "470:             {text('ExtraBrain is designed to stay hidden from screen sharing and screen recording on major video call tools and coding interview environments, while remaining available on your own Mac. Always follow the rules of the interview, employer, school, meeting, or platform.')}\n471:           </p>\n472:         </div>\n473:         <div class=\"compatibility-grid\" aria-label={text('Supported meeting and interview platforms')}>\n474:           {compatibilityPlatforms.map((platform) => (\n475:             <div class=\"platform-chip\">{platform}</div>\n476:           ))}",
+      "surroundingCopy": "505:             {text('ExtraBrain is designed to stay hidden from screen sharing and screen recording on major video call tools and coding interview environments, while remaining available on your own Mac. Always follow the rules of the interview, employer, school, meeting, or platform.')}\n506:           </p>\n507:         </div>\n508:         <div class=\"compatibility-grid\" aria-label={text('Supported meeting and interview platforms')}>\n509:           {compatibilityPlatforms.map((platform) => (\n510:             <div class=\"platform-chip\">{platform}</div>\n511:           ))}",
       "meaningNote": "Translate as natural product copy for interview and meeting workflows, not as generic HR or customer-support copy.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -24736,14 +24746,14 @@
       "kind": "string",
       "sourceText": "System design interview · live",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 325,
+      "sourceLine": 360,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-visual\" aria-label={text('ExtraBrain product mockup')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "322:                   <span class=\"live-dot\" aria-hidden=\"true\"></span>\n323:                   <div>\n324:                     <div class=\"lbl\">{text('Live session')}</div>\n325:                     <div class=\"val\">{text('System design interview · live')}</div>\n326:                   </div>\n327:                   <div class=\"time-code\">14:02</div>\n328:                 </div>",
+      "surroundingCopy": "357:                   <span class=\"live-dot\" aria-hidden=\"true\"></span>\n358:                   <div>\n359:                     <div class=\"lbl\">{text('Live session')}</div>\n360:                     <div class=\"val\">{text('System design interview · live')}</div>\n361:                   </div>\n362:                   <div class=\"time-code\">14:02</div>\n363:                 </div>",
       "meaningNote": "Translate as natural product copy for interview and meeting workflows, not as generic HR or customer-support copy.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -24808,14 +24818,14 @@
       "kind": "string",
       "sourceText": "Talk to us",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 205,
+      "sourceLine": 230,
       "routes": [
         "/"
       ],
       "section": ": sourceTier.name === 'Pro'",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "202:       ? text('Download for Mac')\n203:       : sourceTier.name === 'Pro'\n204:         ? text('Compare Free and Pro')\n205:         : text('Talk to us');\n206: \n207:   return {\n208:     name: tier.name,",
+      "surroundingCopy": "227:       ? text('Download for Mac')\n228:       : sourceTier.name === 'Pro'\n229:         ? text('Compare Free and Pro')\n230:         : text('Talk to us');\n231: \n232:   return {\n233:     name: tier.name,",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -24826,14 +24836,14 @@
       "kind": "string",
       "sourceText": "Target audiences",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 389,
+      "sourceLine": 424,
       "routes": [
         "/"
       ],
       "section": "<div class=\"audience-row\" aria-label={text('Target audiences')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "386:           <strong>{text('Built for high-stakes live thinking.')}</strong>\n387:           {text(productCategory)}. {text('Available for Mac today, with on-device AI powered by Gemma and provider access you control.')}\n388:         </p>\n389:         <div class=\"audience-row\" aria-label={text('Target audiences')}>\n390:           <span>{text('Engineers')}</span>\n391:           <span>{text('PMs')}</span>\n392:           <span>{text('Founders')}</span>",
+      "surroundingCopy": "421:           <strong>{text('Built for high-stakes live thinking.')}</strong>\n422:           {text(productCategory)}. {text('Available for Mac today, with on-device AI powered by Gemma and provider access you control.')}\n423:         </p>\n424:         <div class=\"audience-row\" aria-label={text('Target audiences')}>\n425:           <span>{text('Engineers')}</span>\n426:           <span>{text('PMs')}</span>\n427:           <span>{text('Founders')}</span>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -25259,13 +25269,13 @@
       "kind": "string",
       "sourceText": "The help center keeps installation, provider access, privacy, billing, and interview workflow details crawlable and easy to reach from the homepage.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 604,
+      "sourceLine": 639,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "601:           <span class=\"eyebrow\">{text('Pick your path')}</span>\n602:           <h2>{text('Get set up with the guide that matches your workflow.')}</h2>\n603:           <p class=\"lead light\">\n604:             {text('The help center keeps installation, provider access, privacy, billing, and interview workflow details crawlable and easy to reach from the homepage.')}\n605:           </p>\n606:         </div>\n607:         <div class=\"related-grid\">",
+      "surroundingCopy": "636:           <span class=\"eyebrow\">{text('Pick your path')}</span>\n637:           <h2>{text('Get set up with the guide that matches your workflow.')}</h2>\n638:           <p class=\"lead light\">\n639:             {text('The help center keeps installation, provider access, privacy, billing, and interview workflow details crawlable and easy to reach from the homepage.')}\n640:           </p>\n641:         </div>\n642:         <div class=\"related-grid\">",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -25542,13 +25552,13 @@
       "kind": "string",
       "sourceText": "Tradeoff",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 368,
+      "sourceLine": 403,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "365:                   <div class=\"lbl\">{text('Saved facts')}</div>\n366:                   <div class=\"fact\"><b>{text('Rate limiter')}</b> · {text('public API')}</div>\n367:                   <div class=\"fact\">{text('Burst traffic')}: <b>{text('edge token buckets')}</b></div>\n368:                   <div class=\"fact\">{text('Tradeoff')}: {text('fail-open vs fail-closed')}</div>\n369:                 </div>\n370:               </div>\n371: ",
+      "surroundingCopy": "400:                   <div class=\"lbl\">{text('Saved facts')}</div>\n401:                   <div class=\"fact\"><b>{text('Rate limiter')}</b> · {text('public API')}</div>\n402:                   <div class=\"fact\">{text('Burst traffic')}: <b>{text('edge token buckets')}</b></div>\n403:                   <div class=\"fact\">{text('Tradeoff')}: {text('fail-open vs fail-closed')}</div>\n404:                 </div>\n405:               </div>\n406: ",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -25595,14 +25605,13 @@
       "kind": "string",
       "sourceText": "transcript",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 29,
+      "sourceLine": 48,
       "routes": [
         "/"
       ],
-      "section": "type PricingTierCta = { label: string; href: string };",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "26: const text = (source: string) => t(locale, source);\n27: \n28: const pageTitle = text('ExtraBrain - Local-First AI Interview & Meeting Copilot');\n29: const pageDescription = text('Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.');\n30: \n31: const downloadHref = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest';\n32: const feedbackHref = `mailto:${contactEmail}?subject=ExtraBrain%20feedback`;",
+      "surroundingCopy": "45: }\n46: \n47: const pageTitle = text('ExtraBrain - Local-First AI Interview & Meeting Copilot');\n48: const pageDescription = text('Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.');\n49: const heroTitleSegments = accentedSegments(text('Desktop AI [[accent]]interview[[/accent]] and meeting copilot.'));\n50: const heroLeadSegments = accentedSegments(\n51:   text(",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -25725,13 +25734,13 @@
       "kind": "string",
       "sourceText": "Transcript-aware answers, saved facts, and follow-ups while the call is still active.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 375,
+      "sourceLine": 410,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "372:               <div class=\"stat-float\">\n373:                 <div class=\"label\">{text('Session memory')}</div>\n374:                 <div class=\"value\">{text('Live context')}</div>\n375:                 <div class=\"sub\">{text('Transcript-aware answers, saved facts, and follow-ups while the call is still active.')}</div>\n376:               </div>\n377:             </div>\n378:           </div>",
+      "surroundingCopy": "407:               <div class=\"stat-float\">\n408:                 <div class=\"label\">{text('Session memory')}</div>\n409:                 <div class=\"value\">{text('Live context')}</div>\n410:                 <div class=\"sub\">{text('Transcript-aware answers, saved facts, and follow-ups while the call is still active.')}</div>\n411:               </div>\n412:             </div>\n413:           </div>",
       "meaningNote": "Preserve the exact privacy, data-flow, and provider-routing claim. Do not soften or exaggerate it.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -25842,13 +25851,13 @@
       "kind": "string",
       "sourceText": "Troubleshooting",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 700,
+      "sourceLine": 735,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "697:       <div>\n698:         <h2 class=\"footer-heading\">{text('Support')}</h2>\n699:         <a href={link('/help/getting-started/')}>{text('Getting started')}</a>\n700:         <a href={link('/help/troubleshooting/')}>{text('Troubleshooting')}</a>\n701:         <a href={link('/providers/')}>{text('Providers')}</a>\n702:         <a href=\"https://github.com/ExtraBrainApp/ExtraBrain-releases/releases\" data-track=\"all_releases_clicked\">GitHub</a>\n703:         <a href={feedbackHref} data-feedback-trigger>{text('Send Feedback')}</a>",
+      "surroundingCopy": "732:       <div>\n733:         <h2 class=\"footer-heading\">{text('Support')}</h2>\n734:         <a href={link('/help/getting-started/')}>{text('Getting started')}</a>\n735:         <a href={link('/help/troubleshooting/')}>{text('Troubleshooting')}</a>\n736:         <a href={link('/providers/')}>{text('Providers')}</a>\n737:         <a href=\"https://github.com/ExtraBrainApp/ExtraBrain-releases/releases\" data-track=\"all_releases_clicked\">GitHub</a>\n738:         <a href={feedbackHref} data-feedback-trigger>{text('Send Feedback')}</a>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -25877,14 +25886,14 @@
       "kind": "string",
       "sourceText": "Trust and control",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 487,
+      "sourceLine": 522,
       "routes": [
         "/"
       ],
       "section": "<div class=\"compatibility-grid\" aria-label={text('Supported meeting and interview platforms')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "484:     <section class=\"dark-section section-band--odd\" id=\"trust\">\n485:       <div class=\"container\">\n486:         <div class=\"section-head\">\n487:           <span class=\"eyebrow\">{text('Trust and control')}</span>\n488:           <h2>{text('Local-first control belongs in the main product story.')}</h2>\n489:           <p class=\"lead\">\n490:             {text('ExtraBrain can keep requests on your device when you use Gemma-powered on-device AI and local Parakeet transcription. Privacy still depends on your selected setup, including what you send to optional model and transcription providers.')}",
+      "surroundingCopy": "519:     <section class=\"dark-section section-band--odd\" id=\"trust\">\n520:       <div class=\"container\">\n521:         <div class=\"section-head\">\n522:           <span class=\"eyebrow\">{text('Trust and control')}</span>\n523:           <h2>{text('Local-first control belongs in the main product story.')}</h2>\n524:           <p class=\"lead\">\n525:             {text('ExtraBrain can keep requests on your device when you use Gemma-powered on-device AI and local Parakeet transcription. Privacy still depends on your selected setup, including what you send to optional model and transcription providers.')}",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -26249,14 +26258,14 @@
       "kind": "string",
       "sourceText": "Use cases",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 272,
+      "sourceLine": 297,
       "routes": [
         "/"
       ],
       "section": "<nav class=\"nav-links\" aria-label={text('Primary navigation')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "269:       </a>\n270:       <nav class=\"nav-links\" aria-label={text('Primary navigation')}>\n271:         <a href=\"#overview\">{text('Product')}</a>\n272:         <a href=\"#workflows\">{text('Use cases')}</a>\n273:         <a href={link('/download/')}>{text('Download')}</a>\n274:         <a href={link('/pricing/')}>{text('Pricing')}</a>\n275:         <a href={link('/privacy/')}>{text('Privacy')}</a>",
+      "surroundingCopy": "294:       </a>\n295:       <nav class=\"nav-links\" aria-label={text('Primary navigation')}>\n296:         <a href=\"#overview\">{text('Product')}</a>\n297:         <a href=\"#workflows\">{text('Use cases')}</a>\n298:         <a href={link('/download/')}>{text('Download')}</a>\n299:         <a href={link('/pricing/')}>{text('Pricing')}</a>\n300:         <a href={link('/privacy/')}>{text('Privacy')}</a>",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -26377,13 +26386,13 @@
       "kind": "string",
       "sourceText": "Use ExtraBrain as a private thinking layer during high-pressure live work: interviews, meetings, customer calls, lectures, and research conversations.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 449,
+      "sourceLine": 484,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "446:           <span class=\"eyebrow\">{text('Use cases')}</span>\n447:           <h2>{text('Designed for moments where context moves faster than notes.')}</h2>\n448:           <p class=\"lead light\">\n449:             {text('Use ExtraBrain as a private thinking layer during high-pressure live work: interviews, meetings, customer calls, lectures, and research conversations.')}\n450:           </p>\n451:         </div>\n452: ",
+      "surroundingCopy": "481:           <span class=\"eyebrow\">{text('Use cases')}</span>\n482:           <h2>{text('Designed for moments where context moves faster than notes.')}</h2>\n483:           <p class=\"lead light\">\n484:             {text('Use ExtraBrain as a private thinking layer during high-pressure live work: interviews, meetings, customer calls, lectures, and research conversations.')}\n485:           </p>\n486:         </div>\n487: ",
       "meaningNote": "Translate as natural product copy for interview and meeting workflows, not as generic HR or customer-support copy.",
       "protectedTerms": [
         "ExtraBrain"
@@ -28847,14 +28856,14 @@
       "kind": "string",
       "sourceText": "Windows & Linux planned",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 313,
+      "sourceLine": 348,
       "routes": [
         "/"
       ],
       "section": "<div class=\"hero-mini\" aria-label={text('Product highlights')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "310:             <span>{text('Optional Deepgram')}</span>\n311:             <span>{text('OpenAI, Anthropic, Claude, Codex')}</span>\n312:             <span>{text('Available for Mac today')}</span>\n313:             <span>{text('Windows & Linux planned')}</span>\n314:           </div>\n315:         </div>\n316: ",
+      "surroundingCopy": "345:             <span>{text('Optional Deepgram')}</span>\n346:             <span>{text('OpenAI, Anthropic, Claude, Codex')}</span>\n347:             <span>{text('Available for Mac today')}</span>\n348:             <span>{text('Windows & Linux planned')}</span>\n349:           </div>\n350:         </div>\n351: ",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [
         "Windows",
@@ -29026,14 +29035,14 @@
       "kind": "string",
       "sourceText": "Works invisibly across the interview and meeting platforms people actually use.",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 468,
+      "sourceLine": 503,
       "routes": [
         "/"
       ],
       "section": "<div class=\"prompt-cloud\" aria-label={text('ExtraBrain prompt cards by workflow')}>",
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "465:       <div class=\"container\">\n466:         <div class=\"section-head\">\n467:           <span class=\"eyebrow\">{text('Compatibility')}</span>\n468:           <h2>{text('Works invisibly across the interview and meeting platforms people actually use.')}</h2>\n469:           <p class=\"lead\">\n470:             {text('ExtraBrain is designed to stay hidden from screen sharing and screen recording on major video call tools and coding interview environments, while remaining available on your own Mac. Always follow the rules of the interview, employer, school, meeting, or platform.')}\n471:           </p>",
+      "surroundingCopy": "500:       <div class=\"container\">\n501:         <div class=\"section-head\">\n502:           <span class=\"eyebrow\">{text('Compatibility')}</span>\n503:           <h2>{text('Works invisibly across the interview and meeting platforms people actually use.')}</h2>\n504:           <p class=\"lead\">\n505:             {text('ExtraBrain is designed to stay hidden from screen sharing and screen recording on major video call tools and coding interview environments, while remaining available on your own Mac. Always follow the rules of the interview, employer, school, meeting, or platform.')}\n506:           </p>",
       "meaningNote": "Translate as natural product copy for interview and meeting workflows, not as generic HR or customer-support copy.",
       "protectedTerms": [],
       "protectedInlineTokens": [],
@@ -29695,13 +29704,13 @@
       "kind": "string",
       "sourceText": "You",
       "sourceFile": "src/pages/index.astro",
-      "sourceLine": 56,
+      "sourceLine": 81,
       "routes": [
         "/"
       ],
       "contentType": "homepage marketing copy",
       "audience": "website visitor, buyer, developer, or help-center reader",
-      "surroundingCopy": "53:   'Which AI providers does ExtraBrain support?':\n54:     'ExtraBrain supports on-device AI powered by Gemma, plus provider access you control: OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription modes.',\n55:   'Can I bring my own OpenAI or Anthropic key?':\n56:     'Yes. ExtraBrain is built around provider access you control. You can use on-device AI powered by Gemma, or connect your own OpenAI, Anthropic, custom OpenAI-compatible endpoint, Claude Subscription, or Codex Subscription setup.',\n57:   'How is ExtraBrain different from InterviewCoder, Cluely, or Final Round AI?':\n58:     'ExtraBrain is local-first, free to start, desktop-native, and built around on-device AI powered by Gemma plus provider access you control. It is available for Mac today, with Windows and Linux planned. It emphasizes model choice, data-flow clarity, responsible use, and live interview or meeting context rather than bundled AI credits alone.',\n59: };",
+      "surroundingCopy": "78:   'Which AI providers does ExtraBrain support?':\n79:     'ExtraBrain supports on-device AI powered by Gemma, plus provider access you control: OpenAI, Anthropic, custom OpenAI-compatible endpoints, Claude Subscription, and Codex Subscription modes.',\n80:   'Can I bring my own OpenAI or Anthropic key?':\n81:     'Yes. ExtraBrain is built around provider access you control. You can use on-device AI powered by Gemma, or connect your own OpenAI, Anthropic, custom OpenAI-compatible endpoint, Claude Subscription, or Codex Subscription setup.',\n82:   'How is ExtraBrain different from InterviewCoder, Cluely, or Final Round AI?':\n83:     'ExtraBrain is local-first, free to start, desktop-native, and built around on-device AI powered by Gemma plus provider access you control. It is available for Mac today, with Windows and Linux planned. It emphasizes model choice, data-flow clarity, responsible use, and live interview or meeting context rather than bundled AI credits alone.',\n84: };",
       "meaningNote": "Translate naturally for homepage marketing copy; preserve intent over literal English wording.",
       "protectedTerms": [],
       "protectedInlineTokens": [],

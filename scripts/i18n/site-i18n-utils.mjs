@@ -92,7 +92,9 @@ export function protectedTermPattern(term) {
 
 export function protectedInlineTokens(source) {
   return [
-    ...source.matchAll(/`[^`]+`|https?:\/\/[^\s)]+|\/[A-Za-z0-9_./#?=&%+-]+|\$\d+(?:\.\d+)?(?:\/(?:month|year|mo|yr))?|\b\d+(?:\.\d+)?\s*(?:MB|GB)\b/g),
+    ...source.matchAll(
+      /\[\[\/?accent\]\]|`[^`]+`|https?:\/\/[^\s)]+|\/[A-Za-z0-9_./#?=&%+-]+|\$\d+(?:\.\d+)?(?:\/(?:month|year|mo|yr))?|\b\d+(?:\.\d+)?\s*(?:MB|GB)\b/g,
+    ),
   ].map((match) => match[0]);
 }
 

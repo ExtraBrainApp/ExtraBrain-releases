@@ -20,13 +20,38 @@ type BillingOption = { label: string; price: string; originalPrice?: string; not
 type PricingTierCta = { label: string; href: string };
 type PricingTierExtras = { billingOptions?: BillingOption[]; primaryCta?: PricingTierCta };
 type HomepagePricingCopy = { summary?: string; features?: string[] };
+type AccentedSegment = { text: string; accented: boolean };
 
 const locale = (Astro.props.locale ?? defaultLocale) as Locale;
 const link = (path: string) => localizePath(path, locale);
 const text = (source: string) => t(locale, source);
 
+function accentedSegments(source: string): AccentedSegment[] {
+  const segments: AccentedSegment[] = [];
+  const pattern = /\[\[accent\]\]([\s\S]*?)\[\[\/accent\]\]/g;
+  let lastIndex = 0;
+
+  for (const match of source.matchAll(pattern)) {
+    if (match.index === undefined) continue;
+    const before = source.slice(lastIndex, match.index);
+    if (before) segments.push({ text: before, accented: false });
+    segments.push({ text: match[1], accented: true });
+    lastIndex = match.index + match[0].length;
+  }
+
+  const after = source.slice(lastIndex);
+  if (after) segments.push({ text: after, accented: false });
+  return segments.length > 0 ? segments : [{ text: source, accented: false }];
+}
+
 const pageTitle = text('ExtraBrain - Local-First AI Interview & Meeting Copilot');
 const pageDescription = text('Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.');
+const heroTitleSegments = accentedSegments(text('Desktop AI [[accent]]interview[[/accent]] and meeting copilot.'));
+const heroLeadSegments = accentedSegments(
+  text(
+    'ExtraBrain is a [[accent]]free, local-first[[/accent]] desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow [[accent]]live conversations[[/accent]] with transcription, [[accent]]screen-aware context[[/accent]], on-device AI powered by Gemma, [[accent]]BYO AI providers[[/accent]], and [[accent]]privacy controls[[/accent]]. Available for Mac today, with Windows and Linux planned.'
+  )
+);
 
 const downloadHref = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest';
 const feedbackHref = `mailto:${contactEmail}?subject=ExtraBrain%20feedback`;
@@ -292,9 +317,19 @@ const compatibilityPlatforms = [
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="hero-kicker">{text('Free local-first desktop copilot')}</div>
-          <h1 id="hero-title">{text('Desktop AI interview and meeting copilot.')}</h1>
+          <h1 id="hero-title">
+            {
+              heroTitleSegments.map((segment) =>
+                segment.accented ? <span class="hero-title-accent">{segment.text}</span> : segment.text,
+              )
+            }
+          </h1>
           <p class="lead">
-            {text('ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow live conversations with transcription, screen-aware context, on-device AI powered by Gemma, BYO AI providers, and privacy controls. Available for Mac today, with Windows and Linux planned.')}
+            {
+              heroLeadSegments.map((segment) =>
+                segment.accented ? <strong class="hero-lead-accent">{segment.text}</strong> : segment.text,
+              )
+            }
           </p>
           <div class="hero-ctas">
             <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-hero">

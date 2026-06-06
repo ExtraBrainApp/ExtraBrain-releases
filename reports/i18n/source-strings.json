@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-06T07:04:02.217Z",
+  "generatedAt": "2026-06-06T07:54:22.839Z",
   "strings": [
     {
       "source": "src/components/FeedbackForm.astro",
@@ -1279,7 +1279,7 @@
     },
     {
       "source": "src/pages/index.astro",
-      "text": "Desktop AI interview and meeting copilot."
+      "text": "Desktop AI [[accent]]interview[[/accent]] and meeting copilot."
     },
     {
       "source": "src/data/comparisons.ts",
@@ -1710,12 +1710,12 @@
       "text": "ExtraBrain home"
     },
     {
-      "source": "src/data/product.ts",
-      "text": "ExtraBrain is a desktop app rather than another participant joining the room, which helps keep the workflow private and under your control."
+      "source": "src/pages/index.astro",
+      "text": "ExtraBrain is a [[accent]]free, local-first[[/accent]] desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow [[accent]]live conversations[[/accent]] with transcription, [[accent]]screen-aware context[[/accent]], on-device AI powered by Gemma, [[accent]]BYO AI providers[[/accent]], and [[accent]]privacy controls[[/accent]]. Available for Mac today, with Windows and Linux planned."
     },
     {
-      "source": "src/pages/index.astro",
-      "text": "ExtraBrain is a free, local-first desktop AI interview and meeting copilot. It helps engineers, candidates, students, founders, and meeting leads follow live conversations with transcription, screen-aware context, on-device AI powered by Gemma, BYO AI providers, and privacy controls. Available for Mac today, with Windows and Linux planned."
+      "source": "src/data/product.ts",
+      "text": "ExtraBrain is a desktop app rather than another participant joining the room, which helps keep the workflow private and under your control."
     },
     {
       "source": "src/data/product.ts",
