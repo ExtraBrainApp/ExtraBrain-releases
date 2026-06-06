@@ -841,6 +841,367 @@ const baseMarketingPages: MarketingPage[] = [
     ],
   },
   {
+    slug: 'use-cases/ai-assistant-for-meetings',
+    title: 'AI Meeting Assistant for Mac — ExtraBrain',
+    description:
+      'Use ExtraBrain as an AI meeting assistant for Mac with live transcription, screen context, meeting notes, decisions, risks, follow-ups, private local history, and no meeting bot.',
+    eyebrow: 'AI meeting assistant for Mac',
+    h1: 'AI meeting assistant for Mac that runs on your desktop.',
+    lead:
+      'ExtraBrain helps you follow live meetings, capture context, organize decisions, and prepare follow-ups from a desktop assistant instead of a bot that joins the call.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Compare meeting copilot workflows', href: '/use-cases/meeting-copilot/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'What it helps with',
+        items: [
+          { title: 'Live meeting notes', body: 'Capture decisions, risks, objections, owners, unresolved questions, and customer pain points while the conversation is moving.', href: '/use-cases/meeting-copilot/' },
+          { title: 'Transcript-aware context', body: 'Use live transcription plus selected screen context to turn messy discussion into clearer prompts, notes, and summaries.', href: '/features/live-transcription-ai-assistant/' },
+          { title: 'Private desktop workflow', body: 'Run the assistant on your Mac without adding a bot participant to Zoom, Google Meet, Microsoft Teams, or similar calls.', href: '/features/private-ai-assistant/' },
+          { title: 'Post-meeting follow-through', body: 'Review local session history and turn meetings into summaries, action items, saved facts, and next-call context.' },
+        ],
+      },
+      {
+        title: 'How it works',
+        items: [
+          { title: 'Start the session', body: 'Open ExtraBrain before the meeting, choose your transcription and AI provider path, and confirm what context is appropriate to capture.' },
+          { title: 'Ask meeting prompts', body: 'Prompt for decisions, blockers, risks, owners, customer quotes, follow-up questions, or concise notes while the call continues.' },
+          { title: 'Review and link context', body: 'Use session history after the call and connect related workflows such as meeting copilot, AI note taking, and private transcription.', href: '/use-cases/ai-note-taker-for-mac/' },
+        ],
+      },
+      {
+        title: 'Related AI assistant pages',
+        items: [
+          { title: 'Meeting copilot', body: 'Compare the meeting copilot workflow for decisions, risks, and follow-ups.', href: '/use-cases/meeting-copilot/' },
+          { title: 'AI assistant for video calls', body: 'Use ExtraBrain with Zoom, Google Meet, Microsoft Teams, and similar calls.', href: '/use-cases/ai-assistant-for-video-calls/' },
+          { title: 'Private AI assistant', body: 'Review local-first privacy, provider routing, and data path controls.', href: '/features/private-ai-assistant/' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What is an AI assistant for meetings?', answer: 'An AI assistant for meetings helps capture live conversation, organize decisions, summarize context, and prepare follow-ups. ExtraBrain does this from a Mac desktop app rather than a meeting bot.' },
+      { question: 'Does ExtraBrain join meetings as a bot?', answer: 'No. ExtraBrain runs locally as a desktop app and does not appear as another meeting participant.' },
+      { question: 'Can ExtraBrain help after the meeting?', answer: 'Yes. ExtraBrain can turn local session context into summaries, action items, saved facts, review notes, and follow-up prompts.' },
+      { question: 'Which meeting apps does this support?', answer: 'ExtraBrain is designed for live meeting workflows across Zoom, Google Meet, Microsoft Teams, Webex, Slack Huddles, Discord, and similar desktop calls.' },
+    ],
+  },
+  {
+    slug: 'use-cases/meeting-copilot',
+    title: 'AI Meeting Copilot for Mac — ExtraBrain',
+    description:
+      'ExtraBrain is an AI meeting copilot for Mac that captures live notes, decisions, risks, owners, objections, summaries, and follow-ups without joining as a bot.',
+    eyebrow: 'AI meeting copilot',
+    h1: 'AI meeting copilot for live decisions, notes, and follow-ups.',
+    lead:
+      'Use ExtraBrain as a desktop meeting copilot when you need help staying present, tracking decisions, and turning fast conversation into useful notes.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'AI assistant for meetings', href: '/use-cases/ai-assistant-for-meetings/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'What it helps with',
+        items: [
+          { title: 'Decision tracking', body: 'Separate decisions, open questions, risks, owners, blockers, and next steps as the discussion changes.' },
+          { title: 'Customer and research calls', body: 'Capture objections, quotes, pain points, roadmap signals, and follow-up questions without losing the thread.' },
+          { title: 'Meeting summaries', body: 'Turn session context into summaries and review notes after the call while details are still fresh.', href: '/use-cases/ai-note-taker-for-mac/' },
+          { title: 'Screen context', body: 'Use selected visible context from slides, docs, tickets, or notes alongside the transcript.', href: '/features/screen-context-ai-assistant/' },
+        ],
+      },
+      {
+        title: 'Desktop copilot workflow',
+        items: [
+          { title: 'Before', body: 'Choose a profile and confirm the privacy path for transcription, AI provider, and screenshots.' },
+          { title: 'During', body: 'Ask for concise notes, risks, objections, decisions, and follow-up questions without switching away from the conversation.' },
+          { title: 'After', body: 'Review the local session, delete what you do not need, and turn relevant context into reusable notes.' },
+        ],
+      },
+      {
+        title: 'Backlinks and related workflows',
+        items: [
+          { title: 'Existing meeting use case', body: 'Read the canonical meeting use-case page for the broader ExtraBrain meeting workflow.', href: '/use-cases/meetings/' },
+          { title: 'AI assistant for video calls', body: 'Use meeting copilot workflows across Zoom, Meet, Teams, and other calls.', href: '/use-cases/ai-assistant-for-video-calls/' },
+          { title: 'Live transcription assistant', body: 'Pair the copilot workflow with live transcription and local session history.', href: '/features/live-transcription-ai-assistant/' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What is a meeting copilot?', answer: 'A meeting copilot helps you follow live discussion, organize notes, identify decisions, and prepare follow-ups. ExtraBrain does this from a Mac desktop workflow.' },
+      { question: 'How is ExtraBrain different from a meeting bot?', answer: 'ExtraBrain does not join the participant list. It runs as a desktop app you control, with local-first options where configured.' },
+      { question: 'Can a meeting copilot help with customer calls?', answer: 'Yes. It can help track customer pain points, quotes, objections, next steps, risks, and roadmap signals.' },
+    ],
+  },
+  {
+    slug: 'use-cases/ai-note-taker-for-mac',
+    title: 'AI Note Taker for Mac — Private Meeting Notes with ExtraBrain',
+    description:
+      'Use ExtraBrain as a private AI note taker for Mac with live transcription, AI meeting notes, screen context, summaries, local session history, and no meeting bot.',
+    eyebrow: 'AI note taker for Mac',
+    h1: 'Private AI note taker for Mac meetings, interviews, and calls.',
+    lead:
+      'ExtraBrain turns live conversation into structured notes, summaries, action items, and saved context while keeping the workflow in a Mac desktop app.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Review privacy controls', href: '/privacy/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'What it helps with',
+        items: [
+          { title: 'Meeting notes', body: 'Capture decisions, action items, owners, risks, and open questions from live calls.', href: '/use-cases/meeting-copilot/' },
+          { title: 'Interview notes', body: 'Keep prompts, constraints, follow-ups, and post-session review notes organized for interview workflows.', href: '/use-cases/coding-interviews/' },
+          { title: 'Research and lectures', body: 'Turn dense explanations into concepts, examples, review questions, and saved facts.' },
+          { title: 'Private notes on Mac', body: 'Use local session history and delete records you no longer need.', href: '/features/private-ai-assistant/' },
+        ],
+      },
+      {
+        title: 'How it works',
+        items: [
+          { title: 'Transcribe live', body: 'Use local Parakeet transcription or optional Deepgram depending on your setup and privacy needs.', href: '/features/live-transcription-ai-assistant/' },
+          { title: 'Add screen context', body: 'Include relevant screenshots or visible context from slides, docs, code, or meeting notes when appropriate.', href: '/features/screen-context-ai-assistant/' },
+          { title: 'Review afterward', body: 'Turn the session into summaries, saved facts, follow-ups, and reusable notes for the next call.' },
+        ],
+      },
+      {
+        title: 'Related AI note workflows',
+        items: [
+          { title: 'AI assistant for meetings', body: 'Use note taking as part of a broader AI meeting assistant workflow.', href: '/use-cases/ai-assistant-for-meetings/' },
+          { title: 'Private AI assistant', body: 'Review how local-first storage, provider choice, and privacy controls work.', href: '/features/private-ai-assistant/' },
+          { title: 'Bring your own AI provider', body: 'Connect provider access you control for notes and summaries.', href: '/features/bring-your-own-ai-provider/' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What is an AI note taker for Mac?', answer: 'An AI note taker for Mac captures live conversation and helps turn it into structured notes, summaries, action items, and review context.' },
+      { question: 'Can ExtraBrain take notes without a meeting bot?', answer: 'Yes. ExtraBrain runs as a Mac desktop app instead of joining the call as a bot.' },
+      { question: 'Can notes stay local?', answer: 'Local session records can stay on your Mac. External providers receive content only when you choose features that send context to them.' },
+    ],
+  },
+  {
+    slug: 'use-cases/ai-assistant-for-video-calls',
+    title: 'AI Assistant for Video Calls, Zoom, Meet & Teams — ExtraBrain',
+    description:
+      'Use ExtraBrain as an AI assistant for video calls across Zoom, Google Meet, Microsoft Teams, Webex, Slack Huddles, and Discord with live transcription, screen context, and private notes.',
+    eyebrow: 'AI assistant for video calls',
+    h1: 'AI assistant for video calls, Zoom, Meet, and Teams.',
+    lead:
+      'ExtraBrain helps you follow live video calls, capture transcript context, and organize notes while staying available in your own desktop workflow.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Explore meeting assistant workflow', href: '/use-cases/ai-assistant-for-meetings/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'Video call workflows',
+        items: [
+          { title: 'Zoom calls', body: 'Use ExtraBrain during Zoom meetings, interviews, lectures, research calls, and customer conversations.' },
+          { title: 'Google Meet and Teams', body: 'Follow live discussion, notes, and screen context across Google Meet and Microsoft Teams desktop workflows.' },
+          { title: 'Webex, Slack Huddles, and Discord', body: 'Use the same transcript-aware assistant workflow across other live call tools where your setup allows it.' },
+          { title: 'Interview platforms', body: 'Pair video-call context with coding, system design, and behavioral interview workflows.', href: '/use-cases/coding-interviews/' },
+        ],
+      },
+      {
+        title: 'How it works',
+        items: [
+          { title: 'Capture audio context', body: 'Use live transcription to track what is said during the call.', href: '/features/live-transcription-ai-assistant/' },
+          { title: 'Use screen context', body: 'Add selected context from shared screens, docs, code, slides, or notes when appropriate.', href: '/features/screen-context-ai-assistant/' },
+          { title: 'Keep privacy in view', body: 'Use only providers and capture settings that fit the call, company, school, and platform rules.', href: '/privacy/' },
+        ],
+      },
+      {
+        title: 'Related video call pages',
+        items: [
+          { title: 'Meeting copilot', body: 'Use a meeting copilot workflow for decisions, risks, and follow-ups.', href: '/use-cases/meeting-copilot/' },
+          { title: 'AI note taker for Mac', body: 'Turn calls into private notes, summaries, and session history.', href: '/use-cases/ai-note-taker-for-mac/' },
+          { title: 'Private AI assistant', body: 'Review local-first and provider-routed data paths.', href: '/features/private-ai-assistant/' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain work with Zoom?', answer: 'Yes. ExtraBrain is designed for Zoom and similar Mac video-call workflows.' },
+      { question: 'Can ExtraBrain work with Google Meet and Microsoft Teams?', answer: 'Yes. ExtraBrain supports live meeting workflows across Google Meet, Microsoft Teams, and other desktop call tools.' },
+      { question: 'Does ExtraBrain appear in the video call?', answer: 'No. ExtraBrain is a desktop app and does not join as a meeting participant.' },
+    ],
+  },
+  {
+    slug: 'features/private-ai-assistant',
+    title: 'Private AI Assistant for Mac — Local-First ExtraBrain',
+    description:
+      'ExtraBrain is a private AI assistant for Mac with local-first storage, local transcription, on-device AI where configured, BYO AI providers, privacy controls, and data-path clarity.',
+    eyebrow: 'Private AI assistant for Mac',
+    h1: 'Private AI assistant for Mac with local-first controls.',
+    lead:
+      'ExtraBrain is built for people who want a desktop AI assistant for meetings, interviews, notes, and calls while keeping control over what is captured and which providers are used.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Read full privacy page', href: '/privacy/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'Privacy controls',
+        items: [
+          { title: 'Local-first session history', body: 'Keep transcripts, screenshots, notes, analyses, and saved facts on your Mac unless you delete them or send selected context to a provider.' },
+          { title: 'Local transcription option', body: 'Use local Parakeet transcription when your setup supports it, or choose optional Deepgram when cloud transcription fits.', href: '/features/local-transcription/' },
+          { title: 'On-device AI path', body: 'Use local Gemma 4 where installed and compatible for local model requests.' },
+          { title: 'Provider choice', body: 'Bring OpenAI, Anthropic, Claude, Codex, or compatible provider access you control.', href: '/features/bring-your-own-ai-provider/' },
+        ],
+      },
+      {
+        title: 'Private assistant workflows',
+        items: [
+          { title: 'Meetings', body: 'Use ExtraBrain as a private AI assistant for meetings and follow-ups.', href: '/use-cases/ai-assistant-for-meetings/' },
+          { title: 'Video calls', body: 'Use desktop AI support across Zoom, Google Meet, Teams, Webex, Slack Huddles, and Discord.', href: '/use-cases/ai-assistant-for-video-calls/' },
+          { title: 'Notes', body: 'Turn calls into local notes, summaries, action items, and saved context.', href: '/use-cases/ai-note-taker-for-mac/' },
+        ],
+      },
+      {
+        title: 'Data-path checklist',
+        items: [
+          { title: 'Pick local or external', body: 'Choose whether transcription, model requests, and screenshots should stay local or use external providers.' },
+          { title: 'Limit context', body: 'Send only the transcript excerpts, screenshots, and prompts that are necessary.' },
+          { title: 'Review policies', body: 'Check workplace, school, interview, and provider policies before sensitive sessions.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What is a private AI assistant?', answer: 'A private AI assistant gives users more control over local storage, provider routing, context capture, and deletion. ExtraBrain is local-first and supports local or BYO provider setups.' },
+      { question: 'Is ExtraBrain fully local?', answer: 'It can be fully local when local Parakeet transcription and local Gemma 4 are installed and compatible. External providers receive content only when you choose those routes.' },
+      { question: 'Can I delete local session records?', answer: 'Yes. ExtraBrain supports local session history controls so you can remove records you no longer need.' },
+    ],
+  },
+  {
+    slug: 'features/live-transcription-ai-assistant',
+    title: 'Live Transcription AI Assistant for Meetings & Interviews — ExtraBrain',
+    description:
+      'Use ExtraBrain as a live transcription AI assistant for meetings, interviews, video calls, lectures, and research with real-time transcription, local Parakeet, or optional Deepgram.',
+    eyebrow: 'Live transcription AI assistant',
+    h1: 'Live transcription AI assistant for meetings, calls, and interviews.',
+    lead:
+      'ExtraBrain combines live transcription with prompts, notes, screen context, and provider choice so you can follow fast conversations without losing structure.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Local transcription feature', href: '/features/local-transcription/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'What it helps with',
+        items: [
+          { title: 'Real-time context', body: 'Track questions, constraints, decisions, risks, follow-ups, and important phrases while the call is live.' },
+          { title: 'Meeting summaries', body: 'Turn transcript context into meeting notes, summaries, action items, and next steps.', href: '/use-cases/meeting-copilot/' },
+          { title: 'Interview prompts', body: 'Use transcript context to organize coding, system design, and behavioral interview discussion.', href: '/use-cases/coding-interviews/' },
+          { title: 'Lecture and research review', body: 'Convert dense explanations into concepts, examples, review questions, and saved notes.', href: '/use-cases/ai-note-taker-for-mac/' },
+        ],
+      },
+      {
+        title: 'Transcription choices',
+        items: [
+          { title: 'Local Parakeet', body: 'Use local NVIDIA Parakeet transcription where installed and compatible for local-first workflows.', href: '/features/local-transcription/' },
+          { title: 'Optional Deepgram', body: 'Use optional Deepgram when cloud transcription fits your accuracy, latency, and account preferences.', href: '/providers/' },
+          { title: 'AI provider routing', body: 'Send selected transcript context to the provider path you choose for summaries and prompts.', href: '/features/bring-your-own-ai-provider/' },
+        ],
+      },
+      {
+        title: 'Related transcription pages',
+        items: [
+          { title: 'Private AI assistant', body: 'Review the privacy and local-first implications of live transcription.', href: '/features/private-ai-assistant/' },
+          { title: 'Screen context AI assistant', body: 'Combine live transcript with selected screen context.', href: '/features/screen-context-ai-assistant/' },
+          { title: 'AI assistant for video calls', body: 'Use transcription during Zoom, Meet, Teams, and other calls.', href: '/use-cases/ai-assistant-for-video-calls/' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What is a live transcription AI assistant?', answer: 'It is an assistant that uses a live transcript to help organize context, notes, summaries, questions, and follow-ups during a conversation.' },
+      { question: 'Can ExtraBrain transcribe locally?', answer: 'Yes. ExtraBrain supports local NVIDIA Parakeet transcription where installed and compatible.' },
+      { question: 'Can I use cloud transcription?', answer: 'Yes. ExtraBrain also supports optional Deepgram when you configure it and are comfortable with its provider data path.' },
+    ],
+  },
+  {
+    slug: 'features/bring-your-own-ai-provider',
+    title: 'Bring Your Own AI Provider — OpenAI, Claude, Anthropic & Custom Endpoints',
+    description:
+      'Bring your own AI provider to ExtraBrain with OpenAI, Anthropic, Claude, Codex, custom OpenAI-compatible endpoints, local Gemma 4, and provider-controlled billing and data paths.',
+    eyebrow: 'Bring your own AI provider',
+    h1: 'Bring your own AI provider, API key, or custom endpoint.',
+    lead:
+      'ExtraBrain lets you choose the AI provider path for meetings, interviews, notes, and calls instead of forcing a single hosted model account.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Review providers hub', href: '/providers/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'Provider options',
+        items: [
+          { title: 'OpenAI and Anthropic', body: 'Use provider accounts and API keys you control for model requests.' },
+          { title: 'Claude and Codex subscription modes', body: 'Use supported subscription paths where available in the app.' },
+          { title: 'Compatible endpoints', body: 'Route through compatible providers, proxies, or gateways when your setup supports OpenAI-style behavior.', href: '/features/bring-your-own-provider/' },
+          { title: 'Local Gemma 4', body: 'Use on-device AI powered by Gemma where installed and compatible.', href: '/features/private-ai-assistant/' },
+        ],
+      },
+      {
+        title: 'Why BYO provider matters',
+        items: [
+          { title: 'Cost clarity', body: 'Provider usage, quota, billing, and limits stay in the provider account you choose.' },
+          { title: 'Data-path clarity', body: 'Review each provider for retention, logging, training, and deletion settings before sensitive work.' },
+          { title: 'Workflow flexibility', body: 'Use different provider paths for meeting notes, coding interviews, research calls, or private workflows.' },
+        ],
+      },
+      {
+        title: 'Related provider workflows',
+        items: [
+          { title: 'Private AI assistant', body: 'Understand local-first and external-provider boundaries.', href: '/features/private-ai-assistant/' },
+          { title: 'Live transcription assistant', body: 'Combine provider choice with transcription choices.', href: '/features/live-transcription-ai-assistant/' },
+          { title: 'AI assistant for meetings', body: 'Use your chosen provider path for meeting prompts and summaries.', href: '/use-cases/ai-assistant-for-meetings/' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What does bring your own AI provider mean?', answer: 'It means you connect provider access you control, such as OpenAI, Anthropic, Claude, Codex, local Gemma 4, or a compatible endpoint.' },
+      { question: 'Does ExtraBrain include AI credits?', answer: 'No. Provider billing and quota remain separate from the ExtraBrain app.' },
+      { question: 'Can I use different providers for different workflows?', answer: 'Yes. Provider choice can support different privacy, cost, latency, and model-quality preferences.' },
+    ],
+  },
+  {
+    slug: 'features/screen-context-ai-assistant',
+    title: 'Screen Context AI Assistant for Mac — ExtraBrain',
+    description:
+      'ExtraBrain is a screen context AI assistant for Mac that combines live transcription, screenshots, visible documents, code, meeting slides, and local-first provider controls.',
+    eyebrow: 'Screen context AI assistant for Mac',
+    h1: 'Screen context AI assistant for Mac live work.',
+    lead:
+      'ExtraBrain helps your AI prompts use both what is being said and what is visible on screen, so meetings, interviews, documents, and code stay connected.',
+    primaryCta: defaultCta,
+    secondaryCta: { label: 'Read privacy controls', href: '/privacy/' },
+    schemaType: 'FAQPage',
+    sections: [
+      {
+        title: 'What it helps with',
+        items: [
+          { title: 'Meeting slides and docs', body: 'Use selected screen context from slides, docs, tickets, notes, dashboards, and customer materials.', href: '/use-cases/meeting-copilot/' },
+          { title: 'Coding interviews', body: 'Connect visible code, prompts, examples, and transcript details for clearer technical context.', href: '/use-cases/coding-interviews/' },
+          { title: 'System design discussions', body: 'Keep diagrams, requirements, scale notes, APIs, storage choices, and follow-up questions connected.', href: '/use-cases/system-design-interviews/' },
+          { title: 'Research and lectures', body: 'Pair spoken explanation with visible source material for better notes and review.', href: '/use-cases/ai-note-taker-for-mac/' },
+        ],
+      },
+      {
+        title: 'How it works',
+        items: [
+          { title: 'Capture intentionally', body: 'Use screenshots and screen context only when relevant and allowed for the session.' },
+          { title: 'Combine with transcript', body: 'Pair visible context with live transcription for grounded summaries, prompts, and follow-ups.', href: '/features/live-transcription-ai-assistant/' },
+          { title: 'Choose provider path', body: 'Keep context local where possible or route selected context through the provider you choose.', href: '/features/bring-your-own-ai-provider/' },
+        ],
+      },
+      {
+        title: 'Related screen-aware workflows',
+        items: [
+          { title: 'Private AI assistant', body: 'Review what can stay local and what can leave your Mac.', href: '/features/private-ai-assistant/' },
+          { title: 'AI assistant for video calls', body: 'Use screen context with Zoom, Meet, Teams, and other video calls.', href: '/use-cases/ai-assistant-for-video-calls/' },
+          { title: 'AI note taker for Mac', body: 'Turn visible context and transcripts into useful notes.', href: '/use-cases/ai-note-taker-for-mac/' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What is a screen context AI assistant?', answer: 'It is an AI assistant that can use selected visible screen context alongside live transcript details for more relevant notes, summaries, and prompts.' },
+      { question: 'Can screenshots leave my Mac?', answer: 'Yes, if you include screenshots in a request to an external provider. Use only providers and capture settings that fit the session.' },
+      { question: 'When is screen context useful?', answer: 'It is useful for meetings with slides, coding interviews, system design diagrams, shared docs, customer calls, lectures, and research sessions.' },
+    ],
+  },
+  {
     slug: 'use-cases/meetings',
     title: 'AI Meeting Copilot for Mac',
     description:
