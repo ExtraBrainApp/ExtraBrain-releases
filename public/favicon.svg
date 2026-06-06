@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ExtraBrain">
-  <rect width="64" height="64" rx="14" fill="#121821"/>
-  <circle cx="23" cy="24" r="10" fill="#65d7c7"/>
-  <circle cx="41" cy="24" r="10" fill="#8d68ff"/>
-  <path fill="#f6f4ef" d="M18 38h28v6H18z"/>
-  <path fill="#f6f4ef" d="M21 22h7v20h-7zM36 22h7v20h-7z"/>
-</svg>
