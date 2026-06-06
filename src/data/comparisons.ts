@@ -101,13 +101,13 @@ const comparisonPage = (page: Omit<MarketingPage, 'schemaType'> & { comparison: 
 export const comparisonMarketingPages: MarketingPage[] = [
   {
     slug: 'compare',
-    title: 'AI Interview Assistant Comparisons: ExtraBrain vs Alternatives',
+    title: 'Best AI Interview Assistants Compared — ExtraBrain Alternatives',
     description:
-      'Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, and InterviewBee.',
-    eyebrow: 'Comparisons',
-    h1: 'Compare ExtraBrain with live AI interview assistants.',
+      'Compare ExtraBrain with Cluely, InterviewCoder, Final Round AI, LockedIn AI, ParakeetAI, Linkjob AI, Beyz AI, and InterviewBee for pricing, privacy, and provider control.',
+    eyebrow: 'AI assistant comparisons',
+    h1: 'Compare ExtraBrain with live AI interview and meeting assistants.',
     lead:
-      'Use this hub to compare ExtraBrain against popular real-time interview and meeting assistants. Each page includes who each product is for, pricing notes, tradeoffs, FAQs, and official source links checked on May 12, 2026.',
+      'Use this hub to compare ExtraBrain against popular real-time interview and meeting assistants. Each page includes who each product is for, pricing notes, privacy and provider-control tradeoffs, FAQs, and official source links checked on May 12, 2026.',
     ogImage: '/assets/og/compare.svg',
     primaryCta: defaultCta,
     secondaryCta: { label: 'Read responsible use', href: '/responsible-use/' },

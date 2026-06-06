@@ -238,13 +238,13 @@ const defaultCta = { label: 'Download for Mac', href: '/download/' };
 const baseMarketingPages: MarketingPage[] = [
   {
     slug: 'download',
-    title: 'Download ExtraBrain for macOS',
+    title: 'Download ExtraBrain for Mac — Free AI Interview & Meeting App',
     description:
-      'Download the latest ExtraBrain macOS release, review Mac compatibility, install steps, checksum notes, signing guidance, and release metadata.',
-    eyebrow: 'Download',
-    h1: 'Download the free ExtraBrain macOS app.',
+      'Download ExtraBrain, the free Mac AI interview assistant and meeting copilot. Install the latest macOS app, check compatibility, and set up Extra Brain safely.',
+    eyebrow: 'Download ExtraBrain',
+    h1: 'Download the free ExtraBrain app for Mac.',
     lead:
-      'Use this first-party download page as the canonical place for the latest ExtraBrain Mac release, platform requirements, installation steps, release integrity notes, and troubleshooting before a live interview or meeting.',
+      'Use this first-party download page as the canonical place for the latest ExtraBrain Mac release, platform requirements, installation steps, release integrity notes, and troubleshooting before a live interview or meeting. If you searched for Extra Brain or ExtraBrains, this is the official ExtraBrain download page.',
     primaryCta: { label: 'Download latest release', href: latestReleaseUrl },
     secondaryCta: { label: 'Read installation guide', href: '/help/installation/' },
     schemaType: 'HowTo',
@@ -284,13 +284,13 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'pricing',
-    title: 'ExtraBrain Pricing: Free & Pro Plans for Mac AI Copilot',
+    title: 'ExtraBrain Pricing — Free Mac AI Assistant & Pro Plans',
     description:
-      'ExtraBrain pricing: Free, Pro at $9.99/month ($6.99 Founder), $79/year, $149 Lifetime, BYO provider costs, and Enterprise.',
-    eyebrow: 'Pricing',
-    h1: 'Free to start. Pro from $6.99/month, $79/year, or $149 lifetime.',
+      'See ExtraBrain pricing for the free Mac AI assistant, Pro from $6.99/month, $79/year, $149 Lifetime, BYO provider costs, and Enterprise support.',
+    eyebrow: 'ExtraBrain pricing',
+    h1: 'ExtraBrain pricing: free to start, Pro when you need repeatable workflows.',
     lead:
-      'ExtraBrain separates app features from model usage. The core Mac app is free, Pro unlocks advanced workflow controls, and external AI usage is billed by the providers you choose.',
+      'ExtraBrain, sometimes searched as Extra Brain or ExtraBrains, separates app features from model usage. The core Mac app is free, Pro unlocks advanced workflow controls, and external AI usage is billed by the providers you choose.',
     ogImage: '/assets/og/pricing.svg',
     primaryCta: defaultCta,
     secondaryCta: { label: 'Compare Free and Pro', href: '/pricing/free-vs-pro/' },
@@ -1203,21 +1203,21 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'use-cases/meetings',
-    title: 'AI Meeting Copilot for Mac',
+    title: 'AI Meeting Assistant for Mac — Local-First Meeting Copilot',
     description:
-      'ExtraBrain is a local-first desktop AI meeting copilot that helps with live notes, decisions, risks, and follow-ups without joining as a meeting bot.',
-    eyebrow: 'Use case',
-    h1: 'A meeting copilot that runs on your Mac.',
+      'Use ExtraBrain as an AI meeting assistant for Mac with live notes, decisions, risks, screen context, local transcription options, follow-ups, and no meeting bot.',
+    eyebrow: 'AI meeting assistant for Mac',
+    h1: 'AI meeting assistant for Mac that runs on your desktop.',
     lead:
-      'ExtraBrain helps with decisions, action items, objections, research evidence, and next steps while keeping the assistant in a desktop app you control.',
+      'ExtraBrain helps with decisions, action items, objections, research evidence, and next steps while keeping the AI meeting assistant in a Mac desktop app you control instead of a bot that joins the call.',
     primaryCta: defaultCta,
     sections: [
       {
         title: 'Meeting workflows',
         items: [
-          { title: 'Live notes', body: 'Capture important points, decisions, risks, owners, objections, customer pain points, and unresolved questions while the meeting is still moving.' },
-          { title: 'No meeting bot required', body: 'ExtraBrain is a desktop app rather than another participant joining the room, which helps keep the workflow private and under your control.' },
-          { title: 'Post-session memory', body: 'Turn the session into summaries, follow-ups, saved facts, action items, review notes, and context for the next customer, product, or research conversation.' },
+          { title: 'Live AI meeting notes for Mac', body: 'Capture important points, decisions, risks, owners, objections, customer pain points, and unresolved questions while the meeting is still moving.' },
+          { title: 'No meeting bot required', body: 'ExtraBrain is a desktop app rather than another participant joining Zoom, Google Meet, Microsoft Teams, Webex, or Slack Huddles, which helps keep the workflow private and under your control.' },
+          { title: 'Post-session meeting memory', body: 'Turn the session into summaries, follow-ups, saved facts, action items, review notes, and context for the next customer, product, or research conversation.' },
         ],
       },
       {
@@ -1232,15 +1232,16 @@ const baseMarketingPages: MarketingPage[] = [
         title: 'Desktop app versus meeting agent',
         items: [
           { title: 'Participant list', body: 'ExtraBrain does not join the meeting as another attendee. This is different from notetakers that join Zoom, Google Meet, or Teams as a bot.' },
-          { title: 'Local mode', body: 'Use local Parakeet transcription and local Gemma 4 on-device AI where installed and compatible when the meeting data path should stay on the Mac.' },
+          { title: 'Local-first Mac meeting workflow', body: 'Use local Parakeet transcription and local Gemma 4 on-device AI where installed and compatible when the meeting data path should stay on the Mac.' },
           { title: 'Collaboration tradeoff', body: 'A bot-based meeting agent can be better for shared team workspaces, automatic distribution, or admin-managed archives. ExtraBrain is built for a user-controlled desktop workflow.' },
         ],
       },
     ],
     faq: [
       { question: 'Is ExtraBrain a meeting bot?', answer: 'No. ExtraBrain runs as a desktop app on your Mac instead of joining the meeting as another participant.' },
-      { question: 'What can ExtraBrain capture in meetings?', answer: 'It can help with live notes, decisions, owners, risks, action items, customer pain points, follow-ups, and post-session summaries.' },
+      { question: 'What can an AI meeting assistant for Mac capture?', answer: 'ExtraBrain can help with live notes, decisions, owners, risks, action items, customer pain points, follow-ups, and post-session summaries.' },
       { question: 'Can ExtraBrain work with Zoom, Google Meet, and Teams?', answer: 'ExtraBrain is designed for major meeting tools while remaining a desktop app you control. Always follow workplace and meeting policies.' },
+      { question: 'Can ExtraBrain be a private Mac meeting copilot?', answer: 'Yes. ExtraBrain can run as a private Mac meeting copilot with local transcription and local AI options where installed and compatible, or with provider accounts you choose.' },
       { question: 'How is ExtraBrain different from Otter or other meeting agents?', answer: 'Otter-style tools are usually team meeting agents and transcription workspaces. ExtraBrain focuses on a desktop copilot that can support meetings and interviews without joining the call as a bot.' },
     ],
   },
@@ -1666,13 +1667,13 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'about',
-    title: 'About ExtraBrain AI Copilot',
+    title: 'About ExtraBrain — Private AI Copilot for Interviews & Meetings',
     description:
-      'ExtraBrain builds a local-first Mac AI interview assistant and meeting copilot with local Gemma 4 where installed and compatible, provider choice, and privacy controls.',
-    eyebrow: 'About',
+      'Learn about ExtraBrain, the local-first Mac AI interview assistant and meeting copilot with local Gemma 4, provider choice, privacy controls, and responsible-use guidance.',
+    eyebrow: 'About ExtraBrain',
     h1: 'ExtraBrain helps people stay present during high-stakes live work.',
     lead:
-      'The product is built for interviews, technical discussions, customer calls, lectures, and research conversations where context moves faster than notes.',
+      'ExtraBrain, also searched as Extra Brain or ExtraBrains, is built for interviews, technical discussions, customer calls, lectures, and research conversations where context moves faster than notes.',
     primaryCta: defaultCta,
     sections: [
       {
