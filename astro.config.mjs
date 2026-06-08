@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
-import starlightImageZoom from 'starlight-image-zoom';
 
 const siteUrl = 'https://extrabrain.app';
 const defaultOgImage = `${siteUrl}/assets/images/logo-512.png`;
@@ -185,7 +184,6 @@ export default defineConfig({
           href: 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases',
         },
       ],
-      plugins: [starlightImageZoom()],
       customCss: ['./src/styles/starlight.css'],
       components: {
         Sidebar: './src/components/starlight/Sidebar.astro',
