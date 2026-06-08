@@ -3347,6 +3347,62 @@ h2,
   text-decoration: none;
 }
 
+.blog-pagination {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: clamp(36px, 6vw, 64px) auto 0;
+  max-width: 900px;
+}
+
+.blog-pagination-pages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.blog-pagination-link {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(56, 47, 81, 0.14);
+  border-radius: 999px;
+  box-shadow: 0 14px 38px rgba(39, 31, 62, 0.08);
+  color: var(--text);
+  display: inline-flex;
+  font-size: 15px;
+  font-weight: 800;
+  height: 44px;
+  justify-content: center;
+  min-width: 44px;
+  padding: 0 16px;
+  text-decoration: none;
+}
+
+.blog-pagination-link--wide {
+  min-width: 116px;
+}
+
+.blog-pagination-link:hover {
+  border-color: rgba(88, 67, 179, 0.3);
+  color: var(--editorial-purple-deep);
+  transform: translateY(-1px);
+}
+
+.blog-pagination-link.is-current {
+  background: var(--editorial-purple-deep);
+  border-color: var(--editorial-purple-deep);
+  color: #fff;
+}
+
+.blog-pagination-link.is-disabled {
+  box-shadow: none;
+  color: rgba(40, 35, 54, 0.38);
+  pointer-events: none;
+}
+
 .blog-article-hero-inner {
   max-width: 920px;
 }

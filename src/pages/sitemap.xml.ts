@@ -8,11 +8,16 @@ export async function GET() {
     lastmod: today,
   }));
   const blogPosts = await getCollection('blog', ({ data }) => !data.draft);
+  const blogPageCount = Math.ceil(blogPosts.length / 10);
+  const blogPageUrls = Array.from({ length: Math.max(blogPageCount - 1, 0) }, (_, index) => ({
+    loc: absoluteUrl(`/blog/page/${index + 2}/`),
+    lastmod: today,
+  }));
   const blogUrls = blogPosts.map((post) => ({
     loc: absoluteUrl(`/blog/${post.id}/`),
     lastmod: (post.data.updatedDate ?? post.data.publishDate).toISOString().slice(0, 10),
   }));
-  const urls = [...staticUrls, ...blogUrls]
+  const urls = [...staticUrls, ...blogPageUrls, ...blogUrls]
     .map(
       ({ loc, lastmod }) => `  <url>
     <loc>${loc}</loc>
