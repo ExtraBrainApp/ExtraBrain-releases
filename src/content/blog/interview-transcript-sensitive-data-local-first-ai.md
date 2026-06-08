@@ -2,7 +2,7 @@
 title: "Your Interview Transcript Is Sensitive Data. Here’s Why Local-First AI Matters."
 seoTitle: "Your Interview Transcript Is Sensitive Data: Why Local-First AI Matters"
 description: "Why interview transcripts are sensitive data, and how local-first AI helps protect private, responsible interview prep and meeting notes."
-publishDate: 2025-11-21
+publishDate: 2026-06-08
 author: "ExtraBrain"
 tags:
   - "AI Privacy"
@@ -11,7 +11,7 @@ tags:
   - "Biometrics"
   - "Responsible AI"
 draft: false
-ogImage: "/assets/screenshots/blog/06c-settings-privacy-controls.png"
+ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.png"
 ---
 A job interview can feel like a simple video call. You answer questions, explain your work, ask about the team, and maybe take a few notes afterward. But the moment that conversation is recorded, transcribed, summarized, or analyzed by AI, it becomes something more sensitive: a searchable record of your identity, career history, communication style, personal constraints, and professional judgment.
 

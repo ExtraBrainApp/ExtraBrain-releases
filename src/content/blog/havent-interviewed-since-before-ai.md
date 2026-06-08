@@ -2,7 +2,7 @@
 title: "Haven’t Interviewed Since Before AI? A Calm Guide to Using AI Without Losing Your Voice"
 seoTitle: "Haven’t Interviewed Since Before AI? A Calm Guide to AI Interview Prep"
 description: "Returning to interviews after years away? Learn how mid-career candidates can use AI interview prep tools responsibly, reduce anxiety, and still sound like themselves."
-publishDate: 2025-09-04
+publishDate: 2026-06-05
 author: "ExtraBrain"
 tags:
   - "Interview Prep"
@@ -11,7 +11,7 @@ tags:
   - "Job Search"
   - "Mid Career"
 draft: false
-ogImage: "/assets/screenshots/blog/05-live-star-interview-coaching.png"
+ogImage: "/assets/blog-covers/25-senior-candidate-remote-confidence.png"
 ---
 If you have not interviewed in years, the process can feel like returning to a city where every street changed names. The questions are familiar, but the rituals have changed. There are AI resume tools, AI mock interviewers, AI meeting copilots, and a quiet new anxiety: *Am I supposed to use these? And if I do, will I stop sounding like myself?*
 

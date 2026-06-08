@@ -88,6 +88,9 @@ const schemaGraph = [
           </nav>
           <p class="eyebrow">ExtraBrain Blog</p>
           <h1>{post.data.title}</h1>
+          {post.data.ogImage && (
+            <img class="blog-article-cover" src={post.data.ogImage} alt="" />
+          )}
           <p class="lead">{post.data.description}</p>
           <div class="blog-article-meta">
             <time datetime={post.data.publishDate.toISOString()}>

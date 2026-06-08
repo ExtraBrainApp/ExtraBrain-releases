@@ -2,7 +2,7 @@
 title: "The Coding Interview Is Not Dead. The Memory Test Is."
 seoTitle: "The Coding Interview Is Not Dead. The Memory Test Is."
 description: "AI is changing coding interviews from memorized LeetCode patterns toward explanation, tradeoffs, debugging, and responsible AI fluency."
-publishDate: 2025-07-18
+publishDate: 2026-06-02
 author: "ExtraBrain"
 tags:
   - "Coding Interviews"
@@ -11,7 +11,7 @@ tags:
   - "Software Engineering"
   - "Developer Careers"
 draft: false
-ogImage: "/assets/screenshots/blog/08-coding-interview-lru-cache.png"
+ogImage: "/assets/blog-covers/23-real-work-coding-interviews.png"
 ---
 ![ExtraBrain coding interview practice analysis](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
