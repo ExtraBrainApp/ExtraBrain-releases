@@ -219,29 +219,16 @@ starlight-toc a {
   opacity: var(--help-screenshot-wallpaper-opacity);
 }
 
-.sl-markdown-content p:has(img[src*='/assets/screenshots/']) starlight-image-zoom-zoomable {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 94%;
-  margin-inline: auto;
-  border-radius: 0.45rem;
-  background: transparent;
-}
-
 .sl-markdown-content p:has(img[src*='/assets/screenshots/']) img {
   display: block;
+  margin-inline: auto;
   position: relative;
   z-index: 1;
-  width: 100%;
+  width: 94%;
   border-radius: 0.55rem;
   border: 0;
   background: transparent;
   box-shadow: none;
-}
-
-.sl-markdown-content p:has(img[src*='/assets/screenshots/']) .starlight-image-zoom-control {
-  z-index: 2;
 }
 
 @media (min-width: 50rem) {
