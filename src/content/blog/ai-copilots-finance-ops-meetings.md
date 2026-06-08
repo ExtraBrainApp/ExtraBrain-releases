@@ -2,7 +2,7 @@
 title: "AI Copilots for Finance and Ops Meetings: Capture Decisions Without Adding a Meeting Bot"
 seoTitle: "AI Copilots for Finance and Ops Meetings: Capture Decisions Without Adding a Meeting Bot"
 description: "How privacy-preserving AI copilots help finance and ops teams capture decisions, risks, owners, and follow-ups without adding a meeting bot."
-publishDate: 2026-06-08
+publishDate: 2025-02-11
 author: "ExtraBrain"
 tags:
   - "AI Productivity"

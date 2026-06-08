@@ -2,7 +2,7 @@
 title: "Why the Best AI Copilot Does Not Need to Be a Gadget"
 seoTitle: "Why the Best AI Copilot Does Not Need to Be a Gadget"
 description: "Humane’s AI Pin showed why AI hardware can disappoint: useful copilots should live where work already happens, protect privacy, and keep users in control."
-publishDate: 2026-06-08
+publishDate: 2025-01-23
 author: "ExtraBrain"
 tags:
   - "AI Copilot"
