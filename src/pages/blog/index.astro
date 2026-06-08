@@ -33,6 +33,7 @@ const schemaGraph = [
       datePublished: post.data.publishDate.toISOString(),
       dateModified: (post.data.updatedDate ?? post.data.publishDate).toISOString(),
       author: { '@type': 'Organization', name: post.data.author },
+      image: new URL(post.data.ogImage ?? '/assets/images/logo-512.png', siteUrl).href,
     })),
   },
 ];
@@ -92,15 +93,22 @@ const schemaGraph = [
         <div class="blog-list">
           {posts.map((post) => (
             <article class="blog-card">
-              <div class="blog-card-meta">
-                <time datetime={post.data.publishDate.toISOString()}>
-                  {post.data.publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-                </time>
-                {post.data.tags.length > 0 && <span>{post.data.tags.slice(0, 2).join(' · ')}</span>}
+              {post.data.ogImage && (
+                <a class="blog-card-cover-link" href={`/blog/${post.id}/`} aria-label={`Read ${post.data.title}`}>
+                  <img class="blog-card-cover" src={post.data.ogImage} alt="" loading="lazy" />
+                </a>
+              )}
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <time datetime={post.data.publishDate.toISOString()}>
+                    {post.data.publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                  </time>
+                  {post.data.tags.length > 0 && <span>{post.data.tags.slice(0, 2).join(' · ')}</span>}
+                </div>
+                <h2><a href={`/blog/${post.id}/`}>{post.data.title}</a></h2>
+                <p>{post.data.description}</p>
+                <a class="blog-read-link" href={`/blog/${post.id}/`}>Read article<span aria-hidden="true"> →</span></a>
               </div>
-              <h2><a href={`/blog/${post.id}/`}>{post.data.title}</a></h2>
-              <p>{post.data.description}</p>
-              <a class="blog-read-link" href={`/blog/${post.id}/`}>Read article<span aria-hidden="true"> →</span></a>
             </article>
           ))}
         </div>
