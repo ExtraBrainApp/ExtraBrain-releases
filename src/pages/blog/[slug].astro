@@ -1,0 +1,166 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import BacklinksFooter from '../../components/BacklinksFooter.astro';
+import { productCategory, githubUrl } from '../../data/product';
+
+type Props = {
+  post: CollectionEntry<'blog'>;
+};
+
+const feedbackHref = 'mailto:info@extrabrain.app?subject=ExtraBrain%20Feedback';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const siteUrl = Astro.site ?? new URL('https://extrabrain.app');
+const canonicalUrl = new URL(`/blog/${post.id}/`, siteUrl).href;
+const articleTitle = post.data.seoTitle ?? post.data.title;
+const modifiedDate = post.data.updatedDate ?? post.data.publishDate;
+const schemaGraph = [
+  {
+    '@type': 'BlogPosting',
+    headline: articleTitle,
+    name: post.data.title,
+    description: post.data.description,
+    url: canonicalUrl,
+    mainEntityOfPage: canonicalUrl,
+    datePublished: post.data.publishDate.toISOString(),
+    dateModified: modifiedDate.toISOString(),
+    author: {
+      '@type': 'Organization',
+      name: post.data.author,
+      url: new URL('/', siteUrl).href,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ExtraBrain',
+      url: new URL('/', siteUrl).href,
+      logo: new URL('/assets/images/logo-512.png', siteUrl).href,
+    },
+    image: new URL(post.data.ogImage ?? '/assets/images/logo-512.png', siteUrl).href,
+    keywords: post.data.tags,
+  },
+];
+---
+
+<MarketingLayout title={`${articleTitle} | ExtraBrain`} description={post.data.description} ogImage={post.data.ogImage} schemaGraph={schemaGraph}>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="brand" aria-label="ExtraBrain home">
+        <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="34" height="34" />
+        <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
+          <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/download/">Download</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/help/">Help</a>
+        <a href={feedbackHref}>Feedback</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn primary" href="/download/" data-track="download_nav_clicked" data-attr="download-cta-nav">Download for Mac</a>
+      </div>
+      <a class="btn primary mobile-only" href="/download/" data-track="download_nav_clicked" data-attr="download-cta-nav-mobile">Download</a>
+    </div>
+  </header>
+
+  <main id="top" class="page-main blog-main">
+    <article class="blog-article">
+      <header class="page-hero blog-article-hero">
+        <div class="container blog-article-hero-inner">
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="/">Home</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><span>{post.data.title}</span></li>
+            </ol>
+          </nav>
+          <p class="eyebrow">ExtraBrain Blog</p>
+          <h1>{post.data.title}</h1>
+          <p class="lead">{post.data.description}</p>
+          <div class="blog-article-meta">
+            <time datetime={post.data.publishDate.toISOString()}>
+              {post.data.publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </time>
+            <span>{post.data.author}</span>
+          </div>
+          {post.data.tags.length > 0 && (
+            <ul class="blog-tag-list" aria-label="Article tags">
+              {post.data.tags.map((tag) => <li>{tag}</li>)}
+            </ul>
+          )}
+        </div>
+      </header>
+
+      <section class="light-section blog-article-section">
+        <div class="container blog-content">
+          <Content />
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a href="/" class="brand footer-brand">
+          <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="36" height="36" />
+          <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
+            <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
+          </span>
+        </a>
+        <p>{productCategory}. Available for Mac today, with Windows and Linux planned.</p>
+      </div>
+      <div>
+        <h2 class="footer-heading">Product</h2>
+        <a href="/download/">Download</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/pricing/free-vs-pro/">Free vs Pro</a>
+        <a href="/features/local-transcription/">Local transcription</a>
+        <a href="/features/bring-your-own-provider/">BYO providers</a>
+        <a href="/about/">About</a>
+      </div>
+      <div>
+        <h2 class="footer-heading">Trust</h2>
+        <a href="/privacy/">Privacy</a>
+        <a href="/data-flow/">Data flow</a>
+        <a href="/security/">Security</a>
+        <a href="/responsible-use/">Responsible use</a>
+      </div>
+      <div>
+        <h2 class="footer-heading">Use cases</h2>
+        <a href="/use-cases/coding-interviews/">Coding interviews</a>
+        <a href="/use-cases/system-design-interviews/">System design</a>
+        <a href="/use-cases/behavioral-interviews/">Behavioral interviews</a>
+        <a href="/use-cases/meetings/">Meetings</a>
+        <a href="/platforms/zoom/">Zoom</a>
+        <a href="/platforms/google-meet/">Google Meet</a>
+        <a href="/platforms/coderpad/">CoderPad</a>
+        <a href="/interview-guides/google/">Google interviews</a>
+        <a href="/interview-guides/meta/">Meta interviews</a>
+      </div>
+      <div>
+        <h2 class="footer-heading">Support</h2>
+        <a href="/help/">Help center</a>
+        <a href="/providers/">Providers</a>
+        <a href="/compare/cluely/">Compare Cluely</a>
+        <a href="/compare/interviewcoder/">Compare InterviewCoder</a>
+        <a href="/compare/final-round-ai/">Compare Final Round AI</a>
+        <a href="/contact/">Contact</a>
+        <a href={githubUrl}>GitHub</a>
+        <a href={feedbackHref}>Send Feedback</a>
+      </div>
+    </div>
+    <BacklinksFooter />
+  </footer>
+</MarketingLayout>
