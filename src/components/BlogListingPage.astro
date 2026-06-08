@@ -1,0 +1,202 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import BacklinksFooter from './BacklinksFooter.astro';
+import { productCategory, githubUrl } from '../data/product';
+
+type Props = {
+  posts: CollectionEntry<'blog'>[];
+  currentPage: number;
+  totalPages: number;
+};
+
+const { posts, currentPage, totalPages } = Astro.props;
+const feedbackHref = 'mailto:info@extrabrain.app?subject=ExtraBrain%20Feedback';
+const baseTitle = 'ExtraBrain Blog — AI interview prep, system design, and responsible AI';
+const title = currentPage === 1 ? baseTitle : `${baseTitle} — Page ${currentPage}`;
+const description = 'Read ExtraBrain articles about AI interview prep, system design, productivity, responsible AI, and local-first meeting workflows.';
+const siteUrl = Astro.site ?? new URL('https://extrabrain.app');
+const blogUrl = new URL(currentPage === 1 ? '/blog/' : `/blog/page/${currentPage}/`, siteUrl).href;
+const paginationPages = Array.from({ length: totalPages }, (_, index) => index + 1);
+const pageHref = (page: number) => (page === 1 ? '/blog/' : `/blog/page/${page}/`);
+const schemaGraph = [
+  {
+    '@type': 'Blog',
+    name: currentPage === 1 ? 'ExtraBrain Blog' : `ExtraBrain Blog — Page ${currentPage}`,
+    description,
+    url: blogUrl,
+    publisher: {
+      '@type': 'Organization',
+      name: 'ExtraBrain',
+      url: new URL('/', siteUrl).href,
+      logo: new URL('/assets/images/logo-512.png', siteUrl).href,
+    },
+    blogPost: posts.map((post) => ({
+      '@type': 'BlogPosting',
+      headline: post.data.seoTitle ?? post.data.title,
+      description: post.data.description,
+      url: new URL(`/blog/${post.id}/`, siteUrl).href,
+      datePublished: post.data.publishDate.toISOString(),
+      dateModified: (post.data.updatedDate ?? post.data.publishDate).toISOString(),
+      author: { '@type': 'Organization', name: post.data.author },
+      image: new URL(post.data.ogImage ?? '/assets/images/logo-512.png', siteUrl).href,
+    })),
+  },
+];
+---
+
+<MarketingLayout title={title} description={description} schemaGraph={schemaGraph}>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="brand" aria-label="ExtraBrain home">
+        <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="34" height="34" />
+        <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
+          <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/download/">Download</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/blog/">Blog</a>
+        <a href="/help/">Help</a>
+        <a href={feedbackHref}>Feedback</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn primary" href="/download/" data-track="download_nav_clicked" data-attr="download-cta-nav">Download for Mac</a>
+      </div>
+      <a class="btn primary mobile-only" href="/download/" data-track="download_nav_clicked" data-attr="download-cta-nav-mobile">Download</a>
+    </div>
+  </header>
+
+  <main id="top" class="page-main blog-main">
+    <section class="page-hero blog-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="/">Home</a></li>
+              <li><span>Blog</span></li>
+            </ol>
+          </nav>
+          <p class="eyebrow">ExtraBrain Blog</p>
+          <h1>AI interview prep, system design, and responsible productivity.</h1>
+          <p class="lead">Field notes, experiments, and practical guides for using AI thoughtfully in interviews, meetings, and technical work.</p>
+        </div>
+        <aside class="page-fact-panel" aria-label="Blog topics">
+          <span class="panel-label">Topics</span>
+          <ul>
+            <li>System design and interview prep</li>
+            <li>Responsible AI workflows</li>
+            <li>Local-first productivity</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="light-section page-content-section blog-list-section">
+      <div class="container">
+        <div class="blog-list">
+          {posts.map((post) => (
+            <article class="blog-card">
+              {post.data.ogImage && (
+                <a class="blog-card-cover-link" href={`/blog/${post.id}/`} aria-label={`Read ${post.data.title}`}>
+                  <img class="blog-card-cover" src={post.data.ogImage} alt="" loading="lazy" />
+                </a>
+              )}
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <time datetime={post.data.publishDate.toISOString()}>
+                    {post.data.publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                  </time>
+                  {post.data.tags.length > 0 && <span>{post.data.tags.slice(0, 2).join(' · ')}</span>}
+                </div>
+                <h2><a href={`/blog/${post.id}/`}>{post.data.title}</a></h2>
+                <p>{post.data.description}</p>
+                <a class="blog-read-link" href={`/blog/${post.id}/`}>Read article<span aria-hidden="true"> →</span></a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {totalPages > 1 && (
+          <nav class="blog-pagination" aria-label="Blog pages">
+            {currentPage > 1 ? (
+              <a class="blog-pagination-link blog-pagination-link--wide" href={pageHref(currentPage - 1)}>← Previous</a>
+            ) : (
+              <span class="blog-pagination-link blog-pagination-link--wide is-disabled" aria-disabled="true">← Previous</span>
+            )}
+            <div class="blog-pagination-pages">
+              {paginationPages.map((page) => (
+                page === currentPage ? (
+                  <span class="blog-pagination-link is-current" aria-current="page">{page}</span>
+                ) : (
+                  <a class="blog-pagination-link" href={pageHref(page)}>{page}</a>
+                )
+              ))}
+            </div>
+            {currentPage < totalPages ? (
+              <a class="blog-pagination-link blog-pagination-link--wide" href={pageHref(currentPage + 1)}>Next →</a>
+            ) : (
+              <span class="blog-pagination-link blog-pagination-link--wide is-disabled" aria-disabled="true">Next →</span>
+            )}
+          </nav>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a href="/" class="brand footer-brand">
+          <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="36" height="36" />
+          <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
+            <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
+          </span>
+        </a>
+        <p>{productCategory}. Available for Mac today, with Windows and Linux planned.</p>
+      </div>
+      <div>
+        <h2 class="footer-heading">Product</h2>
+        <a href="/download/">Download</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/pricing/free-vs-pro/">Free vs Pro</a>
+        <a href="/features/local-transcription/">Local transcription</a>
+        <a href="/features/bring-your-own-provider/">BYO providers</a>
+        <a href="/about/">About</a>
+      </div>
+      <div>
+        <h2 class="footer-heading">Trust</h2>
+        <a href="/privacy/">Privacy</a>
+        <a href="/data-flow/">Data flow</a>
+        <a href="/security/">Security</a>
+        <a href="/responsible-use/">Responsible use</a>
+      </div>
+      <div>
+        <h2 class="footer-heading">Use cases</h2>
+        <a href="/use-cases/coding-interviews/">Coding interviews</a>
+        <a href="/use-cases/system-design-interviews/">System design</a>
+        <a href="/use-cases/behavioral-interviews/">Behavioral interviews</a>
+        <a href="/use-cases/meetings/">Meetings</a>
+        <a href="/platforms/zoom/">Zoom</a>
+        <a href="/platforms/google-meet/">Google Meet</a>
+        <a href="/platforms/coderpad/">CoderPad</a>
+        <a href="/interview-guides/google/">Google interviews</a>
+        <a href="/interview-guides/meta/">Meta interviews</a>
+      </div>
+      <div>
+        <h2 class="footer-heading">Support</h2>
+        <a href="/help/">Help center</a>
+        <a href="/providers/">Providers</a>
+        <a href="/compare/cluely/">Compare Cluely</a>
+        <a href="/compare/interviewcoder/">Compare InterviewCoder</a>
+        <a href="/compare/final-round-ai/">Compare Final Round AI</a>
+        <a href="/contact/">Contact</a>
+        <a href={githubUrl}>GitHub</a>
+        <a href={feedbackHref}>Send Feedback</a>
+      </div>
+    </div>
+    <BacklinksFooter />
+  </footer>
+</MarketingLayout>
