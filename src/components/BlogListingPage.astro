@@ -19,6 +19,8 @@ const siteUrl = Astro.site ?? new URL('https://extrabrain.app');
 const blogUrl = new URL(currentPage === 1 ? '/blog/' : `/blog/page/${currentPage}/`, siteUrl).href;
 const paginationPages = Array.from({ length: totalPages }, (_, index) => index + 1);
 const pageHref = (page: number) => (page === 1 ? '/blog/' : `/blog/page/${page}/`);
+const prevUrl = currentPage > 1 ? pageHref(currentPage - 1) : undefined;
+const nextUrl = currentPage < totalPages ? pageHref(currentPage + 1) : undefined;
 const schemaGraph = [
   {
     '@type': 'Blog',
@@ -45,7 +47,7 @@ const schemaGraph = [
 ];
 ---
 
-<MarketingLayout title={title} description={description} schemaGraph={schemaGraph}>
+<MarketingLayout title={title} description={description} prevUrl={prevUrl} nextUrl={nextUrl} schemaGraph={schemaGraph}>
   <header class="site-header">
     <div class="container nav">
       <a href="/" class="brand" aria-label="ExtraBrain home">

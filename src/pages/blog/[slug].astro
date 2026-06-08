@@ -51,7 +51,17 @@ const schemaGraph = [
 ];
 ---
 
-<MarketingLayout title={`${articleTitle} | ExtraBrain`} description={post.data.description} ogImage={post.data.ogImage} schemaGraph={schemaGraph}>
+<MarketingLayout
+  title={`${articleTitle} | ExtraBrain`}
+  description={post.data.description}
+  ogImage={post.data.ogImage}
+  ogType="article"
+  articlePublishedTime={post.data.publishDate.toISOString()}
+  articleModifiedTime={modifiedDate.toISOString()}
+  articleAuthor={post.data.author}
+  articleTags={post.data.tags}
+  schemaGraph={schemaGraph}
+>
   <header class="site-header">
     <div class="container nav">
       <a href="/" class="brand" aria-label="ExtraBrain home">
