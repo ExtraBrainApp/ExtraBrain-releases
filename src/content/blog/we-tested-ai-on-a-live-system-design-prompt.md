@@ -17,7 +17,7 @@ I wanted to know where AI actually helps in a system design conversation, not in
 
 The short version: AI was useful for memory, structure, and surfacing missed angles. It was not a substitute for judgment. It could remind me to discuss backpressure, observability, and data retention. It could not decide what trade-off mattered most for the product, read the interviewer’s priorities, or defend a design under pressure.
 
-That distinction matters. Used responsibly, an AI assistant can make practice sessions and post-call reviews much sharper. Used carelessly, it can become a crutch that hides whether you actually understand the system. I used ExtraBrain as the AI layer for this experiment because it is built around session context — conversation, screen state, follow-ups, and after-the-fact insights — rather than a blank chat box.
+That distinction matters. Used responsibly, an AI assistant can make practice sessions and post-call reviews much sharper. Used carelessly, it can become a crutch that hides whether you actually understand the system. I used [ExtraBrain](https://extrabrain.app) as the AI layer for this experiment because it is built around session context — conversation, screen state, follow-ups, and after-the-fact insights — rather than a blank chat box.
 
 ![ExtraBrain live analysis session before a design-practice experiment](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
@@ -122,7 +122,7 @@ Those are not trivial misses. They are exactly the details that separate a reaso
 
 This is the pattern I would recommend for responsible AI-assisted interview practice: do the work first, then use AI to review it. Let the assistant critique your reasoning, expose gaps, and generate follow-up drills. Do not let it replace the reasoning itself.
 
-A private AI interview copilot is most valuable when it helps you practice honestly: capturing what you said, showing what you missed, and giving you a tighter next repetition.
+A [private AI interview copilot](https://extrabrain.app) is most valuable when it helps you practice honestly: capturing what you said, showing what you missed, and giving you a tighter next repetition.
 
 ![ExtraBrain post-session analysis for debugging and design review](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
@@ -154,11 +154,11 @@ AI helped most when the task was to preserve context, structure messy thinking, 
 
 If I were using this workflow again, I would keep it simple:
 
-- Speak the answer without AI interruption.
-- Trigger analysis after major sections, not every sentence.
-- Use follow-up questions to pressure-test one area at a time.
-- End with a post-session review focused on gaps and next practice reps.
-- Rewrite the answer yourself.
+1. Speak the answer without AI interruption.
+2. Trigger analysis after major sections, not every sentence.
+3. Use follow-up questions to pressure-test one area at a time.
+4. End with a post-session review focused on gaps and next practice reps.
+5. Rewrite the answer yourself.
 
 That last step is essential. The learning happens when you absorb the critique and produce a better version in your own words.
 
