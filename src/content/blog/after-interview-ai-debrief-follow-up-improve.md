@@ -1,7 +1,7 @@
 ---
 title: "After the Interview: How AI Can Help You Debrief, Follow Up, and Improve"
-seoTitle: "After the Interview: How AI Can Help You Debrief, Follow Up, and Improve"
-description: "Learn how to use AI after a job interview to debrief accurately, write better follow-up emails, capture lessons, protect sensitive career data, and improve before the next round wi"
+seoTitle: "After the Interview AI Debrief: Follow Up and Improve"
+description: "Use AI after a job interview to debrief accurately, write better follow-up emails, capture lessons, and improve before the next round."
 publishDate: 2026-03-19
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,6 @@ tags:
   - "Responsible AI"
 draft: false
 ogImage: "/assets/blog-covers/21-after-interview-debrief.png"
----
 ---
 
 ![ExtraBrain 05 live star interview coaching for After the Interview: How AI Can Help You Debrief, Follow Up, and Improve](/assets/screenshots/blog/05-live-star-interview-coaching.png)
