@@ -7,6 +7,61 @@ const siteUrl = 'https://extrabrain.app';
 const defaultOgImage = `${siteUrl}/assets/images/logo-512.png`;
 const proMonthlyFounderCheckout =
   'https://extrabrain.lemonsqueezy.com/checkout/buy/f5618066-dfaf-419e-ac49-a05ffa5e30d9?checkout%5Bdiscount_code%5D=EARLYBIRD&prefill=earlybird';
+function rehypeRemoveBlogImageZoom() {
+  return function transformer(tree) {
+    function cleanChildren(node) {
+      if (!node || !Array.isArray(node.children)) return;
+
+      node.children = node.children.flatMap((child) => {
+        cleanChildren(child);
+
+        if (child?.type !== 'element' || child.tagName !== 'starlight-image-zoom-zoomable') {
+          return [child];
+        }
+
+        const zoomableChildren = Array.isArray(child.children) ? child.children : [];
+        const hasBlogImage = zoomableChildren.some((zoomChild) => {
+          if (zoomChild?.type !== 'element') return false;
+          if (zoomChild.tagName === 'img') {
+            return String(zoomChild.properties?.src ?? '').includes('/assets/screenshots/blog/');
+          }
+          if (zoomChild.tagName === 'picture' && Array.isArray(zoomChild.children)) {
+            return zoomChild.children.some(
+              (pictureChild) =>
+                pictureChild?.type === 'element' &&
+                pictureChild.tagName === 'img' &&
+                String(pictureChild.properties?.src ?? '').includes('/assets/screenshots/blog/'),
+            );
+          }
+          return false;
+        });
+
+        if (!hasBlogImage) return [child];
+
+        return zoomableChildren.filter(
+          (zoomChild) =>
+            zoomChild?.type !== 'element' ||
+            zoomChild.tagName !== 'button' ||
+            !String(zoomChild.properties?.class ?? zoomChild.properties?.className ?? '').includes('starlight-image-zoom-control'),
+        );
+      });
+    }
+
+    cleanChildren(tree);
+  };
+}
+
+function removeBlogImageZoomIntegration() {
+  return {
+    name: 'remove-blog-image-zoom',
+    hooks: {
+      'astro:config:setup': ({ updateConfig }) => {
+        updateConfig({ markdown: { rehypePlugins: [rehypeRemoveBlogImageZoom] } });
+      },
+    },
+  };
+}
+
 const helpStructuredData = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
@@ -320,6 +375,7 @@ export default defineConfig({
         },
       ],
     }),
+    removeBlogImageZoomIntegration(),
   ],
   markdown: {
     shikiConfig: {
