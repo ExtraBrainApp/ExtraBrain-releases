@@ -10,6 +10,8 @@ interface Props {
   articleModifiedTime?: string;
   articleAuthor?: string;
   articleTags?: string[];
+  prevUrl?: string;
+  nextUrl?: string;
   schemaGraph?: Array<Record<string, unknown>>;
   enableAnalytics?: boolean;
 }
@@ -23,6 +25,8 @@ const {
   articleModifiedTime,
   articleAuthor,
   articleTags = [],
+  prevUrl,
+  nextUrl,
   schemaGraph,
   enableAnalytics = true,
 } = Astro.props;
@@ -173,6 +177,8 @@ p{margin-top:0;color:var(--text-secondary)}
     <meta name="robots" content="index,follow" />
     <meta name="author" content="ExtraBrain" />
     <link rel="canonical" href={canonical.href} />
+    {prevUrl && <link rel="prev" href={new URL(prevUrl, siteUrl).href} />}
+    {nextUrl && <link rel="next" href={new URL(nextUrl, siteUrl).href} />}
     <style is:inline set:html={criticalCss} />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
