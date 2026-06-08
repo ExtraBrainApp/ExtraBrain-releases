@@ -2,7 +2,7 @@
 title: "From ATS to Zoom: How Candidates Can Use AI Responsibly Across the Hiring Funnel"
 seoTitle: "From ATS to Zoom: How Candidates Can Use AI Responsibly Across the Hiring Funnel"
 description: "How job seekers can use AI responsibly for ATS-friendly resumes, screening, interview prep, and Zoom interviews while staying authentic."
-publishDate: 2026-06-08
+publishDate: 2025-05-06
 author: "ExtraBrain"
 tags:
   - "AI"

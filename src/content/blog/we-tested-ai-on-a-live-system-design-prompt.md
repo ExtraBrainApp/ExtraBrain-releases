@@ -2,7 +2,7 @@
 title: "We Tested AI on a Live System Design Prompt: Where It Helps, Where Humans Still Matter"
 seoTitle: "We Tested AI on a Live System Design Prompt: Where AI Helps and Humans Still Matter"
 description: "A first-hand system design experiment showing where AI can support requirements, trade-offs, and recap — and where human judgment still matters most."
-publishDate: 2026-06-08
+publishDate: 2025-12-09
 author: "ExtraBrain"
 tags:
   - AI

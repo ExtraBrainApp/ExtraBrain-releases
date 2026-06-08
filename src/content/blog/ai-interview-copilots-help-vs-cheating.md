@@ -2,7 +2,7 @@
 title: "AI Interview Copilots: Where Help Ends and Cheating Begins"
 seoTitle: "AI Interview Copilots: Where Help Ends and Cheating Begins"
 description: "A practical guide to InterviewCoder, responsible AI interview help, cheating boundaries, and clearer rules for candidates and hiring teams."
-publishDate: 2026-06-08
+publishDate: 2025-03-27
 author: "ExtraBrain"
 tags:
   - "AI Interviews"

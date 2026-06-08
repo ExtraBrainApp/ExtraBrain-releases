@@ -2,7 +2,7 @@
 title: "Haven’t Interviewed Since Before AI? A Calm Guide to Using AI Without Losing Your Voice"
 seoTitle: "Haven’t Interviewed Since Before AI? A Calm Guide to AI Interview Prep"
 description: "Returning to interviews after years away? Learn how mid-career candidates can use AI interview prep tools responsibly, reduce anxiety, and still sound like themselves."
-publishDate: 2026-06-08
+publishDate: 2025-09-04
 author: "ExtraBrain"
 tags:
   - "Interview Prep"
