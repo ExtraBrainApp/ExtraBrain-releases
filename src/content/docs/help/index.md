@@ -1,6 +1,6 @@
 ---
 title: ExtraBrain Help Center
-description: ExtraBrain help center for Mac setup, AI interview assistance, meeting copilot workflows, transcription, screenshots, AI providers, privacy controls, and troubleshooting.
+description: ExtraBrain help center for Mac setup, AI interview help, meetings, transcription, providers, privacy controls, and troubleshooting.
 sidebar:
   label: Overview
   order: 1

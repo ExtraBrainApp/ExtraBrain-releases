@@ -1,6 +1,6 @@
 ---
-title: Set Up A Custom OpenAI-Compatible API Endpoint
-description: Learn how to set up a custom OpenAI-compatible API endpoint in ExtraBrain with base URL, API key, model name, validation, examples, privacy checks, and troubleshooting.
+title: Custom OpenAI-Compatible API Endpoint
+description: Set up a custom OpenAI-compatible API endpoint in ExtraBrain with base URL, API key, model name, validation, privacy checks, and troubleshooting.
 sidebar:
   order: 5
 lastUpdated: 2026-06-06

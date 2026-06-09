@@ -13,7 +13,7 @@ type Props = {
 
 const { posts, currentPage, totalPages } = Astro.props;
 const feedbackHref = 'mailto:info@extrabrain.app?subject=ExtraBrain%20Feedback';
-const baseTitle = 'ExtraBrain Blog — AI interview prep, system design, and responsible AI';
+const baseTitle = 'ExtraBrain Blog — AI Interview Prep';
 const title = currentPage === 1 ? baseTitle : `${baseTitle} — Page ${currentPage}`;
 const description = 'Read ExtraBrain articles about AI interview prep, system design, productivity, responsible AI, and local-first meeting workflows.';
 const siteUrl = Astro.site ?? new URL('https://extrabrain.app');
