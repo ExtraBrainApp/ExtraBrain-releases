@@ -19,7 +19,7 @@ AI meeting tools are trying to close that gap. But for finance and ops teams, th
 
 The better pattern is an AI copilot that helps the meeting owner capture decisions, risks, and next steps while staying in control: less “bot joins your meeting,” more private decision support.
 
-![ExtraBrain live analysis during a product strategy session](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in ai copilots finance ops meetings](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## Finance and ops meetings do not fail because people take no notes
 
@@ -50,7 +50,7 @@ There is also a workflow problem. A bot-generated summary often arrives after th
 
 For operational work, the best time to catch ambiguity is while the discussion is still alive.
 
-![ExtraBrain analysis highlighting strategic risks and follow-up questions](/assets/screenshots/blog/09-investor-demo-defensibility.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Why “just add a meeting bot” is not always the right answer in ai copilots finance ops meetings](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## The copilot model: assist the operator, not the meeting
 
@@ -90,7 +90,7 @@ Finance and ops decisions often hinge on budget variance, close date, renewal am
 
 The most valuable meeting output is sometimes the question the team now knows it must answer: “Need legal input on auto-renewal clause,” “Need latest pipeline risk from sales,” or “Need implementation estimate before approving vendor migration.”
 
-![ExtraBrain live coaching analysis with structured follow-up prompts](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for What a good AI copilot should capture in ai copilots finance ops meetings](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## The practical workflow: before, during, after
 
@@ -129,7 +129,7 @@ A tool that quietly records every conversation into a shared workspace creates d
 
 Teams should be especially careful not to use AI meeting tools as employee surveillance. The point is to improve operational memory, not score people on how they spoke in a meeting. If a tool makes people less willing to discuss uncertainty, risk, or bad news, it is hurting the very meetings it claims to improve.
 
-![ExtraBrain privacy controls for user-controlled capture](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Privacy is a product requirement, not a nice-to-have in ai copilots finance ops meetings](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## How to evaluate AI finance meeting tools
 

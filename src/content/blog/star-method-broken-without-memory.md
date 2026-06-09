@@ -15,7 +15,7 @@ ogImage: "/assets/blog-covers/19-star-method-needs-memory.png"
 ---
 ---
 
-![ExtraBrain 05 live star interview coaching for The STAR Method Is Broken Without Memory](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for article introduction in star method broken without memory](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 The STAR method is not the problem.
 
@@ -45,7 +45,7 @@ This is why candidates can practice behavioral questions for hours and still fre
 
 The hard part is not always writing the answer. The hard part is finding the story that actually proves the trait.
 
-![ExtraBrain 01 live analysis product strategy for The STAR Method Is Broken Without Memory](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for STAR works only after you remember the right story in star method broken without memory](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## The pressure problem is real
 
@@ -79,7 +79,7 @@ Then you tag that material by themes interviewers actually ask about: leadership
 
 Only after that do you shape the answer.
 
-![ExtraBrain 01 live analysis product strategy for The STAR Method Is Broken Without Memory](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for A memory layer makes STAR useful again in star method broken without memory](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 This matters because one real story can answer several questions. The same project may show conflict if you focus on the stakeholder disagreement, leadership if you focus on how you organized the team, ambiguity if you focus on incomplete information, and learning if you focus on what you would do differently now.
 
@@ -95,7 +95,7 @@ Story cards are stronger because they help you understand the example rather tha
 
 For each important example, create a compact card with the fields that make recall easier: story name, interview themes, situation, stakes, task, action, result, tradeoff, lesson, privacy notes, and follow-up risk.
 
-![ExtraBrain 06c settings privacy controls for The STAR Method Is Broken Without Memory](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Story cards beat memorized scripts in star method broken without memory](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 Notice that this is more than STAR. STAR gives you the spine. The extra fields give you credibility.
 
@@ -127,7 +127,7 @@ Responsible AI prep should do the opposite. It should make your story harder to 
 
 Ask AI to challenge the answer: Where is my personal contribution unclear? Which sentence sounds generic? What follow-up question would expose missing context? Am I hiding behind “we”? What result needs better evidence? What sensitive detail should I redact?
 
-![ExtraBrain 06c settings privacy controls for The STAR Method Is Broken Without Memory](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for AI should challenge your story, not replace it in star method broken without memory](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 This keeps the ethical boundary clear. AI is not impersonating you. It is helping you examine your own experience more carefully.
 
@@ -147,7 +147,7 @@ A [local-first AI meeting copilot](https://extrabrain.app) points toward a bette
 
 Privacy is not separate from quality. Privacy makes honest preparation possible.
 
-![ExtraBrain 06c settings privacy controls for The STAR Method Is Broken Without Memory](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Privacy matters because real stories are sensitive in star method broken without memory](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Build your story memory before you need it
 

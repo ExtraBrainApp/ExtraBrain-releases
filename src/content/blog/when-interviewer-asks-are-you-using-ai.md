@@ -13,7 +13,7 @@ tags:
 draft: false
 ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.png"
 ---
-![ExtraBrain 01 live analysis product strategy for What Candidates Should Do When an Interviewer Asks, “Are You Using AI?”](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in when interviewer asks are you using ai](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 The question can land like a trap, even when it is not meant that way.
 
@@ -39,7 +39,7 @@ That answer addresses the live-interview concern directly, acknowledges responsi
 
 If you truly have not used AI at all, say that simply. The important part is not whether the answer is yes or no. The important part is that your answer is precise enough to reduce ambiguity.
 
-![ExtraBrain 01 live analysis product strategy for What Candidates Should Do When an Interviewer Asks, “Are You Using AI?”](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Treat the Question as a Boundary Check, Not an Accusation in when interviewer asks are you using ai](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Separate Preparation From Performance
 
@@ -81,7 +81,7 @@ For a presentation, it might be:
 
 This approach works because it is neither defensive nor naive. It acknowledges that modern professionals use tools. It also shows that you understand the ethical line.
 
-![ExtraBrain 05 live star interview coaching for What Candidates Should Do When an Interviewer Asks, “Are You Using AI?”](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Use a Three-Part Answer: Tool, Task, Ownership in when interviewer asks are you using ai](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## If You Are Using Notes, Say So Before It Looks Weird
 
@@ -135,7 +135,7 @@ Or:
 
 This is where responsible AI use can strengthen your candidacy. Many teams want people who can use tools without losing judgment.
 
-![ExtraBrain 05 live star interview coaching for What Candidates Should Do When an Interviewer Asks, “Are You Using AI?”](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Be Ready for Follow-Up Questions in when interviewer asks are you using ai](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Protect Privacy When You Talk About AI Prep
 
@@ -199,7 +199,7 @@ A better pattern is calm, bounded, and specific:
 
 > “I used AI for preparation, not live answer generation. I can explain any part of my answer from my own experience.”
 
-![ExtraBrain 09 investor demo defensibility for What Candidates Should Do When an Interviewer Asks, “Are You Using AI?”](/assets/screenshots/blog/09-investor-demo-defensibility.png)
+![ExtraBrain investor-demo coaching view with defensibility answer guidance and follow-up questions for What Not to Say in when interviewer asks are you using ai](/assets/screenshots/blog/09-investor-demo-defensibility.png)
 
 ## The Best Answer Is Backed by Real Depth
 

@@ -21,7 +21,7 @@ So the useful question is not whether AI belongs near hiring. It already does. T
 
 The better future is not “no AI.” It is interviews designed so the candidate still has to show judgment, ownership, and adaptability.
 
-![ExtraBrain 01 live analysis product strategy for The Future of Hiring Is Not Banning AI. It Is Better Questions.](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in future hiring not banning ai better questions](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## The AI panic is understandable
 
@@ -61,7 +61,7 @@ In most modern jobs, people use tools. The job is not to pretend tools do not ex
 
 A candidate who used AI responsibly to prepare should still be able to explain their own experience. A candidate who used AI irresponsibly to fabricate competence will struggle when the conversation asks for specifics, constraints, and adaptation.
 
-![ExtraBrain 01 live analysis product strategy for The Future of Hiring Is Not Banning AI. It Is Better Questions.](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for The better line is ownership in future hiring not banning ai better questions](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## Start by making the rules explicit
 
@@ -92,7 +92,7 @@ Instead of asking a product candidate, “How would you prioritize a roadmap?”
 
 These questions do not require surveillance. They require thinking. A generated answer may provide a clean framework, but the candidate has to supply lived context, judgment, sequence, and ownership. That is where the signal lives.
 
-![ExtraBrain 09 investor demo defensibility for The Future of Hiring Is Not Banning AI. It Is Better Questions.](/assets/screenshots/blog/09-investor-demo-defensibility.png)
+![ExtraBrain investor-demo coaching view with defensibility answer guidance and follow-up questions for Ask questions AI cannot finish for the candidate in future hiring not banning ai better questions](/assets/screenshots/blog/09-investor-demo-defensibility.png)
 
 ## Make candidates explain the path, not just the answer
 
@@ -134,7 +134,7 @@ For candidates, this creates a healthier standard too. Responsible AI use should
 
 Tools like [ExtraBrain](https://extrabrain.app) are valuable in this context because the best use of AI in hiring is not impersonation. It is private, user-controlled support for practicing answers, reviewing conversations, remembering follow-ups, and improving how you communicate your real experience.
 
-![ExtraBrain 05 live star interview coaching for The Future of Hiring Is Not Banning AI. It Is Better Questions.](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Ask about tool use without turning it into a confession in future hiring not banning ai better questions](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Replace suspicion with a scoring rubric
 
@@ -148,7 +148,7 @@ This makes the debrief more useful and consistent. The point is not to ignore in
 
 If the candidate cannot explain their own work, that matters. If they violate a clear tool-use policy, that matters. But “too smooth” or “looked away” should not be treated as proof.
 
-![ExtraBrain 06c settings privacy controls for The Future of Hiring Is Not Banning AI. It Is Better Questions.](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain investor-demo coaching view with defensibility answer guidance and follow-up questions for Replace suspicion with a scoring rubric in future hiring not banning ai better questions](/assets/screenshots/blog/09-investor-demo-defensibility.png)
 
 ## Recruiters should use AI by the same standard
 

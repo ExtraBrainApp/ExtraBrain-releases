@@ -13,7 +13,7 @@ tags:
 draft: false
 ogImage: "/assets/blog-covers/04-mid-career-interview-coach.png"
 ---
-![ExtraBrain 01 live analysis product strategy for Why Mid-Career Professionals Need a Different Kind of Interview Coach](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in mid career interview coach](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 The hardest part of interviewing after ten or fifteen years of real work is not that you have nothing to say. It is that you have too much.
 
@@ -35,7 +35,7 @@ A traditional interview coach might tell you to “be concise” or “practice 
 
 That is context management.
 
-![ExtraBrain 01 live analysis product strategy for Why Mid-Career Professionals Need a Different Kind of Interview Coach](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for Mid-career interview anxiety is different in mid career interview coach](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## The old coaching model over-focuses on performance
 
@@ -72,7 +72,7 @@ This proves you have material and prevents you from preparing fifty separate ans
 
 This is where an [AI interview preparation workspace](https://extrabrain.app) can help without taking over. You can talk through a story in your own words, capture the transcript, and ask the tool to identify the themes, decision points, and likely follow-up questions. The raw material stays yours. The structure becomes easier to see.
 
-![ExtraBrain 01 live analysis product strategy for Why Mid-Career Professionals Need a Different Kind of Interview Coach](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for The real job is rebuilding your story bank in mid career interview coach](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Confidence comes from clearer recall, not fake certainty
 
@@ -95,7 +95,7 @@ These are not trick questions. They are the questions that reveal seniority.
 
 AI can be helpful here because it can play the role of a patient, skeptical listener. A [private AI interview copilot](https://extrabrain.app) can generate follow-ups from your actual story, point out where you used vague language, and help you practice the part of the answer that makes you nervous. It should not feed you lines during the interview. It should help you build enough clarity before the interview that you do not need lines.
 
-![ExtraBrain 05 live star interview coaching for Why Mid-Career Professionals Need a Different Kind of Interview Coach](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Confidence comes from clearer recall, not fake certainty in mid career interview coach](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Mid-career candidates need help compressing context
 
@@ -119,7 +119,7 @@ Try this exercise: speak one story out loud for three minutes. Then review the t
 
 A tool like [ExtraBrain](https://extrabrain.app) is useful because it treats interview prep like reviewing game tape. You can capture the spoken version, study what actually came out, and refine from evidence instead of guessing how you sounded.
 
-![ExtraBrain 01 live analysis product strategy for Why Mid-Career Professionals Need a Different Kind of Interview Coach](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for Mid-career candidates need help compressing context in mid career interview coach](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## Privacy matters more when your stories are real
 
@@ -135,7 +135,7 @@ This is one reason local-first tools are appealing for serious preparation. A [l
 
 Privacy is not a side issue. It is what allows you to prepare truthfully.
 
-![ExtraBrain 06c settings privacy controls for Why Mid-Career Professionals Need a Different Kind of Interview Coach](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Privacy matters more when your stories are real in mid career interview coach](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## A better interview coach sounds like an editor, not a ghostwriter
 
@@ -157,7 +157,7 @@ If you are returning to interviews after years away, do not rebuild your whole p
 
 On the day of the interview, review your story bank, not a script. Your goal is a clear conversation, not a flawless performance.
 
-![ExtraBrain 06c settings privacy controls for Why Mid-Career Professionals Need a Different Kind of Interview Coach](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Use a smaller routine than you think you need in mid career interview coach](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## The goal is to sound like yourself again
 

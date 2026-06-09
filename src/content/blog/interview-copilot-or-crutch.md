@@ -13,7 +13,7 @@ tags:
 draft: false
 ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.png"
 ---
-![ExtraBrain 01 live analysis product strategy for Interview Copilot or Interview Crutch? How to Tell the Difference](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in interview copilot or crutch](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 The first warning sign is not that you used AI. It is that you feel nervous answering without it.
 
@@ -37,7 +37,7 @@ But you still have to choose the story. You still have to explain the tradeoff. 
 
 That is the first test: **after using AI, are you more capable of answering on your own?** If yes, it is probably acting as a copilot. If no, it is becoming a crutch.
 
-![ExtraBrain 01 live analysis product strategy for Interview Copilot or Interview Crutch? How to Tell the Difference](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for A copilot strengthens the pilot in interview copilot or crutch](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## A crutch creates confidence you cannot defend
 
@@ -79,7 +79,7 @@ A calculator is normal in one setting and forbidden in another. Notes are expect
 
 If AI secretly performs the skill being evaluated, you are no longer being assisted. You are being substituted.
 
-![ExtraBrain 01 live analysis product strategy for Interview Copilot or Interview Crutch? How to Tell the Difference](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for The clearest boundary: assistance versus substitution in interview copilot or crutch](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Five questions that reveal whether AI is helping or hurting
 
@@ -139,7 +139,7 @@ Then use AI to analyze what happened.
 
 This is where [ExtraBrain](https://extrabrain.app) is useful as an **AI interview preparation workspace**. The value is not that it magically creates a better candidate. The value is that it can help capture a practice session, preserve context, and turn your own words into something you can review.
 
-![ExtraBrain 05 live star interview coaching for Interview Copilot or Interview Crutch? How to Tell the Difference](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for The best use case: turning practice into feedback in interview copilot or crutch](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 A strong practice loop looks like this:
 
@@ -184,7 +184,7 @@ When in doubt, use a traffic-light model.
 
 **Red: hidden performance replacement.** Do not use AI to secretly answer questions, solve assessments, fabricate experience, or impersonate judgment. If the interview is designed to evaluate your independent reasoning and you quietly outsource that reasoning, you have crossed the line.
 
-![ExtraBrain 01 live analysis product strategy for Interview Copilot or Interview Crutch? How to Tell the Difference](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for A simple traffic-light framework for interview AI in interview copilot or crutch](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## Privacy matters because real preparation uses real material
 

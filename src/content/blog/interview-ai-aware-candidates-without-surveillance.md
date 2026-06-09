@@ -21,7 +21,7 @@ But the worst response is to turn interviews into surveillance.
 
 The answer is not eye-tracking, room scans, suspicion-first questioning, or treating every candidate like an adversary. The better answer is a hiring process that is explicit about AI, clear about boundaries, and designed to evaluate the work you actually care about.
 
-![ExtraBrain session alongside a recruiter interview screen](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for article introduction in interview ai aware candidates without surveillance](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## Start by admitting the old interview contract is broken
 
@@ -87,7 +87,7 @@ Then follow up:
 
 A hidden AI assistant can suggest frameworks. It is much harder for it to maintain context, reflect the candidate's lived experience, and respond naturally to evolving constraints without the candidate understanding the material.
 
-![ExtraBrain live coaching analysis with structured follow-up prompts](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain investor-demo coaching view with defensibility answer guidance and follow-up questions for Design interviews around reasoning, not recall in interview ai aware candidates without surveillance](/assets/screenshots/blog/09-investor-demo-defensibility.png)
 
 ## Use work samples carefully
 
@@ -113,7 +113,7 @@ There is a big difference between a tool that helps a recruiter privately organi
 
 This is why privacy-conscious tooling matters. A [local-first AI meeting copilot](https://extrabrain.app) is a useful mental model for where the market should go: assistance that helps the user capture and reason over their own conversations while emphasizing privacy, user control, and clear boundaries.
 
-![ExtraBrain privacy controls for user-controlled capture](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Keep note-taking private and consent-based in interview ai aware candidates without surveillance](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Train interviewers to ask without sounding accusatory
 
@@ -165,7 +165,7 @@ Create a simple rubric for AI-aware evaluation. It should include which intervie
 
 The rubric does not need to be long. It needs to be shared.
 
-![ExtraBrain live analysis during a product strategy session](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for Make the process consistent across candidates in interview ai aware candidates without surveillance](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## Trust is designed, not demanded
 

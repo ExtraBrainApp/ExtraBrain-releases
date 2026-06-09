@@ -13,7 +13,7 @@ tags:
 draft: false
 ogImage: "/assets/blog-covers/05-ai-prep-for-people-who-hate-performing.png"
 ---
-![ExtraBrain 01 live analysis product strategy for AI Interview Prep for People Who Hate Performing](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in ai interview prep people who hate performing](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 Some people are good at their jobs and terrible at performing confidence on command.
 
@@ -39,7 +39,7 @@ When your nervous system is busy managing the moment, your memory becomes harder
 
 A better preparation system lowers the retrieval load. Instead of hoping the right answer appears live, you build a visible map of your own experience before the interview.
 
-![ExtraBrain 01 live analysis product strategy for AI Interview Prep for People Who Hate Performing](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for Interview anxiety is often a retrieval problem in ai interview prep people who hate performing](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## Stop preparing like the interview is a performance
 
@@ -74,7 +74,7 @@ Keep the entries messy at first. The goal is retrieval, not polish.
 
 Then use AI to help tag each story by interview theme: ownership, collaboration, conflict, judgment, resilience, technical depth, customer empathy, communication, leadership, or learning. A tool like [ExtraBrain](https://extrabrain.app) can work as an **AI interview preparation workspace** for this because you can speak through your examples, capture what you said, and turn your own words into organized notes.
 
-![ExtraBrain 06c settings privacy controls for AI Interview Prep for People Who Hate Performing](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Build a story bank before you build answers in ai interview prep people who hate performing](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 This matters because anxious candidates often prepare by trying to predict every question. That is exhausting. A story bank lets you prepare reusable evidence instead. One strong story can answer several questions if you understand the shape of it.
 
@@ -94,7 +94,7 @@ For anxious candidates, structure is calming. It gives your answer a path withou
 
 That is not robotic. It is a handrail.
 
-![ExtraBrain 01 live analysis product strategy for AI Interview Prep for People Who Hate Performing](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Use AI to find the shape of your answer in ai interview prep people who hate performing](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Practice the part where you usually freeze
 
@@ -121,7 +121,7 @@ Interview anxiety lives in the spoken moment. Silent preparation can feel comple
 
 A [private AI interview copilot](https://extrabrain.app) is useful here when it helps you review a practice transcript, notice patterns, and generate realistic follow-ups from your actual answer. It should not feed you live answers in a closed interview. It should help you become familiar enough with your own material that follow-ups feel less like traps.
 
-![ExtraBrain 05 live star interview coaching for AI Interview Prep for People Who Hate Performing](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Practice the part where you usually freeze in ai interview prep people who hate performing](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Review your transcript like game tape
 
@@ -144,7 +144,7 @@ AI can help summarize those patterns, but you should make the final judgment. Yo
 
 If you ramble, you do not need shame. You need an editing loop.
 
-![ExtraBrain 01 live analysis product strategy for AI Interview Prep for People Who Hate Performing](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for Review your transcript like game tape in ai interview prep people who hate performing](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## Prepare calming notes, not a script
 
@@ -170,7 +170,7 @@ Before using any AI tool, create a privacy habit: replace company names with pla
 
 This is why local-first tools matter. A [local-first AI meeting copilot](https://extrabrain.app) is a better fit for serious interview preparation because the material is personal, contextual, and sometimes sensitive. Candidates should be able to practice with real substance while staying in control of what they share.
 
-![ExtraBrain 06c settings privacy controls for AI Interview Prep for People Who Hate Performing](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Protect privacy so you can practice honestly in ai interview prep people who hate performing](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Make the interview feel more like a conversation
 

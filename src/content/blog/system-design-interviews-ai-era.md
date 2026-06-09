@@ -13,7 +13,7 @@ tags:
 draft: false
 ogImage: "/assets/blog-covers/10-system-design-ai-era.png"
 ---
-![ExtraBrain 10 debugging arch mismatch for System Design Interviews in the AI Era: Use AI to Think Clearer, Not Louder](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for article introduction in system design interviews ai era](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 System design interviews are not hard because you have to know every database, queue, cache, and load balancer by heart. They are hard because you have to think in public.
 
@@ -39,7 +39,7 @@ System design interviews evaluate how you reason through ambiguity. The diagram 
 
 AI can support those skills during preparation. But it cannot own them for you.
 
-![ExtraBrain 09 investor demo defensibility for System Design Interviews in the AI Era: Use AI to Think Clearer, Not Louder](/assets/screenshots/blog/09-investor-demo-defensibility.png)
+![ExtraBrain investor-demo coaching view with defensibility answer guidance and follow-up questions for The real test is not the diagram in system design interviews ai era](/assets/screenshots/blog/09-investor-demo-defensibility.png)
 
 ## Start with assumptions, not architecture
 
@@ -68,7 +68,7 @@ That last sentence matters. You are not asking AI to solve. You are asking it to
 
 In an [AI interview preparation workspace](https://extrabrain.app), this becomes especially helpful because you can review the actual transcript of your spoken answer. You may discover that you thought you asked about scale, but only said “a lot of users.” You may see that you asked five infrastructure questions and zero product questions.
 
-![ExtraBrain 10 debugging arch mismatch for System Design Interviews in the AI Era: Use AI to Think Clearer, Not Louder](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for Start with assumptions, not architecture in system design interviews ai era](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 ## Use AI to turn rambling into a decision tree
 
@@ -93,7 +93,7 @@ AI can help you find this structure after a practice attempt. Record yourself an
 
 That is the responsible value of a [private AI interview copilot](https://extrabrain.app): it can help you hear the structure you intended, compare it to the structure you actually communicated, and practice the gap.
 
-![ExtraBrain 10 debugging arch mismatch for System Design Interviews in the AI Era: Use AI to Think Clearer, Not Louder](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for Use AI to turn rambling into a decision tree in system design interviews ai era](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 ## Tradeoffs should sound like choices, not vocabulary
 
@@ -129,7 +129,7 @@ AI is useful as a tradeoff coach because it can spot vague decisions. After a pr
 
 You may find that you named a queue without explaining why durability mattered, or mentioned sharding without saying what scale forced it. That feedback is exactly what you want in practice.
 
-![ExtraBrain 09 investor demo defensibility for System Design Interviews in the AI Era: Use AI to Think Clearer, Not Louder](/assets/screenshots/blog/09-investor-demo-defensibility.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for Tradeoffs should sound like choices, not vocabulary in system design interviews ai era](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 ## Practice recovery, not perfection
 
@@ -150,7 +150,7 @@ After you complete a system design answer, ask for follow-ups that force adaptat
 
 ExtraBrain fits this workflow because it can preserve the session context. Instead of asking a blank chatbot for generic system design questions, you can generate follow-ups from what you actually said. The best follow-up is not “talk about caching.” It is “you chose caching because feed freshness was flexible; what changes if users expect real-time updates?”
 
-![ExtraBrain 05 live star interview coaching for System Design Interviews in the AI Era: Use AI to Think Clearer, Not Louder](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Practice recovery, not perfection in system design interviews ai era](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Use AI after the mock, not as a hidden voice
 
@@ -170,7 +170,7 @@ That workflow builds skill because the hard thinking still belongs to you.
 
 If an interview explicitly allows AI tools, the standard is still the same: be transparent, verify outputs, and explain your final decisions. If the rules are unclear, ask what tools are allowed. Responsible candidates do not hide behind tools. They use tools to become clearer.
 
-![ExtraBrain 05 live star interview coaching for System Design Interviews in the AI Era: Use AI to Think Clearer, Not Louder](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Use AI after the mock, not as a hidden voice in system design interviews ai era](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Privacy matters more than people admit
 
@@ -182,7 +182,7 @@ Before putting real examples into any AI tool, clean the context: remove company
 
 This is why user control matters. A [local-first AI meeting copilot](https://extrabrain.app) is valuable not because privacy is a marketing checkbox, but because serious interview preparation often requires honest context. Candidates need tools that make capture, review, and retention feel intentional.
 
-![ExtraBrain 06c settings privacy controls for System Design Interviews in the AI Era: Use AI to Think Clearer, Not Louder](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Privacy matters more than people admit in system design interviews ai era](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## A simple AI-assisted practice loop
 
@@ -201,7 +201,7 @@ Then use AI in four passes:
 
 Finally, repeat the prompt from scratch. The second version should sound more organized, but still human.
 
-![ExtraBrain 05 live star interview coaching for System Design Interviews in the AI Era: Use AI to Think Clearer, Not Louder](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for A simple AI-assisted practice loop in system design interviews ai era](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## The goal is assisted clarity
 

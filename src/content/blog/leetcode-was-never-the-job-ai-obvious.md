@@ -13,7 +13,7 @@ tags:
 draft: false
 ogImage: "/assets/blog-covers/09-leetcode-was-never-the-job.png"
 ---
-![ExtraBrain 08 coding interview lru cache for LeetCode Was Never the Job. AI Just Made That Obvious.](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for article introduction in leetcode was never the job ai obvious](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
 A strange thing happened when AI interview tools became controversial: everyone started arguing about cheating, but fewer people wanted to talk about why the old test was so easy to cheat in the first place.
 
@@ -43,7 +43,7 @@ The job was never "produce a clever solution from memory while someone watches."
 
 AI makes that distinction impossible to ignore.
 
-![ExtraBrain 08 coding interview lru cache for LeetCode Was Never the Job. AI Just Made That Obvious.](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for The LeetCode interview was a scalability hack in leetcode was never the job ai obvious](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
 ## InterviewCoder was a warning sign, not the whole story
 
@@ -75,7 +75,7 @@ That is engineering behavior.
 
 A candidate who owns their reasoning can accept help, inspect it, reject parts of it, and explain what remains. A candidate who does not may produce an impressive answer and then collapse under one follow-up question. The better question is not whether engineers will use tools. They will. The better question is whether this person can use available tools while remaining accountable for the result.
 
-![ExtraBrain 01 live analysis product strategy for LeetCode Was Never the Job. AI Just Made That Obvious.](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for The real signal is not the answer. It is ownership. in leetcode was never the job ai obvious](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
 ## Candidates should prepare for judgment, not scripts
 
@@ -94,7 +94,7 @@ That last question matters now. Responsible AI use is becoming part of professio
 
 Preparation builds the skill. Deception borrows the appearance of skill.
 
-![ExtraBrain 05 live star interview coaching for LeetCode Was Never the Job. AI Just Made That Obvious.](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for Candidates should prepare for judgment, not scripts in leetcode was never the job ai obvious](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
 ## Interviewers should stop asking questions that only reward recall
 
@@ -128,7 +128,7 @@ The key is consent. AI use becomes cheating when it secretly performs the skill 
 
 A mature hiring process should be able to tell candidates which mode they are in.
 
-![ExtraBrain 01 live analysis product strategy for LeetCode Was Never the Job. AI Just Made That Obvious.](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for AI policy should be explicit, not implied in leetcode was never the job ai obvious](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Privacy is part of responsible preparation
 

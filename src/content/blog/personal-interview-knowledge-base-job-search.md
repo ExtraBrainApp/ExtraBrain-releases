@@ -15,7 +15,7 @@ ogImage: "/assets/blog-covers/18-personal-interview-knowledge-base.png"
 ---
 ---
 
-![ExtraBrain 01 live analysis product strategy for How to Build a Personal Interview Knowledge Base Before Your Next Job Search](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for article introduction in personal interview knowledge base job search](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 Most people start interview prep too late.
 
@@ -41,7 +41,7 @@ Those phrases may be true, but they are not evidence. Interviewers need the stor
 
 A personal interview knowledge base gives you that evidence before you are under pressure. It lets you collect raw material while it is still fresh, then shape it later for the role, company, and interview stage.
 
-![ExtraBrain 01 live analysis product strategy for How to Build a Personal Interview Knowledge Base Before Your Next Job Search](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for The best interview prep starts before the job search in personal interview knowledge base job search](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 Think of it as a career memory system. The goal is to make your real examples easy to find.
 
@@ -61,7 +61,7 @@ A useful interview knowledge base is not just a list of accomplishments. Intervi
 
 **6. Lessons.** These are the insights that survived the project. What did you learn about communication, architecture, prioritization, leadership, estimation, user research, data quality, or your own working style?
 
-![ExtraBrain 01 live analysis product strategy for How to Build a Personal Interview Knowledge Base Before Your Next Job Search](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for What belongs in an interview knowledge base in personal interview knowledge base job search](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 Interview questions rarely match how memories are stored. You may remember “the billing migration,” but the interviewer asks about “influencing without authority.” Tags bridge that gap.
 
@@ -96,7 +96,7 @@ A practical weekly workflow looks like this:
 4. Add one difficult moment, even if it did not resolve cleanly.
 5. Add one lesson you would want your future self to remember.
 
-![ExtraBrain 01 live analysis product strategy for How to Build a Personal Interview Knowledge Base Before Your Next Job Search](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for Turn scattered career data into searchable memory in personal interview knowledge base job search](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 This takes ten minutes when done regularly. It takes days when done after years of neglect.
 
@@ -119,7 +119,7 @@ For each strong example in your knowledge base, create a story card with these f
 - **Privacy notes:** Names, numbers, or details to redact.
 - **Follow-up risk:** The question an interviewer might ask next.
 
-![ExtraBrain 06c settings privacy controls for How to Build a Personal Interview Knowledge Base Before Your Next Job Search](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for Build story cards, not scripts in personal interview knowledge base job search](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 This format keeps you honest. If you cannot fill in “Action,” the story may be too team-level. If you cannot fill in “Result,” you may need a metric or a different example. A good [AI interview preparation workspace](https://extrabrain.app) should help you see those gaps before the interview does.
 
@@ -139,7 +139,7 @@ Try prompts like:
 
 These prompts keep responsibility with you. AI can surface patterns, compress notes, suggest framing, and notice missing evidence. You still decide what is true and appropriate to share.
 
-![ExtraBrain 05 live star interview coaching for How to Build a Personal Interview Knowledge Base Before Your Next Job Search](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for Use AI to ask better questions of your own experience in personal interview knowledge base job search](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 Responsible AI career prep should make you clearer, not less accountable.
 
@@ -166,7 +166,7 @@ Use a few rules:
 - Do not paste your entire career history into tools with unclear retention policies.
 - Treat interview prep notes as career data, not disposable text.
 
-![ExtraBrain 06c settings privacy controls for How to Build a Personal Interview Knowledge Base Before Your Next Job Search](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Privacy is part of the system in personal interview knowledge base job search](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 Privacy makes honest preparation possible. If you trust the workspace, you can capture the messy truth first and refine it safely later.
 

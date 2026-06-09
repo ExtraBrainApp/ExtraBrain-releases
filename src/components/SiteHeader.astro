@@ -1,0 +1,61 @@
+---
+import { contactEmail } from '../data/product';
+
+type Props = {
+  isHome?: boolean;
+  brandHref?: string;
+  downloadHref?: string;
+  downloadLabel?: string;
+  downloadDataAttr?: string;
+  mobileDownloadDataAttr?: string;
+  useDataDownload?: boolean;
+  downloadTrackEvent?: string;
+  feedbackHref?: string;
+  feedbackTrigger?: boolean;
+};
+
+const {
+  isHome = false,
+  brandHref = isHome ? '#top' : '/',
+  downloadHref = '/download/',
+  downloadLabel = 'Download for Mac',
+  downloadDataAttr = 'download-cta-nav',
+  mobileDownloadDataAttr = 'download-cta-nav-mobile',
+  useDataDownload = false,
+  downloadTrackEvent = useDataDownload ? undefined : 'download_nav_clicked',
+  feedbackHref = `mailto:${contactEmail}?subject=ExtraBrain%20Feedback`,
+  feedbackTrigger = false,
+} = Astro.props;
+
+const productHref = isHome ? '#overview' : '/#overview';
+const useCasesHref = isHome ? '#workflows' : '/#workflows';
+const downloadAttributes = {
+  'data-download': useDataDownload ? '' : undefined,
+  'data-track': downloadTrackEvent,
+};
+---
+
+<header class="site-header">
+  <div class="container nav">
+    <a href={brandHref} class="brand" aria-label="ExtraBrain home">
+      <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="34" height="34" />
+      <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
+        <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href={productHref}>Product</a>
+      <a href={useCasesHref}>Use cases</a>
+      <a href="/download/">Download</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/blog/">Blog</a>
+      <a href="/help/">Help</a>
+      <a href={feedbackHref} data-feedback-trigger={feedbackTrigger ? '' : undefined}>Feedback</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn primary" href={downloadHref} data-attr={downloadDataAttr} {...downloadAttributes}>{downloadLabel}</a>
+    </div>
+    <a class="btn primary mobile-only" href={downloadHref} data-attr={mobileDownloadDataAttr} {...downloadAttributes}>{downloadLabel}</a>
+  </div>
+</header>

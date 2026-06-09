@@ -13,7 +13,7 @@ tags:
 draft: false
 ogImage: "/assets/blog-covers/30-quiet-second-brain-for-interviews.png"
 ---
-![ExtraBrain live analysis during a product strategy session](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in best ai copilot does not need to be a gadget](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 The Humane AI Pin was supposed to make the phone feel old. Instead, it became a warning about a larger mistake in AI product design: treating intelligence as something that needs a new object, a new ritual, and a new place on your body.
 
@@ -33,7 +33,7 @@ That is not merely a story about one startup shipping too early. It is a story a
 
 A new device has to justify its price, fit social norms, work faster than the device it replaces, handle battery and heat, earn privacy trust, and remain useful when connectivity or cloud services fail. That is a lot of burden before the AI even gets to help.
 
-![ExtraBrain live coaching analysis with structured follow-up prompts](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for The AI gadget problem is not just bad hardware in best ai copilot does not need to be a gadget](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## The shutdown made the risk obvious
 
@@ -59,7 +59,7 @@ That is why the “no gadget” version of AI assistance is often more powerful.
 
 A [local-first AI meeting copilot](https://extrabrain.app) such as ExtraBrain points in this direction: assistance that works around conversations and user-controlled context instead of asking the user to adopt a new piece of hardware as the center of their day.
 
-![ExtraBrain privacy controls for user-controlled capture](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for Useful copilots live where the work already happens in best ai copilot does not need to be a gadget](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## The best interface may be the one you do not have to explain
 
@@ -96,7 +96,7 @@ This matters for both meetings and interviews. In interview preparation, AI can 
 
 A good copilot should make the responsible path easier.
 
-![ExtraBrain analysis highlighting strategic risks and follow-up questions](/assets/screenshots/blog/09-investor-demo-defensibility.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Privacy is a product feature, not a policy footnote in best ai copilot does not need to be a gadget](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## AI should support the human, not perform as the human
 
@@ -150,7 +150,7 @@ Ask practical questions:
 
 These questions are less exciting than “What if your assistant lived on your shirt?” They are also more likely to predict whether the product will still matter after the launch hype fades.
 
-![ExtraBrain post-session debugging and review analysis](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for What to look for in a practical AI copilot in best ai copilot does not need to be a gadget](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## The future is ambient, but ambient does not mean wearable
 
