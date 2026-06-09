@@ -11,6 +11,7 @@ tags:
   - "Interview Follow Up"
   - "Responsible AI"
 draft: false
+ogImageAlt: "ExtraBrain AI interview debrief cover showing follow-up notes and post-interview improvement workflow"
 ogImage: "/assets/blog-covers/21-after-interview-debrief.png"
 ---
 

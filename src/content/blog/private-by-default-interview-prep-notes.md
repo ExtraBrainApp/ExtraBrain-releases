@@ -11,6 +11,7 @@ tags:
   - "Career Advice"
   - "Responsible AI"
 draft: false
+ogImageAlt: "ExtraBrain private interview prep notes cover showing local-first AI privacy controls"
 ogImage: "/assets/blog-covers/15-private-interview-notes.png"
 ---
 ---

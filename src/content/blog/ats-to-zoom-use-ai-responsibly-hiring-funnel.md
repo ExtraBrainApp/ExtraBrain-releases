@@ -11,6 +11,7 @@ tags:
   - "Interviewing"
   - "Resume Tips"
 draft: false
+ogImageAlt: "ExtraBrain responsible AI hiring funnel cover from ATS screening to Zoom interviews"
 ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.png"
 ---
 The modern job search now has two audiences: the human hiring team and the software that helps them sort, screen, schedule, and interview. That can feel unfair if you are trying to present your experience honestly while competing against candidates who seem to have an AI tool for every step. But responsible AI use is not about faking expertise. It is about preparing more clearly, protecting your privacy, and showing up as the strongest version of yourself when the real conversation begins.

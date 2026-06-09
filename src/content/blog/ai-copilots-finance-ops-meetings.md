@@ -11,6 +11,7 @@ tags:
   - "Responsible AI"
   - "Workflow Automation"
 draft: false
+ogImageAlt: "ExtraBrain AI meeting copilot cover showing private notes for finance and operations decisions"
 ogImage: "/assets/blog-covers/30-quiet-second-brain-for-interviews.png"
 ---
 Finance and operations meetings create expensive forgetting. A pricing exception gets approved verbally. A budget risk is acknowledged but never written down. A vendor renewal owner is named in passing. Everyone leaves thinking the decision is obvious, then the next meeting starts with: “Wait, what did we decide?”

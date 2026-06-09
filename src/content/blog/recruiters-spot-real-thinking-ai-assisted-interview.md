@@ -11,6 +11,7 @@ tags:
   - "Responsible AI"
   - "Candidate Experience"
 draft: false
+ogImageAlt: "ExtraBrain recruiter guide cover showing real candidate thinking in an AI-assisted interview"
 ogImage: "/assets/blog-covers/12-recruiters-spot-real-thinking.png"
 ---
 ---

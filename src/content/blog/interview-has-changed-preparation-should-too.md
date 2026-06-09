@@ -11,6 +11,7 @@ tags:
   - "Job Search"
   - "Future of Work"
 draft: false
+ogImageAlt: "ExtraBrain AI interview preparation cover showing modern interview workflows"
 ogImage: "/assets/blog-covers/01-interview-has-changed.png"
 ---
 ![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in interview has changed preparation should too](/assets/screenshots/blog/01-live-analysis-product-strategy.png)

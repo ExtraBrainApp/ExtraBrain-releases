@@ -24,6 +24,7 @@ const { Content } = await render(post);
 const siteUrl = Astro.site ?? new URL('https://extrabrain.app');
 const canonicalUrl = new URL(`/blog/${post.id}/`, siteUrl).href;
 const articleTitle = post.data.seoTitle ?? post.data.title;
+const coverImageAlt = post.data.ogImageAlt ?? `${post.data.title} article cover image for ExtraBrain AI interview prep`;
 const modifiedDate = post.data.updatedDate ?? post.data.publishDate;
 const schemaGraph = [
   {
@@ -79,7 +80,7 @@ const schemaGraph = [
           <p class="eyebrow">ExtraBrain Blog</p>
           <h1>{post.data.title}</h1>
           {post.data.ogImage && (
-            <img class="blog-article-cover" src={post.data.ogImage} alt="" />
+            <img class="blog-article-cover" src={post.data.ogImage} alt={coverImageAlt} />
           )}
           <p class="lead">{post.data.description}</p>
           <div class="blog-article-meta">

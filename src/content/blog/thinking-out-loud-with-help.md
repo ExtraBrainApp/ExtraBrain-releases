@@ -11,6 +11,7 @@ tags:
   - "Responsible AI"
   - "Job Search"
 draft: false
+ogImageAlt: "ExtraBrain interview skills cover showing candidates thinking out loud with AI support"
 ogImage: "/assets/blog-covers/03-thinking-out-loud-with-help.png"
 ---
 ![ExtraBrain investor-demo coaching view with defensibility answer guidance and follow-up questions for article introduction in thinking out loud with help](/assets/screenshots/blog/09-investor-demo-defensibility.png)
