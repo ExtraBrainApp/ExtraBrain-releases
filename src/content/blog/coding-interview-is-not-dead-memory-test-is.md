@@ -13,7 +13,7 @@ tags:
 draft: false
 ogImage: "/assets/blog-covers/23-real-work-coding-interviews.png"
 ---
-![ExtraBrain coding interview practice analysis](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for article introduction in coding interview is not dead memory test is](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
 The coding interview is not going away. It is just becoming much harder to fake.
 
@@ -74,7 +74,7 @@ The best candidates do not merely finish the problem. They narrate their reasoni
 
 That is the interview signal AI has a harder time replacing: not the first draft, but the human judgment around it.
 
-![ExtraBrain post-session debugging and review analysis](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for The New Interview Signal Is Explanation in coding interview is not dead memory test is](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
 ## The Best Candidates Will Practice Differently
 
@@ -134,7 +134,7 @@ In real teams, AI output still needs review. It can be confident and wrong. It c
 
 That is a far better signal than asking candidates to pretend they will never use tools once hired.
 
-![ExtraBrain live coaching analysis with structured follow-up prompts](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for AI Fluency Should Be Evaluated, Not Ignored in coding interview is not dead memory test is](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
 ## Privacy and Control Will Matter More
 

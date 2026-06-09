@@ -1,6 +1,7 @@
 ---
 import MarketingLayout from './MarketingLayout.astro';
 import BacklinksFooter from '../components/BacklinksFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import {
   absoluteUrl,
   breadcrumbSchema,
@@ -185,28 +186,7 @@ const breadcrumbItems = [
 ---
 
 <MarketingLayout title={`${page.title} | ${productName}`} description={page.description} ogImage={page.ogImage} schemaGraph={schemaGraph} enableAnalytics={!isPerformanceDiscoveryPage}>
-  <header class="site-header">
-    <div class="container nav">
-      <a href="/" class="brand" aria-label="ExtraBrain home">
-        <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="34" height="34" />
-        <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
-          <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
-        </span>
-      </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="/download/">Download</a>
-        <a href="/pricing/">Pricing</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/blog/">Blog</a>
-        <a href="/help/">Help</a>
-        <a href={feedbackHref}>Feedback</a>
-      </nav>
-      <div class="nav-actions">
-        <a class="btn primary" href="/download/" data-track="download_nav_clicked" data-attr="download-cta-nav">Download for Mac</a>
-      </div>
-      <a class="btn primary mobile-only" href="/download/" data-track="download_nav_clicked" data-attr="download-cta-nav-mobile">Download</a>
-    </div>
-  </header>
+  <SiteHeader feedbackHref={feedbackHref} />
 
   <main id="top" class="page-main">
     <section class="page-hero">

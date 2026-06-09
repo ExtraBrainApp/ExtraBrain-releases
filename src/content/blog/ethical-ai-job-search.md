@@ -19,7 +19,7 @@ The hiring process has become AI-shaped on both sides, but the rules still feel 
 
 That is the ethical line. AI can be a preparation layer, memory aid, privacy-conscious workspace, and communication coach. It should not become an impersonator. It should not invent achievements, secretly answer live assessments, or help you win a job you cannot actually do.
 
-![ExtraBrain 06c settings privacy controls for The Ethical Way to Bring AI Into Your Job Search](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for article introduction in ethical ai job search](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## The Cheating Debate Is Real, but It Is Too Small
 
@@ -50,7 +50,7 @@ A simple rule helps: **never put a sentence on your resume that you cannot expla
 
 Use AI to find missing evidence, weak phrasing, unclear bullets, and role-specific language. Do not use it to create a fictional candidate.
 
-![ExtraBrain 07 hr intro call recruiter screen for The Ethical Way to Bring AI Into Your Job Search](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Use AI to Translate Your Experience, Not Upgrade It in ethical ai job search](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Build a Story Bank Before You Build Scripts
 
@@ -100,7 +100,7 @@ The ethical use is:
 
 That kind of AI support makes you more prepared. It does not replace you.
 
-![ExtraBrain 05 live star interview coaching for The Ethical Way to Bring AI Into Your Job Search](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Practice Out Loud, Because Written Answers Lie in ethical ai job search](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## During Live Interviews, Permission Decides the Boundary
 
@@ -143,7 +143,7 @@ Replace customer names with placeholders. Generalize internal systems. Remove co
 
 This is why local-first and user-controlled AI tools matter. A [local-first AI meeting copilot](https://extrabrain.app) is not just a technical preference; it is a better default for sensitive conversations. The less unnecessary data you send away, the easier it is to use AI responsibly.
 
-![ExtraBrain 06c settings privacy controls for The Ethical Way to Bring AI Into Your Job Search](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Privacy Is an Ethical Issue Too in ethical ai job search](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Use AI After the Interview to Learn, Not Spiral
 

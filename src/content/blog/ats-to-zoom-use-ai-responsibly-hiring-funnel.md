@@ -15,7 +15,7 @@ ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.png"
 ---
 The modern job search now has two audiences: the human hiring team and the software that helps them sort, screen, schedule, and interview. That can feel unfair if you are trying to present your experience honestly while competing against candidates who seem to have an AI tool for every step. But responsible AI use is not about faking expertise. It is about preparing more clearly, protecting your privacy, and showing up as the strongest version of yourself when the real conversation begins.
 
-![ExtraBrain session alongside a recruiter interview screen](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for article introduction in ats to zoom use ai responsibly hiring funnel](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## The Hiring Funnel Has Become an AI Funnel
 
@@ -67,7 +67,7 @@ That is not keyword stuffing. That is clearer translation.
 
 A responsible ATS workflow is simple: use standard headings, readable bullets, accurate terminology, measurable outcomes, and the file type the employer requests. Remove vague claims like “results-driven” unless they are tied to evidence.
 
-![ExtraBrain coding interview practice analysis](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Stage 1: Use AI to Build an ATS-Friendly Resume Without Keyword Stuffing in ats to zoom use ai responsibly hiring funnel](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## Stage 2: Prepare for AI Resume Screening Like a Human Will Read It Later
 
@@ -96,7 +96,7 @@ For each story, capture the situation, your responsibility, the action you perso
 
 One workflow I like is recording a practice answer out loud, transcribing it, and asking AI to evaluate it against the role. Tools like [ExtraBrain](https://extrabrain.app) can help because they are built around live conversations and post-session analysis rather than generic chat prompts. As a local-first AI meeting copilot, ExtraBrain is especially useful for practicing how you actually sound when you explain a project, not just how polished your written answer looks.
 
-![ExtraBrain live coaching analysis with structured follow-up prompts](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Stage 3: Use AI Interview Prep to Find Your Real Stories in ats to zoom use ai responsibly hiring funnel](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Stage 4: Be Careful With AI During Live Interviews
 
@@ -133,7 +133,7 @@ You do not need to become a privacy lawyer to make better choices. Redact aggres
 
 This is one reason candidate-controlled tools matter. AI assistance should work for the person using it, not quietly turn their job search into someone else’s data source.
 
-![ExtraBrain privacy controls for user-controlled capture](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Stage 5: Treat Privacy as Part of Professionalism in ats to zoom use ai responsibly hiring funnel](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Stage 6: Use AI After the Interview to Improve, Not Obsess
 

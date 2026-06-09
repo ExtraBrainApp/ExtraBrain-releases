@@ -21,7 +21,7 @@ That question is fair. Hiring teams need authentic signal, and candidates need a
 
 Recruiters do not need to become surveillance operators. They need better interview design.
 
-![ExtraBrain 07 hr intro call recruiter screen for How Recruiters Can Spot Real Thinking in an AI-Assisted Interview](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for article introduction in recruiters spot real thinking ai assisted interview](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## Start with the right question
 
@@ -50,7 +50,7 @@ A short pre-interview AI policy helps honest candidates and protects the evaluat
 
 That last line matters. It tells candidates what the process values. You are not saying, “We are trying to catch you.” You are saying, “We are trying to understand how you think.”
 
-![ExtraBrain 01 live analysis product strategy for How Recruiters Can Spot Real Thinking in an AI-Assisted Interview](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Make your AI policy explicit before the interview in recruiters spot real thinking ai assisted interview](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Ask for the path, not just the answer
 
@@ -79,7 +79,7 @@ It includes **ownership language**. The candidate can distinguish “we” from 
 
 It includes **limits**. The candidate can say what they did not know, what failed, what they would not repeat, or where their solution was incomplete. Counterintuitively, this often makes an answer more credible.
 
-![ExtraBrain 09 investor demo defensibility for How Recruiters Can Spot Real Thinking in an AI-Assisted Interview](/assets/screenshots/blog/09-investor-demo-defensibility.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Watch for reasoning markers in recruiters spot real thinking ai assisted interview](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## Change the scenario midstream
 
@@ -122,7 +122,7 @@ Recruiters can make this distinction explicit by asking neutral disclosure quest
 
 These questions invite honesty without making AI a taboo subject.
 
-![ExtraBrain 01 live analysis product strategy for How Recruiters Can Spot Real Thinking in an AI-Assisted Interview](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for Treat responsible AI use as a professional skill in recruiters spot real thinking ai assisted interview](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
 ## Do not use surveillance as a substitute for evaluation
 
@@ -154,7 +154,7 @@ This creates a record that is more useful to hiring managers and fairer to candi
 
 A candidate should not advance because they felt smooth. They should not be rejected because they felt too smooth. They should advance because the evidence suggests they can do the work.
 
-![ExtraBrain 07 hr intro call recruiter screen for How Recruiters Can Spot Real Thinking in an AI-Assisted Interview](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Score the evidence, not the suspicion in recruiters spot real thinking ai assisted interview](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## Use AI after the interview to improve the process
 

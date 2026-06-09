@@ -19,7 +19,7 @@ A candidate may use AI to tune a resume. An applicant tracking system may parse 
 
 The answer is stage-specific. AI can help you translate, prepare, remember, and reflect. It should not invent your experience, impersonate your judgment, or secretly perform the skill being evaluated.
 
-![ExtraBrain 07 hr intro call recruiter screen for From Resume Screen to Final Round: Where AI Can Actually Help Job Seekers](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for article introduction in ai help job seekers resume final round](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 Below is a practical map for using AI across the hiring funnel without turning yourself into a generated candidate.
 
@@ -53,7 +53,7 @@ Where candidates get into trouble is when AI starts adding achievements that did
 
 If you cannot defend a bullet in a recruiter call, it does not belong on the resume.
 
-![ExtraBrain 07 hr intro call recruiter screen for From Resume Screen to Final Round: Where AI Can Actually Help Job Seekers](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Stage 1: Resume Screen — Use AI to Translate, Not Fabricate in ai help job seekers resume final round](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## Stage 2: Recruiter Call — Use AI to Prepare Your Story, Not Script Your Personality
 
@@ -81,7 +81,7 @@ A strong recruiter-call answer usually has three parts: what you do now, what yo
 
 This is also a good time to use a private preparation workspace. A tool like [ExtraBrain](https://extrabrain.app) can help you talk through recruiter-call answers out loud, review the transcript, and notice where you sound clear versus rehearsed. As an [AI interview preparation workspace](https://extrabrain.app), it is most useful when it helps you hear your own words more accurately.
 
-![ExtraBrain 07 hr intro call recruiter screen for From Resume Screen to Final Round: Where AI Can Actually Help Job Seekers](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Stage 2: Recruiter Call — Use AI to Prepare Your Story, Not Script Your Personality in ai help job seekers resume final round](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## Stage 3: Technical Screen — Use AI to Practice the Thinking, Not Outsource the Skill
 
@@ -113,7 +113,7 @@ During the actual screen, ask about the rules:
 
 That question is professional, not awkward. Some companies allow documentation. Some allow AI in specific ways. Some prohibit it entirely. The important thing is not to guess silently.
 
-![ExtraBrain 01 live analysis product strategy for From Resume Screen to Final Round: Where AI Can Actually Help Job Seekers](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for Stage 3: Technical Screen — Use AI to Practice the Thinking, Not Outsource the Skill in ai help job seekers resume final round](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
 ## Stage 4: Final Round — Use AI to Connect the Dots
 
@@ -139,7 +139,7 @@ A final round is not only about getting chosen. It is also about choosing. Use A
 - How does the team handle disagreement?
 - What changed that made this hire necessary now?
 
-![ExtraBrain 09 investor demo defensibility for From Resume Screen to Final Round: Where AI Can Actually Help Job Seekers](/assets/screenshots/blog/09-investor-demo-defensibility.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Stage 4: Final Round — Use AI to Connect the Dots in ai help job seekers resume final round](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## After Every Stage: Debrief While the Memory Is Fresh
 
@@ -153,7 +153,7 @@ Use it for debriefing instead. Right after each stage, write or record quick not
 
 Then use AI to turn those notes into a practical next-step plan. This is where a [local-first AI meeting copilot](https://extrabrain.app) can be valuable: job-search conversations include sensitive context, and your prep notes should stay under your control.
 
-![ExtraBrain 05 live star interview coaching for From Resume Screen to Final Round: Where AI Can Actually Help Job Seekers](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for After Every Stage: Debrief While the Memory Is Fresh in ai help job seekers resume final round](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## Privacy Is Part of Responsible AI Use
 

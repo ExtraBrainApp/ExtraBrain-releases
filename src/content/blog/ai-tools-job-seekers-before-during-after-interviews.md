@@ -15,7 +15,7 @@ ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.png"
 ---
 ---
 
-![ExtraBrain 07 hr intro call recruiter screen for AI Tools for Job Seekers: What to Use Before, During, and After Interviews](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for article introduction in ai tools job seekers before during after interviews](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 Most job seekers do not need “more AI.” They need the right AI tool at the right moment.
 
@@ -41,7 +41,7 @@ This gives you a working map. It helps you see whether the role is mainly about 
 
 The responsible line is simple: use AI to interpret the role, not to pretend you already match every part of it. If the analysis reveals a real gap, that is useful information. You can decide whether to address it honestly, position adjacent experience, or skip the role.
 
-![ExtraBrain 01 live analysis product strategy for AI Tools for Job Seekers: What to Use Before, During, and After Interviews](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for Before the Interview: Use AI to Understand the Role in ai tools job seekers before during after interviews](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## Before the Interview: Use Resume Tools as Editors, Not Fiction Machines
 
@@ -63,7 +63,7 @@ If the real work involved analysis, stakeholder coordination, and measurable res
 
 That is useful only if it is true. If the 28% never happened, it does not belong on the resume. AI should make your evidence clearer, not create new evidence.
 
-![ExtraBrain 07 hr intro call recruiter screen for AI Tools for Job Seekers: What to Use Before, During, and After Interviews](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Before the Interview: Use Resume Tools as Editors, Not Fiction Machines in ai tools job seekers before during after interviews](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## Before the Interview: Build a Memory Bank Before You Practice Answers
 
@@ -81,7 +81,7 @@ The best prompt is not “write me a leadership answer.” It is:
 
 That workflow starts from evidence. It helps you show up with answers that sound specific because they are specific.
 
-![ExtraBrain 01 live analysis product strategy for AI Tools for Job Seekers: What to Use Before, During, and After Interviews](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Before the Interview: Build a Memory Bank Before You Practice Answers in ai tools job seekers before during after interviews](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Before the Interview: Practice Out Loud, Not Just on the Page
 
@@ -101,7 +101,7 @@ Useful prompts include:
 
 A [private AI interview copilot](https://extrabrain.app) is valuable when it helps you hear yourself more accurately. It should not replace your judgment or create a script you memorize. It should show you where your real answer needs structure.
 
-![ExtraBrain 05 live star interview coaching for AI Tools for Job Seekers: What to Use Before, During, and After Interviews](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Before the Interview: Practice Out Loud, Not Just on the Page in ai tools job seekers before during after interviews](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## During the Interview: Use AI Only Within the Rules
 
@@ -119,7 +119,7 @@ That question shows respect for the process and protects you from accidental mis
 
 There are responsible uses during some interviews. You may be allowed to keep notes or use a transcript for accessibility or memory support, depending on consent and local rules. But reading live generated answers in a closed assessment is different. That crosses from support into substitution.
 
-![ExtraBrain 01 live analysis product strategy for AI Tools for Job Seekers: What to Use Before, During, and After Interviews](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for During the Interview: Use AI Only Within the Rules in ai tools job seekers before during after interviews](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## After the Interview: Debrief Before Memory Decays
 
@@ -135,7 +135,7 @@ Then ask AI to organize the notes into themes, open questions, and next actions.
 
 This is where [ExtraBrain](https://extrabrain.app) can become more than an interview tool. It becomes a memory layer across your whole search, helping each conversation improve the next one.
 
-![ExtraBrain 05 live star interview coaching for AI Tools for Job Seekers: What to Use Before, During, and After Interviews](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for After the Interview: Debrief Before Memory Decays in ai tools job seekers before during after interviews](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## After the Interview: Use AI for Follow-Up Without Losing Your Voice
 
@@ -151,7 +151,7 @@ Then edit it. Remove anything you would not say. Add one detail from the convers
 
 AI can also help you prepare a recruiter update, a salary clarification, a take-home submission note, or a thoughtful question for the next round. The same rule applies: use the tool to reduce blank-page friction, then make the final message yours.
 
-![ExtraBrain 05 live star interview coaching for AI Tools for Job Seekers: What to Use Before, During, and After Interviews](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for After the Interview: Use AI for Follow-Up Without Losing Your Voice in ai tools job seekers before during after interviews](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## The Simple Tool Stack I Would Use
 
@@ -166,7 +166,7 @@ If I were building an AI tool stack for a job search, I would keep it focused:
 
 ExtraBrain belongs in the memory, practice, interview copilot, and debrief parts of that stack. It is not there to make you a fake candidate. It is there to help you keep control of your own context and explain your real experience more clearly.
 
-![ExtraBrain 01 live analysis product strategy for AI Tools for Job Seekers: What to Use Before, During, and After Interviews](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for The Simple Tool Stack I Would Use in ai tools job seekers before during after interviews](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## Choose Tools That Make You Clearer, Not Less Real
 

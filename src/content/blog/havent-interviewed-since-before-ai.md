@@ -17,7 +17,7 @@ If you have not interviewed in years, the process can feel like returning to a c
 
 Reasonable. A good interview is not a performance of perfect answers. It is a conversation where a hiring team tries to understand how you think, how you work, and whether the role fits both sides. AI can help you prepare, but it should not replace your judgment, your stories, or your voice.
 
-![ExtraBrain live coaching analysis with structured follow-up prompts](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for article introduction in havent interviewed since before ai](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## The new interview anxiety is not just about answering questions
 
@@ -59,7 +59,7 @@ Once you have the list, ask AI to help you map each story to interview themes: l
 
 The point is not to manufacture answers. The point is to realize you already have enough raw material. You are organizing memory, not inventing a candidate persona.
 
-![ExtraBrain session alongside a recruiter interview screen](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Start by building your story bank in havent interviewed since before ai](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Turn long experience into clear answers
 
@@ -95,7 +95,7 @@ This is where AI becomes useful for anxiety. The fear behind many interviews is 
 
 If you are using a tool like [ExtraBrain](https://extrabrain.app), a local-first AI meeting copilot, you can talk through a mock answer, review the transcript, and use the analysis to spot where you drifted, rushed, or lost the thread. That kind of review is most helpful when it stays private, grounded in your own words, and under your control.
 
-![ExtraBrain privacy controls for user-controlled capture](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Practice follow-up questions, not scripts in havent interviewed since before ai](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Keep a “do not say it that way” list
 
@@ -131,7 +131,7 @@ Instead of asking, “What is the culture like?” try: “When priorities confl
 
 These questions help you evaluate fit and sound like someone who has worked inside real organizations. You are not trying to impress with cleverness. You are trying to have an adult conversation about work.
 
-![ExtraBrain post-session debugging and review analysis](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for Use AI to prepare questions for them, too in havent interviewed since before ai](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 ## A simple AI prep routine for the week before
 

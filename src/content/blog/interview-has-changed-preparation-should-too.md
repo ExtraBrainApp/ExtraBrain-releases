@@ -13,7 +13,7 @@ tags:
 draft: false
 ogImage: "/assets/blog-covers/01-interview-has-changed.png"
 ---
-![ExtraBrain 01 live analysis product strategy for The Interview Has Changed. Your Preparation Should Too.](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in interview has changed preparation should too](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 The interview used to be the moment when preparation ended and performance began. You researched the company, rehearsed your answers, walked into the room, and hoped your memory held up under pressure.
 
@@ -33,7 +33,7 @@ Modern interviews create a different kind of pressure. You may be competing agai
 
 The old playbook was built around recall. The new one has to be built around clarity: not “Can I remember the answer?” but “Can I explain my judgment when the conversation moves?”
 
-![ExtraBrain 06c settings privacy controls for The Interview Has Changed. Your Preparation Should Too.](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for The Old Interview Prep Playbook Is Too Thin Now in interview has changed preparation should too](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Start With Evidence, Not Generic Questions
 
@@ -53,7 +53,7 @@ That prompt keeps you in control. You bring the experience. AI helps you see the
 
 Tools like [ExtraBrain](https://extrabrain.app) are useful in this phase because they are designed around capturing and analyzing real conversations. As an [AI interview preparation workspace](https://extrabrain.app), it can help you talk through a story out loud, review the transcript, and notice where your explanation was strong or vague.
 
-![ExtraBrain 09 investor demo defensibility for The Interview Has Changed. Your Preparation Should Too.](/assets/screenshots/blog/09-investor-demo-defensibility.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Start With Evidence, Not Generic Questions in interview has changed preparation should too](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Practice Thinking, Not Performing
 
@@ -77,7 +77,7 @@ If you cannot answer those without reading a script, you are not done preparing.
 
 A [private AI interview copilot](https://extrabrain.app) should make this easier, not lazier. The best use is not to feed you perfect lines. It is to ask better questions, catch vague explanations, and help you rehearse the parts of the conversation where real judgment appears.
 
-![ExtraBrain 05 live star interview coaching for The Interview Has Changed. Your Preparation Should Too.](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Practice Thinking, Not Performing in interview has changed preparation should too](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Build a Personal AI Boundary Before the Interview
 
@@ -109,7 +109,7 @@ This is one reason I like the idea of a [local-first AI meeting copilot](https:/
 
 Privacy is not paranoia. It is professionalism.
 
-![ExtraBrain 06c settings privacy controls for The Interview Has Changed. Your Preparation Should Too.](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Protect Your Context Like It Matters in interview has changed preparation should too](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Use AI to Hear Yourself More Clearly
 
@@ -129,7 +129,7 @@ That last phrase matters: preserves the truth. The best interview prep does not 
 
 ExtraBrain fits naturally here because it works like a memory layer for conversations. You can practice out loud, let the tool capture what happened, then use the analysis to refine your own answer. The workflow is closer to reviewing game tape than generating a script.
 
-![ExtraBrain 05 live star interview coaching for The Interview Has Changed. Your Preparation Should Too.](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Use AI to Hear Yourself More Clearly in interview has changed preparation should too](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Prepare for AI Questions Too
 
@@ -157,7 +157,7 @@ The week before an interview, use a simple loop:
 
 This loop turns AI into a preparation layer instead of a performance crutch.
 
-![ExtraBrain 01 live analysis product strategy for The Interview Has Changed. Your Preparation Should Too.](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for Create a Simple Prep Loop in interview has changed preparation should too](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## The Future Belongs to Clearer Candidates
 

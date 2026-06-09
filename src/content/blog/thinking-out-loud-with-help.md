@@ -13,7 +13,7 @@ tags:
 draft: false
 ogImage: "/assets/blog-covers/03-thinking-out-loud-with-help.png"
 ---
-![ExtraBrain 09 investor demo defensibility for The New Interview Skill: Thinking Out Loud With Help](/assets/screenshots/blog/09-investor-demo-defensibility.png)
+![ExtraBrain investor-demo coaching view with defensibility answer guidance and follow-up questions for article introduction in thinking out loud with help](/assets/screenshots/blog/09-investor-demo-defensibility.png)
 
 The most important interview skill in the AI era is not having a perfect answer ready. It is being able to think out loud clearly while tools, pressure, and uncertainty are all in the room.
 
@@ -33,7 +33,7 @@ AI makes this problem more visible because it can produce interview answers that
 
 The new goal is not to sound prepared. It is to **be prepared to reason**.
 
-![ExtraBrain 01 live analysis product strategy for The New Interview Skill: Thinking Out Loud With Help](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for The old goal was sounding prepared in thinking out loud with help](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## AI assistance should make your thinking more visible
 
@@ -73,7 +73,7 @@ These answers are not polished monologues. They are windows into judgment.
 
 That is what interviewers are trying to evaluate anyway. The answer matters, but the path to the answer often matters more.
 
-![ExtraBrain 01 live analysis product strategy for The New Interview Skill: Thinking Out Loud With Help](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for Thinking out loud is a skill, not filler in thinking out loud with help](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
 ## The real value of AI is in the follow-up
 
@@ -92,7 +92,7 @@ This is a responsible use of AI because it strengthens the human part of the int
 
 A candidate who can answer follow-ups has not just rehearsed. They understand.
 
-![ExtraBrain 05 live star interview coaching for The New Interview Skill: Thinking Out Loud With Help](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for The real value of AI is in the follow-up in thinking out loud with help](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Responsible help is not hidden impersonation
 
@@ -134,7 +134,7 @@ Reading silently is not enough. Interviewing is spoken reasoning.
 
 Record a practice response or use an [AI interview preparation workspace](https://extrabrain.app) to capture the session. Then review where you rambled, where you became abstract, and where you sounded like you were reading from a document.
 
-![ExtraBrain 01 live analysis product strategy for The New Interview Skill: Thinking Out Loud With Help](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain investor-demo coaching view with defensibility answer guidance and follow-up questions for A practical framework for AI-assisted reasoning in thinking out loud with help](/assets/screenshots/blog/09-investor-demo-defensibility.png)
 
 ### 4. Generate skeptical follow-ups
 
@@ -168,7 +168,7 @@ This is why local-first and user-controlled tools matter. A [local-first AI meet
 
 Clear thinking requires honest material. Honest material deserves careful handling.
 
-![ExtraBrain 06c settings privacy controls for The New Interview Skill: Thinking Out Loud With Help](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Privacy is part of responsible preparation in thinking out loud with help](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## The new skill is assisted clarity
 

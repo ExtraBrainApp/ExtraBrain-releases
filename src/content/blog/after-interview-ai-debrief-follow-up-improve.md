@@ -14,7 +14,7 @@ draft: false
 ogImage: "/assets/blog-covers/21-after-interview-debrief.png"
 ---
 
-![ExtraBrain 05 live star interview coaching for After the Interview: How AI Can Help You Debrief, Follow Up, and Improve](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for article introduction in after interview ai debrief follow up improve](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 Most candidates treat the end of an interview like the end of the work.
 
@@ -51,7 +51,7 @@ A useful prompt:
 
 Post-interview AI should not manufacture confidence. It should help you see the conversation more clearly.
 
-![ExtraBrain 05 live star interview coaching for After the Interview: How AI Can Help You Debrief, Follow Up, and Improve](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for The First Ten Minutes Matter More Than You Think in after interview ai debrief follow up improve](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Separate What Happened From What You Fear Happened
 
@@ -99,7 +99,7 @@ Then edit aggressively. Remove sentences you would not say. Replace vague praise
 
 That note works when it is anchored in the actual conversation. AI can help with structure, but the substance has to come from the interview.
 
-![ExtraBrain 05 live star interview coaching for After the Interview: How AI Can Help You Debrief, Follow Up, and Improve](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Use AI to Find the Follow-Up That Actually Matters in after interview ai debrief follow up improve](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Turn Every Interview Into a Better Story Bank
 
@@ -125,7 +125,7 @@ This creates a learning loop. You are not starting over before every conversatio
 
 A tool like [ExtraBrain](https://extrabrain.app) is useful here because the value compounds. One debrief helps with one follow-up. Ten debriefs become a searchable map of recurring questions, strongest examples, weak explanations, recruiter notes, and next-round preparation.
 
-![ExtraBrain 01 live analysis product strategy for After the Interview: How AI Can Help You Debrief, Follow Up, and Improve](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Turn Every Interview Into a Better Story Bank in after interview ai debrief follow up improve](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Review the Transcript, But Do Not Worship It
 
@@ -150,7 +150,7 @@ This is also where privacy matters. Interview transcripts often include sensitiv
 
 A [local-first AI meeting copilot](https://extrabrain.app) can fit this workflow because interview notes and transcripts deserve more control than ordinary text. The goal is to extract lessons without scattering raw career data across random tools.
 
-![ExtraBrain 06c settings privacy controls for After the Interview: How AI Can Help You Debrief, Follow Up, and Improve](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Review the Transcript, But Do Not Worship It in after interview ai debrief follow up improve](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Build a Repeatable Post-Interview Checklist
 
@@ -176,7 +176,7 @@ AI can help you run this checklist consistently. After each interview, paste the
 
 That prompt turns one conversation into four useful outputs: communication, reflection, memory, and preparation.
 
-![ExtraBrain 06c settings privacy controls for After the Interview: How AI Can Help You Debrief, Follow Up, and Improve](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Build a Repeatable Post-Interview Checklist in after interview ai debrief follow up improve](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## Use AI for Improvement, Not Self-Optimization Theater
 

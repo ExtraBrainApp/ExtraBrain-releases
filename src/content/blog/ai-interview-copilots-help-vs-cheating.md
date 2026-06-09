@@ -13,7 +13,7 @@ tags:
 draft: false
 ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.png"
 ---
-![ExtraBrain coding interview practice analysis](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for article introduction in ai interview copilots help vs cheating](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
 AI interview copilots are forcing everyone in hiring to answer a question we used to avoid: **what counts as help, and what counts as cheating?**
 
@@ -35,7 +35,7 @@ But the controversy also landed because candidates recognize the hypocrisy. Many
 
 That contradiction creates the market for hidden copilots.
 
-![ExtraBrain analysis highlighting strategic risks and follow-up questions](/assets/screenshots/blog/09-investor-demo-defensibility.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for The InterviewCoder controversy is a symptom in ai interview copilots help vs cheating](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
 ## Cheating is defined by deception, not the tool
 
@@ -68,7 +68,7 @@ That kind of preparation does not fake competence. It builds competence.
 
 A private tool such as [ExtraBrain](https://extrabrain.app) can fit here because it is useful for recording practice conversations, reviewing what you actually said, and identifying where your explanation got fuzzy. The point is preparation and reflection, not secretly outsourcing your live performance.
 
-![ExtraBrain live coaching analysis with structured follow-up prompts](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Responsible AI help starts before the interview in ai interview copilots help vs cheating](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 The best candidates will not be the ones who never touch AI. They will be the ones who use AI to get sharper and still own every word they say.
 
@@ -88,7 +88,7 @@ Some companies are already moving toward explicit AI-assisted interviews. Canva,
 
 This is the future: not pretending AI does not exist, but designing interviews where permitted AI use is visible, bounded, and assessable.
 
-![ExtraBrain privacy controls for user-controlled capture](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for During the interview, permission decides the boundary in ai interview copilots help vs cheating](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Hiring teams need better tests, not just better detectors
 
@@ -124,7 +124,7 @@ Here is a practical candidate policy:
 
 This policy protects your reputation and helps ensure the job you win is a job you can actually do.
 
-![ExtraBrain session alongside a recruiter interview screen](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Candidates need a personal AI interview policy in ai interview copilots help vs cheating](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 The temptation to cheat grows when candidates feel the process is unfair. But unfairness does not make deception harmless. If you use a hidden copilot to pass an interview, you may win the offer and lose the foundation of trust before day one.
 

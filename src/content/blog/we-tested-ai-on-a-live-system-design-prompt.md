@@ -20,7 +20,7 @@ The short version: AI was useful for memory, structure, and surfacing missed ang
 
 That distinction matters. Used responsibly, an AI assistant can make practice sessions and post-call reviews much sharper. Used carelessly, it can become a crutch that hides whether you actually understand the system. I used [ExtraBrain](https://extrabrain.app) as the AI layer for this experiment because it is built around session context — conversation, screen state, follow-ups, and after-the-fact insights — rather than a blank chat box.
 
-![ExtraBrain live analysis session before a design-practice experiment](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in we tested ai on a live system design prompt](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## The prompt: design a real-time incident alerting system
 
@@ -41,7 +41,7 @@ I treated this like an interview-practice session, not a live interview. AI can 
 
 My setup was simple: I put the prompt on screen, started an ExtraBrain session, spoke through my design out loud, and used AI at three points: after requirements, after the first architecture pass, and after the trade-off discussion.
 
-![ExtraBrain session alongside an interview prompt screen](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for The prompt: design a real-time incident alerting system in we tested ai on a live system design prompt](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## Step one: AI helped me slow down on requirements
 
@@ -63,7 +63,7 @@ But it did not choose the product stance. I still had to decide what assumptions
 
 That last sentence is human judgment. AI can surface the axis. The designer has to pick a point on it and explain why.
 
-![ExtraBrain live coaching analysis with summarized requirements and next questions](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for Step one: AI helped me slow down on requirements in we tested ai on a live system design prompt](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 ## Step two: AI made the architecture easier to audit
 
@@ -91,7 +91,7 @@ Second, it generated follow-up questions that pointed at operational risks:
 
 This is where a contextual assistant beats a blank prompt. I was not asking, “What should a system design include?” I was asking, “Given the design I just explained, what should I pressure-test next?” ExtraBrain’s follow-up workflow kept the critique attached to the session instead of forcing me to start a new chat and restate the context.
 
-![ExtraBrain analysis card with follow-up questions for technical practice](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
+![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for Step two: AI made the architecture easier to audit in we tested ai on a live system design prompt](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 
 ## Where AI started to get too confident
 
@@ -105,7 +105,7 @@ For example, I chose a durable queue between ingestion and processing because lo
 
 AI can remind you of the menu. It cannot eat the meal for you.
 
-![ExtraBrain analysis highlighting strategic follow-up priorities](/assets/screenshots/blog/09-investor-demo-defensibility.png)
+![ExtraBrain investor-demo coaching view with defensibility answer guidance and follow-up questions for Where AI started to get too confident in we tested ai on a live system design prompt](/assets/screenshots/blog/09-investor-demo-defensibility.png)
 
 ## Step three: AI was strongest after the answer, not during it
 
@@ -125,7 +125,7 @@ This is the pattern I would recommend for responsible AI-assisted interview prac
 
 A [private AI interview copilot](https://extrabrain.app) is most valuable when it helps you practice honestly: capturing what you said, showing what you missed, and giving you a tighter next repetition.
 
-![ExtraBrain post-session analysis for debugging and design review](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Step three: AI was strongest after the answer, not during it in we tested ai on a live system design prompt](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## The privacy and control angle matters
 
@@ -135,7 +135,7 @@ System design practice often includes sensitive context. You might be practicing
 
 For this experiment, the responsible workflow was deliberate: start a session, capture the prompt and spoken reasoning, trigger analysis at known points, and use follow-ups in context. User control is not a nice-to-have for AI assistance. It is the difference between a tool that sharpens your thinking and one that quietly takes over the work.
 
-![ExtraBrain privacy controls for intentional session capture](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for The privacy and control angle matters in we tested ai on a live system design prompt](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## What humans still own
 

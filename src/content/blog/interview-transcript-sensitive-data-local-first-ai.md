@@ -21,7 +21,7 @@ Interview transcripts are not just text. They can contain names, locations, sala
 
 This is why the next generation of AI interview tools should not be judged only by how smart their summaries are. They should be judged by where the data goes, who controls it, and whether the person in the conversation can use AI without turning their interview into a permanent surveillance artifact.
 
-![ExtraBrain privacy controls for user-controlled capture](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for article introduction in interview transcript sensitive data local first ai](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## The interview transcript is the new personal dossier
 
@@ -58,7 +58,7 @@ A healthy interview process should answer four questions clearly:
 
 These questions are not anti-AI. They are pro-trust. AI should assist the participant, not quietly build a dossier around them.
 
-![ExtraBrain live analysis during a product strategy session](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for “Welcome to 1984” is catchy. Consent is better. in interview transcript sensitive data local first ai](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Local-first AI changes the default assumption
 
@@ -109,7 +109,7 @@ A practical hiring policy might say:
 
 This is not bureaucracy. It is how trust becomes operational.
 
-![ExtraBrain post-session debugging and review analysis](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Hiring teams need privacy boundaries too in interview transcript sensitive data local first ai](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## The raw transcript deserves a retention plan
 

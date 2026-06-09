@@ -13,7 +13,7 @@ tags:
 draft: false
 ogImage: "/assets/blog-covers/02-use-ai-without-sounding-like-ai.png"
 ---
-![ExtraBrain 01 live analysis product strategy for How to Use AI in an Interview Without Sounding Like AI](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in use ai interview without sounding like ai](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 The fastest way to sound like AI in an interview is to let AI write the version of you that shows up.
 
@@ -58,7 +58,7 @@ Then use AI to map those stories to interview themes: leadership, conflict, tech
 
 This is where [ExtraBrain](https://extrabrain.app) can be useful as an **AI interview preparation workspace**. Instead of starting from a blank prompt, you can talk through your real examples, review what you said, and turn your own words into clearer preparation notes.
 
-![ExtraBrain 05 live star interview coaching for How to Use AI in an Interview Without Sounding Like AI](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Build a Story Bank Before You Generate Answers in use ai interview without sounding like ai](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 The goal is not to memorize twelve speeches. The goal is to remember your raw material so you can choose the right story in the moment.
 
@@ -96,7 +96,7 @@ Then give AI a direct instruction:
 
 A good [private AI interview copilot](https://extrabrain.app) should help you sound more like yourself, not less. If the output feels too smooth, make it rougher. If it feels too abstract, add concrete details. If it sounds like everyone else, ask what only you would know because you were there.
 
-![ExtraBrain 01 live analysis product strategy for How to Use AI in an Interview Without Sounding Like AI](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for Keep Your Voice by Reading Everything Out Loud in use ai interview without sounding like ai](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## Practice Follow-Up Questions Instead of Memorizing Paragraphs
 
@@ -136,7 +136,7 @@ The ethical line is not “AI touched the process.” The line is deception. AI 
 
 A [local-first AI meeting copilot](https://extrabrain.app) can support responsible workflows when it helps you capture practice sessions, review your own words, and protect your notes. It should not be used to impersonate your thinking in a live assessment.
 
-![ExtraBrain 01 live analysis product strategy for How to Use AI in an Interview Without Sounding Like AI](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for Use AI During Interviews Only Within Clear Boundaries in use ai interview without sounding like ai](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 ## Protect Privacy While You Prepare
 
@@ -150,7 +150,7 @@ Privacy is not a side issue. It is part of professionalism.
 
 This is also why user control matters. When your interview preparation includes real conversations and personal career details, you want tools that respect the sensitivity of that context. ExtraBrain’s positioning as a private, local-first workspace is valuable because the best AI interview prep should help you think clearly without turning your job search into someone else’s data source.
 
-![ExtraBrain 06c settings privacy controls for How to Use AI in an Interview Without Sounding Like AI](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Protect Privacy While You Prepare in use ai interview without sounding like ai](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Use AI After the Interview to Improve, Not Spiral
 
@@ -164,7 +164,7 @@ Then ask AI to identify patterns. If you use a tool like [ExtraBrain](https://ex
 
 The point is iteration. Each interview should make the next one easier.
 
-![ExtraBrain 05 live star interview coaching for How to Use AI in an Interview Without Sounding Like AI](/assets/screenshots/blog/05-live-star-interview-coaching.png)
+![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for Use AI After the Interview to Improve, Not Spiral in use ai interview without sounding like ai](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 
 ## The Goal Is Clearer, Not Less Human
 

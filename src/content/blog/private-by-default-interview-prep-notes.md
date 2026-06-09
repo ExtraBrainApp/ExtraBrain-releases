@@ -15,7 +15,7 @@ ogImage: "/assets/blog-covers/15-private-interview-notes.png"
 ---
 ---
 
-![ExtraBrain 01 live analysis product strategy for Private by Default: Why Interview Prep Notes Should Not Live in Random AI Tools](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for article introduction in private by default interview prep notes](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 The most sensitive document in your job search may not be your resume.
 
@@ -51,7 +51,7 @@ You paste a transcript into one chatbot to summarize the interview. Then you pas
 
 No single step feels reckless. Together, they create a sprawl of sensitive context across systems you do not control.
 
-![ExtraBrain 06c settings privacy controls for Private by Default: Why Interview Prep Notes Should Not Live in Random AI Tools](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for The danger is not one prompt. It is the habit. in private by default interview prep notes](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 This is easy to justify during a job search because the pressure is high. You want the next interview to go better. You want the perfect answer to “Tell me about yourself.” You want to explain a layoff without sounding defensive. You want to negotiate without losing the offer.
 
@@ -93,7 +93,7 @@ A useful privacy checklist before using AI for interview prep:
 
 That last question is blunt because it works. If the answer is no, slow down.
 
-![ExtraBrain 06c settings privacy controls for Private by Default: Why Interview Prep Notes Should Not Live in Random AI Tools](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Responsible AI prep starts with data minimization in private by default interview prep notes](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## Why “private by default” is a product choice
 
@@ -119,7 +119,7 @@ When candidates do not trust the workspace, they sanitize too early. They remove
 
 Private does not mean isolated. It means controlled. You can still export a summary, share a practice plan with a coach, or turn notes into a follow-up email. The difference is that sharing becomes intentional rather than accidental.
 
-![ExtraBrain 06c settings privacy controls for Private by Default: Why Interview Prep Notes Should Not Live in Random AI Tools](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Privacy also supports better interviewing in private by default interview prep notes](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 ## AI should help you prepare, not become you
 

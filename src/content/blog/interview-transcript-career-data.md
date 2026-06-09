@@ -15,7 +15,7 @@ ogImage: "/assets/blog-covers/16-interview-transcript-career-data.png"
 ---
 ---
 
-![ExtraBrain 01 live analysis product strategy for Your Interview Transcript Is Career Data. Treat It That Way.](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in interview transcript career data](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 Most people do not think of an interview transcript as a data asset. They think of it as a convenience: a searchable record of what was said, a source for a follow-up email, or a useful file to paste into an AI tool before the next round.
 
@@ -49,7 +49,7 @@ You finish a recruiter screen and save the transcript. You paste it into a chatb
 
 Each step feels practical. Together, they create a scattered archive of your career transition.
 
-![ExtraBrain 01 live analysis product strategy for Your Interview Transcript Is Career Data. Treat It That Way.](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for Convenience creates data sprawl in interview transcript career data](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 This is exactly where AI tools need to be judged differently. The question is not only “Can this tool summarize my interview?” The better question is: “What happens to the transcript after it helps me?”
 
@@ -82,7 +82,7 @@ Most AI products are cloud-first by habit. You send data away, the service proce
 
 A local-first approach starts with a different assumption: keep the user's data close to the user whenever possible. Store locally when practical, make sharing deliberate, and treat export, deletion, and retention as core product features.
 
-![ExtraBrain 06c settings privacy controls for Your Interview Transcript Is Career Data. Treat It That Way.](/assets/screenshots/blog/06c-settings-privacy-controls.png)
+![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for Local-first changes the privacy default in interview transcript career data](/assets/screenshots/blog/06c-settings-privacy-controls.png)
 
 This matters because the raw transcript is often more sensitive than the final output.
 
@@ -126,7 +126,7 @@ But AI summaries are not neutral just because they are formatted cleanly. A tran
 
 Responsible hiring teams should use AI to organize evidence, not replace judgment. They should also disclose when interviews are recorded, transcribed, or summarized by AI, including what is captured, where it goes, who can access it, and how long it is retained.
 
-![ExtraBrain 01 live analysis product strategy for Your Interview Transcript Is Career Data. Treat It That Way.](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
+![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for Hiring teams should treat transcripts as candidate data too in interview transcript career data](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
 A trustworthy policy can start with a few commitments: disclose capture, limit access, review AI summaries against human notes, avoid vague behavioral scoring, and delete raw recordings when they are no longer needed.
 

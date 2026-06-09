@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '../layouts/MarketingLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import FeedbackForm from '../components/FeedbackForm.astro';
 import BacklinksFooter from '../components/BacklinksFooter.astro';
 import {
@@ -248,34 +249,15 @@ const compatibilityPlatforms = [
 ---
 
 <MarketingLayout title={pageTitle} description={pageDescription} schemaGraph={schemaGraph}>
-  <header class="site-header">
-    <div class="container nav">
-      <a href="#top" class="brand" aria-label="ExtraBrain home">
-        <img class="brand-icon" src="/assets/images/logo-192.png" alt="ExtraBrain logo" width="34" height="34" />
-        <span class="brand-wordmark brand-wordmark--nav" aria-hidden="true">
-          <span class="brand-extra">Extra</span><span class="brand-brain">Brain</span>
-        </span>
-      </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#overview">Product</a>
-        <a href="#workflows">Use cases</a>
-        <a href="/download/">Download</a>
-        <a href="/pricing/">Pricing</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/blog/">Blog</a>
-        <a href="#faq">FAQ</a>
-        <a href={feedbackHref} data-feedback-trigger>Feedback</a>
-      </nav>
-      <div class="nav-actions">
-        <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-home-nav">
-          Download for Mac
-        </a>
-      </div>
-      <a class="btn primary mobile-only" href={downloadHref} data-download data-attr="download-cta-home-nav-mobile">
-        Download for Mac
-      </a>
-    </div>
-  </header>
+  <SiteHeader
+    isHome
+    downloadHref={downloadHref}
+    downloadDataAttr="download-cta-home-nav"
+    mobileDownloadDataAttr="download-cta-home-nav-mobile"
+    useDataDownload
+    feedbackHref={feedbackHref}
+    feedbackTrigger
+  />
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
