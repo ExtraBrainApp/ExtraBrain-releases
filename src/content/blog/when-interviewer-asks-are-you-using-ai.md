@@ -11,6 +11,7 @@ tags:
   - "Career Advice"
   - "Responsible AI"
 draft: false
+ogImageAlt: "ExtraBrain interview disclosure cover showing how candidates can answer questions about AI use"
 ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.png"
 ---
 ![ExtraBrain 01 live analysis product strategy for What Candidates Should Do When an Interviewer Asks, “Are You Using AI?”](/assets/screenshots/blog/01-live-analysis-product-strategy.png)

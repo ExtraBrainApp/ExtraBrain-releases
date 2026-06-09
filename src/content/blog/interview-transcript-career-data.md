@@ -11,6 +11,7 @@ tags:
   - "Career Advice"
   - "Responsible AI"
 draft: false
+ogImageAlt: "ExtraBrain interview transcript cover showing private career data from interview notes"
 ogImage: "/assets/blog-covers/16-interview-transcript-career-data.png"
 ---
 ---

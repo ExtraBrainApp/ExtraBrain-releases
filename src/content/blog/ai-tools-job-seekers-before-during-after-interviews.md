@@ -11,6 +11,7 @@ tags:
   - "Responsible AI"
   - "ExtraBrain"
 draft: false
+ogImageAlt: "ExtraBrain AI tools cover for job seekers before during and after interviews"
 ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.png"
 ---
 ---

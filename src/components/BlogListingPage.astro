@@ -19,6 +19,8 @@ const siteUrl = Astro.site ?? new URL('https://extrabrain.app');
 const blogUrl = new URL(currentPage === 1 ? '/blog/' : `/blog/page/${currentPage}/`, siteUrl).href;
 const paginationPages = Array.from({ length: totalPages }, (_, index) => index + 1);
 const pageHref = (page: number) => (page === 1 ? '/blog/' : `/blog/page/${page}/`);
+const coverImageAlt = (post: CollectionEntry<'blog'>) =>
+  post.data.ogImageAlt ?? `${post.data.title} article cover image for ExtraBrain AI interview prep`;
 const prevUrl = currentPage > 1 ? pageHref(currentPage - 1) : undefined;
 const nextUrl = currentPage < totalPages ? pageHref(currentPage + 1) : undefined;
 const schemaGraph = [
@@ -103,7 +105,7 @@ const schemaGraph = [
             <article class="blog-card">
               {post.data.ogImage && (
                 <a class="blog-card-cover-link" href={`/blog/${post.id}/`} aria-label={`Read ${post.data.title}`}>
-                  <img class="blog-card-cover" src={post.data.ogImage} alt="" loading="lazy" />
+                  <img class="blog-card-cover" src={post.data.ogImage} alt={coverImageAlt(post)} loading="lazy" />
                 </a>
               )}
               <div class="blog-card-body">

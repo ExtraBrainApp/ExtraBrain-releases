@@ -11,6 +11,7 @@ tags:
   - "Privacy"
   - "Productivity"
 draft: false
+ogImageAlt: "ExtraBrain best AI copilot cover showing a quiet second brain for interviews and meetings"
 ogImage: "/assets/blog-covers/30-quiet-second-brain-for-interviews.png"
 ---
 ![ExtraBrain live analysis during a product strategy session](/assets/screenshots/blog/01-live-analysis-product-strategy.png)

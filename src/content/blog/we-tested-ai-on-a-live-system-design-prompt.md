@@ -11,6 +11,7 @@ tags:
   - Responsible AI
   - Productivity
 draft: false
+ogImageAlt: "ExtraBrain live system design prompt cover showing AI support and human judgment"
 ogImage: "/assets/blog-covers/10-system-design-ai-era.png"
 ---
 

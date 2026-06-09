@@ -11,6 +11,7 @@ tags:
   - "Career Advice"
   - "Interview Anxiety"
 draft: false
+ogImageAlt: "ExtraBrain AI interview prep cover for candidates who dislike performing in interviews"
 ogImage: "/assets/blog-covers/05-ai-prep-for-people-who-hate-performing.png"
 ---
 ![ExtraBrain 01 live analysis product strategy for AI Interview Prep for People Who Hate Performing](/assets/screenshots/blog/01-live-analysis-product-strategy.png)

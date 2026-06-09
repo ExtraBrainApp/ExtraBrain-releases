@@ -11,6 +11,7 @@ tags:
   - "Responsible AI"
   - "Developer Careers"
 draft: false
+ogImageAlt: "ExtraBrain AI interview copilot cover comparing responsible help with interview cheating risks"
 ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.png"
 ---
 ![ExtraBrain coding interview practice analysis](/assets/screenshots/blog/08-coding-interview-lru-cache.png)

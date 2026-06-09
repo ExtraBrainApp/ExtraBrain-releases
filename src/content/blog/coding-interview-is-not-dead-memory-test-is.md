@@ -11,6 +11,7 @@ tags:
   - "Software Engineering"
   - "Developer Careers"
 draft: false
+ogImageAlt: "ExtraBrain coding interview cover showing real work coding instead of memorization tests"
 ogImage: "/assets/blog-covers/23-real-work-coding-interviews.png"
 ---
 ![ExtraBrain coding interview practice analysis](/assets/screenshots/blog/08-coding-interview-lru-cache.png)

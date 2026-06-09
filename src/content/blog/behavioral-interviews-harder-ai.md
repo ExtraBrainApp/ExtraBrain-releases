@@ -11,6 +11,7 @@ tags:
   - "Job Search"
   - "Future of Work"
 draft: false
+ogImageAlt: "ExtraBrain behavioral interview cover showing why AI makes real examples and judgment more important"
 ogImage: "/assets/blog-covers/11-behavioral-interviews-harder.png"
 ---
 ![ExtraBrain 05 live star interview coaching for Behavioral Interviews Are About to Get Harder, Not Easier](/assets/screenshots/blog/05-live-star-interview-coaching.png)

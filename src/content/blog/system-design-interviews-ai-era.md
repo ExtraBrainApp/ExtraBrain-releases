@@ -11,6 +11,7 @@ tags:
   - "Software Engineering"
   - "Responsible AI"
 draft: false
+ogImageAlt: "ExtraBrain system design interview cover showing AI-assisted architecture thinking"
 ogImage: "/assets/blog-covers/10-system-design-ai-era.png"
 ---
 ![ExtraBrain 10 debugging arch mismatch for System Design Interviews in the AI Era: Use AI to Think Clearer, Not Louder](/assets/screenshots/blog/10-debugging-arch-mismatch.png)

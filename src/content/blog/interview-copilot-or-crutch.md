@@ -11,6 +11,7 @@ tags:
   - "Responsible AI"
   - "Career Advice"
 draft: false
+ogImageAlt: "ExtraBrain interview copilot cover showing the difference between support and dependency"
 ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.png"
 ---
 ![ExtraBrain 01 live analysis product strategy for Interview Copilot or Interview Crutch? How to Tell the Difference](/assets/screenshots/blog/01-live-analysis-product-strategy.png)

@@ -11,6 +11,7 @@ tags:
   - "Candidate Experience"
   - "Responsible AI"
 draft: false
+ogImageAlt: "ExtraBrain hiring cover showing how to interview AI-aware candidates without surveillance"
 ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.png"
 ---
 Every recruiter I know is asking some version of the same uncomfortable question: **who am I really talking to in this interview?**

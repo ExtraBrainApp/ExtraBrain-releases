@@ -11,6 +11,7 @@ tags:
   - "Career Advice"
   - "Job Search"
 draft: false
+ogImageAlt: "ExtraBrain mid-career interview coach cover for experienced professionals preparing with AI"
 ogImage: "/assets/blog-covers/04-mid-career-interview-coach.png"
 ---
 ![ExtraBrain 01 live analysis product strategy for Why Mid-Career Professionals Need a Different Kind of Interview Coach](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
