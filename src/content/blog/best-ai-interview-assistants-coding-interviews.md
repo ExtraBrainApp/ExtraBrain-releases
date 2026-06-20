@@ -10,6 +10,7 @@ tags:
   - Technical Interviews
   - Interview Copilot
 draft: false
+ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.png"
 ---
 
 Coding interviews are not just LeetCode with a webcam turned on.
