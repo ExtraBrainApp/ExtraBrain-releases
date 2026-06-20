@@ -13,8 +13,8 @@ type Props = {
 
 const { posts, currentPage, totalPages } = Astro.props;
 const feedbackHref = 'mailto:info@extrabrain.app?subject=ExtraBrain%20Feedback';
-const baseTitle = 'ExtraBrain Blog — AI interview prep, system design, and responsible AI';
-const title = currentPage === 1 ? baseTitle : `${baseTitle} — Page ${currentPage}`;
+const baseTitle = 'ExtraBrain Blog - AI interview prep, system design, and responsible AI';
+const title = currentPage === 1 ? baseTitle : `${baseTitle} - Page ${currentPage}`;
 const description = 'Read ExtraBrain articles about AI interview prep, system design, productivity, responsible AI, and local-first meeting workflows.';
 const siteUrl = Astro.site ?? new URL('https://extrabrain.app');
 const blogUrl = new URL(currentPage === 1 ? '/blog/' : `/blog/page/${currentPage}/`, siteUrl).href;
@@ -27,7 +27,7 @@ const nextUrl = currentPage < totalPages ? pageHref(currentPage + 1) : undefined
 const schemaGraph = [
   {
     '@type': 'Blog',
-    name: currentPage === 1 ? 'ExtraBrain Blog' : `ExtraBrain Blog — Page ${currentPage}`,
+    name: currentPage === 1 ? 'ExtraBrain Blog' : `ExtraBrain Blog - Page ${currentPage}`,
     description,
     url: blogUrl,
     publisher: {

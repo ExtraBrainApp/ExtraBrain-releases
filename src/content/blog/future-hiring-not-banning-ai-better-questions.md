@@ -177,4 +177,4 @@ That is a better future than banning AI and pretending the old interview contrac
 
 The future of hiring is not a world where nobody uses tools. It is a world where tools are visible, boundaries are clear, privacy is respected, and the human being still owns the answer.
 
-If you are preparing for that world, ExtraBrain is built around the right idea: private, user-controlled AI support for conversations where clarity matters. Use a [private AI interview copilot](https://extrabrain.app) to practice, remember, and reflect — not to impersonate your judgment, but to make your judgment easier to show.
+If you are preparing for that world, ExtraBrain is built around the right idea: private, user-controlled AI support for conversations where clarity matters. Use a [private AI interview copilot](https://extrabrain.app) to practice, remember, and reflect - not to impersonate your judgment, but to make your judgment easier to show.

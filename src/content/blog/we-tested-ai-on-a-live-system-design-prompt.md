@@ -1,7 +1,7 @@
 ---
 title: "We Tested AI on a Live System Design Prompt: Where It Helps, Where Humans Still Matter"
 seoTitle: "We Tested AI on a Live System Design Prompt: Where AI Helps and Humans Still Matter"
-description: "A first-hand system design experiment showing where AI can support requirements, trade-offs, and recap — and where human judgment still matters most."
+description: "A first-hand system design experiment showing where AI can support requirements, trade-offs, and recap - and where human judgment still matters most."
 publishDate: 2026-05-20
 author: "ExtraBrain"
 tags:
@@ -19,7 +19,7 @@ I wanted to know where AI actually helps in a system design conversation, not in
 
 The short version: AI was useful for memory, structure, and surfacing missed angles. It was not a substitute for judgment. It could remind me to discuss backpressure, observability, and data retention. It could not decide what trade-off mattered most for the product, read the interviewer’s priorities, or defend a design under pressure.
 
-That distinction matters. Used responsibly, an AI assistant can make practice sessions and post-call reviews much sharper. Used carelessly, it can become a crutch that hides whether you actually understand the system. I used [ExtraBrain](https://extrabrain.app) as the AI layer for this experiment because it is built around session context — conversation, screen state, follow-ups, and after-the-fact insights — rather than a blank chat box.
+That distinction matters. Used responsibly, an AI assistant can make practice sessions and post-call reviews much sharper. Used carelessly, it can become a crutch that hides whether you actually understand the system. I used [ExtraBrain](https://extrabrain.app) as the AI layer for this experiment because it is built around session context - conversation, screen state, follow-ups, and after-the-fact insights - rather than a blank chat box.
 
 ![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in we tested ai on a live system design prompt](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 
