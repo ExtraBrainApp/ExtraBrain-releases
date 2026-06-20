@@ -395,6 +395,7 @@ export type MarketingPage = {
   sections: Array<{
     title: string;
     body?: string;
+    bodyMarkdown?: string;
     variant?: 'cards' | 'checklist' | 'numbered' | 'timeline' | 'compact-list';
     items?: Array<{ title: string; body: string; href?: string }>;
     freeVsProComparison?: FreeVsProComparison;
