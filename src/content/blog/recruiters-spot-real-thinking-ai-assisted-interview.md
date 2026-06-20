@@ -1,6 +1,6 @@
 ---
 title: "How Recruiters Can Spot Real Thinking in an AI-Assisted Interview"
-seoTitle: "How Recruiters Can Spot Real Thinking in an AI-Assisted Interview"
+seoTitle: "How Recruiters Can Spot Real Thinking"
 description: "A recruiter-facing guide to evaluating authentic reasoning in AI-assisted interviews without surveillance, suspicion-first hiring, or invasive monitoring."
 publishDate: 2025-11-12
 author: "ExtraBrain"
@@ -12,7 +12,7 @@ tags:
   - "Candidate Experience"
 draft: false
 ogImageAlt: "ExtraBrain recruiter guide cover showing real candidate thinking in an AI-assisted interview"
-ogImage: "/assets/blog-covers/12-recruiters-spot-real-thinking.png"
+ogImage: "/assets/blog-covers/12-recruiters-spot-real-thinking.webp"
 ---
 ---
 

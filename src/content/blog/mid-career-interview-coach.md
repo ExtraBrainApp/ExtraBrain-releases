@@ -1,7 +1,7 @@
 ---
 title: "Why Mid-Career Professionals Need a Different Kind of Interview Coach"
-seoTitle: "Why Mid-Career Professionals Need a Different Kind of Interview Coach"
-description: "Mid-career professionals returning to interviews need more than generic mock questions. Learn how AI interview prep can rebuild confidence, organize context, protect privacy, and h"
+seoTitle: "Interview Coaching for Mid-Career Professionals"
+description: "Mid-career professionals need more than mock questions. Learn how AI prep can rebuild confidence, organize context, and protect privacy."
 publishDate: 2025-07-21
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Job Search"
 draft: false
 ogImageAlt: "ExtraBrain mid-career interview coach cover for experienced professionals preparing with AI"
-ogImage: "/assets/blog-covers/04-mid-career-interview-coach.png"
+ogImage: "/assets/blog-covers/04-mid-career-interview-coach.webp"
 ---
 ![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in mid career interview coach](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 

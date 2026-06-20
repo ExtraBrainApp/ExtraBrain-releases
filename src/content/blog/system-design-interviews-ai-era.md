@@ -1,7 +1,7 @@
 ---
 title: "System Design Interviews in the AI Era: Use AI to Think Clearer, Not Louder"
-seoTitle: "System Design Interviews in the AI Era: How Candidates Can Use AI Responsibly"
-description: "Learn how candidates can use AI responsibly for system design interview prep: clarifying assumptions, structuring tradeoffs, avoiding rambling, protecting privacy, and keeping huma"
+seoTitle: "System Design Interviews in the AI Era"
+description: "Learn how candidates can use AI responsibly for system design prep, tradeoffs, privacy, and clearer communication."
 publishDate: 2025-10-16
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain system design interview cover showing AI-assisted architecture thinking"
-ogImage: "/assets/blog-covers/10-system-design-ai-era.png"
+ogImage: "/assets/blog-covers/10-system-design-ai-era.webp"
 ---
 ![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for article introduction in system design interviews ai era](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 

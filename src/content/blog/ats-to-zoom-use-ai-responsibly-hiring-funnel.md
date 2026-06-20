@@ -1,6 +1,6 @@
 ---
 title: "From ATS to Zoom: How Candidates Can Use AI Responsibly Across the Hiring Funnel"
-seoTitle: "From ATS to Zoom: How Candidates Can Use AI Responsibly Across the Hiring Funnel"
+seoTitle: "How Candidates Can Use AI Responsibly in Hiring"
 description: "How job seekers can use AI responsibly for ATS-friendly resumes, screening, interview prep, and Zoom interviews while staying authentic."
 publishDate: 2026-04-29
 author: "ExtraBrain"
@@ -12,7 +12,7 @@ tags:
   - "Resume Tips"
 draft: false
 ogImageAlt: "ExtraBrain responsible AI hiring funnel cover from ATS screening to Zoom interviews"
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.png"
+ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
 ---
 The modern job search now has two audiences: the human hiring team and the software that helps them sort, screen, schedule, and interview. That can feel unfair if you are trying to present your experience honestly while competing against candidates who seem to have an AI tool for every step. But responsible AI use is not about faking expertise. It is about preparing more clearly, protecting your privacy, and showing up as the strongest version of yourself when the real conversation begins.
 

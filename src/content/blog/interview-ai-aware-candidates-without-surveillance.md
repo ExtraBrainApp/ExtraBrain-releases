@@ -1,7 +1,7 @@
 ---
 title: "How to Interview AI-Aware Candidates Without Turning Hiring Into Surveillance"
-seoTitle: "How to Interview AI-Aware Candidates Without Turning Hiring Into Surveillance"
-description: "A practical guide for recruiters and hiring teams on hidden AI assistants, interview trust, candidate privacy, and humane evaluation design without drifting into surveillance."
+seoTitle: "Interview AI-Aware Candidates Without Surveillance"
+description: "A guide for recruiters on hidden AI assistants, interview trust, candidate privacy, and humane evaluation design."
 publishDate: 2026-04-02
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain hiring cover showing how to interview AI-aware candidates without surveillance"
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.png"
+ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
 ---
 Every recruiter I know is asking some version of the same uncomfortable question: **who am I really talking to in this interview?**
 

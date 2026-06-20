@@ -1,7 +1,7 @@
 ---
 title: "The New Interview Skill: Thinking Out Loud With Help"
 seoTitle: "The New Interview Skill: Thinking Out Loud With AI Help"
-description: "AI assistance in interviews should not be about answer-spitting. Learn how candidates can use AI responsibly to structure reasoning, practice explanations, protect privacy, and sta"
+description: "Learn how candidates can use AI responsibly to structure reasoning, practice explanations, protect privacy, and stay authentic."
 publishDate: 2025-07-08
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Job Search"
 draft: false
 ogImageAlt: "ExtraBrain interview skills cover showing candidates thinking out loud with AI support"
-ogImage: "/assets/blog-covers/03-thinking-out-loud-with-help.png"
+ogImage: "/assets/blog-covers/03-thinking-out-loud-with-help.webp"
 ---
 ![ExtraBrain investor-demo coaching view with defensibility answer guidance and follow-up questions for article introduction in thinking out loud with help](/assets/screenshots/blog/09-investor-demo-defensibility.png)
 

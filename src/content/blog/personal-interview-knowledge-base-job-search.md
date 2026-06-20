@@ -1,7 +1,7 @@
 ---
 title: "How to Build a Personal Interview Knowledge Base Before Your Next Job Search"
-seoTitle: "How to Build a Personal Interview Knowledge Base Before Your Next Job Search"
-description: "A practical guide to building a private interview knowledge base before you start applying, so you can remember real stories, wins, metrics, decisions, and lessons without inventin"
+seoTitle: "Build a Personal Interview Knowledge Base"
+description: "Build a private interview knowledge base before applying so you can remember real stories, wins, metrics, decisions, and lessons."
 publishDate: 2026-02-03
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Personal Knowledge Management"
 draft: false
 ogImageAlt: "ExtraBrain personal interview knowledge base cover showing organized job search memories"
-ogImage: "/assets/blog-covers/18-personal-interview-knowledge-base.png"
+ogImage: "/assets/blog-covers/18-personal-interview-knowledge-base.webp"
 ---
 ---
 

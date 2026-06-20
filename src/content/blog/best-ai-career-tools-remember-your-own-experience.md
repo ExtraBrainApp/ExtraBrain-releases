@@ -1,7 +1,7 @@
 ---
 title: "The Best AI Career Tools Help You Remember Your Own Experience"
-seoTitle: "The Best AI Career Tools Help You Remember Your Own Experience"
-description: "AI career tools should not invent fake interview answers. The best ones help job seekers recall real examples, organize career context, prepare responsibly, and protect private exp"
+seoTitle: "AI Career Tools That Remember Your Experience"
+description: "The best AI career tools help job seekers recall real examples, organize career context, prepare responsibly, and protect privacy."
 publishDate: 2026-01-22
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain AI career tools cover showing a private memory of a candidate’s work experience"
-ogImage: "/assets/blog-covers/17-ai-tools-remember-your-experience.png"
+ogImage: "/assets/blog-covers/17-ai-tools-remember-your-experience.webp"
 ---
 ---
 

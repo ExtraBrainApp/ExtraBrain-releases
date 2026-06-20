@@ -1,7 +1,7 @@
 ---
 title: "The Interview Has Changed. Your Preparation Should Too."
-seoTitle: "The Interview Has Changed: How to Prepare for AI-Era Hiring"
-description: "Interviews now include AI tools, transcripts, copilots, and new expectations. Learn how to prepare with clarity, privacy, and responsible AI support without losing your voice."
+seoTitle: "The Interview Has Changed"
+description: "Interviews now include AI tools and transcripts. Learn how to prepare with clarity, privacy, and responsible AI support."
 publishDate: 2025-06-11
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Future of Work"
 draft: false
 ogImageAlt: "ExtraBrain AI interview preparation cover showing modern interview workflows"
-ogImage: "/assets/blog-covers/01-interview-has-changed.png"
+ogImage: "/assets/blog-covers/01-interview-has-changed.webp"
 ---
 ![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in interview has changed preparation should too](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 

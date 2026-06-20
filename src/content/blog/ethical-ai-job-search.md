@@ -1,7 +1,7 @@
 ---
 title: "The Ethical Way to Bring AI Into Your Job Search"
 seoTitle: "The Ethical Way to Bring AI Into Your Job Search"
-description: "AI can help job seekers prepare, remember, practice, and protect their privacy without crossing into cheating. Here is a practical responsible AI framework for resumes, interviews,"
+description: "A responsible AI framework for job seekers using AI for resumes, interview prep, practice, privacy, and post-interview review."
 publishDate: 2025-09-04
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain ethical AI job search cover showing responsible candidate preparation"
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.png"
+ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
 ---
 AI has created a strange new pressure in the job search: if you do not use it, you worry you are falling behind; if you do use it, you worry you are cheating.
 

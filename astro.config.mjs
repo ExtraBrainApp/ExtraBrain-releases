@@ -4,8 +4,6 @@ import starlight from '@astrojs/starlight';
 
 const siteUrl = 'https://extrabrain.app';
 const defaultOgImage = `${siteUrl}/assets/images/logo-512.png`;
-const proMonthlyFounderCheckout =
-  'https://extrabrain.lemonsqueezy.com/checkout/buy/f5618066-dfaf-419e-ac49-a05ffa5e30d9?checkout%5Bdiscount_code%5D=EARLYBIRD&prefill=earlybird';
 const helpStructuredData = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
@@ -17,93 +15,15 @@ const helpStructuredData = JSON.stringify({
       logo: defaultOgImage,
       sameAs: ['https://github.com/ExtraBrainApp/ExtraBrain-releases/releases'],
     },
-    {
-      '@type': 'SoftwareApplication',
-      name: 'ExtraBrain',
-      alternateName: ['Extra Brain'],
-      applicationCategory: 'ProductivityApplication',
-      applicationSubCategory: 'AI interview and meeting copilot',
-      operatingSystem: 'macOS',
-      url: siteUrl,
-      image: defaultOgImage,
-      offers: [
-        {
-          '@type': 'Offer',
-          name: 'ExtraBrain Free',
-          price: '0',
-          priceCurrency: 'USD',
-          availability: 'https://schema.org/InStock',
-          url: `${siteUrl}/download/`,
-        },
-        {
-          '@type': 'Offer',
-          name: 'ExtraBrain Pro Founder Monthly',
-          price: '6.99',
-          priceCurrency: 'USD',
-          availability: 'https://schema.org/InStock',
-          url: proMonthlyFounderCheckout,
-        },
-        {
-          '@type': 'Offer',
-          name: 'ExtraBrain Pro Yearly',
-          price: '79',
-          priceCurrency: 'USD',
-          availability: 'https://schema.org/InStock',
-          url: `${siteUrl}/pricing/`,
-        },
-        {
-          '@type': 'Offer',
-          name: 'ExtraBrain Pro Lifetime',
-          price: '149',
-          priceCurrency: 'USD',
-          availability: 'https://schema.org/InStock',
-          url: `${siteUrl}/pricing/`,
-        },
-      ],
-      featureList: [
-        'Free, local-first desktop AI interview and meeting copilot',
-        'Local NVIDIA Parakeet transcription and optional Deepgram',
-        'Local Gemma 4 on-device AI where installed and compatible',
-        'OpenAI, Anthropic, Claude Subscription, Codex Subscription, and custom endpoint setup',
-        'Apple Silicon and Intel Mac support',
-      ],
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'What is ExtraBrain?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'ExtraBrain is a free, local-first Mac desktop AI interview assistant and meeting copilot with live transcription, screenshots, provider setup, and privacy controls.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Does ExtraBrain support local transcription?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes. ExtraBrain supports local NVIDIA Parakeet transcription and optional Deepgram cloud transcription.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Which platforms does ExtraBrain support?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'ExtraBrain is available for Mac today, including Apple Silicon and Intel Macs. Windows and Linux are planned.',
-          },
-        },
-      ],
-    },
   ],
 });
 
 export default defineConfig({
   site: siteUrl,
   integrations: [
-    sitemap(),
+    sitemap({
+      filter: (page) => new URL(page).pathname.startsWith('/help/'),
+    }),
     starlight({
       title: 'ExtraBrain Help Center',
       favicon: '/assets/images/favicon-32x32.png',

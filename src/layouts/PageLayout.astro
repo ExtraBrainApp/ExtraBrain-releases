@@ -6,10 +6,8 @@ import {
   absoluteUrl,
   breadcrumbSchema,
   contactEmail,
-  faqSchema,
   githubUrl,
   homepageFaq,
-  howToInstallSchema,
   offerCatalogSchema,
   organizationSchema,
   pricingTiers,
@@ -147,13 +145,12 @@ const summaryFacts = [
 const schemaGraph: Array<Record<string, unknown>> = [
   organizationSchema(),
   websiteSchema(),
-  softwareApplicationSchema(page.description, absoluteUrl('/download/')),
   webPageSchema(page),
   breadcrumbSchema(page),
 ];
 
+if (page.slug === 'download') schemaGraph.push(softwareApplicationSchema(page.description, absoluteUrl('/download/')));
 if (page.slug === 'pricing' || page.slug === 'pricing/free-vs-pro') schemaGraph.push(offerCatalogSchema());
-if (page.schemaType === 'HowTo') schemaGraph.push(howToInstallSchema());
 if (comparisonHub) {
   schemaGraph.push({
     '@type': 'ItemList',
@@ -167,8 +164,6 @@ if (comparisonHub) {
     })),
   });
 }
-if (faq.length > 0) schemaGraph.push(faqSchema(faq, page));
-
 const hasReleaseMetadata = page.slug === 'download';
 const hasSources = Boolean(page.sources?.length);
 const showSummary = page.hideSummary !== true;

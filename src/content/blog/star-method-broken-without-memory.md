@@ -1,7 +1,7 @@
 ---
 title: "The STAR Method Is Broken Without Memory"
-seoTitle: "The STAR Method Is Broken Without Memory: Better Behavioral Interview Prep With AI"
-description: "The STAR method still helps behavioral interview prep, but it fails when candidates cannot remember real examples under pressure. Learn how a private memory layer turns scattered e"
+seoTitle: "The STAR Method Is Broken Without Memory"
+description: "The STAR method helps behavioral interview prep, but it fails when candidates cannot remember real examples under pressure."
 publishDate: 2026-02-18
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Career Advice"
 draft: false
 ogImageAlt: "ExtraBrain STAR method cover showing interview stories strengthened by personal memory"
-ogImage: "/assets/blog-covers/19-star-method-needs-memory.png"
+ogImage: "/assets/blog-covers/19-star-method-needs-memory.webp"
 ---
 ---
 

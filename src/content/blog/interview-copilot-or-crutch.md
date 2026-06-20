@@ -1,7 +1,7 @@
 ---
 title: "Interview Copilot or Interview Crutch? How to Tell the Difference"
-seoTitle: "Interview Copilot or Interview Crutch? How to Use AI Without Losing Your Own Judgment"
-description: "Learn the difference between responsible AI interview support and unhealthy dependency, with clear examples, boundaries, and practical rules for using an AI interview copilot ethic"
+seoTitle: "Interview Copilot or Crutch?"
+description: "Learn the difference between responsible AI interview support and unhealthy dependency, with practical boundaries and examples."
 publishDate: 2025-09-17
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Career Advice"
 draft: false
 ogImageAlt: "ExtraBrain interview copilot cover showing the difference between support and dependency"
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.png"
+ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
 ---
 ![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in interview copilot or crutch](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 

@@ -1,7 +1,7 @@
 ---
 title: "How to Use AI in an Interview Without Sounding Like AI"
 seoTitle: "How to Use AI in an Interview Without Sounding Like AI"
-description: "A practical guide for candidates who want to use AI interview prep tools responsibly, organize their thoughts, protect privacy, and still sound authentic in live interviews."
+description: "Use AI interview prep responsibly, organize your thoughts, protect privacy, and still sound authentic in live interviews."
 publishDate: 2025-06-24
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain AI interview cover showing how to use AI without sounding scripted"
-ogImage: "/assets/blog-covers/02-use-ai-without-sounding-like-ai.png"
+ogImage: "/assets/blog-covers/02-use-ai-without-sounding-like-ai.webp"
 ---
 ![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in use ai interview without sounding like ai](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 

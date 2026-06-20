@@ -1,7 +1,7 @@
 ---
 title: "LeetCode Was Never the Job. AI Just Made That Obvious."
 seoTitle: "LeetCode Was Never the Job. AI Just Made That Obvious."
-description: "The InterviewCoder debate did not prove coding interviews are dead. It proved technical hiring needs to test engineering judgment, communication, debugging, and responsible AI use "
+description: "The InterviewCoder debate showed technical hiring should test judgment, communication, debugging, and responsible AI use."
 publishDate: 2025-10-02
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Developer Careers"
 draft: false
 ogImageAlt: "ExtraBrain coding interview cover showing why LeetCode memorization is not real engineering work"
-ogImage: "/assets/blog-covers/09-leetcode-was-never-the-job.png"
+ogImage: "/assets/blog-covers/09-leetcode-was-never-the-job.webp"
 ---
 ![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for article introduction in leetcode was never the job ai obvious](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 

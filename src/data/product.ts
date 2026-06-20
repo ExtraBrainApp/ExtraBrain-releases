@@ -110,7 +110,6 @@ export const sourceOfTruthPages = [
   { title: 'AI providers', href: '/providers/' },
   { title: 'GitHub releases', href: githubUrl },
   { title: 'Help center', href: '/help/' },
-  { title: 'Blog RSS feed', href: '/rss.xml' },
 ] as const;
 
 export const aiDiscoveryQueries = [
@@ -416,9 +415,9 @@ const defaultCta = { label: 'Download for Mac', href: '/download/' };
 const baseMarketingPages: MarketingPage[] = [
   {
     slug: "download",
-    title: "Download ExtraBrain for Mac - Free AI Interview & Meeting App",
+    title: "Download ExtraBrain for Mac",
     description:
-      "Download ExtraBrain, the free Mac AI interview assistant and meeting copilot. Install the latest macOS app, check compatibility, and set up Extra Brain safely.",
+      "Download ExtraBrain for Mac, check compatibility, install the latest app, and set up your local-first AI assistant safely.",
     eyebrow: "Download ExtraBrain",
     h1: "Download the free ExtraBrain app for Mac.",
     lead: "Use this first-party download page as the canonical place for the latest ExtraBrain Mac release, platform requirements, installation steps, release integrity notes, and troubleshooting before a live interview or meeting. If you searched for Extra Brain or ExtraBrains, this is the official ExtraBrain download page.",
@@ -671,10 +670,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: "pricing/free-vs-pro",
-    title:
-      "ExtraBrain Free vs Pro: Features, Models, Profiles & Provider Costs",
+    title: "ExtraBrain Free vs Pro Plans",
     description:
-      "Compare ExtraBrain Free and Pro for live interview workflows, stealth mode, AI models, providers, interview domains, custom profiles, provider costs, and licensing.",
+      "Compare ExtraBrain Free and Pro for live workflows, custom profiles, AI providers, model controls, pricing, and licensing.",
     eyebrow: "Free vs Pro",
     h1: "ExtraBrain vs ExtraBrain Pro.",
     lead: "ExtraBrain Free gives you the core Mac live assistant, local-first workflow, built-in domains, and bring-your-own provider setup. ExtraBrain Pro adds advanced controls for people who reuse profiles, session context, summaries, and premium settings across repeated interviews, meetings, and research calls.",
@@ -1055,7 +1053,7 @@ const baseMarketingPages: MarketingPage[] = [
     slug: "privacy",
     title: "ExtraBrain Privacy and Data Flow",
     description:
-      "How ExtraBrain handles local storage, local Gemma 4, local Parakeet transcription, screenshots, prompts, external providers, Deepgram, API keys, and privacy controls.",
+      "How ExtraBrain handles local storage, screenshots, prompts, local transcription, AI providers, API keys, and privacy controls.",
     eyebrow: "Privacy",
     h1: "Fully local when your setup stays local.",
     lead: "ExtraBrain can keep transcription and AI prompts on your Mac when you use local Parakeet transcription plus local Gemma 4. External model or transcription providers receive only the content required for requests you choose to send.",
@@ -1468,9 +1466,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: "use-cases/ai-assistant-for-meetings",
-    title: "AI Meeting Assistant for Mac - ExtraBrain",
+    title: "AI Meeting Assistant for Mac",
     description:
-      "Use ExtraBrain as an AI meeting assistant for Mac with live transcription, screen context, meeting notes, decisions, risks, follow-ups, private local history, and no meeting bot.",
+      "Use ExtraBrain as a Mac meeting assistant with live transcription, screen context, notes, decisions, follow-ups, and no meeting bot.",
     eyebrow: "AI meeting assistant for Mac",
     h1: "AI assistant for meetings with live transcription and screen context.",
     lead: "ExtraBrain helps you follow live meetings, capture context, organize decisions, and prepare follow-ups from a desktop assistant instead of a bot that joins the call.",
@@ -1663,9 +1661,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: "use-cases/ai-note-taker-for-mac",
-    title: "AI Note Taker for Mac - Private Meeting Notes with ExtraBrain",
+    title: "AI Note Taker for Mac",
     description:
-      "Use ExtraBrain as a private AI note taker for Mac with live transcription, AI meeting notes, screen context, summaries, local session history, and no meeting bot.",
+      "Use ExtraBrain as a private AI note taker for Mac with live transcription, screen context, summaries, local history, and no meeting bot.",
     eyebrow: "AI note taker for Mac",
     h1: "Private AI note taker for Mac meetings, interviews, and calls.",
     lead: "ExtraBrain turns live conversation into structured notes, summaries, action items, and saved context while keeping the workflow in a Mac desktop app.",
@@ -1757,9 +1755,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: "use-cases/ai-assistant-for-video-calls",
-    title: "AI Assistant for Video Calls, Zoom, Meet & Teams - ExtraBrain",
+    title: "AI Assistant for Video Calls",
     description:
-      "Use ExtraBrain as an AI assistant for video calls across Zoom, Google Meet, Microsoft Teams, Webex, Slack Huddles, and Discord with live transcription, screen context, and private notes.",
+      "Use ExtraBrain for Zoom, Meet, Teams, Webex, Slack Huddles, and Discord with live transcription, screen context, and private notes.",
     eyebrow: "AI assistant for video calls",
     h1: "AI assistant for video calls, Zoom, Meet, and Teams.",
     lead: "ExtraBrain helps you follow live video calls, capture transcript context, and organize notes while staying available in your own desktop workflow.",
@@ -1853,9 +1851,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: "features/private-ai-assistant",
-    title: "Private AI Assistant for Mac - Local-First ExtraBrain",
+    title: "Private AI Assistant for Mac",
     description:
-      "ExtraBrain is a private AI assistant for Mac with local-first storage, local transcription, on-device AI where configured, BYO AI providers, privacy controls, and data-path clarity.",
+      "ExtraBrain is a private Mac AI assistant with local-first storage, local transcription, BYO providers, and clear privacy controls.",
     eyebrow: "Private AI assistant for Mac",
     h1: "Private AI assistant for Mac with local-first controls.",
     lead: "ExtraBrain is built for people who want a desktop AI assistant for meetings, interviews, notes, and calls while keeping control over what is captured and which providers are used.",
@@ -1944,10 +1942,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: "features/live-transcription-ai-assistant",
-    title:
-      "Live Transcription AI Assistant for Meetings & Interviews - ExtraBrain",
+    title: "Live Transcription AI Assistant",
     description:
-      "Use ExtraBrain as a live transcription AI assistant for meetings, interviews, video calls, lectures, and research with real-time transcription, local Parakeet, or optional Deepgram.",
+      "Use ExtraBrain for live transcription in meetings, interviews, calls, lectures, and research with local Parakeet or optional Deepgram.",
     eyebrow: "Live transcription AI assistant",
     h1: "Live transcription AI assistant for meetings, calls, and interviews.",
     lead: "ExtraBrain combines live transcription with prompts, notes, screen context, and provider choice so you can follow fast conversations without losing structure.",
@@ -2043,10 +2040,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: "features/bring-your-own-ai-provider",
-    title:
-      "Bring Your Own AI Provider - OpenAI, Claude, Anthropic & Custom Endpoints",
+    title: "Bring Your Own AI Provider",
     description:
-      "Bring your own AI provider to ExtraBrain with OpenAI, Anthropic, Claude, Codex, custom OpenAI-compatible endpoints, local Gemma 4, and provider-controlled billing and data paths.",
+      "Bring OpenAI, Anthropic, Claude, Codex, local Gemma 4, or custom endpoints to ExtraBrain with provider-controlled billing.",
     eyebrow: "Bring your own AI provider",
     h1: "Bring your own AI provider, API key, or custom endpoint.",
     lead: "ExtraBrain lets you choose the AI provider path for meetings, interviews, notes, and calls instead of forcing a single hosted model account.",
@@ -2135,9 +2131,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: "features/screen-context-ai-assistant",
-    title: "Screen Context AI Assistant for Mac - ExtraBrain",
+    title: "Screen Context AI Assistant for Mac",
     description:
-      "ExtraBrain is a screen context AI assistant for Mac that combines live transcription, screenshots, visible documents, code, meeting slides, and local-first provider controls.",
+      "ExtraBrain combines live transcription, screenshots, visible docs, code, slides, and local-first provider controls on Mac.",
     eyebrow: "Screen context AI assistant for Mac",
     h1: "Screen context AI assistant for Mac live work.",
     lead: "ExtraBrain helps your AI prompts use both what is being said and what is visible on screen, so meetings, interviews, documents, and code stay connected.",
@@ -2230,9 +2226,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: "use-cases/meetings",
-    title: "AI Meeting Assistant for Mac - Local-First Meeting Copilot",
+    title: "AI Meeting Assistant for Mac",
     description:
-      "Use ExtraBrain as an AI meeting assistant for Mac with live notes, decisions, risks, screen context, local transcription options, follow-ups, and no meeting bot.",
+      "Use ExtraBrain for Mac meeting notes, decisions, risks, screen context, local transcription options, follow-ups, and no meeting bot.",
     eyebrow: "AI meeting assistant for Mac",
     h1: "AI meeting assistant for Mac that runs on your desktop.",
     lead: "ExtraBrain helps with decisions, action items, objections, research evidence, and next steps while keeping the AI meeting assistant in a Mac desktop app you control instead of a bot that joins the call.",
@@ -3144,9 +3140,9 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: "about",
-    title: "About ExtraBrain - Local-First AI Interview Assistant for Mac",
+    title: "About ExtraBrain",
     description:
-      "Learn what ExtraBrain is, who it helps, how its local-first Mac workflow works, which providers it supports, and where to verify pricing, privacy, and downloads.",
+      "Learn what ExtraBrain is, who it helps, how its Mac workflow works, which providers it supports, and where to verify privacy and pricing.",
     eyebrow: "About ExtraBrain",
     h1: "ExtraBrain is a local-first AI copilot for interviews, meetings, and live thinking.",
     lead: "ExtraBrain, also searched as Extra Brain or ExtraBrains, is a Mac desktop AI interview assistant and meeting copilot for people who need live transcription, screen-aware context, provider choice, and clear privacy controls during high-stakes conversations.",

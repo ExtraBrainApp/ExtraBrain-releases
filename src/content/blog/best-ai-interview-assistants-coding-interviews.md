@@ -1,7 +1,7 @@
 ---
 title: "I Tried to Find the Best AI Interview Assistants for Coding Interviews. Here's What Actually Matters"
-seoTitle: "Best AI Interview Assistants for Coding Interviews: ExtraBrain vs Interview Coder, Final Round AI, LockedIn AI, Linkjob, Beyz"
-description: "A practical comparison of AI interview assistants for coding interviews, including ExtraBrain, Interview Coder, Final Round AI, LockedIn AI, Linkjob, and Beyz AI."
+seoTitle: "Best AI Interview Assistants for Coding Interviews"
+description: "A practical comparison of AI interview assistants for coding interviews, including ExtraBrain, Interview Coder, Final Round AI, and others."
 publishDate: 2026-06-20
 author: "ExtraBrain"
 tags:
@@ -10,6 +10,8 @@ tags:
   - Technical Interviews
   - Interview Copilot
 draft: false
+ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImageAlt: "Illustration comparing AI interview assistant tools for coding interviews with ExtraBrain"
 ---
 
 Coding interviews are not just LeetCode with a webcam turned on.

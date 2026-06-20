@@ -1,7 +1,7 @@
 ---
 title: "Behavioral Interviews Are About to Get Harder, Not Easier"
-seoTitle: "Behavioral Interviews Are About to Get Harder in the AI Era"
-description: "AI can make behavioral interview answers sound polished, but that only raises the bar. Learn why real examples, follow-up depth, and responsible preparation matter more now."
+seoTitle: "Behavioral Interviews Are Getting Harder"
+description: "AI can polish behavioral answers, but real examples, follow-up depth, and responsible preparation matter more now."
 publishDate: 2025-10-29
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Future of Work"
 draft: false
 ogImageAlt: "ExtraBrain behavioral interview cover showing why AI makes real examples and judgment more important"
-ogImage: "/assets/blog-covers/11-behavioral-interviews-harder.png"
+ogImage: "/assets/blog-covers/11-behavioral-interviews-harder.webp"
 ---
 ![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for article introduction in behavioral interviews harder ai](/assets/screenshots/blog/05-live-star-interview-coaching.png)
 

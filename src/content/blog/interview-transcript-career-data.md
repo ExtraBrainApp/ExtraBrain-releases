@@ -1,7 +1,7 @@
 ---
 title: "Your Interview Transcript Is Career Data. Treat It That Way."
-seoTitle: "Your Interview Transcript Is Career Data: Privacy-First AI Interview Prep"
-description: "Interview transcripts reveal salary goals, career history, communication patterns, private notes, and confidential work context. Learn why candidates and teams should treat transcr"
+seoTitle: "Your Interview Transcript Is Career Data"
+description: "Interview transcripts reveal salary goals, career history, communication patterns, private notes, and confidential work context."
 publishDate: 2026-01-07
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain interview transcript cover showing private career data from interview notes"
-ogImage: "/assets/blog-covers/16-interview-transcript-career-data.png"
+ogImage: "/assets/blog-covers/16-interview-transcript-career-data.webp"
 ---
 ---
 

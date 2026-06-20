@@ -970,9 +970,9 @@ export const aiSearchPages: MarketingPage[] = [
 
 export const useCasePages: MarketingPage[] = [
   useCasePage("use-cases/product-management-interviews", {
-    title: "AI Product Management Interview Assistant - ExtraBrain",
+    title: "AI Product Management Interview Assistant",
     description:
-      "Use ExtraBrain as a local-first AI copilot for product management interviews. Get live support for product sense, estimation, strategy, and metrics questions on Mac.",
+      "Use ExtraBrain as an AI copilot for product management interviews, product sense, estimation, strategy, and metrics questions on Mac.",
     eyebrow: "PM interviews",
     h1: "Product management interview copilot.",
     lead: "ExtraBrain helps you stay organized during PM interviews with live transcription, structured prompts for product sense and strategy questions, and post-session review on Mac.",
@@ -1026,7 +1026,7 @@ export const useCasePages: MarketingPage[] = [
   useCasePage("use-cases/data-science-interviews", {
     title: "AI Data Science Interview Assistant - ExtraBrain",
     description:
-      "Use ExtraBrain for data science interviews. Live AI copilot for SQL, statistics, ML system design, and case study questions on Mac.",
+      "Use ExtraBrain for data science interviews, SQL, statistics, ML system design, case studies, and live technical discussion on Mac.",
     eyebrow: "Data science interviews",
     h1: "Data science interview copilot.",
     lead: "ExtraBrain supports data science interviews with live transcription, screen-aware context for SQL and notebook environments, and structured prompts for statistics and ML questions.",
@@ -1080,7 +1080,7 @@ export const useCasePages: MarketingPage[] = [
   useCasePage("use-cases/technical-phone-screens", {
     title: "AI Technical Phone Screen Assistant - ExtraBrain",
     description:
-      "Use ExtraBrain during technical phone screens. Live AI copilot for initial coding, algorithm, and system design phone interviews on Mac.",
+      "Use ExtraBrain during technical phone screens for coding, algorithm, and system design conversations on Mac.",
     eyebrow: "Phone screens",
     h1: "Technical phone screen copilot.",
     lead: "ExtraBrain helps during technical phone screens with live transcription, real-time context from your coding environment, and structured prompts for algorithm and design questions.",
@@ -1134,7 +1134,7 @@ export const useCasePages: MarketingPage[] = [
   useCasePage("use-cases/frontend-interviews", {
     title: "AI Frontend Interview Assistant - ExtraBrain",
     description:
-      "Use ExtraBrain for frontend engineering interviews. Live AI copilot for React, JavaScript, CSS, and UI design questions on Mac.",
+      "Use ExtraBrain for frontend interviews, React, JavaScript, CSS, UI design questions, and live coding discussion on Mac.",
     eyebrow: "Frontend interviews",
     h1: "Frontend interview copilot.",
     lead: "ExtraBrain supports frontend engineering interviews with live transcription, screen-aware context from browser dev tools and code editors, and structured prompts for React, JavaScript, and UI questions.",
@@ -1188,7 +1188,7 @@ export const useCasePages: MarketingPage[] = [
   useCasePage("use-cases/backend-interviews", {
     title: "AI Backend Interview Assistant - ExtraBrain",
     description:
-      "Use ExtraBrain for backend engineering interviews. Live AI copilot for API design, databases, distributed systems, and coding on Mac.",
+      "Use ExtraBrain for backend interviews, API design, databases, distributed systems, coding prompts, and live discussion on Mac.",
     eyebrow: "Backend interviews",
     h1: "Backend interview copilot.",
     lead: "ExtraBrain supports backend engineering interviews with live transcription, screen-aware context, and structured prompts for API design, database queries, and distributed systems questions.",
@@ -1244,7 +1244,7 @@ export const platformPages: MarketingPage[] = [
   platformPage("platforms/coderpad", "CoderPad", {
     title: "CoderPad Interview Assistant - ExtraBrain",
     description:
-      "Use ExtraBrain as your AI copilot during CoderPad coding interviews. Live transcription, screen-aware context from CoderPad editors, and local-first privacy on Mac.",
+      "Use ExtraBrain during CoderPad coding interviews with live transcription, screen-aware editor context, and local-first privacy on Mac.",
     h1: "CoderPad interview assistant.",
     lead: "ExtraBrain runs alongside CoderPad as a local-first desktop copilot, capturing your interview conversation and reading screen context from the CoderPad editor while staying hidden from screen sharing.",
     howItWorks:
@@ -1285,7 +1285,7 @@ export const platformPages: MarketingPage[] = [
   platformPage("platforms/hackerrank", "HackerRank", {
     title: "HackerRank Interview Assistant - ExtraBrain",
     description:
-      "Use ExtraBrain as your AI copilot during HackerRank coding interviews and assessments. Live transcription, screen context, and local-first privacy on Mac.",
+      "Use ExtraBrain during HackerRank coding interviews with live transcription, screen context, and local-first privacy on Mac.",
     h1: "HackerRank interview assistant.",
     lead: "ExtraBrain runs alongside HackerRank as a local-first desktop copilot, capturing your interview conversation and reading screen context from the HackerRank coding environment.",
     howItWorks:
@@ -1326,7 +1326,7 @@ export const platformPages: MarketingPage[] = [
   platformPage("platforms/codesignal", "CodeSignal", {
     title: "CodeSignal Interview Assistant - ExtraBrain",
     description:
-      "Use ExtraBrain as your AI copilot during CodeSignal coding interviews. Live transcription, screen-aware context, and local-first privacy on Mac.",
+      "Use ExtraBrain during CodeSignal coding interviews with live transcription, screen-aware context, and local-first privacy on Mac.",
     h1: "CodeSignal interview assistant.",
     lead: "ExtraBrain runs alongside CodeSignal as a local-first desktop copilot, capturing your interview conversation and reading screen context from the CodeSignal environment.",
     howItWorks:
@@ -1449,7 +1449,7 @@ export const platformPages: MarketingPage[] = [
   platformPage("platforms/microsoft-teams", "Microsoft Teams", {
     title: "Microsoft Teams Meeting Copilot - ExtraBrain",
     description:
-      "Use ExtraBrain as your AI copilot during Microsoft Teams meetings and interviews. Live transcription, screen-aware context, hidden from screen sharing on Mac.",
+      "Use ExtraBrain during Microsoft Teams meetings and interviews with live transcription and screen-aware context on Mac.",
     h1: "Microsoft Teams meeting copilot.",
     lead: "ExtraBrain runs alongside Microsoft Teams as a local-first desktop copilot, transcribing your calls, capturing screen context, and staying hidden from Teams screen sharing.",
     howItWorks:
@@ -1488,9 +1488,9 @@ export const platformPages: MarketingPage[] = [
   }),
 
   platformPage("platforms/leetcode", "LeetCode", {
-    title: "LeetCode Interview Practice Assistant - ExtraBrain",
+    title: "LeetCode Interview Practice Assistant",
     description:
-      "Use ExtraBrain as your AI copilot while practicing LeetCode problems. Live screen context, structured problem analysis, and local-first privacy on Mac.",
+      "Use ExtraBrain while practicing LeetCode problems with live screen context, structured analysis, and local-first privacy on Mac.",
     h1: "LeetCode practice and interview copilot.",
     lead: "ExtraBrain reads LeetCode problem statements and your code from the screen, provides structured analysis for algorithms and data structures, and helps you review practice sessions.",
     howItWorks:
@@ -1531,7 +1531,7 @@ export const platformPages: MarketingPage[] = [
 
 export const companyGuidePages: MarketingPage[] = [
   companyGuidePage('interview-guides/openai', 'OpenAI', {
-    description: 'Prepare for OpenAI software engineering and research interviews with ExtraBrain. Live AI copilot for coding, system design, and research discussions on Mac.',
+    description: 'Prepare for OpenAI software engineering and research interviews with live coding, system design, and technical discussion support on Mac.',
     lead: 'OpenAI interviews typically include coding rounds, system design discussions, and research-oriented conversations. ExtraBrain helps you prepare and perform with live transcription, screen-aware context, and structured analysis.',
     whatToExpect: [
       { title: 'Coding rounds', body: 'Algorithm and data structure problems with emphasis on Python, clean code, and computational thinking.' },
@@ -1551,7 +1551,7 @@ export const companyGuidePages: MarketingPage[] = [
   }),
 
   companyGuidePage('interview-guides/anthropic', 'Anthropic', {
-    description: 'Prepare for Anthropic software engineering and research interviews with ExtraBrain. Live AI copilot for coding, alignment, and technical discussions on Mac.',
+    description: 'Prepare for Anthropic software engineering and research interviews with coding, alignment, and technical discussion support on Mac.',
     lead: 'Anthropic interviews typically include coding assessments, technical discussions about AI safety and alignment, and system design conversations. ExtraBrain helps you prepare with live context and post-session review.',
     whatToExpect: [
       { title: 'Coding assessments', body: 'Algorithm problems and practical coding tasks with emphasis on Python and clear problem-solving approaches.' },
@@ -1611,7 +1611,7 @@ export const companyGuidePages: MarketingPage[] = [
   }),
 
   companyGuidePage('interview-guides/amazon', 'Amazon', {
-    description: 'Prepare for Amazon software engineering interviews with ExtraBrain. Live AI copilot for coding, system design, and Leadership Principles interviews on Mac.',
+    description: 'Prepare for Amazon software engineering interviews with coding, system design, and Leadership Principles support on Mac.',
     lead: 'Amazon interviews include coding rounds, system design, and Leadership Principles behavioral discussions. ExtraBrain helps you prepare with live transcription and structured analysis for each round.',
     whatToExpect: [
       { title: 'Coding rounds', body: 'Algorithm and data structure problems with emphasis on time and space complexity analysis.' },
@@ -1631,7 +1631,7 @@ export const companyGuidePages: MarketingPage[] = [
   }),
 
   companyGuidePage('interview-guides/microsoft', 'Microsoft', {
-    description: 'Prepare for Microsoft software engineering interviews with ExtraBrain. Live AI copilot for coding, system design, and behavioral interviews on Mac.',
+    description: 'Prepare for Microsoft software engineering interviews with coding, system design, and behavioral interview support on Mac.',
     lead: 'Microsoft interviews include coding rounds, system design, and behavioral discussions focused on growth mindset and collaboration. ExtraBrain helps with live transcription and post-session review.',
     whatToExpect: [
       { title: 'Coding rounds', body: 'Algorithm, data structure, and practical coding problems with emphasis on clean, working code and communication.' },
@@ -1651,7 +1651,7 @@ export const companyGuidePages: MarketingPage[] = [
   }),
 
   companyGuidePage('interview-guides/apple', 'Apple', {
-    description: 'Prepare for Apple software engineering interviews with ExtraBrain. Live AI copilot for coding, system design, and technical depth interviews on Mac.',
+    description: 'Prepare for Apple software engineering interviews with coding, system design, and technical depth support on Mac.',
     lead: 'Apple interviews include coding rounds, system design, and deep technical discussions about your domain expertise. ExtraBrain helps you prepare with live transcription and structured review.',
     whatToExpect: [
       { title: 'Coding rounds', body: 'Algorithm and data structure problems with attention to code quality, edge cases, and practical engineering judgment.' },
@@ -1671,7 +1671,7 @@ export const companyGuidePages: MarketingPage[] = [
   }),
 
   companyGuidePage('interview-guides/stripe', 'Stripe', {
-    description: 'Prepare for Stripe software engineering interviews with ExtraBrain. Live AI copilot for coding, system design, and integration design interviews on Mac.',
+    description: 'Prepare for Stripe software engineering interviews with coding, system design, and integration design support on Mac.',
     lead: 'Stripe interviews include coding rounds, system design with emphasis on payments infrastructure, and practical integration exercises. ExtraBrain helps with live transcription and structured review.',
     whatToExpect: [
       { title: 'Coding rounds', body: 'Practical coding problems emphasizing clean code, API design, and real-world engineering problems over pure algorithm puzzles.' },
@@ -1691,7 +1691,7 @@ export const companyGuidePages: MarketingPage[] = [
   }),
 
   companyGuidePage('interview-guides/databricks', 'Databricks', {
-    description: 'Prepare for Databricks software engineering interviews with ExtraBrain. Live AI copilot for coding, system design, and data platform interviews on Mac.',
+    description: 'Prepare for Databricks software engineering interviews with coding, system design, and data platform support on Mac.',
     lead: 'Databricks interviews include coding rounds, system design focused on data platforms, and technical discussions about distributed computing. ExtraBrain helps with live transcription and review.',
     whatToExpect: [
       { title: 'Coding rounds', body: 'Algorithm and data structure problems with emphasis on distributed systems concepts and data processing patterns.' },
@@ -1711,7 +1711,7 @@ export const companyGuidePages: MarketingPage[] = [
   }),
 
   companyGuidePage('interview-guides/netflix', 'Netflix', {
-    description: 'Prepare for Netflix software engineering interviews with ExtraBrain. Live AI copilot for coding, system design, and culture fit interviews on Mac.',
+    description: 'Prepare for Netflix software engineering interviews with coding, system design, and culture fit support on Mac.',
     lead: 'Netflix interviews include coding rounds, system design at streaming scale, and culture fit discussions around their values. ExtraBrain helps with live transcription and post-session review.',
     whatToExpect: [
       { title: 'Coding rounds', body: 'Algorithm and data structure problems with emphasis on practical engineering, performance, and code quality.' },

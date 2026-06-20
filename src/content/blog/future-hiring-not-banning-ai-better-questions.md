@@ -1,7 +1,7 @@
 ---
 title: "The Future of Hiring Is Not Banning AI. It Is Better Questions."
-seoTitle: "The Future of Hiring Is Better Interview Questions, Not AI Bans"
-description: "AI is changing interviews, but banning it is the wrong answer. Here is how hiring teams can ask better questions, evaluate real judgment, and keep interviews fair without surveilla"
+seoTitle: "The Future of Hiring Is Better Questions"
+description: "AI is changing interviews, but bans are the wrong answer. Learn how hiring teams can ask better questions and evaluate real judgment."
 publishDate: 2025-11-25
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Candidate Experience"
 draft: false
 ogImageAlt: "ExtraBrain future hiring cover showing better interview questions instead of AI bans"
-ogImage: "/assets/blog-covers/13-better-questions-not-ai-bans.png"
+ogImage: "/assets/blog-covers/13-better-questions-not-ai-bans.webp"
 ---
 ---
 

@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain AI interview debrief cover showing follow-up notes and post-interview improvement workflow"
-ogImage: "/assets/blog-covers/21-after-interview-debrief.png"
+ogImage: "/assets/blog-covers/21-after-interview-debrief.webp"
 ---
 
 ![ExtraBrain STAR interview coaching view with behavioral answer structure and follow-up prompts for article introduction in after interview ai debrief follow up improve](/assets/screenshots/blog/05-live-star-interview-coaching.png)

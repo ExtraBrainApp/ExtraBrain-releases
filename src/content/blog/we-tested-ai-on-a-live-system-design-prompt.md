@@ -1,6 +1,6 @@
 ---
 title: "We Tested AI on a Live System Design Prompt: Where It Helps, Where Humans Still Matter"
-seoTitle: "We Tested AI on a Live System Design Prompt: Where AI Helps and Humans Still Matter"
+seoTitle: "We Tested AI on a Live System Design Prompt"
 description: "A first-hand system design experiment showing where AI can support requirements, trade-offs, and recap - and where human judgment still matters most."
 publishDate: 2026-05-20
 author: "ExtraBrain"
@@ -12,7 +12,7 @@ tags:
   - Productivity
 draft: false
 ogImageAlt: "ExtraBrain live system design prompt cover showing AI support and human judgment"
-ogImage: "/assets/blog-covers/10-system-design-ai-era.png"
+ogImage: "/assets/blog-covers/10-system-design-ai-era.webp"
 ---
 
 I wanted to know where AI actually helps in a system design conversation, not in a polished demo or a prompt-engineered screenshot, but in the messy middle of a real-time architecture problem. So I ran a simple experiment: take a realistic system design prompt, talk through it out loud, let AI assist at specific moments, and compare the help against what a human still has to own.

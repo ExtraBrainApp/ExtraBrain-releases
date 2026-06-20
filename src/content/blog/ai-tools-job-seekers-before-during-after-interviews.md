@@ -1,7 +1,7 @@
 ---
 title: "AI Tools for Job Seekers: What to Use Before, During, and After Interviews"
-seoTitle: "AI Tools for Job Seekers: What to Use Before, During, and After Interviews"
-description: "A practical guide to AI tools for job seekers before, during, and after interviews, including resume tools, research assistants, mock interview coaches, private AI interview copilo"
+seoTitle: "AI Tools for Job Seekers"
+description: "A practical guide to AI tools for job seekers before, during, and after interviews, from resumes and research to mock practice and debriefs."
 publishDate: 2026-03-04
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "ExtraBrain"
 draft: false
 ogImageAlt: "ExtraBrain AI tools cover for job seekers before during and after interviews"
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.png"
+ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
 ---
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Private by Default: Why Interview Prep Notes Should Not Live in Random AI Tools"
-seoTitle: "Private by Default: Why Interview Prep Notes Should Not Live in Random AI Tools"
-description: "Interview prep notes often include transcripts, personal stories, salary goals, career plans, and confidential work details. Here is why job seekers should use privacy-first AI too"
+seoTitle: "Private Interview Prep Notes"
+description: "Interview prep notes include transcripts, stories, salary goals, career plans, and confidential work. Use privacy-first AI tools."
 publishDate: 2025-12-18
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain private interview prep notes cover showing local-first AI privacy controls"
-ogImage: "/assets/blog-covers/15-private-interview-notes.png"
+ogImage: "/assets/blog-covers/15-private-interview-notes.webp"
 ---
 ---
 

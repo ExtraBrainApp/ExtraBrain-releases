@@ -1,7 +1,7 @@
 ---
 title: "AI Interview Prep for People Who Hate Performing"
 seoTitle: "AI Interview Prep for People Who Hate Performing"
-description: "Interview anxiety can make capable candidates freeze, ramble, or sound unlike themselves. Learn how responsible AI interview prep can help you organize stories, practice under pres"
+description: "Learn how responsible AI interview prep can help anxious candidates organize stories, practice under pressure, and still sound authentic."
 publishDate: 2025-08-06
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Interview Anxiety"
 draft: false
 ogImageAlt: "ExtraBrain AI interview prep cover for candidates who dislike performing in interviews"
-ogImage: "/assets/blog-covers/05-ai-prep-for-people-who-hate-performing.png"
+ogImage: "/assets/blog-covers/05-ai-prep-for-people-who-hate-performing.webp"
 ---
 ![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in ai interview prep people who hate performing](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 

@@ -1,7 +1,7 @@
 ---
 title: "What Candidates Should Do When an Interviewer Asks, “Are You Using AI?”"
-seoTitle: "What Candidates Should Do When an Interviewer Asks, “Are You Using AI?”"
-description: "A practical guide for job candidates on how to answer AI-use questions in interviews honestly, confidently, and professionally without sounding defensive or hiding responsible prep"
+seoTitle: "When an Interviewer Asks, Are You Using AI?"
+description: "How candidates can answer AI-use questions in interviews honestly, confidently, and professionally without sounding defensive."
 publishDate: 2025-12-05
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain interview disclosure cover showing how candidates can answer questions about AI use"
-ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.png"
+ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.webp"
 ---
 ![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in when interviewer asks are you using ai](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 

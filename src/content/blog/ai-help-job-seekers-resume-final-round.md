@@ -1,7 +1,7 @@
 ---
 title: "From Resume Screen to Final Round: Where AI Can Actually Help Job Seekers"
-seoTitle: "Where AI Actually Helps Job Seekers From Resume to Final Interview"
-description: "A practical map for using AI responsibly across the job search, from resume screening and recruiter calls to technical interviews and final rounds, while keeping your voice, privac"
+seoTitle: "Where AI Helps Job Seekers"
+description: "A practical map for using AI responsibly across resume screens, recruiter calls, technical interviews, and final rounds."
 publishDate: 2025-08-19
 author: "ExtraBrain"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain AI job search cover showing support from resume screening to final round interviews"
-ogImage: "/assets/blog-covers/06-resume-to-final-round.png"
+ogImage: "/assets/blog-covers/06-resume-to-final-round.webp"
 ---
 The most confusing part of the modern job search is not that AI exists. It is that AI shows up everywhere at once.
 
