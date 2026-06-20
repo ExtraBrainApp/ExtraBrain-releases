@@ -2229,57 +2229,126 @@ const faqPrompts = (page: MarketingPage) =>
     .map((entry) => `- ${entry.question}`)
     .join('\n');
 
-const seoLongFormMarkdown = (page: MarketingPage) => {
+const pageIntent = (page: MarketingPage) => {
+  if (page.slug.startsWith('platforms/')) return 'platform';
+  if (page.slug.startsWith('interview-guides/')) return 'company';
+  if (page.slug.startsWith('use-cases/')) return 'use-case';
+  if (interviewPrepPages.some((candidate) => candidate.slug === page.slug)) return 'interview-prep';
+  return 'ai-search';
+};
+
+const intentContext = (page: MarketingPage) => {
+  const subject = readableSubject(page).toLowerCase();
+  const intent = pageIntent(page);
+  if (intent === 'platform') {
+    return {
+      audience: 'candidates, interviewers, and meeting participants using this platform',
+      session: 'a live platform session',
+      proof: 'the platform rules, screen-sharing behavior, coding or meeting surface, transcript, and visible prompt',
+      outcome: `use ${subject} without losing track of the conversation, the screen, or the rules of the platform`,
+      practice: 'test the platform setup, rehearse screen sharing, confirm audio capture, and review what ExtraBrain can and cannot see before the call',
+    };
+  }
+  if (intent === 'company') {
+    return {
+      audience: 'candidates preparing for a company-specific interview loop',
+      session: 'a recruiter screen, technical round, behavioral round, or final loop',
+      proof: 'the job description, company interview format, role expectations, resume stories, technical examples, and follow-up questions',
+      outcome: `prepare for ${subject} with a plan that matches the company loop instead of relying on generic interview advice`,
+      practice: 'map the expected rounds, prepare company-specific examples, run targeted mocks, and debrief each round against the role criteria',
+    };
+  }
+  if (intent === 'interview-prep') {
+    return {
+      audience: 'job seekers building a role-specific preparation plan',
+      session: 'a mock interview, practice case, resume walkthrough, technical screen, or real interview where AI use is allowed',
+      proof: 'the resume, job description, practice transcript, role-specific prompts, project details, and feedback from previous sessions',
+      outcome: `turn ${subject} into a repeatable study plan with realistic practice and useful review`,
+      practice: 'collect target-role context, practice aloud, capture notes or transcripts, and refine weak answers before the real session',
+    };
+  }
+  if (intent === 'use-case') {
+    return {
+      audience: 'people preparing for a specific interview or meeting scenario',
+      session: 'a focused live session with role-specific prompts, follow-ups, and visible context',
+      proof: 'the prompt, transcript, screen context, notes, examples, technical artifacts, and post-session debrief',
+      outcome: `use ${subject} as a practical workflow rather than a generic AI feature claim`,
+      practice: 'prepare realistic prompts, rehearse the conversation flow, capture what happened, and turn the debrief into the next practice plan',
+    };
+  }
+  return {
+    audience: 'candidates comparing AI interview tools and workflows',
+    session: 'a practice interview, allowed live interview, technical round, or post-interview review session',
+    proof: 'the transcript, job description, resume, visible screen context, prompts, notes, and answer history',
+    outcome: `evaluate ${subject} by how well it supports real preparation, live context, and review`,
+    practice: 'compare tool behavior against realistic prompts, privacy expectations, provider choices, and the quality of the post-session review loop',
+  };
+};
+
+const seoLongFormMarkdownV2 = (page: MarketingPage) => {
   const subject = readableSubject(page);
+  const subjectLower = subject.toLowerCase();
   const pageTitle = page.title.replace(/ - ExtraBrain$/, '').replace(/ \| ExtraBrain$/, '');
   const highlights = itemHighlights(page);
-  const sections = sectionNames(page);
   const prompts = faqPrompts(page);
+  const sections = sectionNames(page);
+  const context = intentContext(page);
+  const intent = pageIntent(page);
   const sourceSummary = page.sources?.length
-    ? `This page also links out to relevant source material so readers can compare ExtraBrain's perspective with established resources in the category. Use those references for background, then use the workflow below to turn broad advice into your own practice plan.`
-    : `This page is written as a practical guide rather than a directory listing. Use the workflow below to turn the page focus into concrete preparation, live-session discipline, and post-session review.`;
+    ? `The source links near the end of this page are useful for cross-checking formats, expectations, and terminology. Treat them as supporting material, then use the workflow here to adapt that outside guidance to your own context.`
+    : `Because this page is a practical product guide rather than a source directory, the middle section focuses on decisions, workflows, and review habits that readers can apply immediately.`;
 
   return `## A practical guide to ${subject}
 
-${page.lead} That short summary is useful, but most candidates and professionals need more than a definition. They need a way to turn ${pageTitle.toLowerCase()} into a repeatable workflow: what to prepare, how to practice, how to use notes or AI responsibly, and how to improve after each session. This guide gives the page a deeper middle layer so the topic is not treated as a thin landing page. Read it as an operating manual for using the rest of the page: start with the intent, choose the right preparation inputs, practice against realistic constraints, and keep a record of what changed.
+${page.lead} For SEO, that sentence should not stand alone. Readers who land on a page for ${pageTitle.toLowerCase()} usually need a complete path from intent to action: what the page is for, what to prepare, how to use ExtraBrain responsibly, and how to judge whether the workflow is actually improving the next session. This guide expands the middle of the page with that practical context so the page answers more than one narrow query.
 
-The main reason ${subject.toLowerCase()} deserves a structured process is that interviews and high-stakes conversations rarely fail because someone lacks a single fact. They fail when the person cannot retrieve the right example, organize the answer under pressure, interpret context quickly, or recover after a follow-up question. A tool can help, but only when it supports the workflow instead of replacing judgment. ExtraBrain is positioned around that idea: it can keep transcripts, visible prompts, notes, screenshots, and provider choices close to the work, while the user remains responsible for accuracy, honesty, and policy compliance.
+The audience for this page is ${context.audience}. The important session is ${context.session}. The evidence that matters includes ${context.proof}. A strong page about ${subjectLower} should therefore explain the workflow around the session, not only define the keyword. The outcome is to ${context.outcome}. That outcome is what makes the content useful for readers and stronger for search: it connects the phrase in the title to concrete preparation, live use, review, privacy, and next steps.
 
-### What to optimize for
+### Search intent and reader fit
 
-For ${subject.toLowerCase()}, optimize for clarity before speed. A fast answer that misses the question is less valuable than a slower answer that names assumptions, explains tradeoffs, and gives the interviewer or meeting partner something concrete to evaluate. Before using any guide, write down the situation you are preparing for: the role or meeting type, the platform, the likely prompts, the rules around AI assistance, and the evidence you can honestly bring from your own experience. Then compare that list with the sections on this page, especially ${sections || 'the preparation areas, workflow guidance, source links, and FAQ'}.
+Someone searching for ${pageTitle.toLowerCase()} is usually trying to solve one of three problems. First, they may be comparing tools, platforms, or preparation methods and need to know what matters before committing time. Second, they may already have an upcoming session and need a fast, structured way to practice. Third, they may be trying to understand whether AI assistance is appropriate, private, and allowed for their situation. This page should serve all three intents without becoming vague.
 
-Strong preparation usually has four layers. First, collect context: job descriptions, resumes, project notes, prompts, docs, screenshots, and previous feedback. Second, convert that context into answer-ready material: examples, frameworks, diagrams, practice questions, or checklists. Third, rehearse under realistic conditions: speak out loud, use a timer, switch between screens, and handle interruptions. Fourth, review the session afterward. The review step is where many people lose value. Without a transcript, notes, or a saved debrief, the same vague answer tends to appear again in the next session.
+That is why the surrounding sections cover ${sections || 'features, workflows, responsible use, frequently asked questions, and source material'}. The long-form block connects those pieces into a single decision path. Start by naming the session, the rules, and the material you can honestly use. Then prepare the examples, prompts, or artifacts that the session will likely require. After the session, review what happened instead of relying on memory. This is the difference between a generic landing page and an effective preparation page.
 
-### Signals to pay attention to
+### What to prepare before the session
 
-${highlights || `- **Context:** Identify what information you need before the session starts and what information you can collect during the session.\n- **Structure:** Turn broad advice into repeatable answer shapes, checklists, and follow-up questions.\n- **Review:** Keep a written record of what worked, what failed, and what to practice next.`}
+Before using ExtraBrain for ${subjectLower}, collect the inputs that make the session specific. For an interview, that usually means the job description, resume, company notes, project examples, and likely prompt types. For a coding or technical screen, add problem statements, editor context, constraints, edge cases, and notes about tradeoffs. For a meeting or video call, add the agenda, participant goals, previous decisions, and the question you need the conversation to answer.
 
-These signals are intentionally practical. They help you decide whether your preparation is moving from passive reading to active performance. If a section sounds obvious, test it by practicing aloud. Many candidates can describe a framework when relaxed but cannot apply it when a prompt arrives unexpectedly. Similarly, many professionals can summarize a project in writing but struggle to explain the decision path, alternatives considered, and measurable outcome in a live conversation. The gap between knowing and saying is exactly where structured practice matters.
+Then convert those inputs into a short practice list. Do not try to prepare everything. Choose the three or four moments most likely to decide the session: the opening explanation, the hardest technical or strategic prompt, a follow-up question, and the final summary. ExtraBrain works best when it has enough real context to support those moments. If the page is about a platform, test the platform before the call. If it is about a company, map the preparation to the likely interview loop. If it is about a role or use case, practice with prompts that sound like the actual work.
 
-### How to use ExtraBrain in the workflow
+### Page-specific signals to review
 
-Use ExtraBrain as a context and review layer, not as a substitute for your own thinking. Before a session, gather the material that matters: your resume, target role, prep notes, project summaries, source links, or practice prompts. During practice or an allowed live session, use the transcript and screen context to stay oriented. Afterward, review the saved conversation and ask what the record shows: Did you answer the question directly? Did you use specific evidence? Did you over-explain? Did you miss a clarifying question? Did you forget a stronger example that was already in your notes?
+${highlights || `- **Context:** Identify what information the page expects you to bring before a session starts.
+- **Workflow:** Turn the topic into a small set of practice prompts, setup checks, and review notes.
+- **Review:** Keep a transcript or written debrief so the next session improves from evidence rather than memory.`}
 
-This approach is especially useful when ${subject.toLowerCase()} involves multiple moving parts. Coding interviews combine problem statements, constraints, code, tests, and spoken reasoning. Case interviews combine structure, math, exhibits, and synthesis. Resume interviews combine career narrative, proof, and follow-up details. Platform-specific or company-specific pages combine external rules, interview formats, and your own preparation. In each case, the goal is not to make every answer sound artificially polished. The goal is to make the right context easier to access and the review loop harder to ignore.
+These signals are deliberately concrete because ${subjectLower} only becomes useful when the reader can act on it. A candidate preparing for software engineering interviews needs different evidence than someone comparing meeting copilots. A user preparing for Zoom or Google Meet needs different setup checks than someone practicing LeetCode or HackerRank. A company-specific page should mention the interview loop and the kinds of stories or technical examples that fit that company. The generated content pulls in the page's own section items so the middle block stays connected to the page rather than floating as generic SEO copy.
 
-### Responsible use and boundaries
+### How ExtraBrain fits this page
 
-Responsible use is part of the content, not a footnote. If you use AI for interview preparation, make sure it helps you understand your own experience rather than invent experience you do not have. If you use AI during a live interview, assessment, class, or workplace call, only do so where the interviewer, employer, platform, school, or organization allows it. When rules are unclear, ask or use AI only before and after the session. The safest workflow is transparent, grounded in your real work, and easy to explain if someone asks how you prepared.
+ExtraBrain should be framed as a context and review system for ${subjectLower}. Before the session, it helps gather and reuse the material that matters. During practice or an allowed live session, it can follow the transcript and visible screen so the user does not lose track of the prompt, discussion, or next question. After the session, it gives the user something concrete to review: what was asked, what was visible, what was answered clearly, and what needs to improve.
 
-Privacy also matters. ${pageTitle} may involve sensitive material: compensation goals, company names, unreleased projects, customer details, code, personal career history, or internal documents. Review what is visible on screen, what is transcribed, which AI provider is selected, and whether local options are appropriate for the situation. ExtraBrain's local-first design choices are useful here because they let users think deliberately about data flow instead of treating every conversation as a generic cloud chat.
+This is most valuable when the session contains moving parts. ${intent === 'platform' ? 'Platform pages need setup clarity: whether the app is used with a coding editor, assessment environment, video call, screen share, or meeting transcript.' : intent === 'company' ? 'Company-guide pages need loop clarity: the recruiter screen, technical assessment, system design round, behavioral interview, and final debrief should each have a preparation purpose.' : intent === 'interview-prep' ? 'Interview-prep pages need study clarity: candidates should know what to practice this week, what to review after each mock, and how to connect the advice to their resume and target role.' : intent === 'use-case' ? 'Use-case pages need task clarity: the content should connect the role or scenario to the exact moments where live context, structured prompts, and post-session review help.' : 'AI-search pages need evaluation clarity: readers should understand how ExtraBrain differs from a generic answer generator, chatbot, or note-taking tool.'} That category-specific purpose makes the block more useful for readers and more relevant to the query cluster.
 
-### Questions to pressure-test your preparation
+### Responsible use, privacy, and policy checks
 
-${prompts || `- What is the main outcome this page should help you prepare for?\n- Which examples or notes prove that you can do the work?\n- What would you review after a practice session to improve the next one?`}
+Responsible use is central to ${subjectLower}. If the session is an interview, assessment, classroom exercise, or workplace call, the user should follow the rules set by the interviewer, employer, platform, school, or organization. When the rules are unclear, the safest use of AI is before the session for practice and after the session for review. If live assistance is allowed, the user should still provide honest answers based on their own experience and understanding.
 
-Use those questions as a final check. If you cannot answer them in your own words, spend more time with the examples, checklist items, and source links on this page before adding more tools. Good preparation is not the same as collecting more resources. It is the ability to enter the session with a clear plan, adapt to the actual prompt, and leave with a useful record of what to improve.
+Privacy also affects whether the workflow is appropriate. ${pageTitle} can involve resumes, compensation goals, source code, unreleased product details, customer information, internal documents, or personal career history. Users should review what is visible on screen, what is transcribed, which AI provider is selected, and whether local options are better for sensitive material. ExtraBrain's local-first Mac workflow, provider choice, and privacy controls give readers a way to think about data flow before a high-stakes session starts.
 
-### Turning this page into an action plan
+### Questions this page should help answer
 
-Start with one near-term session: a mock interview, technical screen, case practice, resume walkthrough, product discussion, or live meeting. Choose three prompts from this page or from the source links. Practice them aloud. Capture notes or a transcript. Then write a short debrief with three bullets: what was clear, what was weak, and what you will change next time. Repeat that loop until the answers become specific, honest, and easier to deliver under pressure.
+${prompts || `- What session or decision is this page helping you prepare for?
+- What real examples, documents, prompts, or notes should you bring into the workflow?
+- What will you review afterward so the next session improves?`}
 
-${sourceSummary} The best result is a preparation system that compounds. Every practice answer, follow-up question, transcript, and debrief should make the next session easier. That is the real purpose of adding a deeper middle section to this SEO page: to give readers enough substance to act, not just enough text to rank.`;
+If those questions are still hard to answer, the next step is not more browsing. The next step is a small practice loop: ${context.practice}. Capture what happened, write a short debrief, and update the preparation material. That loop creates the substance behind ${subjectLower}: better examples, clearer reasoning, stronger setup habits, and more confident follow-up answers.
+
+### Turning the guide into an SEO-effective action path
+
+The most effective SEO page is not just longer. It matches the query, answers related questions, links the topic to a product workflow, and gives readers a reason to continue. For ${subjectLower}, that means using the page title, the H1, the supporting sections, the FAQ, and the source links as one coherent path. The reader should understand what the topic means, when ExtraBrain is relevant, what to prepare before using it, how to use it responsibly, and what to review afterward.
+
+${sourceSummary} The page is strongest when the middle content reinforces the exact keyword cluster while still sounding useful to a human reader. That is the purpose of this block: it adds enough depth for search engines to understand the page, enough specificity for readers to trust it, and enough product context for ExtraBrain to be mentioned naturally rather than forced.`;
 };
 
 const withSeoLongFormContent = (page: MarketingPage): MarketingPage => ({
@@ -2289,7 +2358,7 @@ const withSeoLongFormContent = (page: MarketingPage): MarketingPage => ({
     {
       title: 'In-depth guide',
       body: `Use this middle section to turn ${readableSubject(page).toLowerCase()} into a concrete preparation and review workflow.`,
-      bodyMarkdown: seoLongFormMarkdown(page),
+      bodyMarkdown: seoLongFormMarkdownV2(page),
     },
     ...page.sections.slice(1),
   ],
