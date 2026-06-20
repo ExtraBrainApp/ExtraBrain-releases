@@ -42,7 +42,7 @@ The AI Pin’s short life made the dependency problem impossible to ignore. In F
 
 That matters. A cloud-dependent AI gadget can become dramatically less useful when the company changes direction. The hardware may still exist, but the experience people paid for can disappear.
 
-This is one reason work-focused AI tools need a different center of gravity. If the assistant is tied to a fragile device, the user inherits the device’s business risk. If the assistant is tied to durable user workflows — the conversations, notes, documents, and decisions people already need to manage — the value is less about owning a shiny object and more about improving how work gets captured and understood.
+This is one reason work-focused AI tools need a different center of gravity. If the assistant is tied to a fragile device, the user inherits the device’s business risk. If the assistant is tied to durable user workflows - the conversations, notes, documents, and decisions people already need to manage - the value is less about owning a shiny object and more about improving how work gets captured and understood.
 
 A useful copilot should not become a paperweight when the hardware strategy changes.
 
@@ -163,7 +163,7 @@ Sometimes that may involve hardware. Smart glasses, earbuds, cars, conference ro
 
 That relationship is easiest to build where work already happens.
 
-For most professionals, the immediate opportunity is not a new gadget. It is a calmer way to capture conversations, review what was said, generate useful follow-up questions, and turn messy human dialogue into something you can act on — without giving up privacy or pretending the AI is the person doing the work.
+For most professionals, the immediate opportunity is not a new gadget. It is a calmer way to capture conversations, review what was said, generate useful follow-up questions, and turn messy human dialogue into something you can act on - without giving up privacy or pretending the AI is the person doing the work.
 
 That is the promise of tools like [ExtraBrain](https://extrabrain.app): not AI as a fashion statement, not AI as a shortcut, but AI as a private, user-controlled layer over the conversations that already matter.
 

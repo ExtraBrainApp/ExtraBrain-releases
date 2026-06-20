@@ -26,7 +26,7 @@ The better question is not “Which AI tool should I use?” It is: **what job-s
 
 Before an interview, you need research, positioning, memory, and practice. During an interview, you need presence, notes, consent, and clear boundaries. After an interview, you need debriefing, follow-up, and a way to improve before the next round.
 
-Here is a practical map of AI tools for job seekers across all three stages, with a responsible lens: use AI for clarity, preparation, memory, privacy, and user control — not cheating, impersonation, or invented experience.
+Here is a practical map of AI tools for job seekers across all three stages, with a responsible lens: use AI for clarity, preparation, memory, privacy, and user control - not cheating, impersonation, or invented experience.
 
 ## Before the Interview: Use AI to Understand the Role
 

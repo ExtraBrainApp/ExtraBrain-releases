@@ -147,7 +147,7 @@ When code generation gets easier, explanation matters more. When answer lookup g
 
 That is not the death of the coding interview. It is the death of a narrow ritual that confused memorized puzzle fluency with engineering ability. LeetCode was never the job. The job is judgment under constraints, communication when the answer is not obvious, debugging when the system disagrees with your theory, and owning the work after the first draft appears. AI just made that obvious.
 
-For candidates, the path forward is to prepare in a way that makes you clearer, not more scripted. Use AI to practice, reflect, and find weak spots. Do not use it to impersonate competence you cannot defend. For hiring teams, the path forward is to reward reasoning instead of recall: write explicit AI rules, test tradeoffs, ask for verification, and make the conversation resemble the work. Tools like [ExtraBrain](https://extrabrain.app) are most valuable when they help people remember, prepare, and communicate with more control — not when they replace the human at the center of the interview.
+For candidates, the path forward is to prepare in a way that makes you clearer, not more scripted. Use AI to practice, reflect, and find weak spots. Do not use it to impersonate competence you cannot defend. For hiring teams, the path forward is to reward reasoning instead of recall: write explicit AI rules, test tradeoffs, ask for verification, and make the conversation resemble the work. Tools like [ExtraBrain](https://extrabrain.app) are most valuable when they help people remember, prepare, and communicate with more control - not when they replace the human at the center of the interview.
 
 The old memory test is losing power.
 

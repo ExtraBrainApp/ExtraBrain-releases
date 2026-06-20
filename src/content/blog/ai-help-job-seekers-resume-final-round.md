@@ -24,7 +24,7 @@ The answer is stage-specific. AI can help you translate, prepare, remember, and 
 
 Below is a practical map for using AI across the hiring funnel without turning yourself into a generated candidate.
 
-## Stage 1: Resume Screen — Use AI to Translate, Not Fabricate
+## Stage 1: Resume Screen - Use AI to Translate, Not Fabricate
 
 The resume stage creates anxiety because it feels invisible. You upload a document, then wait. You do not know whether an applicant tracking system parsed it correctly, whether a recruiter skimmed it for fifteen seconds, or whether the role already had hundreds of qualified applicants.
 
@@ -54,9 +54,9 @@ Where candidates get into trouble is when AI starts adding achievements that did
 
 If you cannot defend a bullet in a recruiter call, it does not belong on the resume.
 
-![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Stage 1: Resume Screen — Use AI to Translate, Not Fabricate in ai help job seekers resume final round](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Stage 1: Resume Screen - Use AI to Translate, Not Fabricate in ai help job seekers resume final round](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
-## Stage 2: Recruiter Call — Use AI to Prepare Your Story, Not Script Your Personality
+## Stage 2: Recruiter Call - Use AI to Prepare Your Story, Not Script Your Personality
 
 The recruiter call is usually not a deep technical evaluation. It is a fit, clarity, and logistics screen. Can you explain what you do? Does your background match the role? Are your goals aligned? Are compensation, location, timing, and work authorization likely to work?
 
@@ -82,9 +82,9 @@ A strong recruiter-call answer usually has three parts: what you do now, what yo
 
 This is also a good time to use a private preparation workspace. A tool like [ExtraBrain](https://extrabrain.app) can help you talk through recruiter-call answers out loud, review the transcript, and notice where you sound clear versus rehearsed. As an [AI interview preparation workspace](https://extrabrain.app), it is most useful when it helps you hear your own words more accurately.
 
-![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Stage 2: Recruiter Call — Use AI to Prepare Your Story, Not Script Your Personality in ai help job seekers resume final round](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Stage 2: Recruiter Call - Use AI to Prepare Your Story, Not Script Your Personality in ai help job seekers resume final round](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
-## Stage 3: Technical Screen — Use AI to Practice the Thinking, Not Outsource the Skill
+## Stage 3: Technical Screen - Use AI to Practice the Thinking, Not Outsource the Skill
 
 The technical screen is where the rules get sharper.
 
@@ -114,9 +114,9 @@ During the actual screen, ask about the rules:
 
 That question is professional, not awkward. Some companies allow documentation. Some allow AI in specific ways. Some prohibit it entirely. The important thing is not to guess silently.
 
-![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for Stage 3: Technical Screen — Use AI to Practice the Thinking, Not Outsource the Skill in ai help job seekers resume final round](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
+![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for Stage 3: Technical Screen - Use AI to Practice the Thinking, Not Outsource the Skill in ai help job seekers resume final round](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 
-## Stage 4: Final Round — Use AI to Connect the Dots
+## Stage 4: Final Round - Use AI to Connect the Dots
 
 By the final round, the evaluation usually changes. The company may already believe you can do the work. Now they are testing judgment, collaboration, motivation, leadership, and fit.
 
@@ -140,7 +140,7 @@ A final round is not only about getting chosen. It is also about choosing. Use A
 - How does the team handle disagreement?
 - What changed that made this hire necessary now?
 
-![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Stage 4: Final Round — Use AI to Connect the Dots in ai help job seekers resume final round](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
+![ExtraBrain recruiter-screen practice view with a quick answer panel and live transcript for Stage 4: Final Round - Use AI to Connect the Dots in ai help job seekers resume final round](/assets/screenshots/blog/07-hr-intro-call-recruiter-screen.png)
 
 ## After Every Stage: Debrief While the Memory Is Fresh
 
