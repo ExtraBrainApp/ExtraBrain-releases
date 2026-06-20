@@ -919,6 +919,51 @@ cite {
   font-size: 15px;
 }
 
+.seo-markdown-block {
+  display: grid;
+  gap: 18px;
+  max-width: 900px;
+  padding: 30px;
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.54);
+  box-shadow: 0 18px 42px rgba(18, 24, 33, 0.06);
+}
+
+.seo-markdown-block h2,
+.seo-markdown-block h3,
+.seo-markdown-block p,
+.seo-markdown-block ul {
+  margin: 0;
+}
+
+.seo-markdown-block h2 {
+  font-size: clamp(30px, 3vw, 42px);
+}
+
+.seo-markdown-block h3 {
+  margin-top: 12px;
+  font-size: 24px;
+}
+
+.seo-markdown-block p,
+.seo-markdown-block li {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.seo-markdown-block ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 1.2rem;
+}
+
+.seo-markdown-block a {
+  color: var(--editorial-purple-deep);
+  font-weight: 700;
+}
+
 .page-grid--checklist,
 .page-grid--compact-list {
   grid-template-columns: 1fr;

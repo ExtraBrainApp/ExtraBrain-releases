@@ -131,6 +131,53 @@ const comparisonStatusLabels = {
   'cost-note': 'Cost note',
 };
 const comparisonValueItems = (value: string | string[]) => (Array.isArray(value) ? value : [value]);
+const escapeHtml = (value: string) =>
+  value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+const inlineMarkdown = (value: string) =>
+  escapeHtml(value)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
+const markdownToHtml = (markdown: string) => {
+  const blocks: string[] = [];
+  let listItems: string[] = [];
+  const closeList = () => {
+    if (listItems.length > 0) {
+      blocks.push(`<ul>${listItems.map((item) => `<li>${inlineMarkdown(item)}</li>`).join('')}</ul>`);
+      listItems = [];
+    }
+  };
+
+  markdown.split(/\n+/).forEach((rawLine) => {
+    const line = rawLine.trim();
+    if (!line) {
+      closeList();
+      return;
+    }
+    if (line.startsWith('### ')) {
+      closeList();
+      blocks.push(`<h3>${inlineMarkdown(line.slice(4))}</h3>`);
+      return;
+    }
+    if (line.startsWith('## ')) {
+      closeList();
+      blocks.push(`<h2>${inlineMarkdown(line.slice(3))}</h2>`);
+      return;
+    }
+    if (line.startsWith('- ')) {
+      listItems.push(line.slice(2));
+      return;
+    }
+    closeList();
+    blocks.push(`<p>${inlineMarkdown(line)}</p>`);
+  });
+  closeList();
+  return blocks.join('');
+};
 const isPerformanceDiscoveryPage =
   page.slug === 'pricing' ||
   page.slug === 'pricing/free-vs-pro' ||
@@ -362,6 +409,7 @@ const breadcrumbItems = [
               <h2>{section.title}</h2>
               {section.body && <p class="lead light">{section.body}</p>}
             </div>
+            {section.bodyMarkdown && <div class="seo-markdown-block" set:html={markdownToHtml(section.bodyMarkdown)} />}
             {isPricingPlans && (
               <div class="pricing-grid pricing-grid--page">
                 {pricingTiers.map((tier) => {
