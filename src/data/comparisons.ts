@@ -98,6 +98,67 @@ const comparisonPage = (page: Omit<MarketingPage, 'schemaType'> & { comparison: 
   schemaType: 'FAQPage',
 });
 
+const alternativeWorkflowCards = [
+  { title: 'Best Mac local-first alternative: ExtraBrain', body: 'ExtraBrain is strongest for Mac users who want live transcription, screen-aware context, local-first options, and provider access they control.' },
+  { title: 'Best full prep suite: Final Round AI', body: 'Final Round AI is a better fit when you want a hosted interview-preparation suite with mock interviews and post-interview reports.' },
+  { title: 'Best career-platform bundle: LockedIn AI', body: 'LockedIn AI is a better fit when you want interview help bundled with resume, LinkedIn, job tracking, and broader career tools.' },
+  { title: 'Best invisible desktop suite: Beyz AI', body: 'Beyz AI is a better fit when its Mac and Windows invisible desktop workflow, cheat sheets, and phone assistant features match your needs.' },
+  { title: 'Best browser-first copilot: Interviews Chat', body: 'Interviews Chat is a better fit when you prefer a browser-based interview copilot and prep workflow over a Mac desktop app.' },
+  { title: 'Best credit/subscription model: ParakeetAI', body: 'ParakeetAI is a better fit when its credits, subscriptions, lifetime options, and uploaded-document workflow are the buying model you prefer.' },
+];
+
+const alternativePage = (opts: {
+  slug: string;
+  competitorName: string;
+  competitorSlug?: string;
+  description: string;
+  lead: string;
+  shortAnswer: string;
+  whySwitch: Array<{ title: string; body: string }>;
+  pricingNotes: Array<{ title: string; body: string }>;
+  competitorSummary: string;
+  pricingSnapshot: string;
+  competitorPlatform: string;
+  bestForCompetitor: string[];
+  atAGlance: ComparisonPageContent['atAGlance'];
+  chooseCompetitorWhen: Array<{ title: string; body: string }>;
+  faq: Array<{ question: string; answer: string }>;
+  sources: Array<{ label: string; href: string }>;
+}): MarketingPage =>
+  comparisonPage({
+    slug: opts.slug,
+    title: `Best ${opts.competitorName} Alternative for Mac — ExtraBrain`,
+    description: opts.description,
+    eyebrow: `${opts.competitorName} alternative`,
+    h1: `Best ${opts.competitorName} alternative for Mac.`,
+    lead: opts.lead,
+    primaryCta: defaultCta,
+    secondaryCta: opts.competitorSlug ? { label: `Compare ${opts.competitorName}`, href: `/compare/${opts.competitorSlug}/` } : { label: 'See all comparisons', href: '/compare/' },
+    sections: [
+      { title: 'Short answer', body: opts.shortAnswer },
+      { title: `Why people look for a ${opts.competitorName} alternative`, items: opts.whySwitch },
+      { title: 'Best alternatives by workflow', items: alternativeWorkflowCards },
+      { title: 'Why ExtraBrain is a strong alternative', items: sharedExtraBrainAdvantages },
+      { title: 'Pricing notes', items: opts.pricingNotes },
+      { title: 'Responsible use', body: responsibleUse },
+    ],
+    sources: opts.sources,
+    comparison: {
+      checkedAt,
+      competitorName: opts.competitorName,
+      competitorSummary: opts.competitorSummary,
+      pricingSnapshot: opts.pricingSnapshot,
+      bestForExtraBrain: sharedExtraBrainBestFor,
+      bestForCompetitor: opts.bestForCompetitor,
+      atAGlance: opts.atAGlance,
+      featureRows: baseRows(opts.competitorName, opts.competitorPlatform, opts.pricingSnapshot),
+      extraBrainAdvantages: sharedExtraBrainAdvantages,
+      chooseCompetitorWhen: opts.chooseCompetitorWhen,
+      responsibleUse,
+    },
+    faq: opts.faq,
+  });
+
 export const comparisonMarketingPages: MarketingPage[] = [
   {
     slug: "compare",
@@ -169,6 +230,46 @@ export const comparisonMarketingPages: MarketingPage[] = [
             "Invisible desktop interview assistant with real-time suggestions, coding assistant, meeting assistant, and prep tools.",
           pricing:
             "Monthly $49.99/month; Titan $24.99/month billed semi-annually; God $32.99/month billed quarterly.",
+        },
+        {
+          name: "LockedIn AI alternative",
+          href: "/alternatives/lockedin-ai/",
+          summary:
+            "Best LockedIn AI alternative page for Mac local-first workflows, provider control, and live interview context.",
+          pricing:
+            "ExtraBrain free core app; compare against LockedIn AI plan families and checkout terms.",
+        },
+        {
+          name: "Final Round AI alternative",
+          href: "/alternatives/final-round-ai/",
+          summary:
+            "Best Final Round AI alternative page for Mac desktop context, technical interviews, and provider control.",
+          pricing:
+            "ExtraBrain free core app; verify Final Round AI live subscription pricing.",
+        },
+        {
+          name: "Beyz AI alternative",
+          href: "/alternatives/beyz-ai/",
+          summary:
+            "Best Beyz AI alternative page for a free-core Mac workflow, local-first options, and BYO providers.",
+          pricing:
+            "ExtraBrain free core app; compare against Beyz monthly, quarterly, and semi-annual plans.",
+        },
+        {
+          name: "Interviews Chat alternative",
+          href: "/alternatives/interviews-chat/",
+          summary:
+            "Best Interviews Chat alternative page for Mac desktop screen context and local-first interview support.",
+          pricing:
+            "ExtraBrain free core app; verify Interviews Chat live pricing and limits.",
+        },
+        {
+          name: "ParakeetAI alternative",
+          href: "/alternatives/parakeet-ai/",
+          summary:
+            "Best ParakeetAI alternative page for local Parakeet transcription, screen context, and provider control.",
+          pricing:
+            "ExtraBrain free core app; compare against ParakeetAI credits, subscriptions, and lifetime terms.",
         },
         {
           name: "InterviewBee",
@@ -1096,6 +1197,251 @@ export const comparisonMarketingPages: MarketingPage[] = [
         answer:
           "Choose ExtraBrain when you want a free core Mac app, optional low-cost Pro workflow controls, local-first session context, local transcription, and BYO provider control.",
       },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/lockedin-ai',
+    competitorName: 'LockedIn AI',
+    competitorSlug: 'lockedin-ai',
+    description: 'Compare ExtraBrain as a LockedIn AI alternative for Mac interviews, live transcription, screen context, local-first privacy, pricing, and provider control.',
+    lead: 'If you want a LockedIn AI alternative focused on Mac, local-first privacy, live transcription, screen context, and bring-your-own provider control, ExtraBrain is built for that workflow.',
+    shortAnswer: 'The best LockedIn AI alternative depends on your workflow. ExtraBrain is a strong alternative for Mac users who want a free core desktop app, local transcription options, screen-aware context, and provider access they control. LockedIn AI may be a better fit if you want its broader career-platform features, phone mode, or bundled web workflows.',
+    whySwitch: [
+      { title: 'You want a narrower Mac desktop workflow', body: 'LockedIn AI presents a broad interview and career platform. ExtraBrain focuses on a Mac desktop copilot for live interviews, meetings, and session review.' },
+      { title: 'You want local-first transcription options', body: 'ExtraBrain supports local Parakeet transcription and local Gemma 4 where installed and compatible for users who want more local control.' },
+      { title: 'You want bring-your-own provider control', body: 'ExtraBrain separates app access from external AI provider billing so users can choose OpenAI, Anthropic, Claude, Codex, or compatible endpoints.' },
+      { title: 'You want a free core app', body: 'ExtraBrain keeps the core Mac app free, while Pro adds custom profiles and richer session history.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. ExtraBrain Pro is $9.99/month regular, $6.99/month Founder pricing, $79/year, or $149 Lifetime launch pricing. External provider usage is billed separately.' },
+      { title: 'LockedIn AI pricing', body: 'LockedIn AI has published Unlimited, Credits, and Lifetime plan families; verify the live pricing and checkout terms before buying.' },
+      { title: 'Compare total cost', body: 'Compare subscription price, credit limits, external provider costs, renewal terms, refund policy, and whether you need career-platform features.' },
+    ],
+    competitorSummary: 'LockedIn AI positions itself as an interview copilot and career platform with web, desktop, phone interview, coding, and job-search tools.',
+    pricingSnapshot: 'Pricing page lists Unlimited, Credits, and Lifetime plan families plus General and Professional categories; verify live pricing before purchase.',
+    competitorPlatform: 'Interview copilot with desktop, browser, phone, coding, and career-tool workflows.',
+    bestForCompetitor: [
+      'People who want interview help plus resume, LinkedIn, cover letter, job tracking, and career tools.',
+      'People who want web, desktop, and phone interview modes under one account.',
+      'People who prefer LockedIn AI’s credit, unlimited, or lifetime plan structure.',
+    ],
+    atAGlance: [
+      { label: 'Primary alternative reason', extraBrain: 'Mac local-first live assistant', competitor: 'Broader career platform' },
+      { label: 'Pricing model', extraBrain: 'Free core app plus Pro and BYO provider costs', competitor: 'Unlimited, Credits, and Lifetime plan families' },
+      { label: 'Provider control', extraBrain: 'BYO providers and local AI options', competitor: 'Vendor-managed AI access through product plans' },
+      { label: 'Career tools', extraBrain: 'Focused interview and meeting copilot', competitor: 'Resume, LinkedIn, job tracking, and more' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You want a full career platform', body: 'LockedIn AI includes resume, cover letter, LinkedIn, job tracking, and career planning workflows.' },
+      { title: 'You want phone interview mode', body: 'Its support center documents phone interview workflows on mobile devices.' },
+    ],
+    faq: [
+      { question: 'What is the best LockedIn AI alternative?', answer: 'ExtraBrain is a strong LockedIn AI alternative for Mac users who want a free core desktop app, live transcription, screen-aware context, local-first options, and provider access they control.' },
+      { question: 'Is ExtraBrain cheaper than LockedIn AI?', answer: 'ExtraBrain has a free core Mac app and Pro options starting at $6.99/month Founder pricing. LockedIn AI pricing should be verified on its current checkout page.' },
+      { question: 'Which is better for Mac interviews?', answer: 'ExtraBrain is built specifically for Mac live interview and meeting workflows. LockedIn AI may be better if you need its broader career-platform bundle.' },
+      { question: 'Which has better provider control?', answer: 'ExtraBrain is stronger when you want local AI options and bring-your-own provider access you control.' },
+      { question: 'Can ExtraBrain replace LockedIn AI?', answer: 'ExtraBrain can replace LockedIn AI for Mac users focused on live interview context, screen awareness, transcription, and debriefs, but not for every career-platform feature.' },
+    ],
+    sources: [
+      { label: 'LockedIn AI homepage', href: 'https://www.lockedinai.com/' },
+      { label: 'LockedIn AI pricing', href: 'https://www.lockedinai.com/pricing' },
+      { label: 'LockedIn AI support', href: 'https://www.lockedinai.com/support' },
+      { label: 'ExtraBrain vs LockedIn AI', href: '/compare/lockedin-ai/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/final-round-ai',
+    competitorName: 'Final Round AI',
+    competitorSlug: 'final-round-ai',
+    description: 'Compare ExtraBrain as a Final Round AI alternative for live interview help, technical interviews, Mac desktop workflows, privacy, pricing, and provider control.',
+    lead: 'ExtraBrain is a Final Round AI alternative for candidates who want a lighter Mac desktop app with live transcription, screen context, technical interview support, local-first options, and provider control.',
+    shortAnswer: 'ExtraBrain is a strong Final Round AI alternative when you want real-time desktop context instead of a hosted interview-preparation suite. Final Round AI may be better if you want mock interviews, resume and job-detail personalization, and post-interview scoring in one hosted career workflow.',
+    whySwitch: [
+      { title: 'You want desktop context instead of a hosted suite', body: 'ExtraBrain runs on your Mac and follows visible interview context across apps, while Final Round AI is positioned around an all-in-one interview lifecycle.' },
+      { title: 'You want provider control', body: 'ExtraBrain lets users bring OpenAI, Anthropic, Claude, Codex, compatible endpoints, or local Gemma 4 where installed and compatible.' },
+      { title: 'You want interview plus meeting support', body: 'ExtraBrain is designed for interviews, meetings, lectures, research calls, and post-session review.' },
+      { title: 'You want local-first options', body: 'ExtraBrain can use local Parakeet transcription and local AI where available, with clear caveats for external providers.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. ExtraBrain Pro is $9.99/month regular, $6.99/month Founder pricing, $79/year, or $149 Lifetime launch pricing.' },
+      { title: 'Final Round AI pricing', body: 'Public pages link to subscription signup and desktop app onboarding; verify the current checkout page for exact current dollar prices.' },
+      { title: 'Compare bundled value', body: 'Final Round AI may include prep-suite value. ExtraBrain separates desktop app features from external AI and transcription provider billing.' },
+    ],
+    competitorSummary: 'Final Round AI describes interview preparation, mock interviews, real-time Interview Copilot, post-interview reports, resume and role personalization, and broad interview-type coverage.',
+    pricingSnapshot: 'Current public pages link to subscription signup and desktop app onboarding, but exact current dollar prices require live checkout verification.',
+    competitorPlatform: 'All-in-one interview assistant for preparation, live guidance, and feedback reports.',
+    bestForCompetitor: [
+      'People who want mock interviews, preparation, and live support in one career suite.',
+      'People who want resume and job-detail personalization in a hosted interview workflow.',
+      'People who want post-interview scoring and performance feedback features.',
+    ],
+    atAGlance: [
+      { label: 'Primary alternative reason', extraBrain: 'Mac desktop live context', competitor: 'Hosted interview-prep suite' },
+      { label: 'Technical interviews', extraBrain: 'Screen-aware coding and system design context', competitor: 'Interview Copilot and prep workflows' },
+      { label: 'Provider model', extraBrain: 'Local AI options plus BYO providers', competitor: 'Vendor-managed AI access' },
+      { label: 'Meetings', extraBrain: 'Interviews and meetings', competitor: 'Interview lifecycle focus' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You want a prep suite', body: 'Final Round AI emphasizes mock interviews, resume/job context, and post-interview feedback.' },
+      { title: 'You want broad career tooling', body: 'Its public pages frame the product around the full interview lifecycle.' },
+    ],
+    faq: [
+      { question: 'What is the best Final Round AI alternative?', answer: 'ExtraBrain is a strong Final Round AI alternative for Mac users who want live desktop context, screen awareness, local-first options, and provider control.' },
+      { question: 'Is ExtraBrain cheaper than Final Round AI?', answer: 'ExtraBrain has a free core Mac app and low-cost Pro options. Final Round AI pricing should be checked on its live subscription page before purchase.' },
+      { question: 'Which is better for technical interviews?', answer: 'ExtraBrain is strong for visible coding, system design, and debugging context on Mac. Final Round AI may be better if you want a hosted prep suite.' },
+      { question: 'Which is better for post-interview reports?', answer: 'Final Round AI emphasizes post-interview reports. ExtraBrain focuses on session history, transcript review, and local-first desktop context.' },
+      { question: 'Can ExtraBrain replace Final Round AI?', answer: 'ExtraBrain can replace Final Round AI for users prioritizing Mac desktop live context and provider control, but not for every hosted prep-suite feature.' },
+    ],
+    sources: [
+      { label: 'Final Round AI homepage', href: 'https://www.finalroundai.com/' },
+      { label: 'Final Round AI FAQ', href: 'https://www.finalroundai.com/frequently-asked-questions' },
+      { label: 'ExtraBrain vs Final Round AI', href: '/compare/final-round-ai/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/beyz-ai',
+    competitorName: 'Beyz AI',
+    competitorSlug: 'beyz-ai',
+    description: 'Compare ExtraBrain as a Beyz AI alternative for real-time interview support, Mac desktop workflow, local-first privacy, pricing, and provider control.',
+    lead: 'ExtraBrain is a Beyz AI alternative for Mac users who want a free core app, live transcript, screen-aware context, local-first options, and bring-your-own provider control.',
+    shortAnswer: 'ExtraBrain is a strong Beyz AI alternative if you want a Mac-first workflow with a free core app, local transcription options, and provider access you control. Beyz AI may be better if you need its Windows download, cheat sheets, phone assistant, or paid desktop bundle.',
+    whySwitch: [
+      { title: 'You want a free core Mac app', body: 'ExtraBrain keeps its core desktop app free, with Pro upgrades for custom profiles and richer session history.' },
+      { title: 'You want provider control', body: 'ExtraBrain lets users choose local AI where available or bring their own external provider access.' },
+      { title: 'You want less bundled packaging', body: 'ExtraBrain focuses on live context, transcripts, screen awareness, and debriefs instead of a larger interview-prep feature bundle.' },
+      { title: 'You want local-first transcription options', body: 'ExtraBrain supports local Parakeet transcription and optional Deepgram.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. ExtraBrain Pro is $9.99/month regular, $6.99/month Founder pricing, $79/year, or $149 Lifetime launch pricing.' },
+      { title: 'Beyz AI pricing', body: 'Beyz listed Monthly $49.99/month, Titan $24.99/month billed semi-annually, and God $32.99/month billed quarterly when checked.' },
+      { title: 'Compare platform needs', body: 'Beyz lists Windows x64 support. ExtraBrain currently supports Mac, with Windows and Linux planned.' },
+    ],
+    competitorSummary: 'Beyz says its desktop app is invisible to screen sharing and includes interview, coding, meeting, practice, cheat sheet, phone assistant, and prep tools.',
+    pricingSnapshot: 'Monthly $49.99/month; Titan $24.99/month billed semi-annually; God $32.99/month billed quarterly. Verify live checkout before buying.',
+    competitorPlatform: 'Invisible desktop interview assistant with real-time suggestions, coding, meetings, practice, and prep tools.',
+    bestForCompetitor: [
+      'People who want Beyz’s invisible desktop app across Mac and Windows.',
+      'People who want its interview cheat sheets, practice, phone assistant, and meeting assistant bundle.',
+      'People who prefer Beyz’s semi-annual or quarterly paid plan structure.',
+    ],
+    atAGlance: [
+      { label: 'Primary alternative reason', extraBrain: 'Free core Mac app and provider control', competitor: 'Invisible desktop bundle' },
+      { label: 'Platform', extraBrain: 'Mac today; Windows/Linux planned', competitor: 'Mac Apple Silicon, Mac Intel, Windows x64 listed' },
+      { label: 'Pricing', extraBrain: 'Free core plus Pro options', competitor: 'Monthly, quarterly, and semi-annual plans' },
+      { label: 'Local options', extraBrain: 'Local transcription and local AI where compatible', competitor: 'Vendor-managed workflow' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You need Windows today', body: 'Beyz lists a Windows x64 download, while ExtraBrain lists Windows as planned.' },
+      { title: 'You want cheat sheets and phone assistant features', body: 'Beyz markets interview cheat sheets, phone assistant, 90s prep, and related tools.' },
+    ],
+    faq: [
+      { question: 'What is the best Beyz AI alternative?', answer: 'ExtraBrain is a strong Beyz AI alternative for Mac users who want a free core app, live transcription, screen context, local-first options, and provider control.' },
+      { question: 'Is ExtraBrain cheaper than Beyz AI?', answer: 'ExtraBrain has a free core Mac app. Beyz published paid monthly, quarterly, and semi-annual plan prices when checked, but buyers should verify live checkout.' },
+      { question: 'Which supports Windows?', answer: 'Beyz listed Windows x64 support when checked. ExtraBrain supports Mac today, with Windows and Linux planned.' },
+      { question: 'Which has better provider control?', answer: 'ExtraBrain is stronger when you want bring-your-own provider access and local AI options where compatible.' },
+      { question: 'Can ExtraBrain replace Beyz AI?', answer: 'ExtraBrain can replace Beyz AI for Mac users focused on live interview context, screen awareness, transcription, and debriefs.' },
+    ],
+    sources: [
+      { label: 'Beyz AI homepage', href: 'https://beyz.ai/' },
+      { label: 'Beyz AI top interview assistants article', href: 'https://beyz.ai/blog/top-10-ai-interview-assistants-in-2025-tested-by-users' },
+      { label: 'ExtraBrain vs Beyz AI', href: '/compare/beyz-ai/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/interviews-chat',
+    competitorName: 'Interviews Chat',
+    description: 'Compare ExtraBrain as an Interviews Chat alternative for AI interview copilot workflows, live context, screen awareness, privacy controls, and technical interviews.',
+    lead: 'ExtraBrain is an Interviews Chat alternative for candidates who want a Mac desktop interview copilot with live transcription, screen-aware context, local-first options, and broader meeting use cases.',
+    shortAnswer: 'ExtraBrain is a strong Interviews Chat alternative for Mac users who prefer a desktop app with screen context, local transcription options, and provider control. Interviews Chat may be better if you prefer its browser-based interview copilot, prep, and smart-response workflow.',
+    whySwitch: [
+      { title: 'You want a desktop app', body: 'ExtraBrain runs as a Mac desktop assistant rather than a browser-first interview chat workflow.' },
+      { title: 'You want screen-aware context', body: 'ExtraBrain can read visible prompts, code, whiteboards, documents, notes, and meeting context from the Mac desktop.' },
+      { title: 'You want local-first options', body: 'ExtraBrain supports local Parakeet transcription and local Gemma 4 where installed and compatible.' },
+      { title: 'You want interview and meeting coverage', body: 'ExtraBrain supports interviews, meetings, lectures, research calls, and debriefs in one workflow.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. ExtraBrain Pro is $9.99/month regular, $6.99/month Founder pricing, $79/year, or $149 Lifetime launch pricing.' },
+      { title: 'Interviews Chat pricing', body: 'Verify the current Interviews Chat pricing and limits on the live product page before buying.' },
+      { title: 'Compare workflow cost', body: 'Consider whether you need a desktop app, browser workflow, provider control, session history, or bundled response formats.' },
+    ],
+    competitorSummary: 'Interviews Chat positions itself as an AI interview copilot and interview-prep product with real-time response support and practice workflows.',
+    pricingSnapshot: 'Verify live Interviews Chat pricing, limits, and checkout terms before purchase.',
+    competitorPlatform: 'AI interview copilot and interview-prep workflow with browser-based positioning.',
+    bestForCompetitor: [
+      'People who prefer Interviews Chat’s browser-based AI interview copilot workflow.',
+      'People who want its smart-response formatting and interview-prep experience.',
+      'People who prefer its bundled product model over a Mac desktop app with BYO providers.',
+    ],
+    atAGlance: [
+      { label: 'Primary alternative reason', extraBrain: 'Mac desktop context', competitor: 'Browser-first interview copilot' },
+      { label: 'Screen context', extraBrain: 'Visible desktop context across apps', competitor: 'Verify current browser/workspace context support' },
+      { label: 'Provider model', extraBrain: 'Local options and BYO providers', competitor: 'Vendor-managed product model' },
+      { label: 'Use cases', extraBrain: 'Interviews, meetings, lectures, research calls', competitor: 'Interview copilot and prep focus' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You want browser-first usage', body: 'Interviews Chat may fit better when you prefer to work primarily in a browser interview assistant workflow.' },
+      { title: 'You like its response workflow', body: 'Its public positioning emphasizes interview copilot and response-support workflows.' },
+    ],
+    faq: [
+      { question: 'What is the best Interviews Chat alternative?', answer: 'ExtraBrain is a strong Interviews Chat alternative for Mac users who want a desktop AI interview copilot with live transcription, screen context, local-first options, and provider control.' },
+      { question: 'Is ExtraBrain a browser-based Interviews Chat alternative?', answer: 'No. ExtraBrain is a Mac desktop app, which is better for users who want context across meeting apps, editors, terminals, docs, and whiteboards.' },
+      { question: 'Which is better for technical interviews?', answer: 'ExtraBrain is strong for technical interviews because it can use visible screen context from code editors, browser tools, terminals, and whiteboards.' },
+      { question: 'Which is better for privacy controls?', answer: 'ExtraBrain is stronger when local transcription, local AI options, and bring-your-own provider control matter.' },
+      { question: 'Can ExtraBrain replace Interviews Chat?', answer: 'ExtraBrain can replace Interviews Chat for users who prefer a Mac desktop copilot and broader interview plus meeting workflows.' },
+    ],
+    sources: [
+      { label: 'Interviews Chat homepage', href: 'https://www.interviews.chat/' },
+      { label: 'ExtraBrain AI interview copilot page', href: '/ai-interview-copilot/' },
+      { label: 'ExtraBrain technical interview AI assistant page', href: '/technical-interview-ai-assistant/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/parakeet-ai',
+    competitorName: 'ParakeetAI',
+    competitorSlug: 'parakeet-ai',
+    description: 'Compare ExtraBrain as a ParakeetAI alternative for live interview assistance, local transcription, screen context, provider control, pricing, and privacy.',
+    lead: 'ExtraBrain is a ParakeetAI alternative for Mac users who want local Parakeet transcription, screen-aware context, live interview help, and provider access they control.',
+    shortAnswer: 'ExtraBrain is a strong ParakeetAI alternative if you want a free core Mac app, local Parakeet transcription, local AI options where compatible, and bring-your-own provider control. ParakeetAI may be better if you prefer its credits, subscription, lifetime, browser/mobile, or uploaded-document workflow.',
+    whySwitch: [
+      { title: 'You want local Parakeet transcription', body: 'ExtraBrain distinguishes local NVIDIA Parakeet transcription from ParakeetAI the product, giving users a local transcription path where supported.' },
+      { title: 'You want BYO providers', body: 'ExtraBrain lets users connect their own AI provider access instead of relying only on a vendor-managed model.' },
+      { title: 'You want a free core Mac app', body: 'ExtraBrain keeps the core Mac desktop app free, with Pro upgrades for custom profiles and session history.' },
+      { title: 'You want meetings too', body: 'ExtraBrain supports interviews, meetings, lectures, and research calls, not only interview-assistant sessions.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. ExtraBrain Pro is $9.99/month regular, $6.99/month Founder pricing, $79/year, or $149 Lifetime launch pricing.' },
+      { title: 'ParakeetAI pricing', body: 'ParakeetAI has documented credits, subscriptions, lifetime options, and session concepts; verify current prices and limits before buying.' },
+      { title: 'Compare transcription meaning', body: 'ExtraBrain’s local Parakeet transcription refers to the local transcription engine option, not ParakeetAI the interview-assistant product.' },
+    ],
+    competitorSummary: 'ParakeetAI positions itself as a real-time AI interview assistant with coding support, documents, notes, privacy claims, credits, subscriptions, and lifetime plans.',
+    pricingSnapshot: 'Pricing area lists credits, subscriptions, lifetime, 30-day money back, unlimited calls, and cancel-anytime language. Verify live prices before purchase.',
+    competitorPlatform: 'Real-time interview assistant with coding support, documents, notes, credits, subscriptions, and privacy claims.',
+    bestForCompetitor: [
+      'People who want ParakeetAI’s credits, subscription, or lifetime usage model.',
+      'People who want its browser/mobile session options and coding-call support.',
+      'People who prefer its bundled model choices and uploaded-document workflow.',
+    ],
+    atAGlance: [
+      { label: 'Primary alternative reason', extraBrain: 'Local transcription plus BYO providers', competitor: 'Credits/subscriptions interview assistant' },
+      { label: 'Transcription', extraBrain: 'Local NVIDIA Parakeet and optional Deepgram', competitor: 'Vendor-managed transcription claims' },
+      { label: 'Pricing model', extraBrain: 'Free core plus Pro options', competitor: 'Credits, subscriptions, and lifetime options' },
+      { label: 'Use cases', extraBrain: 'Interviews and meetings', competitor: 'Real-time interview assistant focus' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You want its credit model', body: 'ParakeetAI documents credits divided into 30-minute sessions and says credits never expire.' },
+      { title: 'You want browser/mobile pairing', body: 'Its FAQ describes mobile-optimized browser access and simultaneous desktop/mobile sessions.' },
+    ],
+    faq: [
+      { question: 'What is the best ParakeetAI alternative?', answer: 'ExtraBrain is a strong ParakeetAI alternative for Mac users who want local Parakeet transcription, screen-aware context, a free core app, local AI options, and provider access they control.' },
+      { question: 'Is ExtraBrain the same as ParakeetAI?', answer: 'No. ExtraBrain is a Mac desktop AI interview assistant and meeting copilot. It can use local NVIDIA Parakeet transcription, which is distinct from ParakeetAI the product.' },
+      { question: 'Is ExtraBrain cheaper than ParakeetAI?', answer: 'ExtraBrain has a free core Mac app and Pro options. ParakeetAI pricing should be verified on its live pricing or checkout page.' },
+      { question: 'Which is better for provider control?', answer: 'ExtraBrain is stronger when you want local AI options and bring-your-own OpenAI, Anthropic, Claude, Codex, or compatible provider access.' },
+      { question: 'Can ExtraBrain replace ParakeetAI?', answer: 'ExtraBrain can replace ParakeetAI for Mac users focused on local transcription options, screen context, provider control, and broader meeting/interview workflows.' },
+    ],
+    sources: [
+      { label: 'ParakeetAI homepage', href: 'https://www.parakeet-ai.com/' },
+      { label: 'ParakeetAI interview assistant', href: 'https://www.parakeet-ai.com/ai-interview-assistant' },
+      { label: 'ExtraBrain vs ParakeetAI', href: '/compare/parakeet-ai/' },
     ],
   }),
 ];

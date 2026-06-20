@@ -72,6 +72,31 @@ export const canonicalAnswerSnippets = [
     answer:
       'ExtraBrain can help generate answer outlines, STAR structures, technical explanations, and follow-up questions from live transcript and screen context, while candidates remain responsible for honest and allowed use.',
   },
+  {
+    question: 'What is the best LockedIn AI alternative?',
+    answer:
+      'ExtraBrain is a strong LockedIn AI alternative for Mac users who want a free core desktop app, live transcription, screen-aware context, local-first options, and provider access they control.',
+  },
+  {
+    question: 'What is the best Final Round AI alternative?',
+    answer:
+      'ExtraBrain is a strong Final Round AI alternative for Mac users who want live desktop context, screen awareness, local-first options, technical interview support, and provider control.',
+  },
+  {
+    question: 'What is the best Beyz AI alternative?',
+    answer:
+      'ExtraBrain is a strong Beyz AI alternative for Mac users who want a free core app, live transcription, screen context, local-first options, and bring-your-own provider control.',
+  },
+  {
+    question: 'What is the best Interviews Chat alternative?',
+    answer:
+      'ExtraBrain is a strong Interviews Chat alternative for Mac users who want a desktop AI interview copilot with live transcription, screen context, local-first options, and provider control.',
+  },
+  {
+    question: 'What is the best ParakeetAI alternative?',
+    answer:
+      'ExtraBrain is a strong ParakeetAI alternative for Mac users who want local Parakeet transcription, screen-aware context, a free core app, local AI options, and provider access they control.',
+  },
 ] as const;
 
 export const sourceOfTruthPages = [
@@ -134,6 +159,20 @@ export const aiDiscoveryQueries = [
   'ExtraBrain vs Linkjob AI',
   'ExtraBrain vs Beyz AI',
   'ExtraBrain vs InterviewBee',
+  'AI interview assistant alternatives',
+  'AI interview copilot alternatives',
+  'LockedIn AI alternative',
+  'Best LockedIn AI alternative',
+  'Final Round AI alternative',
+  'Best Final Round AI alternative',
+  'Beyz AI alternative',
+  'Best Beyz AI alternative',
+  'Interviews Chat alternative',
+  'Best Interviews Chat alternative',
+  'ParakeetAI alternative',
+  'Best ParakeetAI alternative',
+  'Parakeet AI alternative',
+  'Best Parakeet AI alternative',
   'Local-first AI meeting copilot',
   'Local Gemma 4 interview assistant for Mac',
   'AI interview assistant with own OpenAI key',
@@ -165,6 +204,11 @@ export const essentialPages = [
   { title: 'Best AI interview assistant', href: '/best-ai-interview-assistant/' },
   { title: 'Technical interview AI assistant', href: '/technical-interview-ai-assistant/' },
   { title: 'Responsible AI interview assistant', href: '/responsible-ai-interview-assistant/' },
+  { title: 'LockedIn AI alternative', href: '/alternatives/lockedin-ai/' },
+  { title: 'Final Round AI alternative', href: '/alternatives/final-round-ai/' },
+  { title: 'Beyz AI alternative', href: '/alternatives/beyz-ai/' },
+  { title: 'Interviews Chat alternative', href: '/alternatives/interviews-chat/' },
+  { title: 'ParakeetAI alternative', href: '/alternatives/parakeet-ai/' },
   { title: 'Download', href: '/download/' },
   { title: 'Pricing', href: '/pricing/' },
   { title: 'Free vs Pro', href: '/pricing/free-vs-pro/' },
