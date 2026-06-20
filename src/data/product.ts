@@ -24,10 +24,10 @@ export const schemaIds = {
 
 export const externalEntityProfiles = [
   { label: 'GitHub releases', href: githubUrl, verified: true },
-  { label: 'LinkedIn company page', href: '', verified: false },
-  { label: 'Product Hunt launch', href: '', verified: false },
-  { label: 'X / Twitter profile', href: '', verified: false },
-  { label: 'YouTube or Loom demo channel', href: '', verified: false },
+  { label: 'YouTube channel', href: 'https://www.youtube.com/@ExtraBrainApp', verified: true },
+  { label: 'X profile', href: 'https://x.com/extrabrainapp', verified: true },
+  { label: 'LinkedIn company page', href: 'https://www.linkedin.com/company/extrabrainapp/', verified: true },
+  { label: 'Product Hunt product page', href: 'https://www.producthunt.com/products/extrabrain', verified: true },
 ] as const;
 
 export const verifiedSameAsLinks = externalEntityProfiles.filter((profile) => profile.verified && profile.href).map((profile) => profile.href);
@@ -1856,6 +1856,10 @@ const baseMarketingPages: MarketingPage[] = [
       { label: 'Provider setup and model choices', href: '/providers/' },
       { label: 'Help center', href: '/help/' },
       { label: 'GitHub releases', href: githubUrl },
+      { label: 'YouTube channel', href: 'https://www.youtube.com/@ExtraBrainApp' },
+      { label: 'X profile', href: 'https://x.com/extrabrainapp' },
+      { label: 'LinkedIn company page', href: 'https://www.linkedin.com/company/extrabrainapp/' },
+      { label: 'Product Hunt product page', href: 'https://www.producthunt.com/products/extrabrain' },
     ],
     faq: [
       { question: 'What is ExtraBrain?', answer: 'ExtraBrain is a free, local-first Mac desktop AI interview assistant and meeting copilot with live transcription, screen-aware context, local Gemma 4 where installed and compatible, bring-your-own providers, and privacy controls.' },
