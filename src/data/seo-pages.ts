@@ -117,6 +117,65 @@ const useCasePage = (
   faq: opts.faq,
 });
 
+const interviewPrepPage = (
+  slug: string,
+  opts: {
+    title: string;
+    description: string;
+    eyebrow: string;
+    h1: string;
+    lead: string;
+    answer: string;
+    sections: MarketingPage['sections'];
+    faq: Array<{ question: string; answer: string }>;
+    sources: Array<{ label: string; href: string }>;
+  },
+): MarketingPage => ({
+  slug,
+  title: opts.title,
+  description: opts.description,
+  eyebrow: opts.eyebrow,
+  h1: opts.h1,
+  lead: opts.lead,
+  primaryCta: defaultCta,
+  secondaryCta: { label: 'Explore interview guides', href: '/blog/' },
+  schemaType: 'FAQPage',
+  sections: [
+    {
+      title: 'Quick answer',
+      body: opts.answer,
+    },
+    ...opts.sections,
+    {
+      title: 'How ExtraBrain helps',
+      variant: 'cards',
+      items: [
+        {
+          title: 'Practice with your real context',
+          body: 'Use resumes, job descriptions, notes, prompts, transcripts, and screenshots as preparation context instead of starting from generic advice every time.',
+          href: '/',
+        },
+        {
+          title: 'Review what you actually said',
+          body: 'After mock interviews or allowed live sessions, revisit the transcript and visible context to find vague answers, missed details, and stronger follow-ups.',
+          href: '/',
+        },
+        {
+          title: 'Keep preparation private',
+          body: 'ExtraBrain is a Mac desktop app with local-first options, provider choice, and privacy controls for sensitive interview preparation.',
+          href: '/help/privacy-security/how-extrabrain-handles-data/',
+        },
+      ],
+    },
+    {
+      title: 'Responsible use',
+      body: responsibleUseNote,
+    },
+  ],
+  faq: opts.faq,
+  sources: opts.sources,
+});
+
 const worksWithPlatforms = [
   { title: 'Zoom interviews', body: 'Run ExtraBrain alongside Zoom calls with live transcription, screen-aware context, and a desktop window designed to stay hidden from screen sharing.' },
   { title: 'Google Meet interviews', body: 'Use ExtraBrain during Google Meet interviews without adding a meeting bot or browser extension to the call.' },
@@ -1240,6 +1299,423 @@ export const useCasePages: MarketingPage[] = [
   }),
 ];
 
+export const interviewPrepPages: MarketingPage[] = [
+  interviewPrepPage('best-interview-prep-tools', {
+    title: 'Best Interview Prep Tools and Resources - ExtraBrain',
+    description: 'Compare interview prep tools for mock interviews, technical practice, behavioral answers, resume review, notes, transcripts, and AI-assisted preparation.',
+    eyebrow: 'Interview prep tools',
+    h1: 'Best interview prep tools and resources.',
+    lead: 'The best interview prep stack is usually not one tool. It combines practice questions, mock interviews, resume review, technical drills, notes, transcripts, and repeated feedback.',
+    answer: 'The best interview prep tools help you practice under realistic conditions, organize your examples, identify weak answers, and improve after every session. ExtraBrain fits into this stack as the private context layer: it helps capture practice conversations, visible prompts, job descriptions, resumes, and post-interview notes so your preparation compounds instead of disappearing after each call.',
+    sections: [
+      {
+        title: 'Tool categories to compare',
+        variant: 'cards',
+        items: [
+          { title: 'Mock interview platforms', body: 'Practice timing, pressure, and follow-up questions with peers, coaches, or AI interview simulations.' },
+          { title: 'Question banks', body: 'Build familiarity with common behavioral, coding, data, consulting, product, and role-specific prompts.' },
+          { title: 'Technical practice tools', body: 'Prepare coding, SQL, system design, case math, dashboards, spreadsheets, and other hard skills.' },
+          { title: 'Resume review tools', body: 'Improve clarity before interviews, then prepare the proof stories behind each important resume bullet.' },
+          { title: 'Note and transcript tools', body: 'Turn mock interviews and real interview debriefs into a reusable record of what to improve.' },
+          { title: 'AI interview assistants', body: 'Use AI for structured practice, answer review, transcript analysis, and allowed live-context support.' },
+        ],
+      },
+      {
+        title: 'How to choose the right tool',
+        variant: 'checklist',
+        items: [
+          { title: 'Match the interview format', body: 'A coding interview, consulting case, internship screen, and resume walkthrough need different preparation workflows.' },
+          { title: 'Prioritize realistic practice', body: 'Reading sample answers helps, but timed spoken answers reveal the gaps you need to fix.' },
+          { title: 'Look for review loops', body: 'The strongest tools help you inspect what happened after practice, not just generate more prompts.' },
+          { title: 'Check privacy expectations', body: 'Interview prep often includes resumes, compensation goals, company targets, and sensitive career history.' },
+        ],
+      },
+      {
+        title: '7-day interview prep stack',
+        variant: 'timeline',
+        items: [
+          { title: 'Day 1: Map the interview loop', body: 'List each expected round, the skills tested, and the tools you need for each one.' },
+          { title: 'Day 2: Prepare resume stories', body: 'Turn your strongest bullets into concise examples with context, action, result, and lessons learned.' },
+          { title: 'Day 3: Practice role-specific questions', body: 'Work through technical, case, product, data, or domain-specific prompts with a timer.' },
+          { title: 'Day 4: Run a mock interview', body: 'Simulate pressure and capture notes or a transcript for review.' },
+          { title: 'Day 5: Fix weak answers', body: 'Rewrite unclear stories, missing metrics, weak explanations, and rambling responses.' },
+          { title: 'Day 6: Practice follow-ups', body: 'Prepare clarifying questions, interviewer questions, and deeper project details.' },
+          { title: 'Day 7: Final review', body: 'Review your notes, resume, job description, and highest-risk topics before the interview.' },
+        ],
+      },
+      {
+        title: 'Mistakes to avoid',
+        variant: 'compact-list',
+        items: [
+          { title: 'Using too many disconnected tools', body: 'If resume notes, transcripts, question lists, and feedback live in separate places, improvement becomes harder to compound.' },
+          { title: 'Memorizing perfect answers', body: 'Interviewers usually probe beyond the first answer. Prepare flexible stories and reasoning instead of scripts.' },
+          { title: 'Skipping the debrief', body: 'The fastest improvement often comes from reviewing what you actually said after practice.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What are the best interview prep tools?', answer: 'The best tools depend on the role, but most candidates benefit from mock interviews, question banks, resume review, technical practice, and a way to review notes or transcripts afterward.' },
+      { question: 'Can ExtraBrain be used for interview prep?', answer: 'Yes. ExtraBrain can help you practice with your resume, job description, notes, prompts, screenshots, and transcripts so you can review and improve after each session.' },
+      { question: 'Should I use AI during a live interview?', answer: 'Only use AI during a live interview when the interviewer, employer, school, or platform rules allow it. Otherwise, use AI for preparation and post-interview review.' },
+    ],
+    sources: [
+      { label: 'DEV Community interview prep tools list', href: 'https://dev.to/finalroundai/10-best-interview-prep-tools-for-2026-4nfp' },
+      { label: 'Tech Interview Handbook mock interviews', href: 'https://www.techinterviewhandbook.org/mock-interviews/' },
+      { label: 'MIT interview preparation resources', href: 'https://cdo.mit.edu/cdo-resources-to-help-you-prepare-for-interviews/' },
+      { label: 'Yale interview preparation guide', href: 'https://ocs.yale.edu/channels/interview-preparation/' },
+      { label: 'MockIF interview preparation tools', href: 'https://mockif.com/interview-preparation-tools' },
+    ],
+  }),
+
+  interviewPrepPage('software-engineering-interview-preparation', {
+    title: 'Software Engineering Interview Preparation - ExtraBrain',
+    description: 'Prepare for software engineering and SDE interviews with coding practice, system design, behavioral stories, resume walkthroughs, and AI-assisted review.',
+    eyebrow: 'Software engineering prep',
+    h1: 'Software engineering interview preparation.',
+    lead: 'Software engineering interview prep spans coding, data structures, algorithms, system design, debugging, technical communication, and behavioral stories.',
+    answer: 'A strong software engineering interview preparation plan combines technical drills with communication practice. You need to solve problems, explain tradeoffs, test assumptions, discuss projects, and review mistakes. ExtraBrain helps by capturing prompts, code screens, transcripts, and notes so each practice session becomes reusable preparation.',
+    sections: [
+      {
+        title: 'What software engineering interviews test',
+        variant: 'cards',
+        items: [
+          { title: 'Problem solving', body: 'Break problems down, choose data structures, analyze complexity, and adapt when constraints change.' },
+          { title: 'Coding fundamentals', body: 'Prepare arrays, strings, hash maps, trees, graphs, recursion, dynamic programming, sorting, searching, and tests.' },
+          { title: 'System design', body: 'For mid-level and senior roles, prepare APIs, data models, scaling, reliability, caching, queues, storage, and observability.' },
+          { title: 'Communication', body: 'Explain assumptions, tradeoffs, edge cases, and debugging steps instead of silently coding.' },
+          { title: 'Project depth', body: 'Resume projects can lead to architecture, ownership, incidents, collaboration, and business impact questions.' },
+          { title: 'Behavioral signal', body: 'Companies often evaluate teamwork, ambiguity, leadership, conflict, learning, and ownership alongside technical skill.' },
+        ],
+      },
+      {
+        title: 'Common software engineering interview questions',
+        variant: 'compact-list',
+        items: [
+          { title: 'Walk me through your coding approach', body: 'Clarify inputs, outputs, constraints, examples, edge cases, brute force, optimized approach, complexity, and tests.' },
+          { title: 'Design a URL shortener, feed, chat, or notification system', body: 'Start with requirements, scale assumptions, APIs, data model, core components, bottlenecks, and tradeoffs.' },
+          { title: 'Tell me about a technical decision you made', body: 'Explain context, options, tradeoffs, decision criteria, implementation, outcome, and what you would revisit.' },
+          { title: 'Describe a production issue or bug you handled', body: 'Cover detection, triage, mitigation, root cause, communication, and prevention.' },
+        ],
+      },
+      {
+        title: 'Preparation checklist',
+        variant: 'checklist',
+        items: [
+          { title: 'Practice aloud with a timer', body: 'Coding silently is not enough. You need to explain your reasoning while solving.' },
+          { title: 'Keep a mistake log', body: 'Track missed patterns, complexity mistakes, syntax gaps, weak tests, and communication issues.' },
+          { title: 'Prepare project deep dives', body: 'Choose two or three projects and prepare architecture, constraints, decisions, metrics, and lessons learned.' },
+          { title: 'Review system design basics', body: 'Even if the role is coding-heavy, prepare requirements, APIs, storage, scaling, and failure modes.' },
+        ],
+      },
+      {
+        title: '4-week software engineering prep plan',
+        variant: 'timeline',
+        items: [
+          { title: 'Week 1: Core patterns', body: 'Review arrays, strings, hash maps, two pointers, sliding window, recursion, and complexity analysis.' },
+          { title: 'Week 2: Trees, graphs, and dynamic programming', body: 'Practice traversal, search, shortest paths, backtracking, memoization, and explaining tradeoffs.' },
+          { title: 'Week 3: System design and debugging', body: 'Practice requirements, APIs, data models, scaling bottlenecks, observability, and debugging narratives.' },
+          { title: 'Week 4: Mock interviews and behavioral stories', body: 'Run timed mocks, review transcripts, refine project stories, and prepare interviewer questions.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'How do I prepare for a software engineering interview?', answer: 'Practice coding patterns, system design, technical communication, project deep dives, and behavioral stories. Use mock interviews and review each session afterward.' },
+      { question: 'Is SDE interview prep different from software engineering prep?', answer: 'Usually no. SDE and software engineering interview prep cover similar areas: coding, algorithms, systems, debugging, project discussion, and behavioral examples.' },
+      { question: 'Can ExtraBrain help with technical interview prep?', answer: 'Yes. ExtraBrain can capture prompts, visible code, transcripts, and notes so you can review your reasoning, explanations, and mistakes after practice.' },
+    ],
+    sources: [
+      { label: 'Tech Interview Handbook software engineering guide', href: 'https://www.techinterviewhandbook.org/software-engineering-interview-guide/' },
+      { label: 'Amazon software development interview topics', href: 'https://amazon.jobs/content/en/how-we-hire/interview-prep/software-development-topics' },
+      { label: 'Jane Street software engineering interview prep', href: 'https://www.janestreet.com/preparing-for-a-software-engineering-interview/' },
+      { label: 'LogRocket software developer interview prep', href: 'https://blog.logrocket.com/prep-for-software-dev-interview/' },
+      { label: 'GeeksforGeeks software developer interview prep', href: 'https://www.geeksforgeeks.org/software-engineering/interview-preparation-for-software-developer/' },
+    ],
+  }),
+
+  interviewPrepPage('data-analyst-interview-preparation', {
+    title: 'Data Analyst Interview Preparation - ExtraBrain',
+    description: 'Prepare for data analyst interviews with SQL, statistics, dashboards, business cases, metrics, resume stories, and AI-assisted practice review.',
+    eyebrow: 'Data analyst prep',
+    h1: 'Data analyst interview preparation.',
+    lead: 'Data analyst interviews test whether you can turn ambiguous business questions into clean analysis, SQL, metrics, and recommendations.',
+    answer: 'Data analyst interview preparation should cover SQL, spreadsheets, statistics, business metrics, dashboards, case questions, and stakeholder communication. ExtraBrain helps you practice with live prompts, capture screens and transcripts, and turn each mock interview into a reviewable prep record.',
+    sections: [
+      {
+        title: 'What data analyst interviews test',
+        variant: 'cards',
+        items: [
+          { title: 'SQL', body: 'Joins, aggregations, filters, windows, date logic, CTEs, query validation, and explaining query choices.' },
+          { title: 'Business metrics', body: 'Defining KPIs, diagnosing changes, segmenting funnels, interpreting dashboards, and tying analysis to decisions.' },
+          { title: 'Statistics', body: 'Averages, distributions, confidence, sampling, A/B testing, correlation, causation, and uncertainty.' },
+          { title: 'Dashboards and BI', body: 'Explain chart choices, audience needs, data freshness, data quality, and how the dashboard supports decisions.' },
+          { title: 'Business cases', body: 'Clarify goals, make assumptions, structure analyses, and recommend next steps from incomplete information.' },
+          { title: 'Stakeholder communication', body: 'Translate analysis into concise recommendations, caveats, and follow-up actions for non-technical partners.' },
+        ],
+      },
+      {
+        title: 'Common data analyst interview questions',
+        variant: 'compact-list',
+        items: [
+          { title: 'How would you investigate a drop in conversion?', body: 'Clarify the metric, segment the funnel, check instrumentation, compare cohorts, and propose likely causes.' },
+          { title: 'Walk through a SQL query you wrote', body: 'Explain the business goal, tables, joins, filters, aggregations, validation, and final recommendation.' },
+          { title: 'How would you design a dashboard?', body: 'Identify the audience, decision, metrics, data sources, update cadence, and failure modes.' },
+          { title: 'Tell me about an analysis that changed a decision', body: 'Describe the problem, data, method, finding, recommendation, impact, and limitations.' },
+        ],
+      },
+      {
+        title: 'Preparation checklist',
+        variant: 'checklist',
+        items: [
+          { title: 'Practice SQL aloud', body: 'Explain not only the query but why each join, filter, and aggregation belongs.' },
+          { title: 'Prepare metric stories', body: 'Bring examples where you used data to change a decision, not just produce a report.' },
+          { title: 'Review statistics basics', body: 'Focus on interpretation and business implications, not just definitions.' },
+          { title: 'Practice case prompts', body: 'Work through ambiguous business problems and state assumptions clearly.' },
+        ],
+      },
+      {
+        title: '4-week data analyst prep plan',
+        variant: 'timeline',
+        items: [
+          { title: 'Week 1: SQL foundations', body: 'Practice joins, group by, windows, dates, and query explanation.' },
+          { title: 'Week 2: Metrics and dashboards', body: 'Practice funnel, retention, activation, revenue, and operational metric cases.' },
+          { title: 'Week 3: Statistics and experiments', body: 'Review A/B testing, sampling, confidence, bias, and interpretation.' },
+          { title: 'Week 4: Mock interviews', body: 'Run SQL, case, and resume mocks; review transcripts and weak explanations.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What should I study for a data analyst interview?', answer: 'Study SQL, metrics, statistics, dashboards, business cases, stakeholder communication, and resume-based project explanations.' },
+      { question: 'Do data analyst interviews include case questions?', answer: 'Many do. Case questions often ask you to define metrics, diagnose a business problem, or recommend an analysis plan.' },
+      { question: 'Can ExtraBrain help with SQL interview prep?', answer: 'Yes. ExtraBrain can capture visible SQL prompts, discussion, notes, and transcripts for review after practice.' },
+    ],
+    sources: [
+      { label: 'Coursera data analysis interview prep guide', href: 'https://www.coursera.org/resources/data-analysis-interview-prep-guide' },
+      { label: 'Coursera data analyst interview questions', href: 'https://www.coursera.org/articles/data-analyst-interview-questions-and-answers' },
+      { label: 'Exponent data analytics interview course', href: 'https://www.tryexponent.com/courses/data-analytics' },
+      { label: 'GeeksforGeeks data analyst interview questions', href: 'https://www.geeksforgeeks.org/data-analysis/data-analyst-interview-questions-and-answers/' },
+      { label: 'McKinsey interviewing guidance', href: 'https://www.mckinsey.com/careers/interviewing' },
+    ],
+  }),
+
+  interviewPrepPage('consulting-case-interview-prep', {
+    title: 'Consulting Case Interview Prep - ExtraBrain',
+    description: 'Prepare for consulting case interviews with structure, clarifying questions, mental math, charts, hypotheses, synthesis, and practice notes.',
+    eyebrow: 'Case interview prep',
+    h1: 'Consulting case interview prep.',
+    lead: 'Consulting case interviews test structured thinking, business judgment, math, synthesis, and how you communicate through ambiguity.',
+    answer: 'Good consulting case interview prep focuses on structure, clarifying questions, issue trees, hypotheses, mental math, chart interpretation, and concise recommendations. ExtraBrain can help you review practice case transcripts, prompts, notes, and feedback so your casing improves with each repetition.',
+    sections: [
+      {
+        title: 'What case interviews test',
+        variant: 'cards',
+        items: [
+          { title: 'Problem structuring', body: 'Break ambiguous business problems into clear drivers, assumptions, and workstreams.' },
+          { title: 'Business judgment', body: 'Prioritize the highest-impact questions, recognize practical constraints, and avoid analysis for its own sake.' },
+          { title: 'Mental math', body: 'Handle units, percentages, market sizing, profitability math, and sanity checks under pressure.' },
+          { title: 'Exhibit interpretation', body: 'Read charts, tables, and written facts quickly while explaining what matters and what does not.' },
+          { title: 'Hypothesis-driven reasoning', body: 'State what you believe, test it with available information, and update your view as the case evolves.' },
+          { title: 'Synthesis', body: 'End with a direct recommendation, supporting evidence, risks, and next steps.' },
+        ],
+      },
+      {
+        title: 'Common case types',
+        variant: 'compact-list',
+        items: [
+          { title: 'Profitability', body: 'Diagnose revenue, cost, mix, pricing, volume, customer, and operational drivers.' },
+          { title: 'Market entry', body: 'Assess market attractiveness, capabilities, competition, economics, risks, and entry strategy.' },
+          { title: 'Growth strategy', body: 'Evaluate segments, channels, pricing, retention, expansion, product changes, and execution tradeoffs.' },
+          { title: 'Operations improvement', body: 'Look at capacity, process bottlenecks, quality, supply chain, staffing, and cost-to-serve.' },
+        ],
+      },
+      {
+        title: 'Case interview do list',
+        variant: 'checklist',
+        items: [
+          { title: 'Clarify the objective', body: 'Confirm the business goal, success metric, timeframe, and constraints before building a structure.' },
+          { title: 'State assumptions', body: 'Make assumptions explicit so the interviewer can correct them before they derail your analysis.' },
+          { title: 'Talk through math', body: 'Show units, intermediate steps, and sanity checks instead of only giving the final number.' },
+          { title: 'Synthesize often', body: 'Summarize where you are, what you have learned, and what you would test next.' },
+        ],
+      },
+      {
+        title: '10-case practice plan',
+        variant: 'timeline',
+        items: [
+          { title: 'Cases 1-2: Profitability basics', body: 'Practice revenue, cost, mix, and margin trees with simple math.' },
+          { title: 'Cases 3-4: Market entry', body: 'Work through attractiveness, competition, capabilities, economics, and risks.' },
+          { title: 'Cases 5-6: Growth and pricing', body: 'Practice segmentation, willingness to pay, elasticity, acquisition, retention, and expansion.' },
+          { title: 'Cases 7-8: Operations', body: 'Diagnose process bottlenecks, supply constraints, quality problems, and cost-to-serve issues.' },
+          { title: 'Cases 9-10: Mixed mocks', body: 'Run full mock cases, capture feedback, and refine opening structures and final synthesis.' },
+        ],
+      },
+      {
+        title: 'Mistakes to avoid',
+        variant: 'compact-list',
+        items: [
+          { title: 'Forcing memorized frameworks', body: 'A framework only helps if it fits the specific case objective and constraints.' },
+          { title: 'Going silent during analysis', body: 'Interviewers need to hear your reasoning, assumptions, and prioritization.' },
+          { title: 'Skipping the final recommendation', body: 'Do not stop after the math. Give the answer, evidence, caveats, and next steps.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'How do I prepare for a consulting case interview?', answer: 'Practice structuring ambiguous problems, asking clarifying questions, doing mental math, interpreting exhibits, and synthesizing recommendations.' },
+      { question: 'How many cases should I practice?', answer: 'Quality matters more than raw count, but many candidates benefit from at least 10 focused cases with debriefs across different case types.' },
+      { question: 'Can ExtraBrain help with case interview prep?', answer: 'Yes. ExtraBrain can capture practice case transcripts and notes so you can review your structure, hypotheses, math, and synthesis afterward.' },
+    ],
+    sources: [
+      { label: 'BCG case interview preparation', href: 'https://careers.bcg.com/global/en/case-interview-preparation' },
+      { label: 'McKinsey interviewing', href: 'https://www.mckinsey.com/careers/interviewing' },
+      { label: 'Crafting Cases case interview prep guide', href: 'https://www.craftingcases.com/case-interview-prep-guide/' },
+      { label: 'Dartmouth case interview guidelines', href: 'https://careerdesign.dartmouth.edu/resources/case-interview-guidelines/' },
+      { label: 'Hacking the Case Interview', href: 'https://www.hackingthecaseinterview.com/pages/data-analyst-case-interview' },
+    ],
+  }),
+
+  interviewPrepPage('internship-interview-preparation', {
+    title: 'Internship Interview Preparation - ExtraBrain',
+    description: 'Prepare for internship and campus placement interviews with resume stories, behavioral examples, technical basics, projects, and practice notes.',
+    eyebrow: 'Internship prep',
+    h1: 'Internship interview preparation.',
+    lead: 'Internship interviews often focus on fundamentals, projects, motivation, communication, learning ability, and how you handle unfamiliar problems.',
+    answer: 'Internship interview preparation should start with your resume, projects, coursework, technical basics, behavioral stories, and a clear explanation of why the role fits your goals. ExtraBrain helps students and early-career candidates practice aloud, save mock interview transcripts, and improve answers over time.',
+    sections: [
+      {
+        title: 'What internship interviews test',
+        variant: 'cards',
+        items: [
+          { title: 'Motivation', body: 'Explain why this company, team, role, and learning opportunity fit your goals.' },
+          { title: 'Resume familiarity', body: 'Be ready to explain every project, course, activity, and claim on your resume.' },
+          { title: 'Learning ability', body: 'Show how you approach unfamiliar problems, ask for help, and improve from feedback.' },
+          { title: 'Teamwork', body: 'Prepare examples of collaboration, conflict, leadership, accountability, and communication.' },
+          { title: 'Role fundamentals', body: 'Review the technical, analytical, design, business, or domain basics expected for the internship.' },
+          { title: 'Professionalism', body: 'Show preparation, curiosity, clear communication, and thoughtful questions for the interviewer.' },
+        ],
+      },
+      {
+        title: 'Common internship interview questions',
+        variant: 'compact-list',
+        items: [
+          { title: 'Tell me about yourself', body: 'Start with your background, connect to relevant experience, and end with why this internship fits.' },
+          { title: 'Why this company or internship?', body: 'Connect company mission, team work, role responsibilities, and your learning goals.' },
+          { title: 'Walk me through a project', body: 'Explain the problem, your role, tools used, challenges, result, and what you learned.' },
+          { title: 'Tell me about a time you worked on a team', body: 'Use a concrete example with conflict, coordination, responsibility, and outcome.' },
+        ],
+      },
+      {
+        title: 'Student preparation checklist',
+        variant: 'checklist',
+        items: [
+          { title: 'Annotate your resume', body: 'Write a short proof story for every bullet that might trigger a question.' },
+          { title: 'Prepare role basics', body: 'Review the skills named in the job description and connect each one to coursework or projects.' },
+          { title: 'Practice common openers', body: 'Rehearse tell me about yourself, why this role, and walk me through your resume.' },
+          { title: 'Prepare interviewer questions', body: 'Ask about the team, intern projects, mentorship, evaluation, and what success looks like.' },
+        ],
+      },
+      {
+        title: '7-day internship prep plan',
+        variant: 'timeline',
+        items: [
+          { title: 'Day 1: Decode the job description', body: 'Highlight responsibilities, required skills, and repeated keywords.' },
+          { title: 'Day 2: Build resume proof stories', body: 'Prepare examples for projects, classes, activities, part-time jobs, or volunteer work.' },
+          { title: 'Day 3: Review fundamentals', body: 'Study the basic skills expected for the internship function.' },
+          { title: 'Day 4: Practice behavioral answers', body: 'Use STAR-style answers for teamwork, conflict, learning, leadership, and mistakes.' },
+          { title: 'Day 5: Run a mock interview', body: 'Practice aloud and capture notes or transcripts for review.' },
+          { title: 'Day 6: Fix weak answers', body: 'Shorten rambling stories, add missing details, and clarify motivation.' },
+          { title: 'Day 7: Final review', body: 'Review your resume, company notes, questions to ask, and interview logistics.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'How do I prepare for an internship interview?', answer: 'Review the job description, prepare your resume walkthrough, practice behavioral stories, review role-specific basics, and rehearse common internship questions aloud.' },
+      { question: 'What questions are common in internship interviews?', answer: 'Common questions include tell me about yourself, why this internship, walk me through your resume, project explanations, teamwork stories, and role-specific basics.' },
+      { question: 'Can ExtraBrain help with internship interview practice?', answer: 'Yes. ExtraBrain can capture mock interview transcripts, notes, and feedback so students can improve their answers before real internship interviews.' },
+    ],
+    sources: [
+      { label: 'Handshake internship interview questions', href: 'https://joinhandshake.com/blog/students/the-4-most-common-internship-interview-questions/' },
+      { label: 'MIT STAR method worksheet', href: 'https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/' },
+      { label: 'Northumbria placement interview guidance', href: 'https://london.northumbria.ac.uk/blog/how-to-ace-your-placement-interview/' },
+      { label: 'UC internship interview tips', href: 'https://www.uc.edu/news/articles/2022/09/7-interview-tips-for-landing-your-dream-internship-or-co-op.html' },
+      { label: 'Virginia State interview prep PDF', href: 'https://www.vsu.edu/files/docs/career-services/traditional-interview-prep.pdf' },
+    ],
+  }),
+
+  interviewPrepPage('resume-advice-for-job-interviews', {
+    title: 'Resume Advice for Job Interviews - ExtraBrain',
+    description: 'Use your resume to prepare for job interviews with stronger stories, project explanations, career context, and AI-assisted practice notes.',
+    eyebrow: 'Resume interview prep',
+    h1: 'Resume advice for job interviews.',
+    lead: 'A resume does not only get you the interview. It also gives interviewers the map they use to ask about your projects, decisions, outcomes, and career story.',
+    answer: 'The best resume advice for job interviews is to prepare beyond formatting. Know how to explain every bullet, quantify impact, discuss tradeoffs, connect experience to the role, and answer follow-up questions. ExtraBrain helps by turning your resume, job description, practice answers, and interview transcripts into reusable preparation context.',
+    sections: [
+      {
+        title: 'How interviewers use your resume',
+        variant: 'cards',
+        items: [
+          { title: 'Resume walkthroughs', body: 'Interviewers may ask you to summarize your background and explain why your path fits the role.' },
+          { title: 'Project deep dives', body: 'Strong bullets invite questions about goals, constraints, tools, collaboration, decisions, and outcomes.' },
+          { title: 'Skill validation', body: 'Claims about tools, languages, methods, or leadership often lead to specific follow-up questions.' },
+          { title: 'Career narrative', body: 'Your resume should support a clear story about strengths, growth, direction, and motivation.' },
+          { title: 'Behavioral evidence', body: 'Resume experiences become examples for teamwork, conflict, ownership, learning, and impact.' },
+          { title: 'Role fit', body: 'Interviewers compare your experience to the job description and look for relevant proof.' },
+        ],
+      },
+      {
+        title: 'Common resume-based interview questions',
+        variant: 'compact-list',
+        items: [
+          { title: 'Walk me through your resume', body: 'Give a concise narrative that connects your background, strongest evidence, and target role.' },
+          { title: 'Tell me about this project', body: 'Explain context, your role, decisions, tradeoffs, result, and what you learned.' },
+          { title: 'Why did you make this career move?', body: 'Connect each transition to growth, skills, motivation, or the type of work you want next.' },
+          { title: 'What was your impact?', body: 'Use numbers where possible, but be ready to explain how the metric was measured and what changed.' },
+        ],
+      },
+      {
+        title: 'Resume-to-interview checklist',
+        variant: 'checklist',
+        items: [
+          { title: 'Prepare proof for every important bullet', body: 'Know the situation, your action, measurable result, tradeoffs, and lessons learned.' },
+          { title: 'Map bullets to the job description', body: 'Choose the stories that best prove the skills and responsibilities named in the role.' },
+          { title: 'Quantify carefully', body: 'Use metrics when you can defend how they were calculated and what your contribution was.' },
+          { title: 'Practice follow-up details', body: 'Interviewers may ask about constraints, alternatives, teammates, failures, or what you would do differently.' },
+        ],
+      },
+      {
+        title: 'Resume bullet proof workflow',
+        variant: 'timeline',
+        items: [
+          { title: 'Step 1: Pick a bullet', body: 'Start with the resume line most likely to attract interviewer attention.' },
+          { title: 'Step 2: Add context', body: 'Write what problem existed, why it mattered, and who was involved.' },
+          { title: 'Step 3: Clarify your role', body: 'Separate what you personally did from what the team did.' },
+          { title: 'Step 4: Explain decisions', body: 'Prepare the tradeoffs, constraints, tools, and alternatives behind your work.' },
+          { title: 'Step 5: Tie to outcome', body: 'Connect the work to a metric, user impact, operational improvement, or learning.' },
+        ],
+      },
+      {
+        title: 'Mistakes to avoid',
+        variant: 'compact-list',
+        items: [
+          { title: 'Overclaiming', body: 'If you cannot explain the detail behind a bullet, rewrite it or prepare the missing context.' },
+          { title: 'Using vague metrics', body: 'Numbers help only when you can explain the baseline, measurement, and your contribution.' },
+          { title: 'Forgetting older details', body: 'Review older roles and projects so you can answer follow-ups confidently.' },
+        ],
+      },
+    ],
+    faq: [
+      { question: 'How do I use my resume to prepare for an interview?', answer: 'Review every bullet and prepare a concise story with context, action, result, tradeoffs, and what you learned. Match your strongest stories to the job description.' },
+      { question: 'Should I bring my resume to an interview?', answer: 'For in-person interviews, it is usually helpful to bring copies. For remote interviews, keep your resume and job description nearby for preparation and review.' },
+      { question: 'Can ExtraBrain help with resume-based interview prep?', answer: 'Yes. ExtraBrain can use your resume, job description, practice transcript, and notes as context for mock interviews and post-session review.' },
+    ],
+    sources: [
+      { label: 'U.S. Department of Labor interview tips', href: 'https://www.dol.gov/general/jobs/interview-tips' },
+      { label: 'National Careers Service interview advice', href: 'https://nationalcareers.service.gov.uk/careers-advice/interview-advice' },
+      { label: 'UC Davis interview questions and prep', href: 'https://careercenter.ucdavis.edu/interviews-and-offers/questions-and-prep' },
+      { label: 'Monster career advice', href: 'https://www.monster.com/career-advice' },
+      { label: 'Indeed interview resume advice', href: 'https://www.indeed.com/career-advice/interviewing/interview-resume' },
+    ],
+  }),
+];
+
 export const platformPages: MarketingPage[] = [
   platformPage("platforms/coderpad", "CoderPad", {
     title: "CoderPad Interview Assistant - ExtraBrain",
@@ -1734,6 +2210,7 @@ export const companyGuidePages: MarketingPage[] = [
 export const seoMarketingPages: MarketingPage[] = [
   ...aiSearchPages,
   ...useCasePages,
+  ...interviewPrepPages,
   ...platformPages,
   ...companyGuidePages,
 ];

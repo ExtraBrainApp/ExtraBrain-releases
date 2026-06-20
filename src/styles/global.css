@@ -919,6 +919,118 @@ cite {
   font-size: 15px;
 }
 
+.page-grid--checklist,
+.page-grid--compact-list {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.page-grid--checklist .page-info-card,
+.page-grid--compact-list .page-info-card {
+  min-height: auto;
+  padding: 20px 22px;
+}
+
+.page-grid--checklist .page-info-card {
+  position: relative;
+  padding-left: 56px;
+}
+
+.page-grid--checklist .page-info-card::before {
+  content: '✓';
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(101, 215, 199, 0.18);
+  color: var(--brain-teal);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.page-grid--numbered {
+  counter-reset: page-numbered-list;
+}
+
+.page-grid--numbered .page-info-card {
+  position: relative;
+  padding-top: 58px;
+}
+
+.page-grid--numbered .page-info-card::before {
+  counter-increment: page-numbered-list;
+  content: counter(page-numbered-list);
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--editorial-purple), var(--editorial-cobalt));
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.page-grid--timeline {
+  position: relative;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.page-grid--timeline .page-info-card {
+  position: relative;
+  min-height: auto;
+  margin-left: 24px;
+  padding: 20px 22px;
+}
+
+.page-grid--timeline .page-info-card::before {
+  content: '';
+  position: absolute;
+  top: 26px;
+  left: -24px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--brain-teal);
+  box-shadow: 0 0 0 6px rgba(101, 215, 199, 0.18);
+}
+
+.page-grid--timeline .page-info-card::after {
+  content: '';
+  position: absolute;
+  top: 44px;
+  bottom: -24px;
+  left: -18px;
+  width: 1px;
+  background: rgba(16, 24, 40, 0.14);
+}
+
+.page-grid--timeline .page-info-card:last-child::after {
+  display: none;
+}
+
+.page-grid--compact-list .page-info-card h3,
+.page-grid--checklist .page-info-card h3,
+.page-grid--timeline .page-info-card h3 {
+  font-size: 20px;
+}
+
+.page-grid--compact-list .page-info-card p,
+.page-grid--checklist .page-info-card p,
+.page-grid--timeline .page-info-card p {
+  max-width: 820px;
+}
+
 .price-highlight {
   background: linear-gradient(135deg, var(--brain-teal), var(--iris-signal));
   -webkit-background-clip: text;
