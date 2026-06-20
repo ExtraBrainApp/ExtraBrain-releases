@@ -10,6 +10,8 @@ tags:
   - Technical Interviews
   - Interview Copilot
 draft: false
+ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.png"
+ogImageAlt: "AI interview assistants for coding interviews comparison cover showing a developer evaluating real-time coding copilot tools, live transcript context, and technical interview support."
 ---
 
 Coding interviews are not just LeetCode with a webcam turned on.
