@@ -1,5 +1,5 @@
 ---
-import { brandAliases, lemonSqueezyCheckoutLinks } from '../data/product';
+import { organizationSchema, softwareApplicationSchema, websiteSchema } from '../data/product';
 
 interface Props {
   title: string;
@@ -32,88 +32,7 @@ const {
 } = Astro.props;
 const siteUrl = Astro.site ?? new URL('https://extrabrain.app');
 const canonical = new URL(Astro.url.pathname, siteUrl);
-const downloadUrl = new URL('/download/', siteUrl).href;
-const defaultSchemaGraph = [
-  {
-    '@type': 'SoftwareApplication',
-    name: 'ExtraBrain',
-    alternateName: brandAliases,
-    applicationCategory: 'ProductivityApplication',
-    applicationSubCategory: 'AI interview and meeting copilot',
-    operatingSystem: 'macOS',
-    offers: [
-      {
-        '@type': 'Offer',
-        name: 'ExtraBrain Free',
-        price: '0',
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock',
-        url: new URL('/download/', siteUrl).href,
-      },
-      {
-        '@type': 'Offer',
-        name: 'ExtraBrain Pro Founder Monthly',
-        price: '6.99',
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock',
-        url: lemonSqueezyCheckoutLinks.proMonthlyFounder,
-      },
-      {
-        '@type': 'Offer',
-        name: 'ExtraBrain Pro Yearly',
-        price: '79',
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock',
-        url: new URL('/pricing/', siteUrl).href,
-      },
-      {
-        '@type': 'Offer',
-        name: 'ExtraBrain Pro Lifetime',
-        price: '149',
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock',
-        url: new URL('/pricing/', siteUrl).href,
-      },
-    ],
-    author: {
-      '@type': 'Organization',
-      name: 'ExtraBrain',
-      alternateName: brandAliases,
-      url: 'https://extrabrain.app',
-    },
-    downloadUrl,
-    description,
-    featureList: [
-      'Free, local-first desktop AI interview and meeting copilot',
-      'Live interview, meeting, lecture, and research support',
-      'Local Gemma 4 on-device AI where installed and compatible',
-      'Local NVIDIA Parakeet transcription and optional Deepgram',
-      'Use your current OpenAI, Anthropic, Claude, Codex, or compatible provider access when external providers fit your workflow',
-      'Local-first transcripts, prompts, screenshots, and session notes',
-      'Available for Mac today, with Windows and Linux planned',
-      'Apple Silicon and Intel Mac support',
-    ],
-  },
-  {
-    '@type': 'Organization',
-    name: 'ExtraBrain',
-    alternateName: brandAliases,
-    url: 'https://extrabrain.app',
-    logo: new URL('/assets/images/logo-512.png', siteUrl).href,
-    sameAs: ['https://github.com/ExtraBrainApp/ExtraBrain-releases/releases'],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      email: 'info@extrabrain.app',
-      contactType: 'customer service',
-    },
-  },
-  {
-    '@type': 'WebSite',
-    name: 'ExtraBrain',
-    alternateName: brandAliases,
-    url: 'https://extrabrain.app',
-  },
-];
+const defaultSchemaGraph = [organizationSchema(), websiteSchema(), softwareApplicationSchema(description, new URL('/download/', siteUrl).href)];
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': schemaGraph ?? defaultSchemaGraph,
@@ -184,6 +103,7 @@ p{margin-top:0;color:var(--text-secondary)}
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="ExtraBrain Blog RSS" href={new URL('/rss.xml', siteUrl).href} />
     <link rel="preload" href="/assets/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/instrument-serif-italic-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
