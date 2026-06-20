@@ -10,12 +10,14 @@ import {
   githubUrl,
   homepageFaq,
   howToInstallSchema,
+  offerCatalogSchema,
   organizationSchema,
   pricingTiers,
   productCategory,
   productName,
   softwareApplicationSchema,
   type MarketingPage,
+  webPageSchema,
   websiteSchema,
 } from '../data/product';
 
@@ -143,12 +145,14 @@ const summaryFacts = [
   'ExtraBrain has 3 configurable data paths to review before sensitive work: local Parakeet transcription, local Gemma 4 where installed and compatible, and external providers you choose.',
 ];
 const schemaGraph: Array<Record<string, unknown>> = [
-  softwareApplicationSchema(page.description, absoluteUrl('/download/')),
   organizationSchema(),
   websiteSchema(),
+  softwareApplicationSchema(page.description, absoluteUrl('/download/')),
+  webPageSchema(page),
   breadcrumbSchema(page),
 ];
 
+if (page.slug === 'pricing' || page.slug === 'pricing/free-vs-pro') schemaGraph.push(offerCatalogSchema());
 if (page.schemaType === 'HowTo') schemaGraph.push(howToInstallSchema());
 if (comparisonHub) {
   schemaGraph.push({
@@ -163,7 +167,7 @@ if (comparisonHub) {
     })),
   });
 }
-if (faq.length > 0) schemaGraph.push(faqSchema(faq));
+if (faq.length > 0) schemaGraph.push(faqSchema(faq, page));
 
 const hasReleaseMetadata = page.slug === 'download';
 const hasSources = Boolean(page.sources?.length);

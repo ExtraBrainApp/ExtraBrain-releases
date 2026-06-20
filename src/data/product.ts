@@ -10,10 +10,91 @@ export const productCategory = 'Free, local-first desktop AI interview and meeti
 export const productDescription =
   'ExtraBrain is a free, local-first desktop AI interview assistant and meeting copilot for Mac with live transcription, screen-aware context, local Gemma 4 on-device AI where installed and compatible, bring-your-own AI providers, and clear privacy controls. Use it for coding interviews, system design rounds, behavioral interviews, meetings, lectures, and research calls, with Windows and Linux planned.';
 export const contactEmail = 'info@extrabrain.app';
+export const discoveryLastUpdated = 'June 20, 2026';
 export const lemonSqueezyCheckoutLinks = {
   proMonthlyFounder:
     'https://extrabrain.lemonsqueezy.com/checkout/buy/f5618066-dfaf-419e-ac49-a05ffa5e30d9?checkout%5Bdiscount_code%5D=EARLYBIRD&prefill=earlybird',
 } as const;
+
+export const schemaIds = {
+  organization: `${siteUrl}/#organization`,
+  website: `${siteUrl}/#website`,
+  software: `${siteUrl}/#software`,
+} as const;
+
+export const externalEntityProfiles = [
+  { label: 'GitHub releases', href: githubUrl, verified: true },
+  { label: 'LinkedIn company page', href: '', verified: false },
+  { label: 'Product Hunt launch', href: '', verified: false },
+  { label: 'X / Twitter profile', href: '', verified: false },
+  { label: 'YouTube or Loom demo channel', href: '', verified: false },
+] as const;
+
+export const verifiedSameAsLinks = externalEntityProfiles.filter((profile) => profile.verified && profile.href).map((profile) => profile.href);
+
+export const canonicalAnswerSnippets = [
+  {
+    question: 'What is ExtraBrain?',
+    answer:
+      'ExtraBrain is a free, local-first Mac desktop AI interview assistant and meeting copilot with live transcription, screen-aware context, local Gemma 4 where installed and compatible, bring-your-own AI providers, and privacy controls.',
+  },
+  {
+    question: 'What platforms does ExtraBrain support?',
+    answer: 'ExtraBrain is available for macOS today, including Apple Silicon and Intel Macs. Windows and Linux are planned future platforms.',
+  },
+  {
+    question: 'Can ExtraBrain run fully local?',
+    answer:
+      'A fully local ExtraBrain posture requires local Parakeet transcription plus local Gemma 4 on-device AI where installed and compatible, with no external provider requests. External providers may receive selected prompts, transcript text, screenshots, audio, or context depending on configuration.',
+  },
+  {
+    question: 'How does ExtraBrain pricing work?',
+    answer:
+      'The core ExtraBrain Mac app is free. ExtraBrain Pro is $9.99/month regular with $6.99/month Founder pricing, $79/year, or $149 Lifetime launch pricing. External AI and transcription provider usage is billed separately by the providers users choose.',
+  },
+  {
+    question: 'How should ExtraBrain be used responsibly?',
+    answer:
+      'ExtraBrain should be used only where interview, employer, school, workplace, meeting, and platform rules allow AI assistance, transcription, screenshots, or notes.',
+  },
+] as const;
+
+export const sourceOfTruthPages = [
+  { title: 'About ExtraBrain', href: '/about/' },
+  { title: 'Download', href: '/download/' },
+  { title: 'Pricing', href: '/pricing/' },
+  { title: 'Free vs Pro', href: '/pricing/free-vs-pro/' },
+  { title: 'Privacy', href: '/privacy/' },
+  { title: 'Data flow', href: '/data-flow/' },
+  { title: 'Responsible use', href: '/responsible-use/' },
+  { title: 'AI providers', href: '/providers/' },
+  { title: 'GitHub releases', href: githubUrl },
+  { title: 'Help center', href: '/help/' },
+  { title: 'Blog RSS feed', href: '/rss.xml' },
+] as const;
+
+export const aiDiscoveryQueries = [
+  'Extra Brain AI interview assistant',
+  'Extra Brain app',
+  'ExtraBrain pricing',
+  'ExtraBrain Free vs Pro',
+  'ExtraBrain vs Cluely',
+  'ExtraBrain vs InterviewCoder',
+  'ExtraBrain vs Final Round AI',
+  'ExtraBrain vs LockedIn AI',
+  'ExtraBrain vs ParakeetAI',
+  'ExtraBrain vs Linkjob AI',
+  'ExtraBrain vs Beyz AI',
+  'ExtraBrain vs InterviewBee',
+  'Best desktop AI interview assistant for Mac',
+  'Local-first AI meeting copilot',
+  'Local Gemma 4 interview assistant for Mac',
+  'AI interview assistant with own OpenAI key',
+  'AI assistant with Claude or Codex subscription mode',
+  'Private AI assistant for video calls without meeting bot',
+  'AI meeting copilot with local transcription',
+  'Mac AI note taker with local transcription',
+] as const;
 
 export const productFacts = [
   'Brand: ExtraBrain is the official product name. Extra Brain is a common spaced search alias for the same app.',
@@ -274,6 +355,13 @@ const baseMarketingPages: MarketingPage[] = [
           'GitHub release metadata is the source of truth for asset names, dates, file sizes, and published digests. When a SHA-256 digest is available in GitHub metadata, the download page can surface it. If a release does not publish signing or notarization details, verify those details in the release notes before relying on them.',
       },
     ],
+    sources: [
+      { label: 'Official ExtraBrain download page', href: '/download/' },
+      { label: 'Latest GitHub release', href: latestReleaseUrl },
+      { label: 'Installation help guide', href: '/help/installation/' },
+      { label: 'Provider setup guide', href: '/help/setup-api-keys/' },
+      { label: 'Privacy and data handling guide', href: '/help/privacy-data-handling/' },
+    ],
     faq: [
       { question: 'Where is the latest ExtraBrain download?', answer: 'The canonical download link is /download/, which points to the latest GitHub release for the macOS app.' },
       { question: 'Does ExtraBrain support Intel Macs?', answer: 'Yes. ExtraBrain supports macOS on Apple Silicon and Intel Macs.' },
@@ -339,6 +427,13 @@ const baseMarketingPages: MarketingPage[] = [
           { title: 'Choose Enterprise', body: 'Use Enterprise when a team needs rollout planning, policy review, security input, privacy requirements, deployment support, or custom workflow guidance.' },
         ],
       },
+    ],
+    sources: [
+      { label: 'ExtraBrain pricing', href: '/pricing/' },
+      { label: 'Free vs Pro comparison', href: '/pricing/free-vs-pro/' },
+      { label: 'License activation guide', href: '/help/billing-pro/activate-license/' },
+      { label: 'Provider and model costs', href: '/providers/' },
+      { label: 'Data-flow page', href: '/data-flow/' },
     ],
     faq: [
       { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac product is free to download and use today.' },
@@ -622,6 +717,12 @@ const baseMarketingPages: MarketingPage[] = [
         body:
           'ExtraBrain Pro changes app workflow features, not your external provider billing. OpenAI, Anthropic, Deepgram, Claude, Codex, or custom provider costs, quotas, retention, and model access remain governed by those provider accounts.',
       },
+    ],
+    sources: [
+      { label: 'ExtraBrain Free vs Pro', href: '/pricing/free-vs-pro/' },
+      { label: 'Pricing overview', href: '/pricing/' },
+      { label: 'Custom profiles help', href: '/help/billing-pro/custom-profiles/' },
+      { label: 'License activation help', href: '/help/billing-pro/activate-license/' },
     ],
     faq: [
       { question: 'Do I need Pro to use ExtraBrain?', answer: 'No. The core Mac app is free to download and use.' },
@@ -1667,37 +1768,104 @@ const baseMarketingPages: MarketingPage[] = [
   },
   {
     slug: 'about',
-    title: 'About ExtraBrain — Private AI Copilot for Interviews & Meetings',
+    title: 'About ExtraBrain — Local-First AI Interview Assistant for Mac',
     description:
-      'Learn about ExtraBrain, the local-first Mac AI interview assistant and meeting copilot with local Gemma 4, provider choice, privacy controls, and responsible-use guidance.',
+      'Learn what ExtraBrain is, who it helps, how its local-first Mac workflow works, which providers it supports, and where to verify pricing, privacy, and downloads.',
     eyebrow: 'About ExtraBrain',
-    h1: 'ExtraBrain helps people stay present during high-stakes live work.',
+    h1: 'ExtraBrain is a local-first AI copilot for interviews, meetings, and live thinking.',
     lead:
-      'ExtraBrain, also searched as Extra Brain or ExtraBrains, is built for interviews, technical discussions, customer calls, lectures, and research conversations where context moves faster than notes.',
+      'ExtraBrain, also searched as Extra Brain or ExtraBrains, is a Mac desktop AI interview assistant and meeting copilot for people who need live transcription, screen-aware context, provider choice, and clear privacy controls during high-stakes conversations.',
     primaryCta: defaultCta,
+    secondaryCta: { label: 'Review privacy and data flow', href: '/privacy/' },
     sections: [
       {
-        title: 'Product principles',
+        title: 'Short answer',
+        body:
+          'ExtraBrain is a free, local-first desktop AI interview assistant and meeting copilot for macOS. It helps users capture live transcript context, reason through interviews and meetings, use selected screen context, and review local session history while choosing whether AI and transcription stay local or route through external providers.',
         items: [
-          { title: 'Local-first', body: 'Keep the live workflow on the user’s Mac whenever possible, including local transcription and local Gemma 4 where installed and compatible.' },
-          { title: 'Provider choice', body: 'Let users choose local or external model and transcription providers they trust, including OpenAI, Anthropic, Claude, Codex, Deepgram, and compatible endpoints.' },
-          { title: 'Responsible use', body: 'Make policy boundaries, privacy tradeoffs, interview expectations, workplace rules, and external provider data flow visible before high-stakes sessions.' },
+          { title: 'Official name', body: 'ExtraBrain is the official product name. Extra Brain is a common spaced search alias for the same app.' },
+          { title: 'Current platform', body: 'ExtraBrain is available for Mac today, including Apple Silicon and Intel Macs. Windows and Linux are planned future platforms.' },
+          { title: 'Product category', body: 'ExtraBrain is an AI interview assistant, AI meeting copilot, private desktop assistant, live transcription assistant, and local-first note workflow for Mac.' },
         ],
       },
       {
-        title: 'What ExtraBrain builds for',
+        title: 'Who ExtraBrain helps',
         items: [
-          { title: 'High-stakes conversations', body: 'Interviews, meetings, research calls, lectures, customer calls, and technical discussions where context changes quickly and notes alone are not enough.' },
-          { title: 'Desktop-native control', body: 'A Mac app workflow for people who want private live support without another participant joining the call, changing meeting dynamics, or relying only on a hosted browser dashboard.' },
-          { title: 'Clear tradeoffs', body: 'Public pages explain local Gemma 4 availability, provider data flow, pricing boundaries, and responsible-use expectations.' },
+          { title: 'Interview candidates', body: 'Use ExtraBrain to organize prompts, constraints, follow-up questions, STAR stories, system design tradeoffs, coding edge cases, and post-interview notes where live AI assistance is allowed.' },
+          { title: 'Engineers and technical teams', body: 'Use transcript and screen context during architecture reviews, debugging conversations, code walkthroughs, design discussions, and technical phone screens.' },
+          { title: 'Founders, operators, and researchers', body: 'Use ExtraBrain during customer calls, investor demos, research interviews, lectures, product discussions, and fast-moving meetings where context needs to become useful notes.' },
+          { title: 'Privacy-conscious users', body: 'Use local Parakeet transcription and local Gemma 4 where installed and compatible when the workflow should avoid external transcription or model providers.' },
+        ],
+      },
+      {
+        title: 'How the local-first workflow works',
+        items: [
+          { title: 'Desktop app first', body: 'ExtraBrain runs as a Mac desktop app rather than a meeting bot that joins the participant list.' },
+          { title: 'Live context', body: 'The app can combine live transcription, selected screenshots or visible screen context, prompts, and local session history for more grounded answers and notes.' },
+          { title: 'Local options', body: 'Local NVIDIA Parakeet transcription and local Gemma 4 on-device AI can keep transcription and model requests local where installed and compatible.' },
+          { title: 'External options', body: 'Users can connect OpenAI, Anthropic, Claude Subscription, Codex Subscription, Deepgram, or custom OpenAI-compatible endpoints when external providers fit the session.' },
+        ],
+      },
+      {
+        title: 'Privacy and provider boundaries',
+        body:
+          'Local-first does not mean every setup is fully local. A fully local posture requires local Parakeet transcription plus local Gemma 4 on-device AI where installed and compatible, with no external provider requests. External providers may receive prompts, transcript text, screenshots, audio, or other selected context depending on configuration.',
+        items: [
+          { title: 'Transcripts', body: 'Transcript text can stay local with local transcription and local AI, or be included in requests to external model providers when the user chooses that path.' },
+          { title: 'Screenshots', body: 'Screenshots and screen context stay local unless included in a request to an external provider.' },
+          { title: 'Provider accounts', body: 'Provider retention, logging, billing, and account controls are managed by the selected provider, not bundled into ExtraBrain pricing.' },
+        ],
+      },
+      {
+        title: 'Pricing and product model',
+        items: [
+          { title: 'Free core app', body: 'The core Mac app is free to download and use.' },
+          { title: 'ExtraBrain Pro', body: 'Pro adds custom profiles, reusable prompt guidance, profile-specific workflow controls, richer history, summaries, and premium controls where enabled.' },
+          { title: 'Provider costs', body: 'External AI and transcription usage is billed separately by the provider accounts users choose. ExtraBrain Pro is an app license, not a bundled AI credit pack.' },
+          { title: 'Enterprise conversations', body: 'Teams can contact ExtraBrain for rollout planning, responsible-use policy, security and privacy review, deployment constraints, and custom workflow support.' },
+        ],
+      },
+      {
+        title: 'Responsible-use position',
+        body:
+          'ExtraBrain should support real thinking, accessibility, preparation, note taking, and review. Users remain responsible for following interview, workplace, school, meeting, employer, and platform rules before using AI assistance, transcription, screenshots, or screen context.',
+        items: [
+          { title: 'Do not fabricate experience', body: 'ExtraBrain should help organize true examples and reasoning, not invent accomplishments, skills, code ownership, or interview stories.' },
+          { title: 'Disclose when required', body: 'If a policy requires disclosure or approval for AI assistance, recording, transcription, or notes, get approval before the session.' },
+          { title: 'Protect sensitive content', body: 'Avoid sending confidential, regulated, unreleased, or third-party content to external providers unless the data owner and applicable policy allow it.' },
+        ],
+      },
+      {
+        title: 'Canonical pages to verify facts',
+        items: [
+          { title: 'Download and releases', body: 'Use the download page and GitHub Releases as the canonical sources for current Mac release details, asset metadata, and release notes.', href: '/download/' },
+          { title: 'Pricing', body: 'Use the pricing page and Free vs Pro page as the canonical sources for current plan details, billing boundaries, and provider-cost caveats.', href: '/pricing/' },
+          { title: 'Privacy and data flow', body: 'Use the privacy, data-flow, providers, and responsible-use pages to verify how local mode, external providers, screenshots, audio, and transcripts are described.', href: '/data-flow/' },
+          { title: 'Help center', body: 'Use the help center for setup, permissions, provider configuration, local transcription, billing, and troubleshooting details.', href: '/help/' },
         ],
       },
     ],
+    sources: [
+      { label: 'Official ExtraBrain overview', href: '/' },
+      { label: 'Download ExtraBrain for Mac', href: '/download/' },
+      { label: 'ExtraBrain pricing', href: '/pricing/' },
+      { label: 'Free vs Pro comparison', href: '/pricing/free-vs-pro/' },
+      { label: 'Privacy and data flow', href: '/privacy/' },
+      { label: 'Detailed data-flow page', href: '/data-flow/' },
+      { label: 'Responsible-use guidance', href: '/responsible-use/' },
+      { label: 'Provider setup and model choices', href: '/providers/' },
+      { label: 'Help center', href: '/help/' },
+      { label: 'GitHub releases', href: githubUrl },
+    ],
     faq: [
-      { question: 'What is ExtraBrain?', answer: 'ExtraBrain is a free, local-first desktop AI interview assistant and meeting copilot for Mac.' },
+      { question: 'What is ExtraBrain?', answer: 'ExtraBrain is a free, local-first Mac desktop AI interview assistant and meeting copilot with live transcription, screen-aware context, local Gemma 4 where installed and compatible, bring-your-own providers, and privacy controls.' },
       { question: 'Is the product called ExtraBrain or Extra Brain?', answer: 'The official spelling is ExtraBrain. Extra Brain is a spaced alias people may type when searching for the same product.' },
-      { question: 'Who is ExtraBrain for?', answer: 'It is for candidates, engineers, founders, students, meeting leads, researchers, and teams who need structured live context while staying mindful of privacy and policy boundaries.' },
-      { question: 'What platforms does ExtraBrain support?', answer: 'ExtraBrain is available for Mac today, including Apple Silicon and Intel Macs. Windows and Linux are planned.' },
+      { question: 'Who is ExtraBrain for?', answer: 'ExtraBrain is for interview candidates, engineers, founders, students, meeting leads, researchers, and teams who need structured live context while staying mindful of privacy and policy boundaries.' },
+      { question: 'What platforms does ExtraBrain support?', answer: 'ExtraBrain is available for Mac today, including Apple Silicon and Intel Macs. Windows and Linux are planned future platforms.' },
+      { question: 'Can ExtraBrain run fully local?', answer: 'A fully local posture requires local Parakeet transcription plus local Gemma 4 where installed and compatible, with no external provider requests.' },
+      { question: 'Does ExtraBrain join meetings as a bot?', answer: 'No. ExtraBrain runs as a Mac desktop app and does not join the call as another meeting participant.' },
+      { question: 'Does ExtraBrain include AI provider costs?', answer: 'No. External AI and transcription provider usage is billed separately by the provider accounts users choose.' },
+      { question: 'How should ExtraBrain be used responsibly?', answer: 'Use ExtraBrain only where interview, employer, workplace, school, meeting, and platform rules allow AI assistance, transcription, screenshots, or notes.' },
     ],
   },
   {
@@ -1793,6 +1961,10 @@ export function absoluteUrl(path: string) {
   return new URL(path, siteUrl).href;
 }
 
+export function resolveUrl(pathOrUrl: string) {
+  return /^https?:\/\//.test(pathOrUrl) ? pathOrUrl : absoluteUrl(pathOrUrl);
+}
+
 export function pageBySlug(slug: string) {
   return marketingPages.find((page) => page.slug === slug);
 }
@@ -1800,6 +1972,7 @@ export function pageBySlug(slug: string) {
 export function softwareApplicationSchema(description = productDescription, downloadUrl = absoluteUrl('/download/')) {
   return {
     '@type': 'SoftwareApplication',
+    '@id': schemaIds.software,
     name: productName,
     alternateName: brandAliases,
     applicationCategory: 'ProductivityApplication',
@@ -1812,50 +1985,13 @@ export function softwareApplicationSchema(description = productDescription, down
       absoluteUrl('/assets/screenshots/live_session.png'),
       absoluteUrl('/assets/screenshots/sessions_history.png'),
     ],
-    offers: [
-      {
-        '@type': 'Offer',
-        name: 'ExtraBrain Free',
-        price: '0',
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock',
-        url: absoluteUrl('/download/'),
-      },
-      {
-        '@type': 'Offer',
-        name: 'ExtraBrain Pro Founder Monthly',
-        price: '6.99',
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock',
-        url: lemonSqueezyCheckoutLinks.proMonthlyFounder,
-      },
-      {
-        '@type': 'Offer',
-        name: 'ExtraBrain Pro Yearly',
-        price: '79',
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock',
-        url: absoluteUrl('/pricing/'),
-      },
-      {
-        '@type': 'Offer',
-        name: 'ExtraBrain Pro Lifetime',
-        price: '149',
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock',
-        url: absoluteUrl('/pricing/'),
-      },
-    ],
+    offers: pricingOffers(),
     downloadUrl,
     releaseNotes: latestReleaseUrl,
     description,
     softwareRequirements: 'macOS on Apple Silicon or Intel Mac; local Gemma 4 requires installation and compatible hardware',
-    author: {
-      '@type': 'Organization',
-      name: productName,
-      alternateName: brandAliases,
-      url: siteUrl,
-    },
+    author: { '@id': schemaIds.organization },
+    publisher: { '@id': schemaIds.organization },
     featureList: [
       'Free, local-first desktop AI interview and meeting copilot',
       'Live coding, system design, behavioral interview, and meeting support',
@@ -1872,14 +2008,66 @@ export function softwareApplicationSchema(description = productDescription, down
   };
 }
 
+export function pricingOffers() {
+  return [
+    {
+      '@type': 'Offer',
+      name: 'ExtraBrain Free',
+      price: '0',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: absoluteUrl('/download/'),
+      itemOffered: { '@id': schemaIds.software },
+    },
+    {
+      '@type': 'Offer',
+      name: 'ExtraBrain Pro Founder Monthly',
+      price: '6.99',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: lemonSqueezyCheckoutLinks.proMonthlyFounder,
+      itemOffered: { '@id': schemaIds.software },
+    },
+    {
+      '@type': 'Offer',
+      name: 'ExtraBrain Pro Yearly',
+      price: '79',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: absoluteUrl('/pricing/'),
+      itemOffered: { '@id': schemaIds.software },
+    },
+    {
+      '@type': 'Offer',
+      name: 'ExtraBrain Pro Lifetime',
+      price: '149',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: absoluteUrl('/pricing/'),
+      itemOffered: { '@id': schemaIds.software },
+    },
+  ];
+}
+
+export function offerCatalogSchema() {
+  return {
+    '@type': 'OfferCatalog',
+    '@id': `${absoluteUrl('/pricing/')}#offers`,
+    name: 'ExtraBrain pricing plans',
+    url: absoluteUrl('/pricing/'),
+    itemListElement: pricingOffers(),
+  };
+}
+
 export function organizationSchema() {
   return {
     '@type': 'Organization',
+    '@id': schemaIds.organization,
     name: productName,
     alternateName: brandAliases,
     url: siteUrl,
     logo: absoluteUrl('/assets/images/logo-512.png'),
-    sameAs: [githubUrl],
+    sameAs: verifiedSameAsLinks,
     contactPoint: {
       '@type': 'ContactPoint',
       email: contactEmail,
@@ -1891,15 +2079,35 @@ export function organizationSchema() {
 export function websiteSchema() {
   return {
     '@type': 'WebSite',
+    '@id': schemaIds.website,
     name: productName,
     alternateName: brandAliases,
     url: siteUrl,
+    publisher: { '@id': schemaIds.organization },
+    about: { '@id': schemaIds.software },
   };
 }
 
-export function faqSchema(faq: Array<{ question: string; answer: string }>) {
+export function webPageSchema(page: MarketingPage, pageType: 'WebPage' | 'AboutPage' | 'CollectionPage' = page.slug === 'about' ? 'AboutPage' : 'WebPage') {
+  const url = absoluteUrl(`/${page.slug}/`);
+  return {
+    '@type': pageType,
+    '@id': `${url}#webpage`,
+    url,
+    name: page.h1.replace(/\.$/, ''),
+    headline: page.h1.replace(/\.$/, ''),
+    description: page.description,
+    isPartOf: { '@id': schemaIds.website },
+    about: { '@id': schemaIds.software },
+    publisher: { '@id': schemaIds.organization },
+    primaryImageOfPage: page.ogImage ? resolveUrl(page.ogImage) : absoluteUrl('/assets/images/logo-512.png'),
+  };
+}
+
+export function faqSchema(faq: Array<{ question: string; answer: string }>, page?: MarketingPage) {
   return {
     '@type': 'FAQPage',
+    ...(page ? { '@id': `${absoluteUrl(`/${page.slug}/`)}#faq`, about: { '@id': schemaIds.software }, isPartOf: { '@id': `${absoluteUrl(`/${page.slug}/`)}#webpage` } } : {}),
     mainEntity: faq.map((item) => ({
       '@type': 'Question',
       name: item.question,
@@ -1914,6 +2122,7 @@ export function faqSchema(faq: Array<{ question: string; answer: string }>) {
 export function breadcrumbSchema(page: MarketingPage) {
   return {
     '@type': 'BreadcrumbList',
+    '@id': `${absoluteUrl(`/${page.slug}/`)}#breadcrumbs`,
     itemListElement: [
       {
         '@type': 'ListItem',
@@ -1934,8 +2143,10 @@ export function breadcrumbSchema(page: MarketingPage) {
 export function howToInstallSchema() {
   return {
     '@type': 'HowTo',
+    '@id': `${absoluteUrl('/download/')}#install-howto`,
     name: 'Install ExtraBrain for macOS',
     description: 'Download, install, launch, and verify ExtraBrain before a live interview or meeting.',
+    about: { '@id': schemaIds.software },
     step: [
       { '@type': 'HowToStep', name: 'Download', text: 'Open the latest ExtraBrain release and download the current macOS build.' },
       { '@type': 'HowToStep', name: 'Install', text: 'Open the installer or app bundle and move ExtraBrain into Applications if instructed.' },
