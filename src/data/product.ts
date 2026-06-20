@@ -1472,7 +1472,7 @@ const baseMarketingPages: MarketingPage[] = [
     description:
       "Use ExtraBrain as an AI meeting assistant for Mac with live transcription, screen context, meeting notes, decisions, risks, follow-ups, private local history, and no meeting bot.",
     eyebrow: "AI meeting assistant for Mac",
-    h1: "AI meeting assistant for Mac that runs on your desktop.",
+    h1: "AI assistant for meetings with live transcription and screen context.",
     lead: "ExtraBrain helps you follow live meetings, capture context, organize decisions, and prepare follow-ups from a desktop assistant instead of a bot that joins the call.",
     primaryCta: defaultCta,
     secondaryCta: {
