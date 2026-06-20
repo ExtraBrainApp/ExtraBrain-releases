@@ -351,6 +351,8 @@ const breadcrumbItems = [
       const isPricingPlans = page.slug === 'pricing' && section.title === 'Plans';
       const supportsPricingIcons = page.slug === 'pricing' || page.slug === 'pricing/free-vs-pro';
       const sectionAccent = supportsPricingIcons ? pricingSectionAccents[section.title] : undefined;
+      const sectionVariant = section.variant ?? 'cards';
+      const sectionVariantClass = sectionVariant !== 'cards' ? `page-grid--${sectionVariant}` : undefined;
       return (
       <section class:list={['light-section', 'page-content-section', sectionBandClass(contentBandStart + index)]}>
         <div class="container page-section-stack">
@@ -403,7 +405,7 @@ const breadcrumbItems = [
               </div>
             )}
             {!isPricingPlans && section.items && (
-              <div class:list={['page-grid', sectionAccent && `page-grid--accent-${sectionAccent.accent}`]}>
+              <div class:list={['page-grid', sectionVariantClass, sectionAccent && `page-grid--accent-${sectionAccent.accent}`]}>
                 {section.items.map((item) => {
                   const itemIcon = supportsPricingIcons ? pricingItemIcons[item.title] : undefined;
                   const cardContent = (
