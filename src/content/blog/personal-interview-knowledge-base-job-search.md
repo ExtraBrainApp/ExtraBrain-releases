@@ -24,7 +24,7 @@ They update a resume after seeing an interesting role. They skim a job descripti
 
 The problem is not that they have no stories. The problem is that the stories are scattered everywhere: old project docs, meeting notes, performance reviews, launch retros, customer calls, Slack threads, manager feedback, and half-remembered moments from stressful weeks.
 
-A better approach is to build a personal interview knowledge base before you need it: a private, searchable archive of stories, wins, metrics, decisions, tradeoffs, failures, lessons, and raw notes you can turn into strong interview answers later. That is where [ExtraBrain](https://extrabrain.app) is most useful: organizing and recalling real experience, not manufacturing a more impressive version of you.
+A better approach is to build a personal interview knowledge base before you need it: a private, searchable archive of stories, wins, metrics, decisions, tradeoffs, failures, lessons, and raw notes you can turn into strong interview answers later. Think of it as a focused [AI second brain](/ai-second-brain/) for career context. That is where [ExtraBrain](https://extrabrain.app) is most useful: organizing and recalling real experience, not manufacturing a more impressive version of you.
 
 ## The best interview prep starts before the job search
 
