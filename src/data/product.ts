@@ -39,6 +39,11 @@ export const canonicalAnswerSnippets = [
       'ExtraBrain is a free, local-first Mac desktop AI interview assistant and meeting copilot with live transcription, screen-aware context, local Gemma 4 where installed and compatible, bring-your-own AI providers, and privacy controls.',
   },
   {
+    question: 'Is ExtraBrain an AI second brain?',
+    answer:
+      'ExtraBrain can work as a focused AI second brain for interviews and meetings: a second-brain-style workspace for live sessions, transcripts, notes, screen context, and review, not a broad replacement for general note-taking databases.',
+  },
+  {
     question: 'What platforms does ExtraBrain support?',
     answer: 'ExtraBrain is available for macOS today, including Apple Silicon and Intel Macs. Windows and Linux are planned future platforms.',
   },
@@ -179,6 +184,13 @@ export const aiDiscoveryQueries = [
   'Private AI assistant for video calls without meeting bot',
   'AI meeting copilot with local transcription',
   'Mac AI note taker with local transcription',
+  'AI second brain',
+  'AI second brain app',
+  'second brain app for interviews',
+  'second brain app for meetings',
+  'local-first AI second brain',
+  'AI second brain with meeting transcripts',
+  'personal knowledge base for interviews',
 ] as const;
 
 export const productFacts = [
@@ -197,6 +209,7 @@ export const productFacts = [
 
 export const essentialPages = [
   { title: 'Overview', href: '/' },
+  { title: 'AI second brain', href: '/ai-second-brain/' },
   { title: 'AI interview assistant', href: '/ai-interview-assistant/' },
   { title: 'AI interview copilot', href: '/ai-interview-copilot/' },
   { title: 'AI interview answer generator', href: '/ai-interview-answer-generator/' },
