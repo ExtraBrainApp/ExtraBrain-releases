@@ -120,27 +120,41 @@ const alternativePage = (opts: {
   pricingSnapshot: string;
   competitorPlatform: string;
   bestForCompetitor: string[];
-  atAGlance: ComparisonPageContent['atAGlance'];
+  atAGlance: ComparisonPageContent["atAGlance"];
   chooseCompetitorWhen: Array<{ title: string; body: string }>;
   faq: Array<{ question: string; answer: string }>;
   sources: Array<{ label: string; href: string }>;
 }): MarketingPage =>
   comparisonPage({
     slug: opts.slug,
-    title: `Best ${opts.competitorName} Alternative for Mac — ExtraBrain`,
+    title: `Best ${opts.competitorName} Alternative for Mac - ExtraBrain`,
     description: opts.description,
     eyebrow: `${opts.competitorName} alternative`,
     h1: `Best ${opts.competitorName} alternative for Mac.`,
     lead: opts.lead,
     primaryCta: defaultCta,
-    secondaryCta: opts.competitorSlug ? { label: `Compare ${opts.competitorName}`, href: `/compare/${opts.competitorSlug}/` } : { label: 'See all comparisons', href: '/compare/' },
+    secondaryCta: opts.competitorSlug
+      ? {
+          label: `Compare ${opts.competitorName}`,
+          href: `/compare/${opts.competitorSlug}/`,
+        }
+      : { label: "See all comparisons", href: "/compare/" },
     sections: [
-      { title: 'Short answer', body: opts.shortAnswer },
-      { title: `Why people look for a ${opts.competitorName} alternative`, items: opts.whySwitch },
-      { title: 'Best alternatives by workflow', items: alternativeWorkflowCards },
-      { title: 'Why ExtraBrain is a strong alternative', items: sharedExtraBrainAdvantages },
-      { title: 'Pricing notes', items: opts.pricingNotes },
-      { title: 'Responsible use', body: responsibleUse },
+      { title: "Short answer", body: opts.shortAnswer },
+      {
+        title: `Why people look for a ${opts.competitorName} alternative`,
+        items: opts.whySwitch,
+      },
+      {
+        title: "Best alternatives by workflow",
+        items: alternativeWorkflowCards,
+      },
+      {
+        title: "Why ExtraBrain is a strong alternative",
+        items: sharedExtraBrainAdvantages,
+      },
+      { title: "Pricing notes", items: opts.pricingNotes },
+      { title: "Responsible use", body: responsibleUse },
     ],
     sources: opts.sources,
     comparison: {
@@ -151,7 +165,11 @@ const alternativePage = (opts: {
       bestForExtraBrain: sharedExtraBrainBestFor,
       bestForCompetitor: opts.bestForCompetitor,
       atAGlance: opts.atAGlance,
-      featureRows: baseRows(opts.competitorName, opts.competitorPlatform, opts.pricingSnapshot),
+      featureRows: baseRows(
+        opts.competitorName,
+        opts.competitorPlatform,
+        opts.pricingSnapshot,
+      ),
       extraBrainAdvantages: sharedExtraBrainAdvantages,
       chooseCompetitorWhen: opts.chooseCompetitorWhen,
       responsibleUse,
