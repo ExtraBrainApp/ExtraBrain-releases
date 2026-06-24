@@ -361,5 +361,5 @@ External AI and transcription provider usage is billed separately by the provide
 - [How to use AI for a live coding interview responsibly](https://extrabrain.app/blog/how-to-use-ai-for-live-coding-interview-extrabrain/)
 - [ChatGPT during a coding interview](https://extrabrain.app/blog/chatgpt-during-coding-interview-extrabrain/)
 - [Leetcode was never the job](https://extrabrain.app/blog/leetcode-was-never-the-job-ai-obvious/)
-- [AI-assisted coding explanations](https://extrabrain.app/blog/ai-assisted-coding-explanation/)
+- [AI-assisted coding explanations](https://extrabrain.app/blog/coding-interview-is-not-dead-memory-test-is/)
 - [ExtraBrain pricing](https://extrabrain.app/pricing/)

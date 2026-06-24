@@ -238,6 +238,6 @@ External providers may receive selected prompts, transcript text, screenshots, a
 
 - [How to use AI for a live coding interview responsibly](https://extrabrain.app/blog/how-to-use-ai-for-live-coding-interview-extrabrain/)
 - [Why LeetCode was never the real job](https://extrabrain.app/blog/leetcode-was-never-the-job-ai-obvious/)
-- [AI-assisted coding explanations](https://extrabrain.app/blog/ai-assisted-coding-explanation/)
+- [AI-assisted coding explanations](https://extrabrain.app/blog/coding-interview-is-not-dead-memory-test-is/)
 - [Responsible AI job search guidance](https://extrabrain.app/blog/ethical-ai-job-search/)
 - [ExtraBrain responsible use](https://extrabrain.app/responsible-use/)

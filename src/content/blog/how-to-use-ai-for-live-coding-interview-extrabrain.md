@@ -419,6 +419,6 @@ Never claim you are working without assistance if you are using assistance durin
 
 - [How to use AI in an interview without sounding like AI](/blog/use-ai-interview-without-sounding-like-ai/)
 - [Why LeetCode was never the whole job](/blog/leetcode-was-never-the-job-ai-obvious/)
-- [AI-assisted coding explanations in interviews](/blog/ai-assisted-coding-explanation/)
+- [AI-assisted coding explanations in interviews](/blog/coding-interview-is-not-dead-memory-test-is/)
 - [System design interviews in the AI era](/blog/system-design-interviews-ai-era/)
 - [Private interview notes and responsible AI preparation](/blog/private-by-default-interview-prep-notes/)

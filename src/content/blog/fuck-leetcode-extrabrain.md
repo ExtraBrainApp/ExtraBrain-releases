@@ -369,5 +369,5 @@ Typical practice languages include Python, JavaScript, TypeScript, Java, C++, Go
 - [How to use AI for live coding interviews with ExtraBrain](https://extrabrain.app/blog/how-to-use-ai-for-live-coding-interview-extrabrain/)
 - [ChatGPT during coding interviews](https://extrabrain.app/blog/chatgpt-during-coding-interview-extrabrain/)
 - [Why LeetCode was never the job](https://extrabrain.app/blog/leetcode-was-never-the-job-ai-obvious/)
-- [AI-assisted coding explanations](https://extrabrain.app/blog/ai-assisted-coding-explanation/)
+- [AI-assisted coding explanations](https://extrabrain.app/blog/coding-interview-is-not-dead-memory-test-is/)
 - [Responsible AI job search guidance](https://extrabrain.app/blog/ethical-ai-job-search/)

@@ -318,5 +318,5 @@ If live AI assistance, transcription, screenshots, notes, or hidden tools are pr
 - [ExtraBrain](https://extrabrain.app)
 - [Shadecoder alternative for Mac](/blog/shadecoder-alternative-extrabrain/)
 - [AI interview copilot or crutch?](/blog/interview-copilot-or-crutch/)
-- [AI-assisted coding explanation](/blog/ai-assisted-coding-explanation/)
+- [AI-assisted coding explanation](/blog/coding-interview-is-not-dead-memory-test-is/)
 - [Private-by-default interview prep notes](/blog/private-by-default-interview-prep-notes/)

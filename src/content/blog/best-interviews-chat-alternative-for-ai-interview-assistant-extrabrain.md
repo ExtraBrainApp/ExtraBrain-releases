@@ -366,4 +366,4 @@ If the rules do not allow live AI help, use ExtraBrain for preparation and post-
 - [AI interview copilots: help or cheating?](https://extrabrain.app/blog/ai-interview-copilots-help-vs-cheating/)
 - [How to use AI in interviews without sounding like AI](https://extrabrain.app/blog/use-ai-interview-without-sounding-like-ai/)
 - [Best ParakeetAI alternative for AI interview assistance](https://extrabrain.app/blog/best-ai-interview-assistant-real-time-extrabrain/)
-- [Privacy and identity in AI-assisted interviews](https://extrabrain.app/blog/privacy-identity-ai-interviews/)
+- [Privacy and identity in AI-assisted interviews](https://extrabrain.app/blog/interview-transcript-sensitive-data-local-first-ai/)

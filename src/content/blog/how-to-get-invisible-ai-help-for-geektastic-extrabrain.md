@@ -459,6 +459,6 @@ It gives you a second-brain-style workspace for live sessions, transcripts, note
 
 - [How to use AI for a live coding interview](https://extrabrain.app/blog/how-to-use-ai-for-live-coding-interview-extrabrain/)
 - [Best AI interview assistants for coding interviews](https://extrabrain.app/blog/best-ai-interview-assistants-coding-interviews/)
-- [AI-assisted coding explanations in interviews](https://extrabrain.app/blog/ai-assisted-coding-explanation/)
+- [AI-assisted coding explanations in interviews](https://extrabrain.app/blog/coding-interview-is-not-dead-memory-test-is/)
 - [System design interviews in the AI era](https://extrabrain.app/blog/system-design-interviews-ai-era/)
 - [Ethical AI job search guidance](https://extrabrain.app/blog/ethical-ai-job-search/)
