@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/on-screen-ai-interview-assistant-extrabrain.webp"
 ogImageAlt: "A thoughtful candidate weighing when an AI interview copilot is helpful versus distracting."
 ---
 

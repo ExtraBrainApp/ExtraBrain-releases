@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/codesubmit-how-to-cheat-extrabrain.webp"
 ogImageAlt: "A realistic coding interview practice session with responsible AI support"
 ---
 

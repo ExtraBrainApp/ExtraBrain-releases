@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Alternatives
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/sensei-ai-alternative-extrabrain.webp"
 ogImageAlt: "A thoughtful guide to choosing an AI interview copilot without turning it into a crutch"
 ---
 

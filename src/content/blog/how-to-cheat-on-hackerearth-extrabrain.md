@@ -11,7 +11,7 @@ tags:
   - Online Assessments
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-hackerearth-extrabrain.webp"
 ogImageAlt: "Developer preparing for a practical coding interview with AI-assisted context"
 ---
 

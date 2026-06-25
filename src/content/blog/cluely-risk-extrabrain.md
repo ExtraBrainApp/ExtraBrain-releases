@@ -10,7 +10,7 @@ tags:
   - Privacy
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/cluely-risk-extrabrain.webp"
 ogImageAlt: "Private AI interview preparation notes and identity protection"
 ---
 

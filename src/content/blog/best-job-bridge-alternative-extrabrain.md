@@ -10,7 +10,7 @@ tags:
   - Job Bridge Alternative
   - Technical Interviews
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/best-job-bridge-alternative-extrabrain.webp"
 ogImageAlt: "Candidate using an AI interview copilot for real work coding interview preparation"
 ---
 

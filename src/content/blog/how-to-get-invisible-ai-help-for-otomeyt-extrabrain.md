@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - Privacy
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-get-invisible-ai-help-for-otomeyt-extrabrain.webp"
 ogImageAlt: "Private AI interview preparation with a local-first desktop copilot"
 ---
 

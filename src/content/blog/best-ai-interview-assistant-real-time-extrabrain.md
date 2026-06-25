@@ -10,7 +10,7 @@ tags:
   - Interview Copilot
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/best-ai-interview-assistant-real-time-extrabrain.webp"
 ogImageAlt: "A candidate comparing real-time AI interview assistants for coding and live interview support"
 ---
 

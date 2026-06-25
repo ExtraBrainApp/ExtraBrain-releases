@@ -10,7 +10,7 @@ tags:
   - Beyz AI Alternative
   - Coding Interviews
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/beyz-ai-alternative-extrabrain.webp"
 ogImageAlt: "AI interview assistant workspace for coding interview preparation"
 ---
 

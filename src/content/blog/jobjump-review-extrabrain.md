@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Job Search
 draft: false
-ogImage: "/assets/blog-covers/28-ai-assisted-coding-explanation.webp"
+ogImage: "/assets/blog-covers/jobjump-review-extrabrain.webp"
 ogImageAlt: "AI-assisted coding interview explanation workflow"
 ---
 

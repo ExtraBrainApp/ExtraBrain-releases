@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain AI job search cover showing support from resume screening to final round interviews"
-ogImage: "/assets/blog-covers/06-resume-to-final-round.webp"
+ogImage: "/assets/blog-covers/ai-help-job-seekers-resume-final-round.webp"
 ---
 The most confusing part of the modern job search is not that AI exists. It is that AI shows up everywhere at once.
 

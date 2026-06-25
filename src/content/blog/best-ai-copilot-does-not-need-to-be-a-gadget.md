@@ -12,7 +12,7 @@ tags:
   - "Productivity"
 draft: false
 ogImageAlt: "ExtraBrain best AI copilot cover showing a quiet second brain for interviews and meetings"
-ogImage: "/assets/blog-covers/30-quiet-second-brain-for-interviews.webp"
+ogImage: "/assets/blog-covers/best-ai-copilot-does-not-need-to-be-a-gadget.webp"
 ---
 ![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in best ai copilot does not need to be a gadget](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 

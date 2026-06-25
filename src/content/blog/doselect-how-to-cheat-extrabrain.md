@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - DoSelect
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/doselect-how-to-cheat-extrabrain.webp"
 ogImageAlt: "Developer preparing for a realistic coding interview with AI-assisted explanations"
 ---
 

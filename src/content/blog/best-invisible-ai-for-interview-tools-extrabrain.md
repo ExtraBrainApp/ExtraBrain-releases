@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Privacy
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/best-invisible-ai-for-interview-tools-extrabrain.webp"
 ogImageAlt: "Interview copilot or crutch cover image for AI interview assistant comparison"
 ---
 

@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Troubleshooting
 draft: false
-ogImage: "/assets/blog-covers/26-reducing-interview-panic.webp"
+ogImage: "/assets/blog-covers/cluely-not-working-extrabrain.webp"
 ogImageAlt: "A calm interview preparation workspace for handling AI assistant problems before a live session"
 ---
 

@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-spark-hire-extrabrain.webp"
 ogImageAlt: "A candidate preparing to answer interview questions with responsible AI support"
 ---
 

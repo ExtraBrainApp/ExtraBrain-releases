@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain ethical AI job search cover showing responsible candidate preparation"
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/ethical-ai-job-search.webp"
 ---
 AI has created a strange new pressure in the job search: if you do not use it, you worry you are falling behind; if you do use it, you worry you are cheating.
 

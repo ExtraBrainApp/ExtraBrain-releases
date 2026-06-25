@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Responsible AI
 draft: false
-ogImage: "/assets/screenshots/blog/05-live-star-interview-coaching.png"
+ogImage: "/assets/blog-covers/how-to-cheat-on-talview-extrabrain.webp"
 ogImageAlt: "ExtraBrain showing live STAR interview coaching context"
 ---
 

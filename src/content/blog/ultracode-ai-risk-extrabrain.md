@@ -10,7 +10,7 @@ tags:
   - Privacy
   - Coding Interviews
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/ultracode-ai-risk-extrabrain.webp"
 ogImageAlt: "Private interview preparation notes and AI interview risk controls"
 ---
 

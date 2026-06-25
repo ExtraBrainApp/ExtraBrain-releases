@@ -10,7 +10,7 @@ tags:
   - Responsible AI
   - Recruiter AI
 draft: false
-ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-in-interview-on-andersen-lab-recruiter-ai-extrabrain.webp"
 ogImageAlt: "Candidate preparing to answer questions about AI use in an interview"
 ---
 

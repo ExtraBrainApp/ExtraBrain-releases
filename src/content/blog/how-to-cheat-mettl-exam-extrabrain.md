@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Responsible Use
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-mettl-exam-extrabrain.webp"
 ogImageAlt: "Responsible AI job search and online assessment preparation with ExtraBrain"
 ---
 

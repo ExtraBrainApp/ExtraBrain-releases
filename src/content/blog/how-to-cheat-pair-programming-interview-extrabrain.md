@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-pair-programming-interview-extrabrain.webp"
 ogImageAlt: "Developer preparing for a realistic coding interview with AI-supported notes and code context"
 ---
 

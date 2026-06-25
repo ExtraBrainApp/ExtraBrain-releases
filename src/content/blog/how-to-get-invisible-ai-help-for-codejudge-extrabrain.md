@@ -10,7 +10,7 @@ tags:
   - Codejudge
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-get-invisible-ai-help-for-codejudge-extrabrain.webp"
 ogImageAlt: "Developer preparing for a practical coding interview with AI-assisted context"
 ---
 

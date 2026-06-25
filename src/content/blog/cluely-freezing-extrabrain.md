@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Reliability
 draft: false
-ogImage: "/assets/blog-covers/26-reducing-interview-panic.webp"
+ogImage: "/assets/blog-covers/cluely-freezing-extrabrain.webp"
 ogImageAlt: "A calm candidate preparing for an interview with a reliable AI copilot workflow"
 ---
 

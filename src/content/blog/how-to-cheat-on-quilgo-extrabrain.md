@@ -10,7 +10,7 @@ tags:
   - Online Assessment
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-quilgo-extrabrain.webp"
 ogImageAlt: "A candidate thinking about privacy and identity during an AI-assisted remote interview"
 ---
 

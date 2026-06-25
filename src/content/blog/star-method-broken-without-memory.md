@@ -12,7 +12,7 @@ tags:
   - "Career Advice"
 draft: false
 ogImageAlt: "ExtraBrain STAR method cover showing interview stories strengthened by personal memory"
-ogImage: "/assets/blog-covers/19-star-method-needs-memory.webp"
+ogImage: "/assets/blog-covers/star-method-broken-without-memory.webp"
 ---
 ---
 

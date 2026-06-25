@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - Ropes Interview
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-interview-on-ropes-extrabrain.webp"
 ogImageAlt: "Responsible AI interview preparation with ExtraBrain"
 ---
 

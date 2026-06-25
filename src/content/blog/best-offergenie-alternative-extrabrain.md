@@ -10,7 +10,7 @@ tags:
   - Interview Copilot
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/best-offergenie-alternative-extrabrain.webp"
 ogImageAlt: "AI interview assistant workspace for coding and live interview preparation"
 ---
 

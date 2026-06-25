@@ -10,7 +10,7 @@ tags:
   - Help Center
   - AI Interview Assistant
 draft: false
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/billing-and-payment-faq-extrabrain.webp"
 ogImageAlt: "ExtraBrain billing and payment guidance for AI interview and meeting workflows"
 ---
 

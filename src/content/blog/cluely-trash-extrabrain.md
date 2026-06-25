@@ -9,7 +9,7 @@ tags:
   - Cluely Alternative
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/cluely-trash-extrabrain.webp"
 ogImageAlt: "Private AI interview preparation with a local-first desktop copilot"
 ---
 

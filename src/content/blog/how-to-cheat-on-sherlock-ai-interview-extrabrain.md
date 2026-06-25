@@ -10,7 +10,7 @@ tags:
   - Responsible AI
   - Sherlock AI
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-sherlock-ai-interview-extrabrain.webp"
 ogImageAlt: "Private and responsible AI interview preparation with ExtraBrain"
 ---
 

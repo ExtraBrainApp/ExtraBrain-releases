@@ -11,7 +11,7 @@ tags:
   - Online Assessments
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-get-invisible-ai-help-for-geektastic-extrabrain.webp"
 ogImageAlt: "Developer preparing for a realistic coding assessment with AI-assisted interview context"
 ---
 

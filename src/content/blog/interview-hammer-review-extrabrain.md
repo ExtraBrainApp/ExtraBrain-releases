@@ -10,7 +10,7 @@ tags:
   - Reviews
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/interview-hammer-review-extrabrain.webp"
 ogImageAlt: "Illustration for an AI interview copilot review comparing helpful support with overreliance"
 ---
 

@@ -9,7 +9,7 @@ tags:
   - Beyz AI
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/beyz-ai-trash-extrabrain.webp"
 ogImageAlt: "A thoughtful candidate evaluating whether an AI interview copilot is helpful or risky."
 ---
 

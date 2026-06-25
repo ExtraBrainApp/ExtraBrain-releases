@@ -11,7 +11,7 @@ tags:
   - "Responsible AI"
   - "Interview Prep"
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-codeaid-assessment-without-detection-extrabrain.webp"
 ogImageAlt: "ExtraBrain responsible AI job search cover for CodeAid assessment preparation"
 ---
 People search for "how to cheat on CodeAid 2026 without getting caught" because online coding assessments are stressful, time-limited, and increasingly monitored.

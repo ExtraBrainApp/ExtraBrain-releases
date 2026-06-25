@@ -11,7 +11,7 @@ tags:
   - Sova
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-get-invisible-ai-for-sova-assessment-extrabrain.webp"
 ogImageAlt: "Ethical AI job search preparation with a privacy-conscious interview copilot"
 ---
 

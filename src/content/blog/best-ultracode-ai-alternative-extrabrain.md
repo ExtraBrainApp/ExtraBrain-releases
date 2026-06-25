@@ -10,7 +10,7 @@ tags:
   - Alternatives
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/best-ultracode-ai-alternative-extrabrain.webp"
 ogImageAlt: "A realistic coding interview setup with code, transcript context, and technical notes"
 ---
 

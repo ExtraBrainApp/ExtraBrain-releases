@@ -12,7 +12,7 @@ tags:
   - ExtraBrain
   - Reviews
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/beyz-ai-review-extrabrain.webp"
 ogImageAlt: "Illustration for a review of AI interview copilots and responsible interview support"
 ---
 

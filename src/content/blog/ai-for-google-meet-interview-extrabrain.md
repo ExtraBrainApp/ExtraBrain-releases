@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Coding Interviews
   - Responsible AI
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/ai-for-google-meet-interview-extrabrain.webp"
 ogImageAlt: "ExtraBrain workflow for using AI before, during, and after a Google Meet interview"
 draft: false
 ---

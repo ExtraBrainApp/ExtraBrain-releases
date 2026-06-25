@@ -9,7 +9,7 @@ tags:
   - Support
   - Bug Reports
 draft: false
-ogImage: "/assets/blog-covers/15-private-interview-notes.webp"
+ogImage: "/assets/blog-covers/contact-extrabrain-team-report-bugs.webp"
 ogImageAlt: "Private interview notes and support workflow for ExtraBrain users"
 ---
 

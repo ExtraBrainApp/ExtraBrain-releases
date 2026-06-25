@@ -10,7 +10,7 @@ tags:
   - Reviews
   - Final Round AI
 draft: false
-ogImage: "/assets/blog-covers/06-resume-to-final-round.webp"
+ogImage: "/assets/blog-covers/final-round-ai-review-extrabrain.webp"
 ogImageAlt: "Candidate moving from resume preparation to final round interview practice with an AI assistant"
 ---
 

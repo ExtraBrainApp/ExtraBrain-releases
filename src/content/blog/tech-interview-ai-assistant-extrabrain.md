@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Tech Careers
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/tech-interview-ai-assistant-extrabrain.webp"
 ogImageAlt: "AI interview assistant tools for coding interview preparation"
 ---
 

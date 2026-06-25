@@ -10,7 +10,7 @@ tags:
   - LeetCode
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/09-leetcode-was-never-the-job.webp"
+ogImage: "/assets/blog-covers/fuck-leetcode-extrabrain.webp"
 ogImageAlt: "AI-assisted coding interview preparation beyond repetitive LeetCode memorization"
 ---
 

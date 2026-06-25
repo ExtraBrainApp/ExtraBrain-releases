@@ -11,7 +11,7 @@ tags:
   - Learning
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/22-practicing-aloud-with-ai-coach.webp"
+ogImage: "/assets/blog-covers/online-ai-exam-assistant-extrabrain.webp"
 ogImageAlt: "Student practicing aloud with an AI coach before an online exam"
 ---
 

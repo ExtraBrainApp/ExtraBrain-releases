@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/verve-ai-trash-extrabrain.webp"
 ogImageAlt: "Interview copilot support without turning the candidate into a script reader"
 ---
 

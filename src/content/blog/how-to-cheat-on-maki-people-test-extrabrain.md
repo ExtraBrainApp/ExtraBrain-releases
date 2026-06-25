@@ -10,7 +10,7 @@ tags:
   - Responsible AI
   - Interview Copilot
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-maki-people-test-extrabrain.webp"
 ogImageAlt: "Ethical AI job search preparation with a private interview copilot"
 ---
 

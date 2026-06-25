@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - Technical Interviews
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-use-ai-for-live-coding-interview-extrabrain.webp"
 ogImageAlt: "Developer preparing for a realistic live coding interview with AI-assisted notes and screen context"
 ---
 

@@ -10,7 +10,7 @@ tags:
   - Testlify
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-testlify-extrabrain.webp"
 ogImageAlt: "Ethical AI job search illustration for candidates using AI responsibly during interviews"
 ---
 

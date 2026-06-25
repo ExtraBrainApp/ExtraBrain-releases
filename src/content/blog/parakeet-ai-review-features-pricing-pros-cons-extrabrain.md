@@ -11,7 +11,7 @@ tags:
   - Parakeet AI
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/parakeet-ai-review-features-pricing-pros-cons-extrabrain.webp"
 ogImageAlt: "AI interview assistant review for live coding and behavioral interviews"
 ---
 

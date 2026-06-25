@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Sensei AI
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/sensei-ai-review-extrabrain.webp"
 ogImageAlt: "Interview copilot or crutch illustration for AI interview assistant reviews"
 ---
 

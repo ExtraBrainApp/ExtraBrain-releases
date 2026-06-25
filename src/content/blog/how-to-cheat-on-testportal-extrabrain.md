@@ -10,7 +10,7 @@ tags:
   - Responsible Use
   - Testportal
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-testportal-extrabrain.webp"
 ogImageAlt: "Responsible AI job search and online assessment preparation with ExtraBrain"
 ---
 

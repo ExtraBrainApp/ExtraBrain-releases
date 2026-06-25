@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Technical Interviews
 draft: false
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/how-to-prepare-for-salesforce-interview-extrabrain.webp"
 ogImageAlt: "AI interview preparation workflow before, during, and after an interview"
 ---
 

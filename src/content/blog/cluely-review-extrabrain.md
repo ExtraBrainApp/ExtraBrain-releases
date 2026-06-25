@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/cluely-review-extrabrain.webp"
 ogImageAlt: "AI interview copilot review for live interview preparation"
 ---
 

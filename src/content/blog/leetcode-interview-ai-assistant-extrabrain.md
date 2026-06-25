@@ -10,7 +10,7 @@ tags:
   - LeetCode
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/leetcode-interview-ai-assistant-extrabrain.webp"
 ogImageAlt: "Developer practicing a real-world coding interview with AI-assisted explanations"
 ---
 

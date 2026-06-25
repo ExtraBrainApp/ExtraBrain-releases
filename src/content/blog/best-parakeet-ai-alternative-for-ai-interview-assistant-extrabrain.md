@@ -10,7 +10,7 @@ tags:
   - Parakeet AI Alternative
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/best-parakeet-ai-alternative-for-ai-interview-assistant-extrabrain.webp"
 ogImageAlt: "ExtraBrain AI interview assistant for coding and live interview prep"
 ---
 

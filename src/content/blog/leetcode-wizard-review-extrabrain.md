@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Reviews
 draft: false
-ogImage: "/assets/blog-covers/09-leetcode-was-never-the-job.webp"
+ogImage: "/assets/blog-covers/leetcode-wizard-review-extrabrain.webp"
 ogImageAlt: "Candidate preparing for coding interviews with AI-assisted practice"
 ---
 

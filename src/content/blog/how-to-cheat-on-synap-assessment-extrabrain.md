@@ -11,7 +11,7 @@ tags:
   - Proctored Exams
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-synap-assessment-extrabrain.webp"
 ogImageAlt: "Candidate preparing responsibly for an online assessment with AI support"
 ---
 

@@ -11,7 +11,7 @@ tags:
   - Job Search
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.webp"
+ogImage: "/assets/blog-covers/can-interviewers-tell-when-you-are-using-ai-extrabrain.webp"
 ogImageAlt: "Candidate answering an interview question while thinking through responsible AI use"
 ---
 

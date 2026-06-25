@@ -11,7 +11,7 @@ tags:
   - Online Assessments
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/22-practicing-aloud-with-ai-coach.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-cappfinity-assessment-extrabrain.webp"
 ogImageAlt: "Candidate practicing aloud with an AI coach before an online assessment"
 ---
 

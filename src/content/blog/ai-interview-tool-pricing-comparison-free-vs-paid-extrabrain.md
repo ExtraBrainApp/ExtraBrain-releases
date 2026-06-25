@@ -9,7 +9,7 @@ tags:
   - Interview Prep
   - Pricing
 draft: false
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/ai-interview-tool-pricing-comparison-free-vs-paid-extrabrain.webp"
 ogImageAlt: "AI interview tools before, during, and after interview preparation"
 ---
 

@@ -10,7 +10,7 @@ tags:
   - Coding Interviews
   - Alternatives
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/ctrlpotato-alternative-extrabrain.webp"
 ogImageAlt: "Candidate using an AI interview copilot during a practical coding interview"
 ---
 

@@ -12,7 +12,7 @@ tags:
   - "Developer Careers"
 draft: false
 ogImageAlt: "ExtraBrain coding interview cover showing why LeetCode memorization is not real engineering work"
-ogImage: "/assets/blog-covers/09-leetcode-was-never-the-job.webp"
+ogImage: "/assets/blog-covers/leetcode-was-never-the-job-ai-obvious.webp"
 ---
 ![ExtraBrain coding interview practice view showing an LRU cache solution and technical transcript for article introduction in leetcode was never the job ai obvious](/assets/screenshots/blog/08-coding-interview-lru-cache.png)
 

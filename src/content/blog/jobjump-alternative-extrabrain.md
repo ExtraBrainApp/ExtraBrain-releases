@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Alternatives
 draft: false
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/jobjump-alternative-extrabrain.webp"
 ogImageAlt: "AI tools supporting candidates before, during, and after interviews"
 ---
 

@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Technical Interviews
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/interviewpal-alternative-extrabrain.webp"
 ogImageAlt: "Interview copilot illustration for comparing InterviewPal alternatives"
 ---
 

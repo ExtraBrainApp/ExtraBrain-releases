@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.webp"
+ogImage: "/assets/blog-covers/how-to-get-invisible-ai-help-on-kira-talent-interview-extrabrain.webp"
 ogImageAlt: "Candidate preparing for an AI-aware video interview with responsible assistance"
 ---
 

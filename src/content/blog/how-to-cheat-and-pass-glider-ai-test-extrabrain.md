@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - Glider AI
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-and-pass-glider-ai-test-extrabrain.webp"
 ogImageAlt: "Candidate preparing for a real-work coding interview with AI-assisted practice"
 ---
 

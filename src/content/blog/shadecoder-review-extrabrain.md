@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Privacy
 draft: false
-ogImage: "/assets/blog-covers/28-ai-assisted-coding-explanation.webp"
+ogImage: "/assets/blog-covers/shadecoder-review-extrabrain.webp"
 ogImageAlt: "Developer practicing a coding interview with AI-assisted explanation support"
 ---
 

@@ -10,7 +10,7 @@ tags:
   - Interview Coder Alternative
   - Interview Copilot
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/best-interview-coder-alternative-for-coding-interview-copilot-extrabrain.webp"
 ogImageAlt: "ExtraBrain as an Interview Coder alternative for coding interview copilot workflows"
 ---
 

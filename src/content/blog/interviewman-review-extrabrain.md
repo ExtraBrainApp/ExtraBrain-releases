@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/interviewman-review-extrabrain.webp"
 ogImageAlt: "AI interview tools used before, during, and after an interview"
 ---
 

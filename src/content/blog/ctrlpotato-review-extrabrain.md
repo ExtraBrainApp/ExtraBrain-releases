@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/ctrlpotato-review-extrabrain.webp"
 ogImageAlt: "AI interview copilot review cover for candidates evaluating Ctrlpotato and ExtraBrain"
 ---
 

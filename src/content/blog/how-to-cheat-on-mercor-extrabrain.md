@@ -11,7 +11,7 @@ tags:
   - Behavioral Interviews
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-mercor-extrabrain.webp"
 ogImageAlt: "Candidate deciding whether an AI interview copilot is a useful assistant or a risky crutch"
 ---
 

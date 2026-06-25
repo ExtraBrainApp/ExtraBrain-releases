@@ -11,7 +11,7 @@ tags:
   - "Interview Prep"
   - "Privacy"
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/share-screen-cheat-extrabrain.webp"
 ogImageAlt: "ExtraBrain privacy-focused AI interview assistant cover for responsible screen sharing and interview preparation"
 ---
 ![ExtraBrain privacy settings showing user-controlled screen visibility and capture controls for responsible screen sharing during interviews](/assets/screenshots/blog/06c-settings-privacy-controls.png)

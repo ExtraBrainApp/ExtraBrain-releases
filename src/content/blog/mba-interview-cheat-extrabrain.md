@@ -10,7 +10,7 @@ tags:
   - Behavioral Interviews
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/05-ai-prep-for-people-who-hate-performing.webp"
+ogImage: "/assets/blog-covers/mba-interview-cheat-extrabrain.webp"
 ogImageAlt: "Candidate practicing an MBA interview with AI preparation support"
 ---
 

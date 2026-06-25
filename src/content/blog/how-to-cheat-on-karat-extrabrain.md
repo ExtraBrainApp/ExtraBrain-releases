@@ -10,7 +10,7 @@ tags:
   - Karat
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-karat-extrabrain.webp"
 ogImageAlt: "Developer preparing for a real work coding interview with AI-assisted notes"
 ---
 

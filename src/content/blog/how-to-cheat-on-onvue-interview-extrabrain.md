@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-onvue-interview-extrabrain.webp"
 ogImageAlt: "Privacy and identity considerations for AI-assisted online interviews"
 ---
 

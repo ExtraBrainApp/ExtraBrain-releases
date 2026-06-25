@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/eskill-how-to-cheat-extrabrain.webp"
 ogImageAlt: "Candidate preparing for an eSkill-style assessment with responsible AI support"
 ---
 

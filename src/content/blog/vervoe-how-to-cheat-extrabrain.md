@@ -10,7 +10,7 @@ tags:
   - Responsible AI
   - Vervoe
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/vervoe-how-to-cheat-extrabrain.webp"
 ogImageAlt: "Responsible AI job search and interview preparation with ExtraBrain"
 ---
 

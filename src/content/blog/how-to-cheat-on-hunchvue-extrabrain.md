@@ -10,7 +10,7 @@ tags:
   - Responsible AI
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-hunchvue-extrabrain.webp"
 ogImageAlt: "Candidate preparing to explain responsible AI use during an interview"
 ---
 

@@ -11,7 +11,7 @@ tags:
   - Online Assessments
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-korn-ferry-assessment-extrabrain.webp"
 ogImageAlt: "Candidate preparing responsibly for an online job assessment with AI support"
 ---
 

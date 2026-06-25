@@ -12,7 +12,7 @@ tags:
   - "Candidate Experience"
 draft: false
 ogImageAlt: "ExtraBrain future hiring cover showing better interview questions instead of AI bans"
-ogImage: "/assets/blog-covers/13-better-questions-not-ai-bans.webp"
+ogImage: "/assets/blog-covers/future-hiring-not-banning-ai-better-questions.webp"
 ---
 ---
 

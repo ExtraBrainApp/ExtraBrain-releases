@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain interview disclosure cover showing how candidates can answer questions about AI use"
-ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.webp"
+ogImage: "/assets/blog-covers/when-interviewer-asks-are-you-using-ai.webp"
 ---
 ![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in when interviewer asks are you using ai](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 

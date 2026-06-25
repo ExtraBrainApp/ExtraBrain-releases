@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Coding Interviews
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/cluely-high-latency-extrabrain.webp"
 ogImageAlt: "Candidate practicing a real work coding interview with an AI copilot"
 ---
 

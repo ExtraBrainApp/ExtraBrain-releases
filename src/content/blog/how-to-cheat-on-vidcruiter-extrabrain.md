@@ -10,7 +10,7 @@ tags:
   - Responsible AI
   - VidCruiter
 draft: false
-ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-vidcruiter-extrabrain.webp"
 ogImageAlt: "Candidate preparing for an AI-aware interview with a responsible desktop copilot"
 ---
 

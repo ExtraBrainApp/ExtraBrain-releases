@@ -12,7 +12,7 @@ tags:
   - "Career Advice"
 draft: false
 ogImageAlt: "ExtraBrain interview copilot cover showing the difference between support and dependency"
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/interview-copilot-or-crutch.webp"
 ---
 ![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in interview copilot or crutch](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 

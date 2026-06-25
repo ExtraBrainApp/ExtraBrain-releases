@@ -11,7 +11,7 @@ tags:
   - LockedIn AI
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/lockedin-ai-review-extrabrain.webp"
 ogImageAlt: "A person evaluating whether an AI interview copilot is a useful support tool or a risky crutch."
 ---
 

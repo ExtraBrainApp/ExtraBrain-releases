@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/zoom-interview-ai-assistant-extrabrain.webp"
 ogImageAlt: "AI interview assistant workflow before, during, and after a Zoom interview"
 ---
 

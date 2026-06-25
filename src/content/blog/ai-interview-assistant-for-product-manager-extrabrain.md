@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Responsible AI
 draft: false
-ogImage: "/assets/screenshots/blog/01-live-analysis-product-strategy.png"
+ogImage: "/assets/blog-covers/ai-interview-assistant-for-product-manager-extrabrain.webp"
 ogImageAlt: "ExtraBrain live analysis view for a product strategy interview prompt"
 ---
 

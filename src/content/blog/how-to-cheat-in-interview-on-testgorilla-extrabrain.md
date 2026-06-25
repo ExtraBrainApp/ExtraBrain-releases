@@ -12,7 +12,7 @@ tags:
   - Responsible AI
   - Coding Interviews
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-in-interview-on-testgorilla-extrabrain.webp"
 ogImageAlt: "Responsible AI job search and interview preparation with ExtraBrain"
 ---
 

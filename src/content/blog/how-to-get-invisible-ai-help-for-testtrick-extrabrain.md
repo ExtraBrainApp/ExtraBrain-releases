@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/how-to-get-invisible-ai-help-for-testtrick-extrabrain.webp"
 ogImageAlt: "AI tools supporting interview preparation before, during, and after a live session"
 ---
 

@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - Study Tools
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-canvas-extrabrain.webp"
 ogImageAlt: "Private AI preparation workflow for high-stakes online assessments"
 ---
 

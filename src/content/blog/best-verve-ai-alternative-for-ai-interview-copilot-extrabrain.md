@@ -10,7 +10,7 @@ tags:
   - Alternatives
   - Coding Interviews
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/best-verve-ai-alternative-for-ai-interview-copilot-extrabrain.webp"
 ogImageAlt: "AI interview copilot workflow for responsible interview preparation"
 ---
 

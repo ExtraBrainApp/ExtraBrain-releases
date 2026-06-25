@@ -10,7 +10,7 @@ tags:
   - Responsible AI
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.webp"
+ogImage: "/assets/blog-covers/fake-interview-eye-contact-reading-answers-extrabrain.webp"
 ogImageAlt: "Candidate thinking through whether AI assistance is allowed in a virtual interview"
 ---
 

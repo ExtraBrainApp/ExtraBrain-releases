@@ -10,7 +10,7 @@ tags:
   - Reviews
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/22-practicing-aloud-with-ai-coach.webp"
+ogImage: "/assets/blog-covers/interviewbee-review-extrabrain.webp"
 ogImageAlt: "Person practicing interview answers aloud with an AI coach"
 ---
 

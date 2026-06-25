@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain AI interview cover showing how to use AI without sounding scripted"
-ogImage: "/assets/blog-covers/02-use-ai-without-sounding-like-ai.webp"
+ogImage: "/assets/blog-covers/use-ai-interview-without-sounding-like-ai.webp"
 ---
 ![ExtraBrain live analysis panel summarizing a product strategy discussion with transcript context for article introduction in use ai interview without sounding like ai](/assets/screenshots/blog/01-live-analysis-product-strategy.png)
 

@@ -10,7 +10,7 @@ tags:
   - Ultracode AI
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/ultracode-ai-trash-extrabrain.webp"
 ogImageAlt: "A candidate practicing a realistic technical interview with an AI interview assistant"
 ---
 

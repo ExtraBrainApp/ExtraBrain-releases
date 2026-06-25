@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Engineering Interviews
 draft: false
-ogImage: "/assets/blog-covers/10-system-design-ai-era.webp"
+ogImage: "/assets/blog-covers/how-to-use-ai-interview-co-pilot-in-system-design-extrabrain.webp"
 ogImageAlt: "Abstract cover art for system design interviews in the AI era"
 ---
 

@@ -11,7 +11,7 @@ tags:
   - Coding Interviews
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/testdome-how-to-cheat-extrabrain.webp"
 ogImageAlt: "Candidate preparing for a practical coding assessment with AI-assisted interview practice"
 ---
 

@@ -9,7 +9,7 @@ tags:
   - Talenscio Interview
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-talenscio-interview-extrabrain.webp"
 ogImageAlt: "Candidate preparing for an AI-aware interview with calm, responsible support"
 ---
 

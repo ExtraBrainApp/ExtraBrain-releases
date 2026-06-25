@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-get-invisible-ai-help-for-smowl-extrabrain.webp"
 ogImageAlt: "Private AI support for identity-sensitive online assessments and interviews"
 ---
 

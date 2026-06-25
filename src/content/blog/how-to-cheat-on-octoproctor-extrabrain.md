@@ -10,7 +10,7 @@ tags:
   - Responsible Use
   - Octoproctor
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-octoproctor-extrabrain.webp"
 ogImageAlt: "Responsible AI preparation for online assessments with ExtraBrain"
 ---
 

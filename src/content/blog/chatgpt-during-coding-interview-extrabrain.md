@@ -10,7 +10,7 @@ tags:
   - ChatGPT
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/chatgpt-during-coding-interview-extrabrain.webp"
 ogImageAlt: "Developer preparing for a realistic coding interview with AI-assisted context"
 ---
 

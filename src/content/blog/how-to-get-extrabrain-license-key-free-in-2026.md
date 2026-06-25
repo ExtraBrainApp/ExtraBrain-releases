@@ -10,7 +10,7 @@ tags:
   - Privacy
   - Pricing
 draft: false
-ogImage: "/assets/blog-covers/15-private-interview-notes.webp"
+ogImage: "/assets/blog-covers/how-to-get-extrabrain-license-key-free-in-2026.webp"
 ogImageAlt: "Private interview notes and AI session context for ExtraBrain users"
 ---
 

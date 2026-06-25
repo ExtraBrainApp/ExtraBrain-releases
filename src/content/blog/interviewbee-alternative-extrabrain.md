@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Coding Interviews
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/interviewbee-alternative-extrabrain.webp"
 ogImageAlt: "ExtraBrain as an InterviewBee alternative for coding and live interview preparation"
 ---
 

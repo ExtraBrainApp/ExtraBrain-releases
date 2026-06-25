@@ -10,7 +10,7 @@ tags:
   - AI Interview Assistant
   - Career Tools
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/best-ai-interview-software-extrabrain.webp"
 ogImageAlt: "Candidate using AI interview software for coding interview preparation"
 ---
 

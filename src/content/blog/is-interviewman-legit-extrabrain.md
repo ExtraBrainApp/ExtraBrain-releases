@@ -10,7 +10,7 @@ tags:
   - Interview Copilot
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/is-interviewman-legit-extrabrain.webp"
 ogImageAlt: "AI interview copilot or crutch illustration for responsible interview preparation"
 ---
 

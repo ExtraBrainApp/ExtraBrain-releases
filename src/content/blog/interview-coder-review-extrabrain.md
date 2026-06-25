@@ -10,7 +10,7 @@ tags:
   - Interview Coder
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/interview-coder-review-extrabrain.webp"
 ogImageAlt: "Candidate using AI support while preparing for a realistic coding interview"
 ---
 

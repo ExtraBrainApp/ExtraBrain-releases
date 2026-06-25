@@ -10,7 +10,7 @@ tags:
   - Coding Interviews
   - Alternatives
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/interview-solver-alternative-extrabrain.webp"
 ogImageAlt: "ExtraBrain AI interview copilot support for coding and live interview preparation"
 ---
 

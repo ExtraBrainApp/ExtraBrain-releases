@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain system design interview cover showing AI-assisted architecture thinking"
-ogImage: "/assets/blog-covers/10-system-design-ai-era.webp"
+ogImage: "/assets/blog-covers/system-design-interviews-ai-era.webp"
 ---
 ![ExtraBrain debugging session view for an architecture mismatch with technical follow-up questions for article introduction in system design interviews ai era](/assets/screenshots/blog/10-debugging-arch-mismatch.png)
 

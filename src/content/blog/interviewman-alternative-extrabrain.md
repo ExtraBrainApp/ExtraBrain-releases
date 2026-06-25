@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Privacy
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/interviewman-alternative-extrabrain.webp"
 ogImageAlt: "Private AI interview prep notes and live interview context"
 ---
 

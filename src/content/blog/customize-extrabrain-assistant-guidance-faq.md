@@ -10,7 +10,7 @@ tags:
   - Help Center
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/customize-extrabrain-assistant-guidance-faq.webp"
 ogImageAlt: "ExtraBrain setup guidance for AI-assisted interviews and meetings"
 ---
 

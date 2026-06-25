@@ -10,7 +10,7 @@ tags:
   - Critical Thinking
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/invisible-ai-help-for-watson-glaser-test-extrabrain.webp"
 ogImageAlt: "Responsible AI job search and interview preparation"
 ---
 

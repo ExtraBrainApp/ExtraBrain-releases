@@ -10,7 +10,7 @@ tags:
   - Support
   - Troubleshooting
 draft: false
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/help-center-supports-advice-extrabrain.webp"
 ogImageAlt: "ExtraBrain help center guidance for setup, troubleshooting, and interview support"
 ---
 

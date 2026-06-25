@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Shadecoder Alternative
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/shadecoder-alternative-extrabrain.webp"
 ogImageAlt: "Candidate preparing for a real work coding interview with an AI interview assistant"
 ---
 

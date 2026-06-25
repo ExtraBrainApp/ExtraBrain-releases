@@ -12,7 +12,7 @@ tags:
   - "ExtraBrain"
 draft: false
 ogImageAlt: "ExtraBrain AI tools cover for job seekers before during and after interviews"
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/ai-tools-job-seekers-before-during-after-interviews.webp"
 ---
 ---
 

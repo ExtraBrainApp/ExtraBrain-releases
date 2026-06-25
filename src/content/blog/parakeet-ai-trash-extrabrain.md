@@ -11,7 +11,7 @@ tags:
   - Privacy
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/parakeet-ai-trash-extrabrain.webp"
 ogImageAlt: "Private AI interview preparation notes and live interview context"
 ---
 

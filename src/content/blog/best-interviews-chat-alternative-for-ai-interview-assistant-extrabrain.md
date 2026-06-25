@@ -10,7 +10,7 @@ tags:
   - Interview Copilot
   - Coding Interviews
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/best-interviews-chat-alternative-for-ai-interview-assistant-extrabrain.webp"
 ogImageAlt: "A thoughtful candidate using an AI interview copilot responsibly during interview preparation."
 ---
 

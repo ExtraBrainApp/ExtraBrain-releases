@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-wecp-platform-extrabrain.webp"
 ogImageAlt: "Private and responsible AI interview preparation with ExtraBrain"
 ---
 

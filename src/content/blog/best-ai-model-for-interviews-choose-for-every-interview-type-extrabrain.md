@@ -10,7 +10,7 @@ tags:
   - Coding Interviews
   - AI Models
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/best-ai-model-for-interviews-choose-for-every-interview-type-extrabrain.webp"
 ogImageAlt: "AI interview assistant workspace for choosing the right model by interview type"
 ---
 

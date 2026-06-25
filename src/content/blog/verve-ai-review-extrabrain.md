@@ -11,7 +11,7 @@ tags:
   - Interview Prep
   - Reviews
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/verve-ai-review-extrabrain.webp"
 ogImageAlt: "Candidate evaluating whether an AI interview copilot is helpful support or a risky crutch"
 ---
 

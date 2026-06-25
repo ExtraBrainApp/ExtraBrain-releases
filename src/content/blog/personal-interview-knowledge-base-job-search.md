@@ -12,7 +12,7 @@ tags:
   - "Personal Knowledge Management"
 draft: false
 ogImageAlt: "ExtraBrain personal interview knowledge base cover showing organized job search memories"
-ogImage: "/assets/blog-covers/18-personal-interview-knowledge-base.webp"
+ogImage: "/assets/blog-covers/personal-interview-knowledge-base-job-search.webp"
 ---
 ---
 

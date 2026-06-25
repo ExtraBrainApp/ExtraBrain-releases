@@ -9,7 +9,7 @@ tags:
   - Interview Prep
   - Alternatives
 draft: false
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/interview-hammer-alternative-extrabrain.webp"
 ogImageAlt: "Interview preparation workflow with AI tools before, during, and after interviews"
 ---
 

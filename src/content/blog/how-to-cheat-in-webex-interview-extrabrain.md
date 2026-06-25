@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-in-webex-interview-extrabrain.webp"
 ogImageAlt: "Interview copilot support during a remote video interview"
 ---
 

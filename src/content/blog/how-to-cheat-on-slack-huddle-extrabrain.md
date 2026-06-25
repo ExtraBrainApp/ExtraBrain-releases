@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - Meeting Copilot
 draft: false
-ogImage: "/assets/blog-covers/14-asked-if-you-use-ai.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-slack-huddle-extrabrain.webp"
 ogImageAlt: "Candidate thinking through how to discuss AI use in an interview"
 ---
 

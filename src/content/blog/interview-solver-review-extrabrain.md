@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Reviews
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/interview-solver-review-extrabrain.webp"
 ogImageAlt: "AI-assisted coding interview preparation on a laptop"
 ---
 

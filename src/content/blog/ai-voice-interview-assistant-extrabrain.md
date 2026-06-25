@@ -10,7 +10,7 @@ tags:
   - Voice AI
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/22-practicing-aloud-with-ai-coach.webp"
+ogImage: "/assets/blog-covers/ai-voice-interview-assistant-extrabrain.webp"
 ogImageAlt: "Candidate practicing interview answers aloud with an AI coach"
 ---
 

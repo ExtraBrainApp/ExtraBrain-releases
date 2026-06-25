@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - Bryq
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-cheat-on-bryq-test-extrabrain.webp"
 ogImageAlt: "Responsible AI job search and online assessment preparation"
 ---
 

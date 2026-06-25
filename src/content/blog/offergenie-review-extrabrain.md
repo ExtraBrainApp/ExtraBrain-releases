@@ -10,7 +10,7 @@ tags:
   - Reviews
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/offergenie-review-extrabrain.webp"
 ogImageAlt: "Person evaluating whether an AI interview copilot is helpful or a crutch"
 ---
 

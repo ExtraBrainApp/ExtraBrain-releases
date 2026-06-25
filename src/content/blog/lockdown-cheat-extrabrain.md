@@ -10,7 +10,7 @@ tags:
   - Responsible Use
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/lockdown-cheat-extrabrain.webp"
 ogImageAlt: "A responsible AI job search and preparation workflow illustration"
 ---
 

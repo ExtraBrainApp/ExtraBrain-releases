@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/how-to-get-invisible-ai-for-imocha-test-extrabrain.webp"
 ogImageAlt: "Candidate preparing for a private AI-assisted interview workflow"
 ---
 

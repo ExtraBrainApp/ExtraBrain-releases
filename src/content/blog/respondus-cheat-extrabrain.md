@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - ExtraBrain
 draft: false
-ogImage: "/assets/blog-covers/24-privacy-identity-ai-interviews.webp"
+ogImage: "/assets/blog-covers/respondus-cheat-extrabrain.webp"
 ogImageAlt: "Private AI preparation workflow for proctored online exams and high-stakes assessments"
 ---
 

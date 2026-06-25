@@ -10,7 +10,7 @@ tags:
   - Coding Interviews
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/best-ai-apply-alternative-for-ai-interview-assistant-extrabrain.webp"
 ogImageAlt: "ExtraBrain AI interview assistant for coding interview preparation"
 ---
 

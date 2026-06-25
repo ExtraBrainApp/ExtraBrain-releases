@@ -11,7 +11,7 @@ tags:
   - Job Search
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/26-reducing-interview-panic.webp"
+ogImage: "/assets/blog-covers/how-to-get-invisible-help-on-wonderlic-test-extrabrain.webp"
 ogImageAlt: "Candidate reducing interview panic while preparing for an online assessment"
 ---
 

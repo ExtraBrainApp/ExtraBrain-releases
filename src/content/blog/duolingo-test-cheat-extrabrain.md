@@ -10,7 +10,7 @@ tags:
   - Responsible Use
   - English Tests
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/duolingo-test-cheat-extrabrain.webp"
 ogImageAlt: "Person preparing responsibly with AI instead of using risky Duolingo English Test shortcuts"
 ---
 

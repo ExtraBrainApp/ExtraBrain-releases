@@ -12,7 +12,7 @@ tags:
   - "Mid Career"
 draft: false
 ogImageAlt: "ExtraBrain AI interview guide cover for experienced candidates returning to interviews"
-ogImage: "/assets/blog-covers/25-senior-candidate-remote-confidence.webp"
+ogImage: "/assets/blog-covers/havent-interviewed-since-before-ai.webp"
 ---
 If you have not interviewed in years, the process can feel like returning to a city where every street changed names. The questions are familiar, but the rituals have changed. There are AI resume tools, AI mock interviewers, AI meeting copilots, and a quiet new anxiety: *Am I supposed to use these? And if I do, will I stop sounding like myself?*
 

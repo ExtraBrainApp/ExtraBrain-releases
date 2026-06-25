@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - System Design
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/ai-interview-copilot-devops-extrabrain.webp"
 ogImageAlt: "Developer preparing for practical technical interview questions with an AI copilot"
 ---
 

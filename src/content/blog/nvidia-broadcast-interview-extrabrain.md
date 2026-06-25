@@ -11,7 +11,7 @@ tags:
   - Responsible AI
   - NVIDIA Broadcast
 draft: false
-ogImage: "/assets/blog-covers/25-senior-candidate-remote-confidence.webp"
+ogImage: "/assets/blog-covers/nvidia-broadcast-interview-extrabrain.webp"
 ogImageAlt: "A confident remote interview candidate preparing for a virtual interview with AI-assisted notes"
 ---
 

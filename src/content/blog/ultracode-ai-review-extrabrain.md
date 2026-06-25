@@ -10,7 +10,7 @@ tags:
   - Reviews
   - Interview Prep
 draft: false
-ogImage: "/assets/blog-covers/23-real-work-coding-interviews.webp"
+ogImage: "/assets/blog-covers/ultracode-ai-review-extrabrain.webp"
 ogImageAlt: "A realistic coding interview workspace with notes, transcript context, and technical prompts"
 ---
 

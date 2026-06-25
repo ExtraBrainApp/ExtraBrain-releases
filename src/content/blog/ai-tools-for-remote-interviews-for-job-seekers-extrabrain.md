@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Job Search
 draft: false
-ogImage: "/assets/blog-covers/20-ai-tools-before-during-after.webp"
+ogImage: "/assets/blog-covers/ai-tools-for-remote-interviews-for-job-seekers-extrabrain.webp"
 ogImageAlt: "AI tools for job seekers before, during, and after remote interviews"
 ---
 

@@ -12,7 +12,7 @@ tags:
   - "Responsible AI"
 draft: false
 ogImageAlt: "ExtraBrain AI career tools cover showing a private memory of a candidate’s work experience"
-ogImage: "/assets/blog-covers/17-ai-tools-remember-your-experience.webp"
+ogImage: "/assets/blog-covers/best-ai-career-tools-remember-your-own-experience.webp"
 ---
 ---
 

@@ -10,7 +10,7 @@ tags:
   - Moodle
   - Responsible Use
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/moodle-cheat-extrabrain.webp"
 ogImageAlt: "Responsible AI preparation workflow for exams and interviews"
 ---
 

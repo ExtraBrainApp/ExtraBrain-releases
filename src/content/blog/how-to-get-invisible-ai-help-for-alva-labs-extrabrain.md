@@ -10,7 +10,7 @@ tags:
   - Assessment Prep
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/07-ethical-ai-job-search.webp"
+ogImage: "/assets/blog-covers/how-to-get-invisible-ai-help-for-alva-labs-extrabrain.webp"
 ogImageAlt: "Responsible AI interview preparation with ExtraBrain"
 ---
 

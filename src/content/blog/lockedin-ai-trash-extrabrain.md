@@ -10,7 +10,7 @@ tags:
   - Interview Prep
   - Responsible AI
 draft: false
-ogImage: "/assets/blog-covers/08-interview-copilot-or-crutch.webp"
+ogImage: "/assets/blog-covers/lockedin-ai-trash-extrabrain.webp"
 ogImageAlt: "Candidate deciding whether an AI interview copilot is useful support or a risky crutch"
 ---
 

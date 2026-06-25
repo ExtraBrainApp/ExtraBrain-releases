@@ -10,7 +10,7 @@ tags:
   - Interview Sidekick Alternative
   - Coding Interviews
 draft: false
-ogImage: "/assets/blog-covers/best-ai-interview-assistants-coding-interviews.webp"
+ogImage: "/assets/blog-covers/best-interview-sidekick-alternative-for-ai-interview-assistant-extrabrain.webp"
 ogImageAlt: "Candidate using an AI interview assistant for a coding interview"
 ---
 
