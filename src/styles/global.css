@@ -3642,6 +3642,37 @@ h2,
   font-weight: 700;
 }
 
+.blog-content :not(pre) > code {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  color: #24292f;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
+  font-size: 0.85em;
+  padding: 0.2em 0.4em;
+}
+
+.blog-content pre {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  color: #24292f;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 28px 0;
+  overflow-x: auto;
+  padding: 16px;
+}
+
+.blog-content pre code {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+}
+
 .blog-content blockquote {
   border-left: 4px solid var(--editorial-purple-deep);
   color: var(--text);

@@ -3,7 +3,7 @@
 
 <div class="backlinks-footer">
   <div class="backlinks-badges">
-    <div class="backlinks-row">
+    <div class="backlinks-row external-links-row">
       <a href="https://productwill.com" target="_blank" >
         <img src="https://productwill.com/badages-awards.svg" alt="Featured on Product Will" height="50" loading="lazy" />
       </a>
@@ -20,7 +20,7 @@
         <img src="https://dayslaunch.com/badages-awards.svg" alt="Featured on Days Launch" height="50" loading="lazy" />
       </a>
     </div>
-    <div class="backlinks-row">
+    <div class="backlinks-row external-links-row">
       <a href="https://fazier.com/launches/extrabrain" target="_blank" >
         <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light" alt="Featured ExtraBrain launch badge on Fazier" height="50" loading="lazy" />
       </a>
@@ -34,7 +34,7 @@
         <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" height="50" loading="lazy" />
       </a>
     </div>
-    <div class="backlinks-row">
+    <div class="backlinks-row external-links-row">
       <a href="https://yo.directory/" target="_blank" >
         <img src="https://cdn.prod.website-files.com/65c1546fa73ea974db789e3d/65e1e171f89ebfa7bd0129ac_yodirectory-featured.png" alt="Featured on yo.directory" height="50" loading="lazy" />
       </a>
@@ -51,7 +51,7 @@
         <img src="https://3188a5210b07f4ad511bbcdc967bc67b.cdn.bubble.io/f1747781918344x939992978866771600/pB-Badge.png" alt="Featured on ProductBurst" height="50" loading="lazy" />
       </a>
     </div>
-    <div class="backlinks-row">
+    <div class="backlinks-row external-links-row">
       <a href="https://topfreeaitools.com/ai/extrabrain" target="_blank" >
         <img src="https://ff65dcf08ebd5eb1c022b44dd88016ac.cdn.bubble.io/f1724746116087x632750678197528400/badge%20white.png?_gl=1*1wvcbnr*_gcl_au*MTg3MzI0ODMyLjE3MjE2MjAzNjA.*_ga*NTIyODE4MzEyLjE3MDU5OTg0MTc.*_ga_BFPVR2DEE2*MTcyNDc0NTM2OS4yMjkuMS4xNzI0NzQ2MjY2LjYwLjAuMA.." alt="Listed on Top Free AI Tools" height="50" loading="lazy" />
       </a>
@@ -112,7 +112,7 @@
       <a href="/compare/linkjob-ai/">Compare Linkjob AI</a>
       <a href="/help/getting-started/">Getting started</a>
     </div>
-    <div class="backlinks-row">
+    <div class="backlinks-row external-links-row">
       <a href="https://aistage.net" target="_blank" title="AIStage" >AIStage</a>
       <a href="https://kontext-ai.com/" target="_blank" title="Kontext AI" >Kontext AI</a>
       <a href="https://aibesttop.com/" target="_blank" title="aibesttop AI Tools Directory" >aibesttop AI Tools Directory</a>
@@ -120,7 +120,7 @@
       <a href="https://aitoolcenter.com/" target="_blank" title="AI Tool Center" >AI Tool Center</a>
       <a href="https://whatisaitools.com/" target="_blank" title="What Is Ai Tools" >What Is Ai Tools</a>
     </div>
-    <div class="backlinks-row">
+    <div class="backlinks-row external-links-row">
       <a href="https://www.aiheron.com/" target="_blank" title="智鹭AI导航" >AiHeron</a>
       <a href="https://toolsapp.cc/" target="_blank" title="ToolsApp AI Tools Directory" >ToolsApp AI Tools Directory</a>
       <a href="https://www.aimonstr.com" target="_blank" title="AIMonstr" >AIMonstr</a>
@@ -128,7 +128,7 @@
       <a href="https://www.aitoolzdir.com" target="_blank" title="AI Toolz Dir" >AI Toolz Dir</a>
       <a href="https://ai-findr.com/" target="_blank" title="AI Findr Tools Directory" >AI Findr Tools Directory</a>
     </div>
-    <div class="backlinks-row">
+    <div class="backlinks-row external-links-row">
       <a href="https://www.aitoolgo.com" target="_blank" title="AiToolGo" >AiToolGo</a>
       <a href="https://okeiai.com/" target="_blank" title="Okei AI Tools Directory" >Okei AI Tools</a>
       <a href="https://seektool.ai/" title="SeekTool.ai Tools Directory">SeekTool.ai Tools Directory</a>
@@ -144,8 +144,12 @@
     margin: 0 auto;
   }
 
+  .backlinks-badges,
+  .external-links-row {
+    display: none;
+  }
+
   .backlinks-badges {
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
