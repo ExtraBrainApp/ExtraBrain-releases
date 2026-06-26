@@ -23,7 +23,7 @@ ogImageAlt: "Goldman Sachs HireVue interview preparation with ExtraBrain"
 draft: false
 ---
 
-![Goldman Sachs HireVue interview preparation with ExtraBrain](/assets/blog-covers/hirevue-interview-assistant-extrabrain.png)
+![Goldman Sachs HireVue interview preparation with ExtraBrain](/assets/blog-covers/hirevue-interview-assistant-extrabrain.webp)
 
 A Goldman Sachs HireVue for a general engineering role is commonly described as a short recorded video interview with about six prompts, a brief preparation window, and roughly two minutes to answer each question.
 Many candidates report a mix of behavioral, situational, and role-specific questions.

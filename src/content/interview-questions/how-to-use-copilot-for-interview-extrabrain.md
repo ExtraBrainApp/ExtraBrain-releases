@@ -24,7 +24,7 @@ ogImageAlt: "AI interview copilot used as responsible interview support"
 draft: false
 ---
 
-![AI interview copilot used as responsible interview support](/assets/blog-covers/interview-copilot-or-crutch.png)
+![AI interview copilot used as responsible interview support](/assets/blog-covers/interview-copilot-or-crutch.webp)
 
 AI interview copilots can help candidates prepare, listen more carefully, structure answers, and learn from each interview afterward.
 Used well, they are not a replacement for your judgment, experience, or honesty.
