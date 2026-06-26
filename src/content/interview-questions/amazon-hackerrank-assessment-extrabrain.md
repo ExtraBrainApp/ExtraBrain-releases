@@ -258,4 +258,4 @@ When in doubt, ask the recruiter or follow the written assessment instructions.
 - [Amazon coding interview preparation with ExtraBrain](https://extrabrain.app/interview-questions/amazon-coding-interview-extrabrain/)
 - [AI interview assistant for software engineers](https://extrabrain.app/blog/ai-interview-assistant-for-software-engineers-extrabrain/)
 - [How to use AI responsibly in live coding interview preparation](https://extrabrain.app/blog/how-to-use-ai-for-live-coding-interview-extrabrain/)
-- [Why real-work coding interviews are replacing pure memorization](https://extrabrain.app/blog/real-work-coding-interviews/)
+- [Why real-work coding interviews are replacing pure memorization](https://extrabrain.app/blog/coding-interview-is-not-dead-memory-test-is/)

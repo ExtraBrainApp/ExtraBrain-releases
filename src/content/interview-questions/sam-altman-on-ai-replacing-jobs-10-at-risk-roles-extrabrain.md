@@ -322,6 +322,6 @@ You remain responsible for honest use and for following all interview, employer,
 
 - [What is an AI interview copilot?](https://extrabrain.app/interview-questions/interview-copilot-extrabrain/)
 - [AI interview preparation guide](https://extrabrain.app/interview-questions/ai-interview-preparation-extrabrain/)
-- [Best AI interview assistant for real-time interviews](https://extrabrain.app/interview-questions/best-ai-interview-assistant-real-time-extrabrain/)
-- [How to use AI responsibly in a live coding interview](https://extrabrain.app/interview-questions/how-to-use-ai-for-live-coding-interview-extrabrain/)
-- [Can interviewers tell when you are using AI?](https://extrabrain.app/interview-questions/can-interviewers-tell-when-you-are-using-ai-extrabrain/)
+- [Best AI interview assistant for real-time interviews](https://extrabrain.app/blog/best-ai-interview-assistant-real-time-extrabrain/)
+- [How to use AI responsibly in a live coding interview](https://extrabrain.app/blog/how-to-use-ai-for-live-coding-interview-extrabrain/)
+- [Can interviewers tell when you are using AI?](https://extrabrain.app/blog/can-interviewers-tell-when-you-are-using-ai-extrabrain/)
