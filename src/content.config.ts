@@ -37,6 +37,11 @@ const interviewQuestions = defineCollection({
   }),
 });
 
+const marketingPageGuides = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/marketing-pages' }),
+  schema: z.object({}),
+});
+
 export const collections = {
   docs: defineCollection({
     loader: docsLoader(),
@@ -44,4 +49,5 @@ export const collections = {
   }),
   blog,
   interviewQuestions,
+  marketingPageGuides,
 };

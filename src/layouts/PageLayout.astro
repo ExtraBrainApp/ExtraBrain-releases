@@ -118,9 +118,10 @@ const freeVsProPlanIcons: Record<string, string> = {
 
 interface Props {
   page: MarketingPage;
+  guideContent?: any;
 }
 
-const { page } = Astro.props as Props;
+const { page, guideContent: GuideContent } = Astro.props as Props;
 const comparisonHub = page.comparisonHub as ComparisonHub | undefined;
 const comparison = page.comparison as ComparisonContent | undefined;
 const faq = page.faq ?? homepageFaq.slice(0, 4);
@@ -213,11 +214,12 @@ if (comparisonHub) {
 }
 const hasReleaseMetadata = page.slug === 'download';
 const hasSources = Boolean(page.sources?.length);
+const hasGuideContent = Boolean(GuideContent);
 const showSummary = page.hideSummary !== true;
 const summaryBandIndex = 0;
 const releaseBandIndex = showSummary ? 1 : 0;
 const contentBandStart = (showSummary ? 1 : 0) + (hasReleaseMetadata ? 1 : 0);
-const sourcesBandIndex = contentBandStart + page.sections.length;
+const sourcesBandIndex = contentBandStart + page.sections.length + (hasGuideContent ? 1 : 0);
 const faqBandIndex = sourcesBandIndex + (hasSources ? 1 : 0);
 const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--odd' : 'section-band--even');
 const breadcrumbItems = [
@@ -400,8 +402,10 @@ const breadcrumbItems = [
       const sectionAccent = supportsPricingIcons ? pricingSectionAccents[section.title] : undefined;
       const sectionVariant = section.variant ?? 'cards';
       const sectionVariantClass = sectionVariant !== 'cards' ? `page-grid--${sectionVariant}` : undefined;
+      const sectionIndex = contentBandStart + index + (hasGuideContent && index > 0 ? 1 : 0);
       return (
-      <section class:list={['light-section', 'page-content-section', sectionBandClass(contentBandStart + index)]}>
+      <>
+      <section class:list={['light-section', 'page-content-section', sectionBandClass(sectionIndex)]}>
         <div class="container page-section-stack">
           <article class="page-section-block">
             <div class="section-head compact">
@@ -616,6 +620,22 @@ const breadcrumbItems = [
           </article>
         </div>
       </section>
+      {index === 0 && GuideContent && (
+        <section class:list={['light-section', 'page-content-section', sectionBandClass(contentBandStart + 1)]}>
+          <div class="container page-section-stack">
+            <article class="page-section-block">
+              <div class="section-head compact">
+                <span class="eyebrow">Practical guide</span>
+                <h2>Practical guide</h2>
+              </div>
+              <div class="seo-markdown-block">
+                <GuideContent />
+              </div>
+            </article>
+          </div>
+        </section>
+      )}
+      </>
       );
     })}
 

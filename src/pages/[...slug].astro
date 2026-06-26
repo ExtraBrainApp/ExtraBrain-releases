@@ -1,8 +1,9 @@
 ---
+import { getCollection, render } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
 import { marketingPages, pageBySlug } from '../data/product';
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
   return marketingPages.map((page) => ({
     params: { slug: page.slug },
     props: { page },
@@ -14,6 +15,10 @@ const page = Astro.props.page ?? pageBySlug(Astro.params.slug ?? '');
 if (!page) {
   return Astro.redirect('/404.html');
 }
+
+const guides = await getCollection('marketingPageGuides');
+const guide = guides.find((entry) => entry.id === page.slug);
+const guideContent = guide ? (await render(guide)).Content : undefined;
 ---
 
-<PageLayout page={page} />
+<PageLayout page={page} guideContent={guideContent} />
