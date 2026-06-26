@@ -3643,20 +3643,20 @@ h2,
 }
 
 .blog-content :not(pre) > code {
-  background: #f6f8fa;
-  border: 1px solid #d0d7de;
+  background: #161b22;
+  border: 1px solid #30363d;
   border-radius: 6px;
-  color: #24292f;
+  color: #e6edf3;
   font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
   font-size: 0.85em;
   padding: 0.2em 0.4em;
 }
 
 .blog-content pre {
-  background: #f6f8fa;
-  border: 1px solid #d0d7de;
+  background: #0d1117;
+  border: 1px solid #30363d;
   border-radius: 12px;
-  color: #24292f;
+  color: #e6edf3;
   font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
   font-size: 14px;
   line-height: 1.55;
