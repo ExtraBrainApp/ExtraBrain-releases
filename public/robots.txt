@@ -14,4 +14,3 @@ Allow: /
 Disallow: /index.html
 
 Sitemap: https://extrabrain.app/sitemap.xml
-Sitemap: https://extrabrain.app/sitemap-index.xml

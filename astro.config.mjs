@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 
 const siteUrl = 'https://extrabrain.app';
@@ -21,9 +20,6 @@ const helpStructuredData = JSON.stringify({
 export default defineConfig({
   site: siteUrl,
   integrations: [
-    sitemap({
-      filter: (page) => new URL(page).pathname.startsWith('/help/'),
-    }),
     starlight({
       title: 'ExtraBrain Help Center',
       favicon: '/assets/images/favicon-32x32.png',
