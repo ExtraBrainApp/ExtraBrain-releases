@@ -192,7 +192,7 @@ const pricingCards = pricingTiers.map((tier) => {
         ? '/pricing/free-vs-pro/'
         : 'mailto:info@extrabrain.app?subject=ExtraBrain%20enterprise%20inquiry';
   const fallbackCta =
-    tier.name === 'Free' ? 'Download for Mac' : tier.name === 'Pro' ? 'Compare Free and Pro' : 'Talk to us';
+    tier.name === 'Free' ? 'Download Free' : tier.name === 'Pro' ? 'Compare Free and Pro' : 'Talk to us';
 
   return {
     name: tier.name,
@@ -280,12 +280,13 @@ const compatibilityPlatforms = [
           </p>
           <div class="hero-ctas">
             <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-hero">
-              Download for Mac
+              Download Free
             </a>
             <a class="btn ghost" href="#overview">
               See overview
             </a>
           </div>
+          <p class="hero-cta-note">Free Mac app · Optional Pro upgrade</p>
           <div class="hero-mini" aria-label="Product highlights">
             <span>Local Parakeet transcription</span>
             <span>Gemma-powered on-device AI</span>
@@ -660,12 +661,12 @@ const compatibilityPlatforms = [
           <h2>Download the free Mac app before the call starts.</h2>
           <p class="lead">
             ExtraBrain gives you a private live workspace for interview prompts, meeting notes, structured answers,
-            and post-session summaries, all in a desktop app you control.
+            and session context in a free desktop app you control. Upgrade only if you need Pro workflow features.
           </p>
         </div>
         <div class="cta-actions">
           <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-final">
-            Download latest release
+            Download Free Mac App
           </a>
           <a class="btn ghost" href="/help/">Open help center</a>
         </div>

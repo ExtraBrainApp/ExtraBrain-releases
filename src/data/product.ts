@@ -425,7 +425,7 @@ export type MarketingPage = {
   comparison?: unknown;
 };
 
-const defaultCta = { label: 'Download for Mac', href: '/download/' };
+const defaultCta = { label: 'Download Free', href: '/download/' };
 
 const baseMarketingPages: MarketingPage[] = [
   {
@@ -436,7 +436,7 @@ const baseMarketingPages: MarketingPage[] = [
     eyebrow: "Download ExtraBrain",
     h1: "Download the free ExtraBrain app for Mac.",
     lead: "Use this first-party download page as the canonical place for the latest ExtraBrain Mac release, platform requirements, installation steps, release integrity notes, and troubleshooting before a live interview or meeting. If you searched for Extra Brain or ExtraBrains, this is the official ExtraBrain download page.",
-    primaryCta: { label: "Download latest release", href: latestReleaseUrl },
+    primaryCta: { label: "Download Free Mac App", href: latestReleaseUrl },
     secondaryCta: {
       label: "Read installation guide",
       href: "/help/installation/",
