@@ -2734,6 +2734,13 @@ footer p {
   max-width: 560px;
 }
 
+.hero-cta-note {
+  margin: -24px 0 28px;
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+}
+
 .hero-mini {
   display: flex;
   flex-wrap: wrap;
