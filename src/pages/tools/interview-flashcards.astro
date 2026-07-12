@@ -1,0 +1,99 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+
+const title = 'Interview Flashcards - Common Questions and Tips - ExtraBrain';
+const description = 'Free interview flashcards for common behavioral and technical questions. Flip each card for a structured way to answer. Runs in your browser, no signup.';
+
+const cards = [
+  { q: 'Tell me about yourself.', a: 'Give a 60 to 90 second arc: present role and strengths, a relevant highlight or two, and why this role now. Tailor it to the job, not your whole life story.' },
+  { q: 'Why do you want to work here?', a: 'Connect specifics about the company, product, or team to your goals. Show you researched it and that the fit is mutual, not generic praise.' },
+  { q: 'Tell me about a time you faced conflict on a team.', a: 'Use STAR. Focus on how you listened, found shared goals, and reached a resolution. Emphasize your actions and the outcome, not blame.' },
+  { q: 'Describe a project you are proud of.', a: 'Pick something relevant with measurable impact. Explain the problem, your specific contribution, key decisions, and the result.' },
+  { q: 'Tell me about a time you failed.', a: 'Choose a real failure with a clear lesson. Own your part, explain what you changed, and show growth. Avoid a humblebrag.' },
+  { q: 'What is your greatest weakness?', a: 'Name a genuine area you are improving, then describe the concrete steps you take to manage it. Avoid cliches and fake weaknesses.' },
+  { q: 'Walk me through your approach to a coding problem.', a: 'Clarify inputs, outputs, and constraints. State a brute-force idea, then improve it, discussing time and space complexity before you code.' },
+  { q: 'How would you design a system like this?', a: 'Start with requirements and scale estimates. Sketch components, APIs, storage, and data flow, then discuss tradeoffs and failure modes.' },
+  { q: 'Why are you leaving your current role?', a: 'Stay positive and forward-looking. Frame it around growth, scope, or fit rather than criticizing your current employer.' },
+  { q: 'Where do you see yourself in five years?', a: 'Show direction and ambition that align with the role and company, while staying honest and flexible about the exact path.' },
+  { q: 'Tell me about a time you influenced without authority.', a: 'Use STAR. Show how you built alignment through data, relationships, and clear communication to move a decision forward.' },
+  { q: 'Do you have any questions for us?', a: 'Always yes. Ask about team challenges, success in the role, how decisions are made, or what growth looks like. Prepare three in advance.' },
+];
+---
+
+<ToolLayout
+  title={title}
+  description={description}
+  h1="Interview flashcards."
+  lead="Rehearse the questions that come up in almost every interview. Flip each card for a structured way to answer, then practice out loud. Everything runs in your browser."
+  eyebrow="Free tool"
+  faq={[
+    { question: 'How should I use interview flashcards?', answer: 'Read the question, answer it out loud before flipping, then check the structure on the back. Practicing aloud is far more effective than reading silently.' },
+    { question: 'Are these questions for technical or behavioral interviews?', answer: 'Both. The deck mixes common behavioral prompts with high-level coding and system design questions you can expect across most interviews.' },
+    { question: 'Do the flashcards need an account?', answer: 'No. They run entirely in your browser with no signup and nothing stored.' },
+  ]}
+>
+  <div class="tool-card">
+    <div class="flashcard" id="card" role="button" tabindex="0" aria-label="Flashcard, activate to flip">
+      <div class="flashcard-face flashcard-front">
+        <span class="flashcard-tag">Question</span>
+        <p id="card-q"></p>
+        <span class="flashcard-hint">Click to flip</span>
+      </div>
+      <div class="flashcard-face flashcard-back">
+        <span class="flashcard-tag">How to answer</span>
+        <p id="card-a"></p>
+        <span class="flashcard-hint">Click to flip back</span>
+      </div>
+    </div>
+    <div class="tool-actions" style="align-items:center;justify-content:space-between">
+      <button class="btn ghost" id="prev" type="button">Previous</button>
+      <span class="tool-note" id="counter"></span>
+      <button class="btn primary" id="next" type="button">Next</button>
+    </div>
+  </div>
+</ToolLayout>
+
+<style is:global>
+  .flashcard { position: relative; width: 100%; min-height: 240px; perspective: 1200px; cursor: pointer; margin-bottom: 18px; }
+  .flashcard-face {
+    position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 14px;
+    padding: 28px; border-radius: 18px; border: 1px solid rgba(16,24,40,.1);
+    backface-visibility: hidden; transition: transform .5s var(--ease-standard); box-shadow: var(--shadow-editorial-soft);
+  }
+  .flashcard-front { background: #fff; transform: rotateY(0deg); }
+  .flashcard-back { background: var(--editorial-canvas-alt); transform: rotateY(180deg); }
+  .flashcard.flipped .flashcard-front { transform: rotateY(-180deg); }
+  .flashcard.flipped .flashcard-back { transform: rotateY(0deg); }
+  .flashcard-face p { margin: 0; color: var(--ink); font-size: clamp(18px, 2.4vw, 24px); font-family: var(--font-serif); line-height: 1.35; }
+  .flashcard-back p { font-family: var(--font-sans); font-size: clamp(15px, 1.7vw, 17px); color: var(--text-secondary); line-height: 1.55; }
+  .flashcard-tag { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--text-subtle); }
+  .flashcard-hint { position: absolute; bottom: 14px; right: 18px; font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); }
+</style>
+
+<script is:inline define:vars={{ cards }}>
+  (function () {
+    var card = document.getElementById('card');
+    var qEl = document.getElementById('card-q');
+    var aEl = document.getElementById('card-a');
+    var counter = document.getElementById('counter');
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+    if (!card || !cards || !cards.length) return;
+    var i = 0;
+
+    function render() {
+      card.classList.remove('flipped');
+      qEl.textContent = cards[i].q;
+      aEl.textContent = cards[i].a;
+      counter.textContent = (i + 1) + ' / ' + cards.length;
+    }
+    function flip() { card.classList.toggle('flipped'); }
+    function go(d) { i = (i + d + cards.length) % cards.length; render(); }
+
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+    prev.addEventListener('click', function () { go(-1); });
+    next.addEventListener('click', function () { go(1); });
+    render();
+  })();
+</script>

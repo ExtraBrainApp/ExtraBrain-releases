@@ -3488,6 +3488,12 @@ export const allPublicRoutes = [
   '/help/using-extrabrain/follow-up-questions/',
   '/help/using-extrabrain/screenshots-screen-context/',
   '/help/using-extrabrain/start-recording-and-analysis/',
+  '/tools/',
+  '/tools/salary-to-hourly-calculator/',
+  '/tools/offer-comparison-calculator/',
+  '/tools/ats-resume-keyword-checker/',
+  '/tools/star-answer-builder/',
+  '/tools/interview-flashcards/',
   '/llms.txt',
   '/llms-full.txt',
 ];
