@@ -5,8 +5,9 @@
 .playwright-mcp/
 .playwright-cli/
 
-# Local agent worktrees
-.claude/
+# Local agent worktrees (but keep shared skills tracked)
+.claude/*
+!.claude/skills/
 
 # Astro
 node_modules/

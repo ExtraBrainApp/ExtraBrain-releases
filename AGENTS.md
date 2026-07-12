@@ -114,3 +114,16 @@ grep -n "blog" dist/sitemap.xml dist/sitemap-index.xml 2>/dev/null || true
 - Confirm all image paths resolve under `public/assets/`.
 - Confirm there are no duplicate H1s in the markdown body.
 - Commit with git author `ExtraBrain <developers@extrabrain.app>`.
+
+# Devbox: sync changes and open PRs
+
+The devbox is a Lima VM (`limactl shell devbox`) with the host `~/repos` mounted writable at `/home/<user>.linux/repos`.
+The working clone is `~/work/ExtraBrain-releases`, with `origin` on GitHub and a local `no-mistakes` mirror.
+
+Full runbook: **`docs/devbox-sync-and-pr.md`** (also mirrored as a Claude skill at `.claude/skills/devbox-sync-pr/SKILL.md`).
+
+Essentials:
+- Copy changed source files from the mount (`/home/<user>.linux/repos/ExtraBrain-releases`) into `~/work/ExtraBrain-releases`; skip gitignored `dist/`.
+- First confirm the target clone is clean (`git -C <clone> status --porcelain`), then verify copies with `diff -q` / `diff -rq`.
+- Build in the VM with nvm loaded and `unset LD_LIBRARY_PATH && npm run build` (and `npm run check`); Node is not on the default PATH.
+- Commit as `ExtraBrain <developers@extrabrain.app>` with no agent co-author, branch off `master`, push to `origin` (never `no-mistakes`), then `gh pr create --base master`.
