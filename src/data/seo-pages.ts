@@ -1421,6 +1421,374 @@ export const useCasePages: MarketingPage[] = [
       },
     ],
   }),
+
+  useCasePage('use-cases/devops-interviews', {
+    title: 'DevOps Interview Assistant - ExtraBrain',
+    description: 'Prepare for DevOps interviews with ExtraBrain: CI/CD, infrastructure as code, containers, monitoring, and incident response on Mac.',
+    eyebrow: 'DevOps interviews',
+    h1: 'A DevOps interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for and follow DevOps interviews spanning CI/CD, infrastructure as code, Kubernetes, observability, and incident response, with live transcription and post-session review.',
+    whatYouGet: [
+      { title: 'Pipeline and IaC context', body: 'Keep CI/CD, Terraform, and configuration questions organized while you explain tradeoffs.' },
+      { title: 'Reliability scenarios', body: 'Structure answers on monitoring, alerting, rollbacks, and incident response under pressure.' },
+      { title: 'Systems fundamentals', body: 'Track Linux, networking, and scripting questions and keep your reasoning clear.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse common DevOps scenarios and load your tooling context before the interview.' },
+      { title: 'Follow', body: 'Capture multi-part infrastructure questions and keep tradeoffs visible during the conversation.' },
+      { title: 'Review', body: 'Revisit the transcript to sharpen answers on automation, reliability, and rollout strategy.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with DevOps interviews?', answer: 'Yes. ExtraBrain supports CI/CD, IaC, container, observability, and incident-response discussions with live transcription and review.' },
+      { question: 'Can it help with Kubernetes questions?', answer: 'Yes. ExtraBrain helps you structure answers on orchestration, deployments, scaling, and failure handling.' },
+      { question: 'Is it useful for on-call and incident scenarios?', answer: 'Yes. ExtraBrain keeps incident timelines, mitigation steps, and postmortem reasoning organized while you talk.' },
+    ],
+  }),
+
+  useCasePage('use-cases/machine-learning-interviews', {
+    title: 'Machine Learning Interview Assistant - ExtraBrain',
+    description: 'Prepare for machine learning engineer interviews with ExtraBrain: ML fundamentals, model design, ML system design, and coding on Mac.',
+    eyebrow: 'ML interviews',
+    h1: 'A machine learning interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for ML engineer interviews across ML fundamentals, modeling tradeoffs, ML system design, and coding, with live transcription and structured review.',
+    whatYouGet: [
+      { title: 'ML fundamentals', body: 'Keep bias-variance, regularization, evaluation metrics, and model selection reasoning organized.' },
+      { title: 'ML system design', body: 'Structure answers on data pipelines, feature stores, training, serving, and monitoring.' },
+      { title: 'Coding context', body: 'Follow coding rounds with screen-aware context for data manipulation and algorithms.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse modeling tradeoffs and ML design patterns before the interview.' },
+      { title: 'Follow', body: 'Capture open-ended modeling questions and keep assumptions and metrics visible.' },
+      { title: 'Review', body: 'Revisit transcripts to tighten explanations of model choices and evaluation.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with ML interviews?', answer: 'Yes. ExtraBrain supports ML fundamentals, modeling, ML system design, and coding rounds with live transcription and review.' },
+      { question: 'Can it help with ML system design?', answer: 'Yes. ExtraBrain keeps data, features, training, serving, and monitoring tradeoffs organized while you talk.' },
+      { question: 'Does it support coding rounds for ML roles?', answer: 'Yes. ExtraBrain captures coding context for data manipulation, algorithms, and complexity reasoning.' },
+    ],
+  }),
+
+  useCasePage('use-cases/sre-interviews', {
+    title: 'SRE Interview Assistant - ExtraBrain',
+    description: 'Prepare for Site Reliability Engineer interviews with ExtraBrain: reliability, SLOs, incident response, systems, and coding on Mac.',
+    eyebrow: 'SRE interviews',
+    h1: 'A Site Reliability Engineer interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for SRE interviews across reliability, SLIs and SLOs, incident response, Linux systems, and coding, with live transcription and review.',
+    whatYouGet: [
+      { title: 'Reliability concepts', body: 'Keep SLIs, SLOs, error budgets, and toil-reduction reasoning organized.' },
+      { title: 'Incident response', body: 'Structure answers on detection, mitigation, on-call, and blameless postmortems.' },
+      { title: 'Systems and coding', body: 'Track Linux, networking, and coding questions with clear reasoning.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse reliability scenarios and systems fundamentals before the interview.' },
+      { title: 'Follow', body: 'Capture incident scenarios and keep mitigation steps and tradeoffs visible.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen reliability and troubleshooting answers.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with SRE interviews?', answer: 'Yes. ExtraBrain supports reliability, SLO, incident-response, systems, and coding discussions with live transcription and review.' },
+      { question: 'Can it help with SLO and error-budget questions?', answer: 'Yes. ExtraBrain keeps reliability targets, error budgets, and tradeoffs organized while you explain them.' },
+      { question: 'Is it useful for incident scenarios?', answer: 'Yes. ExtraBrain tracks detection, mitigation, and postmortem reasoning during scenario questions.' },
+    ],
+  }),
+
+  useCasePage('use-cases/security-interviews', {
+    title: 'Security Engineer Interview Assistant - ExtraBrain',
+    description: 'Prepare for security engineering interviews with ExtraBrain: appsec, threat modeling, secure coding, network security, and incident response on Mac.',
+    eyebrow: 'Security interviews',
+    h1: 'A security engineer interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for security interviews across application security, threat modeling, secure coding, network security, and incident response, with live transcription and review.',
+    whatYouGet: [
+      { title: 'Threat modeling', body: 'Keep attack surfaces, trust boundaries, and mitigations organized while you reason aloud.' },
+      { title: 'Secure coding', body: 'Structure answers on common vulnerabilities, input validation, and secure design.' },
+      { title: 'Network and incident', body: 'Track network security, cryptography basics, and incident-response questions.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse threat-model walkthroughs and vulnerability discussions before the interview.' },
+      { title: 'Follow', body: 'Capture scenario questions and keep mitigations and tradeoffs visible.' },
+      { title: 'Review', body: 'Revisit transcripts to tighten threat-model and secure-design answers.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with security interviews?', answer: 'Yes. ExtraBrain supports appsec, threat modeling, secure coding, and incident-response discussions with live transcription and review.' },
+      { question: 'Can it help with threat modeling?', answer: 'Yes. ExtraBrain keeps attack surfaces, trust boundaries, and mitigations organized while you walk through a system.' },
+      { question: 'Is it useful for secure-coding questions?', answer: 'Yes. ExtraBrain helps structure answers on common vulnerabilities and secure design tradeoffs.' },
+    ],
+  }),
+
+  useCasePage('use-cases/qa-interviews', {
+    title: 'QA and SDET Interview Assistant - ExtraBrain',
+    description: 'Prepare for QA and SDET interviews with ExtraBrain: test strategy, automation frameworks, coding, and CI on Mac.',
+    eyebrow: 'QA / SDET interviews',
+    h1: 'A QA and SDET interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for QA and SDET interviews across test strategy, automation, coding, and CI, with live transcription and review.',
+    whatYouGet: [
+      { title: 'Test strategy', body: 'Keep test planning, coverage, edge cases, and risk-based testing reasoning organized.' },
+      { title: 'Automation', body: 'Structure answers on frameworks like Selenium and Playwright, page objects, and flaky-test handling.' },
+      { title: 'Coding and CI', body: 'Track coding rounds and questions on continuous integration and test pipelines.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse test-design scenarios and automation patterns before the interview.' },
+      { title: 'Follow', body: 'Capture scenario questions and keep edge cases and coverage visible.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen test-strategy and automation answers.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with QA and SDET interviews?', answer: 'Yes. ExtraBrain supports test strategy, automation, coding, and CI discussions with live transcription and review.' },
+      { question: 'Can it help with test-design questions?', answer: 'Yes. ExtraBrain keeps coverage, edge cases, and risk-based reasoning organized while you talk.' },
+      { question: 'Is it useful for automation framework questions?', answer: 'Yes. ExtraBrain helps structure answers on frameworks, patterns, and flaky-test handling.' },
+    ],
+  }),
+
+  useCasePage('use-cases/data-engineering-interviews', {
+    title: 'Data Engineering Interview Assistant - ExtraBrain',
+    description: 'Prepare for data engineering interviews with ExtraBrain: SQL, pipelines, data modeling, Spark, and data system design on Mac.',
+    eyebrow: 'Data engineering interviews',
+    h1: 'A data engineering interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for data engineering interviews across SQL, ETL pipelines, data modeling, distributed processing, and data system design, with live transcription and review.',
+    whatYouGet: [
+      { title: 'SQL and modeling', body: 'Keep query optimization, joins, windowing, and schema design reasoning organized.' },
+      { title: 'Pipelines', body: 'Structure answers on batch and streaming ETL, orchestration, and data quality.' },
+      { title: 'Data system design', body: 'Track warehousing, partitioning, and distributed processing tradeoffs.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse SQL patterns and pipeline design before the interview.' },
+      { title: 'Follow', body: 'Capture data design questions and keep tradeoffs and assumptions visible.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen SQL and pipeline answers.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with data engineering interviews?', answer: 'Yes. ExtraBrain supports SQL, pipelines, data modeling, and data system design with live transcription and review.' },
+      { question: 'Can it help with SQL rounds?', answer: 'Yes. ExtraBrain captures screen context from SQL editors and helps structure query optimization reasoning.' },
+      { question: 'Is it useful for pipeline design?', answer: 'Yes. ExtraBrain keeps batch, streaming, orchestration, and data-quality tradeoffs organized.' },
+    ],
+  }),
+
+  useCasePage('use-cases/engineering-manager-interviews', {
+    title: 'Engineering Manager Interview Assistant - ExtraBrain',
+    description: 'Prepare for engineering manager interviews with ExtraBrain: people management, delivery, technical depth, and leadership behavioral rounds on Mac.',
+    eyebrow: 'Engineering manager interviews',
+    h1: 'An engineering manager interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for engineering manager interviews across people management, project delivery, technical depth, and leadership behavioral rounds, with live transcription and review.',
+    whatYouGet: [
+      { title: 'People and delivery', body: 'Keep stories on coaching, performance, hiring, and project delivery structured and specific.' },
+      { title: 'Leadership behavioral', body: 'Structure answers on conflict, prioritization, and cross-team influence with the STAR method.' },
+      { title: 'Technical judgment', body: 'Track technical and system design questions where managers must show depth.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse leadership stories and delivery examples before the interview.' },
+      { title: 'Follow', body: 'Capture scenario and behavioral questions and keep your examples specific.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen leadership and delivery narratives.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with engineering manager interviews?', answer: 'Yes. ExtraBrain supports people management, delivery, technical, and leadership behavioral rounds with live transcription and review.' },
+      { question: 'Can it help with leadership behavioral questions?', answer: 'Yes. ExtraBrain helps structure STAR stories on coaching, conflict, and cross-team influence.' },
+      { question: 'Is it useful for technical rounds for managers?', answer: 'Yes. ExtraBrain keeps technical and system design reasoning organized where managers must show depth.' },
+    ],
+  }),
+
+  useCasePage('use-cases/cloud-interviews', {
+    title: 'Cloud Engineer Interview Assistant - ExtraBrain',
+    description: 'Prepare for cloud engineering interviews with ExtraBrain: AWS, Azure, GCP, networking, IaC, and cloud architecture on Mac.',
+    eyebrow: 'Cloud interviews',
+    h1: 'A cloud engineer interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for cloud interviews across AWS, Azure, and GCP services, networking, infrastructure as code, and cloud architecture, with live transcription and review.',
+    whatYouGet: [
+      { title: 'Cloud services', body: 'Keep compute, storage, networking, and managed-service tradeoffs organized.' },
+      { title: 'Architecture', body: 'Structure answers on availability, scaling, cost, and security in the cloud.' },
+      { title: 'IaC and automation', body: 'Track infrastructure-as-code, deployment, and automation questions.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse cloud architecture scenarios and service tradeoffs before the interview.' },
+      { title: 'Follow', body: 'Capture design questions and keep availability, cost, and security tradeoffs visible.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen cloud architecture answers.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with cloud interviews?', answer: 'Yes. ExtraBrain supports AWS, Azure, GCP, networking, IaC, and architecture discussions with live transcription and review.' },
+      { question: 'Can it help with cloud architecture design?', answer: 'Yes. ExtraBrain keeps availability, scaling, cost, and security tradeoffs organized while you design.' },
+      { question: 'Is it useful for IaC questions?', answer: 'Yes. ExtraBrain helps structure answers on infrastructure as code, deployment, and automation.' },
+    ],
+  }),
+
+  useCasePage('use-cases/full-stack-interviews', {
+    title: 'Full-Stack Interview Assistant - ExtraBrain',
+    description: 'Prepare for full-stack engineering interviews with ExtraBrain: frontend, backend, APIs, coding, and system design on Mac.',
+    eyebrow: 'Full-stack interviews',
+    h1: 'A full-stack interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for full-stack interviews spanning frontend, backend, API design, coding, and system design, with live transcription and review.',
+    whatYouGet: [
+      { title: 'Front and back end', body: 'Keep UI, state management, backend, and database questions organized in one session.' },
+      { title: 'API and integration', body: 'Structure answers on REST, auth, and data flow across the stack.' },
+      { title: 'Coding and design', body: 'Track coding rounds and end-to-end system design with clear reasoning.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse full-stack scenarios that cross the frontend and backend boundary.' },
+      { title: 'Follow', body: 'Capture multi-layer questions and keep data flow and tradeoffs visible.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen end-to-end explanations.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with full-stack interviews?', answer: 'Yes. ExtraBrain supports frontend, backend, API, coding, and system design discussions with live transcription and review.' },
+      { question: 'Can it help across the whole stack?', answer: 'Yes. ExtraBrain keeps UI, backend, API, and database reasoning organized in one session.' },
+      { question: 'Is it useful for end-to-end system design?', answer: 'Yes. ExtraBrain tracks data flow and tradeoffs from client to database.' },
+    ],
+  }),
+
+  useCasePage('use-cases/embedded-interviews', {
+    title: 'Embedded Systems Interview Assistant - ExtraBrain',
+    description: 'Prepare for embedded and firmware interviews with ExtraBrain: C, memory, RTOS, low-level, and debugging on Mac.',
+    eyebrow: 'Embedded interviews',
+    h1: 'An embedded systems interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for embedded and firmware interviews across C, memory management, RTOS concepts, low-level programming, and debugging, with live transcription and review.',
+    whatYouGet: [
+      { title: 'Low-level fundamentals', body: 'Keep pointers, memory, bit manipulation, and concurrency reasoning organized.' },
+      { title: 'RTOS and hardware', body: 'Structure answers on scheduling, interrupts, peripherals, and constraints.' },
+      { title: 'Debugging', body: 'Track systematic debugging and root-cause questions with clear steps.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse C and memory questions and hardware-adjacent scenarios before the interview.' },
+      { title: 'Follow', body: 'Capture low-level questions and keep constraints and tradeoffs visible.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen embedded and debugging answers.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with embedded interviews?', answer: 'Yes. ExtraBrain supports C, memory, RTOS, low-level, and debugging discussions with live transcription and review.' },
+      { question: 'Can it help with memory and pointer questions?', answer: 'Yes. ExtraBrain keeps pointer, memory, and bit-manipulation reasoning organized while you talk.' },
+      { question: 'Is it useful for RTOS questions?', answer: 'Yes. ExtraBrain helps structure answers on scheduling, interrupts, and real-time constraints.' },
+    ],
+  }),
+
+  useCasePage('use-cases/platform-engineering-interviews', {
+    title: 'Platform Engineering Interview Assistant - ExtraBrain',
+    description: 'Prepare for platform engineering interviews with ExtraBrain: internal platforms, Kubernetes, developer tooling, and reliability on Mac.',
+    eyebrow: 'Platform engineering interviews',
+    h1: 'A platform engineering interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for platform engineering interviews across internal platforms, Kubernetes, developer tooling, and reliability, with live transcription and review.',
+    whatYouGet: [
+      { title: 'Platform design', body: 'Keep internal-platform, paved-path, and self-service reasoning organized.' },
+      { title: 'Kubernetes and tooling', body: 'Structure answers on orchestration, CI/CD platforms, and developer experience.' },
+      { title: 'Reliability', body: 'Track scaling, multi-tenancy, and reliability tradeoffs for shared platforms.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse platform design scenarios and developer-experience tradeoffs.' },
+      { title: 'Follow', body: 'Capture design questions and keep multi-tenancy and reliability visible.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen platform design answers.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with platform engineering interviews?', answer: 'Yes. ExtraBrain supports platform design, Kubernetes, tooling, and reliability discussions with live transcription and review.' },
+      { question: 'Can it help with internal-platform design?', answer: 'Yes. ExtraBrain keeps paved-path, self-service, and multi-tenancy reasoning organized.' },
+      { question: 'Is it useful for developer-experience questions?', answer: 'Yes. ExtraBrain helps structure answers on tooling, CI/CD platforms, and productivity tradeoffs.' },
+    ],
+  }),
+
+  useCasePage('use-cases/android-interviews', {
+    title: 'Android Interview Assistant - ExtraBrain',
+    description: 'Prepare for Android engineering interviews with ExtraBrain: Kotlin, Android SDK, architecture, coding, and mobile system design on Mac.',
+    eyebrow: 'Android interviews',
+    h1: 'An Android interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for Android interviews across Kotlin, the Android SDK, app architecture, coding, and mobile system design, with live transcription and review.',
+    whatYouGet: [
+      { title: 'Android fundamentals', body: 'Keep lifecycle, coroutines, Jetpack, and memory reasoning organized.' },
+      { title: 'Architecture', body: 'Structure answers on MVVM, dependency injection, and modularization.' },
+      { title: 'Coding and design', body: 'Track coding rounds and mobile system design with clear reasoning.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse Android fundamentals and architecture patterns before the interview.' },
+      { title: 'Follow', body: 'Capture SDK and design questions and keep tradeoffs visible.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen Android answers.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with Android interviews?', answer: 'Yes. ExtraBrain supports Kotlin, Android SDK, architecture, coding, and mobile design with live transcription and review.' },
+      { question: 'Can it help with Android architecture questions?', answer: 'Yes. ExtraBrain keeps MVVM, DI, and modularization reasoning organized while you talk.' },
+      { question: 'Is it useful for mobile system design?', answer: 'Yes. ExtraBrain helps structure answers on offline support, sync, and mobile constraints.' },
+    ],
+  }),
+
+  useCasePage('use-cases/ios-interviews', {
+    title: 'iOS Interview Assistant - ExtraBrain',
+    description: 'Prepare for iOS engineering interviews with ExtraBrain: Swift, UIKit, SwiftUI, memory, architecture, and coding on Mac.',
+    eyebrow: 'iOS interviews',
+    h1: 'An iOS interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for iOS interviews across Swift, UIKit, SwiftUI, memory management, app architecture, and coding, with live transcription and review.',
+    whatYouGet: [
+      { title: 'iOS fundamentals', body: 'Keep memory management, concurrency, and lifecycle reasoning organized.' },
+      { title: 'UI and architecture', body: 'Structure answers on UIKit, SwiftUI, and patterns like MVVM and Coordinator.' },
+      { title: 'Coding and design', body: 'Track coding rounds and mobile system design with clear reasoning.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse Swift fundamentals and architecture patterns before the interview.' },
+      { title: 'Follow', body: 'Capture UI and design questions and keep tradeoffs visible.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen iOS answers.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with iOS interviews?', answer: 'Yes. ExtraBrain supports Swift, UIKit, SwiftUI, memory, architecture, and coding with live transcription and review.' },
+      { question: 'Can it help with memory management questions?', answer: 'Yes. ExtraBrain keeps ARC, retain cycles, and concurrency reasoning organized while you talk.' },
+      { question: 'Is it useful for iOS architecture questions?', answer: 'Yes. ExtraBrain helps structure answers on MVVM, Coordinator, and dependency management.' },
+    ],
+  }),
+
+  useCasePage('use-cases/ai-engineer-interviews', {
+    title: 'AI Engineer Interview Assistant - ExtraBrain',
+    description: 'Prepare for AI engineer interviews with ExtraBrain: LLMs, RAG, prompt design, ML basics, coding, and AI system design on Mac.',
+    eyebrow: 'AI engineer interviews',
+    h1: 'An AI engineer interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for AI engineer interviews across LLMs, retrieval-augmented generation, prompt and evaluation design, ML basics, coding, and AI system design, with live transcription and review.',
+    whatYouGet: [
+      { title: 'LLM and RAG', body: 'Keep prompting, retrieval, context windows, and evaluation reasoning organized.' },
+      { title: 'AI system design', body: 'Structure answers on pipelines, guardrails, latency, cost, and monitoring for AI features.' },
+      { title: 'Coding and ML basics', body: 'Track coding rounds and core ML fundamentals with clear reasoning.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse LLM application patterns and evaluation design before the interview.' },
+      { title: 'Follow', body: 'Capture AI design questions and keep guardrails and tradeoffs visible.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen AI system design answers.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with AI engineer interviews?', answer: 'Yes. ExtraBrain supports LLM, RAG, evaluation, coding, and AI system design discussions with live transcription and review.' },
+      { question: 'Can it help with RAG design questions?', answer: 'Yes. ExtraBrain keeps retrieval, chunking, context, and evaluation tradeoffs organized while you talk.' },
+      { question: 'Is it useful for AI system design?', answer: 'Yes. ExtraBrain helps structure answers on pipelines, guardrails, latency, and cost for AI features.' },
+    ],
+  }),
+
+  useCasePage('use-cases/solutions-architect-interviews', {
+    title: 'Solutions Architect Interview Assistant - ExtraBrain',
+    description: 'Prepare for solutions architect interviews with ExtraBrain: architecture, cloud, tradeoffs, and client-facing communication on Mac.',
+    eyebrow: 'Solutions architect interviews',
+    h1: 'A solutions architect interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for solutions architect interviews across architecture design, cloud services, tradeoff reasoning, and client-facing communication, with live transcription and review.',
+    whatYouGet: [
+      { title: 'Architecture design', body: 'Keep requirements, components, integration, and tradeoff reasoning organized.' },
+      { title: 'Cloud and cost', body: 'Structure answers on cloud services, availability, security, and cost optimization.' },
+      { title: 'Client communication', body: 'Track how you translate technical tradeoffs into clear business value.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse architecture scenarios and stakeholder-facing explanations.' },
+      { title: 'Follow', body: 'Capture design questions and keep requirements and tradeoffs visible.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen architecture and communication answers.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with solutions architect interviews?', answer: 'Yes. ExtraBrain supports architecture, cloud, tradeoff, and client-communication discussions with live transcription and review.' },
+      { question: 'Can it help with architecture design questions?', answer: 'Yes. ExtraBrain keeps requirements, components, and tradeoffs organized while you design.' },
+      { question: 'Is it useful for client-facing communication?', answer: 'Yes. ExtraBrain helps you review how clearly you translate tradeoffs into business value.' },
+    ],
+  }),
+
+  useCasePage('use-cases/technical-program-manager-interviews', {
+    title: 'Technical Program Manager Interview Assistant - ExtraBrain',
+    description: 'Prepare for technical program manager (TPM) interviews with ExtraBrain: program management, cross-functional, technical depth, and behavioral rounds on Mac.',
+    eyebrow: 'TPM interviews',
+    h1: 'A technical program manager interview copilot for Mac.',
+    lead: 'ExtraBrain helps you prepare for TPM interviews across program management, cross-functional execution, technical depth, and behavioral rounds, with live transcription and review.',
+    whatYouGet: [
+      { title: 'Program management', body: 'Keep planning, dependencies, risk, and stakeholder-alignment reasoning organized.' },
+      { title: 'Technical depth', body: 'Structure answers on system understanding and tradeoffs a TPM must grasp.' },
+      { title: 'Behavioral', body: 'Track leadership, conflict, and influence stories with the STAR method.' },
+    ],
+    workflow: [
+      { title: 'Prepare', body: 'Rehearse program scenarios and cross-functional stories before the interview.' },
+      { title: 'Follow', body: 'Capture scenario and behavioral questions and keep your examples specific.' },
+      { title: 'Review', body: 'Revisit transcripts to sharpen program-management narratives.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with TPM interviews?', answer: 'Yes. ExtraBrain supports program management, cross-functional, technical, and behavioral rounds with live transcription and review.' },
+      { question: 'Can it help with program-management scenarios?', answer: 'Yes. ExtraBrain keeps planning, dependencies, and risk reasoning organized while you talk.' },
+      { question: 'Is it useful for behavioral rounds?', answer: 'Yes. ExtraBrain helps structure STAR stories on leadership, conflict, and influence.' },
+    ],
+  }),
 ];
 
 export const interviewPrepPages: MarketingPage[] = [
@@ -2127,6 +2495,334 @@ export const platformPages: MarketingPage[] = [
       },
     ],
   }),
+
+  platformPage("platforms/hirevue", "HireVue", {
+    title: "HireVue Interview Practice Assistant - ExtraBrain",
+    description:
+      "Practice for HireVue video and game-based interviews with ExtraBrain: record rehearsals, review transcripts, and refine answers on Mac.",
+    h1: "HireVue interview practice assistant.",
+    lead: "HireVue interviews are often recorded, one-way video prompts and game-based assessments. ExtraBrain helps you rehearse and review before the real thing, so your answers are structured, specific, and confident.",
+    howItWorks:
+      "ExtraBrain runs as a Mac desktop app while you practice HireVue-style prompts. It transcribes your rehearsal answers, keeps your notes and STAR structure visible, and lets you review the recording afterward to tighten your delivery.",
+    whyExtraBrain: [
+      {
+        title: "Rehearse recorded prompts",
+        body: "Practice answering timed, one-way video questions out loud, then review the transcript to cut filler and sharpen your points.",
+      },
+      {
+        title: "Structure under time pressure",
+        body: "Keep a STAR outline and your key stories visible while you rehearse so answers stay organized when the timer is running.",
+      },
+      {
+        title: "Local-first privacy",
+        body: "With local Parakeet transcription and local Gemma 4, your practice sessions can stay on your Mac.",
+      },
+    ],
+    faq: [
+      {
+        question: "Can ExtraBrain help me prepare for HireVue?",
+        answer:
+          "Yes. ExtraBrain is well suited to rehearsing HireVue-style one-way video and game-based prompts, transcribing your practice answers, and helping you review and improve them.",
+      },
+      {
+        question: "Does HireVue allow AI assistance during the interview?",
+        answer:
+          "Many HireVue assessments are proctored or recorded and prohibit outside help. Use ExtraBrain to prepare beforehand and follow every rule of the specific assessment during the real session.",
+      },
+      {
+        question: "Is ExtraBrain free for HireVue prep?",
+        answer:
+          "Yes. The core Mac app is free. Pro adds custom profiles and richer session history starting at $6.99/month.",
+      },
+    ],
+  }),
+
+  platformPage("platforms/spark-hire", "Spark Hire", {
+    title: "Spark Hire Interview Practice Assistant - ExtraBrain",
+    description:
+      "Practice for Spark Hire one-way video interviews with ExtraBrain: rehearse answers, review transcripts, and improve delivery on Mac.",
+    h1: "Spark Hire interview practice assistant.",
+    lead: "Spark Hire is a one-way video interview platform where you record answers to set questions. ExtraBrain helps you rehearse those answers and review your delivery before you record for real.",
+    howItWorks:
+      "ExtraBrain runs as a Mac desktop app while you practice Spark Hire prompts. It transcribes your rehearsals, keeps your notes visible, and lets you review each take to improve pacing and clarity.",
+    whyExtraBrain: [
+      {
+        title: "Practice one-way answers",
+        body: "Rehearse timed video responses and review the transcript to remove filler and lead with your strongest point.",
+      },
+      {
+        title: "Keep notes visible",
+        body: "Hold your key talking points and examples on screen while you rehearse so nothing important gets missed.",
+      },
+      {
+        title: "Review your delivery",
+        body: "Use saved transcripts to spot rambling answers, weak openings, and places to be more specific.",
+      },
+    ],
+    faq: [
+      {
+        question: "Can ExtraBrain help with Spark Hire interviews?",
+        answer:
+          "Yes. ExtraBrain is built for rehearsing Spark Hire one-way video prompts, transcribing your practice answers, and helping you review and refine them.",
+      },
+      {
+        question: "Should I use AI help during a live Spark Hire recording?",
+        answer:
+          "Use ExtraBrain to prepare beforehand. During the actual recording, follow the employer and platform rules, and do not misrepresent your skills or authorship.",
+      },
+      {
+        question: "Is ExtraBrain free for Spark Hire prep?",
+        answer:
+          "Yes. The core Mac app is free. Pro adds custom profiles and session history starting at $6.99/month.",
+      },
+    ],
+  }),
+
+  platformPage("platforms/talview", "Talview", {
+    title: "Talview Interview Practice Assistant - ExtraBrain",
+    description:
+      "Prepare for Talview video interviews and assessments with ExtraBrain: rehearse answers, review transcripts, and structure responses on Mac.",
+    h1: "Talview interview practice assistant.",
+    lead: "Talview combines video interviews with proctored assessments. ExtraBrain helps you prepare and rehearse beforehand so you walk in structured and confident.",
+    howItWorks:
+      "ExtraBrain runs as a Mac desktop app during your practice. It transcribes rehearsal answers, keeps your notes and outlines visible, and helps you review recordings to improve structure and delivery.",
+    whyExtraBrain: [
+      {
+        title: "Rehearse video prompts",
+        body: "Practice answering Talview-style questions aloud, then review transcripts to tighten structure and cut filler.",
+      },
+      {
+        title: "Prepare for assessments",
+        body: "Use ExtraBrain before the session to organize notes, practice explanations, and build a checklist for each topic.",
+      },
+      {
+        title: "Local-first privacy",
+        body: "Keep practice transcripts and notes on your Mac with local transcription and local AI where installed and compatible.",
+      },
+    ],
+    faq: [
+      {
+        question: "Can ExtraBrain help me prepare for Talview?",
+        answer:
+          "Yes. ExtraBrain helps you rehearse Talview video prompts and organize preparation, then review your practice sessions to improve.",
+      },
+      {
+        question: "Are Talview assessments proctored?",
+        answer:
+          "Talview often includes proctoring and prohibits outside assistance during the assessment. Use ExtraBrain to prepare, and follow all rules during the real session.",
+      },
+      {
+        question: "Is ExtraBrain free for Talview prep?",
+        answer:
+          "Yes. The core Mac app is free. Pro adds custom profiles and richer session history starting at $6.99/month.",
+      },
+    ],
+  }),
+
+  platformPage("platforms/vidcruiter", "VidCruiter", {
+    title: "VidCruiter Interview Practice Assistant - ExtraBrain",
+    description:
+      "Prepare for VidCruiter live and pre-recorded video interviews with ExtraBrain: rehearse, transcribe, and review answers on Mac.",
+    h1: "VidCruiter interview practice assistant.",
+    lead: "VidCruiter supports both live and pre-recorded video interviews. ExtraBrain helps you rehearse structured answers and review your delivery before the real interview.",
+    howItWorks:
+      "ExtraBrain runs as a Mac desktop app during practice. It transcribes your rehearsal answers, keeps notes and STAR outlines visible, and lets you review each session to improve pacing and clarity.",
+    whyExtraBrain: [
+      {
+        title: "Practice both formats",
+        body: "Rehearse pre-recorded prompts and live interview questions, then review transcripts to sharpen answers.",
+      },
+      {
+        title: "Structure your stories",
+        body: "Keep a STAR outline and key examples visible so answers stay organized and specific.",
+      },
+      {
+        title: "Review and improve",
+        body: "Use saved transcripts to find vague answers and places to add measurable detail.",
+      },
+    ],
+    faq: [
+      {
+        question: "Can ExtraBrain help with VidCruiter interviews?",
+        answer:
+          "Yes. ExtraBrain helps you rehearse VidCruiter live and pre-recorded prompts, transcribe your practice, and review your delivery.",
+      },
+      {
+        question: "Can I use ExtraBrain during a live VidCruiter interview?",
+        answer:
+          "Only where the employer and platform allow it. Use ExtraBrain mainly to prepare, and follow all interview rules during the real session.",
+      },
+      {
+        question: "Is ExtraBrain free for VidCruiter prep?",
+        answer:
+          "Yes. The core Mac app is free. Pro adds custom profiles and session history starting at $6.99/month.",
+      },
+    ],
+  }),
+
+  platformPage("platforms/amazon-chime", "Amazon Chime", {
+    title: "Amazon Chime Interview Assistant - ExtraBrain",
+    description:
+      "Use ExtraBrain during Amazon Chime interviews with live transcription, screen-aware context, and local-first privacy on Mac.",
+    h1: "Amazon Chime interview assistant.",
+    lead: "Amazon Chime is the video platform used for many Amazon interviews. ExtraBrain runs alongside Chime as a local-first desktop copilot with live transcription and screen-aware context.",
+    howItWorks:
+      "ExtraBrain runs as a Mac desktop app alongside Amazon Chime. It transcribes the conversation, reads visible screen context such as a shared coding environment, and keeps your notes and Leadership Principles stories organized without joining the call.",
+    whyExtraBrain: [
+      {
+        title: "Live transcription",
+        body: "Follow the interview conversation with a live transcript so you can track multi-part questions and follow-ups.",
+      },
+      {
+        title: "Leadership Principles prep",
+        body: "Keep your STAR stories for the Amazon Leadership Principles visible and review them after each round.",
+      },
+      {
+        title: "Hidden from screen sharing",
+        body: "ExtraBrain is designed to stay hidden from screen sharing and screen recording on video platforms like Chime.",
+      },
+    ],
+    faq: [
+      {
+        question: "Does ExtraBrain work with Amazon Chime?",
+        answer:
+          "Yes. ExtraBrain runs as a Mac desktop app alongside Amazon Chime, transcribing the conversation and reading visible screen context.",
+      },
+      {
+        question: "Is Amazon Chime used for Amazon interviews?",
+        answer:
+          "Amazon commonly uses Amazon Chime for virtual interviews, though the exact tooling can vary by team and role. See our Amazon interview guide for round details.",
+      },
+      {
+        question: "Should I follow Amazon interview rules?",
+        answer:
+          "Yes. Use ExtraBrain responsibly, follow all interview rules, and do not use generated answers to misrepresent your skills or experience.",
+      },
+    ],
+  }),
+
+  platformPage("platforms/karat", "Karat", {
+    title: "Karat Interview Assistant - ExtraBrain",
+    description:
+      "Prepare for Karat technical interviews with ExtraBrain: rehearse coding rounds, review transcripts, and structure explanations on Mac.",
+    h1: "Karat interview assistant.",
+    lead: "Karat runs technical interviews on behalf of many companies, with a live interview engineer and a coding environment. ExtraBrain helps you prepare and review so your problem solving and communication are sharp.",
+    howItWorks:
+      "ExtraBrain runs as a Mac desktop app during practice and, where allowed, live sessions. It transcribes the conversation, reads visible code, and keeps your approach and complexity notes organized.",
+    whyExtraBrain: [
+      {
+        title: "Practice the Karat format",
+        body: "Rehearse live coding with an interviewer talking through your approach, then review transcripts to improve clarity.",
+      },
+      {
+        title: "Explain complexity clearly",
+        body: "Keep complexity, edge cases, and tradeoff notes visible so you communicate structured reasoning under time pressure.",
+      },
+      {
+        title: "Review each round",
+        body: "Use saved sessions to find where explanations were vague and to prepare stronger follow-ups.",
+      },
+    ],
+    faq: [
+      {
+        question: "Can ExtraBrain help with Karat interviews?",
+        answer:
+          "Yes. ExtraBrain helps you rehearse Karat-style live coding rounds, transcribe your practice, and review your explanations and complexity analysis.",
+      },
+      {
+        question: "Are Karat interviews recorded?",
+        answer:
+          "Karat interviews are often recorded for the hiring company. Use ExtraBrain mainly to prepare, and follow all interview rules during the real session.",
+      },
+      {
+        question: "Is ExtraBrain free for Karat prep?",
+        answer:
+          "Yes. The core Mac app is free. Pro adds custom profiles and richer session history starting at $6.99/month.",
+      },
+    ],
+  }),
+
+  platformPage("platforms/willo", "Willo", {
+    title: "Willo Interview Practice Assistant - ExtraBrain",
+    description:
+      "Practice for Willo one-way video interviews with ExtraBrain: rehearse answers, review transcripts, and improve delivery on Mac.",
+    h1: "Willo interview practice assistant.",
+    lead: "Willo is an asynchronous video interview platform where you record answers to set questions. ExtraBrain helps you rehearse and review before you record for real.",
+    howItWorks:
+      "ExtraBrain runs as a Mac desktop app while you practice Willo prompts. It transcribes your rehearsals, keeps notes visible, and lets you review takes to improve structure and pacing.",
+    whyExtraBrain: [
+      {
+        title: "Rehearse async prompts",
+        body: "Practice timed video answers and review the transcript to lead with your strongest point and cut filler.",
+      },
+      {
+        title: "Stay on message",
+        body: "Keep your key examples and talking points visible so recorded answers stay focused.",
+      },
+      {
+        title: "Review your takes",
+        body: "Use saved transcripts to compare practice takes and tighten your delivery.",
+      },
+    ],
+    faq: [
+      {
+        question: "Can ExtraBrain help with Willo interviews?",
+        answer:
+          "Yes. ExtraBrain is built for rehearsing Willo one-way video prompts, transcribing your practice answers, and helping you review and refine them.",
+      },
+      {
+        question: "Should I use AI during a live Willo recording?",
+        answer:
+          "Use ExtraBrain to prepare beforehand. During the recording, follow employer and platform rules and do not misrepresent your skills or authorship.",
+      },
+      {
+        question: "Is ExtraBrain free for Willo prep?",
+        answer:
+          "Yes. The core Mac app is free. Pro adds custom profiles and session history starting at $6.99/month.",
+      },
+    ],
+  }),
+
+  platformPage("platforms/myinterview", "myInterview", {
+    title: "myInterview Practice Assistant - ExtraBrain",
+    description:
+      "Practice for myInterview video interviews with ExtraBrain: rehearse answers, review transcripts, and structure responses on Mac.",
+    h1: "myInterview practice assistant.",
+    lead: "myInterview is an asynchronous video interview platform used for screening. ExtraBrain helps you rehearse structured answers and review your delivery before you record.",
+    howItWorks:
+      "ExtraBrain runs as a Mac desktop app while you practice myInterview prompts. It transcribes rehearsals, keeps notes and outlines visible, and helps you review each take.",
+    whyExtraBrain: [
+      {
+        title: "Rehearse screening prompts",
+        body: "Practice answering common screening questions aloud and review transcripts to sharpen your points.",
+      },
+      {
+        title: "Structure your answers",
+        body: "Keep a short outline visible so recorded answers open strong and stay organized.",
+      },
+      {
+        title: "Local-first privacy",
+        body: "Keep practice transcripts and notes on your Mac with local transcription and local AI where installed and compatible.",
+      },
+    ],
+    faq: [
+      {
+        question: "Can ExtraBrain help with myInterview?",
+        answer:
+          "Yes. ExtraBrain helps you rehearse myInterview video prompts, transcribe your practice answers, and review your delivery.",
+      },
+      {
+        question: "Can I use AI during a live myInterview recording?",
+        answer:
+          "Use ExtraBrain to prepare beforehand. During the recording, follow all employer and platform rules and do not misrepresent your skills.",
+      },
+      {
+        question: "Is ExtraBrain free for myInterview prep?",
+        answer:
+          "Yes. The core Mac app is free. Pro adds custom profiles and session history starting at $6.99/month.",
+      },
+    ],
+  }),
 ];
 
 export const companyGuidePages: MarketingPage[] = [
@@ -2329,7 +3025,1978 @@ export const companyGuidePages: MarketingPage[] = [
       { question: 'Does Netflix have behavioral interviews?', answer: 'Netflix typically includes culture fit discussions centered on their values, including freedom and responsibility, context not control, and high performance.' },
     ],
   }),
+
+  companyGuidePage('interview-guides/nvidia', 'Nvidia', {
+    description: 'Prepare for Nvidia software and deep learning engineering interviews with coding, GPU and CUDA depth, and system design support on Mac.',
+    lead: 'Nvidia interviews mix strong C++ and algorithm coding with deep questions about GPU architecture, CUDA, parallel programming, and machine learning. ExtraBrain helps you prepare each round with live transcription and structured review.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems, often in C++, with attention to performance, memory, and parallelism.' },
+      { title: 'Domain depth', body: 'Questions on GPU architecture, CUDA programming, numerical methods, deep learning frameworks, or graphics depending on the team.' },
+      { title: 'System design', body: 'Design discussions on training pipelines, inference serving, or accelerated computing systems at scale.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Domain prep', body: 'Build a profile for your target team, such as CUDA, deep learning, or graphics, and rehearse deep-dive questions with recorded sessions.' },
+      { title: 'Coding support', body: 'ExtraBrain captures your coding environment and interview conversation to help you explain complexity and hardware tradeoffs.' },
+      { title: 'Session review', body: 'Review each round with saved context to find gaps in parallel programming or ML fundamentals before the next interview.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Nvidia interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Nvidia coding, domain depth, and system design rounds.' },
+      { question: 'What languages does Nvidia test in coding rounds?', answer: 'Nvidia coding rounds often use C++ and emphasize performance, memory management, and sometimes parallel or CUDA concepts, though the exact format varies by team and role.' },
+      { question: 'Does Nvidia ask about machine learning?', answer: 'For many roles, yes. Deep learning teams often probe model fundamentals, training, and inference, while systems teams focus on GPU architecture and CUDA.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/tesla', 'Tesla', {
+    description: 'Prepare for Tesla software, firmware, and embedded engineering interviews with coding, domain depth, and hiring manager support on Mac.',
+    lead: 'Tesla interviews are fast and practical, spanning coding, embedded or firmware depth, and hiring manager conversations about real engineering problems. ExtraBrain helps you prepare with live transcription and post-session review.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Practical algorithm and data structure problems, with embedded roles adding C, memory, and low-level questions.' },
+      { title: 'Domain depth', body: 'Deep questions on your specialty, such as firmware, controls, manufacturing software, or vehicle systems.' },
+      { title: 'Hiring manager', body: 'Conversations about past projects, ownership, speed, and how you solve ambiguous real-world problems.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Project prep', body: 'Rehearse clear, measurable project stories and review transcripts to keep explanations concise under fast questioning.' },
+      { title: 'Coding support', body: 'ExtraBrain captures coding context and helps you communicate tradeoffs during practical problems.' },
+      { title: 'Domain review', body: 'Save and review domain deep-dives to sharpen embedded, controls, or systems explanations.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Tesla interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Tesla coding, domain, and hiring manager rounds.' },
+      { question: 'What are Tesla interviews like?', answer: 'Tesla interviews tend to be fast, practical, and project focused, with strong emphasis on real engineering judgment over pure puzzle solving. Formats vary by team.' },
+      { question: 'Does Tesla interview for embedded and firmware roles?', answer: 'Yes. Embedded and firmware roles typically add C, memory, and hardware-adjacent questions alongside general coding.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/uber', 'Uber', {
+    description: 'Prepare for Uber software engineering interviews with coding, marketplace system design, and behavioral support on Mac.',
+    lead: 'Uber interviews cover coding, system design for large real-time marketplaces, and behavioral rounds. ExtraBrain helps you prepare each stage with live transcription and structured review.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems with attention to efficiency and clean, working code.' },
+      { title: 'System design', body: 'Design discussions on ride matching, mapping and geospatial systems, pricing, and real-time services at scale.' },
+      { title: 'Behavioral', body: 'Questions on ownership, collaboration, and handling ambiguity in fast-moving teams.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'System design capture', body: 'Record design discussions on matching, dispatch, and geospatial systems with full transcription and tradeoff notes.' },
+      { title: 'Coding support', body: 'ExtraBrain captures your coding environment to help you explain approach and complexity.' },
+      { title: 'Behavioral review', body: 'Review behavioral answers to keep stories specific and measurable.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Uber interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Uber coding, system design, and behavioral rounds.' },
+      { question: 'What system design topics does Uber ask?', answer: 'Uber system design often covers ride matching, dispatch, mapping and geospatial indexing, surge pricing, and real-time event processing at scale.' },
+      { question: 'Are Uber interviews algorithm heavy?', answer: 'Coding rounds test standard algorithms and data structures, but system design and practical engineering carry significant weight for many roles.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/coinbase', 'Coinbase', {
+    description: 'Prepare for Coinbase software engineering interviews with coding, exchange and wallet system design, and culture support on Mac.',
+    lead: 'Coinbase interviews include coding, system design for secure financial and crypto systems, and culture-focused conversations. ExtraBrain helps you prepare with live transcription and review.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and practical coding problems with emphasis on correctness, edge cases, and clean code.' },
+      { title: 'System design', body: 'Design discussions on exchanges, wallets, ledgers, and secure high-availability financial systems.' },
+      { title: 'Culture and behavioral', body: 'Conversations tied to clear communication, efficient execution, and the Coinbase operating principles.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Secure design capture', body: 'Record system design discussions on ledgers, wallets, and security tradeoffs with full transcription.' },
+      { title: 'Coding support', body: 'ExtraBrain captures coding context to help you reason through correctness and edge cases.' },
+      { title: 'Culture prep', body: 'Rehearse and review answers tied to communication, ownership, and mission focus.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Coinbase interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Coinbase coding, system design, and culture rounds.' },
+      { question: 'What does Coinbase system design cover?', answer: 'Coinbase system design often covers exchanges, matching engines, wallets, ledgers, and secure, highly available financial infrastructure.' },
+      { question: 'Does Coinbase focus on culture fit?', answer: 'Yes. Coinbase places weight on clear communication, efficient execution, and alignment with its operating principles alongside technical skill.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/palantir', 'Palantir', {
+    description: 'Prepare for Palantir software engineering interviews with the decomposition round, coding, and product sense support on Mac.',
+    lead: 'Palantir interviews are known for a decomposition round alongside coding and discussions about building on messy real-world data. ExtraBrain helps you prepare each stage with live transcription and review.',
+    whatToExpect: [
+      { title: 'Decomposition', body: 'An open-ended design round where you model a real-world problem into data structures, systems, and interfaces.' },
+      { title: 'Coding rounds', body: 'Practical coding problems focused on clean, correct solutions rather than only competitive puzzles.' },
+      { title: 'Culture and product', body: 'Conversations about impact, working with users, and building on ambiguous real data.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Decomposition practice', body: 'Rehearse decomposition problems and review transcripts to tighten how you model entities, systems, and edge cases.' },
+      { title: 'Coding support', body: 'ExtraBrain captures coding context to help you explain design and tradeoffs clearly.' },
+      { title: 'Session review', body: 'Review each round to sharpen product reasoning and real-world modeling.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Palantir interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for the Palantir decomposition, coding, and product rounds.' },
+      { question: 'What is the Palantir decomposition interview?', answer: 'The decomposition round is an open-ended design conversation where you break a real-world problem into data models, systems, and interfaces, explaining tradeoffs as you go.' },
+      { question: 'Is Palantir coding competitive-programming heavy?', answer: 'Palantir coding tends to emphasize practical, correct solutions and clear modeling over pure competitive-programming puzzles, though this varies by role.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/goldman-sachs', 'Goldman Sachs', {
+    description: 'Prepare for Goldman Sachs engineering interviews with the HackerRank assessment, technical rounds, and superday support on Mac.',
+    lead: 'Goldman Sachs interviews often start with a HackerRank online assessment and move through technical rounds to a superday, mixing coding with finance and behavioral questions. ExtraBrain helps you prepare with live transcription and review.',
+    whatToExpect: [
+      { title: 'Online assessment', body: 'A timed HackerRank test covering algorithms, data structures, and sometimes maths or aptitude sections.' },
+      { title: 'Technical rounds', body: 'Coding, data structures, and role-specific questions, with some system or design discussion for senior roles.' },
+      { title: 'Superday', body: 'Back-to-back interviews mixing technical depth with behavioral and motivation questions.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Assessment prep', body: 'Rehearse timed problem solving and review transcripts to improve speed and clarity before the HackerRank test.' },
+      { title: 'Superday tracking', body: 'Track each superday session separately with saved context for focused post-round review.' },
+      { title: 'Behavioral prep', body: 'Practice motivation and behavioral answers about why finance and why Goldman Sachs.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Goldman Sachs interviews?', answer: 'Yes. ExtraBrain provides live transcription and structured review for Goldman Sachs technical, behavioral, and superday rounds.' },
+      { question: 'Does Goldman Sachs use a HackerRank test?', answer: 'Goldman Sachs commonly uses a timed HackerRank online assessment early in the process, though exact formats vary by role, division, and year.' },
+      { question: 'What is a Goldman Sachs superday?', answer: 'A superday is a set of back-to-back interviews, often mixing technical questions with behavioral and motivation topics, used as a final-stage evaluation.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/jpmorgan', 'JPMorgan Chase', {
+    description: 'Prepare for JPMorgan Chase software engineering interviews with the coding assessment, technical rounds, and behavioral support on Mac.',
+    lead: 'JPMorgan Chase interviews typically include a coding assessment, technical interviews, and behavioral rounds spanning software and finance topics. ExtraBrain helps you prepare with live transcription and review.',
+    whatToExpect: [
+      { title: 'Online assessment', body: 'A timed coding assessment, sometimes paired with behavioral or game-based screening.' },
+      { title: 'Technical rounds', body: 'Data structures, algorithms, and role-relevant topics such as web, data, or systems.' },
+      { title: 'Behavioral', body: 'Questions on teamwork, motivation, and interest in financial technology.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Assessment prep', body: 'Rehearse timed coding and review transcripts to improve speed and communication.' },
+      { title: 'Technical review', body: 'Save technical rounds to identify weak spots in data structures or role-specific topics.' },
+      { title: 'Behavioral prep', body: 'Practice concise, specific answers about motivation and teamwork.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with JPMorgan Chase interviews?', answer: 'Yes. ExtraBrain provides live transcription and structured review for JPMorgan Chase coding, technical, and behavioral rounds.' },
+      { question: 'What does the JPMorgan coding assessment cover?', answer: 'The assessment usually covers algorithms and data structures, sometimes alongside behavioral or game-based screening. Formats vary by program and year.' },
+      { question: 'Does JPMorgan ask finance questions?', answer: 'Some rounds probe interest in financial technology and relevant domain topics, but core technical rounds focus on engineering fundamentals.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/mckinsey', 'McKinsey', {
+    description: 'Prepare for McKinsey interviews with the Solve assessment, case interviews, and Personal Experience Interview support on Mac.',
+    lead: 'McKinsey interviews center on the Solve assessment, case interviews, and the Personal Experience Interview. ExtraBrain helps you rehearse structured problem solving with live transcription and review.',
+    whatToExpect: [
+      { title: 'McKinsey Solve', body: 'A game-based problem-solving assessment testing critical reasoning and decision making.' },
+      { title: 'Case interviews', body: 'Structured business cases where you frame problems, run analysis, and drive to a recommendation.' },
+      { title: 'Personal Experience Interview', body: 'Behavioral discussion on leadership, personal impact, and drive using specific stories.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Case practice', body: 'Run mock cases and review transcripts to tighten structure, hypotheses, and communication.' },
+      { title: 'PEI story prep', body: 'Rehearse leadership and impact stories, then review recordings for specificity and clarity.' },
+      { title: 'Session review', body: 'Identify where framing or synthesis slipped and refine before the next round.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with McKinsey interviews?', answer: 'Yes. ExtraBrain provides live transcription and structured review for McKinsey case and Personal Experience Interview practice.' },
+      { question: 'What is McKinsey Solve?', answer: 'McKinsey Solve is a game-based assessment that evaluates problem solving, critical reasoning, and decision making through interactive scenarios.' },
+      { question: 'How should I prepare for the McKinsey PEI?', answer: 'Prepare specific leadership, impact, and drive stories with clear structure. ExtraBrain can record practice sessions and help you review and refine each story.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/oracle', 'Oracle', {
+    description: 'Prepare for Oracle software engineering interviews with coding, database and cloud depth, and system design support on Mac.',
+    lead: 'Oracle interviews cover coding, database and cloud infrastructure depth, and system design, often in Java. ExtraBrain helps you prepare each round with live transcription and review.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems, frequently in Java, with attention to correctness and complexity.' },
+      { title: 'Domain depth', body: 'Questions on databases, SQL, distributed systems, or Oracle Cloud Infrastructure depending on the team.' },
+      { title: 'System design', body: 'Design discussions on scalable services, storage, and enterprise systems.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Domain prep', body: 'Build a profile for databases, cloud, or platform topics and rehearse deep-dive questions with recorded sessions.' },
+      { title: 'Coding support', body: 'ExtraBrain captures your coding environment to help you explain approach and complexity.' },
+      { title: 'Session review', body: 'Review each round with saved context to sharpen database or distributed systems answers.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Oracle interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Oracle coding, domain, and system design rounds.' },
+      { question: 'Does Oracle interview in Java?', answer: 'Many Oracle coding rounds use Java, and teams may go deep on databases, SQL, and distributed systems, though the format varies by role.' },
+      { question: 'What does Oracle system design cover?', answer: 'Oracle system design often covers scalable services, storage, cloud infrastructure, and enterprise-grade reliability.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/snowflake', 'Snowflake', {
+    description: 'Prepare for Snowflake software engineering interviews with coding, data platform system design, and domain depth support on Mac.',
+    lead: 'Snowflake interviews cover coding, system design focused on data platforms and query engines, and technical depth in distributed data systems. ExtraBrain helps you prepare with live transcription and review.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems with attention to efficiency and correctness.' },
+      { title: 'System design', body: 'Design discussions on query engines, distributed storage, data warehousing, and large-scale data processing.' },
+      { title: 'Domain depth', body: 'Questions on SQL, databases, concurrency, and distributed systems fundamentals.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Data systems capture', body: 'Record design discussions on query engines and distributed storage with full transcription and tradeoff notes.' },
+      { title: 'Coding support', body: 'ExtraBrain captures coding context to help you explain complexity and data structures.' },
+      { title: 'Session review', body: 'Review rounds with saved context to strengthen SQL and distributed systems fundamentals.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Snowflake interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Snowflake coding, system design, and domain rounds.' },
+      { question: 'What does Snowflake system design cover?', answer: 'Snowflake system design often covers query engines, distributed storage, data warehousing, concurrency, and large-scale data processing.' },
+      { question: 'Are Snowflake interviews SQL heavy?', answer: 'SQL and database fundamentals matter for many roles, alongside general algorithms, data structures, and distributed systems knowledge.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/salesforce', 'Salesforce', {
+    description: 'Prepare for Salesforce software engineering interviews with coding, system design, and values-based behavioral support on Mac.',
+    lead: 'Salesforce interviews cover coding, system design, and behavioral rounds tied to company values. ExtraBrain helps you prepare each stage with live transcription and structured review.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems, with some roles touching Apex, APIs, or platform-specific topics.' },
+      { title: 'System design', body: 'Design discussions on multi-tenant cloud services, APIs, and scalable enterprise systems.' },
+      { title: 'Behavioral', body: 'Values-based questions on trust, customer success, and collaboration.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding support', body: 'ExtraBrain captures coding context to help you explain approach and tradeoffs clearly.' },
+      { title: 'Design capture', body: 'Record system design discussions on multi-tenant architecture and APIs with full transcription.' },
+      { title: 'Values prep', body: 'Rehearse and review behavioral answers tied to trust, customer success, and teamwork.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Salesforce interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Salesforce coding, system design, and behavioral rounds.' },
+      { question: 'Does Salesforce ask about Apex?', answer: 'Some platform roles include Apex, Lightning, or API questions, while general roles focus on standard algorithms, data structures, and design.' },
+      { question: 'How important are values in Salesforce interviews?', answer: 'Behavioral rounds often connect to company values such as trust and customer success, so specific, honest examples help.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/bloomberg', 'Bloomberg', {
+    description: 'Prepare for Bloomberg software engineering interviews with C++ and coding, data structure depth, and project deep-dive support on Mac.',
+    lead: 'Bloomberg interviews emphasize strong coding, often in C++, with deep data structure questions and discussions of past projects and low-latency systems. ExtraBrain helps you prepare with live transcription and review.',
+    whatToExpect: [
+      { title: 'Phone screen', body: 'A coding screen covering core data structures, strings, and algorithmic problem solving.' },
+      { title: 'Onsite coding', body: 'Multiple coding rounds, often in C++, with emphasis on correctness, edge cases, and clear reasoning.' },
+      { title: 'Project deep-dive', body: 'Discussion of a past project, technical decisions, and how you handle real engineering tradeoffs.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding support', body: 'ExtraBrain captures coding context to help you communicate approach, complexity, and edge cases.' },
+      { title: 'Project prep', body: 'Rehearse a clear project story and review transcripts to keep technical explanations precise.' },
+      { title: 'Session review', body: 'Review each round with saved context to tighten data structure and problem-solving answers.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Bloomberg interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Bloomberg coding and project deep-dive rounds.' },
+      { question: 'Does Bloomberg interview in C++?', answer: 'C++ is common in Bloomberg coding rounds, with strong emphasis on data structures, correctness, and clear reasoning, though other languages may be allowed.' },
+      { question: 'What is the Bloomberg project deep-dive?', answer: 'It is a discussion of a past project where interviewers probe your technical decisions, tradeoffs, and depth of understanding.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/tiktok', 'TikTok', {
+    description: 'Prepare for TikTok and ByteDance software engineering interviews with fast algorithm coding and system design support on Mac.',
+    lead: 'TikTok and ByteDance interviews are known for multiple fast, algorithm-heavy coding rounds and system design, sometimes touching recommendation systems. ExtraBrain helps you prepare with live transcription and review.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Several rounds of medium to hard algorithm and data structure problems, often under time pressure.' },
+      { title: 'System design', body: 'Design discussions on feeds, recommendation systems, and high-throughput services for senior roles.' },
+      { title: 'Behavioral', body: 'Questions on collaboration, speed, and impact in a fast-moving environment.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Speed practice', body: 'Rehearse timed problem solving and review transcripts to improve pace and clear communication.' },
+      { title: 'System design capture', body: 'Record design discussions on feeds and recommendation systems with tradeoff notes.' },
+      { title: 'Session review', body: 'Review multiple rounds with saved context to find recurring gaps quickly.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with TikTok interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for TikTok and ByteDance coding and system design rounds.' },
+      { question: 'Are TikTok interviews algorithm heavy?', answer: 'Coding rounds tend to be algorithm heavy, often with several medium to hard problems, though senior roles add system design.' },
+      { question: 'How many rounds does TikTok have?', answer: 'Candidates often report several back-to-back technical rounds, but the exact number varies by role, level, and region.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/airbnb', 'Airbnb', {
+    description: 'Prepare for Airbnb software engineering interviews with practical coding, system design, and core values support on Mac.',
+    lead: 'Airbnb interviews cover practical coding, system design, cross-functional discussion, and a distinctive core values round. ExtraBrain helps you prepare each stage with live transcription and review.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Practical, real-world coding problems that value clean, working solutions over pure puzzle tricks.' },
+      { title: 'System design', body: 'Design discussions on booking, search, payments, and large-scale consumer systems.' },
+      { title: 'Core values', body: 'A dedicated round on how you embody company values, collaboration, and belonging.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding support', body: 'ExtraBrain captures coding context to help you explain practical solutions and tradeoffs.' },
+      { title: 'Design capture', body: 'Record system design discussions on search, booking, and payments with full transcription.' },
+      { title: 'Values prep', body: 'Rehearse and review values-based answers with specific, honest examples.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Airbnb interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Airbnb coding, system design, and core values rounds.' },
+      { question: 'What is the Airbnb core values interview?', answer: 'It is a dedicated round exploring how you work with others and embody company values, using specific examples from your experience.' },
+      { question: 'Are Airbnb coding rounds practical?', answer: 'Airbnb coding tends to favor practical, real-world problems and clean working code over purely competitive puzzles, though this varies by role.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/adobe', 'Adobe', {
+    description: 'Prepare for Adobe software engineering interviews with coding, technical depth, and hiring manager support on Mac.',
+    lead: 'Adobe interviews cover coding, technical depth in your domain, and hiring manager conversations about projects and product thinking. ExtraBrain helps you prepare with live transcription and review.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems, sometimes in C++, with attention to correctness and clarity.' },
+      { title: 'Technical depth', body: 'Questions on your domain, such as graphics, imaging, web, or systems, and past technical work.' },
+      { title: 'Hiring manager', body: 'Conversations on projects, collaboration, and product-oriented thinking.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding support', body: 'ExtraBrain captures coding context to help you explain approach and complexity.' },
+      { title: 'Domain review', body: 'Save and review domain deep-dives to sharpen graphics, web, or systems explanations.' },
+      { title: 'Project prep', body: 'Rehearse clear project stories and review transcripts for concise, specific answers.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Adobe interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Adobe coding, technical, and hiring manager rounds.' },
+      { question: 'Does Adobe interview in C++?', answer: 'Some Adobe teams, especially graphics and imaging, use C++, while others allow common languages. Formats vary by team and role.' },
+      { question: 'What does Adobe look for?', answer: 'Adobe often evaluates solid coding, domain depth, and product-oriented thinking, alongside collaboration and communication.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/robinhood', 'Robinhood', {
+    description: 'Prepare for Robinhood software engineering interviews with coding, concurrency, system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Robinhood interviews move from a technical coding screen to a virtual onsite with coding, low-level and system design on financial infrastructure, a project deep dive, and behavioral rounds. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding and concurrency', body: 'Live coding in CoderPad with data structures and algorithms, and a distinctive focus on thread safety, race conditions, and locks.' },
+      { title: 'System and low-level design', body: 'Design rounds on high-availability financial systems such as real-time price streaming, plus low-level design like an order book or ledger.' },
+      { title: 'Project deep dive and behavioral', body: 'A prepared walkthrough of past work and behavioral questions, including a serious take on why Robinhood.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible code and problem with screen-aware context and transcribes the discussion, helping you reason through correctness and concurrency.' },
+      { title: 'Design review', body: 'Record system and low-level design discussions with live transcription, then revisit tradeoffs on availability and consistency in local session history.' },
+      { title: 'Behavioral prep', body: 'Rehearse project deep dive and why Robinhood answers, then review saved transcripts to tighten specificity.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Robinhood interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Robinhood coding, concurrency, system design, and behavioral rounds.' },
+      { question: 'Does Robinhood test concurrency?', answer: 'Robinhood often extends coding problems into thread-safe versions and probes race conditions and locks, though formats vary by team, role, and year.' },
+      { question: 'Is ExtraBrain private for interview prep?', answer: 'Yes. ExtraBrain is a local-first Mac app with on-device options and a window designed to stay hidden from screen sharing on major meeting tools.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/plaid', 'Plaid', {
+    description: 'Prepare for Plaid software engineering interviews with practical coding, fintech system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Plaid interviews include a practical online assessment, a live coding screen, and a virtual onsite with applied coding, system design on financial data infrastructure, and behavioral rounds. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Practical coding', body: 'Applied problems themed on financial data such as transaction categorization, fuzzy matching, and idempotency, with a bar for clean, readable code.' },
+      { title: 'System design', body: 'Design rounds anchored on aggregating data from unreliable bank APIs, with heavy emphasis on fault tolerance, retries, and idempotency at scale.' },
+      { title: 'Behavioral and deep dive', body: 'Ownership and ambiguity stories in STAR format, a genuine why Plaid conversation, and a deep dive on a project you led.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Applied coding support', body: 'ExtraBrain reads the visible code and evolving problem with screen-aware context and transcribes each requirement as the interviewer layers it on.' },
+      { title: 'Reliability design capture', body: 'Record system design discussions on circuit breakers, retries, and reconciliation with live transcription for focused review afterward.' },
+      { title: 'Behavioral review', body: 'Revisit saved transcripts in local session history to sharpen ownership stories and why Plaid answers.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Plaid interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Plaid coding, system design, and behavioral rounds.' },
+      { question: 'What makes Plaid coding rounds different?', answer: 'Plaid favors practical, fintech-flavored problems and clean code over pure algorithm puzzles, and questions often gain new requirements as you go.' },
+      { question: 'What does Plaid system design cover?', answer: 'It usually centers on aggregating financial data from many banks, with fault tolerance, idempotency, and retries, though formats vary by team, role, and year.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/affirm', 'Affirm', {
+    description: 'Prepare for Affirm software engineering interviews with practical coding, payments system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Affirm interviews include a recruiter screen, practical coding rounds that often involve editing an existing codebase, a hiring manager conversation, and a system design round tied to payments and lending. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Practical coding', body: 'Data-oriented problems on a shared editor, often reading and extending an existing codebase rather than solving blank-page puzzles.' },
+      { title: 'Payments system design', body: 'Design rounds grounded in the Affirm business, covering payment pipelines, idempotency, consistency, and high-volume financial data.' },
+      { title: 'Hiring manager and behavioral', body: 'A weighted conversation with the hiring manager on project depth, motivation, and how you handle ambiguity.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Mock coding practice', body: 'Practice reading unfamiliar code with screen-aware context that captures the visible editor and terminal, then review your approach.' },
+      { title: 'Design rehearsal', body: 'Record mock payment-pipeline design discussions with live transcription to refine tradeoffs on idempotency and consistency.' },
+      { title: 'Post-session review', body: 'Use local session history to revisit hiring manager and behavioral answers and tighten specificity before the real loop.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Affirm interviews?', answer: 'Yes. ExtraBrain supports preparation and review for Affirm coding, system design, and hiring manager rounds with live transcription and screen-aware context.' },
+      { question: 'What is different about Affirm coding rounds?', answer: 'Affirm often has you edit an existing codebase and solve practical, data-oriented problems, so reading unfamiliar code well is a strong signal.' },
+      { question: 'Does Affirm system design focus on fintech?', answer: 'Yes. Design rounds usually relate to payments, lending, and idempotent processing rather than generic prompts, though formats vary by team, role, and year.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/paypal', 'PayPal', {
+    description: 'Prepare for PayPal software engineering interviews with coding, system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'PayPal interviews typically start with a HackerRank online assessment and move through live coding, a system design round, a role specialization round, and behavioral conversations. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Online assessment', body: 'A HackerRank test with two or three DSA problems and often Java and OOP or SQL questions, usually timed to 60 to 90 minutes.' },
+      { title: 'Coding rounds', body: 'Live talk-and-type coding, sometimes via Karat, covering strings, graph traversal, dynamic programming, and clean, production-ready code.' },
+      { title: 'System design and behavioral', body: 'Fintech-flavored design on payment gateways, idempotency, and failure handling, plus STAR behavioral rounds mapped to the PayPal values.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Assessment prep', body: 'Rehearse timed HackerRank-style problems and review saved transcripts to improve speed and narration before the real test.' },
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible code with screen-aware context and transcribes the talk-and-type session so you can focus on communicating complexity.' },
+      { title: 'Behavioral prep', body: 'Practice six to eight STAR stories mapped to the PayPal values and review them in local session history.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with PayPal interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for PayPal coding, system design, and behavioral rounds.' },
+      { question: 'Does PayPal use a HackerRank assessment?', answer: 'PayPal commonly uses a HackerRank online assessment with DSA and Java or OOP questions early in the process, though formats vary by role, team, and year.' },
+      { question: 'What does PayPal system design cover?', answer: 'It often centers on payment gateways and fintech concerns like idempotency, data consistency, and failure handling, with depth scaled to the role level.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/visa', 'Visa', {
+    description: 'Prepare for Visa software engineering interviews with coding, CS fundamentals, system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Visa interviews open with a timed CodeSignal or HackerRank assessment and continue through technical rounds that test coding alongside broad CS fundamentals, a payments-focused design round, and a behavioral deep dive. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Online assessment', body: 'A proctored CodeSignal or HackerRank test of about four questions with escalating difficulty on arrays, strings, hash maps, graphs, and dynamic programming.' },
+      { title: 'Coding and CS breadth', body: 'Live coding paired with breadth questions on OOP, operating systems, networking, SQL, and REST, plus follow-ups defending your resume tech stack.' },
+      { title: 'Design and behavioral', body: 'Payments-oriented design such as a gateway or fraud detection, and a hiring manager deep dive with STAR answers and architecture sketches.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Assessment prep', body: 'Rehearse timed problems and review transcripts to build the speed the escalating Visa assessment rewards.' },
+      { title: 'Breadth review', body: 'ExtraBrain transcribes technical rounds and reads the visible screen, helping you capture broad CS follow-ups and resume deep dives for later review.' },
+      { title: 'Design capture', body: 'Record payments design discussions on scale, security, and reliability with live transcription and revisit them in local session history.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Visa interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Visa coding, CS fundamentals, system design, and behavioral rounds.' },
+      { question: 'What does the Visa online assessment cover?', answer: 'It is usually a timed CodeSignal or HackerRank test of about four questions with escalating difficulty, though formats vary by team, role, and year.' },
+      { question: 'Does Visa test more than algorithms?', answer: 'Yes. The Visa process rewards breadth across coding, OOP, operating systems, networking, and databases, and expects you to defend your resume choices.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/capital-one', 'Capital One', {
+    description: 'Prepare for Capital One software engineering interviews with the coding assessment, Power Day, and case round support on Mac using ExtraBrain.',
+    lead: 'Capital One interviews include recruiter and hiring manager screens, a timed CodeSignal assessment, and a Power Day that bundles coding, system design, a behavioral round, and a distinctive business case interview. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'CodeSignal assessment', body: 'A timed test of roughly four algorithm problems from easy to medium-hard that gates entry to Power Day.' },
+      { title: 'Power Day coding and design', body: 'Back-to-back rounds of medium LeetCode-style coding and system design that account for security, compliance, and consistency.' },
+      { title: 'Case interview', body: 'A business-flavored round where you reason through a financial scenario with mental math and connect technical choices to customer value.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Assessment prep', body: 'Rehearse timed CodeSignal-style problems and review saved transcripts to pace yourself across the ramp of questions.' },
+      { title: 'Power Day tracking', body: 'Track each Power Day round separately in local session history with screen-aware context and live transcription for focused review.' },
+      { title: 'Case rehearsal', body: 'Practice explaining financial tradeoffs out loud, then revisit transcripts to tighten how you tie technical decisions to business value.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Capital One interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Capital One coding, system design, behavioral, and case rounds.' },
+      { question: 'What is the Capital One Power Day?', answer: 'Power Day is the final onsite, a block of back-to-back interviews covering coding, system design, behavioral questions, and a business case round.' },
+      { question: 'What is the Capital One case interview?', answer: 'It is a business-reasoning round using a financial scenario and mental math, not coding, so practicing tradeoff explanations matters more than algorithms.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/cisco', 'Cisco', {
+    description: 'Prepare for Cisco software engineering interviews with coding, networking fundamentals, system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Cisco interviews pair standard coding with networking fundamentals across a HackerRank assessment, technical phone screens, and a virtual onsite with coding, system design, and behavioral rounds. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Online assessment', body: 'A HackerRank test mixing two or three coding problems with multiple-choice questions on networking, operating systems, and databases.' },
+      { title: 'Coding and networking', body: 'Medium coding with a bias toward graphs and dynamic programming, plus first-class networking topics like the OSI model, TCP versus UDP, and subnetting.' },
+      { title: 'System design and behavioral', body: 'Production-rooted design such as cross-region logging or monitoring, and behavioral rounds tied to the Cisco People Deal framework.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible code with screen-aware context and transcribes the Webex discussion so you can focus on clean, runnable solutions.' },
+      { title: 'Fundamentals review', body: 'Save networking and operating systems discussions to local session history to find gaps in OSI, TCP, and concurrency knowledge.' },
+      { title: 'Behavioral prep', body: 'Rehearse People Deal behavioral answers and defend your resume choices, then review saved transcripts for specificity.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Cisco interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Cisco coding, networking, system design, and behavioral rounds.' },
+      { question: 'Does Cisco test networking for software roles?', answer: 'Yes. Networking is a first-class topic even for software engineers, covering the OSI model, TCP and UDP, and subnetting, though formats vary by team, role, and year.' },
+      { question: 'What languages does Cisco expect?', answer: 'Cisco coding rounds commonly use C++, Python, or Java, with interviewers expecting clean, runnable code rather than pseudocode.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/ibm', 'IBM', {
+    description: 'Prepare for IBM software engineering interviews with cognitive and coding assessments, technical rounds, and behavioral support on Mac using ExtraBrain.',
+    lead: 'IBM interviews begin with online assessments that may include cognitive, coding, and video sections, followed by technical rounds on coding and CS fundamentals and a behavioral round tied to the THINK values. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Online assessments', body: 'A mix that can include a cognitive ability test, a HackerRank coding assessment, and an English or video section, depending on the role.' },
+      { title: 'Technical rounds', body: 'Live coding plus core CS theory on data structures, DBMS, OOP, networking, and sometimes low-level or system design.' },
+      { title: 'Recorded and behavioral', body: 'An AI-led recorded video round of about five questions, plus behavioral rounds evaluated against the IBM THINK framework.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Assessment prep', body: 'Rehearse timed coding and reasoning problems and review saved transcripts to build speed before the IBM online assessments.' },
+      { title: 'Recorded round practice', body: 'Practice concise, roughly three-minute STAR answers for the recorded video round and review them in local session history.' },
+      { title: 'Technical review', body: 'ExtraBrain transcribes technical rounds and reads the visible screen, helping you spot gaps in CS fundamentals and coding for later review.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with IBM interviews?', answer: 'Yes. ExtraBrain supports preparation and review for IBM assessments, technical rounds, and behavioral interviews with live transcription and screen-aware context.' },
+      { question: 'What are the IBM online assessments?', answer: 'They can include a cognitive ability test, a HackerRank coding assessment, and video or English sections, and no single role uses all of them.' },
+      { question: 'What is the IBM THINK framework?', answer: 'THINK reflects curiosity, collaboration, continuous learning, and responsible innovation, and behavioral answers should connect to at least one of these values.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/dell', 'Dell', {
+    description: 'Prepare for Dell software engineering interviews with the coding assessment, technical rounds, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Dell interviews typically include a recruiter screen, a coding assessment in C, C++, or Python, technical rounds covering CS fundamentals and system design, and behavioral rounds on teamwork and core values. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding assessment', body: 'An online test mixing aptitude questions with coding problems, often in C, C++, or Python, ranging from easy to medium.' },
+      { title: 'Technical rounds', body: 'Live coding, system design, and project deep dives, with CS fundamentals on OOP, DBMS, operating systems, and networking such as the OSI model.' },
+      { title: 'Behavioral and managerial', body: 'Teamwork and problem-solving questions tied to the Dell core values, followed by managerial and HR conversations.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Assessment prep', body: 'Rehearse timed coding and aptitude problems and review saved transcripts to sharpen speed and accuracy.' },
+      { title: 'Technical review', body: 'ExtraBrain reads the visible code with screen-aware context and transcribes fundamentals discussions for focused review afterward.' },
+      { title: 'Behavioral prep', body: 'Practice STAR stories on teamwork and the Dell core values, then revisit them in local session history.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Dell interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Dell coding, technical, and behavioral rounds.' },
+      { question: 'What does the Dell coding assessment cover?', answer: 'It often pairs aptitude questions with coding problems in C, C++, or Python, though formats vary by role, business unit, and region.' },
+      { question: 'Does Dell ask CS fundamentals?', answer: 'Yes. Technical rounds commonly cover OOP, DBMS, operating systems, and networking topics such as the OSI model and CPU scheduling.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/vmware', 'VMware', {
+    description: 'Prepare for VMware software engineering interviews with coding, operating systems, C++, and system design support on Mac using ExtraBrain.',
+    lead: 'VMware interviews pair coding with a strong focus on operating systems and C++, moving from a technical screen to an onsite loop with multiple coding rounds, infrastructure system design, and managerial conversations. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems on arrays, trees, graphs, and dynamic programming, in CoderPad or on a whiteboard onsite.' },
+      { title: 'Operating systems and C++', body: 'Systems-oriented questions on synchronization, deadlocks, thread safety, and memory, reflecting the VMware virtualization focus.' },
+      { title: 'System design', body: 'Infrastructure design such as a cross-data-center log ingestion pipeline or failover strategies for virtual machines.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible code with screen-aware context and transcribes the discussion so you can focus on reasoning, not note-taking.' },
+      { title: 'Systems review', body: 'Save operating systems and C++ discussions to local session history to find gaps in synchronization and concurrency knowledge.' },
+      { title: 'Design rehearsal', body: 'Record infrastructure design discussions with live transcription and revisit tradeoffs on latency and failover afterward.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with VMware interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for VMware coding, systems, design, and behavioral rounds.' },
+      { question: 'Does VMware focus on operating systems and C++?', answer: 'Yes. VMware often probes synchronization, deadlocks, thread safety, and C++, reflecting its virtualization roots, though formats vary by team, role, and year.' },
+      { question: 'What does VMware system design cover?', answer: 'It tends toward infrastructure such as log ingestion pipelines, failover for virtual machines, cloud computing, and network protocols.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/citadel', 'Citadel', {
+    description: 'Prepare for Citadel quant and engineering interviews with probability, coding, and market intuition support from ExtraBrain on Mac.',
+    lead: 'Citadel and Citadel Securities interviews move from an online assessment through phone screens to a final round, testing probability, mental math, coding, and market intuition. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Online assessment', body: 'A timed test with probability puzzles, mental math, and pattern questions for quant roles, or a HackerRank-style coding round for engineers.' },
+      { title: 'Technical rounds', body: 'Phone and onsite interviews covering probability, statistics, live coding, and market-making games, with topics varying by role, team, and year.' },
+      { title: 'Final round and team fit', body: 'Back-to-back interviews of 45 to 60 minutes each, mixing technical depth with behavioral fit, then matching to a specific Citadel or Citadel Securities team.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Probability and coding prep', body: 'Rehearse timed probability and coding problems, then review local session history to sharpen speed and clear reasoning before the real rounds.' },
+      { title: 'Screen-aware practice', body: 'Screen-aware context reads the visible problem or code during mock rounds, and live transcription with local Parakeet keeps a full record for review.' },
+      { title: 'Private, local-first review', body: 'On-device transcription and local-first storage keep sensitive practice private, with on-device Gemma where compatible or a provider you choose.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Citadel interviews?', answer: 'Yes. ExtraBrain provides live transcription, screen-aware context, and post-session review for probability, coding, and market intuition practice.' },
+      { question: 'What does the Citadel online assessment cover?', answer: 'Quant assessments focus on probability, mental math, and pattern recognition, while engineering assessments use HackerRank-style coding. Formats vary by role, team, and year.' },
+      { question: 'Does Citadel interview for a specific team?', answer: 'Early rounds assess general technical and behavioral skill, and team matching usually happens after the final round across Citadel and Citadel Securities.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/jane-street', 'Jane Street', {
+    description: 'Prepare for Jane Street trading and research interviews with probability, mental math, and market-making game support from ExtraBrain on Mac.',
+    lead: 'Jane Street interviews are known for probability puzzles, fast mental math, and live market-making games across several rounds, with roles kept deliberately broad. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Mental math test', body: 'A fast, timed arithmetic test covering multiplication, division, percentages, and estimation that acts as an early gatekeeper.' },
+      { title: 'Probability and brainteasers', body: 'Expected value puzzles, recursive probability, and estimation problems where clear, spoken reasoning matters as much as the final number.' },
+      { title: 'Market-making games', body: 'Interactive trading games where you quote bid and ask prices, manage inventory, and update on new information under time pressure.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Mental math drills', body: 'Rehearse timed arithmetic and probability sets, then use post-session review to track accuracy and speed as your practice improves.' },
+      { title: 'Think-aloud review', body: 'Live transcription with local Parakeet captures how you narrate reasoning, so you can review where explanations were unclear or silent.' },
+      { title: 'Private preparation', body: 'Local-first storage and on-device options keep your practice private, with a bring-your-own provider such as OpenAI or Anthropic for deeper analysis.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Jane Street interviews?', answer: 'Yes. ExtraBrain provides live transcription, screen-aware context, and post-session review for probability, mental math, and market-making practice.' },
+      { question: 'How important is mental math at Jane Street?', answer: 'Fast, accurate mental math is a core early filter, so daily practice with arithmetic and estimation is widely recommended. Exact formats vary by role and year.' },
+      { question: 'What is a Jane Street trading game?', answer: 'It is a live market-making exercise where you quote prices, manage risk, and update on new information, testing calibrated judgment more than raw calculation.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/two-sigma', 'Two Sigma', {
+    description: 'Prepare for Two Sigma software engineering and quant research interviews with coding, statistics, and system design support from ExtraBrain on Mac.',
+    lead: 'Two Sigma runs two distinct tracks, an algorithms and systems loop for engineers and a statistics-heavy loop for quant researchers, usually starting with an online assessment. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Online assessment', body: 'A HackerRank-style coding test for engineers, or a probability and statistics screen for quant researchers, before phone screens.' },
+      { title: 'Engineering loop', body: 'Multiple coding rounds plus system design on topics like data pipelines, backtesting frameworks, and distributed computation.' },
+      { title: 'Quant research loop', body: 'Probability, statistics, machine learning methodology, and applied questions on bias, experiment design, and financial intuition.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding and stats prep', body: 'Rehearse algorithm and statistics problems, then use local session history to find weak spots in methodology or complexity analysis.' },
+      { title: 'System design capture', body: 'Screen-aware context reads diagrams and shared documents during mock design rounds, with live transcription saving tradeoffs and decisions.' },
+      { title: 'Private, local-first practice', body: 'On-device transcription and local-first storage keep preparation private, with on-device Gemma where compatible or a provider you choose.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Two Sigma interviews?', answer: 'Yes. ExtraBrain provides live transcription, screen-aware context, and post-session review for coding, statistics, and system design practice.' },
+      { question: 'What are the two Two Sigma interview tracks?', answer: 'One track is an algorithms and systems loop for engineers, and the other is a statistics-focused loop for quant researchers. Formats vary by role, team, and year.' },
+      { question: 'Does Two Sigma allow AI tools during assessments?', answer: 'Two Sigma has stated it prohibits AI assistants during its assessments, so ExtraBrain is best used for preparation and post-session review rather than live tests.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/hudson-river-trading', 'Hudson River Trading', {
+    description: 'Prepare for Hudson River Trading engineering and research interviews with coding, probability, and low-latency systems support from ExtraBrain on Mac.',
+    lead: 'Hudson River Trading blends hard probability with strong coding across a take-home test, phone screens, and a full-day onsite spanning algorithms, systems, and math. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding assessment', body: 'A timed HackerRank-style test with two or three medium-to-hard problems, often mixing algorithms with quantitative or simulation tasks.' },
+      { title: 'Technical screens', body: 'Live coding in a shared editor where interviewers probe complexity, edge cases, and how clearly you reason more than whether you finish.' },
+      { title: 'Onsite loop', body: 'Five to six rounds across algorithms, probability, low-latency systems, and a strategy game you first solve mathematically then implement.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Speed-focused prep', body: 'Rehearse timed coding and probability sets, then review local session history to build the speed and clarity Hudson River Trading expects.' },
+      { title: 'Screen-aware practice', body: 'Screen-aware context reads the visible code or problem during mock rounds, and live transcription keeps a full record for later review.' },
+      { title: 'Private, local-first review', body: 'On-device transcription and local-first storage keep sensitive practice private, with on-device Gemma where compatible or a provider you choose.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Hudson River Trading interviews?', answer: 'Yes. ExtraBrain provides live transcription, screen-aware context, and post-session review for coding, probability, and systems practice.' },
+      { question: 'How hard are the Hudson River Trading coding rounds?', answer: 'Candidates often describe them as harder than typical big-tech rounds, with a strong focus on correctness, speed, and clear reasoning. Formats vary by role and year.' },
+      { question: 'Does Hudson River Trading allow AI help during interviews?', answer: 'Hudson River Trading has warned against using AI to cheat its stages, so ExtraBrain is best used for preparation and post-session review, not live assessments.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/cohere', 'Cohere', {
+    description: 'Prepare for Cohere machine learning and software engineering interviews with coding, ML depth, and system design support from ExtraBrain on Mac.',
+    lead: 'Cohere interviews cover live coding in Python or Go, an ML or system design deep dive rooted in enterprise LLMs, and behavioral rounds about shipping reliable infrastructure. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Live coding in Python or Go with tests and edge cases, sometimes implementing ML routines such as token decoding from scratch.' },
+      { title: 'ML and system design', body: 'A deep dive on eval suites, fine-tuning, retrieval-augmented generation, or multi-tenant inference with real tradeoffs and cost thinking.' },
+      { title: 'Behavioral', body: 'Discussion of reliable infrastructure, async collaboration, and why Cohere and enterprise AI specifically, often with design-doc examples.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'ML coding prep', body: 'Rehearse from-scratch ML coding and algorithm rounds, then use local session history to review where explanations or tests fell short.' },
+      { title: 'Design discussion capture', body: 'Screen-aware context and live transcription record RAG and inference design discussions so you can revisit tradeoffs and cost estimates.' },
+      { title: 'Provider choice for depth', body: 'Bring your own provider such as OpenAI, Anthropic, or a compatible model to get deeper analysis of your practice answers between sessions.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Cohere interviews?', answer: 'Yes. ExtraBrain provides live transcription, screen-aware context, and post-session review for coding, ML, and system design rounds.' },
+      { question: 'What does Cohere ask in its ML deep dive?', answer: 'Rounds often cover eval suites, fine-tuning, retrieval-augmented generation, and multi-tenant inference, with emphasis on tradeoffs. Formats vary by team and year.' },
+      { question: 'Which languages does Cohere use in coding rounds?', answer: 'Cohere commonly asks for Python or Go with a focus on tests, edge cases, and production-quality thinking rather than memorized solutions.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/perplexity', 'Perplexity', {
+    description: 'Prepare for Perplexity software engineering interviews with practical coding, RAG system design, and LLM depth support from ExtraBrain on Mac.',
+    lead: 'Perplexity runs a fast process with a technical screen, an onsite of four to five interviews, and a founder round, emphasizing practical coding and RAG system design. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding screen', body: 'Practical problems, usually in Python, such as an in-memory file system or temporal key-value store, judged on clarity and production quality.' },
+      { title: 'System design and LLM depth', body: 'RAG architecture, search infrastructure, retrieval, and LLM serving with attention to freshness, latency, and cost tradeoffs.' },
+      { title: 'Deep dive and founder round', body: 'A hiring-manager deep dive on past work and a final conversation with a founder or leader on ownership and mission fit.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Timed coding prep', body: 'Rehearse fast, practical coding in Python, then use local session history to sharpen speed and edge-case handling before the screen.' },
+      { title: 'RAG design review', body: 'Screen-aware context and live transcription capture your system design reasoning so you can revisit retrieval and latency tradeoffs.' },
+      { title: 'LLM depth analysis', body: 'Bring your own provider such as OpenAI or Anthropic to analyze answers on retrieval, serving, and evaluation between practice sessions.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Perplexity interviews?', answer: 'Yes. ExtraBrain provides live transcription, screen-aware context, and post-session review for coding, system design, and LLM rounds.' },
+      { question: 'What language should I use for Perplexity coding?', answer: 'Python is strongly preferred because the codebase is mostly Python, so most candidates are advised to interview in it. Formats vary by role and year.' },
+      { question: 'How important is RAG for Perplexity system design?', answer: 'Retrieval-augmented generation is central, so understanding retrieval, ranking, freshness, and latency tradeoffs is valuable for the design rounds.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/xai', 'xAI', {
+    description: 'Prepare for xAI engineering and machine learning interviews with practical coding, concurrency, and system design support from ExtraBrain on Mac.',
+    lead: 'xAI runs an engineer-led, fast process with practical coding, concurrency, and system design rounds tied to implementation, plus deep dives on your strongest work. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Practical coding', body: 'Applied, object-oriented problems like iterators, key-value stores, caches, and rate limiters, often needing thread-safe, production-quality code.' },
+      { title: 'ML and system design', body: 'For ML roles, transformers, training, and distributed inference, with open-ended design you are expected to be able to implement.' },
+      { title: 'Project deep dive', body: 'A detailed defense of a statement of exceptional work, with numbers on latency, throughput, and tradeoffs, plus a hiring-manager conversation.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Applied coding prep', body: 'Rehearse practical, concurrency-aware coding, then use local session history to check that you can explain why your solution is correct.' },
+      { title: 'Deep-dive rehearsal', body: 'Live transcription captures your project walkthrough so you can tighten a five-minute and a twenty-minute version with clear numbers.' },
+      { title: 'ML depth analysis', body: 'Bring your own provider such as OpenAI or Anthropic to analyze answers on transformers, scaling, and distributed training between sessions.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with xAI interviews?', answer: 'Yes. ExtraBrain provides live transcription, screen-aware context, and post-session review for coding, ML, and system design rounds.' },
+      { question: 'What kind of coding does xAI test?', answer: 'xAI leans toward practical, object-oriented problems and concurrency rather than pure algorithm puzzles, valuing correct and clear code. Formats vary by role and year.' },
+      { question: 'What is the xAI statement of exceptional work?', answer: 'It is a written summary of your most impressive work that interviewers reference and probe in detail, so prepare to defend it thoroughly.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/atlassian', 'Atlassian', {
+    description: 'Prepare for Atlassian software engineering interviews with coding, system design, and the distinctive values interview support from ExtraBrain on Mac.',
+    lead: 'Atlassian interviews combine coding in your chosen language, a system design round, and a heavily weighted values interview based on structured behavioral questions. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding interviews', body: 'Practical problems in the language you choose, run in your own IDE, valuing clean, working code and clear thinking over memorized puzzles.' },
+      { title: 'System design', body: 'A 60-minute round designing something like a task list or job scheduler, building from fundamentals to added complexity and tradeoffs.' },
+      { title: 'Values interview', body: 'A structured behavioral round on the Atlassian values that carries real weight, best answered with specific STAR stories.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding practice', body: 'Rehearse practical problems in your chosen language, then use local session history to review readability, tests, and tradeoffs.' },
+      { title: 'Values story prep', body: 'Live transcription captures your STAR stories so you can review specificity and map each one to an Atlassian value before the round.' },
+      { title: 'Custom profiles', body: 'Pro custom profiles let you tailor separate setups for coding, system design, and values practice, keeping each round focused.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Atlassian interviews?', answer: 'Yes. ExtraBrain provides live transcription, screen-aware context, and post-session review for coding, system design, and values rounds.' },
+      { question: 'How important is the Atlassian values interview?', answer: 'The values interview is heavily weighted, and strong candidates can still be rejected on values or manager fit, so prepare specific STAR stories. Formats vary by role.' },
+      { question: 'Can I choose my language for Atlassian coding?', answer: 'Yes. Atlassian lets you code in the language you are most comfortable with and often expects you to run it in your own IDE.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/datadog', 'Datadog', {
+    description: 'Prepare for Datadog software engineering interviews with practical coding, focused system design, and behavioral round support from ExtraBrain on Mac.',
+    lead: 'Datadog interviews include a coding phone screen and an onsite of coding, focused system design, and a behavioral round, often with a detailed project deep dive. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'CoderPad problems that wrap medium algorithms in real engineering contexts, with follow-ups on thread safety, scale, and data that exceeds memory.' },
+      { title: 'System design', body: 'A grounded round on practical backend services where the interviewer shifts latency, cost, or scale constraints to test how you adapt.' },
+      { title: 'Behavioral and deep dive', body: 'Ownership-focused stories about production issues, plus a deep dive where you defend a complex project in real detail.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Practical coding prep', body: 'Rehearse medium problems with realistic follow-ups, then use local session history to review edge cases, performance, and readability.' },
+      { title: 'Project deep-dive prep', body: 'Live transcription captures your project walkthrough so you can make sure you can defend schema, concurrency, and tradeoff decisions.' },
+      { title: 'Design review capture', body: 'Screen-aware context reads your diagrams in tools like Excalidraw while transcription records how you adapt to changing constraints.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Datadog interviews?', answer: 'Yes. ExtraBrain provides live transcription, screen-aware context, and post-session review for coding, system design, and behavioral rounds.' },
+      { question: 'What makes Datadog coding rounds distinctive?', answer: 'Problems wrap algorithms in real engineering contexts and add follow-ups on thread safety, scale, and memory limits. Formats vary by team, role, and region.' },
+      { question: 'Does Datadog have a project deep dive?', answer: 'Many candidates report a deep-dive round where you discuss a complex project in detail, so be ready to defend everything on your resume.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/canva', 'Canva', {
+    description: 'Prepare for Canva software engineering interviews with the Craft Challenge, coding, system design, and values round support from ExtraBrain on Mac.',
+    lead: 'Canva interviews center on the Craft Challenge take-home project and its review, alongside coding, a domain-focused system design round, and a values interview. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Craft Challenge', body: 'A multi-day take-home project of roughly six to eight hours, followed by a review of your design decisions, tradeoffs, and code quality.' },
+      { title: 'Coding and system design', body: 'Data structure and algorithm problems with a design twist, plus system design on collaborative editing, rendering, or image pipelines.' },
+      { title: 'Values interview', body: 'A structured round, often a panel, assessing alignment with the Canva values through behavioral questions and stories.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Craft review prep', body: 'Rehearse walking through your take-home decisions, then use local session history to tighten how you explain tradeoffs and next steps.' },
+      { title: 'System design capture', body: 'Screen-aware context reads your diagrams while live transcription records reasoning on collaboration, rendering, and image pipelines.' },
+      { title: 'Values story prep', body: 'Live transcription captures your behavioral stories so you can map each to a Canva value and sharpen specificity before the panel.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Canva interviews?', answer: 'Yes. ExtraBrain provides live transcription, screen-aware context, and post-session review for the Craft Challenge, coding, and values rounds.' },
+      { question: 'What is the Canva Craft Challenge?', answer: 'It is a multi-day take-home project treated as a portfolio piece, followed by a review of your design decisions and tradeoffs. Formats vary by role and year.' },
+      { question: 'How should I prepare for the Canva values round?', answer: 'Prepare specific stories mapped to the Canva values, since the round is structured and often a panel. ExtraBrain can record and help you review each story.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/figma', 'Figma', {
+    description: 'Prepare for Figma software engineering interviews with coding, frontend depth, system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Figma interviews emphasize practical coding, frontend and product engineering depth, and system design often tied to collaborative editing and rendering, plus behavioral rounds. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Practical coding', body: 'Applied problems and, for product roles, hands-on frontend tasks in a real editor, valuing working, well-structured code.' },
+      { title: 'System design', body: 'Design rounds often centered on collaborative editing, real-time multiplayer, and rendering performance in the browser.' },
+      { title: 'Behavioral and craft', body: 'Conversations about product sense, collaboration with design, and past work you can defend in detail.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible editor with screen-aware context and transcribes the discussion so you can focus on clean solutions.' },
+      { title: 'Design review', body: 'Record collaborative-editing and rendering design discussions with live transcription and revisit tradeoffs in local session history.' },
+      { title: 'Craft prep', body: 'Rehearse product-sense and project stories, then review saved transcripts to sharpen specificity.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Figma interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Figma coding, frontend, system design, and behavioral rounds.' },
+      { question: 'Does Figma test frontend deeply?', answer: 'For product engineering roles, Figma often includes hands-on frontend work and product sense, though formats vary by team, role, and year.' },
+      { question: 'What does Figma system design cover?', answer: 'Design rounds frequently involve collaborative editing, real-time multiplayer, and browser rendering performance.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/discord', 'Discord', {
+    description: 'Prepare for Discord software engineering interviews with coding, real-time system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Discord interviews cover practical coding, system design rooted in real-time chat, voice, and presence at scale, and behavioral rounds. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and practical problems with attention to correctness, edge cases, and clear communication.' },
+      { title: 'Real-time system design', body: 'Design discussions on chat delivery, presence, fan-out, and voice infrastructure for large servers.' },
+      { title: 'Behavioral', body: 'Conversations about collaboration, ownership, and building for large online communities.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible code with screen-aware context and transcribes the discussion for focused reasoning.' },
+      { title: 'Design review', body: 'Record real-time design discussions on fan-out and presence with live transcription and revisit tradeoffs afterward.' },
+      { title: 'Behavioral prep', body: 'Rehearse ownership and collaboration stories, then review saved transcripts to tighten specificity.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Discord interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Discord coding, system design, and behavioral rounds.' },
+      { question: 'What does Discord system design cover?', answer: 'Design rounds often involve real-time messaging, presence, fan-out, and voice at scale, though formats vary by team, role, and year.' },
+      { question: 'Are Discord coding rounds algorithm heavy?', answer: 'Coding rounds test standard algorithms and practical problem solving, with communication and clean code weighted alongside correctness.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/notion', 'Notion', {
+    description: 'Prepare for Notion software engineering interviews with practical coding, system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Notion interviews favor practical coding, system design tied to collaborative documents and the block data model, and behavioral rounds about craft and ownership. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Practical coding', body: 'Real-world problems and sometimes debugging or extending existing code, valuing clean, working solutions over puzzles.' },
+      { title: 'System design', body: 'Design discussions on collaborative editing, the block and document data model, sync, and offline support.' },
+      { title: 'Behavioral and craft', body: 'Conversations about product sense, quality, and projects you can explain in depth.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible editor with screen-aware context and transcribes the session so you can focus on structure and edge cases.' },
+      { title: 'Design review', body: 'Record collaborative-editing and sync design discussions with live transcription and revisit tradeoffs in local session history.' },
+      { title: 'Craft prep', body: 'Rehearse product and project stories, then review saved transcripts to sharpen specificity.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Notion interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Notion coding, system design, and behavioral rounds.' },
+      { question: 'What makes Notion coding rounds distinctive?', answer: 'Notion favors practical problems and sometimes extending real code, so reading and structuring code well matters. Formats vary by team, role, and year.' },
+      { question: 'What does Notion system design cover?', answer: 'Design rounds often involve collaborative documents, the block data model, sync, and offline behavior.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/roblox', 'Roblox', {
+    description: 'Prepare for Roblox software engineering interviews with coding, system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Roblox interviews pair coding, sometimes in C++ for engine roles, with system design on game-platform scale and an economy, plus behavioral rounds. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems, with C++ common for engine and performance-sensitive roles.' },
+      { title: 'System design', body: 'Design discussions on large-scale game infrastructure, real-time multiplayer, and the platform economy.' },
+      { title: 'Behavioral', body: 'Conversations about ownership, collaboration, and building for a large creator and player community.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible code with screen-aware context and transcribes the discussion to help you explain complexity.' },
+      { title: 'Design review', body: 'Record game-platform design discussions with live transcription and revisit scale and latency tradeoffs afterward.' },
+      { title: 'Behavioral prep', body: 'Rehearse ownership and collaboration stories, then review saved transcripts to tighten specificity.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Roblox interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Roblox coding, system design, and behavioral rounds.' },
+      { question: 'Does Roblox interview in C++?', answer: 'Engine and performance-sensitive roles often use C++, while other roles may allow common languages. Formats vary by team, role, and year.' },
+      { question: 'What does Roblox system design cover?', answer: 'Design rounds often involve large-scale game infrastructure, real-time multiplayer, and platform economy systems.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/pinterest', 'Pinterest', {
+    description: 'Prepare for Pinterest software engineering interviews with coding, recommendation system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Pinterest interviews cover coding, system design tied to the home feed, recommendations, and ads, with machine learning depth for relevant roles, plus behavioral rounds. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems with attention to efficiency and clean code.' },
+      { title: 'System design', body: 'Design discussions on the home feed, recommendation systems, search, and ads at scale.' },
+      { title: 'Domain and behavioral', body: 'Machine learning depth for relevant roles, plus behavioral questions on collaboration and impact.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible code with screen-aware context and transcribes the discussion for focused reasoning.' },
+      { title: 'Recommendation design capture', body: 'Record feed and recommendation design discussions with live transcription and revisit ranking and scale tradeoffs afterward.' },
+      { title: 'Behavioral prep', body: 'Rehearse impact and collaboration stories, then review saved transcripts to sharpen specificity.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Pinterest interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Pinterest coding, system design, and behavioral rounds.' },
+      { question: 'What does Pinterest system design cover?', answer: 'Design rounds often involve the home feed, recommendations, search, and ads at scale, though formats vary by team, role, and year.' },
+      { question: 'Does Pinterest test machine learning?', answer: 'For machine learning and relevant roles, expect model and ranking depth alongside general coding and system design.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/snapchat', 'Snapchat', {
+    description: 'Prepare for Snapchat and Snap software engineering interviews with coding, system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Snap interviews cover coding, system design rooted in media, messaging, and ephemeral content at scale, and behavioral rounds. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems with attention to efficiency, edge cases, and communication.' },
+      { title: 'System design', body: 'Design discussions on media delivery, messaging, stories, and ephemeral content at large scale.' },
+      { title: 'Behavioral', body: 'Conversations about ownership, collaboration, and building consumer products.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible code with screen-aware context and transcribes the discussion to help you explain complexity.' },
+      { title: 'Design review', body: 'Record media and messaging design discussions with live transcription and revisit scale tradeoffs in local session history.' },
+      { title: 'Behavioral prep', body: 'Rehearse ownership and impact stories, then review saved transcripts to tighten specificity.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Snapchat interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Snap coding, system design, and behavioral rounds.' },
+      { question: 'What does Snap system design cover?', answer: 'Design rounds often involve media delivery, messaging, stories, and ephemeral content at scale, though formats vary by team, role, and year.' },
+      { question: 'Are Snap coding rounds standard?', answer: 'Coding rounds test common algorithms and data structures, with communication and clean code weighted alongside correctness.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/dropbox', 'Dropbox', {
+    description: 'Prepare for Dropbox software engineering interviews with coding, storage system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Dropbox interviews cover coding, system design rooted in file storage, sync, and metadata at scale, and behavioral rounds. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems with attention to correctness, edge cases, and clean code.' },
+      { title: 'System design', body: 'Design discussions on file storage, synchronization, conflict resolution, and metadata services at scale.' },
+      { title: 'Behavioral', body: 'Conversations about ownership, collaboration, and past technical decisions.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible code with screen-aware context and transcribes the discussion for focused reasoning.' },
+      { title: 'Storage design capture', body: 'Record sync and storage design discussions with live transcription and revisit consistency and conflict tradeoffs afterward.' },
+      { title: 'Behavioral prep', body: 'Rehearse ownership and impact stories, then review saved transcripts to sharpen specificity.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Dropbox interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Dropbox coding, system design, and behavioral rounds.' },
+      { question: 'What does Dropbox system design cover?', answer: 'Design rounds often involve file storage, sync, conflict resolution, and metadata at scale, though formats vary by team, role, and year.' },
+      { question: 'Are Dropbox coding rounds practical?', answer: 'Coding rounds test standard algorithms and data structures, with clean, correct code and clear communication valued highly.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/instacart', 'Instacart', {
+    description: 'Prepare for Instacart software engineering interviews with coding, marketplace system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'Instacart interviews cover coding, system design rooted in a marketplace with catalog, logistics, and fulfillment, and behavioral rounds. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and practical problems with attention to correctness, edge cases, and readable code.' },
+      { title: 'System design', body: 'Design discussions on catalog, search, order fulfillment, batching, and real-time logistics.' },
+      { title: 'Behavioral', body: 'Conversations about ownership, collaboration, and building for a multi-sided marketplace.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible code with screen-aware context and transcribes the discussion for focused reasoning.' },
+      { title: 'Marketplace design capture', body: 'Record catalog, fulfillment, and logistics design discussions with live transcription and revisit tradeoffs afterward.' },
+      { title: 'Behavioral prep', body: 'Rehearse ownership and impact stories, then review saved transcripts to sharpen specificity.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with Instacart interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for Instacart coding, system design, and behavioral rounds.' },
+      { question: 'What does Instacart system design cover?', answer: 'Design rounds often involve catalog, search, fulfillment, batching, and real-time logistics, though formats vary by team, role, and year.' },
+      { question: 'Are Instacart coding rounds practical?', answer: 'Coding rounds test standard algorithms and practical problem solving, with clean code and communication valued alongside correctness.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/doordash', 'DoorDash', {
+    description: 'Prepare for DoorDash software engineering interviews with coding, logistics system design, and behavioral support on Mac using ExtraBrain.',
+    lead: 'DoorDash interviews cover coding, system design rooted in a marketplace with dispatch, logistics, and real-time delivery, and behavioral rounds. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems with attention to efficiency, edge cases, and clear communication.' },
+      { title: 'System design', body: 'Design discussions on dispatch and matching, real-time delivery tracking, and marketplace services at scale.' },
+      { title: 'Domain and behavioral', body: 'A practical or domain round for some teams, plus behavioral questions on ownership and collaboration.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible code with screen-aware context and transcribes the discussion to help you explain complexity.' },
+      { title: 'Logistics design capture', body: 'Record dispatch and real-time delivery design discussions with live transcription and revisit tradeoffs afterward.' },
+      { title: 'Behavioral prep', body: 'Rehearse ownership and impact stories, then review saved transcripts to sharpen specificity.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with DoorDash interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for DoorDash coding, system design, and behavioral rounds.' },
+      { question: 'What does DoorDash system design cover?', answer: 'Design rounds often involve dispatch and matching, real-time delivery tracking, and marketplace scale, though formats vary by team, role, and year.' },
+      { question: 'Are DoorDash coding rounds algorithm heavy?', answer: 'Coding rounds test standard algorithms and data structures, with communication and clean code weighted alongside correctness.' },
+    ],
+  }),
+
+  companyGuidePage('interview-guides/linkedin', 'LinkedIn', {
+    description: 'Prepare for LinkedIn software engineering interviews with coding, system design, and values-based behavioral support on Mac using ExtraBrain.',
+    lead: 'LinkedIn interviews cover coding, system design tied to the social graph and feed at scale, and values-based behavioral rounds, sometimes with a distributed-systems domain round. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    whatToExpect: [
+      { title: 'Coding rounds', body: 'Algorithm and data structure problems with attention to efficiency, edge cases, and clean code.' },
+      { title: 'System design', body: 'Design discussions on the social graph, feed ranking, messaging, and large-scale distributed services.' },
+      { title: 'Values and behavioral', body: 'Behavioral rounds tied to the LinkedIn values, plus a distributed-systems domain round for some roles.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Coding capture', body: 'ExtraBrain reads the visible code with screen-aware context and transcribes the discussion for focused reasoning.' },
+      { title: 'Design review', body: 'Record social-graph and feed design discussions with live transcription and revisit scale tradeoffs in local session history.' },
+      { title: 'Values prep', body: 'Rehearse values-based behavioral stories, then review saved transcripts to sharpen specificity.' },
+    ],
+    faq: [
+      { question: 'Can ExtraBrain help with LinkedIn interviews?', answer: 'Yes. ExtraBrain provides live transcription and screen-aware context for LinkedIn coding, system design, and behavioral rounds.' },
+      { question: 'What does LinkedIn system design cover?', answer: 'Design rounds often involve the social graph, feed ranking, messaging, and distributed services at scale, though formats vary by team, role, and year.' },
+      { question: 'Does LinkedIn have a values interview?', answer: 'LinkedIn typically includes values-based behavioral rounds, and some roles add a distributed-systems domain round.' },
+    ],
+  }),
 ];
+
+type GlossaryEntry = {
+  slug: string;
+  term: string;
+  h1?: string;
+  description: string;
+  definition: string;
+  details: Array<{ title: string; body: string }>;
+  faq: Array<{ question: string; answer: string }>;
+  related: Array<{ title: string; body: string; href: string }>;
+};
+
+const glossaryPage = (entry: GlossaryEntry): MarketingPage => ({
+  slug: entry.slug,
+  title: `${entry.term} - Interview Glossary - ExtraBrain`,
+  description: entry.description,
+  eyebrow: 'Interview glossary',
+  h1: entry.h1 ?? `What is ${entry.term}?`,
+  lead: entry.definition,
+  primaryCta: defaultCta,
+  secondaryCta: { label: 'Browse the glossary', href: '/glossary/' },
+  schemaType: 'FAQPage',
+  sections: [
+    {
+      title: 'What to know',
+      items: entry.details,
+    },
+    {
+      title: 'Related terms and guides',
+      variant: 'cards',
+      items: entry.related,
+    },
+    {
+      title: 'Responsible use',
+      body: responsibleUseNote,
+    },
+  ],
+  faq: entry.faq,
+});
+
+const glossaryEntries: GlossaryEntry[] = [
+  {
+    slug: 'glossary/star-method',
+    term: 'the STAR method',
+    h1: 'What is the STAR method?',
+    description: 'The STAR method is a structure for answering behavioral interview questions using Situation, Task, Action, and Result.',
+    definition: 'The STAR method is a way to structure behavioral interview answers into four parts: Situation, Task, Action, and Result. It helps you tell a clear, specific story instead of a vague summary.',
+    details: [
+      { title: 'Situation and Task', body: 'Set the scene in one or two sentences, then state the specific problem you owned and what success looked like.' },
+      { title: 'Action', body: 'Spend most of your answer on what you personally did, the decisions you made, and why. Use I, not we.' },
+      { title: 'Result', body: 'Close with measurable outcomes and what you learned. Numbers and concrete impact make the story credible.' },
+    ],
+    faq: [
+      { question: 'When should I use the STAR method?', answer: 'Use it for behavioral questions that start with prompts like tell me about a time or describe a situation where.' },
+      { question: 'How long should a STAR answer be?', answer: 'Aim for about one to two minutes: brief situation and task, detailed action, and a clear measurable result.' },
+    ],
+    related: [
+      { title: 'Behavioral interviews', body: 'How ExtraBrain helps you prepare and review STAR stories.', href: '/use-cases/behavioral-interviews/' },
+      { title: 'Behavioral interview', body: 'What a behavioral interview evaluates.', href: '/glossary/behavioral-interview/' },
+      { title: 'Amazon interview guide', body: 'STAR stories for the Amazon Leadership Principles.', href: '/interview-guides/amazon/' },
+    ],
+  },
+  {
+    slug: 'glossary/behavioral-interview',
+    term: 'a behavioral interview',
+    h1: 'What is a behavioral interview?',
+    description: 'A behavioral interview evaluates past behavior as a predictor of future performance using questions about real situations you handled.',
+    definition: 'A behavioral interview asks you to describe how you handled real past situations, on the theory that past behavior predicts future performance. Answers are usually structured with the STAR method.',
+    details: [
+      { title: 'What it evaluates', body: 'Collaboration, ownership, conflict handling, leadership, and how you make decisions under ambiguity.' },
+      { title: 'Common prompts', body: 'Tell me about a time you disagreed with a teammate, handled a failure, or led a project under pressure.' },
+      { title: 'How to prepare', body: 'Build a set of specific, measurable stories and map each to several possible questions.' },
+    ],
+    faq: [
+      { question: 'How do I answer behavioral questions?', answer: 'Use the STAR method: describe the Situation, Task, Action, and Result with specific detail and measurable outcomes.' },
+      { question: 'How many stories should I prepare?', answer: 'Prepare six to ten flexible stories covering leadership, conflict, failure, impact, and teamwork that you can adapt to many prompts.' },
+    ],
+    related: [
+      { title: 'Behavioral interviews', body: 'Practice and review behavioral answers with ExtraBrain.', href: '/use-cases/behavioral-interviews/' },
+      { title: 'The STAR method', body: 'The structure to use for behavioral answers.', href: '/glossary/star-method/' },
+      { title: 'Panel interview', body: 'Behavioral questions often happen in panels.', href: '/glossary/panel-interview/' },
+    ],
+  },
+  {
+    slug: 'glossary/system-design-interview',
+    term: 'a system design interview',
+    h1: 'What is a system design interview?',
+    description: 'A system design interview evaluates how you architect a large-scale system, covering requirements, components, data, and tradeoffs.',
+    definition: 'A system design interview asks you to architect a large-scale system out loud, from requirements and APIs to storage, scaling, and failure handling. It evaluates judgment and tradeoff reasoning more than a single correct answer.',
+    details: [
+      { title: 'Requirements first', body: 'Clarify functional and non-functional requirements, scale estimates, and constraints before drawing anything.' },
+      { title: 'Components and data', body: 'Lay out APIs, services, storage, caching, and queues, and explain why each choice fits the requirements.' },
+      { title: 'Tradeoffs', body: 'Discuss latency, availability, consistency, cost, and failure modes, and defend your decisions.' },
+    ],
+    faq: [
+      { question: 'How do I prepare for system design?', answer: 'Practice a repeatable framework: requirements, high-level design, deep dives, and tradeoffs, then rehearse common problems.' },
+      { question: 'What level needs system design?', answer: 'Most mid-level and senior software roles include at least one system design round, with depth increasing by level.' },
+    ],
+    related: [
+      { title: 'System design interviews', body: 'Keep requirements and tradeoffs organized with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+      { title: 'Coding interview', body: 'The other core technical round.', href: '/glossary/coding-interview/' },
+      { title: 'Databricks interview guide', body: 'Data-platform system design examples.', href: '/interview-guides/databricks/' },
+    ],
+  },
+  {
+    slug: 'glossary/coding-interview',
+    term: 'a coding interview',
+    h1: 'What is a coding interview?',
+    description: 'A coding interview tests your ability to solve algorithm and data structure problems while explaining your approach and complexity.',
+    definition: 'A coding interview asks you to solve algorithm and data structure problems, usually while talking through your approach, edge cases, and time and space complexity. Communication counts as much as the final code.',
+    details: [
+      { title: 'Clarify before coding', body: 'Restate the problem, ask about inputs, outputs, constraints, and edge cases, and agree on examples.' },
+      { title: 'Explain your approach', body: 'Describe a brute-force baseline, then improve it, discussing complexity tradeoffs out loud.' },
+      { title: 'Test your solution', body: 'Walk through examples, handle edge cases, and explain how you would verify correctness.' },
+    ],
+    faq: [
+      { question: 'What should I study for coding interviews?', answer: 'Focus on arrays, strings, hash maps, trees, graphs, recursion, dynamic programming, and complexity analysis.' },
+      { question: 'Do interviewers care about communication?', answer: 'Yes. Explaining your reasoning, tradeoffs, and edge cases clearly is often as important as reaching the optimal solution.' },
+    ],
+    related: [
+      { title: 'Coding interviews', body: 'How ExtraBrain supports live coding rounds responsibly.', href: '/use-cases/coding-interviews/' },
+      { title: 'Live coding interview', body: 'The real-time variant with an interviewer watching.', href: '/glossary/live-coding-interview/' },
+      { title: 'HackerRank', body: 'A common coding interview platform.', href: '/platforms/hackerrank/' },
+    ],
+  },
+  {
+    slug: 'glossary/technical-phone-screen',
+    term: 'a technical phone screen',
+    h1: 'What is a technical phone screen?',
+    description: 'A technical phone screen is an early-stage remote interview with a coding or technical question used to filter candidates before onsite rounds.',
+    definition: 'A technical phone screen is an early remote interview, often 45 to 60 minutes, with one coding or technical question in a shared editor. It filters candidates before the full onsite loop.',
+    details: [
+      { title: 'Format', body: 'Usually a video or phone call with a shared coding pad such as CoderPad or HackerRank.' },
+      { title: 'What matters', body: 'A working solution, clear communication, and reasonable complexity within the time limit.' },
+      { title: 'How to pass', body: 'Clarify the problem, think aloud, and leave time to test. A clean, explained solution beats a rushed clever one.' },
+    ],
+    faq: [
+      { question: 'How long is a technical phone screen?', answer: 'Most run 45 to 60 minutes, with 30 to 45 minutes on one coding or technical problem plus questions at the end.' },
+      { question: 'What comes after a phone screen?', answer: 'Passing usually leads to an onsite or virtual onsite loop with several coding, system design, and behavioral rounds.' },
+    ],
+    related: [
+      { title: 'Technical phone screens', body: 'Prepare for remote screening rounds with ExtraBrain.', href: '/use-cases/technical-phone-screens/' },
+      { title: 'Coding interview', body: 'The core skill tested in phone screens.', href: '/glossary/coding-interview/' },
+      { title: 'Onsite interview', body: 'The stage that follows a phone screen.', href: '/glossary/onsite-interview/' },
+    ],
+  },
+  {
+    slug: 'glossary/take-home-assignment',
+    term: 'a take-home assignment',
+    h1: 'What is a take-home assignment?',
+    description: 'A take-home assignment is a coding or analysis task you complete on your own time and submit, used instead of or alongside live interviews.',
+    definition: 'A take-home assignment is a self-paced project or problem you complete on your own time and submit for review. It lets you show real-world work without the pressure of a live timer.',
+    details: [
+      { title: 'Scope', body: 'Ranges from a small coding task to a full mini-project with tests, a README, and design notes.' },
+      { title: 'What is judged', body: 'Correctness, code quality, structure, testing, documentation, and clear communication of tradeoffs.' },
+      { title: 'How to stand out', body: 'Respect the time box, write a clear README explaining decisions, and leave notes on what you would improve with more time.' },
+    ],
+    faq: [
+      { question: 'How long should a take-home take?', answer: 'Follow the stated time box, often two to four hours. Note anything you cut for time rather than over-investing.' },
+      { question: 'What follows a take-home?', answer: 'Many companies use a follow-up review where you walk through your solution and answer questions about your choices.' },
+    ],
+    related: [
+      { title: 'Coding interview', body: 'The live counterpart to a take-home.', href: '/glossary/coding-interview/' },
+      { title: 'Software engineering interview prep', body: 'Prepare across coding, design, and behavioral rounds.', href: '/software-engineering-interview-preparation/' },
+      { title: 'Online assessment', body: 'Another self-paced screening format.', href: '/glossary/online-assessment/' },
+    ],
+  },
+  {
+    slug: 'glossary/whiteboard-interview',
+    term: 'a whiteboard interview',
+    h1: 'What is a whiteboard interview?',
+    description: 'A whiteboard interview asks you to solve a problem on a physical or virtual whiteboard, focusing on reasoning and communication over runnable code.',
+    definition: 'A whiteboard interview asks you to work through a problem on a physical or virtual whiteboard. The focus is on your reasoning, structure, and communication rather than perfectly runnable code.',
+    details: [
+      { title: 'Focus on thinking', body: 'Interviewers watch how you decompose the problem, not whether the syntax compiles.' },
+      { title: 'Communicate constantly', body: 'Narrate assumptions, tradeoffs, and next steps so the interviewer can follow and nudge you.' },
+      { title: 'Manage space', body: 'Leave room to iterate, write examples, and revise. Do not cram everything into one corner.' },
+    ],
+    faq: [
+      { question: 'Do companies still use whiteboards?', answer: 'Many onsite loops use physical or virtual whiteboards for coding and system design, though live editors are also common.' },
+      { question: 'How is it different from a coding interview?', answer: 'A whiteboard round emphasizes reasoning and communication and usually does not run your code, so correctness is judged by inspection.' },
+    ],
+    related: [
+      { title: 'Coding interview', body: 'The editor-based counterpart.', href: '/glossary/coding-interview/' },
+      { title: 'System design interview', body: 'Often conducted on a whiteboard.', href: '/glossary/system-design-interview/' },
+      { title: 'Coding interviews', body: 'How ExtraBrain helps you structure reasoning.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'glossary/pair-programming-interview',
+    term: 'a pair programming interview',
+    h1: 'What is a pair programming interview?',
+    description: 'A pair programming interview has you build or debug code collaboratively with an interviewer, evaluating real-world coding and communication.',
+    definition: 'A pair programming interview has you write or debug code together with the interviewer, often in a real IDE or shared editor. It evaluates how you collaborate, communicate, and work with real code.',
+    details: [
+      { title: 'Realistic setup', body: 'You may extend an existing codebase, fix bugs, or add a feature rather than solve a puzzle from scratch.' },
+      { title: 'Collaboration counts', body: 'Ask questions, accept hints, and think aloud. The interviewer is a partner, not just an examiner.' },
+      { title: 'Tools allowed', body: 'You can often use documentation, an IDE, and run code. Clarify what is allowed before you start.' },
+    ],
+    faq: [
+      { question: 'How is pair programming different from whiteboarding?', answer: 'It is collaborative and uses real tools and runnable code, focusing on practical engineering and communication.' },
+      { question: 'Can I use documentation?', answer: 'Often yes, since the format mimics real work, but always confirm what resources are permitted at the start.' },
+    ],
+    related: [
+      { title: 'Coding interview', body: 'The solo counterpart.', href: '/glossary/coding-interview/' },
+      { title: 'Live coding interview', body: 'A related real-time format.', href: '/glossary/live-coding-interview/' },
+      { title: 'CoderPad', body: 'A common shared-editor platform.', href: '/platforms/coderpad/' },
+    ],
+  },
+  {
+    slug: 'glossary/onsite-interview',
+    term: 'an onsite interview',
+    h1: 'What is an onsite interview (the loop)?',
+    description: 'An onsite interview, or loop, is a series of back-to-back interview rounds covering coding, system design, and behavioral topics.',
+    definition: 'An onsite interview, often called the loop, is a series of back-to-back rounds in one day, usually mixing coding, system design, and behavioral interviews. Many onsites are now virtual.',
+    details: [
+      { title: 'Structure', body: 'Typically four to six rounds with different interviewers, each focused on a specific competency.' },
+      { title: 'Stamina matters', body: 'Consistency across rounds is key. Take short resets between interviews and treat each one fresh.' },
+      { title: 'Debrief', body: 'Interviewers compare notes afterward, so strong signals in multiple rounds carry weight.' },
+    ],
+    faq: [
+      { question: 'How many rounds is an onsite?', answer: 'Most onsite loops include four to six rounds spanning coding, system design, and behavioral interviews, varying by company and level.' },
+      { question: 'Are onsites in person?', answer: 'Many are now virtual onsites conducted over video, though some companies still bring candidates on site.' },
+    ],
+    related: [
+      { title: 'Technical phone screen', body: 'The stage before the onsite.', href: '/glossary/technical-phone-screen/' },
+      { title: 'Superday', body: 'The finance equivalent of a loop.', href: '/glossary/superday/' },
+      { title: 'Software engineering interview prep', body: 'Prepare for a full loop with ExtraBrain.', href: '/software-engineering-interview-preparation/' },
+    ],
+  },
+  {
+    slug: 'glossary/superday',
+    term: 'a superday',
+    h1: 'What is a superday?',
+    description: 'A superday is a final-stage set of back-to-back interviews, common in finance and banking, mixing technical and behavioral rounds.',
+    definition: 'A superday is a final-round event, common in finance and banking, where you complete several back-to-back interviews in one day. It often mixes technical questions with behavioral and motivation topics.',
+    details: [
+      { title: 'Who uses it', body: 'Investment banks and financial firms such as Goldman Sachs and JPMorgan commonly run superdays.' },
+      { title: 'What to expect', body: 'Multiple interviewers, technical or coding questions, and repeated why this firm and why this role prompts.' },
+      { title: 'How to prepare', body: 'Prepare crisp motivation answers, know the firm, and keep energy consistent across every interview.' },
+    ],
+    faq: [
+      { question: 'What is a superday in finance?', answer: 'It is the final interview stage where candidates face several back-to-back interviews in one day before hiring decisions.' },
+      { question: 'How do I prepare for a superday?', answer: 'Rehearse concise motivation and behavioral answers, review technical fundamentals, and prepare thoughtful questions for each interviewer.' },
+    ],
+    related: [
+      { title: 'Goldman Sachs interview guide', body: 'Assessment, technical rounds, and superday.', href: '/interview-guides/goldman-sachs/' },
+      { title: 'JPMorgan Chase interview guide', body: 'Assessment, technical, and behavioral rounds.', href: '/interview-guides/jpmorgan/' },
+      { title: 'Onsite interview', body: 'The tech equivalent of a superday.', href: '/glossary/onsite-interview/' },
+    ],
+  },
+  {
+    slug: 'glossary/online-assessment',
+    term: 'an online assessment',
+    h1: 'What is an online assessment (OA)?',
+    description: 'An online assessment (OA) is a timed, automated coding or aptitude test used to screen candidates early in the interview process.',
+    definition: 'An online assessment, or OA, is a timed, automated test, usually coding problems, sometimes aptitude sections, used to screen candidates before live interviews. Platforms like HackerRank and CodeSignal are common.',
+    details: [
+      { title: 'Format', body: 'One or more coding problems with a strict timer, auto-graded against hidden test cases.' },
+      { title: 'What is judged', body: 'Correctness on all test cases and sometimes runtime efficiency within the time limit.' },
+      { title: 'How to prepare', body: 'Practice timed problems, read constraints carefully, and handle edge cases to pass hidden tests.' },
+    ],
+    faq: [
+      { question: 'What platforms host online assessments?', answer: 'Common ones include HackerRank, CodeSignal, and Codility, often with proctoring and time limits.' },
+      { question: 'Are online assessments proctored?', answer: 'Many are proctored or recorded and prohibit outside help, so always follow the specific assessment rules.' },
+    ],
+    related: [
+      { title: 'HackerRank', body: 'A common online assessment platform.', href: '/platforms/hackerrank/' },
+      { title: 'CodeSignal', body: 'Another widely used assessment platform.', href: '/platforms/codesignal/' },
+      { title: 'Take-home assignment', body: 'A self-paced alternative to an OA.', href: '/glossary/take-home-assignment/' },
+    ],
+  },
+  {
+    slug: 'glossary/case-interview',
+    term: 'a case interview',
+    h1: 'What is a case interview?',
+    description: 'A case interview, common in consulting, asks you to work through a business problem out loud, structuring analysis toward a recommendation.',
+    definition: 'A case interview, common in consulting, presents a business problem you solve out loud with the interviewer. It evaluates structured thinking, quantitative reasoning, and clear communication toward a recommendation.',
+    details: [
+      { title: 'Structure the problem', body: 'Open with a clear framework that breaks the problem into logical, testable parts.' },
+      { title: 'Drive the analysis', body: 'Form hypotheses, do the math cleanly, and interpret what the numbers mean for the client.' },
+      { title: 'Recommend', body: 'End with a concise, decisive recommendation and the risks or next steps.' },
+    ],
+    faq: [
+      { question: 'Who uses case interviews?', answer: 'Management consulting firms such as McKinsey, Bain, and BCG, plus some strategy and operations roles.' },
+      { question: 'How do I prepare for case interviews?', answer: 'Practice frameworks, mental math, and speaking your structure aloud, then review recordings to tighten your logic.' },
+    ],
+    related: [
+      { title: 'Consulting case interview prep', body: 'Prepare for cases with ExtraBrain.', href: '/consulting-case-interview-prep/' },
+      { title: 'McKinsey interview guide', body: 'Solve assessment, cases, and the PEI.', href: '/interview-guides/mckinsey/' },
+      { title: 'The STAR method', body: 'For the personal experience portion.', href: '/glossary/star-method/' },
+    ],
+  },
+  {
+    slug: 'glossary/panel-interview',
+    term: 'a panel interview',
+    h1: 'What is a panel interview?',
+    description: 'A panel interview has multiple interviewers question one candidate at once, common for behavioral, leadership, and cross-functional rounds.',
+    definition: 'A panel interview has several interviewers question one candidate at the same time. It is common for behavioral, leadership, and cross-functional evaluation, and it tests how you handle multiple perspectives.',
+    details: [
+      { title: 'Engage everyone', body: 'Make eye contact with the person who asked, then include the whole panel in your answer.' },
+      { title: 'Track the thread', body: 'Panels can jump between topics. Keep answers structured so you do not lose the question.' },
+      { title: 'Names and roles', body: 'Note who is who early so you can address follow-ups and ask relevant questions at the end.' },
+    ],
+    faq: [
+      { question: 'How do I handle a panel interview?', answer: 'Stay structured, address the asker while including the panel, and keep answers concise so multiple interviewers can probe.' },
+      { question: 'Why do companies use panels?', answer: 'Panels gather several perspectives at once, reduce individual bias, and test communication with multiple stakeholders.' },
+    ],
+    related: [
+      { title: 'Behavioral interview', body: 'Panels often focus on behavioral questions.', href: '/glossary/behavioral-interview/' },
+      { title: 'Behavioral interviews', body: 'Prepare structured stories with ExtraBrain.', href: '/use-cases/behavioral-interviews/' },
+      { title: 'The STAR method', body: 'Keep panel answers structured.', href: '/glossary/star-method/' },
+    ],
+  },
+  {
+    slug: 'glossary/live-coding-interview',
+    term: 'a live coding interview',
+    h1: 'What is a live coding interview?',
+    description: 'A live coding interview has you write and run code in real time while an interviewer watches and asks questions.',
+    definition: 'A live coding interview has you write and often run code in real time while an interviewer observes and asks questions. It tests coding skill, communication, and how you handle feedback under light pressure.',
+    details: [
+      { title: 'Think aloud', body: 'Narrate your plan before coding so the interviewer can follow and guide you if you drift.' },
+      { title: 'Iterate openly', body: 'It is fine to start simple and refactor. Show how you find and fix your own bugs.' },
+      { title: 'Use the tools', body: 'Run code, add quick tests, and check edge cases if the environment allows it.' },
+    ],
+    faq: [
+      { question: 'What tools are used for live coding?', answer: 'Shared editors like CoderPad, HackerRank, and CodeSignal, sometimes a real IDE for pair-style rounds.' },
+      { question: 'How is it different from an online assessment?', answer: 'A live coding interview is interactive with an interviewer present, while an online assessment is automated and self-paced.' },
+    ],
+    related: [
+      { title: 'Coding interview', body: 'The broader category.', href: '/glossary/coding-interview/' },
+      { title: 'Pair programming interview', body: 'A collaborative live variant.', href: '/glossary/pair-programming-interview/' },
+      { title: 'Coding interviews', body: 'How ExtraBrain supports live rounds responsibly.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'glossary/applicant-tracking-system',
+    term: 'an applicant tracking system (ATS)',
+    h1: 'What is an applicant tracking system (ATS)?',
+    description: 'An applicant tracking system (ATS) is software employers use to collect, filter, and manage job applications and resumes.',
+    definition: 'An applicant tracking system, or ATS, is software employers use to collect, parse, filter, and manage job applications. Resumes are often screened for keywords before a human reviews them.',
+    details: [
+      { title: 'Resume parsing', body: 'An ATS extracts your skills, titles, and experience into structured fields, so clean formatting helps.' },
+      { title: 'Keyword matching', body: 'Recruiters search and filter by keywords from the job description, so relevant terms matter.' },
+      { title: 'What it is not', body: 'An ATS rarely auto-rejects on its own. It is a filing and search tool that supports human recruiters.' },
+    ],
+    faq: [
+      { question: 'How do I get past an ATS?', answer: 'Use a clean, standard resume format and mirror the exact skills and titles from the job description where they are truthful.' },
+      { question: 'Do ATS systems reject resumes automatically?', answer: 'Usually not automatically. Recruiters use the ATS to search and filter, so ranking and keywords influence whether a human sees you.' },
+    ],
+    related: [
+      { title: 'Resume advice for job interviews', body: 'Make your resume ATS-friendly and specific.', href: '/resume-advice-for-job-interviews/' },
+      { title: 'Online assessment', body: 'A later automated screening step.', href: '/glossary/online-assessment/' },
+      { title: 'Technical phone screen', body: 'What often follows resume screening.', href: '/glossary/technical-phone-screen/' },
+    ],
+  },
+];
+
+const glossaryTermPages: MarketingPage[] = glossaryEntries.map((entry) => glossaryPage(entry));
+
+const glossaryHubPage: MarketingPage = {
+  slug: 'glossary',
+  title: 'Interview Glossary - Terms, Formats, and Definitions - ExtraBrain',
+  description: 'A plain-English glossary of interview terms and formats: STAR method, behavioral, system design, coding, take-home, superday, ATS, and more.',
+  eyebrow: 'Interview glossary',
+  h1: 'Interview glossary.',
+  lead: 'Clear definitions of the interview terms, rounds, and formats you will meet in a modern hiring process, with links to deeper ExtraBrain guides for each one.',
+  primaryCta: defaultCta,
+  secondaryCta: { label: 'See use cases', href: '/use-cases/coding-interviews/' },
+  schemaType: 'FAQPage',
+  sections: [
+    {
+      title: 'Browse interview terms',
+      variant: 'cards',
+      items: glossaryEntries.map((entry) => ({
+        title: entry.term.replace(/^(the|a|an) /, '').replace(/\b\w/, (c) => c.toUpperCase()),
+        body: entry.description,
+        href: `/${entry.slug}/`,
+      })),
+    },
+    {
+      title: 'Responsible use',
+      body: responsibleUseNote,
+    },
+  ],
+  faq: [
+    { question: 'What is an interview glossary?', answer: 'It is a reference of common interview terms and formats, from the STAR method to system design interviews and online assessments, explained in plain English.' },
+    { question: 'How can ExtraBrain help with these interviews?', answer: 'ExtraBrain is a local-first Mac AI interview assistant and meeting copilot that helps you prepare, rehearse, follow live context where allowed, and review each session afterward.' },
+  ],
+};
+
+export const glossaryPages: MarketingPage[] = [glossaryHubPage, ...glossaryTermPages];
+
+type LanguageEntry = {
+  slug: string;
+  language: string;
+  description: string;
+  lead: string;
+  topics: Array<{ title: string; body: string }>;
+  faq: Array<{ question: string; answer: string }>;
+};
+
+const languagePage = (entry: LanguageEntry): MarketingPage => ({
+  slug: entry.slug,
+  title: `${entry.language} Coding Interview Assistant - ExtraBrain`,
+  description: entry.description,
+  eyebrow: `${entry.language} interviews`,
+  h1: `A ${entry.language} coding interview copilot for Mac.`,
+  lead: entry.lead,
+  primaryCta: defaultCta,
+  secondaryCta: { label: 'Coding interviews', href: '/use-cases/coding-interviews/' },
+  schemaType: 'FAQPage',
+  sections: [
+    { title: `What it helps with in ${entry.language} interviews`, items: entry.topics },
+    { title: 'Works with common interview tools', items: worksWithPlatforms },
+    { title: 'Responsible use', body: responsibleUseNote },
+  ],
+  faq: entry.faq,
+});
+
+const languageInterviewEntries: LanguageEntry[] = [
+  {
+    slug: 'use-cases/python-coding-interviews',
+    language: 'Python',
+    description: 'Prepare for Python coding interviews with ExtraBrain: data structures, generators, concurrency, and idiomatic Python on Mac.',
+    lead: 'ExtraBrain helps you prepare for and follow Python coding interviews, keeping data structures, idiomatic patterns, and complexity reasoning organized with live transcription and review.',
+    topics: [
+      { title: 'Data structures and idioms', body: 'Keep list, dict, set, and comprehension patterns and their tradeoffs organized.' },
+      { title: 'Generators and concurrency', body: 'Structure answers on generators, iterators, the GIL, threading, and asyncio.' },
+      { title: 'Complexity and style', body: 'Track time and space complexity and idiomatic, readable Python while you code.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with Python interviews?', answer: 'Yes. ExtraBrain supports Python coding rounds with screen-aware context and structured reasoning about data structures and complexity.' },
+      { question: 'Can it help with Python concurrency questions?', answer: 'Yes. ExtraBrain helps you structure answers on the GIL, threading, multiprocessing, and asyncio.' },
+      { question: 'Is Python good for coding interviews?', answer: 'Python is popular for interviews thanks to concise syntax and rich data structures. ExtraBrain helps you use it idiomatically under time pressure.' },
+    ],
+  },
+  {
+    slug: 'use-cases/java-coding-interviews',
+    language: 'Java',
+    description: 'Prepare for Java coding interviews with ExtraBrain: collections, concurrency, OOP, and the JVM on Mac.',
+    lead: 'ExtraBrain helps you prepare for and follow Java coding interviews, keeping collections, concurrency, and object-oriented design reasoning organized with live transcription and review.',
+    topics: [
+      { title: 'Collections and generics', body: 'Keep List, Map, Set, and generic-type tradeoffs organized while you code.' },
+      { title: 'Concurrency and JVM', body: 'Structure answers on threads, synchronization, the memory model, and garbage collection.' },
+      { title: 'OOP and streams', body: 'Track object-oriented design, interfaces, and the Streams API with clear reasoning.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with Java interviews?', answer: 'Yes. ExtraBrain supports Java coding rounds with screen-aware context and structured reasoning about collections and concurrency.' },
+      { question: 'Can it help with JVM and memory questions?', answer: 'Yes. ExtraBrain helps you structure answers on the memory model, garbage collection, and performance.' },
+      { question: 'Is Java common in coding interviews?', answer: 'Java is widely used in enterprise and Android interviews. ExtraBrain helps you keep collections and concurrency answers precise.' },
+    ],
+  },
+  {
+    slug: 'use-cases/javascript-coding-interviews',
+    language: 'JavaScript',
+    description: 'Prepare for JavaScript coding interviews with ExtraBrain: closures, async, the event loop, and prototypes on Mac.',
+    lead: 'ExtraBrain helps you prepare for and follow JavaScript coding interviews, keeping closures, asynchronous patterns, and language quirks organized with live transcription and review.',
+    topics: [
+      { title: 'Closures and scope', body: 'Keep closures, hoisting, and this-binding reasoning organized while you code.' },
+      { title: 'Async and the event loop', body: 'Structure answers on promises, async/await, microtasks, and the event loop.' },
+      { title: 'Prototypes and ES6+', body: 'Track prototypal inheritance, modules, and modern syntax with clear reasoning.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with JavaScript interviews?', answer: 'Yes. ExtraBrain supports JavaScript coding rounds with screen-aware context and structured reasoning about closures and async.' },
+      { question: 'Can it help with event-loop questions?', answer: 'Yes. ExtraBrain helps you structure answers on the call stack, microtasks, macrotasks, and async ordering.' },
+      { question: 'Is JavaScript used in frontend interviews?', answer: 'JavaScript is central to frontend interviews. ExtraBrain helps you explain closures, async, and prototypes clearly.' },
+    ],
+  },
+  {
+    slug: 'use-cases/typescript-coding-interviews',
+    language: 'TypeScript',
+    description: 'Prepare for TypeScript coding interviews with ExtraBrain: types, generics, narrowing, and utility types on Mac.',
+    lead: 'ExtraBrain helps you prepare for and follow TypeScript coding interviews, keeping the type system, generics, and narrowing reasoning organized with live transcription and review.',
+    topics: [
+      { title: 'Types and interfaces', body: 'Keep interfaces, type aliases, unions, and intersections organized while you code.' },
+      { title: 'Generics and narrowing', body: 'Structure answers on generic constraints, conditional types, and type narrowing.' },
+      { title: 'Utility types and config', body: 'Track built-in utility types and strictness settings with clear reasoning.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with TypeScript interviews?', answer: 'Yes. ExtraBrain supports TypeScript coding rounds with screen-aware context and structured reasoning about the type system.' },
+      { question: 'Can it help with generics questions?', answer: 'Yes. ExtraBrain helps you structure answers on generic constraints, inference, and conditional types.' },
+      { question: 'Is TypeScript common in frontend interviews?', answer: 'TypeScript is common in modern frontend and full-stack interviews. ExtraBrain helps you reason about types precisely.' },
+    ],
+  },
+  {
+    slug: 'use-cases/go-coding-interviews',
+    language: 'Go',
+    description: 'Prepare for Go coding interviews with ExtraBrain: goroutines, channels, interfaces, and concurrency patterns on Mac.',
+    lead: 'ExtraBrain helps you prepare for and follow Go coding interviews, keeping concurrency, interfaces, and idiomatic Go reasoning organized with live transcription and review.',
+    topics: [
+      { title: 'Goroutines and channels', body: 'Keep concurrency patterns, channels, and select statements organized while you code.' },
+      { title: 'Interfaces and errors', body: 'Structure answers on interfaces, composition, and idiomatic error handling.' },
+      { title: 'Slices, maps, and memory', body: 'Track slice internals, maps, and memory behavior with clear reasoning.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with Go interviews?', answer: 'Yes. ExtraBrain supports Go coding rounds with screen-aware context and structured reasoning about concurrency and interfaces.' },
+      { question: 'Can it help with concurrency questions?', answer: 'Yes. ExtraBrain helps you structure answers on goroutines, channels, and synchronization patterns.' },
+      { question: 'Is Go common in backend interviews?', answer: 'Go is popular for backend and infrastructure roles. ExtraBrain helps you keep concurrency and idiom answers clear.' },
+    ],
+  },
+  {
+    slug: 'use-cases/cpp-coding-interviews',
+    language: 'C++',
+    description: 'Prepare for C++ coding interviews with ExtraBrain: memory, RAII, move semantics, the STL, and templates on Mac.',
+    lead: 'ExtraBrain helps you prepare for and follow C++ coding interviews, keeping memory management, the STL, and modern C++ reasoning organized with live transcription and review.',
+    topics: [
+      { title: 'Memory and RAII', body: 'Keep pointers, references, RAII, and smart pointers organized while you code.' },
+      { title: 'Move semantics and templates', body: 'Structure answers on move semantics, rvalue references, and templates.' },
+      { title: 'STL and complexity', body: 'Track STL containers, algorithms, and complexity with clear reasoning.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with C++ interviews?', answer: 'Yes. ExtraBrain supports C++ coding rounds with screen-aware context and structured reasoning about memory and the STL.' },
+      { question: 'Can it help with memory management questions?', answer: 'Yes. ExtraBrain helps you structure answers on RAII, smart pointers, and ownership.' },
+      { question: 'Is C++ used in low-latency interviews?', answer: 'C++ is common in systems, finance, and low-latency interviews. ExtraBrain helps you keep performance answers precise.' },
+    ],
+  },
+  {
+    slug: 'use-cases/csharp-coding-interviews',
+    language: 'C#',
+    description: 'Prepare for C# coding interviews with ExtraBrain: LINQ, async/await, collections, and .NET on Mac.',
+    lead: 'ExtraBrain helps you prepare for and follow C# coding interviews, keeping LINQ, async patterns, and .NET reasoning organized with live transcription and review.',
+    topics: [
+      { title: 'LINQ and collections', body: 'Keep LINQ queries, collections, and value versus reference types organized while you code.' },
+      { title: 'Async and tasks', body: 'Structure answers on async/await, the Task model, and cancellation.' },
+      { title: 'OOP and .NET', body: 'Track object-oriented design and .NET runtime behavior with clear reasoning.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with C# interviews?', answer: 'Yes. ExtraBrain supports C# coding rounds with screen-aware context and structured reasoning about LINQ and async.' },
+      { question: 'Can it help with async/await questions?', answer: 'Yes. ExtraBrain helps you structure answers on the Task model, async/await, and cancellation.' },
+      { question: 'Is C# common in enterprise interviews?', answer: 'C# is widely used in enterprise and game interviews. ExtraBrain helps you keep LINQ and async answers clear.' },
+    ],
+  },
+  {
+    slug: 'use-cases/rust-coding-interviews',
+    language: 'Rust',
+    description: 'Prepare for Rust coding interviews with ExtraBrain: ownership, borrowing, lifetimes, traits, and safe concurrency on Mac.',
+    lead: 'ExtraBrain helps you prepare for and follow Rust coding interviews, keeping ownership, lifetimes, and trait reasoning organized with live transcription and review.',
+    topics: [
+      { title: 'Ownership and borrowing', body: 'Keep ownership, borrowing, and lifetime reasoning organized while you code.' },
+      { title: 'Traits and generics', body: 'Structure answers on traits, generics, and the type system.' },
+      { title: 'Error handling and concurrency', body: 'Track Result and Option handling and fearless concurrency with clear reasoning.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with Rust interviews?', answer: 'Yes. ExtraBrain supports Rust coding rounds with screen-aware context and structured reasoning about ownership and traits.' },
+      { question: 'Can it help with ownership and borrowing questions?', answer: 'Yes. ExtraBrain helps you structure answers on the borrow checker, lifetimes, and move semantics.' },
+      { question: 'Is Rust common in systems interviews?', answer: 'Rust is increasingly common in systems and infrastructure interviews. ExtraBrain helps you keep ownership answers precise.' },
+    ],
+  },
+  {
+    slug: 'use-cases/sql-coding-interviews',
+    language: 'SQL',
+    description: 'Prepare for SQL interviews with ExtraBrain: joins, window functions, indexing, and query optimization on Mac.',
+    lead: 'ExtraBrain helps you prepare for and follow SQL interviews, keeping joins, window functions, and query optimization reasoning organized with live transcription and review.',
+    topics: [
+      { title: 'Joins and aggregation', body: 'Keep join types, grouping, and aggregation reasoning organized while you write queries.' },
+      { title: 'Window functions', body: 'Structure answers on partitioning, ranking, and running totals.' },
+      { title: 'Indexing and optimization', body: 'Track indexes, execution plans, and query optimization with clear reasoning.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with SQL interviews?', answer: 'Yes. ExtraBrain supports SQL rounds with screen-aware context from query editors and structured optimization reasoning.' },
+      { question: 'Can it help with window-function questions?', answer: 'Yes. ExtraBrain helps you structure answers on partitioning, ranking, and analytic functions.' },
+      { question: 'Is SQL common in data interviews?', answer: 'SQL is central to data analyst, data engineer, and backend interviews. ExtraBrain helps you keep query reasoning clear.' },
+    ],
+  },
+  {
+    slug: 'use-cases/ruby-coding-interviews',
+    language: 'Ruby',
+    description: 'Prepare for Ruby coding interviews with ExtraBrain: blocks, enumerables, metaprogramming, and idiomatic Ruby on Mac.',
+    lead: 'ExtraBrain helps you prepare for and follow Ruby coding interviews, keeping blocks, enumerables, and idiomatic Ruby reasoning organized with live transcription and review.',
+    topics: [
+      { title: 'Blocks and enumerables', body: 'Keep blocks, procs, lambdas, and Enumerable methods organized while you code.' },
+      { title: 'Objects and metaprogramming', body: 'Structure answers on the object model, modules, and metaprogramming.' },
+      { title: 'Idioms and complexity', body: 'Track idiomatic Ruby and complexity tradeoffs with clear reasoning.' },
+    ],
+    faq: [
+      { question: 'Does ExtraBrain help with Ruby interviews?', answer: 'Yes. ExtraBrain supports Ruby coding rounds with screen-aware context and structured reasoning about blocks and enumerables.' },
+      { question: 'Can it help with metaprogramming questions?', answer: 'Yes. ExtraBrain helps you structure answers on the object model, modules, and dynamic methods.' },
+      { question: 'Is Ruby common in interviews?', answer: 'Ruby appears in Rails and product-company interviews. ExtraBrain helps you keep idiomatic answers clear.' },
+    ],
+  },
+];
+
+export const languageInterviewPages: MarketingPage[] = languageInterviewEntries.map((entry) => languagePage(entry));
+
+type ConceptEntry = {
+  slug: string;
+  term: string;
+  h1?: string;
+  description: string;
+  definition: string;
+  details: Array<{ title: string; body: string }>;
+  faq: Array<{ question: string; answer: string }>;
+  related: Array<{ title: string; body: string; href: string }>;
+};
+
+const conceptPage = (entry: ConceptEntry): MarketingPage => ({
+  slug: entry.slug,
+  title: `${entry.term} - Interview Concepts - ExtraBrain`,
+  description: entry.description,
+  eyebrow: 'Interview concept',
+  h1: entry.h1 ?? entry.term,
+  lead: entry.definition,
+  primaryCta: defaultCta,
+  secondaryCta: { label: 'Browse concepts', href: '/concepts/' },
+  schemaType: 'FAQPage',
+  sections: [
+    { title: 'How it works', items: entry.details },
+    { title: 'Related concepts and guides', variant: 'cards', items: entry.related },
+    { title: 'Responsible use', body: responsibleUseNote },
+  ],
+  faq: entry.faq,
+});
+
+const conceptEntries: ConceptEntry[] = [
+  {
+    slug: 'concepts/sliding-window',
+    term: 'The sliding window technique',
+    h1: 'What is the sliding window technique?',
+    description: 'The sliding window technique solves array and string problems by maintaining a moving range instead of recomputing from scratch.',
+    definition: 'The sliding window technique keeps a moving range over an array or string and updates a running result as the window grows or shrinks, turning many O(n squared) brute-force scans into O(n) solutions.',
+    details: [
+      { title: 'Fixed vs dynamic windows', body: 'A fixed window keeps a constant size; a dynamic window expands and contracts based on a condition such as a sum or character count.' },
+      { title: 'When to use it', body: 'Reach for it on contiguous-subarray or substring problems asking for a maximum, minimum, or count under a constraint.' },
+      { title: 'Common pitfalls', body: 'Watch off-by-one bounds, when to shrink the window, and correctly updating state as elements leave.' },
+    ],
+    faq: [
+      { question: 'When should I use a sliding window?', answer: 'Use it for contiguous subarray or substring problems where you can update a result incrementally as the range moves.' },
+      { question: 'What is the time complexity?', answer: 'Most sliding window solutions run in O(n) because each element enters and leaves the window at most once.' },
+    ],
+    related: [
+      { title: 'Two pointers', body: 'A closely related range technique.', href: '/concepts/two-pointers/' },
+      { title: 'Big O notation', body: 'How to describe the complexity you improve.', href: '/concepts/big-o-notation/' },
+      { title: 'Coding interviews', body: 'Practice patterns with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/two-pointers',
+    term: 'The two pointers technique',
+    h1: 'What is the two pointers technique?',
+    description: 'The two pointers technique uses two indices moving through a structure to solve pair, partition, and in-place problems efficiently.',
+    definition: 'The two pointers technique advances two indices through an array or list, often from both ends or at different speeds, to solve pair-sum, partitioning, and in-place problems without nested loops.',
+    details: [
+      { title: 'Opposite ends', body: 'Start one pointer at each end and move them inward, common for sorted-array pair and palindrome problems.' },
+      { title: 'Fast and slow', body: 'Move pointers at different speeds to detect cycles or find midpoints in linked lists.' },
+      { title: 'When to use it', body: 'Prefer it on sorted data or in-place rearrangement where a nested loop would be O(n squared).' },
+    ],
+    faq: [
+      { question: 'When should I use two pointers?', answer: 'Use it on sorted arrays, pair-sum problems, palindromes, and in-place rearrangements to avoid nested loops.' },
+      { question: 'How does fast and slow pointers work?', answer: 'One pointer moves one step and another moves two, which detects cycles and finds midpoints in a single pass.' },
+    ],
+    related: [
+      { title: 'Sliding window', body: 'A related moving-range technique.', href: '/concepts/sliding-window/' },
+      { title: 'Binary search', body: 'Another technique for sorted data.', href: '/concepts/binary-search/' },
+      { title: 'Coding interviews', body: 'Practice patterns with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/binary-search',
+    term: 'Binary search',
+    h1: 'What is binary search?',
+    description: 'Binary search finds a target in sorted data in O(log n) by repeatedly halving the search range.',
+    definition: 'Binary search locates a value in sorted data by comparing the middle element to the target and discarding half the range each step, achieving O(log n) time.',
+    details: [
+      { title: 'Core loop', body: 'Track low and high bounds, compute a mid index, and move the bound that cannot contain the target.' },
+      { title: 'Search on the answer', body: 'Many problems binary search over a range of possible answers, not just array indices.' },
+      { title: 'Common pitfalls', body: 'Guard against overflow in mid calculation and off-by-one errors in loop bounds and termination.' },
+    ],
+    faq: [
+      { question: 'When can I use binary search?', answer: 'Use it when data is sorted or when the answer space is monotonic, so you can discard half the range each step.' },
+      { question: 'What is the complexity of binary search?', answer: 'Binary search runs in O(log n) time and O(1) extra space in its iterative form.' },
+    ],
+    related: [
+      { title: 'Big O notation', body: 'Why log n matters.', href: '/concepts/big-o-notation/' },
+      { title: 'Two pointers', body: 'Another sorted-data technique.', href: '/concepts/two-pointers/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/dynamic-programming',
+    term: 'Dynamic programming',
+    h1: 'What is dynamic programming?',
+    description: 'Dynamic programming solves problems by breaking them into overlapping subproblems and reusing stored results.',
+    definition: 'Dynamic programming solves a problem by combining solutions to overlapping subproblems, storing each result once so it is never recomputed. It applies when a problem has optimal substructure and overlapping subproblems.',
+    details: [
+      { title: 'Memoization vs tabulation', body: 'Top-down memoization caches recursive results; bottom-up tabulation fills a table iteratively.' },
+      { title: 'Define the state', body: 'Identify what parameters uniquely describe a subproblem and write the recurrence relating states.' },
+      { title: 'Common patterns', body: 'Knapsack, longest common subsequence, edit distance, and grid path problems are frequent DP templates.' },
+    ],
+    faq: [
+      { question: 'When should I use dynamic programming?', answer: 'Use it when a problem has optimal substructure and overlapping subproblems, so cached results avoid exponential recomputation.' },
+      { question: 'How do I find the DP state?', answer: 'Ask what minimal set of parameters describes a subproblem, then write a recurrence that builds larger states from smaller ones.' },
+    ],
+    related: [
+      { title: 'Recursion and backtracking', body: 'The foundation DP optimizes.', href: '/concepts/recursion-and-backtracking/' },
+      { title: 'Big O notation', body: 'How DP changes complexity.', href: '/concepts/big-o-notation/' },
+      { title: 'Coding interviews', body: 'Practice DP with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/recursion-and-backtracking',
+    term: 'Recursion and backtracking',
+    h1: 'What are recursion and backtracking?',
+    description: 'Recursion solves problems by self-reference; backtracking explores choices and undoes them when they fail.',
+    definition: 'Recursion solves a problem by calling itself on smaller inputs until a base case. Backtracking is recursion that tries a choice, explores further, and undoes the choice when it leads to a dead end.',
+    details: [
+      { title: 'Base case and recurrence', body: 'Define a clear base case and how each call reduces the problem toward it.' },
+      { title: 'Backtracking template', body: 'Choose, explore, and un-choose, pruning branches that cannot lead to a valid solution.' },
+      { title: 'When to use it', body: 'Reach for it on permutations, combinations, subsets, and constraint problems like N-Queens.' },
+    ],
+    faq: [
+      { question: 'What is the difference between recursion and backtracking?', answer: 'Backtracking is a form of recursion that explores choices and undoes them, systematically searching a solution space with pruning.' },
+      { question: 'How do I avoid stack overflow?', answer: 'Ensure a reachable base case, bound recursion depth, and consider an iterative or memoized approach for deep recursion.' },
+    ],
+    related: [
+      { title: 'Dynamic programming', body: 'Optimizes overlapping recursive subproblems.', href: '/concepts/dynamic-programming/' },
+      { title: 'Depth-first search', body: 'A recursive traversal strategy.', href: '/concepts/depth-first-search/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/breadth-first-search',
+    term: 'Breadth-first search (BFS)',
+    h1: 'What is breadth-first search (BFS)?',
+    description: 'Breadth-first search explores a graph level by level using a queue, finding shortest paths in unweighted graphs.',
+    definition: 'Breadth-first search explores nodes in order of distance from the start using a queue, visiting all neighbors before going deeper. It finds shortest paths in unweighted graphs.',
+    details: [
+      { title: 'Queue-based traversal', body: 'Use a queue and a visited set to process nodes in expanding layers from the source.' },
+      { title: 'Shortest paths', body: 'Because BFS expands by distance, the first time it reaches a node is via a shortest unweighted path.' },
+      { title: 'When to use it', body: 'Prefer BFS for level-order traversal, shortest path in unweighted graphs, and minimum-step problems.' },
+    ],
+    faq: [
+      { question: 'When should I use BFS over DFS?', answer: 'Use BFS when you need the shortest path in an unweighted graph or level-order processing.' },
+      { question: 'What is the complexity of BFS?', answer: 'BFS runs in O(V + E) time, visiting every vertex and edge once, with O(V) space for the queue and visited set.' },
+    ],
+    related: [
+      { title: 'Depth-first search', body: 'The complementary traversal.', href: '/concepts/depth-first-search/' },
+      { title: 'Graphs', body: 'The structure BFS explores.', href: '/concepts/graphs/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/depth-first-search',
+    term: 'Depth-first search (DFS)',
+    h1: 'What is depth-first search (DFS)?',
+    description: 'Depth-first search explores a graph as deep as possible before backtracking, using recursion or a stack.',
+    definition: 'Depth-first search explores one branch of a graph fully before backtracking, using recursion or an explicit stack. It suits path finding, cycle detection, and topological ordering.',
+    details: [
+      { title: 'Recursive or stack-based', body: 'Implement DFS with recursion or an explicit stack plus a visited set to avoid revisiting nodes.' },
+      { title: 'Uses', body: 'DFS supports cycle detection, connected components, topological sort, and exhaustive path search.' },
+      { title: 'When to use it', body: 'Prefer DFS when you must explore full paths or structure, not the shortest one.' },
+    ],
+    faq: [
+      { question: 'When should I use DFS?', answer: 'Use DFS for exhaustive path exploration, cycle detection, connected components, and topological sorting.' },
+      { question: 'What is the complexity of DFS?', answer: 'DFS runs in O(V + E) time and O(V) space for the visited set and recursion or stack.' },
+    ],
+    related: [
+      { title: 'Breadth-first search', body: 'The complementary traversal.', href: '/concepts/breadth-first-search/' },
+      { title: 'Trees and binary search trees', body: 'DFS traversals apply to trees.', href: '/concepts/trees-and-binary-search-trees/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/hash-maps',
+    term: 'Hash maps',
+    h1: 'What is a hash map?',
+    description: 'A hash map stores key-value pairs with average O(1) lookup by hashing keys into buckets.',
+    definition: 'A hash map stores key-value pairs and uses a hash function to place keys into buckets, giving average O(1) insert, lookup, and delete. Collisions are handled by chaining or open addressing.',
+    details: [
+      { title: 'Hashing and collisions', body: 'A hash function maps keys to buckets; collisions are resolved by chaining or probing.' },
+      { title: 'Complexity', body: 'Average operations are O(1), but a bad hash or heavy collisions can degrade to O(n).' },
+      { title: 'Interview uses', body: 'Hash maps power frequency counts, lookups, deduplication, and caching patterns.' },
+    ],
+    faq: [
+      { question: 'When should I use a hash map?', answer: 'Use it for fast lookups, counting frequencies, deduplication, and mapping relationships in O(1) average time.' },
+      { question: 'What causes worst-case O(n) lookups?', answer: 'Many collisions from a poor hash function or adversarial keys can push operations toward O(n).' },
+    ],
+    related: [
+      { title: 'Big O notation', body: 'Understand average vs worst case.', href: '/concepts/big-o-notation/' },
+      { title: 'Caching', body: 'Hash maps underpin caches.', href: '/concepts/caching/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/heaps-priority-queues',
+    term: 'Heaps and priority queues',
+    h1: 'What are heaps and priority queues?',
+    description: 'A heap is a tree-based structure that gives fast access to the min or max; a priority queue is often built on one.',
+    definition: 'A heap is a complete binary tree where each parent orders before its children, giving O(log n) insert and remove and O(1) peek at the min or max. Priority queues are commonly implemented with heaps.',
+    details: [
+      { title: 'Min and max heaps', body: 'A min heap keeps the smallest element at the root; a max heap keeps the largest.' },
+      { title: 'Operations', body: 'Insert and extract are O(log n) via sift-up and sift-down; peeking the top is O(1).' },
+      { title: 'Interview uses', body: 'Top-K elements, merging sorted lists, and scheduling problems often use heaps.' },
+    ],
+    faq: [
+      { question: 'When should I use a heap?', answer: 'Use a heap for top-K problems, streaming medians, scheduling, and anytime you repeatedly need the min or max.' },
+      { question: 'What is the complexity of heap operations?', answer: 'Insert and extract are O(log n); peeking the top element is O(1).' },
+    ],
+    related: [
+      { title: 'Trees and binary search trees', body: 'Related tree structures.', href: '/concepts/trees-and-binary-search-trees/' },
+      { title: 'Big O notation', body: 'Complexity of heap operations.', href: '/concepts/big-o-notation/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/graphs',
+    term: 'Graphs',
+    h1: 'What is a graph in interviews?',
+    description: 'A graph models entities and relationships as nodes and edges, underlying traversal, shortest-path, and connectivity problems.',
+    definition: 'A graph is a set of nodes connected by edges, which may be directed or weighted. Graph problems cover traversal, shortest paths, connectivity, and ordering, and appear across coding and system design rounds.',
+    details: [
+      { title: 'Representations', body: 'Adjacency lists suit sparse graphs; adjacency matrices suit dense graphs or fast edge lookups.' },
+      { title: 'Core algorithms', body: 'BFS and DFS for traversal, Dijkstra for weighted shortest paths, and topological sort for ordering.' },
+      { title: 'Interview uses', body: 'Dependency resolution, social networks, maps, and scheduling map naturally to graphs.' },
+    ],
+    faq: [
+      { question: 'How do I represent a graph in an interview?', answer: 'Use an adjacency list for most problems; choose an adjacency matrix when the graph is dense or you need O(1) edge checks.' },
+      { question: 'Which algorithms should I know?', answer: 'Know BFS, DFS, topological sort, union-find, and Dijkstra for weighted shortest paths.' },
+    ],
+    related: [
+      { title: 'Breadth-first search', body: 'Traversal and shortest paths.', href: '/concepts/breadth-first-search/' },
+      { title: 'Depth-first search', body: 'Traversal and ordering.', href: '/concepts/depth-first-search/' },
+      { title: 'System design interviews', body: 'Where graph thinking helps.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/trees-and-binary-search-trees',
+    term: 'Trees and binary search trees',
+    h1: 'What are trees and binary search trees?',
+    description: 'Trees are hierarchical structures; a binary search tree keeps sorted order for O(log n) search when balanced.',
+    definition: 'A tree is a hierarchical structure of nodes with one root and no cycles. A binary search tree keeps left children smaller and right children larger, giving O(log n) search, insert, and delete when balanced.',
+    details: [
+      { title: 'Traversals', body: 'In-order, pre-order, post-order, and level-order traversals each suit different problems.' },
+      { title: 'Balance matters', body: 'An unbalanced BST degrades to O(n); balanced variants like AVL and red-black trees keep O(log n).' },
+      { title: 'Interview uses', body: 'Range queries, ordered data, and hierarchical relationships map to trees.' },
+    ],
+    faq: [
+      { question: 'What is the complexity of BST operations?', answer: 'Search, insert, and delete are O(log n) in a balanced BST and O(n) in the worst case when unbalanced.' },
+      { question: 'Which tree traversal should I use?', answer: 'Use in-order for sorted output of a BST, level-order for breadth, and pre or post-order for structure-based tasks.' },
+    ],
+    related: [
+      { title: 'Depth-first search', body: 'Tree traversals are DFS variants.', href: '/concepts/depth-first-search/' },
+      { title: 'Heaps and priority queues', body: 'Another tree-based structure.', href: '/concepts/heaps-priority-queues/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/big-o-notation',
+    term: 'Big O notation',
+    h1: 'What is Big O notation?',
+    description: 'Big O notation describes how an algorithm scales in time or space as input size grows.',
+    definition: 'Big O notation describes the upper bound on how an algorithm time or memory grows with input size, ignoring constants. It lets you compare algorithms independent of hardware.',
+    details: [
+      { title: 'Common classes', body: 'From fastest to slowest: O(1), O(log n), O(n), O(n log n), O(n squared), and O(2 to the n).' },
+      { title: 'Time and space', body: 'Analyze both runtime and extra memory; a faster algorithm may use more space.' },
+      { title: 'How to reason', body: 'Count how work grows with n, keep the dominant term, and drop constants and lower-order terms.' },
+    ],
+    faq: [
+      { question: 'Why does Big O matter in interviews?', answer: 'Interviewers expect you to state and improve the time and space complexity of your solution, not just make it work.' },
+      { question: 'What is a good target complexity?', answer: 'It depends on the problem, but reducing an O(n squared) brute force to O(n log n) or O(n) is a common goal.' },
+    ],
+    related: [
+      { title: 'Sliding window', body: 'A technique that improves complexity.', href: '/concepts/sliding-window/' },
+      { title: 'Dynamic programming', body: 'Trades space for time.', href: '/concepts/dynamic-programming/' },
+      { title: 'Coding interviews', body: 'Practice explaining complexity.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/consistent-hashing',
+    term: 'Consistent hashing',
+    h1: 'What is consistent hashing?',
+    description: 'Consistent hashing distributes keys across servers so that adding or removing a node moves few keys.',
+    definition: 'Consistent hashing maps both keys and servers onto a ring so that adding or removing a server only reassigns a small fraction of keys, unlike a plain modulo hash that remaps almost everything.',
+    details: [
+      { title: 'The hash ring', body: 'Keys and nodes are hashed onto a ring; each key belongs to the next node clockwise.' },
+      { title: 'Virtual nodes', body: 'Each physical node maps to many ring points to balance load and smooth rebalancing.' },
+      { title: 'When to use it', body: 'It underpins distributed caches, databases, and load balancers that scale nodes up and down.' },
+    ],
+    faq: [
+      { question: 'Why not just use modulo hashing?', answer: 'Modulo by server count remaps almost all keys when the count changes; consistent hashing moves only a small fraction.' },
+      { question: 'What are virtual nodes?', answer: 'Virtual nodes give each server multiple positions on the ring to balance load and reduce hotspots.' },
+    ],
+    related: [
+      { title: 'Database sharding', body: 'A common use of consistent hashing.', href: '/concepts/database-sharding/' },
+      { title: 'Caching', body: 'Distributed caches rely on it.', href: '/concepts/caching/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/cap-theorem',
+    term: 'The CAP theorem',
+    h1: 'What is the CAP theorem?',
+    description: 'The CAP theorem says a distributed system can guarantee only two of consistency, availability, and partition tolerance during a partition.',
+    definition: 'The CAP theorem states that during a network partition a distributed system must choose between consistency and availability, since partition tolerance is required in practice. It frames core tradeoffs in distributed data stores.',
+    details: [
+      { title: 'The three properties', body: 'Consistency means every read sees the latest write; availability means every request gets a response; partition tolerance means the system survives dropped messages.' },
+      { title: 'Choosing under partition', body: 'When a partition occurs, a system favors either consistency (reject some requests) or availability (serve possibly stale data).' },
+      { title: 'Practical nuance', body: 'Real systems tune consistency levels rather than picking one extreme, as in eventual or tunable consistency.' },
+    ],
+    faq: [
+      { question: 'Can a system have all three of CAP?', answer: 'Not during a network partition. When partitions happen, you trade consistency against availability; partition tolerance is a practical requirement.' },
+      { question: 'How does CAP show up in interviews?', answer: 'System design interviews expect you to justify consistency versus availability choices for stores, caches, and replication.' },
+    ],
+    related: [
+      { title: 'Database sharding', body: 'Distribution raises CAP tradeoffs.', href: '/concepts/database-sharding/' },
+      { title: 'Caching', body: 'Caches trade freshness for speed.', href: '/concepts/caching/' },
+      { title: 'System design interviews', body: 'Practice tradeoffs with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/load-balancing',
+    term: 'Load balancing',
+    h1: 'What is load balancing?',
+    description: 'Load balancing spreads traffic across multiple servers to improve throughput, availability, and reliability.',
+    definition: 'Load balancing distributes incoming requests across a pool of servers so no single instance is overwhelmed, improving throughput, availability, and fault tolerance.',
+    details: [
+      { title: 'Algorithms', body: 'Round robin, least connections, and hashing strategies route requests based on different goals.' },
+      { title: 'Layers', body: 'Layer 4 balancers route by transport connection; layer 7 balancers route by application data like URLs.' },
+      { title: 'Health and failover', body: 'Balancers run health checks and remove unhealthy instances to keep the service available.' },
+    ],
+    faq: [
+      { question: 'What algorithms do load balancers use?', answer: 'Common ones include round robin, weighted round robin, least connections, and consistent hashing.' },
+      { question: 'What is the difference between L4 and L7 balancing?', answer: 'L4 routes by TCP or UDP connection information; L7 routes using application-level data such as HTTP paths and headers.' },
+    ],
+    related: [
+      { title: 'Consistent hashing', body: 'A routing strategy for balancers.', href: '/concepts/consistent-hashing/' },
+      { title: 'Rate limiting', body: 'Protects balanced services.', href: '/concepts/rate-limiting/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/caching',
+    term: 'Caching',
+    h1: 'What is caching?',
+    description: 'Caching stores frequently used data close to consumers to reduce latency and load on the source.',
+    definition: 'Caching keeps copies of frequently accessed data in a faster layer, reducing latency and load on the underlying store. Effective caching balances freshness against hit rate.',
+    details: [
+      { title: 'Where caches live', body: 'Caches sit in the client, CDN, application memory, or a shared store like Redis.' },
+      { title: 'Invalidation', body: 'Strategies include time-to-live expiry, write-through, and write-back, each trading freshness for performance.' },
+      { title: 'Eviction', body: 'Policies like LRU and LFU decide what to drop when the cache is full.' },
+    ],
+    faq: [
+      { question: 'What are common cache invalidation strategies?', answer: 'Time-to-live expiry, write-through, write-back, and explicit invalidation each balance freshness and performance.' },
+      { question: 'What is a cache eviction policy?', answer: 'It decides which entries to remove when full; LRU and LFU are common choices.' },
+    ],
+    related: [
+      { title: 'Hash maps', body: 'The structure behind many caches.', href: '/concepts/hash-maps/' },
+      { title: 'CAP theorem', body: 'Caches trade consistency for speed.', href: '/concepts/cap-theorem/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/database-sharding',
+    term: 'Database sharding',
+    h1: 'What is database sharding?',
+    description: 'Sharding splits a database horizontally across servers so each holds a subset of the data.',
+    definition: 'Database sharding partitions data horizontally across multiple servers, each holding a subset, so a system can scale beyond the capacity of a single database node.',
+    details: [
+      { title: 'Shard keys', body: 'A shard key decides which server holds a row; a poor key creates hotspots and uneven load.' },
+      { title: 'Strategies', body: 'Range, hash, and directory-based sharding trade simplicity against balance and flexibility.' },
+      { title: 'Costs', body: 'Cross-shard joins and transactions are harder, so schema and queries must respect shard boundaries.' },
+    ],
+    faq: [
+      { question: 'How do I choose a shard key?', answer: 'Pick a key with high cardinality and even access patterns to avoid hotspots and rebalancing.' },
+      { question: 'What is the downside of sharding?', answer: 'Cross-shard queries, joins, and transactions become complex, so design queries to stay within a shard when possible.' },
+    ],
+    related: [
+      { title: 'Consistent hashing', body: 'Distributes shards evenly.', href: '/concepts/consistent-hashing/' },
+      { title: 'Database indexing', body: 'Speeds queries within a shard.', href: '/concepts/database-indexing/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/message-queues',
+    term: 'Message queues',
+    h1: 'What is a message queue?',
+    description: 'A message queue decouples producers and consumers by buffering messages for asynchronous processing.',
+    definition: 'A message queue buffers messages between producers and consumers so work can be processed asynchronously, smoothing spikes and decoupling services so they can fail and scale independently.',
+    details: [
+      { title: 'Decoupling', body: 'Producers enqueue without waiting for consumers, improving resilience and scalability.' },
+      { title: 'Delivery guarantees', body: 'Systems offer at-most-once, at-least-once, or exactly-once semantics with different tradeoffs.' },
+      { title: 'Interview uses', body: 'Queues power background jobs, event pipelines, and buffering between fast and slow components.' },
+    ],
+    faq: [
+      { question: 'Why use a message queue?', answer: 'To decouple services, absorb traffic spikes, retry failures, and process work asynchronously.' },
+      { question: 'What delivery guarantees exist?', answer: 'At-most-once, at-least-once, and exactly-once, each trading complexity against duplicate or loss risk.' },
+    ],
+    related: [
+      { title: 'Rate limiting', body: 'Another traffic-shaping tool.', href: '/concepts/rate-limiting/' },
+      { title: 'Load balancing', body: 'Complements async processing.', href: '/concepts/load-balancing/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/rate-limiting',
+    term: 'Rate limiting',
+    h1: 'What is rate limiting?',
+    description: 'Rate limiting caps how many requests a client can make in a time window to protect a service.',
+    definition: 'Rate limiting restricts how many requests a client can make within a time window, protecting services from overload and abuse while keeping capacity fair across users.',
+    details: [
+      { title: 'Algorithms', body: 'Token bucket, leaky bucket, fixed window, and sliding window each balance burst tolerance and smoothness.' },
+      { title: 'Where it runs', body: 'Rate limits apply at the API gateway, load balancer, or service layer, often per user or per IP.' },
+      { title: 'Responses', body: 'Limited requests typically receive a 429 status with retry guidance.' },
+    ],
+    faq: [
+      { question: 'What is the token bucket algorithm?', answer: 'Tokens refill at a fixed rate and each request consumes one; requests are allowed while tokens remain, permitting controlled bursts.' },
+      { question: 'Where should rate limiting live?', answer: 'Often at the gateway or load balancer for broad protection, with finer per-service limits where needed.' },
+    ],
+    related: [
+      { title: 'Load balancing', body: 'Works with rate limits to protect services.', href: '/concepts/load-balancing/' },
+      { title: 'Message queues', body: 'Buffer work beyond limits.', href: '/concepts/message-queues/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/database-indexing',
+    term: 'Database indexing',
+    h1: 'What is database indexing?',
+    description: 'A database index is a data structure that speeds up reads at the cost of extra storage and slower writes.',
+    definition: 'A database index is an auxiliary structure, often a B-tree, that lets the database find rows without scanning the whole table, speeding reads at the cost of storage and slower writes.',
+    details: [
+      { title: 'How indexes help', body: 'They turn full-table scans into fast lookups for filters, joins, and sorts on indexed columns.' },
+      { title: 'Costs', body: 'Each index adds storage and must be updated on writes, so unnecessary indexes slow inserts and updates.' },
+      { title: 'Design choices', body: 'Composite and covering indexes match query patterns; column order and selectivity matter.' },
+    ],
+    faq: [
+      { question: 'When should I add an index?', answer: 'Add indexes for columns frequently used in filters, joins, and sorts, guided by query plans and selectivity.' },
+      { question: 'What is the downside of indexing?', answer: 'Indexes consume storage and slow writes, so avoid indexing columns that queries rarely use.' },
+    ],
+    related: [
+      { title: 'Database sharding', body: 'Scales data horizontally.', href: '/concepts/database-sharding/' },
+      { title: 'SQL coding interviews', body: 'Practice query optimization.', href: '/use-cases/sql-coding-interviews/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+];
+
+const conceptTermPages: MarketingPage[] = conceptEntries.map((entry) => conceptPage(entry));
+
+const conceptHubPage: MarketingPage = {
+  slug: 'concepts',
+  title: 'Interview Concepts - Algorithms and System Design - ExtraBrain',
+  description: 'Plain-English explainers for the algorithm and system-design concepts behind coding and design interviews: sliding window, dynamic programming, CAP theorem, sharding, and more.',
+  eyebrow: 'Interview concepts',
+  h1: 'Interview concepts.',
+  lead: 'Clear explainers for the algorithm patterns and system-design building blocks that come up in coding and design interviews, with links to related ExtraBrain guides.',
+  primaryCta: defaultCta,
+  secondaryCta: { label: 'Coding interviews', href: '/use-cases/coding-interviews/' },
+  schemaType: 'FAQPage',
+  sections: [
+    {
+      title: 'Browse concepts',
+      variant: 'cards',
+      items: conceptEntries.map((entry) => ({
+        title: entry.h1?.replace(/^What (is|are) /, '').replace(/\?$/, '') ?? entry.term,
+        body: entry.description,
+        href: `/${entry.slug}/`,
+      })),
+    },
+    {
+      title: 'Responsible use',
+      body: responsibleUseNote,
+    },
+  ],
+  faq: [
+    { question: 'What are interview concepts?', answer: 'They are the recurring algorithm patterns and system-design building blocks, from sliding window to consistent hashing, that coding and design interviews test.' },
+    { question: 'How does ExtraBrain help with these?', answer: 'ExtraBrain is a local-first Mac AI interview assistant that helps you prepare, follow live context where allowed, and review each session to strengthen these fundamentals.' },
+  ],
+};
+
+export const conceptPages: MarketingPage[] = [conceptHubPage, ...conceptTermPages];
 
 export const seoMarketingPages: MarketingPage[] = [
   ...aiSearchPages,
@@ -2337,4 +5004,7 @@ export const seoMarketingPages: MarketingPage[] = [
   ...interviewPrepPages,
   ...platformPages,
   ...companyGuidePages,
+  ...glossaryPages,
+  ...languageInterviewPages,
+  ...conceptPages,
 ];

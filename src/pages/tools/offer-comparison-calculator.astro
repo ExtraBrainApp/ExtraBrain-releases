@@ -1,0 +1,91 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+
+const title = 'Job Offer Comparison Calculator - ExtraBrain';
+const description = 'Free job offer comparison calculator. Compare two offers by base salary, bonus, annual equity, and benefits to see total yearly compensation side by side.';
+const faq = [
+  { question: 'How do I compare two job offers?', answer: 'Add each component of total compensation: base salary, expected annual bonus, equity value per year, and the cash value of benefits. Comparing total yearly compensation is more accurate than comparing base salary alone.' },
+  { question: 'How is equity counted per year?', answer: 'Enter the yearly value of your equity grant. For a four-year vesting grant, divide the total grant value by four to get the per-year figure.' },
+  { question: 'Does this tool store my offer details?', answer: 'No. The offer comparison calculator runs entirely in your browser. Nothing you enter is uploaded or saved.' },
+];
+---
+
+<ToolLayout
+  title={title}
+  description={description}
+  h1="Job offer comparison calculator."
+  lead="Compare two offers by total yearly compensation, not just base salary. Add base, bonus, annual equity, and the value of benefits to see which offer is higher and by how much. Everything runs in your browser."
+  eyebrow="Free calculator"
+  faq={faq}
+>
+  <div class="tool-card">
+    <div class="tool-grid cols-2">
+      <div>
+        <div class="tool-field">
+          <label for="a-label">Offer A label</label>
+          <input id="a-label" type="text" value="Offer A" />
+        </div>
+        <div class="tool-field"><label for="a-base">Base salary ($/yr)</label><input id="a-base" type="number" min="0" step="any" value="150000" /></div>
+        <div class="tool-field"><label for="a-bonus">Annual bonus ($/yr)</label><input id="a-bonus" type="number" min="0" step="any" value="20000" /></div>
+        <div class="tool-field"><label for="a-equity">Equity value ($/yr)</label><input id="a-equity" type="number" min="0" step="any" value="40000" /></div>
+        <div class="tool-field"><label for="a-benefits">Benefits value ($/yr)</label><input id="a-benefits" type="number" min="0" step="any" value="10000" /></div>
+      </div>
+      <div>
+        <div class="tool-field">
+          <label for="b-label">Offer B label</label>
+          <input id="b-label" type="text" value="Offer B" />
+        </div>
+        <div class="tool-field"><label for="b-base">Base salary ($/yr)</label><input id="b-base" type="number" min="0" step="any" value="135000" /></div>
+        <div class="tool-field"><label for="b-bonus">Annual bonus ($/yr)</label><input id="b-bonus" type="number" min="0" step="any" value="15000" /></div>
+        <div class="tool-field"><label for="b-equity">Equity value ($/yr)</label><input id="b-equity" type="number" min="0" step="any" value="70000" /></div>
+        <div class="tool-field"><label for="b-benefits">Benefits value ($/yr)</label><input id="b-benefits" type="number" min="0" step="any" value="12000" /></div>
+      </div>
+    </div>
+
+    <div class="tool-result" aria-live="polite">
+      <div class="tool-grid cols-2">
+        <div><h3 id="a-name">Offer A total</h3><div class="tool-metric" id="a-total">-</div></div>
+        <div><h3 id="b-name">Offer B total</h3><div class="tool-metric" id="b-total">-</div></div>
+      </div>
+      <p class="tool-note" id="verdict"></p>
+    </div>
+  </div>
+</ToolLayout>
+
+<script is:inline>
+  (function () {
+    var ids = ['a-base','a-bonus','a-equity','a-benefits','b-base','b-bonus','b-equity','b-benefits','a-label','b-label'];
+    var els = {};
+    for (var i = 0; i < ids.length; i++) { els[ids[i]] = document.getElementById(ids[i]); if (!els[ids[i]]) return; }
+    var aTotal = document.getElementById('a-total');
+    var bTotal = document.getElementById('b-total');
+    var aName = document.getElementById('a-name');
+    var bName = document.getElementById('b-name');
+    var verdict = document.getElementById('verdict');
+
+    var money = function (n) { return (n || 0).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }); };
+    var num = function (id) { return parseFloat(els[id].value) || 0; };
+
+    function compute() {
+      var a = num('a-base') + num('a-bonus') + num('a-equity') + num('a-benefits');
+      var b = num('b-base') + num('b-bonus') + num('b-equity') + num('b-benefits');
+      var aLabel = els['a-label'].value || 'Offer A';
+      var bLabel = els['b-label'].value || 'Offer B';
+      aName.textContent = aLabel + ' total';
+      bName.textContent = bLabel + ' total';
+      aTotal.textContent = money(a);
+      bTotal.textContent = money(b);
+      if (a === b) {
+        verdict.textContent = 'Both offers have the same total yearly compensation.';
+      } else {
+        var higher = a > b ? aLabel : bLabel;
+        var diff = Math.abs(a - b);
+        var pct = Math.min(a, b) > 0 ? (diff / Math.min(a, b)) * 100 : 0;
+        verdict.textContent = higher + ' is higher by ' + money(diff) + ' per year (' + pct.toFixed(1) + '% more). Total compensation is only one factor: also weigh growth, team, role, cost of living, and work-life balance.';
+      }
+    }
+
+    ids.forEach(function (id) { els[id].addEventListener('input', compute); });
+    compute();
+  })();
+</script>
