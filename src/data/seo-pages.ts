@@ -79,6 +79,69 @@ const companyGuidePage = (
   faq: opts.faq,
 });
 
+const companyRolePage = (
+  slug: string,
+  companyName: string,
+  roleName: string,
+  opts: {
+    companySlug: string;
+    roleUseCase: { label: string; href: string };
+    description: string;
+    lead: string;
+    process: Array<{ title: string; body: string }>;
+    focusAreas: Array<{ title: string; body: string }>;
+    howExtraBrainHelps: Array<{ title: string; body: string }>;
+    extraLinks?: Array<{ title: string; body: string; href: string }>;
+    faq: Array<{ question: string; answer: string }>;
+  },
+): MarketingPage => ({
+  slug,
+  title: `${companyName} ${roleName} Interview`,
+  description: opts.description,
+  eyebrow: 'Interview guide',
+  h1: `Prepare for ${companyName} ${roleName} interviews.`,
+  lead: opts.lead,
+  primaryCta: defaultCta,
+  secondaryCta: { label: `All ${companyName} interview prep`, href: `/interview-guides/${opts.companySlug}/` },
+  schemaType: 'FAQPage',
+  sections: [
+    {
+      title: `The ${companyName} ${roleName} interview process`,
+      items: opts.process,
+    },
+    {
+      title: 'What the interview focuses on',
+      items: opts.focusAreas,
+    },
+    {
+      title: 'How ExtraBrain helps',
+      items: opts.howExtraBrainHelps,
+    },
+    {
+      title: 'Related guides',
+      variant: 'cards',
+      items: [
+        {
+          title: `${companyName} interview guide`,
+          body: `Rounds, formats, and preparation across all ${companyName} roles.`,
+          href: `/interview-guides/${opts.companySlug}/`,
+        },
+        {
+          title: opts.roleUseCase.label,
+          body: `Role-focused preparation for ${roleName.toLowerCase()} interviews with ExtraBrain.`,
+          href: opts.roleUseCase.href,
+        },
+        ...(opts.extraLinks ?? []),
+      ],
+    },
+    {
+      title: 'Responsible use',
+      body: responsibleUseNote,
+    },
+  ],
+  faq: opts.faq,
+});
+
 const useCasePage = (
   slug: string,
   opts: {
@@ -4428,13 +4491,901 @@ const companyGuideTermPages: MarketingPage[] = [
   }),
 ];
 
+const codingUseCase = { label: 'Coding interview prep', href: '/use-cases/coding-interviews/' };
+const pmUseCase = { label: 'Product manager interview prep', href: '/use-cases/product-management-interviews/' };
+const dsUseCase = { label: 'Data science interview prep', href: '/use-cases/data-science-interviews/' };
+const deUseCase = { label: 'Data engineering interview prep', href: '/use-cases/data-engineering-interviews/' };
+const mlUseCase = { label: 'Machine learning interview prep', href: '/use-cases/machine-learning-interviews/' };
+const emUseCase = { label: 'Engineering manager interview prep', href: '/use-cases/engineering-manager-interviews/' };
+const saUseCase = { label: 'Solutions architect interview prep', href: '/use-cases/solutions-architect-interviews/' };
+
+const linkSystemDesign = { title: 'System design interview prep', body: 'Scale, storage, and reliability tradeoffs for design rounds.', href: '/use-cases/system-design-interviews/' };
+const linkBehavioral = { title: 'Behavioral interview prep', body: 'Structure stories about ownership, conflict, and impact.', href: '/use-cases/behavioral-interviews/' };
+const linkBigO = { title: 'Big-O notation', body: 'Analyze time and space complexity with confidence.', href: '/concepts/big-o-notation/' };
+const linkStar = { title: 'The STAR method', body: 'A structure for concise, specific behavioral answers.', href: '/glossary/star-method/' };
+const linkOnlineAssessment = { title: 'Online assessment', body: 'What timed pre-interview coding tests involve.', href: '/glossary/online-assessment/' };
+const linkDbIndexing = { title: 'Database indexing', body: 'How indexes shape query performance and design.', href: '/concepts/database-indexing/' };
+const linkGraphs = { title: 'Graphs', body: 'Traversals and modeling for graph-shaped problems.', href: '/concepts/graphs/' };
+const linkLoadBalancing = { title: 'Load balancing', body: 'Distributing traffic across services at scale.', href: '/concepts/load-balancing/' };
+const linkRecursion = { title: 'Recursion and backtracking', body: 'A core pattern for many algorithm problems.', href: '/concepts/recursion-and-backtracking/' };
+
+const companyRoleTermPages: MarketingPage[] = [
+  companyRolePage('interview-guides/google-software-engineer', 'Google', 'Software Engineer', {
+    companySlug: 'google',
+    roleUseCase: codingUseCase,
+    description: 'Prepare for Google software engineer interviews: coding, algorithms, system design, and Googleyness rounds, with prep and review on a Mac app.',
+    lead: 'Google software engineer interviews usually run a technical phone screen followed by an onsite loop of coding rounds, a system design round for senior levels, and a Googleyness and leadership discussion. ExtraBrain helps you prepare and review with live transcription, screen-aware context, and local session history.',
+    process: [
+      { title: 'Technical phone screen', body: 'One or two coding problems in a shared editor, focused on data structures, algorithms, and clear communication.' },
+      { title: 'Onsite coding rounds', body: 'Two to three interviews solving algorithm and data-structure problems while explaining tradeoffs and analyzing complexity.' },
+      { title: 'System design', body: 'For mid and senior levels, an open-ended design round covering scalability, data modeling, and reliability tradeoffs.' },
+      { title: 'Googleyness and leadership', body: 'A behavioral discussion about collaboration, ownership, and how you work through ambiguity.' },
+    ],
+    focusAreas: [
+      { title: 'Data structures and algorithms', body: 'Arrays, strings, trees, graphs, hashing, and dynamic programming, with fluent Big-O analysis.' },
+      { title: 'Problem communication', body: 'Interviewers weigh how clearly you clarify, plan, and narrate your approach as much as the final code.' },
+      { title: 'General cognitive ability', body: 'Structured reasoning through unfamiliar problems is a signal Google looks for across rounds.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse coding out loud', body: 'Practice narrating algorithm problems while ExtraBrain transcribes locally, then review where your explanation drifted.' },
+      { title: 'Capture design tradeoffs', body: 'During mock system design, screen-aware context and transcription record the tradeoffs you raised so you can tighten them.' },
+      { title: 'Private by default', body: 'ExtraBrain is a Mac app with local-first transcription and provider choice, so sensitive prep stays on your machine.' },
+    ],
+    extraLinks: [linkSystemDesign, linkBigO],
+    faq: [
+      { question: 'How hard is the Google software engineer interview?', answer: 'It is demanding, with multiple algorithm rounds and a design round at senior levels. Clear communication matters as much as raw problem count.' },
+      { question: 'Does Google ask system design at every level?', answer: 'System design weight increases with level. Entry loops lean on coding, while mid and senior loops add one or more design rounds. Confirm your loop with your recruiter.' },
+      { question: 'Can ExtraBrain help me prepare for Google interviews?', answer: 'Yes. ExtraBrain helps you rehearse coding and design out loud, capture mock sessions, and review them on a local-first Mac app where the format allows.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/google-product-manager', 'Google', 'Product Manager', {
+    companySlug: 'google',
+    roleUseCase: pmUseCase,
+    description: 'Prepare for Google product manager interviews: product sense, analytical and estimation, technical, and leadership rounds, with prep and review on Mac.',
+    lead: 'Google product manager interviews typically cover product design and sense, analytical and estimation problems, technical understanding, and leadership. ExtraBrain helps you rehearse and review with live transcription, screen-aware context, and local session history.',
+    process: [
+      { title: 'Product design and sense', body: 'Design a product or improve an existing one, defining users, needs, tradeoffs, and success metrics.' },
+      { title: 'Analytical and estimation', body: 'Market sizing, metric definition, and reasoning about data to support product decisions.' },
+      { title: 'Technical discussion', body: 'Conversations about how systems work and how you collaborate with engineering, without heavy coding.' },
+      { title: 'Leadership and behavioral', body: 'How you influence, prioritize, and drive outcomes across teams.' },
+    ],
+    focusAreas: [
+      { title: 'Product sense', body: 'Framing user problems, prioritizing needs, and justifying tradeoffs with clear reasoning.' },
+      { title: 'Metrics and analysis', body: 'Defining the right success metrics and reasoning about tradeoffs quantitatively.' },
+      { title: 'Cross-functional influence', body: 'Showing how you align engineering, design, and stakeholders around a plan.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse product cases', body: 'Practice product-design answers out loud while ExtraBrain transcribes locally, then review structure and clarity.' },
+      { title: 'Sharpen metrics stories', body: 'Revisit saved transcripts to check whether your metric definitions were specific and defensible.' },
+      { title: 'Meeting copilot for mocks', body: 'Use ExtraBrain as a meeting copilot during peer mock interviews to capture and review the full session.' },
+    ],
+    extraLinks: [linkBehavioral, linkStar],
+    faq: [
+      { question: 'Do Google PM interviews include coding?', answer: 'Google PM loops focus on product, analytical, and leadership skills rather than coding, though you should understand technical concepts well enough to work with engineers.' },
+      { question: 'What is the hardest part of the Google PM interview?', answer: 'Many candidates find product-sense and analytical rounds hardest because they reward structured thinking under ambiguity. Practicing out loud helps.' },
+      { question: 'Can ExtraBrain help with PM interview prep?', answer: 'Yes. ExtraBrain transcribes mock product and behavioral rounds locally so you can review structure, metrics, and storytelling on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/google-data-scientist', 'Google', 'Data Scientist', {
+    companySlug: 'google',
+    roleUseCase: dsUseCase,
+    description: 'Prepare for Google data scientist interviews: statistics, SQL and coding, experimentation, and product analysis rounds, with prep and review on Mac.',
+    lead: 'Google data scientist interviews commonly test statistics and probability, SQL and coding, analysis and experimentation, and product sense. ExtraBrain helps you rehearse and review with live transcription and local session history.',
+    process: [
+      { title: 'Statistics and probability', body: 'Hypothesis testing, distributions, and probability reasoning applied to real problems.' },
+      { title: 'SQL and coding', body: 'Query writing and light programming to manipulate and analyze data.' },
+      { title: 'Analysis and experimentation', body: 'Designing and interpreting A/B tests and reasoning about metrics and causality.' },
+      { title: 'Product and behavioral', body: 'Framing ambiguous product questions with data and communicating findings.' },
+    ],
+    focusAreas: [
+      { title: 'Experimentation', body: 'A/B test design, statistical power, and interpreting results without overclaiming.' },
+      { title: 'Statistical reasoning', body: 'Choosing the right test, understanding assumptions, and quantifying uncertainty.' },
+      { title: 'Communicating insight', body: 'Turning analysis into a clear recommendation a product team can act on.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse case reasoning', body: 'Practice explaining experiment design and statistical choices out loud while ExtraBrain transcribes locally.' },
+      { title: 'Review analysis stories', body: 'Revisit saved transcripts to check that your reasoning about metrics and causality was precise.' },
+      { title: 'Bring your own provider', body: 'Connect the AI provider you prefer and keep sensitive prep on a local-first Mac app.' },
+    ],
+    extraLinks: [{ title: deUseCase.label, body: 'Adjacent data-role preparation.', href: deUseCase.href }, linkBehavioral],
+    faq: [
+      { question: 'What does the Google data scientist interview emphasize?', answer: 'Expect statistics and probability, SQL and coding, experimentation, and product analysis. The exact mix varies by team and level.' },
+      { question: 'Is A/B testing important for Google data science interviews?', answer: 'Yes. Experiment design and interpretation are common themes, so practice reasoning about power, bias, and metrics.' },
+      { question: 'Can ExtraBrain help with data science interview prep?', answer: 'Yes. ExtraBrain transcribes mock analytical and product rounds locally so you can review your statistical reasoning on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/google-engineering-manager', 'Google', 'Engineering Manager', {
+    companySlug: 'google',
+    roleUseCase: emUseCase,
+    description: 'Prepare for Google engineering manager interviews: people management, technical leadership, system design, and behavioral rounds, on a Mac app.',
+    lead: 'Google engineering manager interviews blend people management and technical leadership with system design and behavioral discussions. ExtraBrain helps you rehearse and review with live transcription and local session history.',
+    process: [
+      { title: 'People management', body: 'Handling performance, growth, conflict, and team health with concrete examples.' },
+      { title: 'Technical leadership', body: 'Guiding architecture and execution, sometimes including a system design round.' },
+      { title: 'System design', body: 'Designing scalable systems and explaining tradeoffs from a leadership perspective.' },
+      { title: 'Behavioral and leadership', body: 'Ownership, influence, and how you deliver results through a team.' },
+    ],
+    focusAreas: [
+      { title: 'Management judgment', body: 'Concrete stories about coaching, feedback, and difficult decisions.' },
+      { title: 'Technical depth', body: 'Enough hands-on depth to lead design discussions credibly.' },
+      { title: 'Cross-team influence', body: 'Driving alignment and outcomes beyond your immediate team.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse management stories', body: 'Practice leadership and conflict stories out loud while ExtraBrain transcribes locally, then tighten specifics.' },
+      { title: 'Capture design discussions', body: 'Record mock system design rounds with screen-aware context to review tradeoffs later.' },
+      { title: 'Review in local history', body: 'Revisit each mock session privately on a local-first Mac app.' },
+    ],
+    extraLinks: [linkSystemDesign, linkStar],
+    faq: [
+      { question: 'Do Google EM interviews include coding?', answer: 'Manager loops emphasize people and technical leadership and system design, with less live coding, though some teams include a technical round. Confirm with your recruiter.' },
+      { question: 'How should I prepare management stories?', answer: 'Prepare specific examples of coaching, conflict, and delivery using a clear structure, then rehearse them out loud to keep them concise.' },
+      { question: 'Can ExtraBrain help EM candidates?', answer: 'Yes. ExtraBrain transcribes mock leadership and design rounds locally so you can review your stories and tradeoffs on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/google-machine-learning-engineer', 'Google', 'Machine Learning Engineer', {
+    companySlug: 'google',
+    roleUseCase: mlUseCase,
+    description: 'Prepare for Google machine learning engineer interviews: coding, ML system design, ML fundamentals, and behavioral rounds, with prep on Mac.',
+    lead: 'Google machine learning engineer interviews combine coding with machine learning fundamentals, ML system design, and behavioral rounds. ExtraBrain helps you rehearse and review with live transcription and local session history.',
+    process: [
+      { title: 'Coding rounds', body: 'Algorithm and data-structure problems similar to the software engineer loop.' },
+      { title: 'ML fundamentals', body: 'Modeling choices, evaluation, and tradeoffs across common algorithms.' },
+      { title: 'ML system design', body: 'Designing training and serving pipelines, features, and monitoring at scale.' },
+      { title: 'Behavioral', body: 'Collaboration, ownership, and how you ship ML in production.' },
+    ],
+    focusAreas: [
+      { title: 'ML system design', body: 'Data pipelines, feature stores, training, serving, and monitoring tradeoffs.' },
+      { title: 'Fundamentals', body: 'Bias and variance, regularization, evaluation metrics, and when to use which model.' },
+      { title: 'Coding fluency', body: 'Solid algorithms plus the ability to translate ideas into working code.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse ML design', body: 'Practice explaining pipeline and serving tradeoffs out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture coding rounds', body: 'Screen-aware context records the problem and your code so you can review complexity and clarity.' },
+      { title: 'On-device options', body: 'ExtraBrain runs on-device AI where compatible and lets you bring your own provider.' },
+    ],
+    extraLinks: [linkSystemDesign, { title: codingUseCase.label, body: 'Sharpen the algorithm rounds in the loop.', href: codingUseCase.href }],
+    faq: [
+      { question: 'How does the Google MLE interview differ from SWE?', answer: 'The MLE loop keeps coding rounds but adds machine learning fundamentals and ML system design, so prepare modeling and pipeline tradeoffs alongside algorithms.' },
+      { question: 'How do I prepare for ML system design?', answer: 'Practice designing end-to-end systems across data, features, training, serving, and monitoring, and explain tradeoffs out loud.' },
+      { question: 'Can ExtraBrain help MLE candidates?', answer: 'Yes. ExtraBrain transcribes mock coding and ML design rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/amazon-software-engineer', 'Amazon', 'Software Engineer', {
+    companySlug: 'amazon',
+    roleUseCase: codingUseCase,
+    description: 'Prepare for Amazon SDE interviews: online assessment, coding, system design, and Leadership Principles rounds, with prep and review on Mac.',
+    lead: 'Amazon software development engineer (SDE) interviews usually start with an online assessment, then a loop of coding and system design rounds anchored heavily in the Leadership Principles, including a bar raiser. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Online assessment', body: 'Timed coding problems plus a work-style survey before the interview loop.' },
+      { title: 'Coding rounds', body: 'Data structure and algorithm problems with an emphasis on correctness and clear reasoning.' },
+      { title: 'System design', body: 'For mid and senior levels, scalable design rounds covering storage, throughput, and reliability.' },
+      { title: 'Leadership Principles and bar raiser', body: 'Behavioral rounds mapped to the Leadership Principles, including a bar raiser focused on hiring standards.' },
+    ],
+    focusAreas: [
+      { title: 'Leadership Principles', body: 'STAR stories mapped to principles like Customer Obsession, Ownership, and Dive Deep.' },
+      { title: 'Algorithms', body: 'Solid data structures and algorithms with clean, correct implementations.' },
+      { title: 'System design', body: 'Scalable, reliable designs explained with clear tradeoffs.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse Leadership Principles', body: 'Practice STAR stories out loud while ExtraBrain transcribes locally, then check that each maps to a principle.' },
+      { title: 'Capture coding and design', body: 'Screen-aware context records the problem and your approach so you can review structure and complexity.' },
+      { title: 'Private local review', body: 'Revisit each mock session on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkBehavioral, linkOnlineAssessment],
+    faq: [
+      { question: 'How important are the Leadership Principles at Amazon?', answer: 'Very. Behavioral rounds are explicitly mapped to the Leadership Principles, so prepare specific STAR stories for several of them.' },
+      { question: 'What is the Amazon bar raiser?', answer: 'A trained interviewer from outside the hiring team who safeguards hiring standards and often focuses on Leadership Principles. Treat it as a key round.' },
+      { question: 'Can ExtraBrain help with Amazon SDE prep?', answer: 'Yes. ExtraBrain transcribes mock behavioral and technical rounds locally so you can review your STAR stories and code on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/amazon-data-engineer', 'Amazon', 'Data Engineer', {
+    companySlug: 'amazon',
+    roleUseCase: deUseCase,
+    description: 'Prepare for Amazon data engineer interviews: SQL, data modeling, ETL and pipelines, coding, and Leadership Principles rounds, on Mac.',
+    lead: 'Amazon data engineer interviews commonly cover SQL and data modeling, ETL and pipeline design, coding, and Leadership Principles behavioral rounds. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'SQL and data modeling', body: 'Writing queries and designing schemas and dimensional models for analytics.' },
+      { title: 'Pipelines and ETL', body: 'Designing batch and streaming data flows with reliability and cost in mind.' },
+      { title: 'Coding', body: 'Programming problems, often in Python, to transform and validate data.' },
+      { title: 'Leadership Principles', body: 'Behavioral rounds mapped to the Leadership Principles with STAR stories.' },
+    ],
+    focusAreas: [
+      { title: 'Data modeling', body: 'Star schemas, normalization tradeoffs, and modeling for query performance.' },
+      { title: 'Pipeline design', body: 'Batch versus streaming, idempotency, and handling late or bad data.' },
+      { title: 'SQL fluency', body: 'Window functions, joins, and aggregation under performance constraints.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse design tradeoffs', body: 'Explain pipeline and modeling choices out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture SQL reasoning', body: 'Screen-aware context records the schema and query discussion for later review.' },
+      { title: 'Leadership Principles review', body: 'Revisit STAR stories in local session history to keep them specific.' },
+    ],
+    extraLinks: [linkBehavioral, linkDbIndexing],
+    faq: [
+      { question: 'What does the Amazon data engineer interview test?', answer: 'Expect SQL, data modeling, pipeline and ETL design, coding, and Leadership Principles rounds. The mix varies by team and level.' },
+      { question: 'Do I need the Leadership Principles as a data engineer?', answer: 'Yes. Amazon behavioral rounds map to the Leadership Principles regardless of role, so prepare STAR stories.' },
+      { question: 'Can ExtraBrain help data engineer candidates?', answer: 'Yes. ExtraBrain transcribes mock design and behavioral rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/amazon-solutions-architect', 'Amazon', 'Solutions Architect', {
+    companySlug: 'amazon',
+    roleUseCase: saUseCase,
+    description: 'Prepare for Amazon solutions architect interviews: technical breadth, architecture design, customer scenarios, and Leadership Principles rounds.',
+    lead: 'Amazon solutions architect interviews test cloud and architecture breadth, design for customer scenarios, and Leadership Principles behavioral rounds. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Technical breadth', body: 'Networking, storage, compute, security, and how services fit together.' },
+      { title: 'Architecture design', body: 'Designing solutions for customer scenarios with cost, scale, and reliability tradeoffs.' },
+      { title: 'Customer-facing scenario', body: 'Explaining architecture clearly to technical and non-technical stakeholders.' },
+      { title: 'Leadership Principles', body: 'Behavioral rounds mapped to the Leadership Principles with STAR stories.' },
+    ],
+    focusAreas: [
+      { title: 'Architecture tradeoffs', body: 'Balancing cost, performance, security, and operational simplicity.' },
+      { title: 'Communication', body: 'Explaining technical decisions clearly to varied audiences.' },
+      { title: 'Breadth', body: 'Comfort across compute, storage, networking, and security.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse whiteboard designs', body: 'Explain architecture out loud while ExtraBrain transcribes locally, then review clarity.' },
+      { title: 'Capture customer scenarios', body: 'Screen-aware context records the discussion so you can sharpen how you communicate tradeoffs.' },
+      { title: 'Private local review', body: 'Revisit mock sessions on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkSystemDesign, linkLoadBalancing],
+    faq: [
+      { question: 'Is the Amazon solutions architect interview coding heavy?', answer: 'It emphasizes architecture, breadth, and customer communication more than algorithm coding, though some roles include light technical exercises.' },
+      { question: 'How do I prepare for the customer scenario round?', answer: 'Practice explaining architecture decisions clearly to both technical and business audiences, and rehearse out loud.' },
+      { question: 'Can ExtraBrain help solutions architect candidates?', answer: 'Yes. ExtraBrain transcribes mock design and scenario rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/amazon-product-manager', 'Amazon', 'Product Manager', {
+    companySlug: 'amazon',
+    roleUseCase: pmUseCase,
+    description: 'Prepare for Amazon product manager interviews: product sense, analytical, technical, and Leadership Principles rounds, with prep and review on Mac.',
+    lead: 'Amazon product manager interviews cover product sense, analytical problems, technical understanding, and Leadership Principles behavioral rounds, often working backwards from the customer. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Product sense', body: 'Defining customer problems and working backwards to a product and its metrics.' },
+      { title: 'Analytical', body: 'Estimation, metric definition, and reasoning about tradeoffs with data.' },
+      { title: 'Technical understanding', body: 'Enough technical depth to work closely with engineering teams.' },
+      { title: 'Leadership Principles', body: 'Behavioral rounds mapped to the Leadership Principles with STAR stories.' },
+    ],
+    focusAreas: [
+      { title: 'Working backwards', body: 'Starting from the customer and defining the press release and metrics.' },
+      { title: 'Data-driven decisions', body: 'Defining and defending success metrics quantitatively.' },
+      { title: 'Leadership Principles', body: 'Ownership, Customer Obsession, and Dive Deep expressed through concrete stories.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse product cases', body: 'Practice working-backwards answers out loud while ExtraBrain transcribes locally.' },
+      { title: 'Sharpen STAR stories', body: 'Revisit saved transcripts to align stories with the Leadership Principles.' },
+      { title: 'Meeting copilot for mocks', body: 'Capture peer mock interviews and review the full session privately.' },
+    ],
+    extraLinks: [linkBehavioral, linkStar],
+    faq: [
+      { question: 'What is unique about the Amazon PM interview?', answer: 'Amazon PMs are expected to work backwards from the customer and to demonstrate the Leadership Principles, so prepare STAR stories alongside product cases.' },
+      { question: 'Do Amazon PM interviews include analytics?', answer: 'Yes. Expect estimation and metric-definition questions that reward structured, data-driven reasoning.' },
+      { question: 'Can ExtraBrain help Amazon PM candidates?', answer: 'Yes. ExtraBrain transcribes mock product and behavioral rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/meta-software-engineer', 'Meta', 'Software Engineer', {
+    companySlug: 'meta',
+    roleUseCase: codingUseCase,
+    description: 'Prepare for Meta software engineer interviews: coding, system design, and behavioral rounds, with prep and review on a local-first Mac app.',
+    lead: 'Meta software engineer interviews usually include a technical screen and an onsite loop with coding rounds, a system design round for mid and senior levels, and behavioral rounds. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Technical screen', body: 'Two coding problems in about 45 minutes, emphasizing speed and correctness.' },
+      { title: 'Coding rounds', body: 'Onsite algorithm rounds where clean, correct solutions and communication matter.' },
+      { title: 'System design', body: 'For mid and senior levels, designing scalable systems with clear tradeoffs.' },
+      { title: 'Behavioral', body: 'Discussions about impact, moving fast, and working with others.' },
+    ],
+    focusAreas: [
+      { title: 'Coding speed and accuracy', body: 'Solving two problems quickly and correctly under time pressure.' },
+      { title: 'System design', body: 'Scale, data modeling, and tradeoffs for large consumer systems.' },
+      { title: 'Impact and collaboration', body: 'Behavioral signals around ownership, speed, and teamwork.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Practice timed coding', body: 'Rehearse solving problems quickly out loud while ExtraBrain transcribes locally, then review pacing.' },
+      { title: 'Capture design tradeoffs', body: 'Screen-aware context records mock design rounds so you can tighten scale and storage decisions.' },
+      { title: 'Private local review', body: 'Revisit each session on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkSystemDesign, linkGraphs],
+    faq: [
+      { question: 'How many coding problems are in the Meta screen?', answer: 'The technical screen typically includes two problems in about 45 minutes, so practice solving quickly while communicating clearly.' },
+      { question: 'Does Meta require system design?', answer: 'System design weight increases with level. Mid and senior loops include at least one design round. Confirm your loop with your recruiter.' },
+      { question: 'Can ExtraBrain help with Meta interview prep?', answer: 'Yes. ExtraBrain transcribes mock coding and design rounds locally so you can review pacing and tradeoffs on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/meta-product-manager', 'Meta', 'Product Manager', {
+    companySlug: 'meta',
+    roleUseCase: pmUseCase,
+    description: 'Prepare for Meta product manager interviews: product sense, execution and analytics, and leadership rounds, with prep and review on a Mac app.',
+    lead: 'Meta product manager interviews focus on product sense, execution and analytics, and leadership and drive. ExtraBrain helps you rehearse and review with live transcription and local session history.',
+    process: [
+      { title: 'Product sense', body: 'Designing and improving products, defining users, needs, and tradeoffs.' },
+      { title: 'Execution and analytics', body: 'Defining metrics, diagnosing changes, and reasoning about experiments.' },
+      { title: 'Leadership and drive', body: 'How you set direction, influence teams, and handle ambiguity.' },
+    ],
+    focusAreas: [
+      { title: 'Product sense', body: 'Clear user problem framing and prioritization with tradeoffs.' },
+      { title: 'Metrics and execution', body: 'Choosing metrics, diagnosing drops, and reasoning about experiments.' },
+      { title: 'Leadership', body: 'Driving impact and aligning teams under ambiguity.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse product cases', body: 'Practice product-sense and execution answers out loud while ExtraBrain transcribes locally.' },
+      { title: 'Sharpen metric stories', body: 'Review saved transcripts to check your metric definitions and diagnosis were structured.' },
+      { title: 'Meeting copilot for mocks', body: 'Capture peer mock interviews and review the full session privately.' },
+    ],
+    extraLinks: [linkBehavioral, linkStar],
+    faq: [
+      { question: 'What are the Meta PM interview rounds?', answer: 'Expect product sense, execution and analytics, and leadership rounds. The exact mix varies by team and level.' },
+      { question: 'How do I prepare for the execution round?', answer: 'Practice defining metrics, diagnosing metric changes, and reasoning about experiments out loud.' },
+      { question: 'Can ExtraBrain help Meta PM candidates?', answer: 'Yes. ExtraBrain transcribes mock product and behavioral rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/meta-data-engineer', 'Meta', 'Data Engineer', {
+    companySlug: 'meta',
+    roleUseCase: deUseCase,
+    description: 'Prepare for Meta data engineer interviews: SQL, data modeling, Python coding, and product analytics rounds, with prep and review on a Mac app.',
+    lead: 'Meta data engineer interviews commonly cover SQL, data modeling, Python coding, and product analytics. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'SQL', body: 'Complex queries with joins, window functions, and aggregation under performance constraints.' },
+      { title: 'Data modeling', body: 'Designing schemas and pipelines for analytics at large scale.' },
+      { title: 'Python coding', body: 'Programming problems to transform, validate, and analyze data.' },
+      { title: 'Product analytics', body: 'Framing metrics and reasoning about product questions with data.' },
+    ],
+    focusAreas: [
+      { title: 'SQL depth', body: 'Window functions, nested aggregation, and query performance.' },
+      { title: 'Modeling for scale', body: 'Schema design and pipeline choices for large event data.' },
+      { title: 'Analytics sense', body: 'Turning ambiguous product questions into measurable metrics.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse SQL reasoning', body: 'Explain query and modeling choices out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture analytics cases', body: 'Screen-aware context records the metric discussion for later review.' },
+      { title: 'Bring your own provider', body: 'Keep sensitive prep on a Mac app with provider choice and local-first options.' },
+    ],
+    extraLinks: [{ title: dsUseCase.label, body: 'Adjacent data-role preparation.', href: dsUseCase.href }, linkDbIndexing],
+    faq: [
+      { question: 'What does the Meta data engineer interview emphasize?', answer: 'Expect SQL, data modeling, Python, and product analytics. The mix varies by team and level.' },
+      { question: 'How SQL-heavy is the Meta data engineer loop?', answer: 'SQL is central, so practice window functions, nested aggregation, and performance-aware queries.' },
+      { question: 'Can ExtraBrain help data engineer candidates?', answer: 'Yes. ExtraBrain transcribes mock SQL and analytics rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/meta-machine-learning-engineer', 'Meta', 'Machine Learning Engineer', {
+    companySlug: 'meta',
+    roleUseCase: mlUseCase,
+    description: 'Prepare for Meta machine learning engineer interviews: coding, ML system design, ML domain knowledge, and behavioral rounds, on a Mac app.',
+    lead: 'Meta machine learning engineer interviews combine coding with ML system design and ML domain knowledge, plus behavioral rounds. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Coding rounds', body: 'Algorithm and data-structure problems similar to the software engineer loop.' },
+      { title: 'ML system design', body: 'Designing recommendation, ranking, or classification systems end to end.' },
+      { title: 'ML domain', body: 'Modeling, features, evaluation, and tradeoffs for large-scale ML.' },
+      { title: 'Behavioral', body: 'Impact, collaboration, and shipping ML in production.' },
+    ],
+    focusAreas: [
+      { title: 'ML system design', body: 'Candidate generation, ranking, features, and online and offline evaluation.' },
+      { title: 'Fundamentals', body: 'Loss functions, regularization, and evaluation for large-scale models.' },
+      { title: 'Coding fluency', body: 'Strong algorithms plus practical implementation.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse ranking design', body: 'Explain recommendation and ranking tradeoffs out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture coding rounds', body: 'Screen-aware context records the problem and your code for later review.' },
+      { title: 'On-device options', body: 'Run on-device AI where compatible and bring your own provider.' },
+    ],
+    extraLinks: [linkSystemDesign, { title: codingUseCase.label, body: 'Sharpen the algorithm rounds in the loop.', href: codingUseCase.href }],
+    faq: [
+      { question: 'What is unique about the Meta MLE interview?', answer: 'ML system design often centers on recommendation and ranking, so prepare candidate generation, ranking, and evaluation tradeoffs.' },
+      { question: 'Does the Meta MLE loop include coding?', answer: 'Yes. Expect algorithm coding alongside ML design and domain rounds.' },
+      { question: 'Can ExtraBrain help MLE candidates?', answer: 'Yes. ExtraBrain transcribes mock coding and ML design rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/microsoft-software-engineer', 'Microsoft', 'Software Engineer', {
+    companySlug: 'microsoft',
+    roleUseCase: codingUseCase,
+    description: 'Prepare for Microsoft software engineer interviews: coding, design, and behavioral rounds across an onsite loop, with prep and review on Mac.',
+    lead: 'Microsoft software engineer interviews usually include a phone screen and an onsite loop of coding, design, and behavioral rounds, sometimes ending with an as-appropriate final round. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Phone screen', body: 'A coding problem and a discussion of your background.' },
+      { title: 'Coding rounds', body: 'Data structure and algorithm problems with an emphasis on clean, correct code.' },
+      { title: 'Design round', body: 'System or component design appropriate to your level.' },
+      { title: 'Behavioral and as-appropriate', body: 'Collaboration and problem-solving, sometimes with a final senior round.' },
+    ],
+    focusAreas: [
+      { title: 'Algorithms', body: 'Core data structures, recursion, and clear complexity analysis.' },
+      { title: 'Design', body: 'Structuring components and systems with sensible tradeoffs.' },
+      { title: 'Collaboration', body: 'How you communicate and work through problems with others.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse coding out loud', body: 'Practice narrating problems while ExtraBrain transcribes locally, then review clarity.' },
+      { title: 'Capture design rounds', body: 'Screen-aware context records your design discussion so you can tighten tradeoffs.' },
+      { title: 'Private local review', body: 'Revisit sessions on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkSystemDesign, linkRecursion],
+    faq: [
+      { question: 'What is the Microsoft as-appropriate round?', answer: 'It is often a final round with a senior interviewer or hiring manager who helps make the overall call. Treat it as an important conversation.' },
+      { question: 'Is Microsoft coding as hard as Google or Meta?', answer: 'Difficulty varies by team, but expect solid algorithm problems and clear communication. Team fit matters throughout the loop.' },
+      { question: 'Can ExtraBrain help with Microsoft interview prep?', answer: 'Yes. ExtraBrain transcribes mock coding and design rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/microsoft-product-manager', 'Microsoft', 'Product Manager', {
+    companySlug: 'microsoft',
+    roleUseCase: pmUseCase,
+    description: 'Prepare for Microsoft product manager interviews: product design, analytical, technical, and behavioral rounds, with prep and review on a Mac app.',
+    lead: 'Microsoft product manager interviews cover product design and sense, analytical problems, technical understanding, and behavioral rounds. ExtraBrain helps you rehearse and review with live transcription and local session history.',
+    process: [
+      { title: 'Product design', body: 'Designing or improving a product with clear users, needs, and tradeoffs.' },
+      { title: 'Analytical', body: 'Estimation and reasoning about metrics and tradeoffs.' },
+      { title: 'Technical', body: 'Working knowledge of how systems fit together to partner with engineering.' },
+      { title: 'Behavioral', body: 'Collaboration, customer focus, and driving outcomes.' },
+    ],
+    focusAreas: [
+      { title: 'Product sense', body: 'Framing user problems and prioritizing with clear tradeoffs.' },
+      { title: 'Analytical reasoning', body: 'Estimation and metric definition under ambiguity.' },
+      { title: 'Collaboration', body: 'Partnering with engineering and design to ship.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse product cases', body: 'Practice product-design answers out loud while ExtraBrain transcribes locally.' },
+      { title: 'Sharpen metrics stories', body: 'Revisit saved transcripts to check your metric definitions were specific.' },
+      { title: 'Meeting copilot for mocks', body: 'Capture peer mock interviews and review the full session privately.' },
+    ],
+    extraLinks: [linkBehavioral, linkStar],
+    faq: [
+      { question: 'What does the Microsoft PM interview cover?', answer: 'Expect product design, analytical problems, technical understanding, and behavioral rounds. The mix varies by team and level.' },
+      { question: 'Is the Microsoft PM interview technical?', answer: 'You need working technical understanding to partner with engineering, but the focus is product sense, analysis, and collaboration.' },
+      { question: 'Can ExtraBrain help Microsoft PM candidates?', answer: 'Yes. ExtraBrain transcribes mock product and behavioral rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/microsoft-data-scientist', 'Microsoft', 'Data Scientist', {
+    companySlug: 'microsoft',
+    roleUseCase: dsUseCase,
+    description: 'Prepare for Microsoft data scientist interviews: statistics, machine learning, SQL and coding, and applied case rounds, with prep and review on Mac.',
+    lead: 'Microsoft data scientist interviews commonly cover statistics, machine learning, SQL and coding, and applied case or behavioral rounds. ExtraBrain helps you rehearse and review with live transcription and local session history.',
+    process: [
+      { title: 'Statistics and probability', body: 'Hypothesis testing, distributions, and reasoning about uncertainty.' },
+      { title: 'Machine learning', body: 'Modeling choices, evaluation, and tradeoffs across common algorithms.' },
+      { title: 'SQL and coding', body: 'Query writing and light programming to work with data.' },
+      { title: 'Applied case and behavioral', body: 'Framing a business or product problem with data and communicating findings.' },
+    ],
+    focusAreas: [
+      { title: 'Statistical reasoning', body: 'Choosing the right method and quantifying uncertainty.' },
+      { title: 'ML fundamentals', body: 'Evaluation, overfitting, and picking suitable models.' },
+      { title: 'Communicating insight', body: 'Turning analysis into a clear, actionable recommendation.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse case reasoning', body: 'Explain modeling and statistical choices out loud while ExtraBrain transcribes locally.' },
+      { title: 'Review analysis stories', body: 'Revisit saved transcripts to check your reasoning was precise.' },
+      { title: 'Bring your own provider', body: 'Keep sensitive prep on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [{ title: mlUseCase.label, body: 'Adjacent ML interview preparation.', href: mlUseCase.href }, linkBehavioral],
+    faq: [
+      { question: 'What does the Microsoft data scientist interview emphasize?', answer: 'Expect statistics, machine learning, SQL and coding, and applied case rounds. The mix varies by team and level.' },
+      { question: 'How much machine learning do I need?', answer: 'Enough to discuss modeling choices, evaluation, and tradeoffs clearly. Depth varies by team and level.' },
+      { question: 'Can ExtraBrain help data scientist candidates?', answer: 'Yes. ExtraBrain transcribes mock analytical and case rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/apple-software-engineer', 'Apple', 'Software Engineer', {
+    companySlug: 'apple',
+    roleUseCase: codingUseCase,
+    description: 'Prepare for Apple software engineer interviews: team-specific coding, domain depth, design, and behavioral rounds, with prep and review on Mac.',
+    lead: 'Apple software engineer interviews are team-specific and usually combine coding with domain depth, design, and behavioral discussions across several team members. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Recruiter and hiring manager', body: 'Early conversations about your background and the team you would join.' },
+      { title: 'Coding rounds', body: 'Data structure and algorithm problems, sometimes tuned to the team domain.' },
+      { title: 'Domain depth', body: 'Deeper questions in the team area, such as systems, graphics, or on-device ML.' },
+      { title: 'Behavioral and collaboration', body: 'How you work with others and your interest in the product.' },
+    ],
+    focusAreas: [
+      { title: 'Domain depth', body: 'Strong knowledge in the specific team area you are interviewing for.' },
+      { title: 'Coding', body: 'Solid algorithms plus clean, correct implementation.' },
+      { title: 'Collaboration and product passion', body: 'Teamwork signals and genuine interest in the product.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse domain answers', body: 'Practice explaining domain-specific decisions out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture coding rounds', body: 'Screen-aware context records the problem and your approach for later review.' },
+      { title: 'Private local review', body: 'Revisit each session on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkSystemDesign, linkBigO],
+    faq: [
+      { question: 'Are Apple interviews standardized?', answer: 'Less so than some companies. Loops are team-specific, so the balance of coding, domain depth, and design varies by team. Ask your recruiter about the format.' },
+      { question: 'How technical is the Apple software engineer interview?', answer: 'Expect solid coding plus depth in the team domain. Some teams weigh systems or hardware-adjacent knowledge heavily.' },
+      { question: 'Can ExtraBrain help with Apple interview prep?', answer: 'Yes. ExtraBrain transcribes mock coding and domain rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/apple-machine-learning-engineer', 'Apple', 'Machine Learning Engineer', {
+    companySlug: 'apple',
+    roleUseCase: mlUseCase,
+    description: 'Prepare for Apple machine learning engineer interviews: coding, ML depth, on-device and applied ML, and behavioral rounds, with prep on Mac.',
+    lead: 'Apple machine learning engineer interviews are team-specific and usually combine coding with machine learning depth, applied and on-device ML topics, and behavioral rounds. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Coding rounds', body: 'Algorithm and data-structure problems, sometimes tuned to the team domain.' },
+      { title: 'ML depth', body: 'Modeling, evaluation, and tradeoffs, often with an applied or on-device focus.' },
+      { title: 'Applied and system topics', body: 'How models run efficiently in products and on device where relevant.' },
+      { title: 'Behavioral and collaboration', body: 'How you work with others and ship ML features.' },
+    ],
+    focusAreas: [
+      { title: 'ML fundamentals', body: 'Evaluation, regularization, and choosing suitable models.' },
+      { title: 'Applied and on-device ML', body: 'Running models efficiently, sometimes with privacy and on-device constraints.' },
+      { title: 'Coding fluency', body: 'Solid algorithms and clean implementation.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse ML answers', body: 'Explain modeling and deployment tradeoffs out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture coding rounds', body: 'Screen-aware context records the problem and your code for later review.' },
+      { title: 'On-device options', body: 'ExtraBrain itself runs on-device AI where compatible, with provider choice.' },
+    ],
+    extraLinks: [{ title: codingUseCase.label, body: 'Sharpen the algorithm rounds in the loop.', href: codingUseCase.href }, linkSystemDesign],
+    faq: [
+      { question: 'What does the Apple MLE interview emphasize?', answer: 'Expect coding, machine learning depth, and often applied or on-device topics. Loops are team-specific, so confirm the focus with your recruiter.' },
+      { question: 'Is on-device ML relevant to Apple ML interviews?', answer: 'For many teams, yes. Efficiency and on-device or privacy-aware deployment can come up, though it depends on the team.' },
+      { question: 'Can ExtraBrain help MLE candidates?', answer: 'Yes. ExtraBrain transcribes mock coding and ML rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/netflix-software-engineer', 'Netflix', 'Software Engineer', {
+    companySlug: 'netflix',
+    roleUseCase: codingUseCase,
+    description: 'Prepare for Netflix software engineer interviews: coding, system design, and culture and judgment rounds at a senior bar, with prep on Mac.',
+    lead: 'Netflix software engineer interviews set a senior bar, with coding and system design rounds and strong emphasis on judgment and the Netflix culture. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Recruiter and hiring manager', body: 'Early conversations about your experience and the teams high-autonomy culture.' },
+      { title: 'Coding rounds', body: 'Algorithm and practical problems that expect strong, senior-level execution.' },
+      { title: 'System design', body: 'Designing scalable, reliable systems and reasoning about tradeoffs.' },
+      { title: 'Culture and judgment', body: 'Deep conversations about judgment, ownership, and the Netflix culture of freedom and responsibility.' },
+    ],
+    focusAreas: [
+      { title: 'Senior-level depth', body: 'A high bar for autonomy, judgment, and technical execution.' },
+      { title: 'System design', body: 'Scale, reliability, and clear tradeoffs for large streaming systems.' },
+      { title: 'Culture and judgment', body: 'Demonstrating strong decisions with context rather than process.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse judgment stories', body: 'Practice high-context decision stories out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture design tradeoffs', body: 'Screen-aware context records mock design rounds so you can tighten reliability decisions.' },
+      { title: 'Private local review', body: 'Revisit each session on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkSystemDesign, linkBehavioral],
+    faq: [
+      { question: 'Why is the Netflix interview considered a high bar?', answer: 'Netflix hires senior and expects strong autonomy and judgment, so rounds tend to be fewer but demanding, with heavy weight on culture fit.' },
+      { question: 'How should I prepare for the culture conversation?', answer: 'Prepare specific stories that show high-judgment decisions made with context, and rehearse them so they stay concrete.' },
+      { question: 'Can ExtraBrain help with Netflix interview prep?', answer: 'Yes. ExtraBrain transcribes mock coding, design, and culture rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/netflix-data-engineer', 'Netflix', 'Data Engineer', {
+    companySlug: 'netflix',
+    roleUseCase: deUseCase,
+    description: 'Prepare for Netflix data engineer interviews: data architecture, SQL, pipelines, and culture and judgment rounds, with prep and review on Mac.',
+    lead: 'Netflix data engineer interviews combine data architecture, SQL, and pipeline design with a strong culture and judgment component and a senior bar. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Data architecture', body: 'Designing data models and platforms for large-scale analytics and reliability.' },
+      { title: 'SQL and coding', body: 'Complex queries and programming to build and validate data flows.' },
+      { title: 'Pipelines', body: 'Batch and streaming pipeline design with autonomy and strong ownership.' },
+      { title: 'Culture and judgment', body: 'Conversations about decisions, context, and the Netflix culture.' },
+    ],
+    focusAreas: [
+      { title: 'Data architecture', body: 'Modeling and platform choices for large, reliable analytics.' },
+      { title: 'Pipeline design', body: 'Batch versus streaming, reliability, and data quality.' },
+      { title: 'Judgment and autonomy', body: 'Demonstrating strong, context-driven decisions.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse architecture answers', body: 'Explain modeling and pipeline tradeoffs out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture SQL reasoning', body: 'Screen-aware context records the schema and query discussion for later review.' },
+      { title: 'Private local review', body: 'Revisit each session on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkDbIndexing, linkBehavioral],
+    faq: [
+      { question: 'What does the Netflix data engineer interview test?', answer: 'Expect data architecture, SQL, pipeline design, and a strong culture and judgment component at a senior bar.' },
+      { question: 'Is the Netflix culture important for data roles?', answer: 'Yes. The culture of freedom and responsibility applies across roles, so prepare high-judgment decision stories.' },
+      { question: 'Can ExtraBrain help data engineer candidates?', answer: 'Yes. ExtraBrain transcribes mock design and culture rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/nvidia-machine-learning-engineer', 'NVIDIA', 'Machine Learning Engineer', {
+    companySlug: 'nvidia',
+    roleUseCase: mlUseCase,
+    description: 'Prepare for NVIDIA machine learning engineer interviews: deep learning depth, coding, GPU and systems awareness, and design rounds, on Mac.',
+    lead: 'NVIDIA machine learning engineer interviews emphasize deep learning depth, coding, and awareness of GPUs and performance, alongside ML system design. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Coding rounds', body: 'Algorithm and data-structure problems, sometimes with a systems flavor.' },
+      { title: 'Deep learning depth', body: 'Neural network fundamentals, training, and evaluation, often at research depth.' },
+      { title: 'GPU and performance', body: 'Awareness of parallelism, memory, and performance, relevant for many teams.' },
+      { title: 'ML system design', body: 'Designing training and inference pipelines with efficiency in mind.' },
+    ],
+    focusAreas: [
+      { title: 'Deep learning', body: 'Architectures, training dynamics, and evaluation for modern models.' },
+      { title: 'Performance awareness', body: 'Parallelism, memory, and efficiency, especially on GPUs.' },
+      { title: 'Coding fluency', body: 'Strong algorithms and clean implementation.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse deep learning answers', body: 'Explain training and architecture tradeoffs out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture design rounds', body: 'Screen-aware context records ML system design discussions for later review.' },
+      { title: 'On-device options', body: 'ExtraBrain runs on-device AI where compatible and lets you bring your own provider.' },
+    ],
+    extraLinks: [{ title: codingUseCase.label, body: 'Sharpen the algorithm rounds in the loop.', href: codingUseCase.href }, linkSystemDesign],
+    faq: [
+      { question: 'What does the NVIDIA MLE interview emphasize?', answer: 'Expect deep learning depth, coding, and awareness of GPUs and performance, plus ML system design. Depth varies by team and level.' },
+      { question: 'Do I need GPU or CUDA knowledge?', answer: 'For many teams, performance and parallelism awareness helps, and some roles expect CUDA or systems depth. Confirm with your recruiter.' },
+      { question: 'Can ExtraBrain help MLE candidates?', answer: 'Yes. ExtraBrain transcribes mock coding and ML design rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/nvidia-software-engineer', 'NVIDIA', 'Software Engineer', {
+    companySlug: 'nvidia',
+    roleUseCase: codingUseCase,
+    description: 'Prepare for NVIDIA software engineer interviews: coding, C++ and systems depth, and design rounds across GPU and platform teams, on Mac.',
+    lead: 'NVIDIA software engineer interviews emphasize coding, systems and C++ depth for many teams, and design rounds tuned to the team domain. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Coding rounds', body: 'Algorithm and data-structure problems, often with a systems flavor.' },
+      { title: 'Systems and C++', body: 'Depth in C++, memory, and performance for many platform and GPU teams.' },
+      { title: 'Design round', body: 'System or component design tuned to the team domain.' },
+      { title: 'Behavioral', body: 'Collaboration and how you approach hard technical problems.' },
+    ],
+    focusAreas: [
+      { title: 'Systems depth', body: 'Memory, concurrency, and performance, frequently in C++.' },
+      { title: 'Algorithms', body: 'Solid data structures with clean, correct implementations.' },
+      { title: 'Domain fit', body: 'Knowledge relevant to the specific GPU or platform team.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse systems answers', body: 'Explain memory and performance tradeoffs out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture coding rounds', body: 'Screen-aware context records the problem and your code for later review.' },
+      { title: 'Private local review', body: 'Revisit each session on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkSystemDesign, linkBigO],
+    faq: [
+      { question: 'Is C++ important for NVIDIA software engineer interviews?', answer: 'For many platform and GPU teams, yes. Expect systems and C++ depth alongside algorithms, though it varies by team.' },
+      { question: 'How systems-heavy is the NVIDIA loop?', answer: 'Many teams weigh memory, concurrency, and performance heavily. Confirm the focus for your team with your recruiter.' },
+      { question: 'Can ExtraBrain help with NVIDIA interview prep?', answer: 'Yes. ExtraBrain transcribes mock coding and design rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/uber-software-engineer', 'Uber', 'Software Engineer', {
+    companySlug: 'uber',
+    roleUseCase: codingUseCase,
+    description: 'Prepare for Uber software engineer interviews: coding, large-scale system design, and behavioral rounds, with prep and review on a Mac app.',
+    lead: 'Uber software engineer interviews include coding rounds, a strong system design component for real-time and marketplace systems, and behavioral rounds. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Coding rounds', body: 'Algorithm and data-structure problems with an emphasis on correctness and clarity.' },
+      { title: 'System design', body: 'Designing large-scale, real-time systems such as dispatch, pricing, or maps.' },
+      { title: 'Behavioral', body: 'Ownership, collaboration, and how you handle ambiguity and scale.' },
+    ],
+    focusAreas: [
+      { title: 'System design', body: 'Real-time, high-throughput services and marketplace tradeoffs.' },
+      { title: 'Algorithms', body: 'Solid data structures with clean implementation.' },
+      { title: 'Scalability tradeoffs', body: 'Latency, consistency, and reliability under load.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse design out loud', body: 'Explain real-time system tradeoffs out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture coding rounds', body: 'Screen-aware context records the problem and your code for later review.' },
+      { title: 'Private local review', body: 'Revisit each session on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkSystemDesign, linkLoadBalancing],
+    faq: [
+      { question: 'How important is system design at Uber?', answer: 'Very. Uber is known for real-time, marketplace-scale system design, so prepare to reason about latency, consistency, and reliability.' },
+      { question: 'What coding level should I expect?', answer: 'Expect solid algorithm rounds with clear communication. Difficulty varies by team and level.' },
+      { question: 'Can ExtraBrain help with Uber interview prep?', answer: 'Yes. ExtraBrain transcribes mock coding and design rounds locally so you can review tradeoffs on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/uber-data-scientist', 'Uber', 'Data Scientist', {
+    companySlug: 'uber',
+    roleUseCase: dsUseCase,
+    description: 'Prepare for Uber data scientist interviews: statistics, experimentation, SQL, and marketplace analytics rounds, with prep and review on Mac.',
+    lead: 'Uber data scientist interviews commonly cover statistics, experimentation, SQL, and marketplace and product analytics. ExtraBrain helps you rehearse and review with live transcription and local session history.',
+    process: [
+      { title: 'Statistics and probability', body: 'Hypothesis testing and reasoning about uncertainty in marketplace data.' },
+      { title: 'Experimentation', body: 'Designing and interpreting experiments where network effects complicate analysis.' },
+      { title: 'SQL and analytics', body: 'Query writing and framing product and marketplace metrics.' },
+      { title: 'Behavioral', body: 'Communicating findings and collaborating with product and engineering.' },
+    ],
+    focusAreas: [
+      { title: 'Experimentation', body: 'A/B testing where marketplace and network effects matter.' },
+      { title: 'Marketplace analytics', body: 'Reasoning about supply, demand, and pricing metrics.' },
+      { title: 'Statistical rigor', body: 'Choosing the right method and quantifying uncertainty.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse experiment reasoning', body: 'Explain experiment design and marketplace tradeoffs out loud while ExtraBrain transcribes locally.' },
+      { title: 'Review analytics stories', body: 'Revisit saved transcripts to check your reasoning about metrics was precise.' },
+      { title: 'Bring your own provider', body: 'Keep sensitive prep on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkBehavioral, { title: deUseCase.label, body: 'Adjacent data-role preparation.', href: deUseCase.href }],
+    faq: [
+      { question: 'What is unique about Uber data science interviews?', answer: 'Experimentation is complicated by marketplace and network effects, so practice reasoning about interference and metric design.' },
+      { question: 'How SQL-heavy is the Uber data scientist loop?', answer: 'SQL and analytics are central, so practice queries and framing marketplace metrics clearly.' },
+      { question: 'Can ExtraBrain help data scientist candidates?', answer: 'Yes. ExtraBrain transcribes mock analytics and experiment rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/stripe-software-engineer', 'Stripe', 'Software Engineer', {
+    companySlug: 'stripe',
+    roleUseCase: codingUseCase,
+    description: 'Prepare for Stripe software engineer interviews: practical coding, integration work, system design, debugging, and behavioral rounds, on Mac.',
+    lead: 'Stripe software engineer interviews are known for practical, real-world coding, including building working features and integrations, alongside system design, debugging, and behavioral rounds. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Practical coding', body: 'Building a working feature or small program rather than only solving abstract algorithm puzzles.' },
+      { title: 'Integration and API work', body: 'Working with real APIs and data, close to the kind of code Stripe engineers write.' },
+      { title: 'System design and debugging', body: 'Designing services and debugging realistic issues under time pressure.' },
+      { title: 'Behavioral', body: 'Collaboration, ownership, and how you approach ambiguous problems.' },
+    ],
+    focusAreas: [
+      { title: 'Practical coding', body: 'Writing correct, maintainable code that handles real-world edge cases.' },
+      { title: 'Debugging', body: 'Reading unfamiliar code and diagnosing issues methodically.' },
+      { title: 'System design', body: 'Designing reliable services with clear tradeoffs.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse practical builds', body: 'Talk through building a feature out loud while ExtraBrain transcribes locally, then review your approach.' },
+      { title: 'Capture debugging steps', body: 'Screen-aware context records how you diagnosed an issue so you can refine your method.' },
+      { title: 'Private local review', body: 'Revisit each session on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkSystemDesign, linkBehavioral],
+    faq: [
+      { question: 'How is the Stripe coding interview different?', answer: 'Stripe leans toward practical, real-world coding, such as building a working feature or integration, rather than only abstract algorithm puzzles.' },
+      { question: 'Should I practice debugging for Stripe?', answer: 'Yes. Reading unfamiliar code and debugging realistic issues is a common part of the loop.' },
+      { question: 'Can ExtraBrain help with Stripe interview prep?', answer: 'Yes. ExtraBrain transcribes mock practical coding and design rounds locally so you can review your approach on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/stripe-product-manager', 'Stripe', 'Product Manager', {
+    companySlug: 'stripe',
+    roleUseCase: pmUseCase,
+    description: 'Prepare for Stripe product manager interviews: product sense for developer products, technical understanding, and analytical rounds, on Mac.',
+    lead: 'Stripe product manager interviews focus on product sense for developer and financial products, technical understanding, and analytical reasoning. ExtraBrain helps you rehearse and review with live transcription and local session history.',
+    process: [
+      { title: 'Product sense', body: 'Designing and improving products for developers and businesses, with clear tradeoffs.' },
+      { title: 'Technical understanding', body: 'Comfort discussing APIs and systems to partner closely with engineering.' },
+      { title: 'Analytical', body: 'Metric definition and reasoning about tradeoffs with data.' },
+      { title: 'Behavioral', body: 'Collaboration, ownership, and driving outcomes.' },
+    ],
+    focusAreas: [
+      { title: 'Developer product sense', body: 'Understanding developer needs and API-first product tradeoffs.' },
+      { title: 'Technical fluency', body: 'Discussing APIs and integrations credibly with engineers.' },
+      { title: 'Analytical reasoning', body: 'Defining and defending metrics quantitatively.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse product cases', body: 'Practice developer-product answers out loud while ExtraBrain transcribes locally.' },
+      { title: 'Sharpen metric stories', body: 'Revisit saved transcripts to check your metric definitions were specific.' },
+      { title: 'Meeting copilot for mocks', body: 'Capture peer mock interviews and review the full session privately.' },
+    ],
+    extraLinks: [linkBehavioral, linkStar],
+    faq: [
+      { question: 'What is unique about the Stripe PM interview?', answer: 'Stripe products are developer and API focused, so product sense often involves understanding developer needs and technical tradeoffs.' },
+      { question: 'How technical is the Stripe PM interview?', answer: 'You should be comfortable discussing APIs and systems to partner with engineering, though the focus stays on product and analysis.' },
+      { question: 'Can ExtraBrain help Stripe PM candidates?', answer: 'Yes. ExtraBrain transcribes mock product and behavioral rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/airbnb-software-engineer', 'Airbnb', 'Software Engineer', {
+    companySlug: 'airbnb',
+    roleUseCase: codingUseCase,
+    description: 'Prepare for Airbnb software engineer interviews: coding, system design, and a values-based cross-functional round, with prep and review on Mac.',
+    lead: 'Airbnb software engineer interviews include coding and system design rounds and a distinctive values-based cross-functional round. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Coding rounds', body: 'Algorithm and data-structure problems with an emphasis on clean, correct code.' },
+      { title: 'System design', body: 'Designing scalable systems with clear tradeoffs for a global marketplace.' },
+      { title: 'Cross-functional and values', body: 'A round focused on collaboration and alignment with the Airbnb core values.' },
+      { title: 'Behavioral', body: 'Ownership, collaboration, and how you work across teams.' },
+    ],
+    focusAreas: [
+      { title: 'Coding quality', body: 'Clean, correct, maintainable implementations.' },
+      { title: 'System design', body: 'Scale and reliability for a global marketplace.' },
+      { title: 'Values alignment', body: 'Demonstrating collaboration and the Airbnb core values.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse values stories', body: 'Practice collaboration and values stories out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture design tradeoffs', body: 'Screen-aware context records mock design rounds so you can tighten decisions.' },
+      { title: 'Private local review', body: 'Revisit each session on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkSystemDesign, linkBehavioral],
+    faq: [
+      { question: 'What is the Airbnb cross-functional round?', answer: 'It is a values-based interview focused on collaboration and alignment with the Airbnb core values, in addition to technical rounds.' },
+      { question: 'How should I prepare for the values round?', answer: 'Prepare specific stories that show collaboration, empathy, and alignment with company values, and rehearse them out loud.' },
+      { question: 'Can ExtraBrain help with Airbnb interview prep?', answer: 'Yes. ExtraBrain transcribes mock technical and values rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/airbnb-data-scientist', 'Airbnb', 'Data Scientist', {
+    companySlug: 'airbnb',
+    roleUseCase: dsUseCase,
+    description: 'Prepare for Airbnb data scientist interviews: statistics, experimentation, SQL, and product analytics rounds, with prep and review on a Mac app.',
+    lead: 'Airbnb data scientist interviews commonly cover statistics, experimentation, SQL, and product analytics, sometimes split across analytics and inference tracks. ExtraBrain helps you rehearse and review with live transcription and local session history.',
+    process: [
+      { title: 'Statistics and inference', body: 'Hypothesis testing, distributions, and reasoning about uncertainty.' },
+      { title: 'Experimentation', body: 'Designing and interpreting A/B tests for a global marketplace.' },
+      { title: 'SQL and analytics', body: 'Query writing and framing product and marketplace metrics.' },
+      { title: 'Product and behavioral', body: 'Communicating findings and collaborating with product teams.' },
+    ],
+    focusAreas: [
+      { title: 'Experimentation', body: 'A/B test design and interpretation with marketplace effects.' },
+      { title: 'Statistical reasoning', body: 'Choosing the right method and quantifying uncertainty.' },
+      { title: 'Product analytics', body: 'Turning ambiguous questions into measurable metrics.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse experiment reasoning', body: 'Explain experiment design and analysis out loud while ExtraBrain transcribes locally.' },
+      { title: 'Review analytics stories', body: 'Revisit saved transcripts to check your reasoning was precise.' },
+      { title: 'Bring your own provider', body: 'Keep sensitive prep on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkBehavioral, { title: mlUseCase.label, body: 'Adjacent ML interview preparation.', href: mlUseCase.href }],
+    faq: [
+      { question: 'Does Airbnb split data science into tracks?', answer: 'Airbnb has used analytics and inference or algorithms tracks in some years, so confirm which track you are interviewing for.' },
+      { question: 'How important is experimentation?', answer: 'Very. Experiment design and interpretation for a marketplace are common themes, so practice reasoning about effects and metrics.' },
+      { question: 'Can ExtraBrain help data scientist candidates?', answer: 'Yes. ExtraBrain transcribes mock analytics and experiment rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/databricks-software-engineer', 'Databricks', 'Software Engineer', {
+    companySlug: 'databricks',
+    roleUseCase: codingUseCase,
+    description: 'Prepare for Databricks software engineer interviews: coding, distributed systems design, and behavioral rounds, with prep and review on a Mac app.',
+    lead: 'Databricks software engineer interviews include coding rounds and a strong distributed systems design component, plus behavioral rounds. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Coding rounds', body: 'Algorithm and data-structure problems with an emphasis on correctness.' },
+      { title: 'Distributed systems design', body: 'Designing data-intensive, distributed systems with clear tradeoffs.' },
+      { title: 'Domain discussion', body: 'For some teams, discussion of data processing and platform internals.' },
+      { title: 'Behavioral', body: 'Ownership, collaboration, and how you handle hard technical problems.' },
+    ],
+    focusAreas: [
+      { title: 'Distributed systems', body: 'Partitioning, consistency, and fault tolerance for data-intensive systems.' },
+      { title: 'Algorithms', body: 'Solid data structures with clean implementation.' },
+      { title: 'Data platform depth', body: 'Useful context on data processing engines for some teams.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse systems design', body: 'Explain distributed systems tradeoffs out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture coding rounds', body: 'Screen-aware context records the problem and your code for later review.' },
+      { title: 'Private local review', body: 'Revisit each session on a local-first Mac app with provider choice.' },
+    ],
+    extraLinks: [linkSystemDesign, linkLoadBalancing],
+    faq: [
+      { question: 'How hard is the Databricks system design interview?', answer: 'It often centers on data-intensive, distributed systems, so prepare partitioning, consistency, and fault tolerance tradeoffs.' },
+      { question: 'Do I need data platform knowledge?', answer: 'For some teams, familiarity with data processing engines helps, though core algorithms and systems design carry most rounds.' },
+      { question: 'Can ExtraBrain help with Databricks interview prep?', answer: 'Yes. ExtraBrain transcribes mock coding and distributed systems rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+
+  companyRolePage('interview-guides/databricks-machine-learning-engineer', 'Databricks', 'Machine Learning Engineer', {
+    companySlug: 'databricks',
+    roleUseCase: mlUseCase,
+    description: 'Prepare for Databricks machine learning engineer interviews: coding, ML system design, and ML platform depth, with prep and review on a Mac app.',
+    lead: 'Databricks machine learning engineer interviews combine coding with ML system design and depth on ML and data platforms. ExtraBrain helps you prepare and review with live transcription and local session history.',
+    process: [
+      { title: 'Coding rounds', body: 'Algorithm and data-structure problems similar to the software engineer loop.' },
+      { title: 'ML system design', body: 'Designing training and serving pipelines on large-scale data platforms.' },
+      { title: 'ML and data depth', body: 'Modeling, features, and how ML runs on distributed data systems.' },
+      { title: 'Behavioral', body: 'Collaboration, ownership, and shipping ML in production.' },
+    ],
+    focusAreas: [
+      { title: 'ML system design', body: 'Pipelines, features, training, and serving on distributed data.' },
+      { title: 'Data platform depth', body: 'How ML integrates with large-scale data processing.' },
+      { title: 'Coding fluency', body: 'Strong algorithms and clean implementation.' },
+    ],
+    howExtraBrainHelps: [
+      { title: 'Rehearse ML design', body: 'Explain pipeline and serving tradeoffs out loud while ExtraBrain transcribes locally.' },
+      { title: 'Capture coding rounds', body: 'Screen-aware context records the problem and your code for later review.' },
+      { title: 'On-device options', body: 'ExtraBrain runs on-device AI where compatible and lets you bring your own provider.' },
+    ],
+    extraLinks: [linkSystemDesign, { title: codingUseCase.label, body: 'Sharpen the algorithm rounds in the loop.', href: codingUseCase.href }],
+    faq: [
+      { question: 'What does the Databricks MLE interview emphasize?', answer: 'Expect coding, ML system design, and depth on how ML runs across large-scale data platforms. The mix varies by team and level.' },
+      { question: 'How is it different from the software engineer loop?', answer: 'It keeps coding rounds but adds ML system design and modeling depth tied to data platforms.' },
+      { question: 'Can ExtraBrain help MLE candidates?', answer: 'Yes. ExtraBrain transcribes mock coding and ML design rounds locally so you can review them on a Mac app.' },
+    ],
+  }),
+];
+
 const companyGuideHubPage: MarketingPage = {
   slug: 'interview-guides',
   title: 'Company Interview Guides - Prep by Employer - ExtraBrain',
   description: 'Employer-specific interview prep: coding, system design, behavioral, quant, and case rounds for top tech, finance, trading, and consulting companies.',
   eyebrow: 'Interview guides',
   h1: 'Company interview guides.',
-  lead: 'Employer-specific guides to what each interview process looks like and how to prepare, from coding and system design to quant and case rounds, with links to deeper ExtraBrain resources.',
+  lead: 'Employer-specific guides to what each interview process looks like and how to prepare, from coding and system design to quant and case rounds. Many companies also have role-specific guides for software engineer, product manager, data, and machine learning interviews.',
   primaryCta: defaultCta,
   secondaryCta: { label: 'See use cases', href: '/use-cases/coding-interviews/' },
   schemaType: 'FAQPage',
@@ -4443,6 +5394,22 @@ const companyGuideHubPage: MarketingPage = {
       title: 'Browse company guides',
       variant: 'cards',
       items: [...companyGuideTermPages]
+        .sort((a, b) =>
+          a.h1
+            .replace(/^Prepare for /, '')
+            .localeCompare(b.h1.replace(/^Prepare for /, '')),
+        )
+        .map((page) => ({
+          title: page.h1.replace(/^Prepare for /, '').replace(/ interviews\.$/, ''),
+          body: page.description,
+          href: `/${page.slug}/`,
+        })),
+    },
+    {
+      title: 'Prepare by role and company',
+      body: 'Role-specific guides that pair a company with a role, covering the rounds and focus areas you can expect for that exact combination.',
+      variant: 'cards',
+      items: [...companyRoleTermPages]
         .sort((a, b) =>
           a.h1
             .replace(/^Prepare for /, '')
@@ -4466,7 +5433,7 @@ const companyGuideHubPage: MarketingPage = {
   ],
 };
 
-export const companyGuidePages: MarketingPage[] = [companyGuideHubPage, ...companyGuideTermPages];
+export const companyGuidePages: MarketingPage[] = [companyGuideHubPage, ...companyGuideTermPages, ...companyRoleTermPages];
 
 type GlossaryEntry = {
   slug: string;
