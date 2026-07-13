@@ -153,6 +153,7 @@ const useCasePage = (
     whatYouGet: Array<{ title: string; body: string }>;
     workflow: Array<{ title: string; body: string }>;
     faq: Array<{ question: string; answer: string }>;
+    related?: Array<{ title: string; body: string; href: string }>;
   },
 ): MarketingPage => ({
   slug,
@@ -172,6 +173,15 @@ const useCasePage = (
       title: 'Workflow',
       items: opts.workflow,
     },
+    ...(opts.related
+      ? [
+          {
+            title: 'Related interview prep',
+            variant: 'cards' as const,
+            items: opts.related,
+          },
+        ]
+      : []),
     {
       title: 'Responsible use',
       body: responsibleUseNote,
@@ -1214,7 +1224,129 @@ export const aiSearchPages: MarketingPage[] = [
   }),
 ];
 
+const useCasesHubPage: MarketingPage = {
+  slug: 'use-cases',
+  title: 'Interview Use Cases by Role - ExtraBrain',
+  description:
+    'Browse ExtraBrain interview and meeting copilot use cases by role, from software engineering and data to consulting, finance, product, sales, and design.',
+  eyebrow: 'Interview use cases',
+  h1: 'Interview copilot use cases by role.',
+  lead: 'ExtraBrain is a local-first Mac interview assistant and meeting copilot. Pick your role to see how it helps you prepare, follow live rounds where allowed, and review each session, from coding and data roles to consulting, finance, product, and go-to-market interviews.',
+  primaryCta: defaultCta,
+  secondaryCta: { label: 'Company interview guides', href: '/interview-guides/' },
+  schemaType: 'FAQPage',
+  sections: [
+    {
+      title: 'Core interview rounds',
+      variant: 'cards',
+      items: [
+        { title: 'Coding interviews', body: 'Algorithms, data structures, and live problem solving.', href: '/use-cases/coding-interviews/' },
+        { title: 'System design interviews', body: 'Architecture, scaling, and tradeoff discussions.', href: '/use-cases/system-design-interviews/' },
+        { title: 'Behavioral interviews', body: 'STAR-method stories on impact, conflict, and leadership.', href: '/use-cases/behavioral-interviews/' },
+        { title: 'Technical phone screens', body: 'Early coding and design rounds over a call.', href: '/use-cases/technical-phone-screens/' },
+      ],
+    },
+    {
+      title: 'Software and platform engineering roles',
+      variant: 'cards',
+      items: [
+        { title: 'Backend interviews', body: 'APIs, databases, and service design.', href: '/use-cases/backend-interviews/' },
+        { title: 'Frontend interviews', body: 'UI engineering, JavaScript, and browser topics.', href: '/use-cases/frontend-interviews/' },
+        { title: 'Full-stack interviews', body: 'End-to-end web engineering rounds.', href: '/use-cases/full-stack-interviews/' },
+        { title: 'DevOps interviews', body: 'CI/CD, infrastructure as code, and reliability.', href: '/use-cases/devops-interviews/' },
+        { title: 'SRE interviews', body: 'Reliability, SLOs, and incident response.', href: '/use-cases/sre-interviews/' },
+        { title: 'Cloud interviews', body: 'Cloud architecture and managed services.', href: '/use-cases/cloud-interviews/' },
+        { title: 'Platform engineering interviews', body: 'Developer platforms and internal tooling.', href: '/use-cases/platform-engineering-interviews/' },
+        { title: 'Embedded interviews', body: 'Firmware, C/C++, and hardware-adjacent rounds.', href: '/use-cases/embedded-interviews/' },
+        { title: 'Android interviews', body: 'Android and mobile engineering rounds.', href: '/use-cases/android-interviews/' },
+        { title: 'iOS interviews', body: 'iOS and Swift mobile engineering rounds.', href: '/use-cases/ios-interviews/' },
+        { title: 'QA interviews', body: 'Test strategy, automation, and quality rounds.', href: '/use-cases/qa-interviews/' },
+        { title: 'Security engineer interviews', body: 'AppSec, threat modeling, and secure coding.', href: '/use-cases/security-interviews/' },
+        { title: 'Solutions architect interviews', body: 'Architecture and customer solutioning rounds.', href: '/use-cases/solutions-architect-interviews/' },
+        { title: 'Engineering manager interviews', body: 'Team leadership, delivery, and behavioral rounds.', href: '/use-cases/engineering-manager-interviews/' },
+      ],
+    },
+    {
+      title: 'Data, AI, and product roles',
+      variant: 'cards',
+      items: [
+        { title: 'Data science interviews', body: 'SQL, statistics, and ML case questions.', href: '/use-cases/data-science-interviews/' },
+        { title: 'Data engineering interviews', body: 'Pipelines, warehousing, and data modeling.', href: '/use-cases/data-engineering-interviews/' },
+        { title: 'Data analyst interviews', body: 'SQL, dashboards, and business metrics.', href: '/use-cases/data-analyst-interviews/' },
+        { title: 'Machine learning interviews', body: 'ML fundamentals, modeling, and ML system design.', href: '/use-cases/machine-learning-interviews/' },
+        { title: 'AI engineer interviews', body: 'LLM applications, RAG, and AI system design.', href: '/use-cases/ai-engineer-interviews/' },
+        { title: 'Product management interviews', body: 'Product sense, strategy, estimation, and metrics.', href: '/use-cases/product-management-interviews/' },
+        { title: 'Product design interviews', body: 'Portfolio reviews, critiques, and design challenges.', href: '/use-cases/product-design-interviews/' },
+        { title: 'UX research interviews', body: 'Research methods, study design, and portfolio.', href: '/use-cases/ux-research-interviews/' },
+      ],
+    },
+    {
+      title: 'Program, project, and delivery roles',
+      variant: 'cards',
+      items: [
+        { title: 'Technical program manager interviews', body: 'Program management with technical depth.', href: '/use-cases/technical-program-manager-interviews/' },
+        { title: 'Project management interviews', body: 'Planning, risk, and stakeholder scenarios.', href: '/use-cases/project-management-interviews/' },
+        { title: 'Scrum master interviews', body: 'Agile, ceremonies, and facilitation rounds.', href: '/use-cases/scrum-master-interviews/' },
+        { title: 'Business analyst interviews', body: 'Requirements, SQL, and stakeholder scenarios.', href: '/use-cases/business-analyst-interviews/' },
+        { title: 'Operations interviews', body: 'Process design, metrics, and prioritization cases.', href: '/use-cases/operations-interviews/' },
+      ],
+    },
+    {
+      title: 'Business, finance, and go-to-market roles',
+      variant: 'cards',
+      items: [
+        { title: 'Consulting interviews', body: 'Case structuring, market sizing, and fit rounds.', href: '/use-cases/consulting-interviews/' },
+        { title: 'Investment banking interviews', body: 'Valuation, DCF, LBO, and accounting technicals.', href: '/use-cases/investment-banking-interviews/' },
+        { title: 'Financial analyst interviews', body: 'Modeling, forecasting, and variance analysis.', href: '/use-cases/financial-analyst-interviews/' },
+        { title: 'Marketing interviews', body: 'Growth cases, funnel metrics, and portfolio.', href: '/use-cases/marketing-interviews/' },
+        { title: 'Sales interviews', body: 'Mock pitches, discovery role-plays, and pipeline.', href: '/use-cases/sales-interviews/' },
+        { title: 'Sales engineer interviews', body: 'Technical demos, discovery, and objection handling.', href: '/use-cases/sales-engineer-interviews/' },
+        { title: 'Customer success interviews', body: 'Retention scenarios, role-plays, and metrics.', href: '/use-cases/customer-success-interviews/' },
+        { title: 'Recruiter and HR interviews', body: 'Sourcing scenarios, role-plays, and metrics.', href: '/use-cases/recruiter-interviews/' },
+        { title: 'Technical writer interviews', body: 'Writing exercises and documentation scenarios.', href: '/use-cases/technical-writer-interviews/' },
+      ],
+    },
+    {
+      title: 'Meetings and calls',
+      variant: 'cards',
+      items: [
+        { title: 'Meeting copilot', body: 'Live transcription and context for work meetings.', href: '/use-cases/meeting-copilot/' },
+        { title: 'Meetings', body: 'Capture decisions, action items, and follow-ups.', href: '/use-cases/meetings/' },
+        { title: 'AI note taker for Mac', body: 'Local-first notes from live conversations.', href: '/use-cases/ai-note-taker-for-mac/' },
+        { title: 'AI assistant for meetings', body: 'Structured support during work meetings.', href: '/use-cases/ai-assistant-for-meetings/' },
+        { title: 'AI assistant for video calls', body: 'Context and transcription across video calls.', href: '/use-cases/ai-assistant-for-video-calls/' },
+      ],
+    },
+    {
+      title: 'By programming language',
+      variant: 'cards',
+      items: [
+        { title: 'Python coding interviews', body: 'Python-focused coding rounds.', href: '/use-cases/python-coding-interviews/' },
+        { title: 'Java coding interviews', body: 'Java-focused coding rounds.', href: '/use-cases/java-coding-interviews/' },
+        { title: 'JavaScript coding interviews', body: 'JavaScript-focused coding rounds.', href: '/use-cases/javascript-coding-interviews/' },
+        { title: 'TypeScript coding interviews', body: 'TypeScript-focused coding rounds.', href: '/use-cases/typescript-coding-interviews/' },
+        { title: 'Go coding interviews', body: 'Go-focused coding rounds.', href: '/use-cases/go-coding-interviews/' },
+        { title: 'C++ coding interviews', body: 'C++-focused coding rounds.', href: '/use-cases/cpp-coding-interviews/' },
+        { title: 'C# coding interviews', body: 'C#-focused coding rounds.', href: '/use-cases/csharp-coding-interviews/' },
+        { title: 'Rust coding interviews', body: 'Rust-focused coding rounds.', href: '/use-cases/rust-coding-interviews/' },
+        { title: 'SQL coding interviews', body: 'SQL query and data rounds.', href: '/use-cases/sql-coding-interviews/' },
+        { title: 'Ruby coding interviews', body: 'Ruby-focused coding rounds.', href: '/use-cases/ruby-coding-interviews/' },
+      ],
+    },
+    {
+      title: 'Responsible use',
+      body: responsibleUseNote,
+    },
+  ],
+  faq: [
+    { question: 'What are ExtraBrain use cases?', answer: 'They are role-specific and meeting-specific guides showing how ExtraBrain helps you prepare, follow live rounds where allowed, and review sessions, from coding and data roles to consulting, finance, product, and sales interviews.' },
+    { question: 'Does ExtraBrain only help with engineering interviews?', answer: 'No. ExtraBrain supports business, consulting, finance, product, design, and go-to-market interviews too, and it works as a general meeting copilot for calls and meetings.' },
+    { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac app is free, and ExtraBrain Pro adds custom profiles and richer session history starting at $6.99/month.' },
+  ],
+};
+
 export const useCasePages: MarketingPage[] = [
+  useCasesHubPage,
   useCasePage("use-cases/product-management-interviews", {
     title: "AI Product Management Interview Assistant",
     description:
@@ -1850,6 +1982,470 @@ export const useCasePages: MarketingPage[] = [
       { question: 'Does ExtraBrain help with TPM interviews?', answer: 'Yes. ExtraBrain supports program management, cross-functional, technical, and behavioral rounds with live transcription and review.' },
       { question: 'Can it help with program-management scenarios?', answer: 'Yes. ExtraBrain keeps planning, dependencies, and risk reasoning organized while you talk.' },
       { question: 'Is it useful for behavioral rounds?', answer: 'Yes. ExtraBrain helps structure STAR stories on leadership, conflict, and influence.' },
+    ],
+  }),
+
+  useCasePage("use-cases/consulting-interviews", {
+    title: "Consulting Interview Assistant - ExtraBrain",
+    description: "Prepare for management consulting case and fit interviews with ExtraBrain: case structuring, market sizing, and behavioral answers on Mac.",
+    eyebrow: "Consulting interviews",
+    h1: "A management consulting interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow consulting interviews at firms like McKinsey, BCG, and Bain, from case structuring and market sizing to fit questions, with live transcription and post-session review.",
+    whatYouGet: [
+      { title: "Case structuring", body: "Keep issue trees, hypotheses, and MECE frameworks organized while you think through a case out loud." },
+      { title: "Market sizing and math", body: "Track assumptions, estimation steps, and sanity checks so your quantitative reasoning stays clear under pressure." },
+      { title: "Fit and PEI answers", body: "Structure personal experience and leadership stories with the STAR method for the behavioral portion." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse case frameworks and load your target firm and industry context before the round." },
+      { title: "Follow", body: "Capture multi-part prompts and keep your structure, assumptions, and recommendation visible during the case." },
+      { title: "Review", body: "Revisit the transcript to tighten your structuring, synthesis, and communication." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with case interviews?", answer: "Yes. ExtraBrain helps you keep case structure, assumptions, and quantitative steps organized during practice and allowed live rounds, then review them afterward." },
+      { question: "Can it help with market sizing?", answer: "Yes. ExtraBrain keeps your estimation assumptions and math steps visible so you can sanity-check the numbers while you talk." },
+      { question: "Is ExtraBrain useful for the fit interview?", answer: "Yes. ExtraBrain helps you structure personal experience stories with the STAR method and review them for clarity and impact." },
+    ],
+    related: [
+      { title: "Consulting case interview prep", body: "Deeper preparation guidance for case and fit rounds.", href: "/consulting-case-interview-prep/" },
+      { title: "Behavioral interviews", body: "Structure fit and leadership stories with the STAR method.", href: "/use-cases/behavioral-interviews/" },
+      { title: "Case interview glossary", body: "What a case interview is and how it is evaluated.", href: "/glossary/case-interview/" },
+      { title: "McKinsey interview guide", body: "Company-specific process and preparation.", href: "/interview-guides/mckinsey/" },
+    ],
+  }),
+
+  useCasePage("use-cases/investment-banking-interviews", {
+    title: "Investment Banking Interview Assistant",
+    description: "Prepare for investment banking interviews with ExtraBrain: valuation, DCF, LBO, and accounting technicals plus fit and deal questions on Mac.",
+    eyebrow: "IB interviews",
+    h1: "An investment banking interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow investment banking interviews across technicals like valuation, DCF, LBO, and accounting, plus fit and deal discussion, with live transcription and review.",
+    whatYouGet: [
+      { title: "Valuation technicals", body: "Keep DCF, comparable companies, precedent transactions, and LBO mechanics organized while you explain them." },
+      { title: "Accounting fundamentals", body: "Track the three statements, working capital, and how a transaction flows through them under quick-fire questions." },
+      { title: "Fit and deal talk", body: "Structure why-banking, why-this-firm, and walk-me-through-a-deal answers so they stay concise." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse valuation and accounting technicals and load your resume and deal context before the round." },
+      { title: "Follow", body: "Capture rapid technical questions and keep your formulas and assumptions visible while you answer." },
+      { title: "Review", body: "Revisit the transcript to tighten technical accuracy and your fit narrative." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with IB technical questions?", answer: "Yes. ExtraBrain helps you keep valuation, DCF, LBO, and accounting reasoning organized during practice and allowed live rounds." },
+      { question: "Can it help me walk through a deal?", answer: "Yes. ExtraBrain helps you structure the situation, your role, the rationale, and the outcome so the story stays clear." },
+      { question: "Is ExtraBrain free for finance interview prep?", answer: "Yes. The core Mac app is free, and ExtraBrain Pro adds custom profiles and richer session history starting at $6.99/month." },
+    ],
+    related: [
+      { title: "Financial analyst interviews", body: "FP&A, corporate finance, and modeling rounds.", href: "/use-cases/financial-analyst-interviews/" },
+      { title: "Behavioral interviews", body: "Structure fit and why-banking answers.", href: "/use-cases/behavioral-interviews/" },
+      { title: "Goldman Sachs interview guide", body: "Company-specific finance interview process.", href: "/interview-guides/goldman-sachs/" },
+      { title: "Morgan Stanley interview guide", body: "Prepare for Morgan Stanley rounds.", href: "/interview-guides/morgan-stanley/" },
+    ],
+  }),
+
+  useCasePage("use-cases/financial-analyst-interviews", {
+    title: "Financial Analyst Interview Assistant",
+    description: "Prepare for financial analyst and FP&A interviews with ExtraBrain: Excel modeling, forecasting, variance analysis, and business cases on Mac.",
+    eyebrow: "Financial analyst interviews",
+    h1: "A financial analyst interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow financial analyst and FP&A interviews across modeling, forecasting, variance analysis, and business cases, with live transcription and review.",
+    whatYouGet: [
+      { title: "Modeling and Excel", body: "Keep three-statement models, assumptions, and formula logic organized while you explain your approach." },
+      { title: "Forecasting and variance", body: "Structure budgeting, forecasting, and budget-versus-actual variance reasoning clearly." },
+      { title: "Business case questions", body: "Track the problem, the drivers, and your recommendation during finance case discussions." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse modeling walkthroughs and metric definitions and load your resume context before the round." },
+      { title: "Follow", body: "Capture case and technical questions and keep your assumptions and calculations visible while you talk." },
+      { title: "Review", body: "Revisit the transcript to sharpen your modeling explanations and business framing." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with financial analyst interviews?", answer: "Yes. ExtraBrain helps you keep modeling, forecasting, and variance reasoning organized during practice and allowed live rounds." },
+      { question: "Can it help with Excel modeling questions?", answer: "Yes. ExtraBrain keeps your model assumptions and formula logic visible so you can explain each step clearly." },
+      { question: "Is it useful for FP&A case questions?", answer: "Yes. ExtraBrain helps you structure the problem, the drivers, and your recommendation while you reason out loud." },
+    ],
+    related: [
+      { title: "Investment banking interviews", body: "Valuation, DCF, LBO, and accounting technicals.", href: "/use-cases/investment-banking-interviews/" },
+      { title: "Data analyst interviews", body: "SQL, metrics, and analytics case rounds.", href: "/use-cases/data-analyst-interviews/" },
+      { title: "Behavioral interviews", body: "Structure fit and motivation answers.", href: "/use-cases/behavioral-interviews/" },
+      { title: "Capital One interview guide", body: "Company-specific finance and analytics process.", href: "/interview-guides/capital-one/" },
+    ],
+  }),
+
+  useCasePage("use-cases/data-analyst-interviews", {
+    title: "Data Analyst Interview Assistant - ExtraBrain",
+    description: "Prepare for data analyst interviews with ExtraBrain: SQL, spreadsheets, dashboards, A/B tests, and business-metrics case questions on Mac.",
+    eyebrow: "Data analyst interviews",
+    h1: "A data analyst interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow data analyst interviews across SQL, spreadsheets, dashboards, experimentation, and business-metrics cases, with screen-aware context and review.",
+    whatYouGet: [
+      { title: "SQL and query context", body: "Follow live SQL rounds with screen-aware context for joins, aggregations, and window functions." },
+      { title: "Metrics and A/B tests", body: "Structure answers on KPI definitions, funnels, and how to read an experiment result." },
+      { title: "Analytics case questions", body: "Keep the business question, your approach, and the takeaway organized during case rounds." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse SQL patterns and metric definitions and load your dashboard context before the interview." },
+      { title: "Follow", body: "Capture query prompts and case questions and keep your assumptions and logic visible while you work." },
+      { title: "Review", body: "Revisit the transcript to sharpen your SQL explanations and business framing." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with data analyst interviews?", answer: "Yes. ExtraBrain supports SQL, metrics, experimentation, and analytics case rounds with screen-aware context and review." },
+      { question: "Can it help with SQL rounds?", answer: "Yes. ExtraBrain reads screen context from SQL editors so you can keep joins, aggregation, and window-function logic clear." },
+      { question: "How is this different from data science interviews?", answer: "Data analyst rounds lean more on SQL, dashboards, and business metrics than heavy modeling, and ExtraBrain adapts prompts to that focus." },
+    ],
+    related: [
+      { title: "Data science interviews", body: "SQL, statistics, and ML case questions.", href: "/use-cases/data-science-interviews/" },
+      { title: "SQL coding interviews", body: "Practice SQL query rounds with screen context.", href: "/use-cases/sql-coding-interviews/" },
+      { title: "Business analyst interviews", body: "Requirements, SQL, and stakeholder scenarios.", href: "/use-cases/business-analyst-interviews/" },
+      { title: "Data analyst interview prep", body: "Deeper preparation guidance for analyst roles.", href: "/data-analyst-interview-preparation/" },
+    ],
+  }),
+
+  useCasePage("use-cases/business-analyst-interviews", {
+    title: "Business Analyst Interview Assistant",
+    description: "Prepare for business analyst interviews with ExtraBrain: requirements, SQL, process mapping, stakeholder scenarios, and case questions on Mac.",
+    eyebrow: "Business analyst interviews",
+    h1: "A business analyst interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow business analyst interviews across requirements gathering, SQL and data, process mapping, and stakeholder scenarios, with live transcription and review.",
+    whatYouGet: [
+      { title: "Requirements and documentation", body: "Keep user stories, acceptance criteria, and requirement-gathering reasoning organized while you talk." },
+      { title: "SQL and data questions", body: "Follow data and SQL rounds with screen-aware context for querying and interpretation." },
+      { title: "Stakeholder scenarios", body: "Structure answers on conflicting priorities, scope, and communication with the STAR method." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse requirements and process scenarios and load your project context before the interview." },
+      { title: "Follow", body: "Capture scenario and case questions and keep your assumptions and approach visible while you answer." },
+      { title: "Review", body: "Revisit the transcript to sharpen your requirements framing and stakeholder narratives." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with business analyst interviews?", answer: "Yes. ExtraBrain supports requirements, SQL, process, and stakeholder scenario rounds with live transcription and review." },
+      { question: "Can it help with requirement-gathering questions?", answer: "Yes. ExtraBrain keeps user stories, acceptance criteria, and scope reasoning organized while you explain your approach." },
+      { question: "Is it useful for stakeholder scenarios?", answer: "Yes. ExtraBrain helps you structure conflict, prioritization, and communication answers with the STAR method." },
+    ],
+    related: [
+      { title: "Data analyst interviews", body: "SQL, metrics, and analytics case rounds.", href: "/use-cases/data-analyst-interviews/" },
+      { title: "Product management interviews", body: "Product sense, prioritization, and metrics.", href: "/use-cases/product-management-interviews/" },
+      { title: "Project management interviews", body: "Planning, risk, and stakeholder scenarios.", href: "/use-cases/project-management-interviews/" },
+      { title: "Behavioral interviews", body: "Structure stakeholder and conflict stories.", href: "/use-cases/behavioral-interviews/" },
+    ],
+  }),
+
+  useCasePage("use-cases/product-design-interviews", {
+    title: "Product Design Interview Assistant",
+    description: "Prepare for product and UX design interviews with ExtraBrain: portfolio reviews, app critiques, design challenges, and whiteboard rounds on Mac.",
+    eyebrow: "Product design interviews",
+    h1: "A product design interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow product and UX design interviews across portfolio presentations, app critiques, whiteboard challenges, and behavioral rounds, with screen-aware context and review.",
+    whatYouGet: [
+      { title: "Portfolio presentation", body: "Keep your project narrative, decisions, and outcomes organized while you present case studies." },
+      { title: "Design challenge structure", body: "Track the problem, users, constraints, and tradeoffs during app critiques and whiteboard prompts." },
+      { title: "Critique and rationale", body: "Structure how you justify design decisions and respond to feedback under time pressure." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse portfolio walkthroughs and design-challenge frameworks before the interview." },
+      { title: "Follow", body: "Capture open-ended prompts and keep your users, constraints, and rationale visible while you talk." },
+      { title: "Review", body: "Revisit the transcript to sharpen your case-study storytelling and design justification." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with product design interviews?", answer: "Yes. ExtraBrain supports portfolio reviews, app critiques, whiteboard challenges, and behavioral rounds with screen-aware context and review." },
+      { question: "Can it help with a design challenge?", answer: "Yes. ExtraBrain keeps the problem, users, constraints, and tradeoffs organized so your structure stays clear while you talk." },
+      { question: "Is it useful for portfolio presentations?", answer: "Yes. ExtraBrain helps you keep your project narrative, decisions, and impact organized as you walk through case studies." },
+    ],
+    related: [
+      { title: "UX research interviews", body: "Research methods, study design, and portfolio.", href: "/use-cases/ux-research-interviews/" },
+      { title: "Product management interviews", body: "Product sense and prioritization rounds.", href: "/use-cases/product-management-interviews/" },
+      { title: "Frontend interviews", body: "UI engineering rounds that pair with design.", href: "/use-cases/frontend-interviews/" },
+      { title: "Behavioral interviews", body: "Structure collaboration and impact stories.", href: "/use-cases/behavioral-interviews/" },
+    ],
+  }),
+
+  useCasePage("use-cases/ux-research-interviews", {
+    title: "UX Research Interview Assistant - ExtraBrain",
+    description: "Prepare for UX researcher interviews with ExtraBrain: research methods, study design, portfolio walkthroughs, and stakeholder scenarios on Mac.",
+    eyebrow: "UX research interviews",
+    h1: "A UX research interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow UX researcher interviews across research methods, study design, portfolio walkthroughs, and stakeholder scenarios, with live transcription and review.",
+    whatYouGet: [
+      { title: "Methods and study design", body: "Keep qualitative and quantitative methods, sampling, and bias tradeoffs organized while you explain a study." },
+      { title: "Portfolio walkthrough", body: "Structure your research narrative from question to method to insight to impact." },
+      { title: "Impact and stakeholders", body: "Track how you influenced product decisions and worked with cross-functional partners." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse study-design scenarios and portfolio stories before the interview." },
+      { title: "Follow", body: "Capture method and scenario questions and keep your rationale and tradeoffs visible while you answer." },
+      { title: "Review", body: "Revisit the transcript to sharpen your research storytelling and stakeholder framing." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with UX research interviews?", answer: "Yes. ExtraBrain supports methods, study design, portfolio, and stakeholder rounds with live transcription and review." },
+      { question: "Can it help with study-design questions?", answer: "Yes. ExtraBrain keeps method choice, sampling, and bias tradeoffs organized so your reasoning stays clear." },
+      { question: "Is it useful for the research portfolio?", answer: "Yes. ExtraBrain helps you structure each project from research question to method to insight to product impact." },
+    ],
+    related: [
+      { title: "Product design interviews", body: "Portfolio, critiques, and design challenges.", href: "/use-cases/product-design-interviews/" },
+      { title: "Data analyst interviews", body: "Metrics, experimentation, and analysis rounds.", href: "/use-cases/data-analyst-interviews/" },
+      { title: "Product management interviews", body: "Product sense and metrics rounds.", href: "/use-cases/product-management-interviews/" },
+      { title: "Behavioral interviews", body: "Structure impact and collaboration stories.", href: "/use-cases/behavioral-interviews/" },
+    ],
+  }),
+
+  useCasePage("use-cases/marketing-interviews", {
+    title: "Marketing Interview Assistant - ExtraBrain",
+    description: "Prepare for marketing interviews with ExtraBrain: growth and campaign cases, funnel metrics, portfolio reviews, and behavioral questions on Mac.",
+    eyebrow: "Marketing interviews",
+    h1: "A marketing interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow marketing interviews across growth and campaign cases, funnel metrics, portfolio reviews, and behavioral rounds, with live transcription and review.",
+    whatYouGet: [
+      { title: "Growth and campaign cases", body: "Keep channel strategy, positioning, and campaign structure organized while you reason through a case." },
+      { title: "Metrics and funnels", body: "Structure answers on CAC, LTV, conversion, and how you read a marketing funnel." },
+      { title: "Portfolio and behavioral", body: "Track your campaign results and cross-functional stories with the STAR method." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse growth cases and metric definitions and load your portfolio context before the interview." },
+      { title: "Follow", body: "Capture case and behavioral questions and keep your strategy and numbers visible while you answer." },
+      { title: "Review", body: "Revisit the transcript to sharpen your case structure and results storytelling." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with marketing interviews?", answer: "Yes. ExtraBrain supports growth cases, funnel metrics, portfolio reviews, and behavioral rounds with live transcription and review." },
+      { question: "Can it help with a growth case?", answer: "Yes. ExtraBrain keeps channel strategy, positioning, and metrics organized so your structure stays clear while you talk." },
+      { question: "Is it useful for metrics questions?", answer: "Yes. ExtraBrain helps you keep CAC, LTV, and conversion reasoning visible so your funnel logic holds up." },
+    ],
+    related: [
+      { title: "Sales interviews", body: "Role-plays, discovery, and pipeline rounds.", href: "/use-cases/sales-interviews/" },
+      { title: "Product management interviews", body: "Product sense, metrics, and go-to-market.", href: "/use-cases/product-management-interviews/" },
+      { title: "Data analyst interviews", body: "Metrics and experimentation rounds.", href: "/use-cases/data-analyst-interviews/" },
+      { title: "Behavioral interviews", body: "Structure results and collaboration stories.", href: "/use-cases/behavioral-interviews/" },
+    ],
+  }),
+
+  useCasePage("use-cases/sales-interviews", {
+    title: "Sales Interview Assistant - ExtraBrain",
+    description: "Prepare for sales and account executive interviews with ExtraBrain: mock pitches, discovery role-plays, pipeline questions, and behavioral rounds.",
+    eyebrow: "Sales interviews",
+    h1: "A sales interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow sales and account executive interviews across mock pitches, discovery role-plays, pipeline questions, and behavioral rounds, with live transcription and review. As a meeting copilot, it fits the call-style format many sales interviews use.",
+    whatYouGet: [
+      { title: "Role-play and mock pitch", body: "Keep your discovery questions, value framing, and next steps organized during sell-me-this scenarios." },
+      { title: "Discovery and qualification", body: "Structure answers on qualification frameworks, objection handling, and closing." },
+      { title: "Metrics and behavioral", body: "Track quota attainment, pipeline, and win-loss stories with the STAR method." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse discovery role-plays and qualification frameworks and load your numbers before the interview." },
+      { title: "Follow", body: "Capture role-play and behavioral prompts and keep your framing and questions visible while you talk." },
+      { title: "Review", body: "Revisit the transcript to sharpen your pitch, objection handling, and results stories." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with sales interviews?", answer: "Yes. ExtraBrain supports mock pitches, discovery role-plays, pipeline questions, and behavioral rounds with live transcription and review." },
+      { question: "Can it help with a sell-me-this role-play?", answer: "Yes. ExtraBrain keeps your discovery questions, value framing, and next steps organized so your structure stays clear." },
+      { question: "Is it useful for behavioral rounds?", answer: "Yes. ExtraBrain helps you structure quota, pipeline, and win-loss stories with the STAR method." },
+    ],
+    related: [
+      { title: "Sales engineer interviews", body: "Technical demos and solutioning rounds.", href: "/use-cases/sales-engineer-interviews/" },
+      { title: "Customer success interviews", body: "Retention role-plays and metrics rounds.", href: "/use-cases/customer-success-interviews/" },
+      { title: "Marketing interviews", body: "Growth cases and funnel metrics rounds.", href: "/use-cases/marketing-interviews/" },
+      { title: "Behavioral interviews", body: "Structure results and objection stories.", href: "/use-cases/behavioral-interviews/" },
+    ],
+  }),
+
+  useCasePage("use-cases/sales-engineer-interviews", {
+    title: "Sales Engineer Interview Assistant",
+    description: "Prepare for sales engineer and solutions consultant interviews with ExtraBrain: technical demos, discovery, objection handling, and behavioral rounds.",
+    eyebrow: "Sales engineer interviews",
+    h1: "A sales engineer interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow sales engineer and solutions consultant interviews across technical demos, discovery, objection handling, and behavioral rounds, with screen-aware context and review.",
+    whatYouGet: [
+      { title: "Technical demo and presentation", body: "Keep your demo narrative, architecture, and value framing organized while you present." },
+      { title: "Discovery and solutioning", body: "Structure how you scope a customer problem and map it to a technical solution." },
+      { title: "Objection handling", body: "Track how you address technical objections and competitive comparisons under questioning." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse demo walkthroughs and discovery scenarios and load your product context before the interview." },
+      { title: "Follow", body: "Capture demo and scenario prompts and keep your scoping and value framing visible while you talk." },
+      { title: "Review", body: "Revisit the transcript to sharpen your demo storytelling and objection handling." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with sales engineer interviews?", answer: "Yes. ExtraBrain supports technical demos, discovery, objection handling, and behavioral rounds with screen-aware context and review." },
+      { question: "Can it help with a demo presentation?", answer: "Yes. ExtraBrain reads visible screen context and keeps your demo narrative and value framing organized while you present." },
+      { question: "Is it useful for discovery scenarios?", answer: "Yes. ExtraBrain helps you scope the customer problem and map it to a solution while keeping your reasoning clear." },
+    ],
+    related: [
+      { title: "Sales interviews", body: "Mock pitches, discovery, and pipeline rounds.", href: "/use-cases/sales-interviews/" },
+      { title: "Solutions architect interviews", body: "Architecture and solutioning rounds.", href: "/use-cases/solutions-architect-interviews/" },
+      { title: "Customer success interviews", body: "Retention role-plays and metrics rounds.", href: "/use-cases/customer-success-interviews/" },
+      { title: "Behavioral interviews", body: "Structure customer and results stories.", href: "/use-cases/behavioral-interviews/" },
+    ],
+  }),
+
+  useCasePage("use-cases/customer-success-interviews", {
+    title: "Customer Success Interview Assistant",
+    description: "Prepare for customer success manager interviews with ExtraBrain: retention scenarios, role-plays, metrics, and behavioral questions on Mac.",
+    eyebrow: "Customer success interviews",
+    h1: "A customer success interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow customer success manager interviews across retention scenarios, escalation role-plays, metrics, and behavioral rounds, with live transcription and review.",
+    whatYouGet: [
+      { title: "Role-play and escalations", body: "Keep your discovery, empathy, and resolution steps organized during churn and escalation scenarios." },
+      { title: "Retention and metrics", body: "Structure answers on net revenue retention, health scores, onboarding, and renewals." },
+      { title: "Behavioral stories", body: "Track cross-functional and difficult-customer stories with the STAR method." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse escalation role-plays and metric definitions and load your account context before the interview." },
+      { title: "Follow", body: "Capture role-play and behavioral prompts and keep your steps and reasoning visible while you talk." },
+      { title: "Review", body: "Revisit the transcript to sharpen your escalation handling and results stories." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with customer success interviews?", answer: "Yes. ExtraBrain supports retention scenarios, escalation role-plays, metrics, and behavioral rounds with live transcription and review." },
+      { question: "Can it help with an escalation role-play?", answer: "Yes. ExtraBrain keeps your discovery, empathy, and resolution steps organized so your structure stays clear." },
+      { question: "Is it useful for metrics questions?", answer: "Yes. ExtraBrain helps you keep retention, health-score, and renewal reasoning visible while you answer." },
+    ],
+    related: [
+      { title: "Sales interviews", body: "Role-plays, discovery, and pipeline rounds.", href: "/use-cases/sales-interviews/" },
+      { title: "Operations interviews", body: "Process, metrics, and prioritization rounds.", href: "/use-cases/operations-interviews/" },
+      { title: "Product management interviews", body: "Product sense and prioritization rounds.", href: "/use-cases/product-management-interviews/" },
+      { title: "Behavioral interviews", body: "Structure customer and conflict stories.", href: "/use-cases/behavioral-interviews/" },
+    ],
+  }),
+
+  useCasePage("use-cases/operations-interviews", {
+    title: "Operations Interview Assistant - ExtraBrain",
+    description: "Prepare for operations and ops manager interviews with ExtraBrain: process design, metrics, prioritization cases, and behavioral rounds on Mac.",
+    eyebrow: "Operations interviews",
+    h1: "An operations interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow operations and operations manager interviews across process design, metrics, prioritization cases, and behavioral rounds, with live transcription and review.",
+    whatYouGet: [
+      { title: "Process and prioritization", body: "Keep process-improvement, bottleneck, and prioritization reasoning organized while you talk through a case." },
+      { title: "Metrics and analysis", body: "Structure answers on operational KPIs, capacity, and how you read a metric." },
+      { title: "Stakeholder and behavioral", body: "Track cross-functional and execution stories with the STAR method." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse operations cases and metric definitions and load your context before the interview." },
+      { title: "Follow", body: "Capture case and scenario prompts and keep your assumptions and approach visible while you answer." },
+      { title: "Review", body: "Revisit the transcript to sharpen your process framing and execution stories." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with operations interviews?", answer: "Yes. ExtraBrain supports process, metrics, prioritization cases, and behavioral rounds with live transcription and review." },
+      { question: "Can it help with an operations case?", answer: "Yes. ExtraBrain keeps your process, bottleneck, and prioritization reasoning organized so your structure stays clear." },
+      { question: "Is it useful for behavioral rounds?", answer: "Yes. ExtraBrain helps you structure cross-functional and execution stories with the STAR method." },
+    ],
+    related: [
+      { title: "Project management interviews", body: "Planning, risk, and delivery scenarios.", href: "/use-cases/project-management-interviews/" },
+      { title: "Business analyst interviews", body: "Requirements, SQL, and stakeholder rounds.", href: "/use-cases/business-analyst-interviews/" },
+      { title: "Customer success interviews", body: "Retention role-plays and metrics rounds.", href: "/use-cases/customer-success-interviews/" },
+      { title: "Behavioral interviews", body: "Structure execution and conflict stories.", href: "/use-cases/behavioral-interviews/" },
+    ],
+  }),
+
+  useCasePage("use-cases/project-management-interviews", {
+    title: "Project Management Interview Assistant",
+    description: "Prepare for project and program manager interviews with ExtraBrain: planning, risk, stakeholder scenarios, prioritization, and behavioral rounds.",
+    eyebrow: "Project management interviews",
+    h1: "A project management interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow project and program manager interviews across planning, risk, stakeholder scenarios, prioritization, and behavioral rounds, with live transcription and review.",
+    whatYouGet: [
+      { title: "Planning and scheduling", body: "Keep scope, milestones, dependencies, and critical-path reasoning organized while you talk." },
+      { title: "Risk and stakeholders", body: "Structure answers on risk management, communication, and stakeholder alignment." },
+      { title: "Delivery scenarios", body: "Track how you handle slipping timelines and scope changes with the STAR method." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse delivery scenarios and stakeholder stories and load your project context before the interview." },
+      { title: "Follow", body: "Capture scenario and behavioral prompts and keep your plan and tradeoffs visible while you answer." },
+      { title: "Review", body: "Revisit the transcript to sharpen your planning framing and delivery stories." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with project management interviews?", answer: "Yes. ExtraBrain supports planning, risk, stakeholder, and behavioral rounds with live transcription and review." },
+      { question: "Can it help with delivery scenarios?", answer: "Yes. ExtraBrain keeps scope, dependencies, and risk reasoning organized so your approach stays clear while you talk." },
+      { question: "How is this different from the TPM copilot?", answer: "Project and program management rounds emphasize planning, delivery, and stakeholders over deep technical systems, and ExtraBrain adapts prompts to that focus." },
+    ],
+    related: [
+      { title: "Technical program manager interviews", body: "Program management with technical depth.", href: "/use-cases/technical-program-manager-interviews/" },
+      { title: "Scrum master interviews", body: "Agile ceremonies and facilitation rounds.", href: "/use-cases/scrum-master-interviews/" },
+      { title: "Operations interviews", body: "Process, metrics, and prioritization rounds.", href: "/use-cases/operations-interviews/" },
+      { title: "Behavioral interviews", body: "Structure delivery and conflict stories.", href: "/use-cases/behavioral-interviews/" },
+    ],
+  }),
+
+  useCasePage("use-cases/scrum-master-interviews", {
+    title: "Scrum Master Interview Assistant - ExtraBrain",
+    description: "Prepare for scrum master and agile coach interviews with ExtraBrain: Agile and Scrum practices, ceremonies, conflict scenarios, and behavioral rounds.",
+    eyebrow: "Scrum master interviews",
+    h1: "A scrum master interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow scrum master and agile coach interviews across Agile and Scrum fundamentals, ceremonies, team conflict scenarios, and behavioral rounds, with live transcription and review.",
+    whatYouGet: [
+      { title: "Agile and Scrum fundamentals", body: "Keep roles, artifacts, and Scrum-versus-Kanban reasoning organized while you explain them." },
+      { title: "Ceremony and facilitation", body: "Structure answers on sprint planning, retrospectives, and removing impediments." },
+      { title: "Conflict and coaching", body: "Track servant-leadership and team-conflict stories with the STAR method." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse facilitation scenarios and coaching stories and load your team context before the interview." },
+      { title: "Follow", body: "Capture scenario and behavioral prompts and keep your approach and reasoning visible while you answer." },
+      { title: "Review", body: "Revisit the transcript to sharpen your facilitation framing and coaching stories." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with scrum master interviews?", answer: "Yes. ExtraBrain supports Agile fundamentals, ceremonies, conflict scenarios, and behavioral rounds with live transcription and review." },
+      { question: "Can it help with facilitation scenarios?", answer: "Yes. ExtraBrain keeps your sprint-planning, retrospective, and impediment reasoning organized so your approach stays clear." },
+      { question: "Is it useful for coaching questions?", answer: "Yes. ExtraBrain helps you structure servant-leadership and team-conflict stories with the STAR method." },
+    ],
+    related: [
+      { title: "Project management interviews", body: "Planning, risk, and delivery scenarios.", href: "/use-cases/project-management-interviews/" },
+      { title: "Technical program manager interviews", body: "Program management with technical depth.", href: "/use-cases/technical-program-manager-interviews/" },
+      { title: "Engineering manager interviews", body: "Team leadership and delivery rounds.", href: "/use-cases/engineering-manager-interviews/" },
+      { title: "Behavioral interviews", body: "Structure leadership and conflict stories.", href: "/use-cases/behavioral-interviews/" },
+    ],
+  }),
+
+  useCasePage("use-cases/technical-writer-interviews", {
+    title: "Technical Writer Interview Assistant",
+    description: "Prepare for technical writer interviews with ExtraBrain: writing exercises, documentation scenarios, editing tests, and behavioral questions on Mac.",
+    eyebrow: "Technical writer interviews",
+    h1: "A technical writer interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow technical writer interviews across writing exercises, documentation scenarios, editing tests, and behavioral rounds, with screen-aware context and review.",
+    whatYouGet: [
+      { title: "Writing sample and exercise", body: "Keep audience, structure, and clarity goals organized while you plan a documentation exercise." },
+      { title: "Docs and information design", body: "Structure answers on documentation types, style guides, and how you organize complex information." },
+      { title: "Collaboration and behavioral", body: "Track how you work with engineers and gather source material with the STAR method." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse documentation scenarios and load your writing-sample context before the interview." },
+      { title: "Follow", body: "Capture exercise and scenario prompts and keep your audience and structure visible while you work." },
+      { title: "Review", body: "Revisit the transcript to sharpen your information-design explanations and collaboration stories." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with technical writer interviews?", answer: "Yes. ExtraBrain supports writing exercises, documentation scenarios, editing tests, and behavioral rounds with screen-aware context and review." },
+      { question: "Can it help with a documentation exercise?", answer: "Yes. ExtraBrain keeps your audience, structure, and clarity goals organized so your plan stays clear while you work." },
+      { question: "Is it useful for collaboration questions?", answer: "Yes. ExtraBrain helps you structure how you work with engineers and source material using the STAR method." },
+    ],
+    related: [
+      { title: "Product design interviews", body: "Portfolio, critiques, and design challenges.", href: "/use-cases/product-design-interviews/" },
+      { title: "UX research interviews", body: "Research methods and portfolio rounds.", href: "/use-cases/ux-research-interviews/" },
+      { title: "Product management interviews", body: "Product sense and communication rounds.", href: "/use-cases/product-management-interviews/" },
+      { title: "Behavioral interviews", body: "Structure collaboration and impact stories.", href: "/use-cases/behavioral-interviews/" },
+    ],
+  }),
+
+  useCasePage("use-cases/recruiter-interviews", {
+    title: "Recruiter Interview Assistant - ExtraBrain",
+    description: "Prepare for recruiter, talent, and HR interviews with ExtraBrain: sourcing scenarios, stakeholder role-plays, metrics, and behavioral questions on Mac.",
+    eyebrow: "Recruiter interviews",
+    h1: "A recruiter and HR interview copilot for Mac.",
+    lead: "ExtraBrain helps you prepare for and follow recruiter, talent, and HR interviews across sourcing scenarios, hiring-manager role-plays, metrics, and behavioral rounds, with live transcription and review.",
+    whatYouGet: [
+      { title: "Sourcing and pipeline", body: "Keep your sourcing strategy, outreach, and candidate-pipeline reasoning organized while you talk." },
+      { title: "Stakeholder role-play", body: "Structure answers on partnering with hiring managers, intake calls, and closing candidates." },
+      { title: "Metrics and behavioral", body: "Track time-to-fill, funnel, and difficult-hire stories with the STAR method." },
+    ],
+    workflow: [
+      { title: "Prepare", body: "Rehearse intake and closing role-plays and load your recruiting context before the interview." },
+      { title: "Follow", body: "Capture role-play and behavioral prompts and keep your approach and metrics visible while you answer." },
+      { title: "Review", body: "Revisit the transcript to sharpen your stakeholder framing and results stories." },
+    ],
+    faq: [
+      { question: "Does ExtraBrain help with recruiter interviews?", answer: "Yes. ExtraBrain supports sourcing scenarios, stakeholder role-plays, metrics, and behavioral rounds with live transcription and review." },
+      { question: "Can it help with a hiring-manager role-play?", answer: "Yes. ExtraBrain keeps your intake questions, partnership approach, and closing steps organized so your structure stays clear." },
+      { question: "Is it useful for metrics questions?", answer: "Yes. ExtraBrain helps you keep time-to-fill, funnel, and quality-of-hire reasoning visible while you answer." },
+    ],
+    related: [
+      { title: "Sales interviews", body: "Role-plays, discovery, and pipeline rounds.", href: "/use-cases/sales-interviews/" },
+      { title: "Operations interviews", body: "Process, metrics, and prioritization rounds.", href: "/use-cases/operations-interviews/" },
+      { title: "Customer success interviews", body: "Retention role-plays and behavioral rounds.", href: "/use-cases/customer-success-interviews/" },
+      { title: "Behavioral interviews", body: "Structure stakeholder and results stories.", href: "/use-cases/behavioral-interviews/" },
     ],
   }),
 ];
