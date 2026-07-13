@@ -6023,6 +6023,7 @@ type ConceptEntry = {
   slug: string;
   term: string;
   h1?: string;
+  title?: string;
   description: string;
   definition: string;
   details: Array<{ title: string; body: string }>;
@@ -6032,7 +6033,7 @@ type ConceptEntry = {
 
 const conceptPage = (entry: ConceptEntry): MarketingPage => ({
   slug: entry.slug,
-  title: `${entry.term} - Interview Concepts - ExtraBrain`,
+  title: entry.title ?? `${entry.term} - Interview Concepts - ExtraBrain`,
   description: entry.description,
   eyebrow: 'Interview concept',
   h1: entry.h1 ?? entry.term,
@@ -6302,6 +6303,258 @@ const conceptEntries: ConceptEntry[] = [
     ],
   },
   {
+    slug: 'concepts/linked-lists',
+    term: 'Linked lists',
+    h1: 'What are linked lists?',
+    description: 'A linked list stores elements in nodes that point to the next node, giving fast inserts and deletes without shifting elements.',
+    definition: 'A linked list is a linear structure where each node holds a value and a reference to the next node, so inserting or removing an element takes constant time once you hold the node, unlike arrays that must shift elements.',
+    details: [
+      { title: 'Singly vs doubly linked', body: 'A singly linked list points forward only; a doubly linked list also points backward, easing deletion and reverse traversal.' },
+      { title: 'Fast and slow pointers', body: 'Two pointers moving at different speeds detect cycles and find the middle node in a single pass.' },
+      { title: 'Tradeoffs', body: 'Linked lists give O(1) inserts at a known node but O(n) random access, the opposite of arrays.' },
+    ],
+    faq: [
+      { question: 'When is a linked list better than an array?', answer: 'When you insert or delete often at known positions and rarely need random access by index.' },
+      { question: 'How do I detect a cycle in a linked list?', answer: 'Use fast and slow pointers; if they ever meet, the list has a cycle, an approach known as Floyd\'s algorithm.' },
+    ],
+    related: [
+      { title: 'Two pointers', body: 'Fast and slow pointers traverse lists.', href: '/concepts/two-pointers/' },
+      { title: 'Stacks and queues', body: 'Often built on linked lists.', href: '/concepts/stacks-and-queues/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/stacks-and-queues',
+    term: 'Stacks and queues',
+    h1: 'What are stacks and queues?',
+    description: 'A stack is last-in first-out and a queue is first-in first-out; both are core structures behind traversal, parsing, and scheduling.',
+    definition: 'A stack removes the most recently added item first (LIFO), while a queue removes the oldest item first (FIFO). They model undo history, call stacks, traversals, and scheduling.',
+    details: [
+      { title: 'Stack operations', body: 'Push and pop at one end give LIFO order, powering recursion, expression parsing, and depth-first search.' },
+      { title: 'Queue operations', body: 'Enqueue at the back and dequeue at the front give FIFO order, powering breadth-first search and buffering.' },
+      { title: 'Variants', body: 'A deque allows both ends, and a priority queue orders by key rather than arrival time.' },
+    ],
+    faq: [
+      { question: 'What is the difference between a stack and a queue?', answer: 'A stack is last-in first-out; a queue is first-in first-out. The order in which items leave is the key difference.' },
+      { question: 'Where are stacks used in interviews?', answer: 'In depth-first search, expression evaluation, backtracking, and the monotonic stack pattern.' },
+    ],
+    related: [
+      { title: 'The monotonic stack', body: 'A powerful stack pattern.', href: '/concepts/monotonic-stack/' },
+      { title: 'Breadth-first search', body: 'Uses a queue to explore by level.', href: '/concepts/breadth-first-search/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/sorting-algorithms',
+    term: 'Sorting algorithms',
+    h1: 'What are the main sorting algorithms?',
+    description: 'Comparison sorts like quicksort and merge sort run in O(n log n), while counting and radix sort can reach linear time on bounded keys.',
+    definition: 'Sorting algorithms arrange elements in order. Comparison-based sorts such as merge sort, quicksort, and heapsort run in O(n log n), while non-comparison sorts like counting and radix sort can reach linear time on bounded keys.',
+    details: [
+      { title: 'Merge sort', body: 'A stable divide-and-conquer sort with guaranteed O(n log n) time and O(n) extra space.' },
+      { title: 'Quicksort', body: 'Partitions around a pivot for fast average O(n log n) time in place, but O(n squared) in the worst case without good pivots.' },
+      { title: 'Stability and space', body: 'Interviews often ask whether a sort is stable and how much extra memory it needs.' },
+    ],
+    faq: [
+      { question: 'Which sorting algorithm is fastest?', answer: 'Quicksort is often fastest in practice for in-memory arrays, while merge sort guarantees O(n log n) and stability.' },
+      { question: 'What does a stable sort mean?', answer: 'A stable sort keeps equal elements in their original relative order, which matters when sorting by multiple keys.' },
+    ],
+    related: [
+      { title: 'Divide and conquer', body: 'The paradigm behind merge sort and quicksort.', href: '/concepts/divide-and-conquer/' },
+      { title: 'Big O notation', body: 'Compare sorting complexity.', href: '/concepts/big-o-notation/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/greedy-algorithms',
+    term: 'Greedy algorithms',
+    h1: 'What are greedy algorithms?',
+    description: 'A greedy algorithm makes the locally optimal choice at each step, which reaches a global optimum only when the problem has the right structure.',
+    definition: 'A greedy algorithm builds a solution by taking the best immediate choice at each step. It is correct only when the problem has the greedy-choice property and optimal substructure, as in interval scheduling and Huffman coding.',
+    details: [
+      { title: 'When greedy works', body: 'It needs the greedy-choice property, where a local optimum leads to a global optimum, plus optimal substructure.' },
+      { title: 'Classic examples', body: 'Interval scheduling, Huffman coding, and minimum spanning trees are canonical greedy problems.' },
+      { title: 'Greedy vs DP', body: 'When greedy choices fail, dynamic programming that explores options is usually required.' },
+    ],
+    faq: [
+      { question: 'How do I know if greedy will work?', answer: 'Prove the greedy-choice property, often with an exchange argument, or test it against dynamic programming on small cases.' },
+      { question: 'What is the difference between greedy and dynamic programming?', answer: 'Greedy commits to one choice per step; dynamic programming considers all choices and reuses subproblem results.' },
+    ],
+    related: [
+      { title: 'Dynamic programming', body: 'The fallback when greedy fails.', href: '/concepts/dynamic-programming/' },
+      { title: 'Divide and conquer', body: 'Another algorithm paradigm.', href: '/concepts/divide-and-conquer/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/tries',
+    term: 'Tries (prefix trees)',
+    h1: 'What is a trie (prefix tree)?',
+    description: 'A trie stores strings by shared prefixes, giving fast prefix search for autocomplete, spell check, and dictionary lookups.',
+    definition: 'A trie, or prefix tree, stores strings along paths of characters so that words sharing a prefix share nodes. It supports prefix search, autocomplete, and dictionary lookups in time proportional to word length.',
+    details: [
+      { title: 'Structure', body: 'Each node represents a character, a path from the root spells a prefix, and a flag marks a complete word.' },
+      { title: 'Complexity', body: 'Insert and search take O(L) for a word of length L, independent of how many words are stored.' },
+      { title: 'When to use it', body: 'Reach for a trie on autocomplete, prefix matching, and word-search problems.' },
+    ],
+    faq: [
+      { question: 'When should I use a trie over a hash map?', answer: 'Use a trie when you need prefix queries or ordered traversal; a hash map is better for exact-match lookups only.' },
+      { question: 'What is the space cost of a trie?', answer: 'Tries can use significant memory because of per-character nodes, though a compressed radix tree reduces it.' },
+    ],
+    related: [
+      { title: 'Hash maps', body: 'The alternative for exact lookups.', href: '/concepts/hash-maps/' },
+      { title: 'Trees and binary search trees', body: 'Related tree structures.', href: '/concepts/trees-and-binary-search-trees/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/union-find',
+    term: 'Union-Find',
+    h1: 'What is Union-Find (disjoint set union)?',
+    description: 'Union-Find tracks elements split into disjoint sets and answers connectivity queries fast, powering cycle detection and Kruskal\'s algorithm.',
+    definition: 'Union-Find, also called disjoint set union, maintains a collection of disjoint sets with two operations: find, which returns a set representative, and union, which merges two sets. Path compression and union by rank make it near-constant amortized time.',
+    details: [
+      { title: 'Core operations', body: 'Find returns the root of an element, and union merges two trees under a single root.' },
+      { title: 'Optimizations', body: 'Path compression flattens trees and union by rank keeps them shallow, giving near-constant amortized time.' },
+      { title: 'When to use it', body: 'Use it for connectivity, cycle detection in undirected graphs, and Kruskal minimum spanning trees.' },
+    ],
+    faq: [
+      { question: 'What problems use Union-Find?', answer: 'Connected components, cycle detection in undirected graphs, and building minimum spanning trees with Kruskal.' },
+      { question: 'How fast is Union-Find?', answer: 'With path compression and union by rank, operations run in near-constant amortized time, the inverse Ackermann function.' },
+    ],
+    related: [
+      { title: 'Graphs', body: 'Union-Find answers connectivity queries.', href: '/concepts/graphs/' },
+      { title: 'Trees and binary search trees', body: 'The forest behind the sets.', href: '/concepts/trees-and-binary-search-trees/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/bit-manipulation',
+    term: 'Bit manipulation',
+    h1: 'What is bit manipulation?',
+    description: 'Bit manipulation uses bitwise operators to test, set, and toggle individual bits for compact, fast solutions to many interview problems.',
+    definition: 'Bit manipulation uses operators like AND, OR, XOR, NOT, and shifts to work on the individual bits of integers. It enables compact state, fast arithmetic tricks, and elegant solutions to problems such as finding a single unique element.',
+    details: [
+      { title: 'Core operators', body: 'AND, OR, XOR, NOT, and left and right shifts read and change bits directly.' },
+      { title: 'Common tricks', body: 'XOR cancels duplicates, n and (n minus 1) clears the lowest set bit, and masks toggle flags.' },
+      { title: 'Bitmasks', body: 'A single integer can represent a set of up to 64 booleans, useful in subset and dynamic programming problems.' },
+    ],
+    faq: [
+      { question: 'What is XOR used for in interviews?', answer: 'XOR finds a single non-duplicated number, swaps values without a temporary, and toggles bits, since a value XOR itself is zero.' },
+      { question: 'What is a bitmask?', answer: 'A bitmask is an integer whose bits represent a set of flags or a subset, enabling fast set operations.' },
+    ],
+    related: [
+      { title: 'Big O notation', body: 'Bit tricks often cut a factor of work.', href: '/concepts/big-o-notation/' },
+      { title: 'Hash maps', body: 'An alternative for counting elements.', href: '/concepts/hash-maps/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/topological-sort',
+    term: 'Topological sort',
+    h1: 'What is topological sort?',
+    description: 'Topological sort orders a directed acyclic graph so every edge points forward, used for build order and dependency resolution.',
+    definition: 'Topological sort produces a linear ordering of a directed acyclic graph so that every directed edge goes from earlier to later in the order. It resolves dependencies such as build steps, course prerequisites, and task scheduling.',
+    details: [
+      { title: 'Kahn algorithm', body: 'Repeatedly remove nodes with no remaining incoming edges, using in-degree counts and a queue.' },
+      { title: 'DFS approach', body: 'Run depth-first search and push each node onto a stack after visiting its descendants, then reverse the stack.' },
+      { title: 'Cycle detection', body: 'If no valid ordering exists, the graph has a cycle, so topological sort also detects cycles.' },
+    ],
+    faq: [
+      { question: 'When is topological sort possible?', answer: 'Only on a directed acyclic graph; if the graph has a cycle, no valid ordering exists.' },
+      { question: 'What problems use topological sort?', answer: 'Build systems, course scheduling, task ordering, and general dependency resolution.' },
+    ],
+    related: [
+      { title: 'Graphs', body: 'The structure being ordered.', href: '/concepts/graphs/' },
+      { title: 'Depth-first search', body: 'One way to compute the order.', href: '/concepts/depth-first-search/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/dijkstras-algorithm',
+    term: 'Dijkstra\'s algorithm',
+    h1: 'What is Dijkstra\'s algorithm?',
+    description: 'Dijkstra\'s algorithm finds shortest paths from a source to all nodes in a graph with non-negative edge weights using a priority queue.',
+    definition: 'Dijkstra\'s algorithm computes the shortest path from a source node to every other node in a weighted graph with non-negative edges. It repeatedly expands the closest unvisited node using a priority queue.',
+    details: [
+      { title: 'How it works', body: 'Keep tentative distances, always expand the nearest unvisited node, and relax each of its neighbors.' },
+      { title: 'Priority queue', body: 'A min-heap makes selecting the closest node efficient, giving O((V plus E) log V) time.' },
+      { title: 'Limitations', body: 'It requires non-negative weights; for graphs with negative edges use Bellman-Ford instead.' },
+    ],
+    faq: [
+      { question: 'Why does Dijkstra need non-negative weights?', answer: 'A negative edge can make an already-finalized node reachable more cheaply later, breaking the greedy assumption.' },
+      { question: 'What data structure speeds up Dijkstra?', answer: 'A binary or Fibonacci heap used as a priority queue selects the nearest node efficiently.' },
+    ],
+    related: [
+      { title: 'Graphs', body: 'The weighted structure it searches.', href: '/concepts/graphs/' },
+      { title: 'Heaps and priority queues', body: 'The engine behind node selection.', href: '/concepts/heaps-priority-queues/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/monotonic-stack',
+    term: 'The monotonic stack',
+    h1: 'What is a monotonic stack?',
+    description: 'A monotonic stack keeps its elements in sorted order to solve next-greater-element and range problems in linear time.',
+    definition: 'A monotonic stack maintains its elements in strictly increasing or decreasing order by popping violating elements as new ones arrive. It solves next-greater-element, daily-temperatures, and histogram problems in O(n).',
+    details: [
+      { title: 'How it works', body: 'Before pushing a new element, pop elements that break the desired order, resolving answers as you pop.' },
+      { title: 'Common problems', body: 'Next greater element, daily temperatures, and largest rectangle in a histogram.' },
+      { title: 'Why it is fast', body: 'Each element is pushed and popped at most once, giving linear time overall.' },
+    ],
+    faq: [
+      { question: 'When should I use a monotonic stack?', answer: 'When a problem asks for the next or previous greater or smaller element, or for spans bounded by such elements.' },
+      { question: 'What is the time complexity?', answer: 'O(n), because each element enters and leaves the stack at most once.' },
+    ],
+    related: [
+      { title: 'Stacks and queues', body: 'The base structure it specializes.', href: '/concepts/stacks-and-queues/' },
+      { title: 'Sliding window', body: 'Another linear-time array technique.', href: '/concepts/sliding-window/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/prefix-sums',
+    term: 'Prefix sums',
+    h1: 'What are prefix sums?',
+    description: 'A prefix sum array precomputes running totals so any range sum can be answered in constant time after linear preprocessing.',
+    definition: 'A prefix sum stores the cumulative total up to each index, so the sum of any subarray is the difference of two prefix values. It turns repeated range-sum queries from O(n) each into O(1) after O(n) preprocessing.',
+    details: [
+      { title: 'How it works', body: 'Build an array where each entry holds the sum of all earlier elements, then subtract endpoints for a range.' },
+      { title: 'Two dimensions', body: 'A 2D prefix sum answers submatrix-sum queries in constant time using inclusion and exclusion.' },
+      { title: 'Related patterns', body: 'Prefix XOR, prefix counts, and difference arrays extend the same idea.' },
+    ],
+    faq: [
+      { question: 'When are prefix sums useful?', answer: 'When you answer many range-sum or range-count queries over static data, or need subarray sums quickly.' },
+      { question: 'What is a difference array?', answer: 'It is the inverse idea: record deltas at range endpoints, then take a prefix sum to apply many range updates efficiently.' },
+    ],
+    related: [
+      { title: 'Sliding window', body: 'Another running-total technique.', href: '/concepts/sliding-window/' },
+      { title: 'Hash maps', body: 'Pair with prefix sums for subarray-sum problems.', href: '/concepts/hash-maps/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/divide-and-conquer',
+    term: 'Divide and conquer',
+    h1: 'What is divide and conquer?',
+    description: 'Divide and conquer splits a problem into independent subproblems, solves them recursively, and combines the results, as in merge sort.',
+    definition: 'Divide and conquer breaks a problem into smaller independent subproblems, solves each recursively, and merges their results. Merge sort, quicksort, and binary search are classic examples, and the Master theorem bounds their running time.',
+    details: [
+      { title: 'Three steps', body: 'Divide the input, conquer each part recursively, then combine the partial answers.' },
+      { title: 'The Master theorem', body: 'It gives the running time of many divide-and-conquer recurrences from the split count and work per level.' },
+      { title: 'When to use it', body: 'Prefer it when subproblems are independent, unlike dynamic programming where they overlap.' },
+    ],
+    faq: [
+      { question: 'How is divide and conquer different from dynamic programming?', answer: 'Divide-and-conquer subproblems are independent; dynamic programming subproblems overlap and are cached.' },
+      { question: 'What are examples of divide and conquer?', answer: 'Merge sort, quicksort, binary search, and fast exponentiation.' },
+    ],
+    related: [
+      { title: 'Sorting algorithms', body: 'Merge sort and quicksort apply it.', href: '/concepts/sorting-algorithms/' },
+      { title: 'Binary search', body: 'A divide-and-conquer search.', href: '/concepts/binary-search/' },
+      { title: 'Coding interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/coding-interviews/' },
+    ],
+  },
+  {
     slug: 'concepts/consistent-hashing',
     term: 'Consistent hashing',
     h1: 'What is consistent hashing?',
@@ -6469,6 +6722,259 @@ const conceptEntries: ConceptEntry[] = [
       { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
     ],
   },
+  {
+    slug: 'concepts/microservices',
+    term: 'Microservices',
+    h1: 'What is a microservices architecture?',
+    description: 'Microservices split an application into small, independently deployable services that communicate over the network, trading simplicity for scale.',
+    definition: 'A microservices architecture structures an application as a set of small, independently deployable services, each owning one capability and its data. It trades operational complexity for independent scaling, deployment, and team ownership.',
+    details: [
+      { title: 'Independent services', body: 'Each service owns its data and can be built, deployed, and scaled on its own.' },
+      { title: 'Communication', body: 'Services talk over synchronous APIs or asynchronous messages, often behind an API gateway.' },
+      { title: 'Tradeoffs', body: 'Independence improves scale and team velocity but adds network, consistency, and operational complexity.' },
+    ],
+    faq: [
+      { question: 'When should I choose microservices over a monolith?', answer: 'When independent scaling, team autonomy, and fault isolation outweigh the added operational and consistency complexity.' },
+      { question: 'How do microservices communicate?', answer: 'Through synchronous REST or gRPC calls and asynchronous messaging via queues or event streams.' },
+    ],
+    related: [
+      { title: 'API gateway', body: 'The entry point for microservices.', href: '/concepts/api-gateway/' },
+      { title: 'Message queues', body: 'Enable asynchronous communication.', href: '/concepts/message-queues/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/api-gateway',
+    term: 'API gateway',
+    h1: 'What is an API gateway?',
+    description: 'An API gateway is a single entry point that routes requests to backend services and handles auth, rate limiting, and response aggregation.',
+    definition: 'An API gateway sits in front of backend services as a single entry point, routing requests and centralizing cross-cutting concerns like authentication, rate limiting, caching, and response aggregation.',
+    details: [
+      { title: 'Routing', body: 'It maps incoming paths to the right backend service and can aggregate several calls into one response.' },
+      { title: 'Cross-cutting concerns', body: 'Authentication, rate limiting, TLS termination, and logging all live in one place.' },
+      { title: 'Tradeoffs', body: 'It simplifies clients but can become a bottleneck or single point of failure if it is not scaled.' },
+    ],
+    faq: [
+      { question: 'What is the difference between an API gateway and a load balancer?', answer: 'A load balancer spreads traffic across identical servers; a gateway also routes by API, aggregates calls, and enforces policy.' },
+      { question: 'Does an API gateway add latency?', answer: 'It adds a network hop, but centralized caching and connection reuse often offset the cost.' },
+    ],
+    related: [
+      { title: 'Load balancing', body: 'Often paired with a gateway.', href: '/concepts/load-balancing/' },
+      { title: 'Rate limiting', body: 'A common gateway responsibility.', href: '/concepts/rate-limiting/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/content-delivery-network',
+    term: 'Content delivery network',
+    h1: 'What is a CDN (content delivery network)?',
+    description: 'A CDN caches content on edge servers close to users worldwide, cutting latency and offloading traffic from the origin server.',
+    definition: 'A content delivery network is a geographically distributed set of edge servers that cache content near users. It reduces latency, absorbs traffic spikes, and offloads the origin by serving cached responses from the closest edge.',
+    details: [
+      { title: 'Edge caching', body: 'Static assets and cacheable responses are stored at edge locations near users.' },
+      { title: 'Latency and offload', body: 'Serving from a nearby edge cuts round-trip time and reduces load on the origin.' },
+      { title: 'Invalidation', body: 'Time-to-live and cache purges control how quickly updated content reaches users.' },
+    ],
+    faq: [
+      { question: 'What content is best served by a CDN?', answer: 'Static and cacheable assets such as images, scripts, video, and API responses that change infrequently.' },
+      { question: 'How does a CDN handle updates?', answer: 'Through time-to-live expiry and explicit purges, or versioned URLs that force a fresh fetch.' },
+    ],
+    related: [
+      { title: 'Caching', body: 'A CDN is edge caching.', href: '/concepts/caching/' },
+      { title: 'Load balancing', body: 'CDNs route users to the nearest edge.', href: '/concepts/load-balancing/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/database-replication',
+    term: 'Database replication',
+    h1: 'What is database replication?',
+    description: 'Replication keeps copies of a database on multiple servers to improve availability, read scaling, and durability.',
+    definition: 'Database replication maintains copies of data across multiple servers. It improves availability and read throughput and protects against data loss, using single-leader, multi-leader, or leaderless models with different consistency tradeoffs.',
+    details: [
+      { title: 'Leader and followers', body: 'Writes go to a leader and replicate to followers that serve reads, the most common model.' },
+      { title: 'Synchronous vs async', body: 'Synchronous replication is durable but slower; asynchronous is faster but risks losing recent writes on failover.' },
+      { title: 'Replication lag', body: 'Followers can trail the leader, so reads may be stale under eventual consistency.' },
+    ],
+    faq: [
+      { question: 'What is the difference between replication and sharding?', answer: 'Replication copies the same data to many nodes; sharding splits different data across nodes. They are often combined.' },
+      { question: 'What is replication lag?', answer: 'The delay before a follower reflects a leader write, which can cause stale reads until it catches up.' },
+    ],
+    related: [
+      { title: 'Database sharding', body: 'Splits data; often combined with replication.', href: '/concepts/database-sharding/' },
+      { title: 'Eventual consistency', body: 'The model behind async replicas.', href: '/concepts/eventual-consistency/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/acid-properties',
+    term: 'ACID properties',
+    h1: 'What are ACID properties?',
+    description: 'ACID stands for atomicity, consistency, isolation, and durability, the guarantees that keep database transactions reliable.',
+    definition: 'ACID describes four guarantees of reliable database transactions: atomicity (all or nothing), consistency (valid state transitions), isolation (concurrent transactions do not interfere), and durability (committed data survives failures). BASE systems relax these for availability.',
+    details: [
+      { title: 'The four properties', body: 'Atomicity, consistency, isolation, and durability together make a transaction reliable.' },
+      { title: 'Isolation levels', body: 'Read committed, repeatable read, and serializable trade concurrency against anomalies like dirty and phantom reads.' },
+      { title: 'ACID vs BASE', body: 'BASE systems favor availability and eventual consistency over strict ACID guarantees.' },
+    ],
+    faq: [
+      { question: 'What does each letter in ACID mean?', answer: 'Atomicity, consistency, isolation, and durability, the guarantees that keep transactions correct despite failures and concurrency.' },
+      { question: 'What is the difference between ACID and BASE?', answer: 'ACID guarantees strict consistency; BASE favors availability and accepts eventual consistency, common in distributed NoSQL stores.' },
+    ],
+    related: [
+      { title: 'CAP theorem', body: 'Frames consistency tradeoffs.', href: '/concepts/cap-theorem/' },
+      { title: 'Eventual consistency', body: 'The BASE alternative to ACID.', href: '/concepts/eventual-consistency/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/eventual-consistency',
+    term: 'Eventual consistency',
+    h1: 'What is eventual consistency?',
+    description: 'Eventual consistency means replicas converge to the same value over time, trading immediate consistency for availability and low latency.',
+    definition: 'Eventual consistency is a model where, given no new writes, all replicas eventually converge to the same value. It trades immediate consistency for higher availability and lower latency, common in distributed and NoSQL systems.',
+    details: [
+      { title: 'Why it exists', body: 'Under the CAP theorem, staying available during a partition means accepting temporarily stale reads.' },
+      { title: 'Convergence', body: 'Mechanisms like read repair, anti-entropy, and version vectors reconcile replicas over time.' },
+      { title: 'When it is acceptable', body: 'Use it when availability and scale matter more than reading the very latest write, such as feeds and counters.' },
+    ],
+    faq: [
+      { question: 'Is eventual consistency the same as no consistency?', answer: 'No. Replicas do converge; the guarantee is only that reads may be briefly stale, not permanently wrong.' },
+      { question: 'When should I avoid eventual consistency?', answer: 'For operations needing the latest value immediately, such as balances or inventory decrements, prefer stronger consistency.' },
+    ],
+    related: [
+      { title: 'CAP theorem', body: 'Explains the availability tradeoff.', href: '/concepts/cap-theorem/' },
+      { title: 'Database replication', body: 'Async replicas are eventually consistent.', href: '/concepts/database-replication/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/idempotency',
+    term: 'Idempotency',
+    h1: 'What is idempotency?',
+    description: 'An idempotent operation gives the same result whether it runs once or many times, which makes safe retries possible in distributed systems.',
+    definition: 'An operation is idempotent if applying it multiple times has the same effect as applying it once. Idempotency lets clients and systems retry requests safely after timeouts or failures without duplicate side effects.',
+    details: [
+      { title: 'Why it matters', body: 'Networks fail and clients retry, so operations must tolerate duplicates without double-charging or double-writing.' },
+      { title: 'Idempotency keys', body: 'A unique key per request lets the server detect and ignore duplicate submissions.' },
+      { title: 'HTTP methods', body: 'GET, PUT, and DELETE are defined as idempotent, while POST usually is not.' },
+    ],
+    faq: [
+      { question: 'Why is idempotency important for retries?', answer: 'Because a client that retries after a timeout must not cause a second charge or a duplicate record.' },
+      { question: 'How do I make an operation idempotent?', answer: 'Use idempotency keys, conditional writes, or design the operation so repeats have no additional effect.' },
+    ],
+    related: [
+      { title: 'Message queues', body: 'At-least-once delivery needs idempotent consumers.', href: '/concepts/message-queues/' },
+      { title: 'Rate limiting', body: 'Another API reliability concern.', href: '/concepts/rate-limiting/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/websockets',
+    term: 'WebSockets',
+    h1: 'What are WebSockets?',
+    description: 'WebSockets keep a persistent two-way connection open between client and server, enabling real-time features like chat and live updates.',
+    definition: 'WebSockets provide a persistent, full-duplex connection over a single TCP link, letting the server push data to the client without repeated requests. They power chat, live dashboards, multiplayer, and collaborative editing.',
+    details: [
+      { title: 'Full-duplex', body: 'After an HTTP upgrade handshake, both sides can send messages at any time over one connection.' },
+      { title: 'Versus polling', body: 'They avoid the overhead of repeated polling and the one-way limits of server-sent events.' },
+      { title: 'Scaling', body: 'Many open connections need connection-aware balancing and a pub-sub layer to fan out messages across servers.' },
+    ],
+    faq: [
+      { question: 'When should I use WebSockets over polling?', answer: 'When you need low-latency, two-way, real-time updates such as chat, live feeds, or collaborative editing.' },
+      { question: 'How do WebSockets scale?', answer: 'Through connection-aware load balancing and a pub-sub backbone that broadcasts messages to the right servers.' },
+    ],
+    related: [
+      { title: 'Message queues', body: 'Often fan out real-time messages.', href: '/concepts/message-queues/' },
+      { title: 'Load balancing', body: 'Persistent connections need care.', href: '/concepts/load-balancing/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/bloom-filters',
+    term: 'Bloom filters',
+    h1: 'What is a Bloom filter?',
+    description: 'A Bloom filter is a compact probabilistic structure that tests set membership with no false negatives but possible false positives.',
+    definition: 'A Bloom filter is a space-efficient probabilistic data structure that tests whether an element is in a set. It can return false positives but never false negatives, trading a small error rate for very low memory use.',
+    details: [
+      { title: 'How it works', body: 'Several hash functions set bits in a bit array, and a lookup checks whether all of those bits are set.' },
+      { title: 'The tradeoff', body: 'A reported match may be a false positive, but a miss is always correct, so it never gives false negatives.' },
+      { title: 'When to use it', body: 'Use it to skip expensive lookups, as in databases avoiding disk reads for keys that are probably absent.' },
+    ],
+    faq: [
+      { question: 'Why can a Bloom filter have false positives?', answer: 'Different elements can set the same bits, so all bits for an absent element may already be set by others.' },
+      { question: 'Where are Bloom filters used?', answer: 'In databases and caches to avoid expensive lookups for keys that are probably absent.' },
+    ],
+    related: [
+      { title: 'Hash maps', body: 'The exact-membership alternative.', href: '/concepts/hash-maps/' },
+      { title: 'Caching', body: 'Bloom filters guard cache and disk lookups.', href: '/concepts/caching/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/sql-vs-nosql',
+    term: 'SQL vs NoSQL',
+    h1: 'What is the difference between SQL and NoSQL?',
+    description: 'SQL databases use structured tables and strong consistency; NoSQL databases trade schema and joins for flexible models and horizontal scale.',
+    definition: 'SQL databases store data in relational tables with schemas, joins, and ACID transactions. NoSQL databases use flexible document, key-value, wide-column, or graph models that scale horizontally and often favor availability over strict consistency.',
+    details: [
+      { title: 'Relational strengths', body: 'Schemas, joins, and ACID transactions suit complex, consistent, well-structured data.' },
+      { title: 'NoSQL strengths', body: 'Flexible schemas and horizontal scale suit high write volume and evolving or denormalized data.' },
+      { title: 'Choosing', body: 'Pick based on access patterns, consistency needs, and scale rather than on trends.' },
+    ],
+    faq: [
+      { question: 'When should I use NoSQL over SQL?', answer: 'When you need flexible schemas, very high write throughput, or easy horizontal scaling and can accept eventual consistency.' },
+      { question: 'Can NoSQL databases support transactions?', answer: 'Many now offer limited or document-level transactions, though not always the full multi-row ACID guarantees of relational systems.' },
+    ],
+    related: [
+      { title: 'ACID properties', body: 'The relational transaction guarantees.', href: '/concepts/acid-properties/' },
+      { title: 'Database sharding', body: 'How NoSQL scales horizontally.', href: '/concepts/database-sharding/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/horizontal-vs-vertical-scaling',
+    term: 'Horizontal vs vertical scaling',
+    title: 'Horizontal vs vertical scaling - Interview Concepts',
+    h1: 'Horizontal vs vertical scaling',
+    description: 'Vertical scaling adds power to one machine; horizontal scaling adds more machines. Each has different limits, cost, and complexity.',
+    definition: 'Vertical scaling (scaling up) adds CPU, memory, or disk to a single machine, while horizontal scaling (scaling out) adds more machines behind a load balancer. Horizontal scaling handles larger loads and failures but needs distribution and coordination.',
+    details: [
+      { title: 'Scaling up', body: 'Adding resources to one server is simple but hits a hardware ceiling and remains a single point of failure.' },
+      { title: 'Scaling out', body: 'Adding servers scales further and improves fault tolerance but requires load balancing and state distribution.' },
+      { title: 'Statelessness', body: 'Horizontal scaling is easiest when services are stateless, so any node can handle any request.' },
+    ],
+    faq: [
+      { question: 'Which is better, horizontal or vertical scaling?', answer: 'Vertical is simpler for small loads; horizontal scales further and survives node failures, so large systems favor it.' },
+      { question: 'Why does statelessness help scaling?', answer: 'Stateless services let any server handle any request, so you can add or remove nodes freely behind a load balancer.' },
+    ],
+    related: [
+      { title: 'Load balancing', body: 'Distributes traffic when scaling out.', href: '/concepts/load-balancing/' },
+      { title: 'Database sharding', body: 'How data scales horizontally.', href: '/concepts/database-sharding/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
+  {
+    slug: 'concepts/circuit-breaker',
+    term: 'The circuit breaker',
+    h1: 'What is the circuit breaker pattern?',
+    description: 'A circuit breaker stops calls to a failing service for a while, preventing cascading failures and giving it time to recover.',
+    definition: 'The circuit breaker pattern monitors calls to a dependency and, after too many failures, trips open to fail fast instead of waiting on a broken service. It prevents cascading failures and allows recovery before retrying.',
+    details: [
+      { title: 'Three states', body: 'Closed passes calls, open fails fast, and half-open tests a few calls to see if the dependency recovered.' },
+      { title: 'Why it helps', body: 'Failing fast frees threads and resources, stopping one slow dependency from taking down the whole system.' },
+      { title: 'Related patterns', body: 'Pair it with timeouts, retries with backoff, and bulkheads for resilience.' },
+    ],
+    faq: [
+      { question: 'What problem does a circuit breaker solve?', answer: 'It prevents cascading failures by failing fast when a dependency is unhealthy instead of piling up blocked calls.' },
+      { question: 'What is the half-open state?', answer: 'After a cool-down, the breaker lets a few trial calls through; success closes it, and failure reopens it.' },
+    ],
+    related: [
+      { title: 'Rate limiting', body: 'Another resilience control.', href: '/concepts/rate-limiting/' },
+      { title: 'Load balancing', body: 'Removes unhealthy instances.', href: '/concepts/load-balancing/' },
+      { title: 'System design interviews', body: 'Practice with ExtraBrain.', href: '/use-cases/system-design-interviews/' },
+    ],
+  },
 ];
 
 const conceptTermPages: MarketingPage[] = conceptEntries.map((entry) => conceptPage(entry));
@@ -6476,7 +6982,7 @@ const conceptTermPages: MarketingPage[] = conceptEntries.map((entry) => conceptP
 const conceptHubPage: MarketingPage = {
   slug: 'concepts',
   title: 'Interview Concepts - Algorithms and System Design - ExtraBrain',
-  description: 'Plain-English explainers for the algorithm and system-design concepts behind coding and design interviews: sliding window, dynamic programming, CAP theorem, sharding, and more.',
+  description: 'Plain-English explainers for the algorithm and system-design concepts behind coding and design interviews, from sliding window to CAP theorem and sharding.',
   eyebrow: 'Interview concepts',
   h1: 'Interview concepts.',
   lead: 'Clear explainers for the algorithm patterns and system-design building blocks that come up in coding and design interviews, with links to related ExtraBrain guides.',
