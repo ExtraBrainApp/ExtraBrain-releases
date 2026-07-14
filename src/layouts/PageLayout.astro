@@ -6,6 +6,7 @@ import {
   absoluteUrl,
   breadcrumbSchema,
   contactEmail,
+  faqSchema,
   githubUrl,
   homepageFaq,
   offerCatalogSchema,
@@ -13,6 +14,7 @@ import {
   pricingTiers,
   productCategory,
   productName,
+  sectionHubs,
   softwareApplicationSchema,
   type MarketingPage,
   webPageSchema,
@@ -193,11 +195,12 @@ const summaryFacts = [
 const schemaGraph: Array<Record<string, unknown>> = [
   organizationSchema(),
   websiteSchema(),
+  softwareApplicationSchema(page.description, absoluteUrl('/download/')),
   webPageSchema(page),
   breadcrumbSchema(page),
 ];
 
-if (page.slug === 'download') schemaGraph.push(softwareApplicationSchema(page.description, absoluteUrl('/download/')));
+if (faq.length > 0) schemaGraph.push(faqSchema(faq, page));
 if (page.slug === 'pricing' || page.slug === 'pricing/free-vs-pro') schemaGraph.push(offerCatalogSchema());
 if (comparisonHub) {
   schemaGraph.push({
@@ -222,18 +225,17 @@ const contentBandStart = (showSummary ? 1 : 0) + (hasReleaseMetadata ? 1 : 0);
 const sourcesBandIndex = contentBandStart + page.sections.length + (hasGuideContent ? 1 : 0);
 const faqBandIndex = sourcesBandIndex + (hasSources ? 1 : 0);
 const sectionBandClass = (index: number) => (index % 2 === 0 ? 'section-band--odd' : 'section-band--even');
+const slugSlashIndex = page.slug.indexOf('/');
+const slugPrefix = slugSlashIndex > 0 ? page.slug.slice(0, slugSlashIndex) : null;
+const sectionLabel = slugPrefix ? sectionHubs[slugPrefix] : null;
 const breadcrumbItems = [
   { label: 'Home', href: '/' },
-  ...(page.slug.startsWith('compare/')
-    ? [{ label: 'Compare', href: '/compare/' }]
-    : page.slug.startsWith('pricing/')
-      ? [{ label: 'Pricing', href: '/pricing/' }]
-      : []),
+  ...(sectionLabel ? [{ label: sectionLabel, href: `/${slugPrefix}/` }] : []),
   { label: page.h1.replace(/\.$/, ''), href: `/${page.slug}/` },
 ];
 ---
 
-<MarketingLayout title={`${page.title} | ${productName}`} description={page.description} ogImage={page.ogImage} schemaGraph={schemaGraph} enableAnalytics={!isPerformanceDiscoveryPage}>
+<MarketingLayout title={`${page.title.replace(/ - ExtraBrain$/, '')} | ${productName}`} description={page.description} ogImage={page.ogImage} keywords={page.keywords} schemaGraph={schemaGraph} enableAnalytics={!isPerformanceDiscoveryPage}>
   <SiteHeader feedbackHref={feedbackHref} />
 
   <main id="top" class="page-main">
