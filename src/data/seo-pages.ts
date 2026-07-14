@@ -7608,6 +7608,797 @@ const conceptHubPage: MarketingPage = {
 
 export const conceptPages: MarketingPage[] = [conceptHubPage, ...conceptTermPages];
 
+type SalaryEntry = {
+  slug: string;
+  company: string;
+  description: string;
+  lead: string;
+  companyGuideSlug?: string;
+  levels: Array<{ title: string; body: string }>;
+  factors: Array<{ title: string; body: string }>;
+  negotiation: Array<{ title: string; body: string }>;
+  faq: Array<{ question: string; answer: string }>;
+};
+
+const salaryPage = (entry: SalaryEntry): MarketingPage => ({
+  slug: entry.slug,
+  title: `${entry.company} Software Engineer Salary`,
+  description: entry.description,
+  eyebrow: 'Salary guide',
+  h1: `${entry.company} software engineer salary overview.`,
+  lead: entry.lead,
+  primaryCta: defaultCta,
+  secondaryCta: entry.companyGuideSlug
+    ? { label: `${entry.company} interview guide`, href: `/interview-guides/${entry.companyGuideSlug}/` }
+    : { label: 'All salary guides', href: '/salaries/' },
+  schemaType: 'FAQPage',
+  sections: [
+    { title: 'Compensation by level', items: entry.levels },
+    { title: 'What affects your offer', items: entry.factors },
+    { title: 'Negotiation with ExtraBrain', items: entry.negotiation },
+    {
+      title: 'Related guides',
+      variant: 'cards',
+      items: [
+        ...(entry.companyGuideSlug
+          ? [{
+              title: `${entry.company} interview guide`,
+              body: `Rounds, formats, and preparation for ${entry.company} interviews.`,
+              href: `/interview-guides/${entry.companyGuideSlug}/`,
+            }]
+          : []),
+        { title: 'Software engineering interview prep', body: 'End-to-end prep for SWE interviews.', href: '/software-engineering-interview-preparation/' },
+        { title: 'Offer comparison calculator', body: 'Compare competing offers side by side.', href: '/tools/offer-comparison-calculator/' },
+      ],
+    },
+    { title: 'Responsible use', body: responsibleUseNote },
+  ],
+  faq: entry.faq,
+});
+
+const salaryEntries: SalaryEntry[] = [
+  {
+    slug: 'salaries/google-software-engineer-salary',
+    company: 'Google',
+    description: 'Reported Google software engineer salary ranges by level, what affects offers, and how ExtraBrain helps you prepare for negotiation.',
+    lead: 'Google software engineer compensation is widely reported across levels from L3 to Staff and above. This guide summarizes publicly reported ranges, factors that shape offers, and how ExtraBrain helps you prepare.',
+    companyGuideSlug: 'google',
+    levels: [
+      { title: 'L3 - Entry-level', body: 'Reported total compensation typically falls in the $180K-$260K range, combining base salary, stock grants, and sign-on bonus. Verify current ranges on levels.fyi or Glassdoor.' },
+      { title: 'L4 - Mid-level', body: 'Reported total compensation often ranges from $250K to $370K. Stock refreshers and performance bonuses become a larger share at this level.' },
+      { title: 'L5 - Senior', body: 'Reported total compensation commonly falls between $350K and $520K. Equity typically represents a significant portion of the package.' },
+      { title: 'L6+ - Staff and above', body: 'Reported total compensation can exceed $500K and reach well above $700K for principal levels. Ranges vary widely by location and team.' },
+    ],
+    factors: [
+      { title: 'Location', body: 'Bay Area and New York typically command the highest ranges, while other US offices and remote roles may see adjustments.' },
+      { title: 'Competing offers', body: 'Google is known to match or exceed competing offers from peer companies, making multiple offers one of the strongest negotiation levers.' },
+      { title: 'Level and scope', body: 'Compensation jumps significantly between levels, and interview performance determines the level at which you receive an offer.' },
+      { title: 'Stock vesting', body: 'Google uses a four-year vesting schedule. Refresher grants come based on performance ratings and can meaningfully change total compensation over time.' },
+    ],
+    negotiation: [
+      { title: 'Research before the interview', body: 'Use ExtraBrain to organize salary data, past offer reports, and negotiation talking points so you walk in with a clear target range.' },
+      { title: 'Practice negotiation scenarios', body: 'Run mock negotiation conversations with ExtraBrain to rehearse how you present competing offers, counter initial numbers, and ask clarifying questions.' },
+      { title: 'Review offer details live', body: 'When reviewing an offer call, ExtraBrain can help you follow the conversation, note key numbers, and flag questions about stock, signing bonus, and level.' },
+    ],
+    faq: [
+      { question: 'What is the average Google software engineer salary?', answer: 'Publicly reported total compensation varies widely by level and location. Entry-level (L3) reports suggest $180K-$260K, while senior roles (L5+) often exceed $350K. Always verify current data on levels.fyi or Glassdoor.' },
+      { question: 'Does Google negotiate salary offers?', answer: 'Yes. Google is widely reported to negotiate, particularly when candidates have competing offers. Base, stock, and signing bonus are all commonly adjusted.' },
+      { question: 'How does ExtraBrain help with salary negotiation?', answer: 'ExtraBrain helps you organize research, practice negotiation scenarios, and follow live offer discussions with transcription and context awareness on Mac.' },
+    ],
+  },
+  {
+    slug: 'salaries/amazon-software-engineer-salary',
+    company: 'Amazon',
+    description: 'Reported Amazon SDE salary ranges by level, total compensation structure, and how ExtraBrain helps with interview and offer preparation.',
+    lead: 'Amazon software development engineer compensation follows a distinctive structure with a base salary cap and heavy stock loading. This guide covers publicly reported ranges and how to prepare.',
+    companyGuideSlug: 'amazon',
+    levels: [
+      { title: 'SDE I - Entry-level', body: 'Reported total compensation typically ranges from $150K to $220K, with a larger share in sign-on bonus during the first two years due to stock back-loading.' },
+      { title: 'SDE II - Mid-level', body: 'Reported total compensation often falls between $220K and $360K. The four-year stock vesting schedule (5/15/40/40) shifts compensation heavily toward years three and four.' },
+      { title: 'SDE III - Senior', body: 'Reported total compensation commonly ranges from $350K to $500K. At this level, stock grants become the dominant compensation component.' },
+      { title: 'Principal and above', body: 'Reported total compensation can exceed $500K and vary significantly based on scope, organization, and stock grants.' },
+    ],
+    factors: [
+      { title: 'Base salary cap', body: 'Amazon has a widely reported base salary cap around $185K-$190K. Compensation above that comes through stock and bonuses.' },
+      { title: 'Stock back-loading', body: 'The 5/15/40/40 vesting schedule means years one and two are supplemented by sign-on bonuses, while years three and four deliver much more stock.' },
+      { title: 'Location and team', body: 'Compensation varies by city and organization. AWS, retail, and newer divisions may offer different ranges.' },
+      { title: 'Performance and PIP culture', body: 'Annual stock refreshers depend on performance ratings. Understanding the review process matters for long-term compensation.' },
+    ],
+    negotiation: [
+      { title: 'Understand the structure', body: 'Use ExtraBrain to organize notes on Amazon-specific compensation structure, including the base cap, vesting schedule, and sign-on bonus before your offer call.' },
+      { title: 'Prepare counter-arguments', body: 'Practice articulating why your competing offers or market data support higher stock or sign-on amounts.' },
+      { title: 'Track the live discussion', body: 'During an offer call, ExtraBrain can help you capture exact numbers, vesting terms, and relocation details in real time.' },
+    ],
+    faq: [
+      { question: 'What is the average Amazon SDE salary?', answer: 'Reported total compensation varies by level and year of tenure due to stock back-loading. SDE I reports suggest $150K-$220K, while SDE III often exceeds $350K. Verify on levels.fyi.' },
+      { question: 'Why is Amazon stock back-loaded?', answer: 'Amazon RSUs vest on a 5/15/40/40 schedule over four years, meaning most stock arrives in years three and four. Sign-on bonuses compensate for the lighter early vesting.' },
+      { question: 'Does Amazon negotiate offers?', answer: 'Yes. Amazon is reported to negotiate sign-on bonus, stock grants, and sometimes level, especially with competing offers.' },
+    ],
+  },
+  {
+    slug: 'salaries/meta-software-engineer-salary',
+    company: 'Meta',
+    description: 'Reported Meta software engineer salary ranges by level, equity structure, and how to prepare for offer negotiation with ExtraBrain.',
+    lead: 'Meta software engineer compensation is competitive across the industry, with significant equity at every level. Here are publicly reported ranges and preparation tips.',
+    companyGuideSlug: 'meta',
+    levels: [
+      { title: 'E3 - Entry-level', body: 'Reported total compensation typically falls in the $170K-$240K range, with a balanced mix of base salary, RSUs, and sign-on bonus.' },
+      { title: 'E4 - Mid-level', body: 'Reported total compensation often ranges from $250K to $380K. Stock grants and annual refreshers grow meaningfully at this level.' },
+      { title: 'E5 - Senior', body: 'Reported total compensation commonly falls between $370K and $550K, with equity forming the largest share of the package.' },
+      { title: 'E6+ - Staff and above', body: 'Reported total compensation can exceed $550K and reach past $800K for distinguished-level engineers.' },
+    ],
+    factors: [
+      { title: 'RSU vesting schedule', body: 'Meta RSUs vest quarterly over four years, providing more predictable income than back-loaded schedules.' },
+      { title: 'Stock price impact', body: 'Because equity is a large portion of total compensation, stock price changes directly affect realized pay.' },
+      { title: 'Performance calibration', body: 'Annual refresher grants and bonus multipliers are tied to performance ratings, which significantly affect year-over-year compensation.' },
+      { title: 'Location adjustments', body: 'Remote and non-Bay-Area roles may see adjusted ranges. Verify current policies on location-based pay.' },
+    ],
+    negotiation: [
+      { title: 'Know your target', body: 'Use ExtraBrain to compile salary data, benchmark your level, and set a target range before the recruiter call.' },
+      { title: 'Leverage competing offers', body: 'Practice presenting competing offers clearly and confidently using ExtraBrain mock sessions.' },
+      { title: 'Follow offer details live', body: 'ExtraBrain can help you track base, RSU grant value, vesting start date, and sign-on terms during the offer discussion.' },
+    ],
+    faq: [
+      { question: 'What is the average Meta software engineer salary?', answer: 'Reported total compensation varies by level. E3 reports suggest $170K-$240K, E5 often exceeds $370K. Always check levels.fyi for current data.' },
+      { question: 'How does Meta RSU vesting work?', answer: 'Meta RSUs vest quarterly over four years, with annual refresher grants based on performance.' },
+      { question: 'Can you negotiate a Meta offer?', answer: 'Yes. Meta is reported to negotiate base, RSU grants, and sign-on bonus, particularly when candidates present competitive alternatives.' },
+    ],
+  },
+  {
+    slug: 'salaries/microsoft-software-engineer-salary',
+    company: 'Microsoft',
+    description: 'Reported Microsoft software engineer salary ranges by level, bonus structure, and negotiation preparation with ExtraBrain.',
+    lead: 'Microsoft offers competitive software engineer compensation with a mix of base, stock, and annual bonus. This guide covers reported ranges and how to prepare.',
+    companyGuideSlug: 'microsoft',
+    levels: [
+      { title: 'Level 59-60 - Entry', body: 'Reported total compensation typically ranges from $140K to $200K, combining base salary, stock awards, and annual bonus.' },
+      { title: 'Level 61-62 - Mid', body: 'Reported total compensation often falls between $200K and $320K. Stock and bonus start to form a larger share.' },
+      { title: 'Level 63-64 - Senior', body: 'Reported total compensation commonly ranges from $300K to $460K, with equity and bonus becoming significant.' },
+      { title: 'Level 65+ - Principal', body: 'Reported total compensation can exceed $450K and vary widely based on organization and scope.' },
+    ],
+    factors: [
+      { title: 'Annual bonus', body: 'Microsoft pays an annual cash bonus based on individual and company performance, typically ranging from 10% to 30% of base.' },
+      { title: 'Stock vesting', body: 'RSUs vest quarterly over four years. Annual refresher grants depend on performance, and stock price appreciation affects realized compensation.' },
+      { title: 'Organization differences', body: 'Azure, Office, Windows, and other divisions may offer different compensation ranges and growth paths.' },
+      { title: 'Location flexibility', body: 'Microsoft supports hybrid and remote work in many roles, with location-based adjustments to compensation.' },
+    ],
+    negotiation: [
+      { title: 'Benchmark by level', body: 'Use ExtraBrain to organize Microsoft level-specific data and compare it against competing offers before engaging with the recruiter.' },
+      { title: 'Focus on total compensation', body: 'Practice articulating your target in terms of total compensation, not just base salary, since stock and bonus are meaningful at Microsoft.' },
+      { title: 'Capture offer details', body: 'ExtraBrain can help you record level, base, stock, bonus target, and sign-on terms during the offer conversation.' },
+    ],
+    faq: [
+      { question: 'What is the average Microsoft software engineer salary?', answer: 'Reported total compensation varies by level. Entry-level (59-60) reports suggest $140K-$200K, while senior (63-64) ranges from $300K-$460K. Verify on levels.fyi.' },
+      { question: 'How does the Microsoft bonus work?', answer: 'Microsoft pays an annual cash bonus tied to individual and company performance. Reported percentages range from about 10% to 30% of base salary.' },
+      { question: 'Does Microsoft negotiate?', answer: 'Yes. Microsoft is reported to negotiate level, base, stock, sign-on, and sometimes start date and relocation assistance.' },
+    ],
+  },
+  {
+    slug: 'salaries/apple-software-engineer-salary',
+    company: 'Apple',
+    description: 'Reported Apple software engineer salary ranges by level, RSU structure, and how ExtraBrain helps with offer preparation.',
+    lead: 'Apple software engineer compensation combines competitive base salary with RSU grants and annual bonuses. Here are publicly reported ranges and preparation advice.',
+    companyGuideSlug: 'apple',
+    levels: [
+      { title: 'ICT2 - Entry-level', body: 'Reported total compensation typically falls in the $150K-$220K range. Base salary forms a larger share at this level compared to peers.' },
+      { title: 'ICT3 - Mid-level', body: 'Reported total compensation often ranges from $220K to $340K, with stock grants growing as a percentage of the package.' },
+      { title: 'ICT4 - Senior', body: 'Reported total compensation commonly falls between $330K and $480K. Equity and bonus represent a significant portion.' },
+      { title: 'ICT5+ - Staff and above', body: 'Reported total compensation can exceed $480K with substantial variation based on team, scope, and stock performance.' },
+    ],
+    factors: [
+      { title: 'Secrecy culture', body: 'Apple is known for less public salary sharing than peers, making research on levels.fyi and Glassdoor particularly important for benchmarking.' },
+      { title: 'RSU vesting', body: 'Apple RSUs vest over four years with a reported vesting schedule that varies. Annual refresher grants depend on performance.' },
+      { title: 'Hardware vs software teams', body: 'Compensation can vary between divisions (e.g. Apple Silicon, iOS, services), so research your specific team when possible.' },
+      { title: 'Location', body: 'Cupertino and the Bay Area command the highest ranges. Austin, Seattle, and other offices may see adjustments.' },
+    ],
+    negotiation: [
+      { title: 'Prepare with limited data', body: 'Use ExtraBrain to organize the salary data points you find, since Apple has less public compensation data than some peers.' },
+      { title: 'Practice presenting offers', body: 'Rehearse how to present competing offers effectively, focusing on total compensation comparisons.' },
+      { title: 'Track the offer call', body: 'ExtraBrain can help you capture base, RSU grant size, vesting terms, and sign-on bonus during the recruiter conversation.' },
+    ],
+    faq: [
+      { question: 'What is the average Apple software engineer salary?', answer: 'Reported total compensation varies by level. ICT2 reports suggest $150K-$220K, ICT4 often exceeds $330K. Apple shares less public data than peers, so verify on levels.fyi.' },
+      { question: 'How does Apple RSU vesting work?', answer: 'Apple RSUs vest over four years. The exact schedule and refresher policies are less publicly documented than at Google or Meta.' },
+      { question: 'Is Apple pay competitive?', answer: 'Yes. Apple total compensation is generally competitive with FAANG peers, though the base-to-equity ratio differs.' },
+    ],
+  },
+  {
+    slug: 'salaries/netflix-software-engineer-salary',
+    company: 'Netflix',
+    description: 'Reported Netflix software engineer salary with its unique all-cash option, top-of-market pay philosophy, and negotiation tips.',
+    lead: 'Netflix takes a distinctive approach to compensation, offering top-of-market pay with the option to take most or all compensation as cash. Here is what public reports suggest.',
+    companyGuideSlug: 'netflix',
+    levels: [
+      { title: 'Senior - typical entry point', body: 'Netflix primarily hires senior engineers. Reported total compensation typically starts around $350K-$500K depending on role and location.' },
+      { title: 'Staff and above', body: 'Reported total compensation for staff-level and above can exceed $500K and reach past $700K for senior staff roles.' },
+    ],
+    factors: [
+      { title: 'Cash vs stock choice', body: 'Netflix lets engineers choose what percentage of compensation to take as salary versus stock options, making the cash component unusually flexible.' },
+      { title: 'Top-of-market philosophy', body: 'Netflix aims to pay at the top of the market for each role, which means initial offers may be closer to final than at other companies.' },
+      { title: 'No annual bonus', body: 'Netflix does not pay traditional annual bonuses. All compensation comes through salary and the stock option allocation you choose.' },
+      { title: 'Annual comp reset', body: 'Netflix re-evaluates compensation annually based on market data, which can result in meaningful adjustments.' },
+    ],
+    negotiation: [
+      { title: 'Understand the model', body: 'Use ExtraBrain to organize notes on Netflix-specific compensation including the cash/stock split and lack of bonuses before your recruiter call.' },
+      { title: 'Research market positioning', body: 'Since Netflix targets top-of-market, prepare data showing competing offers and market rates for your specific area of expertise.' },
+      { title: 'Clarify the stock option choice', body: 'ExtraBrain can help you note and compare the implications of different cash/stock allocations during the offer discussion.' },
+    ],
+    faq: [
+      { question: 'What is the average Netflix software engineer salary?', answer: 'Netflix primarily hires senior engineers. Reported total compensation for senior roles ranges from about $350K to $500K or more. Netflix targets top-of-market pay.' },
+      { question: 'Does Netflix give RSUs?', answer: 'Netflix offers stock options rather than RSUs. Engineers choose what percentage of their compensation to take as options versus cash salary.' },
+      { question: 'Can you negotiate a Netflix offer?', answer: 'Yes, though Netflix positions offers as top-of-market. Competing offers and specialized skills can support negotiation.' },
+    ],
+  },
+  {
+    slug: 'salaries/nvidia-software-engineer-salary',
+    company: 'Nvidia',
+    description: 'Reported Nvidia software engineer salary ranges by level, stock growth impact, and interview preparation with ExtraBrain.',
+    lead: 'Nvidia compensation has grown significantly alongside the company stock price. This guide covers publicly reported ranges and how to prepare for negotiation.',
+    companyGuideSlug: 'nvidia',
+    levels: [
+      { title: 'Entry-level', body: 'Reported total compensation typically falls in the $150K-$230K range, combining base, stock, and sign-on bonus.' },
+      { title: 'Mid-level', body: 'Reported total compensation often ranges from $230K to $380K, with stock grants becoming increasingly meaningful.' },
+      { title: 'Senior', body: 'Reported total compensation commonly falls between $370K and $550K. Equity has driven significant gains for those who joined earlier.' },
+      { title: 'Staff and principal', body: 'Reported total compensation can exceed $550K. Stock appreciation has made Nvidia one of the highest-paying companies by realized compensation.' },
+    ],
+    factors: [
+      { title: 'Stock price impact', body: 'Nvidia stock appreciation has dramatically increased realized compensation for engineers who received grants in earlier years.' },
+      { title: 'AI/GPU focus', body: 'Roles focused on CUDA, AI frameworks, and GPU architecture may command premium compensation within the company.' },
+      { title: 'Location', body: 'Santa Clara headquarters typically offers the highest ranges, with offices in other US cities and internationally adjusting accordingly.' },
+      { title: 'Refresher grants', body: 'Annual refresher grants based on performance can meaningfully change total compensation year over year.' },
+    ],
+    negotiation: [
+      { title: 'Benchmark with stock context', body: 'Use ExtraBrain to organize Nvidia-specific compensation data, noting that reported ranges may reflect different stock price points.' },
+      { title: 'Highlight relevant skills', body: 'Practice articulating your value in AI, systems, or GPU-related areas that align with Nvidia priorities.' },
+      { title: 'Follow the offer discussion', body: 'ExtraBrain can help you track base, stock grant value, vesting schedule, and sign-on during the offer call.' },
+    ],
+    faq: [
+      { question: 'What is the average Nvidia software engineer salary?', answer: 'Reported total compensation varies widely by level and when stock was granted. Entry-level reports suggest $150K-$230K, senior often exceeds $370K. Stock appreciation can significantly increase realized pay.' },
+      { question: 'Is Nvidia pay competitive?', answer: 'Yes. Nvidia total compensation is competitive with FAANG peers, and stock appreciation has made realized pay exceptionally high for many engineers.' },
+      { question: 'How does Nvidia stock vesting work?', answer: 'Nvidia RSUs vest over four years. Annual refresher grants depend on performance and can meaningfully change total compensation.' },
+    ],
+  },
+  {
+    slug: 'salaries/stripe-software-engineer-salary',
+    company: 'Stripe',
+    description: 'Reported Stripe software engineer salary ranges, equity considerations, and how ExtraBrain helps prepare for interviews and negotiation.',
+    lead: 'Stripe offers competitive compensation for software engineers with a mix of base salary, equity, and bonus. Here are publicly reported ranges and preparation tips.',
+    companyGuideSlug: 'stripe',
+    levels: [
+      { title: 'L1-L2 - Entry to mid', body: 'Reported total compensation typically ranges from $170K to $280K, including base, equity, and sign-on bonus.' },
+      { title: 'L3 - Senior', body: 'Reported total compensation often falls between $300K and $450K, with equity forming a growing portion of the package.' },
+      { title: 'L4+ - Staff and above', body: 'Reported total compensation can exceed $450K and varies based on scope and organization.' },
+    ],
+    factors: [
+      { title: 'Equity type', body: 'Stripe went public in 2025. Verify current equity structure (RSUs vs options) and any lock-up or trading considerations.' },
+      { title: 'Financial infrastructure focus', body: 'Roles in payments, infrastructure, and developer tools may see different compensation ranges within Stripe.' },
+      { title: 'Remote-friendly', body: 'Stripe supports remote work in many roles. Location-based adjustments may apply to compensation.' },
+    ],
+    negotiation: [
+      { title: 'Understand equity terms', body: 'Use ExtraBrain to organize questions about equity type, vesting schedule, and valuation before the offer conversation.' },
+      { title: 'Practice your pitch', body: 'Rehearse how to present your value to Stripe based on relevant payments, infrastructure, or developer tools experience.' },
+      { title: 'Capture terms live', body: 'ExtraBrain can help you note base, equity grant, vesting, and bonus details during the offer call.' },
+    ],
+    faq: [
+      { question: 'What is the average Stripe software engineer salary?', answer: 'Reported total compensation varies by level. Entry to mid-level reports suggest $170K-$280K, senior often exceeds $300K. Verify current data on levels.fyi.' },
+      { question: 'Is Stripe public now?', answer: 'Stripe went public in 2025. Verify current equity structure and any relevant terms for new grants.' },
+      { question: 'Does Stripe negotiate offers?', answer: 'Yes. Stripe is reported to negotiate base, equity, and sign-on, especially with competing offers from peer companies.' },
+    ],
+  },
+  {
+    slug: 'salaries/uber-software-engineer-salary',
+    company: 'Uber',
+    description: 'Reported Uber software engineer salary ranges by level, equity structure, and negotiation preparation with ExtraBrain.',
+    lead: 'Uber offers competitive software engineer compensation with base salary, RSUs, and bonus. This guide covers publicly reported ranges and preparation tips.',
+    companyGuideSlug: 'uber',
+    levels: [
+      { title: 'L3 - Entry-level', body: 'Reported total compensation typically falls in the $150K-$220K range, with base salary forming the largest component at this level.' },
+      { title: 'L4 - Mid-level', body: 'Reported total compensation often ranges from $230K to $350K, with equity and bonus growing in significance.' },
+      { title: 'L5a-L5b - Senior', body: 'Reported total compensation commonly falls between $340K and $500K. Stock grants represent a major share of the package.' },
+      { title: 'L6+ - Staff and above', body: 'Reported total compensation can exceed $500K with meaningful variation by team and scope.' },
+    ],
+    factors: [
+      { title: 'RSU vesting', body: 'Uber RSUs vest quarterly over four years. Annual refresher grants depend on performance.' },
+      { title: 'Sub-levels', body: 'Uber uses sub-levels (like L5a and L5b) that affect compensation bands. Understand which sub-level your offer targets.' },
+      { title: 'Team and division', body: 'Compensation can vary between core ride-sharing, Uber Eats, freight, and autonomous driving teams.' },
+      { title: 'Location', body: 'San Francisco headquarters typically offers the highest ranges. Other offices may have adjusted bands.' },
+    ],
+    negotiation: [
+      { title: 'Know the sub-levels', body: 'Use ExtraBrain to research Uber-specific leveling and compensation bands before negotiating.' },
+      { title: 'Present competing offers', body: 'Practice clearly presenting FAANG or peer company offers to strengthen your negotiation position.' },
+      { title: 'Track offer terms', body: 'ExtraBrain can help you capture level, sub-level, base, RSU value, and sign-on details during the conversation.' },
+    ],
+    faq: [
+      { question: 'What is the average Uber software engineer salary?', answer: 'Reported total compensation varies by level. L3 reports suggest $150K-$220K, L5 often exceeds $340K. Verify current data on levels.fyi.' },
+      { question: 'Does Uber have sub-levels?', answer: 'Yes. Uber uses sub-levels like L5a and L5b that correspond to different compensation bands within the same title.' },
+      { question: 'Can you negotiate an Uber offer?', answer: 'Yes. Uber is reported to negotiate base, stock, and sign-on bonus, especially with competing offers.' },
+    ],
+  },
+  {
+    slug: 'salaries/coinbase-software-engineer-salary',
+    company: 'Coinbase',
+    description: 'Reported Coinbase software engineer salary ranges, crypto industry compensation, and negotiation preparation with ExtraBrain.',
+    lead: 'Coinbase offers competitive compensation in the crypto industry with base salary, RSUs, and bonus. Here are publicly reported ranges and how to prepare.',
+    companyGuideSlug: 'coinbase',
+    levels: [
+      { title: 'IC2 - Entry-level', body: 'Reported total compensation typically ranges from $160K to $240K, including base, stock, and sign-on bonus.' },
+      { title: 'IC3 - Mid-level', body: 'Reported total compensation often falls between $250K to $370K, with equity forming a growing share of the package.' },
+      { title: 'IC4 - Senior', body: 'Reported total compensation commonly ranges from $350K to $500K. Equity is a significant portion at this level.' },
+      { title: 'IC5+ - Staff and above', body: 'Reported total compensation can exceed $500K with variation based on scope and market conditions.' },
+    ],
+    factors: [
+      { title: 'Crypto market impact', body: 'Coinbase stock and the broader crypto market can meaningfully affect realized compensation from equity grants.' },
+      { title: 'Remote-first culture', body: 'Coinbase operates as a remote-first company. Compensation bands are generally location-adjusted.' },
+      { title: 'Regulatory focus', body: 'Roles involving compliance, security, and blockchain infrastructure may command different ranges.' },
+    ],
+    negotiation: [
+      { title: 'Assess equity risk', body: 'Use ExtraBrain to organize your analysis of Coinbase stock and crypto market conditions before evaluating an equity-heavy offer.' },
+      { title: 'Prepare domain knowledge', body: 'Practice articulating relevant blockchain, fintech, or security experience to strengthen your negotiation position.' },
+      { title: 'Note offer specifics', body: 'ExtraBrain can help you track base, RSU grant, vesting, and any crypto-specific benefits during the offer call.' },
+    ],
+    faq: [
+      { question: 'What is the average Coinbase software engineer salary?', answer: 'Reported total compensation varies by level. IC2 reports suggest $160K-$240K, IC4 often exceeds $350K. Crypto market conditions can significantly affect realized pay.' },
+      { question: 'Is Coinbase remote-friendly?', answer: 'Yes. Coinbase operates as a remote-first company, though compensation bands may be adjusted by location.' },
+      { question: 'Does Coinbase negotiate?', answer: 'Yes. Coinbase is reported to negotiate base, stock, and sign-on, particularly with competing offers.' },
+    ],
+  },
+  {
+    slug: 'salaries/databricks-software-engineer-salary',
+    company: 'Databricks',
+    description: 'Reported Databricks software engineer salary ranges, equity considerations, and preparation tips with ExtraBrain.',
+    lead: 'Databricks offers competitive compensation for engineers working on data and AI infrastructure. Here are publicly reported ranges and how to prepare for negotiation.',
+    companyGuideSlug: 'databricks',
+    levels: [
+      { title: 'Entry-level', body: 'Reported total compensation typically falls in the $170K-$250K range, combining base, equity, and sign-on bonus.' },
+      { title: 'Mid-level', body: 'Reported total compensation often ranges from $260K to $400K, with equity becoming a larger share of the package.' },
+      { title: 'Senior', body: 'Reported total compensation commonly falls between $380K and $550K. Equity grants are significant at this level.' },
+      { title: 'Staff and above', body: 'Reported total compensation can exceed $550K with substantial variation based on specialization and scope.' },
+    ],
+    factors: [
+      { title: 'Growth-stage equity', body: 'Databricks was one of the most highly valued private companies before its IPO. Verify current equity structure and any lock-up considerations.' },
+      { title: 'Data and AI focus', body: 'Roles in Spark, Delta Lake, ML runtime, and core platform may command premium compensation within the company.' },
+      { title: 'Competitive hiring', body: 'Databricks competes directly with Google, Meta, and other top-tier companies for talent, which drives competitive offers.' },
+    ],
+    negotiation: [
+      { title: 'Research equity terms', body: 'Use ExtraBrain to organize questions about equity type, valuation, and liquidity before the offer call.' },
+      { title: 'Highlight relevant experience', body: 'Practice articulating data engineering, distributed systems, or ML platform experience that aligns with Databricks priorities.' },
+      { title: 'Follow the discussion', body: 'ExtraBrain can help you capture base, equity details, and sign-on terms during the offer conversation.' },
+    ],
+    faq: [
+      { question: 'What is the average Databricks software engineer salary?', answer: 'Reported total compensation varies by level. Entry-level reports suggest $170K-$250K, senior often exceeds $380K. Verify current data and equity terms.' },
+      { question: 'Is Databricks public?', answer: 'Verify the current status. Databricks filed for IPO and equity type and liquidity terms may have changed.' },
+      { question: 'Does Databricks pay well?', answer: 'Yes. Databricks total compensation is competitive with top-tier tech companies, particularly for data and AI-focused roles.' },
+    ],
+  },
+  {
+    slug: 'salaries/tesla-software-engineer-salary',
+    company: 'Tesla',
+    description: 'Reported Tesla software engineer salary ranges, stock-heavy compensation, and preparation tips with ExtraBrain.',
+    lead: 'Tesla software engineer compensation is notably stock-heavy, with total compensation varying significantly based on stock performance. Here is what public reports suggest.',
+    companyGuideSlug: 'tesla',
+    levels: [
+      { title: 'Entry-level', body: 'Reported total compensation typically ranges from $130K to $200K. Tesla base salaries are often reported as lower than FAANG peers.' },
+      { title: 'Mid-level', body: 'Reported total compensation often falls between $200K and $320K, with stock grants forming a larger portion of the package.' },
+      { title: 'Senior', body: 'Reported total compensation commonly ranges from $300K to $450K. Stock appreciation or depreciation directly affects realized pay.' },
+      { title: 'Staff and above', body: 'Reported total compensation can exceed $450K, but stock volatility means actual realized compensation varies widely.' },
+    ],
+    factors: [
+      { title: 'Stock-heavy structure', body: 'Tesla compensation leans heavily on stock grants. Base salaries are typically reported as lower than at FAANG companies.' },
+      { title: 'Stock volatility', body: 'Tesla stock has historically been volatile. Realized compensation can be dramatically higher or lower than grant-date values.' },
+      { title: 'Mission-driven culture', body: 'Tesla is known for expecting long hours and high intensity. Factor in work-life balance when evaluating total compensation.' },
+      { title: 'Autopilot and AI teams', body: 'AI and autonomous driving roles may command premium compensation within Tesla.' },
+    ],
+    negotiation: [
+      { title: 'Evaluate stock risk', body: 'Use ExtraBrain to organize your analysis of Tesla stock volatility and its impact on your total compensation expectations.' },
+      { title: 'Compare total compensation', body: 'Practice comparing Tesla offers against FAANG alternatives, accounting for base, stock risk, and work intensity.' },
+      { title: 'Capture offer details', body: 'ExtraBrain can help you note base, stock grant value, vesting schedule, and any sign-on during the conversation.' },
+    ],
+    faq: [
+      { question: 'What is the average Tesla software engineer salary?', answer: 'Reported total compensation varies by level and stock performance. Entry-level reports suggest $130K-$200K base-heavy packages, while senior roles may exceed $300K with stock. Tesla base salaries are typically lower than FAANG.' },
+      { question: 'Is Tesla stock-heavy?', answer: 'Yes. Tesla compensation leans on stock grants more than many peers, making realized pay highly dependent on stock performance.' },
+      { question: 'Does Tesla negotiate?', answer: 'Tesla is reported to negotiate, though the range may be narrower than at some peers. Competing offers and specialized skills help.' },
+    ],
+  },
+  {
+    slug: 'salaries/palantir-software-engineer-salary',
+    company: 'Palantir',
+    description: 'Reported Palantir software engineer salary ranges, equity structure, and negotiation preparation with ExtraBrain.',
+    lead: 'Palantir offers competitive compensation for engineers working on data analytics and defense platforms. Here are publicly reported ranges and preparation advice.',
+    companyGuideSlug: 'palantir',
+    levels: [
+      { title: 'Entry-level', body: 'Reported total compensation typically falls in the $140K-$210K range, with a mix of base salary, RSUs, and sign-on bonus.' },
+      { title: 'Mid-level', body: 'Reported total compensation often ranges from $220K to $350K, with equity forming a growing share of the package.' },
+      { title: 'Senior', body: 'Reported total compensation commonly falls between $340K and $480K, with significant equity grants.' },
+    ],
+    factors: [
+      { title: 'Government and commercial tracks', body: 'Compensation may differ between government-focused (Gotham) and commercial (Foundry/AIP) roles.' },
+      { title: 'Stock performance', body: 'Palantir stock performance directly affects realized compensation from equity grants.' },
+      { title: 'Location', body: 'Denver, Palo Alto, New York, and other offices may have different compensation bands.' },
+    ],
+    negotiation: [
+      { title: 'Research track differences', body: 'Use ExtraBrain to understand how compensation may differ between Palantir product lines before your offer call.' },
+      { title: 'Prepare domain knowledge', body: 'Practice articulating relevant data infrastructure, security, or analytics experience.' },
+      { title: 'Track offer details', body: 'ExtraBrain can help you capture base, RSU grant, vesting, and sign-on during the offer conversation.' },
+    ],
+    faq: [
+      { question: 'What is the average Palantir software engineer salary?', answer: 'Reported total compensation varies by level. Entry-level reports suggest $140K-$210K, senior often exceeds $340K. Verify current ranges on levels.fyi.' },
+      { question: 'Does Palantir pay differently by product?', answer: 'Compensation may vary between government and commercial tracks. Research the specific team and product line when evaluating offers.' },
+      { question: 'Can you negotiate a Palantir offer?', answer: 'Yes. Palantir is reported to negotiate, particularly with competing offers from top-tier companies.' },
+    ],
+  },
+  {
+    slug: 'salaries/airbnb-software-engineer-salary',
+    company: 'Airbnb',
+    description: 'Reported Airbnb software engineer salary ranges, remote work policy, and preparation tips with ExtraBrain.',
+    lead: 'Airbnb offers competitive compensation with a notable live-anywhere policy. Here are publicly reported ranges and how to prepare for negotiation.',
+    companyGuideSlug: 'airbnb',
+    levels: [
+      { title: 'L3 - Entry to mid', body: 'Reported total compensation typically ranges from $170K to $260K, including base, RSUs, and sign-on bonus.' },
+      { title: 'L4 - Senior', body: 'Reported total compensation often falls between $280K to $420K, with equity forming a meaningful share of the package.' },
+      { title: 'L5+ - Staff and above', body: 'Reported total compensation can exceed $420K with significant equity grants based on scope and level.' },
+    ],
+    factors: [
+      { title: 'Live-anywhere policy', body: 'Airbnb allows employees to live and work from almost anywhere. Verify whether compensation adjustments apply by location.' },
+      { title: 'Stock performance', body: 'Airbnb stock performance affects realized compensation from RSU grants. Travel demand cycles can influence stock price.' },
+      { title: 'Annual travel credit', body: 'Airbnb provides an annual travel credit for employees, which adds a non-cash benefit to the overall package.' },
+    ],
+    negotiation: [
+      { title: 'Evaluate the remote benefit', body: 'Use ExtraBrain to factor in the value of location flexibility when comparing Airbnb offers against competitors.' },
+      { title: 'Present competing offers', body: 'Practice articulating how Airbnb compensation compares to FAANG alternatives, including location and lifestyle factors.' },
+      { title: 'Capture terms live', body: 'ExtraBrain can help you track base, RSU, sign-on, and any unique perks during the offer discussion.' },
+    ],
+    faq: [
+      { question: 'What is the average Airbnb software engineer salary?', answer: 'Reported total compensation varies by level. L3 reports suggest $170K-$260K, L4 often exceeds $280K. Verify current ranges on levels.fyi.' },
+      { question: 'Does Airbnb adjust pay by location?', answer: 'Airbnb allows working from almost anywhere. Verify current policies on location-based compensation adjustments.' },
+      { question: 'Does Airbnb negotiate?', answer: 'Yes. Airbnb is reported to negotiate base, equity, and sign-on, especially with competing offers.' },
+    ],
+  },
+  {
+    slug: 'salaries/adobe-software-engineer-salary',
+    company: 'Adobe',
+    description: 'Reported Adobe software engineer salary ranges by level, bonus structure, and negotiation preparation with ExtraBrain.',
+    lead: 'Adobe offers competitive compensation for software engineers working on Creative Cloud, Document Cloud, and Experience Cloud products. Here are publicly reported ranges.',
+    companyGuideSlug: 'adobe',
+    levels: [
+      { title: 'Entry-level', body: 'Reported total compensation typically falls in the $130K-$190K range, combining base salary, RSUs, and annual bonus.' },
+      { title: 'Mid-level', body: 'Reported total compensation often ranges from $190K to $310K, with stock and bonus growing as a percentage of the package.' },
+      { title: 'Senior', body: 'Reported total compensation commonly falls between $300K and $430K, with equity becoming a significant share.' },
+      { title: 'Staff and above', body: 'Reported total compensation can exceed $430K with meaningful variation by product group and scope.' },
+    ],
+    factors: [
+      { title: 'Product groups', body: 'Compensation may vary between Creative Cloud, Document Cloud, Experience Cloud, and emerging AI teams.' },
+      { title: 'Annual bonus', body: 'Adobe pays an annual cash bonus tied to individual and company performance, in addition to stock grants.' },
+      { title: 'Remote flexibility', body: 'Adobe supports hybrid and remote work for many roles. Verify location-based compensation policies.' },
+    ],
+    negotiation: [
+      { title: 'Know the full package', body: 'Use ExtraBrain to organize data on Adobe base, RSUs, bonus target, and perks before your recruiter call.' },
+      { title: 'Highlight product relevance', body: 'Practice connecting your experience to specific Adobe product areas to strengthen your negotiation position.' },
+      { title: 'Follow offer details', body: 'ExtraBrain can help you capture base, stock, bonus target, and any unique benefits during the offer conversation.' },
+    ],
+    faq: [
+      { question: 'What is the average Adobe software engineer salary?', answer: 'Reported total compensation varies by level. Entry-level reports suggest $130K-$190K, senior often exceeds $300K. Verify current data on levels.fyi.' },
+      { question: 'Does Adobe pay annual bonuses?', answer: 'Yes. Adobe pays an annual cash bonus in addition to base salary and RSU grants.' },
+      { question: 'Can you negotiate an Adobe offer?', answer: 'Yes. Adobe is reported to negotiate base, equity, and sign-on, especially when candidates have competing offers.' },
+    ],
+  },
+  {
+    slug: 'salaries/salesforce-software-engineer-salary',
+    company: 'Salesforce',
+    description: 'Reported Salesforce software engineer salary ranges, bonus structure, and how ExtraBrain helps with preparation.',
+    lead: 'Salesforce offers competitive compensation for engineers across its CRM, platform, and AI teams. Here are publicly reported ranges and preparation tips.',
+    companyGuideSlug: 'salesforce',
+    levels: [
+      { title: 'MTS - Entry to mid', body: 'Reported total compensation typically ranges from $150K to $250K, including base, RSUs, and bonus.' },
+      { title: 'SMTS - Senior', body: 'Reported total compensation often falls between $250K and $380K, with equity forming a significant share.' },
+      { title: 'LMTS/Principal and above', body: 'Reported total compensation can exceed $380K with meaningful variation based on team and scope.' },
+    ],
+    factors: [
+      { title: 'Annual bonus', body: 'Salesforce pays an annual performance bonus that adds meaningfully to total compensation at every level.' },
+      { title: 'Acquisition integration', body: 'Teams from acquisitions (Slack, Tableau, MuleSoft) may have different compensation norms and structures.' },
+      { title: 'Location', body: 'San Francisco headquarters typically offers the highest ranges. Other offices and remote roles may see adjustments.' },
+    ],
+    negotiation: [
+      { title: 'Benchmark by title', body: 'Use ExtraBrain to organize Salesforce-specific title and leveling data (MTS, SMTS, LMTS) before negotiation.' },
+      { title: 'Factor in the bonus', body: 'Practice presenting total compensation including the bonus target when comparing with competitors.' },
+      { title: 'Track the offer call', body: 'ExtraBrain can help you capture title, base, RSU grant, bonus target, and sign-on during the discussion.' },
+    ],
+    faq: [
+      { question: 'What is the average Salesforce software engineer salary?', answer: 'Reported total compensation varies by level. MTS reports suggest $150K-$250K, SMTS often exceeds $250K. Verify on levels.fyi.' },
+      { question: 'What do MTS, SMTS, LMTS mean?', answer: 'These are Salesforce engineering titles: Member of Technical Staff, Senior MTS, and Lead MTS, corresponding roughly to mid, senior, and staff levels.' },
+      { question: 'Does Salesforce negotiate?', answer: 'Yes. Salesforce is reported to negotiate base, equity, bonus, and sign-on, especially with competing offers.' },
+    ],
+  },
+  {
+    slug: 'salaries/goldman-sachs-software-engineer-salary',
+    company: 'Goldman Sachs',
+    description: 'Reported Goldman Sachs software engineer salary ranges, bonus structure, and preparation tips with ExtraBrain.',
+    lead: 'Goldman Sachs offers competitive technology compensation with a distinctive bonus-heavy structure. Here are publicly reported ranges for engineering roles.',
+    companyGuideSlug: 'goldman-sachs',
+    levels: [
+      { title: 'Analyst - Entry', body: 'Reported total compensation typically ranges from $120K to $180K, with base salary and year-end bonus as the main components.' },
+      { title: 'Associate', body: 'Reported total compensation often falls between $180K and $280K. The year-end bonus can be a significant percentage of base.' },
+      { title: 'Vice President', body: 'Reported total compensation commonly ranges from $280K to $420K. Bonus becomes a large share of the package.' },
+      { title: 'Managing Director', body: 'Reported total compensation can exceed $500K, with bonus often exceeding base salary.' },
+    ],
+    factors: [
+      { title: 'Bonus-heavy culture', body: 'Goldman Sachs compensation is heavily weighted toward year-end bonuses, which vary based on individual and firm performance.' },
+      { title: 'Division matters', body: 'Engineering in Global Markets, Investment Banking, or Platform may offer different compensation ranges and bonus pools.' },
+      { title: 'Title progression', body: 'Goldman uses Analyst, Associate, VP, and MD titles. Promotion timelines affect long-term compensation growth.' },
+    ],
+    negotiation: [
+      { title: 'Understand the bonus structure', body: 'Use ExtraBrain to research Goldman-specific bonus ranges and timing before your offer conversation.' },
+      { title: 'Compare across finance and tech', body: 'Practice articulating how Goldman offers compare to both finance and tech company alternatives.' },
+      { title: 'Note all components', body: 'ExtraBrain can help you track base, guaranteed bonus, RSUs (if applicable), and sign-on during the call.' },
+    ],
+    faq: [
+      { question: 'What is the average Goldman Sachs engineer salary?', answer: 'Reported total compensation varies by level. Analyst reports suggest $120K-$180K, VP often exceeds $280K. Bonuses are a major component - verify current ranges.' },
+      { question: 'Does Goldman Sachs give RSUs?', answer: 'Goldman Sachs uses a mix of cash bonus and restricted stock as part of total compensation, particularly at senior levels.' },
+      { question: 'Is Goldman tech pay competitive with FAANG?', answer: 'Goldman tech compensation has become more competitive in recent years but typically has lower base with larger bonuses than FAANG peers.' },
+    ],
+  },
+  {
+    slug: 'salaries/jpmorgan-software-engineer-salary',
+    company: 'JPMorgan Chase',
+    description: 'Reported JPMorgan Chase software engineer salary ranges, bonus structure, and interview preparation with ExtraBrain.',
+    lead: 'JPMorgan Chase is one of the largest technology employers in financial services. Here are publicly reported compensation ranges for software engineering roles.',
+    companyGuideSlug: 'jpmorgan',
+    levels: [
+      { title: 'Analyst - Entry', body: 'Reported total compensation typically ranges from $110K to $160K, with base salary and annual bonus.' },
+      { title: 'Associate', body: 'Reported total compensation often falls between $160K and $250K. Bonuses grow as a percentage of total pay.' },
+      { title: 'Vice President', body: 'Reported total compensation commonly ranges from $250K to $380K, with meaningful bonus and stock components.' },
+      { title: 'Executive Director and above', body: 'Reported total compensation can exceed $400K with significant variation based on division and performance.' },
+    ],
+    factors: [
+      { title: 'Scale of technology', body: 'JPMorgan spends tens of billions annually on technology. Roles in AI, cloud, and trading systems may command premium compensation.' },
+      { title: 'Bonus culture', body: 'Annual bonuses are a significant component of total compensation, particularly at VP level and above.' },
+      { title: 'Office locations', body: 'New York, Jersey City, and other hubs offer different compensation ranges. Hybrid policies apply.' },
+    ],
+    negotiation: [
+      { title: 'Research division ranges', body: 'Use ExtraBrain to organize compensation data specific to the JPMorgan division and team you are joining.' },
+      { title: 'Compare across sectors', body: 'Practice comparing JPMorgan offers against both finance and tech alternatives to strengthen your position.' },
+      { title: 'Track offer components', body: 'ExtraBrain can help you capture base, bonus target, RSU grants, and sign-on during the offer discussion.' },
+    ],
+    faq: [
+      { question: 'What is the average JPMorgan software engineer salary?', answer: 'Reported total compensation varies by level. Analyst reports suggest $110K-$160K, VP often exceeds $250K. Bonuses are significant at all levels.' },
+      { question: 'How big is JPMorgan technology?', answer: 'JPMorgan employs tens of thousands of technologists and invests heavily in AI, cloud, and trading infrastructure.' },
+      { question: 'Does JPMorgan negotiate?', answer: 'Yes. JPMorgan is reported to negotiate base, bonus, and sign-on, especially for candidates with competing offers.' },
+    ],
+  },
+  {
+    slug: 'salaries/bloomberg-software-engineer-salary',
+    company: 'Bloomberg',
+    description: 'Reported Bloomberg software engineer salary ranges, bonus structure, and preparation tips with ExtraBrain.',
+    lead: 'Bloomberg offers competitive compensation for software engineers building its terminal, data, and media products. Here are publicly reported ranges.',
+    companyGuideSlug: 'bloomberg',
+    levels: [
+      { title: 'Entry-level', body: 'Reported total compensation typically falls in the $130K-$190K range, with base salary and annual bonus as the primary components.' },
+      { title: 'Mid-level', body: 'Reported total compensation often ranges from $190K to $300K, with bonus becoming a larger share of the package.' },
+      { title: 'Senior', body: 'Reported total compensation commonly falls between $290K and $420K with significant bonus contributions.' },
+    ],
+    factors: [
+      { title: 'Private company', body: 'Bloomberg is privately held. There are no public stock options or RSUs - compensation is primarily base plus cash bonus.' },
+      { title: 'Bonus culture', body: 'Annual bonuses can be substantial and are tied to individual and company performance.' },
+      { title: 'New York focus', body: 'Bloomberg headquarters is in New York City, and many engineering roles are based there. Compensation reflects NYC cost of living.' },
+    ],
+    negotiation: [
+      { title: 'Understand all-cash compensation', body: 'Use ExtraBrain to organize your evaluation of Bloomberg all-cash compensation versus equity-heavy offers from public companies.' },
+      { title: 'Factor in stability', body: 'Practice articulating the value of cash-heavy compensation and private-company stability in your decision framework.' },
+      { title: 'Capture bonus details', body: 'ExtraBrain can help you note base, bonus target, and any sign-on terms during the offer conversation.' },
+    ],
+    faq: [
+      { question: 'What is the average Bloomberg software engineer salary?', answer: 'Reported total compensation varies by level. Entry-level reports suggest $130K-$190K, senior often exceeds $290K. Bloomberg pays cash bonus rather than equity.' },
+      { question: 'Does Bloomberg offer stock?', answer: 'Bloomberg is a private company and does not offer public stock options or RSUs. Compensation is primarily base salary plus cash bonus.' },
+      { question: 'Is Bloomberg pay competitive?', answer: 'Yes. Bloomberg total cash compensation (base plus bonus) is competitive, though the all-cash structure differs from equity-heavy tech peers.' },
+    ],
+  },
+  {
+    slug: 'salaries/tiktok-software-engineer-salary',
+    company: 'TikTok',
+    description: 'Reported TikTok software engineer salary ranges, RSU structure, and negotiation preparation with ExtraBrain.',
+    lead: 'TikTok and parent company ByteDance offer competitive compensation for software engineers. Here are publicly reported ranges and preparation tips.',
+    companyGuideSlug: 'tiktok',
+    levels: [
+      { title: 'Entry-level (L3-L4)', body: 'Reported total compensation typically ranges from $150K to $240K, combining base salary, RSUs, and sign-on bonus.' },
+      { title: 'Mid-level (L5)', body: 'Reported total compensation often falls between $250K and $380K, with stock grants forming a meaningful share.' },
+      { title: 'Senior (L6)', body: 'Reported total compensation commonly ranges from $370K to $520K, with equity representing a large portion of the package.' },
+      { title: 'Staff and above (L7+)', body: 'Reported total compensation can exceed $520K with significant variation based on team and scope.' },
+    ],
+    factors: [
+      { title: 'ByteDance equity', body: 'TikTok RSUs are tied to ByteDance. Verify current equity structure, valuation methods, and any liquidity considerations.' },
+      { title: 'Competitive hiring', body: 'TikTok aggressively competes for talent with FAANG companies, often matching or exceeding competing offers.' },
+      { title: 'US regulatory risk', body: 'Regulatory uncertainty around TikTok in the US may affect long-term employment and equity value considerations.' },
+      { title: 'Work culture', body: 'TikTok is reported to have intense work expectations. Factor in work-life balance when evaluating total compensation.' },
+    ],
+    negotiation: [
+      { title: 'Understand equity terms', body: 'Use ExtraBrain to organize questions about ByteDance RSU valuation, vesting, and liquidity before the offer call.' },
+      { title: 'Leverage competing offers', body: 'TikTok is known to match FAANG offers. Practice presenting competing offers clearly and confidently.' },
+      { title: 'Track complex terms', body: 'ExtraBrain can help you capture base, RSU details, vesting schedule, and sign-on during the offer discussion.' },
+    ],
+    faq: [
+      { question: 'What is the average TikTok software engineer salary?', answer: 'Reported total compensation varies by level. Entry-level reports suggest $150K-$240K, senior often exceeds $370K. TikTok is competitive with FAANG.' },
+      { question: 'How does TikTok equity work?', answer: 'TikTok RSUs are tied to ByteDance. Verify current valuation methods, vesting schedule, and liquidity options.' },
+      { question: 'Does TikTok negotiate?', answer: 'Yes. TikTok is reported to negotiate aggressively, often matching or exceeding competing FAANG offers.' },
+    ],
+  },
+  {
+    slug: 'salaries/linkedin-software-engineer-salary',
+    company: 'LinkedIn',
+    description: 'Reported LinkedIn software engineer salary ranges, Microsoft-aligned benefits, and negotiation preparation with ExtraBrain.',
+    lead: 'LinkedIn, as a Microsoft subsidiary, offers competitive compensation for software engineers. Here are publicly reported ranges and preparation tips.',
+    companyGuideSlug: 'linkedin',
+    levels: [
+      { title: 'Entry-level', body: 'Reported total compensation typically falls in the $150K-$220K range, combining base salary, RSUs, and annual bonus.' },
+      { title: 'Mid-level', body: 'Reported total compensation often ranges from $230K to $350K, with equity and bonus growing at this level.' },
+      { title: 'Senior', body: 'Reported total compensation commonly falls between $340K to $480K, with equity forming a large share.' },
+      { title: 'Staff and above', body: 'Reported total compensation can exceed $480K with meaningful variation by team and scope.' },
+    ],
+    factors: [
+      { title: 'Microsoft ownership', body: 'LinkedIn RSUs are Microsoft stock, providing the liquidity and stability of a large public company.' },
+      { title: 'Annual bonus', body: 'LinkedIn pays an annual cash bonus in addition to base and stock, similar to the broader Microsoft structure.' },
+      { title: 'Sunnyvale and remote', body: 'LinkedIn headquarters is in Sunnyvale. Remote and hybrid options are available for many roles with potential location adjustments.' },
+    ],
+    negotiation: [
+      { title: 'Compare against Microsoft and peers', body: 'Use ExtraBrain to organize data comparing LinkedIn offers against both Microsoft and external tech company alternatives.' },
+      { title: 'Factor in MSFT stock', body: 'Practice evaluating LinkedIn offers in terms of Microsoft RSU value and stability compared to pre-IPO or volatile stock.' },
+      { title: 'Note all components', body: 'ExtraBrain can help you track base, MSFT RSU grant, bonus target, and sign-on during the offer discussion.' },
+    ],
+    faq: [
+      { question: 'What is the average LinkedIn software engineer salary?', answer: 'Reported total compensation varies by level. Entry-level reports suggest $150K-$220K, senior often exceeds $340K. LinkedIn RSUs are Microsoft stock.' },
+      { question: 'Are LinkedIn RSUs Microsoft stock?', answer: 'Yes. As a Microsoft subsidiary, LinkedIn RSUs vest as Microsoft (MSFT) shares.' },
+      { question: 'Does LinkedIn negotiate?', answer: 'Yes. LinkedIn is reported to negotiate base, RSUs, bonus, and sign-on, especially with competing offers.' },
+    ],
+  },
+  {
+    slug: 'salaries/shopify-software-engineer-salary',
+    company: 'Shopify',
+    description: 'Reported Shopify software engineer salary ranges, remote-first policy, and preparation tips with ExtraBrain.',
+    lead: 'Shopify operates as a remote-first company with competitive engineering compensation. Here are publicly reported ranges and how to prepare for negotiation.',
+    companyGuideSlug: 'shopify',
+    levels: [
+      { title: 'Entry-level', body: 'Reported total compensation typically ranges from $120K to $180K, with base, stock, and potential bonus.' },
+      { title: 'Mid-level', body: 'Reported total compensation often falls between $180K and $280K, with equity growing as a share of the package.' },
+      { title: 'Senior', body: 'Reported total compensation commonly ranges from $270K to $380K, with RSUs as a significant component.' },
+      { title: 'Staff and above', body: 'Reported total compensation can exceed $380K based on scope and specialization.' },
+    ],
+    factors: [
+      { title: 'Remote-first', body: 'Shopify is fully remote. Compensation may be adjusted based on location, so verify current geographic pay policies.' },
+      { title: 'Canadian company', body: 'Shopify is headquartered in Canada. Offers may be in CAD or USD depending on location. Factor in currency and tax implications.' },
+      { title: 'Stock performance', body: 'Shopify stock has been volatile. Realized compensation from equity can vary significantly from grant-date values.' },
+    ],
+    negotiation: [
+      { title: 'Clarify currency and location', body: 'Use ExtraBrain to organize questions about whether the offer is in CAD or USD and what location adjustments apply.' },
+      { title: 'Evaluate remote benefits', body: 'Practice factoring in the value of full remote work when comparing Shopify against office-based competitors.' },
+      { title: 'Track offer specifics', body: 'ExtraBrain can help you capture currency, base, RSU details, and any unique remote perks during the call.' },
+    ],
+    faq: [
+      { question: 'What is the average Shopify software engineer salary?', answer: 'Reported total compensation varies by level and location. Entry-level reports suggest $120K-$180K, senior often exceeds $270K. Offers may be in CAD or USD.' },
+      { question: 'Is Shopify fully remote?', answer: 'Yes. Shopify operates as a remote-first company. Compensation may be adjusted by geographic location.' },
+      { question: 'Does Shopify negotiate?', answer: 'Yes. Shopify is reported to negotiate base, equity, and sign-on, particularly with competing offers.' },
+    ],
+  },
+  {
+    slug: 'salaries/snowflake-software-engineer-salary',
+    company: 'Snowflake',
+    description: 'Reported Snowflake software engineer salary ranges, equity structure, and negotiation preparation with ExtraBrain.',
+    lead: 'Snowflake offers competitive compensation for engineers building its cloud data platform. Here are publicly reported ranges and preparation tips.',
+    companyGuideSlug: 'snowflake',
+    levels: [
+      { title: 'Entry-level', body: 'Reported total compensation typically falls in the $160K-$240K range, combining base salary, RSUs, and sign-on bonus.' },
+      { title: 'Mid-level', body: 'Reported total compensation often ranges from $250K to $380K, with equity becoming a larger component.' },
+      { title: 'Senior', body: 'Reported total compensation commonly falls between $370K and $520K, with RSUs forming the majority of the package.' },
+      { title: 'Staff and above', body: 'Reported total compensation can exceed $520K with significant variation by scope and specialization.' },
+    ],
+    factors: [
+      { title: 'Growth-stage compensation', body: 'Snowflake stock has experienced significant volatility. Equity grant values at the time of joining may differ substantially from realized values.' },
+      { title: 'Data platform focus', body: 'Roles in the core query engine, storage, and platform infrastructure may command premium compensation.' },
+      { title: 'Competitive hiring', body: 'Snowflake competes with top tech companies for data infrastructure talent, driving competitive offer packages.' },
+    ],
+    negotiation: [
+      { title: 'Evaluate stock risk', body: 'Use ExtraBrain to analyze Snowflake stock performance and its impact on the equity portion of your offer.' },
+      { title: 'Highlight data expertise', body: 'Practice articulating distributed systems, database, or data platform experience that aligns with Snowflake needs.' },
+      { title: 'Capture grant details', body: 'ExtraBrain can help you track RSU grant size, vesting schedule, and grant price during the offer conversation.' },
+    ],
+    faq: [
+      { question: 'What is the average Snowflake software engineer salary?', answer: 'Reported total compensation varies by level. Entry-level reports suggest $160K-$240K, senior often exceeds $370K. Stock volatility affects realized pay.' },
+      { question: 'Is Snowflake compensation competitive?', answer: 'Yes. Snowflake total compensation is competitive with top-tier tech companies, particularly for data infrastructure roles.' },
+      { question: 'Does Snowflake negotiate?', answer: 'Yes. Snowflake is reported to negotiate base, RSUs, and sign-on, especially with competing offers from FAANG or peer companies.' },
+    ],
+  },
+  {
+    slug: 'salaries/oracle-software-engineer-salary',
+    company: 'Oracle',
+    description: 'Reported Oracle software engineer salary ranges, bonus structure, and interview preparation with ExtraBrain.',
+    lead: 'Oracle offers competitive compensation for engineers across its cloud, database, and enterprise software divisions. Here are publicly reported ranges.',
+    companyGuideSlug: 'oracle',
+    levels: [
+      { title: 'IC2 - Entry', body: 'Reported total compensation typically ranges from $110K to $170K, combining base salary, RSUs, and annual bonus.' },
+      { title: 'IC3 - Mid', body: 'Reported total compensation often falls between $170K to $260K, with stock and bonus forming a growing share.' },
+      { title: 'IC4 - Senior', body: 'Reported total compensation commonly ranges from $250K to $370K, with meaningful equity at this level.' },
+      { title: 'IC5+ - Staff and above', body: 'Reported total compensation can exceed $370K based on division and scope.' },
+    ],
+    factors: [
+      { title: 'OCI growth', body: 'Oracle Cloud Infrastructure (OCI) roles may command premium compensation as Oracle invests heavily in cloud competition.' },
+      { title: 'Legacy vs cloud', body: 'Compensation and culture may differ significantly between legacy database/enterprise teams and newer cloud divisions.' },
+      { title: 'Location', body: 'Austin (new headquarters), the Bay Area, and other offices have different compensation ranges.' },
+    ],
+    negotiation: [
+      { title: 'Research the division', body: 'Use ExtraBrain to understand compensation differences between OCI, database, and enterprise teams before negotiation.' },
+      { title: 'Compare against cloud peers', body: 'Practice comparing Oracle offers against AWS, Azure, and GCP alternatives for similar cloud roles.' },
+      { title: 'Track offer components', body: 'ExtraBrain can help you capture level, base, RSU grant, bonus target, and sign-on during the discussion.' },
+    ],
+    faq: [
+      { question: 'What is the average Oracle software engineer salary?', answer: 'Reported total compensation varies by level and division. IC2 reports suggest $110K-$170K, IC4 often exceeds $250K. OCI roles may command higher ranges.' },
+      { question: 'Is Oracle OCI pay competitive?', answer: 'Oracle has been reported to increase compensation for cloud roles to compete with AWS, Azure, and GCP for talent.' },
+      { question: 'Does Oracle negotiate?', answer: 'Yes. Oracle is reported to negotiate, especially for cloud infrastructure roles where competition for talent is intense.' },
+    ],
+  },
+  {
+    slug: 'salaries/robinhood-software-engineer-salary',
+    company: 'Robinhood',
+    description: 'Reported Robinhood software engineer salary ranges, fintech compensation, and negotiation preparation with ExtraBrain.',
+    lead: 'Robinhood offers competitive compensation for engineers building its trading and financial services platform. Here are publicly reported ranges and preparation tips.',
+    companyGuideSlug: 'robinhood',
+    levels: [
+      { title: 'Entry-level', body: 'Reported total compensation typically falls in the $150K-$220K range, with base, RSUs, and sign-on bonus.' },
+      { title: 'Mid-level', body: 'Reported total compensation often ranges from $230K to $350K, with equity growing as a share of the package.' },
+      { title: 'Senior', body: 'Reported total compensation commonly falls between $340K to $480K, with RSUs as the largest component.' },
+      { title: 'Staff and above', body: 'Reported total compensation can exceed $480K based on scope and specialization.' },
+    ],
+    factors: [
+      { title: 'Stock volatility', body: 'Robinhood stock has been volatile since its IPO. Realized compensation from RSU grants depends heavily on stock performance.' },
+      { title: 'Fintech regulation', body: 'Roles involving compliance, trading systems, and security infrastructure may command different compensation ranges.' },
+      { title: 'Competitive with bigger firms', body: 'Robinhood competes with both fintech startups and large tech companies for engineering talent.' },
+    ],
+    negotiation: [
+      { title: 'Evaluate stock risk', body: 'Use ExtraBrain to analyze Robinhood stock performance and consider what equity-heavy offers mean for your realized compensation.' },
+      { title: 'Highlight fintech experience', body: 'Practice articulating trading systems, real-time infrastructure, or financial services experience to strengthen your position.' },
+      { title: 'Capture offer details', body: 'ExtraBrain can help you note base, RSU grant, vesting, and any unique fintech benefits during the offer call.' },
+    ],
+    faq: [
+      { question: 'What is the average Robinhood software engineer salary?', answer: 'Reported total compensation varies by level. Entry-level reports suggest $150K-$220K, senior often exceeds $340K. Stock volatility significantly affects realized pay.' },
+      { question: 'Is Robinhood pay competitive?', answer: 'Yes. Robinhood total compensation is competitive with peer companies, though stock performance meaningfully affects realized equity value.' },
+      { question: 'Does Robinhood negotiate?', answer: 'Yes. Robinhood is reported to negotiate base, RSUs, and sign-on, especially with competing offers from larger tech companies.' },
+    ],
+  },
+];
+
+const salaryTermPages: MarketingPage[] = salaryEntries.map((entry) => salaryPage(entry));
+
+const salaryHubPage: MarketingPage = {
+  slug: 'salaries',
+  title: 'Software Engineer Salary Guides - ExtraBrain',
+  description: 'Reported software engineer salary ranges at top tech companies by level, what affects offers, and how ExtraBrain helps with interview and negotiation prep.',
+  eyebrow: 'Salary guides',
+  h1: 'Software engineer salary guides.',
+  lead: 'Publicly reported compensation ranges for software engineers at leading technology companies, organized by level. Use these guides alongside ExtraBrain to prepare for interviews and negotiate offers confidently.',
+  primaryCta: defaultCta,
+  secondaryCta: { label: 'Company interview guides', href: '/interview-guides/' },
+  schemaType: 'FAQPage',
+  sections: [
+    {
+      title: 'Browse salary guides',
+      variant: 'cards',
+      items: salaryEntries.map((entry) => ({
+        title: `${entry.company} SWE salary`,
+        body: entry.description,
+        href: `/${entry.slug}/`,
+      })),
+    },
+    {
+      title: 'How to use these guides',
+      body: 'These salary ranges are based on publicly reported data from sources like levels.fyi and Glassdoor. Actual compensation depends on level, location, competing offers, team, and negotiation. Always verify current ranges before making decisions. ExtraBrain helps you organize research, practice negotiation scenarios, and follow live offer discussions.',
+    },
+    { title: 'Responsible use', body: responsibleUseNote },
+  ],
+  faq: [
+    { question: 'Where does this salary data come from?', answer: 'Ranges are summarized from publicly reported data on sites like levels.fyi and Glassdoor. They are approximate and should be verified before making career decisions.' },
+    { question: 'How does ExtraBrain help with salary negotiation?', answer: 'ExtraBrain helps you organize compensation research, practice negotiation conversations, and follow live offer discussions with transcription and context awareness on Mac.' },
+    { question: 'How often are these guides updated?', answer: 'Salary data changes frequently. Use these guides as starting points and always verify current ranges on levels.fyi, Glassdoor, or similar sources.' },
+  ],
+};
+
+export const salaryPages: MarketingPage[] = [salaryHubPage, ...salaryTermPages];
+
 export const seoMarketingPages: MarketingPage[] = [
   ...aiSearchPages,
   ...useCasePages,
@@ -7617,4 +8408,5 @@ export const seoMarketingPages: MarketingPage[] = [
   ...glossaryPages,
   ...languageInterviewPages,
   ...conceptPages,
+  ...salaryPages,
 ];
