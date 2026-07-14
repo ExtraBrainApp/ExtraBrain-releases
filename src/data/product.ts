@@ -421,6 +421,7 @@ export type MarketingPage = {
   faq?: Array<{ question: string; answer: string }>;
   schemaType?: 'SoftwareApplication' | 'FAQPage' | 'HowTo' | 'Article';
   sources?: Array<{ label: string; href: string }>;
+  keywords?: string;
   comparisonHub?: unknown;
   comparison?: unknown;
 };
@@ -3660,24 +3661,37 @@ export function faqSchema(faq: Array<{ question: string; answer: string }>, page
   };
 }
 
+export const sectionHubs: Record<string, string> = {
+  'salaries': 'Software engineer salaries',
+  'interview-guides': 'Interview guides',
+  'glossary': 'Interview glossary',
+  'concepts': 'Interview concepts',
+  'use-cases': 'Use cases',
+  'compare': 'Compare',
+  'alternatives': 'Alternatives',
+  'pricing': 'Pricing',
+};
+
 export function breadcrumbSchema(page: MarketingPage) {
+  const slashIndex = page.slug.indexOf('/');
+  const prefix = slashIndex > 0 ? page.slug.slice(0, slashIndex) : null;
+  const sectionLabel = prefix ? sectionHubs[prefix] : null;
+
+  const items: Array<{ '@type': string; position: number; name: string; item: string }> = [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+  ];
+
+  if (sectionLabel) {
+    items.push({ '@type': 'ListItem', position: 2, name: sectionLabel, item: absoluteUrl(`/${prefix}/`) });
+    items.push({ '@type': 'ListItem', position: 3, name: page.h1.replace(/\.$/, ''), item: absoluteUrl(`/${page.slug}/`) });
+  } else {
+    items.push({ '@type': 'ListItem', position: 2, name: page.h1.replace(/\.$/, ''), item: absoluteUrl(`/${page.slug}/`) });
+  }
+
   return {
     '@type': 'BreadcrumbList',
     '@id': `${absoluteUrl(`/${page.slug}/`)}#breadcrumbs`,
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: siteUrl,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: page.h1.replace(/\.$/, ''),
-        item: absoluteUrl(`/${page.slug}/`),
-      },
-    ],
+    itemListElement: items,
   };
 }
 
