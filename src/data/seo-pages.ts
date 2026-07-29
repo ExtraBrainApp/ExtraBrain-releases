@@ -8983,6 +8983,958 @@ const salaryHubPage: MarketingPage = {
 
 export const salaryPages: MarketingPage[] = [salaryHubPage, ...salaryTermPages];
 
+type MockInterviewEntry = {
+  slug: string;
+  role: string;
+  description: string;
+  lead: string;
+  rounds: Array<{ title: string; body: string }>;
+  scorecard: Array<{ title: string; body: string }>;
+  rehearsal: Array<{ title: string; body: string }>;
+  privatePractice: string;
+  providerPractice: string;
+  peerPractice: string;
+  related: Array<{ title: string; body: string; href: string }>;
+  faq: { question: string; answer: string };
+};
+
+const mockInterviewPage = (entry: MockInterviewEntry): MarketingPage => ({
+  slug: entry.slug,
+  title: `${entry.role} Mock Interview - ExtraBrain`,
+  description: entry.description,
+  eyebrow: 'Role-based mock interview',
+  h1: `Run a focused ${entry.role.toLowerCase()} mock interview.`,
+  lead: entry.lead,
+  primaryCta: defaultCta,
+  secondaryCta: { label: 'All mock interviews', href: '/mock-interviews/' },
+  schemaType: 'FAQPage',
+  sections: [
+    {
+      title: 'Build a realistic interview loop',
+      items: entry.rounds,
+    },
+    {
+      title: 'Use a role-specific scorecard',
+      items: entry.scorecard,
+    },
+    {
+      title: 'A repeatable rehearsal plan',
+      items: entry.rehearsal,
+    },
+    {
+      title: 'Practice privately on Mac',
+      items: [
+        {
+          title: 'Local-first session',
+          body: `${entry.privatePractice} Use local NVIDIA Parakeet transcription and local session history to keep the practice record on your Mac.`,
+        },
+        {
+          title: 'AI provider choice',
+          body: `${entry.providerPractice} Use compatible on-device Gemma where available or bring OpenAI, Anthropic, Claude, Codex, or another compatible provider you control.`,
+        },
+        {
+          title: 'Peer mock and review',
+          body: `${entry.peerPractice} The free core app also works as a meeting copilot, with screen-aware context for the artifacts you discuss.`,
+        },
+      ],
+    },
+    {
+      title: 'Related preparation',
+      variant: 'cards',
+      items: entry.related,
+    },
+    {
+      title: 'Responsible use',
+      body: responsibleUseNote,
+    },
+  ],
+  faq: [
+    entry.faq,
+    {
+      question: `Can ExtraBrain help run a ${entry.role.toLowerCase()} mock interview?`,
+      answer: `Yes. ExtraBrain can transcribe the practice session, follow visible context, help generate follow-up prompts, and preserve a local review record for ${entry.role.toLowerCase()} interview preparation.`,
+    },
+    {
+      question: 'Can I reuse practice feedback in a real interview?',
+      answer: 'Use practice feedback to improve your own skills and explanations. During a real interview, follow every employer, school, interviewer, and platform rule, disclose assistance when required, and never misrepresent your experience.',
+    },
+  ],
+});
+
+const mockInterviewEntries: MockInterviewEntry[] = [
+  {
+    slug: 'mock-interviews/software-engineer',
+    role: 'Software Engineer',
+    description: 'Run a software engineer mock interview with coding, system design, project depth, and behavioral scorecards in a private Mac practice workflow.',
+    lead: 'A useful software engineering mock should test more than whether code passes. Rehearse problem framing, implementation, complexity, design tradeoffs, project ownership, and the communication that connects them.',
+    rounds: [
+      { title: 'Coding screen', body: 'Solve one data-structure or algorithm problem in a shared editor. Clarify constraints, state a plan, test edge cases, and analyze time and space before polishing syntax.' },
+      { title: 'System design', body: 'Design a service at an explicit scale. Cover APIs, data model, failure modes, capacity, observability, and the tradeoff you would revisit with more time.' },
+      { title: 'Project and behavioral deep dive', body: 'Explain one difficult engineering project, your personal decisions, a conflict or setback, and the measurable result without hiding behind the team.' },
+    ],
+    scorecard: [
+      { title: 'Problem solving', body: 'Score whether the candidate decomposes the problem, validates assumptions, and changes course deliberately when evidence contradicts the first plan.' },
+      { title: 'Engineering quality', body: 'Review correctness, readable structure, test coverage, operational thinking, and whether design choices match the stated constraints.' },
+      { title: 'Technical communication', body: 'Listen for concise narration, explicit tradeoffs, useful questions, and the ability to explain code or architecture at the right depth.' },
+    ],
+    rehearsal: [
+      { title: 'Baseline without hints', body: 'Run a 45-minute loop without interruption and mark only the moments where the interviewer would need to redirect.' },
+      { title: 'Repair one weak signal', body: 'Repeat the same format with a narrow goal such as earlier edge-case discovery, clearer API contracts, or more specific ownership language.' },
+      { title: 'Change the prompt family', body: 'Use a new coding pattern and a new system workload to verify that the improvement transfers instead of becoming memorized choreography.' },
+    ],
+    privatePractice: 'Keep proprietary project examples, code sketches, and spoken reasoning in a Mac-native workflow.',
+    providerPractice: 'Ask the model to probe a missing edge case, challenge a design assumption, or turn a vague project claim into a precise follow-up.',
+    peerPractice: 'Capture the editor, diagram, interviewer prompts, and peer feedback in one reviewable session.',
+    related: [
+      { title: 'Software engineering prep', body: 'Build a complete coding, design, project, and behavioral study plan.', href: '/software-engineering-interview-preparation/' },
+      { title: 'Coding interview practice', body: 'Prepare the live problem-solving and explanation workflow.', href: '/use-cases/coding-interviews/' },
+      { title: 'System design interviews', body: 'Practice scale, storage, reliability, and tradeoff discussions.', href: '/use-cases/system-design-interviews/' },
+    ],
+    faq: {
+      question: 'How long should a software engineer mock interview be?',
+      answer: 'Use 45 to 60 minutes for a single coding or design round. A realistic mini-loop can combine 35 minutes of coding, 35 minutes of system design, and 25 minutes of project and behavioral questions.',
+    },
+  },
+  {
+    slug: 'mock-interviews/product-manager',
+    role: 'Product Manager',
+    description: 'Practice a product manager mock interview with product sense, execution, strategy, analytics, and leadership rubrics on a private Mac workflow.',
+    lead: 'A strong product manager mock reveals how you structure ambiguous decisions. It should test customer insight, prioritization, metrics, strategy, execution judgment, and influence without turning every answer into a memorized framework.',
+    rounds: [
+      { title: 'Product sense', body: 'Choose a defined user, identify a painful job, prioritize one opportunity, and sketch a solution while naming the assumptions that need research.' },
+      { title: 'Execution and analytics', body: 'Diagnose a metric change or define success for a launch. Move from a metric tree to hypotheses, cuts of data, guardrails, and a decision.' },
+      { title: 'Strategy and leadership', body: 'Evaluate a market or product bet, then answer an influence, conflict, or failure question with clear ownership and outcome.' },
+    ],
+    scorecard: [
+      { title: 'Customer and problem clarity', body: 'Score whether the answer identifies a specific user and need before proposing features, and separates observed facts from assumptions.' },
+      { title: 'Decision quality', body: 'Look for explicit criteria, prioritized tradeoffs, risks, metrics, and a recommendation that follows from the analysis.' },
+      { title: 'Product leadership', body: 'Assess concise communication, stakeholder awareness, learning from evidence, and honest ownership of difficult decisions.' },
+    ],
+    rehearsal: [
+      { title: 'Record the first structure', body: 'Answer a fresh product prompt in 20 minutes and note where the structure clarified thinking versus where it became filler.' },
+      { title: 'Pressure-test the decision', body: 'Have the interviewer introduce a new constraint, conflicting stakeholder, or surprising metric and evaluate how the recommendation changes.' },
+      { title: 'Retell the leadership example', body: 'Shorten one story until the tension, your decision, the result, and the lesson are clear without extra chronology.' },
+    ],
+    privatePractice: 'Keep unreleased product examples, customer context, and strategy notes in a local-first Mac session.',
+    providerPractice: 'Ask for skeptical executive follow-ups, alternate metric interpretations, and counterarguments to your prioritization.',
+    peerPractice: 'Use the visible product brief, metric tree, or whiteboard as shared context while a peer challenges the recommendation.',
+    related: [
+      { title: 'Product manager interviews', body: 'Review product sense, execution, strategy, and leadership preparation.', href: '/use-cases/product-management-interviews/' },
+      { title: 'Behavioral interview practice', body: 'Build specific stories about influence, conflict, failure, and impact.', href: '/use-cases/behavioral-interviews/' },
+      { title: 'STAR method', body: 'Keep leadership examples concise without losing the result.', href: '/glossary/star-method/' },
+    ],
+    faq: {
+      question: 'Should a product manager mock use frameworks?',
+      answer: 'A framework can prevent omissions, but it should serve the decision rather than dictate it. Score the quality of user insight, prioritization, evidence, and tradeoffs, not whether the candidate recites a named structure.',
+    },
+  },
+  {
+    slug: 'mock-interviews/data-scientist',
+    role: 'Data Scientist',
+    description: 'Practice a data scientist mock interview across statistics, experiments, modeling, SQL, product judgment, and communication with private Mac review.',
+    lead: 'A realistic data science mock connects statistical reasoning to a business decision. It should test experiment design, modeling judgment, SQL or analytical work, causal caution, and the ability to explain uncertainty.',
+    rounds: [
+      { title: 'Statistics and experimentation', body: 'Design an experiment with a clear unit, metric, power assumptions, guardrails, and a plan for novelty, interference, or selection effects.' },
+      { title: 'Modeling case', body: 'Frame a prediction problem, choose an evaluation strategy, discuss leakage and drift, and connect model errors to product cost.' },
+      { title: 'SQL and product analysis', body: 'Write or reason through a query, diagnose a metric movement, and recommend the next analysis without claiming causality too early.' },
+    ],
+    scorecard: [
+      { title: 'Statistical rigor', body: 'Review assumptions, uncertainty, bias, experimental validity, and whether the conclusion is no stronger than the evidence.' },
+      { title: 'Practical modeling', body: 'Score feature and target definition, baseline choice, validation, error analysis, monitoring, and business consequences.' },
+      { title: 'Decision communication', body: 'Assess whether technical detail is translated into a clear recommendation, caveat, and next step for a mixed audience.' },
+    ],
+    rehearsal: [
+      { title: 'Draw the causal story', body: 'Before calculating, map treatment, outcome, confounders, and selection so the analysis answers the intended question.' },
+      { title: 'Defend the metric', body: 'Let the interviewer challenge the primary metric, sample, or threshold and respond with a principled alternative rather than adding metrics at random.' },
+      { title: 'Explain at two depths', body: 'Give the same model recommendation to a staff data scientist and a product leader, preserving accuracy while changing the level of detail.' },
+    ],
+    privatePractice: 'Keep sample queries, experiment notes, and model examples local when they resemble sensitive product work.',
+    providerPractice: 'Use the model as a critical reviewer for leakage, confounding, metric validity, and hidden deployment costs.',
+    peerPractice: 'Capture a notebook, SQL editor, experiment diagram, and discussion together so feedback stays tied to the actual reasoning.',
+    related: [
+      { title: 'Data science interviews', body: 'Prepare statistics, experiments, modeling, SQL, and product cases.', href: '/use-cases/data-science-interviews/' },
+      { title: 'SQL coding interviews', body: 'Practice joins, windows, aggregation, and analytical reasoning.', href: '/use-cases/sql-coding-interviews/' },
+      { title: 'Python coding interviews', body: 'Practice data manipulation, algorithms, and clear implementation.', href: '/use-cases/python-coding-interviews/' },
+    ],
+    faq: {
+      question: 'What should a data scientist mock interview measure?',
+      answer: 'Measure statistical correctness, problem framing, modeling judgment, analytical execution, and communication. A correct formula is not enough if the experiment or decision is poorly defined.',
+    },
+  },
+  {
+    slug: 'mock-interviews/data-analyst',
+    role: 'Data Analyst',
+    description: 'Run a data analyst mock interview with SQL, metric diagnosis, dashboard critique, business cases, and stakeholder communication on Mac.',
+    lead: 'A data analyst mock should move from a business question to trustworthy evidence. Practice SQL, metric definitions, data-quality checks, dashboard reasoning, and recommendations that a stakeholder can act on.',
+    rounds: [
+      { title: 'SQL exercise', body: 'Translate a business question into joins, aggregations, windows, and validation queries while explaining grain and duplicate risk.' },
+      { title: 'Metric diagnosis', body: 'Investigate a conversion or retention change through a structured metric tree, segmentation plan, instrumentation checks, and ranked hypotheses.' },
+      { title: 'Stakeholder case', body: 'Interpret a chart or dashboard, surface uncertainty, and recommend an action without burying the decision under every possible cut.' },
+    ],
+    scorecard: [
+      { title: 'Data correctness', body: 'Check table grain, join behavior, null handling, denominator choice, time windows, and whether validation would catch a misleading result.' },
+      { title: 'Analytical structure', body: 'Score whether hypotheses and cuts are prioritized by expected information value rather than explored in random order.' },
+      { title: 'Business usefulness', body: 'Review clarity, visual interpretation, caveats, decision relevance, and whether the recommendation names an owner or next step.' },
+    ],
+    rehearsal: [
+      { title: 'Narrate the query plan', body: 'Describe the source grain and expected row count before writing SQL, then compare that expectation with each transformation.' },
+      { title: 'Debug a misleading chart', body: 'Use a chart with a truncated axis, mixed cohorts, or changed definition and explain what must be verified before acting.' },
+      { title: 'Deliver a two-minute readout', body: 'Summarize the question, evidence, caveat, recommendation, and next measurement for a busy stakeholder.' },
+    ],
+    privatePractice: 'Keep realistic schemas, business metrics, and dashboard screenshots in a local-first Mac practice record.',
+    providerPractice: 'Ask the model to identify grain errors, alternative explanations, weak denominators, and the next highest-value query.',
+    peerPractice: 'Review the visible SQL and chart while the meeting copilot preserves both the technical corrections and stakeholder feedback.',
+    related: [
+      { title: 'Data analyst interviews', body: 'Prepare SQL, metrics, dashboards, statistics, and business cases.', href: '/use-cases/data-analyst-interviews/' },
+      { title: 'Data analyst prep plan', body: 'Build a structured study schedule before the mock loop.', href: '/data-analyst-interview-preparation/' },
+      { title: 'SQL coding interviews', body: 'Practice analytical SQL with clear assumptions and checks.', href: '/use-cases/sql-coding-interviews/' },
+    ],
+    faq: {
+      question: 'How much SQL belongs in a data analyst mock?',
+      answer: 'Reserve 20 to 30 minutes for a query with joins, aggregation, and one window or cohort concept. Use the rest for metric reasoning, validation, and a stakeholder readout.',
+    },
+  },
+  {
+    slug: 'mock-interviews/data-engineer',
+    role: 'Data Engineer',
+    description: 'Practice a data engineer mock interview with SQL, pipeline coding, data modeling, distributed systems, and reliability review on a private Mac.',
+    lead: 'A data engineering mock should test whether pipelines remain correct when data is late, duplicated, malformed, or reprocessed. Combine SQL and coding with modeling, orchestration, scale, and operational recovery.',
+    rounds: [
+      { title: 'SQL and transformation', body: 'Build an incremental transformation with explicit grain, late-arriving data handling, deduplication, and checks for correctness.' },
+      { title: 'Data system design', body: 'Design a batch or streaming platform with sources, contracts, partitioning, storage, orchestration, observability, and replay.' },
+      { title: 'Incident and behavioral', body: 'Work through a broken pipeline or bad backfill, then explain ownership, stakeholder communication, and the prevention added afterward.' },
+    ],
+    scorecard: [
+      { title: 'Data correctness', body: 'Evaluate idempotency, schema evolution, ordering, deduplication, lineage, and whether a replay produces the same trusted result.' },
+      { title: 'Scalable design', body: 'Review partition choice, throughput assumptions, storage layout, compute model, cost, and how batch and streaming requirements differ.' },
+      { title: 'Operability', body: 'Score alerts, data-quality signals, backfill strategy, runbooks, ownership, and communication when downstream consumers are affected.' },
+    ],
+    rehearsal: [
+      { title: 'Inject bad data', body: 'Add duplicates, late events, a schema change, and a partial source outage to the design and trace what breaks.' },
+      { title: 'Plan a safe backfill', body: 'Explain isolation, capacity, validation, cutover, and rollback for recomputing a month of production data.' },
+      { title: 'Review the data contract', body: 'Define ownership and compatibility rules for one critical event or table before discussing implementation tools.' },
+    ],
+    privatePractice: 'Keep production-shaped schemas, pipeline diagrams, and incident examples on the Mac instead of uploading every artifact by default.',
+    providerPractice: 'Use the model to challenge delivery semantics, state growth, replay safety, schema evolution, and cost assumptions.',
+    peerPractice: 'Capture the visible SQL, lineage diagram, and incident discussion in one meeting-style mock for precise review.',
+    related: [
+      { title: 'Data engineering interviews', body: 'Prepare pipelines, modeling, SQL, distributed systems, and operations.', href: '/use-cases/data-engineering-interviews/' },
+      { title: 'Message queues', body: 'Review delivery, ordering, retention, and consumer tradeoffs.', href: '/concepts/message-queues/' },
+      { title: 'Idempotency', body: 'Make retries and reprocessing safe across pipeline stages.', href: '/concepts/idempotency/' },
+    ],
+    faq: {
+      question: 'Should a data engineer mock include system design?',
+      answer: 'Yes. Even when a role starts with SQL or coding, a design round reveals how the candidate handles data contracts, scale, late data, failures, replay, observability, and cost.',
+    },
+  },
+  {
+    slug: 'mock-interviews/machine-learning-engineer',
+    role: 'Machine Learning Engineer',
+    description: 'Run a machine learning engineer mock interview covering coding, modeling, ML system design, deployment, and monitoring in a private Mac workflow.',
+    lead: 'A machine learning engineering mock should connect model quality to production behavior. Test coding and fundamentals, data and evaluation choices, serving architecture, feedback loops, monitoring, and operational tradeoffs.',
+    rounds: [
+      { title: 'Coding and ML fundamentals', body: 'Solve a coding problem and explain core modeling concepts such as bias and variance, regularization, sampling, and evaluation.' },
+      { title: 'ML system design', body: 'Design an end-to-end training and serving system with data contracts, features, experiments, rollout, latency, and cost constraints.' },
+      { title: 'Model debugging', body: 'Investigate an offline-online gap, drift, skew, or quality regression and rank checks that distinguish data, model, and serving failures.' },
+    ],
+    scorecard: [
+      { title: 'Modeling judgment', body: 'Review baseline choice, labels, leakage, metric alignment, error analysis, and whether model complexity earns its operational cost.' },
+      { title: 'Production architecture', body: 'Score training reproducibility, feature consistency, serving latency, versioning, rollout, monitoring, and fallback behavior.' },
+      { title: 'Cross-functional clarity', body: 'Assess whether the candidate connects technical metrics to user impact and communicates uncertainty to product and platform partners.' },
+    ],
+    rehearsal: [
+      { title: 'Start with a simple baseline', body: 'Defend the smallest system that can test value before introducing feature stores, online learning, or specialized serving infrastructure.' },
+      { title: 'Trace one prediction', body: 'Follow raw data through labeling, features, training, deployment, inference, logging, and feedback to expose skew or leakage.' },
+      { title: 'Run a regression drill', body: 'Give the mock interviewer new evidence at each step and measure whether hypotheses are updated instead of defended.' },
+    ],
+    privatePractice: 'Keep model examples, feature diagrams, and incident-derived scenarios in a private Mac-native rehearsal.',
+    providerPractice: 'Ask the model to probe leakage, offline-online skew, rollout risk, monitoring gaps, and simpler baseline alternatives.',
+    peerPractice: 'Use the visible architecture and experiment notes as shared context while the meeting copilot captures the technical debate.',
+    related: [
+      { title: 'Machine learning interviews', body: 'Prepare coding, modeling, ML systems, and production tradeoffs.', href: '/use-cases/machine-learning-interviews/' },
+      { title: 'AI engineer interviews', body: 'Review retrieval, evaluation, model APIs, and applied AI systems.', href: '/use-cases/ai-engineer-interviews/' },
+      { title: 'Caching', body: 'Explore latency, freshness, and capacity tradeoffs in serving systems.', href: '/concepts/caching/' },
+    ],
+    faq: {
+      question: 'What makes an ML system design mock realistic?',
+      answer: 'Give it a measurable product objective, data and labeling constraints, scale, latency, freshness, privacy, and cost limits. The candidate should cover training, serving, rollout, monitoring, and feedback.',
+    },
+  },
+  {
+    slug: 'mock-interviews/engineering-manager',
+    role: 'Engineering Manager',
+    description: 'Practice an engineering manager mock interview with people leadership, execution, technical judgment, organization design, and behavioral review.',
+    lead: 'An engineering manager mock should reveal how you build teams and systems through other people. Test coaching, performance, hiring, execution, stakeholder alignment, technical judgment, and the evidence behind your leadership stories.',
+    rounds: [
+      { title: 'People leadership', body: 'Discuss coaching, feedback, performance, conflict, hiring, and team health through specific situations where your action changed an outcome.' },
+      { title: 'Execution and organization', body: 'Work through a slipping roadmap or ambiguous initiative, covering priorities, staffing, dependencies, risk, and executive communication.' },
+      { title: 'Technical leadership', body: 'Review an architecture or incident at the depth expected of a manager, including how you guide decisions without becoming the only decision-maker.' },
+    ],
+    scorecard: [
+      { title: 'Leadership evidence', body: 'Score concrete context, personal judgment, actions through the team, measurable outcomes, and honest reflection on what did not work.' },
+      { title: 'Operating system', body: 'Assess prioritization, planning, delegation, talent processes, decision rights, and mechanisms that work beyond one heroic effort.' },
+      { title: 'Technical leverage', body: 'Review whether the manager asks the right questions, sets quality bars, manages risk, and creates ownership instead of taking work back.' },
+    ],
+    rehearsal: [
+      { title: 'Build a story inventory', body: 'Map six examples across performance, conflict, hiring, delivery, technical change, and failure so one story is not stretched across every question.' },
+      { title: 'Add an executive interruption', body: 'Have the interviewer change scope, deadline, or staffing and watch whether the answer resets priorities and communicates consequences.' },
+      { title: 'Probe second-order effects', body: 'For each leadership decision, explain what behavior it rewarded, what risk it moved, and what mechanism made the improvement durable.' },
+    ],
+    privatePractice: 'Keep sensitive performance, organizational, and incident examples local, with names and identifying details removed.',
+    providerPractice: 'Ask for board-level follow-ups, competing stakeholder perspectives, and challenges to delegation or performance decisions.',
+    peerPractice: 'Capture an org sketch, roadmap, or architecture alongside peer feedback without turning the mock into a generic question list.',
+    related: [
+      { title: 'Engineering manager interviews', body: 'Prepare people leadership, execution, technical judgment, and strategy.', href: '/use-cases/engineering-manager-interviews/' },
+      { title: 'Behavioral interviews', body: 'Structure evidence about conflict, failure, ownership, and impact.', href: '/use-cases/behavioral-interviews/' },
+      { title: 'System design interviews', body: 'Refresh architecture tradeoffs at a leadership-appropriate depth.', href: '/use-cases/system-design-interviews/' },
+    ],
+    faq: {
+      question: 'How should an engineering manager mock differ from an engineer mock?',
+      answer: 'Spend less time on individual implementation and more on people systems, execution mechanisms, organizational judgment, stakeholder alignment, and technical leverage through a team.',
+    },
+  },
+  {
+    slug: 'mock-interviews/solutions-architect',
+    role: 'Solutions Architect',
+    description: 'Practice a solutions architect mock interview with discovery, cloud architecture, migration, security, cost, and customer communication on Mac.',
+    lead: 'A solutions architect mock should test both architecture and customer judgment. Rehearse discovery, requirements, cloud tradeoffs, migration risk, security, cost, and explaining a recommendation to technical and business audiences.',
+    rounds: [
+      { title: 'Discovery conversation', body: 'Turn a vague customer request into workloads, constraints, stakeholders, success metrics, current-state risks, and explicit non-goals.' },
+      { title: 'Architecture case', body: 'Design a secure, resilient solution and explain service choices, data flow, networking, identity, observability, cost, and failure recovery.' },
+      { title: 'Migration and presentation', body: 'Plan phases, dependencies, validation, rollback, and change management, then present the recommendation and answer objections.' },
+    ],
+    scorecard: [
+      { title: 'Requirements quality', body: 'Review whether discovery uncovers business drivers, operational constraints, compliance, skills, budget, and decision criteria before solutioning.' },
+      { title: 'Architecture fit', body: 'Score security, reliability, performance, maintainability, cost, and whether each component solves a named requirement.' },
+      { title: 'Customer communication', body: 'Assess audience calibration, visual clarity, objection handling, expectation setting, and the ability to say when more discovery is needed.' },
+    ],
+    rehearsal: [
+      { title: 'Delay the diagram', body: 'Spend the first ten minutes only on discovery and summarize the agreed problem before choosing cloud services.' },
+      { title: 'Introduce a hard constraint', body: 'Add data residency, a fixed deadline, limited operations capacity, or a failed dependency and revise the plan visibly.' },
+      { title: 'Present to two audiences', body: 'Give a technical walkthrough and a five-minute executive recommendation with the same facts but different depth.' },
+    ],
+    privatePractice: 'Keep customer-shaped requirements and architecture sketches in a local-first Mac session with identifying details removed.',
+    providerPractice: 'Ask the model to play a skeptical security reviewer, finance owner, or operations lead and challenge the proposed design.',
+    peerPractice: 'Use the visible diagram and requirement list as context while a peer alternates between customer and architecture-review roles.',
+    related: [
+      { title: 'Solutions architect interviews', body: 'Prepare discovery, cloud design, migration, and customer communication.', href: '/use-cases/solutions-architect-interviews/' },
+      { title: 'Cloud interviews', body: 'Review networking, identity, resilience, observability, and cost.', href: '/use-cases/cloud-interviews/' },
+      { title: 'API gateways', body: 'Understand routing, authentication, throttling, and edge policy tradeoffs.', href: '/concepts/api-gateway/' },
+    ],
+    faq: {
+      question: 'Should a solutions architect mock be vendor specific?',
+      answer: 'Start with vendor-neutral requirements and tradeoffs, then map to the services relevant to the target role. A good answer explains why each service fits rather than listing product names.',
+    },
+  },
+  {
+    slug: 'mock-interviews/devops-engineer',
+    role: 'DevOps Engineer',
+    description: 'Run a DevOps engineer mock interview with CI/CD, infrastructure as code, containers, observability, incidents, and security practice on Mac.',
+    lead: 'A DevOps mock should test delivery and operations as a system. Combine automation, infrastructure, release safety, observability, incident handling, security, and collaboration with developers.',
+    rounds: [
+      { title: 'Pipeline and automation', body: 'Design a CI/CD path from commit to production with tests, artifacts, environments, secrets, approvals, rollout, and rollback.' },
+      { title: 'Infrastructure scenario', body: 'Review an infrastructure-as-code change, container platform, or scaling problem and explain state, drift, failure domains, and safe migration.' },
+      { title: 'Incident response', body: 'Triage a production degradation from limited signals, form ranked hypotheses, stabilize impact, communicate, and define follow-up work.' },
+    ],
+    scorecard: [
+      { title: 'Automation safety', body: 'Score repeatability, least privilege, change review, policy, testing, drift handling, and whether rollback is actually executable.' },
+      { title: 'Operational reasoning', body: 'Review signal selection, hypothesis order, blast-radius control, recovery decisions, and attention to customer impact.' },
+      { title: 'Platform collaboration', body: 'Assess developer experience, paved paths, documentation, ownership boundaries, and whether controls reduce risk without needless friction.' },
+    ],
+    rehearsal: [
+      { title: 'Break the release', body: 'Inject a failed health check, bad migration, unavailable dependency, or leaked secret and trace the containment and rollback path.' },
+      { title: 'Review one change plan', body: 'Write preconditions, verification, observability, abort criteria, and recovery before discussing the exact command sequence.' },
+      { title: 'Run the incident update', body: 'Practice a concise status message with impact, known facts, current action, owner, risk, and next update time.' },
+    ],
+    privatePractice: 'Keep sanitized pipeline files, infrastructure diagrams, and incident details in a local-first Mac review session.',
+    providerPractice: 'Ask the model to identify unsafe rollout assumptions, missing signals, privilege risks, and rollback steps that would fail under pressure.',
+    peerPractice: 'Capture the visible terminal, pipeline, and incident timeline while a peer tests both technical judgment and communication.',
+    related: [
+      { title: 'DevOps interviews', body: 'Prepare automation, infrastructure, delivery, operations, and security.', href: '/use-cases/devops-interviews/' },
+      { title: 'Circuit breakers', body: 'Review dependency protection and controlled degradation.', href: '/concepts/circuit-breaker/' },
+      { title: 'Horizontal scaling', body: 'Compare capacity strategies and operational tradeoffs.', href: '/concepts/horizontal-vs-vertical-scaling/' },
+    ],
+    faq: {
+      question: 'What is a good DevOps mock incident?',
+      answer: 'Use a realistic service degradation with incomplete telemetry, multiple plausible causes, and a risky recent change. Score containment, hypothesis order, communication, recovery, and prevention.',
+    },
+  },
+  {
+    slug: 'mock-interviews/site-reliability-engineer',
+    role: 'Site Reliability Engineer',
+    description: 'Practice an SRE mock interview with debugging, distributed systems, SLOs, capacity, incidents, and automation in a private Mac workflow.',
+    lead: 'An SRE mock should expose reasoning under uncertainty. Test debugging, distributed systems, SLO and error-budget judgment, capacity, incident leadership, and automation that removes recurring toil.',
+    rounds: [
+      { title: 'Troubleshooting', body: 'Diagnose a latency or availability regression from sparse metrics and logs, stating hypotheses, discriminating tests, and safe mitigation.' },
+      { title: 'Reliability design', body: 'Design a service against explicit SLOs, traffic, dependencies, failure domains, overload behavior, recovery objectives, and capacity limits.' },
+      { title: 'Incident and automation', body: 'Lead a failure scenario, communicate impact, then propose follow-up automation that reduces recurrence or response time.' },
+    ],
+    scorecard: [
+      { title: 'Diagnostic method', body: 'Score hypothesis quality, signal choice, experiment safety, awareness of correlation versus cause, and deliberate updates as evidence arrives.' },
+      { title: 'Reliability economics', body: 'Review SLO selection, error-budget use, redundancy, cost, capacity headroom, and whether the reliability target matches user impact.' },
+      { title: 'Incident leadership', body: 'Assess stabilization, roles, communication, decision logs, escalation, learning, and whether follow-ups address system causes rather than blame.' },
+    ],
+    rehearsal: [
+      { title: 'Reveal evidence gradually', body: 'Let the interviewer provide one metric or log result at a time and check whether the candidate narrows or revises the hypothesis tree.' },
+      { title: 'Negotiate an SLO', body: 'Balance a product request, user harm, engineering cost, and measured baseline instead of choosing a familiar number.' },
+      { title: 'Remove one toil loop', body: 'Define the trigger, safe automation boundary, observability, failure handling, and expected time saved for a recurring operation.' },
+    ],
+    privatePractice: 'Keep sanitized incident timelines, architecture, and operational signals in a local Mac record for repeated diagnosis drills.',
+    providerPractice: 'Ask the model to reveal synthetic evidence, challenge an SLO, or identify where a mitigation could expand the blast radius.',
+    peerPractice: 'Share the terminal, dashboard, and architecture while the meeting copilot captures hypothesis changes and incident communication.',
+    related: [
+      { title: 'SRE interviews', body: 'Prepare debugging, reliability, SLOs, capacity, and incidents.', href: '/use-cases/sre-interviews/' },
+      { title: 'Load balancing', body: 'Review distribution, health checks, failure modes, and capacity.', href: '/concepts/load-balancing/' },
+      { title: 'Rate limiting', body: 'Protect dependencies and define overload behavior.', href: '/concepts/rate-limiting/' },
+    ],
+    faq: {
+      question: 'How do I score an SRE troubleshooting mock?',
+      answer: 'Score the reasoning process, not whether the candidate guesses the hidden cause. Look for ranked hypotheses, discriminating evidence, safe mitigation, clear updates, and learning after new facts.',
+    },
+  },
+  {
+    slug: 'mock-interviews/frontend-developer',
+    role: 'Frontend Developer',
+    description: 'Run a frontend developer mock interview with JavaScript, UI coding, browser behavior, accessibility, performance, and architecture on Mac.',
+    lead: 'A frontend mock should combine coding with user-facing engineering judgment. Test JavaScript and browser fundamentals, component design, state, accessibility, performance, testing, and communication about visual tradeoffs.',
+    rounds: [
+      { title: 'JavaScript and browser fundamentals', body: 'Solve a focused problem involving asynchronous behavior, data transformation, events, layout, or rendering while explaining browser consequences.' },
+      { title: 'UI implementation', body: 'Build an accessible interactive component from requirements, including keyboard behavior, loading, errors, empty states, and responsive layout.' },
+      { title: 'Frontend system design', body: 'Design a client architecture with state boundaries, data fetching, caching, performance budgets, observability, testing, and release strategy.' },
+    ],
+    scorecard: [
+      { title: 'User experience correctness', body: 'Review semantic HTML, keyboard and screen-reader behavior, state clarity, responsiveness, and handling of slow or failed interactions.' },
+      { title: 'Code and component design', body: 'Score readable state flow, appropriate abstractions, testability, reuse without premature generalization, and correct browser APIs.' },
+      { title: 'Performance judgment', body: 'Assess bundle and rendering costs, measurement strategy, network behavior, caching, and whether optimizations target real user impact.' },
+    ],
+    rehearsal: [
+      { title: 'Implement from states first', body: 'List idle, loading, success, empty, error, and disabled behavior before writing the happy path.' },
+      { title: 'Use keyboard-only review', body: 'Run the component without a pointer and narrate focus order, accessible names, announcements, and recovery from errors.' },
+      { title: 'Profile before optimizing', body: 'Choose one measured performance problem and explain the smallest change that improves the relevant user metric.' },
+    ],
+    privatePractice: 'Keep product-like UI requirements, source snippets, and visual feedback in a local-first Mac workflow.',
+    providerPractice: 'Ask the model to act as an accessibility reviewer, browser specialist, or performance critic against the visible implementation.',
+    peerPractice: 'Capture the running UI, editor, and design discussion so feedback remains connected to the exact state and code.',
+    related: [
+      { title: 'Frontend interviews', body: 'Prepare JavaScript, browser, UI coding, accessibility, and architecture.', href: '/use-cases/frontend-interviews/' },
+      { title: 'JavaScript coding interviews', body: 'Practice language behavior, data structures, and clear implementation.', href: '/use-cases/javascript-coding-interviews/' },
+      { title: 'Content delivery networks', body: 'Review asset delivery, caching, latency, and invalidation.', href: '/concepts/content-delivery-network/' },
+    ],
+    faq: {
+      question: 'Should a frontend mock include live UI coding?',
+      answer: 'Yes. A small interactive component reveals state modeling, accessibility, browser knowledge, CSS judgment, testing habits, and how the candidate handles incomplete requirements.',
+    },
+  },
+  {
+    slug: 'mock-interviews/backend-developer',
+    role: 'Backend Developer',
+    description: 'Practice a backend developer mock interview with API coding, data modeling, concurrency, distributed systems, and operational tradeoffs on Mac.',
+    lead: 'A backend mock should test the path from request to durable behavior. Combine coding with API contracts, data modeling, concurrency, reliability, security, and operating the service after launch.',
+    rounds: [
+      { title: 'Service coding', body: 'Implement or review an endpoint with validation, persistence, errors, tests, concurrency concerns, and an explicit contract.' },
+      { title: 'Data and system design', body: 'Design a service with APIs, storage, consistency, caching, queues, failure handling, observability, and capacity estimates.' },
+      { title: 'Production scenario', body: 'Diagnose a slow or incorrect service, discuss a migration, and explain a project where operational feedback changed the design.' },
+    ],
+    scorecard: [
+      { title: 'Correct service behavior', body: 'Review data integrity, idempotency, authorization, validation, transaction boundaries, failure semantics, and test coverage.' },
+      { title: 'Architecture tradeoffs', body: 'Score consistency, latency, throughput, cost, operability, security, and whether complexity follows real requirements.' },
+      { title: 'Production ownership', body: 'Assess migrations, observability, rollout, incident response, backward compatibility, and learning from customer impact.' },
+    ],
+    rehearsal: [
+      { title: 'Write the contract first', body: 'Define request, response, errors, idempotency, authorization, and compatibility before selecting framework details.' },
+      { title: 'Trace a partial failure', body: 'Follow one request through a database timeout, duplicate delivery, or downstream error and explain the durable state at each point.' },
+      { title: 'Plan a zero-downtime change', body: 'Sequence schema, code, backfill, validation, cutover, and cleanup so old and new versions can coexist safely.' },
+    ],
+    privatePractice: 'Keep service diagrams, sanitized incident examples, and code review in a Mac-native local practice record.',
+    providerPractice: 'Ask the model to challenge transaction boundaries, consistency claims, security assumptions, and compatibility during migrations.',
+    peerPractice: 'Capture the editor, API sketch, and operational discussion together for feedback on both implementation and ownership.',
+    related: [
+      { title: 'Backend interviews', body: 'Prepare APIs, databases, concurrency, distributed systems, and operations.', href: '/use-cases/backend-interviews/' },
+      { title: 'Database indexing', body: 'Review access paths, query cost, and write tradeoffs.', href: '/concepts/database-indexing/' },
+      { title: 'Microservices', body: 'Understand service boundaries, coordination, and operational cost.', href: '/concepts/microservices/' },
+    ],
+    faq: {
+      question: 'What should a backend coding mock include?',
+      answer: 'Use a small service task with validation, persistence, error behavior, tests, and at least one concurrency or failure concern. Score the contract and production behavior, not only syntax.',
+    },
+  },
+  {
+    slug: 'mock-interviews/mobile-developer',
+    role: 'Mobile Developer',
+    description: 'Run a mobile developer mock interview with app architecture, UI state, offline behavior, networking, performance, and platform judgment on Mac.',
+    lead: 'A mobile mock should test software that lives on an unreliable device and network. Practice platform fundamentals, UI state, architecture, persistence, offline behavior, performance, testing, and release safety.',
+    rounds: [
+      { title: 'Platform coding', body: 'Implement a small screen or data flow with lifecycle, asynchronous work, state restoration, errors, and testable boundaries.' },
+      { title: 'Mobile architecture', body: 'Design an app feature with local storage, sync, networking, background work, navigation, analytics, privacy, and modular ownership.' },
+      { title: 'Debugging and product quality', body: 'Investigate a crash, battery, memory, rendering, or flaky-network issue and explain how the fix is validated before rollout.' },
+    ],
+    scorecard: [
+      { title: 'Lifecycle correctness', body: 'Review state ownership, cancellation, restoration, background limits, concurrency, and behavior across app and device transitions.' },
+      { title: 'Resilient experience', body: 'Score offline and slow-network behavior, caching, conflict handling, errors, accessibility, and perceived performance.' },
+      { title: 'Release discipline', body: 'Assess testing, telemetry, staged rollout, compatibility, migration, crash analysis, and rollback or feature-control options.' },
+    ],
+    rehearsal: [
+      { title: 'Simulate a bad network', body: 'Move through offline, timeout, duplicate response, stale cache, and reconnect states while preserving user intent.' },
+      { title: 'Rotate and resume', body: 'Interrupt the UI with lifecycle changes and explain which state survives, which work cancels, and why.' },
+      { title: 'Read a performance trace', body: 'Use a synthetic timeline or profile to find the measured bottleneck before proposing architecture changes.' },
+    ],
+    privatePractice: 'Keep app screenshots, prototype code, and performance traces local in a Mac-native rehearsal.',
+    providerPractice: 'Ask the model to challenge lifecycle handling, offline consistency, accessibility, energy cost, and rollout safety.',
+    peerPractice: 'Use the simulator, editor, and architecture sketch as shared context while the meeting copilot captures review notes.',
+    related: [
+      { title: 'iOS interviews', body: 'Prepare Swift, UIKit or SwiftUI, lifecycle, and Apple platform topics.', href: '/use-cases/ios-interviews/' },
+      { title: 'Android interviews', body: 'Prepare Kotlin, lifecycle, architecture, and Android platform topics.', href: '/use-cases/android-interviews/' },
+      { title: 'Caching', body: 'Review freshness, invalidation, offline access, and capacity.', href: '/concepts/caching/' },
+    ],
+    faq: {
+      question: 'Should a mobile mock specialize in iOS or Android?',
+      answer: 'Use the target platform for the coding and lifecycle round, but retain cross-platform topics such as offline behavior, networking, architecture, accessibility, performance, testing, and rollout.',
+    },
+  },
+  {
+    slug: 'mock-interviews/cybersecurity-analyst',
+    role: 'Cybersecurity Analyst',
+    description: 'Practice a cybersecurity analyst mock interview with alert triage, incident response, threat reasoning, controls, and stakeholder communication.',
+    lead: 'A cybersecurity analyst mock should test evidence-driven judgment under pressure. Rehearse alert triage, investigation, containment, threat reasoning, control gaps, reporting, and ethical handling of sensitive data.',
+    rounds: [
+      { title: 'Alert triage', body: 'Investigate a suspicious login, endpoint event, or network pattern by ranking hypotheses, requesting useful evidence, and separating severity from confidence.' },
+      { title: 'Incident response', body: 'Contain a developing incident while preserving evidence, coordinating owners, limiting business impact, and documenting decisions.' },
+      { title: 'Risk and behavioral', body: 'Explain a control recommendation, communicate risk to a non-security leader, and discuss a time you challenged an unsafe assumption.' },
+    ],
+    scorecard: [
+      { title: 'Evidence quality', body: 'Review source reliability, timeline construction, scope, false-positive reasoning, and whether conclusions remain bounded by available evidence.' },
+      { title: 'Response judgment', body: 'Score containment speed, evidence preservation, escalation, legal or privacy awareness, business continuity, and recovery planning.' },
+      { title: 'Risk communication', body: 'Assess clarity about likelihood, impact, uncertainty, options, owners, and the difference between immediate response and durable remediation.' },
+    ],
+    rehearsal: [
+      { title: 'Build the timeline', body: 'Place each synthetic event on a timeline and identify the next query most likely to change scope or confidence.' },
+      { title: 'Choose a containment action', body: 'Compare account lockout, endpoint isolation, network block, monitoring, and business disruption before acting.' },
+      { title: 'Brief an executive', body: 'Deliver a short update with confirmed impact, unknowns, action underway, risk, decision needed, and next update time.' },
+    ],
+    privatePractice: 'Use sanitized indicators and keep incident-shaped notes local to avoid exposing real customer, employee, or security details.',
+    providerPractice: 'Ask the model to reveal synthetic evidence, challenge attribution, or role-play an operations, legal, or executive stakeholder.',
+    peerPractice: 'Capture the visible alert, timeline, and response discussion while preserving a local review trail on Mac.',
+    related: [
+      { title: 'Security interviews', body: 'Prepare threats, controls, incidents, risk, and communication.', href: '/use-cases/security-interviews/' },
+      { title: 'Technical phone screens', body: 'Practice concise remote explanations and structured investigation.', href: '/use-cases/technical-phone-screens/' },
+      { title: 'Responsible use', body: 'Review the rules for ethical, permitted assistance and data handling.', href: '/responsible-use/' },
+    ],
+    faq: {
+      question: 'Can a cybersecurity mock use real incident data?',
+      answer: 'Use synthetic or thoroughly sanitized evidence. Do not place customer data, credentials, indicators under restriction, or confidential incident details into a practice tool or external model.',
+    },
+  },
+  {
+    slug: 'mock-interviews/business-analyst',
+    role: 'Business Analyst',
+    description: 'Run a business analyst mock interview with requirements, process mapping, data interpretation, stakeholder conflict, and recommendation practice.',
+    lead: 'A business analyst mock should reveal how you turn ambiguity into a shared decision. Test discovery, requirements, process mapping, data interpretation, prioritization, and communication across competing stakeholders.',
+    rounds: [
+      { title: 'Requirements discovery', body: 'Interview a synthetic stakeholder, distinguish goals from requested features, identify constraints, and write testable acceptance criteria.' },
+      { title: 'Process and data case', body: 'Map a current process, locate delay or waste, interpret supporting data, and recommend a future state with measurable success.' },
+      { title: 'Stakeholder scenario', body: 'Resolve conflicting priorities, explain a changed requirement, and discuss a time your analysis altered a decision.' },
+    ],
+    scorecard: [
+      { title: 'Discovery depth', body: 'Score questions about users, outcomes, rules, exceptions, dependencies, data, constraints, and how success will be accepted.' },
+      { title: 'Analytical traceability', body: 'Review whether evidence connects the current problem to requirements, options, recommendation, and measurable benefit.' },
+      { title: 'Stakeholder alignment', body: 'Assess listening, conflict handling, decision documentation, scope control, and communication tailored to each audience.' },
+    ],
+    rehearsal: [
+      { title: 'Separate need from solution', body: 'Rewrite each requested feature as the underlying user or business outcome and validate the assumption with the interviewer.' },
+      { title: 'Find the exception path', body: 'Add a policy edge case, manual handoff, or conflicting source of truth and revise the process and acceptance criteria.' },
+      { title: 'Present a change recommendation', body: 'Explain current pain, evidence, proposed future state, tradeoffs, impact, owner, and measurement in five minutes.' },
+    ],
+    privatePractice: 'Keep process details, stakeholder examples, and requirement drafts in a local-first Mac practice record.',
+    providerPractice: 'Ask the model to role-play conflicting stakeholders, expose missing exception paths, and test whether requirements are measurable.',
+    peerPractice: 'Use the visible process map and requirement set during a peer mock so feedback stays connected to the artifacts.',
+    related: [
+      { title: 'Business analyst interviews', body: 'Prepare requirements, process, data, cases, and stakeholder work.', href: '/use-cases/business-analyst-interviews/' },
+      { title: 'Data analyst interviews', body: 'Strengthen metric interpretation and evidence-based recommendations.', href: '/use-cases/data-analyst-interviews/' },
+      { title: 'Behavioral interviews', body: 'Practice conflict, influence, ambiguity, and delivery examples.', href: '/use-cases/behavioral-interviews/' },
+    ],
+    faq: {
+      question: 'What artifact should a business analyst mock produce?',
+      answer: 'Use at least one reviewable artifact such as a process map, requirement set, acceptance criteria, decision table, or recommendation. The artifact makes gaps in discovery and traceability visible.',
+    },
+  },
+  {
+    slug: 'mock-interviews/project-manager',
+    role: 'Project Manager',
+    description: 'Practice a project manager mock interview with planning, dependencies, risk, stakeholder alignment, recovery, and leadership scorecards.',
+    lead: 'A project manager mock should test how you create reliable movement across teams. Rehearse scope, sequencing, dependencies, risk, governance, stakeholder communication, and recovery when the original plan fails.',
+    rounds: [
+      { title: 'Planning case', body: 'Turn a goal into scope, milestones, workstreams, owners, dependencies, decision points, and a plan for tracking outcomes.' },
+      { title: 'Delivery recovery', body: 'Respond to a missed dependency, quality problem, or resource loss by reassessing critical path, options, risk, and communication.' },
+      { title: 'Leadership and stakeholders', body: 'Discuss influence without authority, difficult tradeoffs, conflict, and how you kept decisions and accountability clear.' },
+    ],
+    scorecard: [
+      { title: 'Plan quality', body: 'Review scope boundaries, critical path, dependencies, owners, acceptance, risk, contingency, and whether milestones show usable progress.' },
+      { title: 'Decision and risk control', body: 'Score early signal detection, option quality, escalation, change control, and whether tradeoffs are made explicit to decision-makers.' },
+      { title: 'Stakeholder trust', body: 'Assess concise updates, audience calibration, conflict handling, commitment tracking, and honest reporting before certainty is available.' },
+    ],
+    rehearsal: [
+      { title: 'Map the critical path', body: 'Identify which dependency changes the date, what evidence shows its health, and which mitigation actually reduces schedule risk.' },
+      { title: 'Run a red-status review', body: 'Present impact, cause, options, recommendation, decision needed, owner, and next checkpoint without disguising the problem.' },
+      { title: 'Retrospect the mechanism', body: 'Explain which planning or governance mechanism changed after a failure, not only what the team worked harder to do.' },
+    ],
+    privatePractice: 'Keep delivery examples, stakeholder maps, and risk details local, with confidential names and numbers removed.',
+    providerPractice: 'Ask the model to introduce dependency failures, challenge status assumptions, and role-play a sponsor with a conflicting priority.',
+    peerPractice: 'Use the visible plan, risk register, and status update as context while a peer tests delivery and communication judgment.',
+    related: [
+      { title: 'Project manager interviews', body: 'Prepare planning, risk, delivery, stakeholders, and leadership.', href: '/use-cases/project-management-interviews/' },
+      { title: 'Behavioral interviews', body: 'Build evidence about influence, recovery, conflict, and impact.', href: '/use-cases/behavioral-interviews/' },
+      { title: 'STAR method', body: 'Keep complex delivery stories focused on decisions and results.', href: '/glossary/star-method/' },
+    ],
+    faq: {
+      question: 'What makes a project manager mock realistic?',
+      answer: 'Use a goal with incomplete scope, cross-team dependencies, a constrained date, and at least one failure introduced midstream. Require a decision and stakeholder update, not only a revised schedule.',
+    },
+  },
+  {
+    slug: 'mock-interviews/program-manager',
+    role: 'Program Manager',
+    description: 'Run a program manager mock interview with multi-team strategy, operating cadence, dependencies, risks, decisions, and executive updates.',
+    lead: 'A program manager mock should test coordination at a system level. Practice translating strategy into linked workstreams, designing governance, resolving dependencies, managing portfolio risk, and helping leaders make timely decisions.',
+    rounds: [
+      { title: 'Program design', body: 'Translate an outcome into workstreams, owners, interfaces, milestones, success measures, and an operating cadence across teams.' },
+      { title: 'Dependency and risk case', body: 'Resolve a cross-team blocker or regulatory change by tracing downstream impact, options, decision rights, and escalation.' },
+      { title: 'Executive communication', body: 'Deliver a program review with progress, forecast, risks, decisions, and tradeoffs at the level leaders need.' },
+    ],
+    scorecard: [
+      { title: 'Systems thinking', body: 'Review interfaces, incentives, dependency chains, second-order effects, and whether local team plans add up to the program outcome.' },
+      { title: 'Operating mechanism', body: 'Score governance, decision logs, metrics, escalation paths, review cadence, and mechanisms that reveal drift early.' },
+      { title: 'Executive leverage', body: 'Assess synthesis, decision framing, option quality, confidence levels, and the ability to focus leaders on the few issues that need them.' },
+    ],
+    rehearsal: [
+      { title: 'Draw the dependency network', body: 'Map commitments and interfaces, then identify the node with the greatest schedule or outcome risk rather than the loudest status.' },
+      { title: 'Design the review cadence', body: 'Choose which decisions, metrics, and risks belong weekly, monthly, or at milestones and explain why.' },
+      { title: 'Write the one-page update', body: 'Reduce a complex program to outcome, progress, forecast, risks, decisions, and asks without losing material uncertainty.' },
+    ],
+    privatePractice: 'Keep portfolio details, roadmap dependencies, and executive examples in a local-first Mac session with identifying data removed.',
+    providerPractice: 'Ask the model to introduce conflicting incentives, policy changes, or resource shocks and critique the governance design.',
+    peerPractice: 'Capture the visible roadmap and dependency map while a peer plays workstream leads and an executive sponsor.',
+    related: [
+      { title: 'Technical program manager interviews', body: 'Prepare program design, technical depth, dependencies, and execution.', href: '/use-cases/technical-program-manager-interviews/' },
+      { title: 'Project manager interviews', body: 'Review planning, risk, delivery, and stakeholder fundamentals.', href: '/use-cases/project-management-interviews/' },
+      { title: 'Behavioral interviews', body: 'Practice influence, ambiguity, conflict, and recovery stories.', href: '/use-cases/behavioral-interviews/' },
+    ],
+    faq: {
+      question: 'How is a program manager mock different from a project manager mock?',
+      answer: 'A program mock emphasizes linked outcomes across teams, interfaces, governance, dependency networks, and executive decisions. A project mock usually goes deeper on delivering one bounded initiative.',
+    },
+  },
+  {
+    slug: 'mock-interviews/customer-success-manager',
+    role: 'Customer Success Manager',
+    description: 'Practice a customer success manager mock with adoption, renewal risk, executive reviews, escalation, and commercial judgment on Mac.',
+    lead: 'A customer success mock should test whether you can turn customer outcomes into durable adoption and trust. Rehearse discovery, success planning, health signals, renewal risk, escalation, executive communication, and commercial judgment.',
+    rounds: [
+      { title: 'Success plan case', body: 'Turn a customer goal into stakeholders, milestones, adoption behaviors, value measures, risks, and a joint operating cadence.' },
+      { title: 'At-risk account', body: 'Respond to low adoption, a champion departure, product gaps, or renewal pressure with diagnosis, recovery options, and clear internal asks.' },
+      { title: 'Executive business review', body: 'Present outcomes, usage, risks, roadmap boundaries, and next priorities while handling a skeptical executive question.' },
+    ],
+    scorecard: [
+      { title: 'Outcome orientation', body: 'Review whether the plan connects product use to the customer business result instead of treating activity and meetings as success.' },
+      { title: 'Risk judgment', body: 'Score health-signal interpretation, stakeholder mapping, escalation timing, recovery options, and honest handling of product limitations.' },
+      { title: 'Trusted communication', body: 'Assess listening, expectation setting, executive clarity, commercial awareness, and coordination across sales, support, and product.' },
+    ],
+    rehearsal: [
+      { title: 'Diagnose before rescuing', body: 'Ask enough questions to distinguish value, adoption, relationship, product, and budget risk before proposing more training or discounts.' },
+      { title: 'Handle a roadmap objection', body: 'Acknowledge impact, avoid promises you cannot own, offer options, and define the next decision or follow-up clearly.' },
+      { title: 'Quantify the value review', body: 'Connect adoption evidence to an agreed business outcome and name the limitation of the available data.' },
+    ],
+    privatePractice: 'Keep account-shaped examples, renewal scenarios, and stakeholder notes local with customer identities and sensitive terms removed.',
+    providerPractice: 'Ask the model to play a frustrated admin, economic buyer, product leader, or sales partner with misaligned incentives.',
+    peerPractice: 'Use the visible success plan or business-review deck while the meeting copilot captures objection handling and feedback.',
+    related: [
+      { title: 'Customer success interviews', body: 'Prepare adoption, renewals, escalations, value, and stakeholder work.', href: '/use-cases/customer-success-interviews/' },
+      { title: 'Sales interviews', body: 'Review discovery, commercial judgment, objections, and executive communication.', href: '/use-cases/sales-interviews/' },
+      { title: 'Behavioral interviews', body: 'Practice conflict, influence, failure, and customer-impact examples.', href: '/use-cases/behavioral-interviews/' },
+    ],
+    faq: {
+      question: 'What case belongs in a customer success mock?',
+      answer: 'Use an account with ambiguous health, multiple stakeholders, a real product limitation, and a renewal decision. Require diagnosis, a recovery plan, an internal escalation, and an executive customer update.',
+    },
+  },
+  {
+    slug: 'mock-interviews/account-executive',
+    role: 'Account Executive',
+    description: 'Run an account executive mock interview with discovery, qualification, demo, objection handling, deal strategy, and forecast judgment.',
+    lead: 'An account executive mock should reveal how you create a buying decision, not just deliver a pitch. Test discovery, qualification, value, stakeholder mapping, objection handling, deal strategy, and forecast honesty.',
+    rounds: [
+      { title: 'Discovery role-play', body: 'Uncover business pain, impact, current process, urgency, stakeholders, decision criteria, alternatives, and a credible next step.' },
+      { title: 'Demo and objections', body: 'Tailor a short product story to discovered needs, then handle price, competition, timing, security, or status-quo resistance.' },
+      { title: 'Deal review and behavioral', body: 'Inspect a complex opportunity, forecast category, risks, mutual action plan, and a win or loss that changed your selling behavior.' },
+    ],
+    scorecard: [
+      { title: 'Discovery quality', body: 'Review question sequence, listening, follow-up depth, quantified impact, stakeholder understanding, and whether the seller earns the right to present.' },
+      { title: 'Commercial judgment', body: 'Score qualification, value framing, multi-threading, competitive strategy, negotiation boundaries, and forecast evidence.' },
+      { title: 'Conversation control', body: 'Assess relevance, concise responses, objection diagnosis, clear next steps, and respectful pressure without manipulative tactics.' },
+    ],
+    rehearsal: [
+      { title: 'Delay the pitch', body: 'Spend most of the first role-play on discovery and summarize the problem in the buyer language before presenting a solution.' },
+      { title: 'Diagnose the objection', body: 'Respond to a broad objection with a clarifying question, verify the underlying concern, and offer a relevant next step.' },
+      { title: 'Defend the forecast', body: 'Name buyer evidence, missing commitments, timeline risk, competition, and the event that would change the forecast category.' },
+    ],
+    privatePractice: 'Keep deal-shaped examples, account plans, and negotiation details local with company, contact, and commercial data removed.',
+    providerPractice: 'Ask the model to play a skeptical buyer, security leader, finance approver, or competitor advocate and vary the objection path.',
+    peerPractice: 'Capture the role-play and visible mutual action plan so coaching points stay tied to exact questions and buyer signals.',
+    related: [
+      { title: 'Sales interviews', body: 'Prepare discovery, role-play, objections, pipeline, and leadership stories.', href: '/use-cases/sales-interviews/' },
+      { title: 'Customer success interviews', body: 'Understand adoption, value, renewal, and post-sale partnership.', href: '/use-cases/customer-success-interviews/' },
+      { title: 'Behavioral interviews', body: 'Build specific examples about wins, losses, conflict, and resilience.', href: '/use-cases/behavioral-interviews/' },
+    ],
+    faq: {
+      question: 'How should I score an account executive role-play?',
+      answer: 'Score discovery depth, listening, business-value clarity, stakeholder awareness, objection diagnosis, commercial judgment, and the quality of the agreed next step. Do not reward talk time by itself.',
+    },
+  },
+  {
+    slug: 'mock-interviews/ux-designer',
+    role: 'UX Designer',
+    description: 'Practice a UX designer mock interview with portfolio storytelling, product critique, design exercise, research judgment, and collaboration review.',
+    lead: 'A UX design mock should test how you frame and improve user experience, not only visual polish. Rehearse portfolio decisions, critique, a collaborative design exercise, research judgment, and influence across product and engineering.',
+    rounds: [
+      { title: 'Portfolio case study', body: 'Explain the problem, your role, research, constraints, alternatives, iteration, collaboration, outcome, and what you would change now.' },
+      { title: 'Product critique', body: 'Evaluate a familiar flow through user goals, information architecture, interaction, content, accessibility, business context, and evidence.' },
+      { title: 'Design exercise', body: 'Work through an ambiguous prompt collaboratively, defining users and success before sketching flows and prioritizing what to test.' },
+    ],
+    scorecard: [
+      { title: 'Problem framing', body: 'Review whether user needs, business goals, constraints, assumptions, and success measures are clear before the solution appears.' },
+      { title: 'Design reasoning', body: 'Score alternative exploration, prioritization, accessibility, systems thinking, evidence use, and the link between decisions and outcomes.' },
+      { title: 'Collaboration and craft', body: 'Assess facilitation, feedback response, product and engineering partnership, visual communication, and honest ownership of the work.' },
+    ],
+    rehearsal: [
+      { title: 'Cut the portfolio story', body: 'Fit one case into 15 minutes while preserving the decision tension, evidence, your contribution, and measurable result.' },
+      { title: 'Critique without redesigning', body: 'Start with users, goals, context, and evidence before proposing interface changes based on personal taste.' },
+      { title: 'Invite the interviewer in', body: 'During the design exercise, summarize assumptions, ask focused questions, and use feedback as new input rather than defending the first sketch.' },
+    ],
+    privatePractice: 'Keep unreleased portfolio material, research details, and product screenshots local, with customer and company data removed.',
+    providerPractice: 'Ask the model to challenge an unsupported user claim, missing accessibility case, weak metric, or unexplored alternative.',
+    peerPractice: 'Use the visible case study, product flow, and whiteboard while the meeting copilot captures critique and collaboration feedback.',
+    related: [
+      { title: 'Product design interviews', body: 'Prepare portfolio, critique, exercises, craft, and collaboration.', href: '/use-cases/product-design-interviews/' },
+      { title: 'UX research interviews', body: 'Review study design, synthesis, influence, and research ethics.', href: '/use-cases/ux-research-interviews/' },
+      { title: 'Panel interviews', body: 'Prepare for mixed audiences and cross-functional follow-ups.', href: '/glossary/panel-interview/' },
+    ],
+    faq: {
+      question: 'What should a UX portfolio mock focus on?',
+      answer: 'Focus on problem framing, evidence, alternatives, your personal decisions, collaboration, outcome, and reflection. Visual polish matters, but it cannot replace a clear design argument.',
+    },
+  },
+  {
+    slug: 'mock-interviews/financial-analyst',
+    role: 'Financial Analyst',
+    description: 'Run a financial analyst mock interview with accounting, modeling, valuation, variance analysis, business judgment, and presentation practice.',
+    lead: 'A financial analyst mock should connect precise numbers to a business decision. Test accounting fluency, model logic, valuation or planning judgment, variance analysis, assumptions, and a concise recommendation.',
+    rounds: [
+      { title: 'Technical fundamentals', body: 'Explain the financial statements, working capital, cash flow, and how a business event moves through the model.' },
+      { title: 'Modeling and analysis case', body: 'Build or review a forecast, valuation, or variance analysis with explicit drivers, checks, sensitivities, and limitations.' },
+      { title: 'Management readout', body: 'Present the key result, drivers, risk, scenario range, recommendation, and next measurement to a non-finance decision-maker.' },
+    ],
+    scorecard: [
+      { title: 'Financial accuracy', body: 'Review accounting relationships, formula integrity, units, signs, time periods, balance checks, and whether assumptions reconcile.' },
+      { title: 'Analytical judgment', body: 'Score driver selection, scenario design, sensitivity, materiality, uncertainty, and whether the analysis answers the decision.' },
+      { title: 'Executive communication', body: 'Assess synthesis, visual clarity, distinction between fact and forecast, risk framing, and a recommendation with a clear action.' },
+    ],
+    rehearsal: [
+      { title: 'Trace one assumption', body: 'Follow a revenue, margin, or working-capital assumption through all statements and explain which evidence would update it.' },
+      { title: 'Find the model error', body: 'Use a synthetic broken formula, inconsistent period, circular reference, or hard-coded input and narrate the control that should catch it.' },
+      { title: 'Deliver the variance story', body: 'Move from headline variance to volume, price, mix, timing, one-time effects, outlook, and management action.' },
+    ],
+    privatePractice: 'Keep sanitized models, planning scenarios, and business performance examples in a local-first Mac review.',
+    providerPractice: 'Ask the model to challenge accounting flow, forecast drivers, scenario range, and whether the recommendation follows from the analysis.',
+    peerPractice: 'Capture the visible spreadsheet and management readout so technical corrections and presentation feedback remain connected.',
+    related: [
+      { title: 'Financial analyst interviews', body: 'Prepare accounting, models, forecasts, variance, and communication.', href: '/use-cases/financial-analyst-interviews/' },
+      { title: 'Investment banking interviews', body: 'Review valuation, transactions, accounting, and technical questions.', href: '/use-cases/investment-banking-interviews/' },
+      { title: 'Behavioral interviews', body: 'Practice detail, deadline, challenge, and stakeholder examples.', href: '/use-cases/behavioral-interviews/' },
+    ],
+    faq: {
+      question: 'Should a financial analyst mock use a spreadsheet?',
+      answer: 'Yes. A short spreadsheet case exposes formula discipline, model structure, assumptions, checks, speed, and the ability to explain the result. Use synthetic data rather than confidential company information.',
+    },
+  },
+  {
+    slug: 'mock-interviews/management-consultant',
+    role: 'Management Consultant',
+    description: 'Practice a management consultant mock interview with case structure, math, synthesis, exhibits, fit stories, and peer feedback on Mac.',
+    lead: 'A consulting mock should reproduce the pressure of structuring an unfamiliar business problem, calculating accurately, interpreting exhibits, adapting to evidence, and synthesizing a recommendation while maintaining a natural client conversation.',
+    rounds: [
+      { title: 'Case opening and structure', body: 'Clarify the objective and context, then create a tailored issue tree that prioritizes the few questions needed to reach a decision.' },
+      { title: 'Analysis and exhibits', body: 'Work through case math, interpret a chart, update the hypothesis, and connect each result to what should be investigated next.' },
+      { title: 'Synthesis and fit', body: 'Give a recommendation with evidence, risks, and next steps, then answer a personal-impact question with specific leadership detail.' },
+    ],
+    scorecard: [
+      { title: 'Case structure', body: 'Review whether the approach is tailored, mutually distinct enough to be useful, prioritized, and connected to the client objective.' },
+      { title: 'Analysis and insight', body: 'Score accurate math, sensible assumptions, chart interpretation, hypothesis updates, business judgment, and second-level insight.' },
+      { title: 'Client communication', body: 'Assess top-down synthesis, concise transitions, collaborative tone, executive presence, and honest handling of uncertainty.' },
+    ],
+    rehearsal: [
+      { title: 'Record only the opening', body: 'Repeat the objective, clarifying questions, and structure until it is tailored and decision-oriented without sounding memorized.' },
+      { title: 'Force the synthesis', body: 'After every exhibit or calculation, state the result, implication, and next question before moving on.' },
+      { title: 'Run the case with a peer', body: 'Use an interviewer-led case, then switch roles so you learn what makes a candidate answer easy or difficult to follow.' },
+    ],
+    privatePractice: 'Keep personal fit stories, case notes, and peer feedback in a Mac-native local practice history.',
+    providerPractice: 'Ask the model for fresh case branches, exhibit follow-ups, assumption challenges, and concise feedback on synthesis.',
+    peerPractice: 'Use ExtraBrain as the meeting copilot during a peer case to capture the spoken logic and visible exhibit for review.',
+    related: [
+      { title: 'Consulting interviews', body: 'Prepare cases, fit stories, math, exhibits, and synthesis.', href: '/use-cases/consulting-interviews/' },
+      { title: 'Consulting case prep', body: 'Build a focused practice plan for case-interview performance.', href: '/consulting-case-interview-prep/' },
+      { title: 'BCG interview guide', body: 'Review BCG case and personal-experience interview preparation.', href: '/interview-guides/bcg/' },
+    ],
+    faq: {
+      question: 'How many consulting mock cases should I do?',
+      answer: 'Quality matters more than a fixed count. Run enough varied cases to diagnose patterns, then repeat targeted drills for structure, math, exhibits, or synthesis and verify improvement in later full cases.',
+    },
+  },
+  {
+    slug: 'mock-interviews/quality-assurance-engineer',
+    role: 'Quality Assurance Engineer',
+    description: 'Run a QA engineer mock interview with test strategy, automation, exploratory testing, API checks, defect judgment, and quality leadership.',
+    lead: 'A quality assurance mock should test risk thinking rather than a list of test cases. Rehearse test strategy, exploratory work, automation design, API and data checks, defect triage, observability, and influencing quality across a team.',
+    rounds: [
+      { title: 'Test strategy case', body: 'Create a risk-based plan for a new feature across functionality, data, integrations, accessibility, performance, security, and release confidence.' },
+      { title: 'Automation exercise', body: 'Design or code a maintainable test around an API or UI flow, including fixtures, isolation, assertions, failure diagnosis, and pipeline placement.' },
+      { title: 'Defect and quality scenario', body: 'Triage an ambiguous production issue, choose release action, communicate risk, and explain a quality improvement you led beyond testing.' },
+    ],
+    scorecard: [
+      { title: 'Risk coverage', body: 'Review prioritization by user harm, likelihood, detectability, change surface, and business criticality rather than counting cases.' },
+      { title: 'Automation judgment', body: 'Score test level, reliability, speed, diagnosability, data control, maintenance cost, and whether automation supplies useful confidence.' },
+      { title: 'Quality influence', body: 'Assess collaboration, defect communication, prevention, observability, release judgment, and mechanisms that move quality earlier in delivery.' },
+    ],
+    rehearsal: [
+      { title: 'Test from a failure model', body: 'List what can fail at each boundary, then choose the smallest set of tests and signals that meaningfully reduces risk.' },
+      { title: 'Debug a flaky test', body: 'Separate product failure, environment, data, timing, selector, and test isolation causes before adding retries.' },
+      { title: 'Make a release call', body: 'Present impact, evidence, uncertainty, workaround, exposure, recommendation, and monitoring for a late critical defect.' },
+    ],
+    privatePractice: 'Keep product-shaped test plans, synthetic defects, and automation code in a local-first Mac session.',
+    providerPractice: 'Ask the model to expose missing failure modes, weak assertions, flaky design, and release risks hidden by happy-path coverage.',
+    peerPractice: 'Capture the visible application, test code, and risk discussion so feedback covers both technical and leadership signals.',
+    related: [
+      { title: 'QA interviews', body: 'Prepare strategy, automation, testing, defects, and quality leadership.', href: '/use-cases/qa-interviews/' },
+      { title: 'Technical phone screens', body: 'Practice concise explanation of test design and debugging.', href: '/use-cases/technical-phone-screens/' },
+      { title: 'Pair programming interviews', body: 'Prepare collaborative coding and review behavior.', href: '/glossary/pair-programming-interview/' },
+    ],
+    faq: {
+      question: 'What should a QA mock prioritize?',
+      answer: 'Prioritize risk identification, test strategy, automation judgment, debugging, release decisions, and quality influence. Avoid scoring only how many test cases the candidate can list.',
+    },
+  },
+  {
+    slug: 'mock-interviews/technical-writer',
+    role: 'Technical Writer',
+    description: 'Practice a technical writer mock interview with audience analysis, documentation critique, writing exercise, API concepts, and collaboration.',
+    lead: 'A technical writing mock should test whether you can make complex work usable for a defined audience. Rehearse discovery, information architecture, writing and editing, API or product concepts, validation, and collaboration with subject-matter experts.',
+    rounds: [
+      { title: 'Documentation critique', body: 'Evaluate a short guide for audience, task completion, structure, prerequisites, terminology, examples, accessibility, and maintenance risk.' },
+      { title: 'Writing exercise', body: 'Turn a messy technical brief into a concise task or concept page with accurate steps, verification, error handling, and a useful example.' },
+      { title: 'Collaboration scenario', body: 'Resolve conflicting expert feedback, missing product behavior, a deadline, or a breaking change while protecting accuracy and user outcomes.' },
+    ],
+    scorecard: [
+      { title: 'Audience and task fit', body: 'Review whether the document starts from user knowledge and goal, removes hidden prerequisites, and supports successful completion.' },
+      { title: 'Technical accuracy', body: 'Score fact verification, examples, edge cases, terminology, version awareness, and whether uncertainty is surfaced rather than guessed.' },
+      { title: 'Content operations', body: 'Assess information architecture, reuse, review workflow, ownership, analytics, maintenance, localization readiness, and stakeholder communication.' },
+    ],
+    rehearsal: [
+      { title: 'Edit for one audience', body: 'Rewrite the same concept for a new user and an experienced operator, changing assumptions and depth without changing the facts.' },
+      { title: 'Verify every step', body: 'Identify prerequisite, action, expected result, failure recovery, and version context for a synthetic procedure.' },
+      { title: 'Handle an SME conflict', body: 'Ask for evidence, name the user consequence, document the decision, and preserve a path to update when product behavior changes.' },
+    ],
+    privatePractice: 'Keep unreleased feature briefs, documentation samples, and review notes in a local Mac workflow with sensitive details removed.',
+    providerPractice: 'Ask the model to simulate a confused user, strict technical reviewer, or localization editor and identify ambiguity or unsupported claims.',
+    peerPractice: 'Use the visible draft and source material during a peer review while the meeting copilot captures decisions and unresolved questions.',
+    related: [
+      { title: 'Technical writer interviews', body: 'Prepare writing tests, documentation critique, APIs, and collaboration.', href: '/use-cases/technical-writer-interviews/' },
+      { title: 'API gateways', body: 'Refresh a common API architecture concept for explanation exercises.', href: '/concepts/api-gateway/' },
+      { title: 'Panel interviews', body: 'Prepare for mixed writing, engineering, and product audiences.', href: '/glossary/panel-interview/' },
+    ],
+    faq: {
+      question: 'What belongs in a technical writer mock exercise?',
+      answer: 'Use a short, imperfect technical brief and ask for a task or concept page. Score audience fit, structure, accuracy, verification, examples, editing judgment, and questions raised for the subject-matter expert.',
+    },
+  },
+];
+
+const mockInterviewTermPages: MarketingPage[] = mockInterviewEntries.map((entry) => mockInterviewPage(entry));
+
+const mockInterviewHubPage: MarketingPage = {
+  slug: 'mock-interviews',
+  title: 'AI Mock Interview Practice by Role - ExtraBrain',
+  description: 'Choose a role-specific mock interview plan with realistic rounds, scorecards, rehearsal drills, private Mac review, and responsible AI use.',
+  eyebrow: 'Role-based mock interview practice',
+  h1: 'Run a mock interview that matches the role.',
+  lead: 'Generic question lists hide the signals a real loop measures. Choose a role below for a realistic round plan, a scorecard, targeted drills, and a local-first Mac workflow that works for solo practice or peer interviews.',
+  primaryCta: defaultCta,
+  secondaryCta: { label: 'Interview prep tools', href: '/best-interview-prep-tools/' },
+  schemaType: 'FAQPage',
+  sections: [
+    {
+      title: 'Technical and product mock interviews',
+      variant: 'cards',
+      items: mockInterviewEntries.slice(0, 12).map((entry) => ({
+        title: `${entry.role} mock interview`,
+        body: entry.description,
+        href: `/${entry.slug}/`,
+      })),
+    },
+    {
+      title: 'Business and cross-functional mock interviews',
+      variant: 'cards',
+      items: mockInterviewEntries.slice(12).map((entry) => ({
+        title: `${entry.role} mock interview`,
+        body: entry.description,
+        href: `/${entry.slug}/`,
+      })),
+    },
+    {
+      title: 'How to use a role-based mock',
+      items: [
+        { title: 'Reproduce the actual signal', body: 'Use the round plan to test the work the role performs: code, analysis, design, discovery, decisions, communication, or leadership.' },
+        { title: 'Score observable behavior', body: 'Take notes against the role scorecard instead of relying on a vague feeling that the answer sounded confident.' },
+        { title: 'Repair one weakness at a time', body: 'Use the rehearsal drills for the weakest signal, then run a fresh full mock to verify that the improvement transfers.' },
+      ],
+    },
+    {
+      title: 'A private practice and review loop',
+      items: [
+        { title: 'Local-first on Mac', body: 'Use local NVIDIA Parakeet transcription, local session history, and compatible on-device Gemma to keep a solo or peer mock local where your setup allows.' },
+        { title: 'Bring your own provider', body: 'Connect OpenAI, Anthropic, Claude, Codex, or another compatible provider you control when you want external model feedback.' },
+        { title: 'Free meeting copilot', body: 'The free core app can capture peer mocks as meetings, connect visible prompts or artifacts to the transcript, and support review afterward.' },
+      ],
+    },
+    {
+      title: 'Related interview preparation',
+      variant: 'cards',
+      items: [
+        { title: 'Interview use cases', body: 'Browse role, interview-format, and technical practice workflows.', href: '/use-cases/' },
+        { title: 'Company interview guides', body: 'Pair the role mock with a target company process and focus areas.', href: '/interview-guides/' },
+        { title: 'Free interview tools', body: 'Use flashcards, timers, salary calculators, and preparation utilities.', href: '/tools/' },
+      ],
+    },
+    {
+      title: 'Responsible use',
+      body: responsibleUseNote,
+    },
+  ],
+  faq: [
+    {
+      question: 'What is a role-based mock interview?',
+      answer: 'It is a practice interview built around the rounds, artifacts, decisions, and evaluation signals of a specific job instead of a generic list of questions.',
+    },
+    {
+      question: 'Can I run a mock interview by myself?',
+      answer: 'Yes. Use prompts and timed answers for a solo baseline, then review the transcript and visible work. Peer mocks add follow-up pressure and human feedback when available.',
+    },
+    {
+      question: 'How should I use AI during mock interviews?',
+      answer: 'Use AI to generate practice prompts, probe assumptions, and review your own explanations. In real interviews, follow all employer, school, interviewer, and platform rules and never misrepresent your skills or experience.',
+    },
+  ],
+};
+
+export const mockInterviewPages: MarketingPage[] = [mockInterviewHubPage, ...mockInterviewTermPages];
+
 export const seoMarketingPages: MarketingPage[] = [
   ...aiSearchPages,
   ...useCasePages,
@@ -8993,4 +9945,5 @@ export const seoMarketingPages: MarketingPage[] = [
   ...languageInterviewPages,
   ...conceptPages,
   ...salaryPages,
+  ...mockInterviewPages,
 ];
