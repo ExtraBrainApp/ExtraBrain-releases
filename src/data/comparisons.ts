@@ -111,11 +111,13 @@ const alternativePage = (opts: {
   slug: string;
   competitorName: string;
   competitorSlug?: string;
+  checkedAt?: string;
   description: string;
   lead: string;
   shortAnswer: string;
   whySwitch: Array<{ title: string; body: string }>;
   pricingNotes: Array<{ title: string; body: string }>;
+  related?: Array<{ title: string; body: string; href: string }>;
   competitorSummary: string;
   pricingSnapshot: string;
   competitorPlatform: string;
@@ -124,13 +126,19 @@ const alternativePage = (opts: {
   chooseCompetitorWhen: Array<{ title: string; body: string }>;
   faq: Array<{ question: string; answer: string }>;
   sources: Array<{ label: string; href: string }>;
-}): MarketingPage =>
-  comparisonPage({
+}): MarketingPage => {
+  const startsWithThe = opts.competitorName.startsWith("The ");
+
+  return comparisonPage({
     slug: opts.slug,
-    title: `Best ${opts.competitorName} Alternative for Mac - ExtraBrain`,
+    title: startsWithThe
+      ? `Alternative to ${opts.competitorName} for Mac - ExtraBrain`
+      : `Best ${opts.competitorName} Alternative for Mac - ExtraBrain`,
     description: opts.description,
     eyebrow: `${opts.competitorName} alternative`,
-    h1: `Best ${opts.competitorName} alternative for Mac.`,
+    h1: startsWithThe
+      ? `Best alternative to ${opts.competitorName} for Mac.`
+      : `Best ${opts.competitorName} alternative for Mac.`,
     lead: opts.lead,
     primaryCta: defaultCta,
     secondaryCta: opts.competitorSlug
@@ -142,7 +150,9 @@ const alternativePage = (opts: {
     sections: [
       { title: "Short answer", body: opts.shortAnswer },
       {
-        title: `Why people look for a ${opts.competitorName} alternative`,
+        title: startsWithThe
+          ? `Why people look for an alternative to ${opts.competitorName}`
+          : `Why people look for a ${opts.competitorName} alternative`,
         items: opts.whySwitch,
       },
       {
@@ -154,11 +164,20 @@ const alternativePage = (opts: {
         items: sharedExtraBrainAdvantages,
       },
       { title: "Pricing notes", items: opts.pricingNotes },
+      ...(opts.related
+        ? [
+            {
+              title: 'Related comparisons and workflows',
+              variant: 'cards' as const,
+              items: opts.related,
+            },
+          ]
+        : []),
       { title: "Responsible use", body: responsibleUse },
     ],
     sources: opts.sources,
     comparison: {
-      checkedAt,
+      checkedAt: opts.checkedAt ?? checkedAt,
       competitorName: opts.competitorName,
       competitorSummary: opts.competitorSummary,
       pricingSnapshot: opts.pricingSnapshot,
@@ -176,6 +195,7 @@ const alternativePage = (opts: {
     },
     faq: opts.faq,
   });
+};
 
 const comparePage = (opts: {
   slug: string;
@@ -228,7 +248,192 @@ const comparePage = (opts: {
     faq: opts.faq,
   });
 
+const alternativesHubPage: MarketingPage = {
+  slug: 'alternatives',
+  title: 'Best AI Interview Assistant Alternatives - ExtraBrain',
+  description:
+    'Compare AI interview assistant alternatives for Mac, privacy, pricing, local AI, provider control, coding, prep, and meeting workflows.',
+  eyebrow: 'AI interview assistant alternatives',
+  h1: 'Find the right AI interview assistant alternative.',
+  lead:
+    'Compare ExtraBrain with established and emerging interview copilots. Each guide separates verified product facts from practical tradeoffs, links to official sources, and explains when a local-first Mac app with provider control is the better fit.',
+  primaryCta: defaultCta,
+  secondaryCta: { label: 'Compare all assistants', href: '/compare/' },
+  schemaType: 'FAQPage',
+  sections: [
+    {
+      title: 'Popular interview copilot alternatives',
+      variant: 'cards',
+      items: [
+        {
+          title: 'Cluely alternative',
+          body: 'Compare a general live meeting assistant with a local-first Mac interview and meeting workflow.',
+          href: '/alternatives/cluely/',
+        },
+        {
+          title: 'Final Round AI alternative',
+          body: 'Compare a broad interview-preparation suite with ExtraBrain desktop context and provider control.',
+          href: '/alternatives/final-round-ai/',
+        },
+        {
+          title: 'LockedIn AI alternative',
+          body: 'Compare a career-platform bundle with a focused local-first interview and meeting copilot.',
+          href: '/alternatives/lockedin-ai/',
+        },
+        {
+          title: 'Beyz AI alternative',
+          body: 'Compare an interview assistant suite with a free-core Mac workflow and local AI options.',
+          href: '/alternatives/beyz-ai/',
+        },
+        {
+          title: 'ParakeetAI alternative',
+          body: 'Compare hosted interview assistance with local Parakeet transcription and provider choice.',
+          href: '/alternatives/parakeet-ai/',
+        },
+        {
+          title: 'Interviews Chat alternative',
+          body: 'Compare a browser-first interview copilot with a Mac-native desktop workflow.',
+          href: '/alternatives/interviews-chat/',
+        },
+        {
+          title: 'Interview Coder alternative',
+          body: 'Compare coding-focused live assistance with broader interview and meeting coverage.',
+          href: '/alternatives/interview-coder/',
+        },
+        {
+          title: 'Linkjob AI alternative',
+          body: 'Compare a hosted interview suite with local-first privacy and bring-your-own providers.',
+          href: '/alternatives/linkjob-ai/',
+        },
+        {
+          title: 'InterviewBee alternative',
+          body: 'Compare live and mock interview tools with ExtraBrain local-first Mac context.',
+          href: '/alternatives/interviewbee/',
+        },
+        {
+          title: 'Verve AI alternative',
+          body: 'Compare a broad multilingual tool suite with a focused Mac interview and meeting copilot.',
+          href: '/alternatives/verve-ai/',
+        },
+        {
+          title: 'Sensei AI alternative',
+          body: 'Compare a web interview copilot with a Mac-native workflow and provider control.',
+          href: '/alternatives/sensei-ai/',
+        },
+      ],
+    },
+    {
+      title: 'Focused and emerging alternatives',
+      variant: 'cards',
+      items: [
+        {
+          title: 'LeetCode Wizard alternative',
+          body: 'Compare a LeetCode-focused coding assistant with coding, system design, behavioral, and meeting support.',
+          href: '/alternatives/leetcode-wizard/',
+        },
+        {
+          title: 'ClearIntervue alternative',
+          body: 'Compare a Windows interview assistant with a local-first Mac interview and meeting workflow.',
+          href: '/alternatives/clearintervue/',
+        },
+        {
+          title: 'hintio alternative',
+          body: 'Compare an interview, sales, and meeting assistant with Mac-native local processing and provider choice.',
+          href: '/alternatives/hintio/',
+        },
+        {
+          title: 'KeetAI alternative',
+          body: 'Compare a native Mac interview copilot with ExtraBrain local AI, provider control, and meeting support.',
+          href: '/alternatives/keetai/',
+        },
+        {
+          title: 'Acedly alternative',
+          body: 'Compare a Mac and Windows live assistant with a local-first Mac interview and meeting copilot.',
+          href: '/alternatives/acedly/',
+        },
+        {
+          title: 'Hidini alternative',
+          body: 'Compare two Mac-native copilots for local options, provider control, technical context, and meetings.',
+          href: '/alternatives/hidini/',
+        },
+        {
+          title: 'Sutra AI alternative',
+          body: 'Compare an interview and meeting copilot with Indian-language support against a local-first Mac workflow.',
+          href: '/alternatives/sutra-ai/',
+        },
+        {
+          title: 'The Interview Copilot alternative',
+          body: 'Compare a Mac and Windows interview assistant with a free-core, local-first Mac workflow.',
+          href: '/alternatives/the-interview-copilot/',
+        },
+      ],
+    },
+    {
+      title: 'Emerging interview copilot alternatives',
+      variant: 'cards',
+      items: [
+        {
+          title: 'hcalls alternative',
+          body: 'Compare a credit-based web, phone, extension, and desktop service with a local-first Mac app.',
+          href: '/alternatives/hcalls/',
+        },
+        {
+          title: 'InterviewCopilot alternative',
+          body: 'Compare a fixed-price desktop interview copilot with a free-core BYO-provider workflow.',
+          href: '/alternatives/interviewcopilot/',
+        },
+        {
+          title: 'Mirly alternative',
+          body: 'Compare a speed-focused Mac and Windows copilot with local AI and broader meeting support.',
+          href: '/alternatives/mirly/',
+        },
+      ],
+    },
+    {
+      title: 'How to choose',
+      items: [
+        {
+          title: 'Start with the workflow',
+          body: 'Decide whether you need live help, mock practice, coding support, a full job-search suite, or a reusable meeting copilot.',
+        },
+        {
+          title: 'Check the privacy path',
+          body: 'Verify what stays on your device, what reaches a vendor, which AI provider processes content, and how sessions are retained.',
+        },
+        {
+          title: 'Compare the full cost',
+          body: 'Review free limits, subscriptions, one-time passes, credit expiry, renewal terms, and any separate provider costs.',
+        },
+      ],
+    },
+    { title: 'Responsible use', body: responsibleUse },
+  ],
+  faq: [
+    {
+      question: 'What is the best AI interview assistant alternative for Mac?',
+      answer:
+        'ExtraBrain is a strong Mac option when you want a free core app, local-first transcription and AI options, screen-aware context, and provider access you control.',
+    },
+    {
+      question: 'Are all interview assistants the same?',
+      answer:
+        'No. Some focus on live answers, some on mock interviews or coding, and others bundle resumes, applications, or large question libraries. Compare the exact workflow you need.',
+    },
+    {
+      question: 'How current are these alternatives pages?',
+      answer:
+        'The newest competitor facts and source links were checked on July 29, 2026. Pricing and plan terms can change, so verify each official site before purchase.',
+    },
+    {
+      question: 'Can an interview assistant make prohibited help acceptable?',
+      answer:
+        'No. Follow the rules of every interview, employer, school, meeting, and platform, and never use generated content to misrepresent your skills or experience.',
+    },
+  ],
+};
+
 export const comparisonMarketingPages: MarketingPage[] = [
+  alternativesHubPage,
   {
     slug: "compare",
     title: "Best AI Interview Assistants Compared - ExtraBrain Alternatives",
@@ -425,7 +630,7 @@ export const comparisonMarketingPages: MarketingPage[] = [
     sections: [
       {
         title: "How to use these pages",
-        body: "Start with the workflow you need, then check pricing, platform support, privacy path, provider control, and the rules for the interview or meeting.",
+        body: "Start with the workflow you need, then check pricing, platform support, privacy path, provider control, and the rules for the interview or meeting. Browse the [alternatives hub](/alternatives/) when you are replacing a specific product.",
       },
       {
         title: "Responsible use",
@@ -1960,6 +2165,7 @@ export const comparisonMarketingPages: MarketingPage[] = [
   comparePage({
     slug: 'compare/leetcode-wizard',
     competitorName: 'LeetCode Wizard',
+    alternativesSlug: 'leetcode-wizard',
     description: 'Compare ExtraBrain and LeetCode Wizard for coding interviews: broader interview coverage, local-first privacy, provider control, and pricing.',
     lead: 'LeetCode Wizard is a desktop assistant focused on coding interviews and LeetCode-style problems. ExtraBrain is a local-first Mac copilot that covers coding plus system design, behavioral rounds, and meetings, with local transcription and BYO provider control.',
     summary: 'Compare a coding-interview-focused desktop tool against a broader local-first Mac interview and meeting copilot.',
@@ -2111,6 +2317,601 @@ export const comparisonMarketingPages: MarketingPage[] = [
       { label: 'ShadeCoder homepage', href: 'https://www.shadecoder.com/' },
       { label: 'ShadeCoder pricing', href: 'https://www.shadecoder.com/pricing' },
       { label: 'All ExtraBrain comparisons', href: '/compare/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/leetcode-wizard',
+    competitorName: 'LeetCode Wizard',
+    competitorSlug: 'leetcode-wizard',
+    checkedAt: 'July 29, 2026',
+    description: 'Compare ExtraBrain as a LeetCode Wizard alternative for Mac coding interviews, local-first privacy, broader coverage, pricing, and provider control.',
+    lead: 'ExtraBrain is a LeetCode Wizard alternative for candidates who want help across coding, system design, behavioral rounds, and meetings, with local transcription and AI provider access they control.',
+    shortAnswer: 'Choose ExtraBrain when coding is only one part of your interview loop and you also want local-first privacy, screen-aware context, and meeting support. LeetCode Wizard may fit better when LeetCode-style coding problems are your only priority.',
+    whySwitch: [
+      { title: 'Your loop is broader than coding', body: 'ExtraBrain supports coding, system design, behavioral interviews, lectures, research calls, and work meetings in one Mac app.' },
+      { title: 'You want provider choice', body: 'Use local Gemma 4 where installed and compatible or connect OpenAI, Anthropic, Claude, Codex, and compatible endpoints you control.' },
+      { title: 'You want local transcription', body: 'ExtraBrain can transcribe with local NVIDIA Parakeet instead of requiring every session to use a hosted transcription service.' },
+      { title: 'You want a free core workflow', body: 'The ExtraBrain core Mac app is free, while Pro adds custom profiles and richer session history.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. Pro is optional, and external AI or transcription charges depend on providers you choose.' },
+      { title: 'LeetCode Wizard pricing', body: 'LeetCode Wizard publishes subscription pricing. Verify its current price, renewal terms, and usage limits before purchase.' },
+      { title: 'Compare scope, not only price', body: 'A coding-only product and a reusable interview and meeting copilot solve different amounts of your workflow.' },
+    ],
+    related: [
+      { title: 'ExtraBrain vs LeetCode Wizard', body: 'Review the direct feature, privacy, and workflow comparison.', href: '/compare/leetcode-wizard/' },
+      { title: 'Coding interview workflow', body: 'See how ExtraBrain supports live coding rounds where assistance is allowed.', href: '/use-cases/coding-interviews/' },
+      { title: 'All alternatives', body: 'Compare other live interview assistants and prep suites.', href: '/alternatives/' },
+    ],
+    competitorSummary: 'LeetCode Wizard is positioned as a desktop coding-interview assistant with a LeetCode-style problem database, help center, and coding-focused preparation content.',
+    pricingSnapshot: 'LeetCode Wizard publishes subscription pricing; verify current checkout pricing, usage limits, and renewal terms.',
+    competitorPlatform: 'Desktop coding-interview assistant focused on LeetCode-style problems.',
+    bestForCompetitor: [
+      'Candidates whose interview loop is dominated by LeetCode-style coding rounds.',
+      'People who want its dedicated problem database.',
+      'People who prefer a narrowly focused coding product.',
+    ],
+    atAGlance: [
+      { label: 'Primary scope', extraBrain: 'Interviews and meetings', competitor: 'Coding interviews' },
+      { label: 'Local options', extraBrain: 'Local transcription and compatible local AI', competitor: 'Verify current processing path' },
+      { label: 'Provider control', extraBrain: 'Local and BYO providers', competitor: 'Vendor-managed product access' },
+      { label: 'Core price', extraBrain: 'Free', competitor: 'Published subscription plans' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You only need LeetCode-style help', body: 'Its focused workflow may be simpler when every target round is a coding problem.' },
+      { title: 'You want its problem database', body: 'Its public site includes a dedicated problem database for coding practice.' },
+    ],
+    faq: [
+      { question: 'What is the best LeetCode Wizard alternative for Mac?', answer: 'ExtraBrain is a strong alternative when you want coding help plus system design, behavioral, meeting, local-first, and BYO-provider workflows.' },
+      { question: 'Does ExtraBrain support coding interviews?', answer: 'Yes. ExtraBrain provides live transcription, screen-aware context, and AI support for coding rounds where the interview rules allow it.' },
+      { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac app is free, with optional Pro controls and any separate provider costs you choose.' },
+      { question: 'Which product is broader?', answer: 'ExtraBrain covers coding, system design, behavioral interviews, meetings, lectures, and research calls. LeetCode Wizard is more coding-focused.' },
+      { question: 'Can either tool make prohibited help acceptable?', answer: 'No. Follow the rules for every interview, assessment, employer, school, and platform.' },
+    ],
+    sources: [
+      { label: 'LeetCode Wizard homepage', href: 'https://leetcodewizard.io/' },
+      { label: 'LeetCode Wizard pricing', href: 'https://leetcodewizard.io/pricing' },
+      { label: 'ExtraBrain responsible use', href: '/responsible-use/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/clearintervue',
+    competitorName: 'ClearIntervue',
+    checkedAt: 'July 29, 2026',
+    description: 'Compare ExtraBrain as a ClearIntervue alternative for local-first Mac privacy, meeting support, provider control, platforms, and pricing.',
+    lead: 'ExtraBrain is a ClearIntervue alternative for Mac users who want local transcription, optional on-device AI, screen-aware context, and one workflow for interviews and meetings.',
+    shortAnswer: 'Choose ExtraBrain for a Mac-native, free-core workflow with local processing choices and meeting support. ClearIntervue may fit better when you need its Windows desktop workflow, resume and role grounding, or screenshot-based prompts.',
+    whySwitch: [
+      { title: 'You want local-first processing', body: 'ExtraBrain supports local NVIDIA Parakeet transcription and compatible local Gemma 4 AI on your Mac.' },
+      { title: 'You use a Mac', body: 'ExtraBrain is built for macOS, while ClearIntervue currently presents a Windows desktop workflow.' },
+      { title: 'You want provider control', body: 'Connect provider accounts you control instead of depending only on AI access bundled by a vendor.' },
+      { title: 'You want a free core app', body: 'ExtraBrain keeps the core Mac workflow free and reserves custom profiles and richer session history for Pro.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. Optional Pro and the external providers you select determine any ongoing cost.' },
+      { title: 'ClearIntervue pricing', body: 'ClearIntervue uses a credit-based purchase flow. Confirm the live credit price, included usage, and expiry terms before buying.' },
+      { title: 'Compare the operating system first', body: 'A Windows-only workflow and a Mac-native app serve different device setups before feature differences matter.' },
+    ],
+    related: [
+      { title: 'AI interview assistant comparisons', body: 'Review privacy, pricing, and workflow tradeoffs across the category.', href: '/compare/' },
+      { title: 'Screen-aware interview workflow', body: 'See how ExtraBrain uses visible context where assistance is allowed.', href: '/use-cases/coding-interviews/' },
+      { title: 'All alternatives', body: 'Compare more real-time assistants and prep suites.', href: '/alternatives/' },
+    ],
+    competitorSummary: 'ClearIntervue positions itself as a Windows desktop interview assistant grounded in a resume and target role, with behavioral, coding, and screenshot-based prompts.',
+    pricingSnapshot: 'ClearIntervue uses a credit-based purchase flow; verify the current credit price, usage rules, and expiry terms before purchase.',
+    competitorPlatform: 'Windows desktop interview assistant with resume, role, coding, and screenshot context.',
+    bestForCompetitor: [
+      'Windows users who want a native desktop interview assistant.',
+      'Candidates who want responses grounded in their resume and target role.',
+      'People who want screenshot-based coding or visual prompts.',
+    ],
+    atAGlance: [
+      { label: 'Primary scope', extraBrain: 'Interviews and meetings', competitor: 'Live interviews' },
+      { label: 'Platform', extraBrain: 'macOS', competitor: 'Windows' },
+      { label: 'Transcription', extraBrain: 'Local Parakeet or optional Deepgram', competitor: 'Verify current processing path' },
+      { label: 'Provider control', extraBrain: 'Local and BYO providers', competitor: 'Vendor-managed product access' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You interview on Windows', body: 'ClearIntervue is designed around a Windows desktop workflow.' },
+      { title: 'You want screenshot prompts', body: 'Its public site highlights screenshot capture for coding and visual interview questions.' },
+    ],
+    faq: [
+      { question: 'What is the best ClearIntervue alternative for Mac?', answer: 'ExtraBrain is a strong alternative for Mac users who want local transcription, optional local AI, provider control, and meeting support.' },
+      { question: 'Does ClearIntervue support Mac?', answer: 'Its official site currently presents a Windows download. Verify its current platform support before choosing it.' },
+      { question: 'Is ExtraBrain free?', answer: 'Yes. The core app is free, while optional Pro controls and any external provider use can add cost.' },
+      { question: 'Does ClearIntervue handle coding prompts?', answer: 'Its official site describes coding support and screenshot-based prompts. Test its current workflow against your interview format.' },
+      { question: 'Can either tool make prohibited help acceptable?', answer: 'No. Use live assistance only when the interview, employer, school, and platform rules allow it.' },
+    ],
+    sources: [
+      { label: 'ClearIntervue homepage', href: 'https://www.clearintervue.com/' },
+      { label: 'ClearIntervue pricing', href: 'https://www.clearintervue.com/pricing' },
+      { label: 'ExtraBrain responsible use', href: '/responsible-use/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/hintio',
+    competitorName: 'hintio',
+    checkedAt: 'July 29, 2026',
+    description: 'Compare ExtraBrain as a hintio alternative for Mac with local-first privacy, provider control, interviews, meetings, platforms, and pricing.',
+    lead: 'ExtraBrain is a hintio alternative for Mac users who want a native interview and meeting copilot with local transcription, optional on-device AI, and provider choice.',
+    shortAnswer: 'Choose ExtraBrain for a Mac-native, free-core workflow with local processing choices and screen-aware context. hintio may fit better when you need Windows support or dedicated interview, sales, and meeting profiles.',
+    whySwitch: [
+      { title: 'You want a Mac-native workflow', body: 'ExtraBrain concentrates on a native macOS experience for live context, session review, interviews, and meetings.' },
+      { title: 'You want local options', body: 'Local Parakeet transcription and compatible local Gemma 4 AI can reduce how much session content leaves your Mac.' },
+      { title: 'You want provider choice', body: 'Bring OpenAI, Anthropic, Claude, Codex, and compatible access you control.' },
+      { title: 'You want a free core app', body: 'ExtraBrain includes the main Mac interview and meeting workflow at no charge.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. Pro adds custom profiles and richer history, and provider usage is billed separately by providers you select.' },
+      { title: 'hintio pricing', body: 'hintio currently advertises a free allowance, a monthly Pro plan, and annual pricing. Verify live prices, limits, and renewal terms.' },
+      { title: 'Compare provider modes', body: 'hintio lists cloud, bring-your-own-key, and local modes on Pro. Test the exact models and processing path you plan to use.' },
+    ],
+    related: [
+      { title: 'Compare AI assistants', body: 'Review focused live copilots and broader interview suites.', href: '/compare/' },
+      { title: 'Meeting copilot workflow', body: 'See how ExtraBrain carries live context into work calls.', href: '/use-cases/meeting-copilot/' },
+      { title: 'All alternatives', body: 'Browse the complete alternative index.', href: '/alternatives/' },
+    ],
+    competitorSummary: 'hintio positions itself as a Mac and Windows assistant with separate interview, sales, and meeting profiles plus cloud, bring-your-own-key, and local modes.',
+    pricingSnapshot: 'hintio currently advertises limited free use plus monthly and annual Pro plans; verify live prices, session limits, modes, and renewal terms.',
+    competitorPlatform: 'Mac and Windows assistant for interviews, sales calls, and meetings.',
+    bestForCompetitor: [
+      'People who need both Mac and Windows support.',
+      'Teams that want dedicated interview, sales, and meeting profiles.',
+      'People who want to compare its cloud, bring-your-own-key, and local modes.',
+    ],
+    atAGlance: [
+      { label: 'Product scope', extraBrain: 'Interviews and meetings', competitor: 'Interviews, sales, and meetings' },
+      { label: 'Platform', extraBrain: 'macOS', competitor: 'macOS and Windows' },
+      { label: 'Local options', extraBrain: 'Local transcription and compatible local AI', competitor: 'Local mode listed on Pro' },
+      { label: 'Core access', extraBrain: 'Free', competitor: 'Limited free allowance' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You need Windows support', body: 'hintio publishes both Mac and Windows downloads.' },
+      { title: 'You want sales profiles', body: 'Its public site includes dedicated sales and meeting profiles alongside interview assistance.' },
+    ],
+    faq: [
+      { question: 'What is the best hintio alternative for Mac?', answer: 'ExtraBrain is a strong alternative when you want a native Mac workflow, local transcription, screen-aware context, provider control, and free core access.' },
+      { question: 'Does hintio support meetings?', answer: 'Yes. Its official site describes interview, sales, and meeting profiles.' },
+      { question: 'Is ExtraBrain free?', answer: 'Yes. ExtraBrain has a free core Mac app with optional Pro controls and separate provider costs you choose.' },
+      { question: 'Does hintio have a free plan?', answer: 'Its official site currently lists limited free interview use. Verify current time limits and monthly allowances.' },
+      { question: 'Can either tool make prohibited help acceptable?', answer: 'No. Follow all interview, employer, school, and platform rules and represent your skills honestly.' },
+    ],
+    sources: [
+      { label: 'hintio homepage', href: 'https://www.hintio.tech/' },
+      { label: 'hintio pricing', href: 'https://www.hintio.tech/#pricing' },
+      { label: 'ExtraBrain responsible use', href: '/responsible-use/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/keetai',
+    competitorName: 'KeetAI',
+    checkedAt: 'July 29, 2026',
+    description: 'Compare ExtraBrain as a KeetAI alternative for Mac interviews, local processing, provider control, coding support, meetings, and pricing.',
+    lead: 'ExtraBrain is a KeetAI alternative for Mac users who want local transcription, optional on-device AI, screen-aware context, provider control, and one workflow for interviews and meetings.',
+    shortAnswer: 'Choose ExtraBrain for free-core access, local AI choices, bring-your-own providers, and broader meeting support. KeetAI may fit better when its native Mac interview workflow and non-expiring credit model match your needs.',
+    whySwitch: [
+      { title: 'You need more than interviews', body: 'ExtraBrain covers meetings, lectures, and research calls alongside coding, system design, and behavioral interviews.' },
+      { title: 'You want local-first privacy', body: 'Use local Parakeet transcription and compatible local Gemma 4 AI where your Mac supports them.' },
+      { title: 'You want provider choice', body: 'ExtraBrain works with local AI and provider access you control.' },
+      { title: 'You want post-session continuity', body: 'Review local session history and use the same context workflow for interviews and later work meetings.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free, with optional Pro controls and separate charges only for providers you choose to use.' },
+      { title: 'KeetAI pricing', body: 'KeetAI currently advertises a free trial followed by credit packs that do not expire. Verify live prices, currency, and credit consumption.' },
+      { title: 'Compare credit usage', body: 'Estimate how many interview minutes and screenshots each credit pack covers before comparing its total cost with a free-core app.' },
+    ],
+    related: [
+      { title: 'Compare AI assistants', body: 'Review live copilots by privacy, workflow, and pricing model.', href: '/compare/' },
+      { title: 'System design interviews', body: 'Explore live architecture and tradeoff support on Mac.', href: '/use-cases/system-design-interviews/' },
+      { title: 'All alternatives', body: 'Compare more interview assistants and coding copilots.', href: '/alternatives/' },
+    ],
+    competitorSummary: 'KeetAI positions itself as a native macOS interview copilot with live transcription, answer suggestions, coding and screenshot support, and non-expiring credits.',
+    pricingSnapshot: 'KeetAI currently advertises a short free trial and non-expiring credit packs; verify live prices, currency, credit usage, and refund terms.',
+    competitorPlatform: 'Native macOS interview copilot with coding and screenshot support.',
+    bestForCompetitor: [
+      'Mac users who want a focused interview-only copilot.',
+      'Candidates who prefer non-expiring credit packs to a subscription.',
+      'People who want its coding and screenshot workflow.',
+    ],
+    atAGlance: [
+      { label: 'Primary scope', extraBrain: 'Interviews and meetings', competitor: 'Interviews' },
+      { label: 'Local options', extraBrain: 'Local transcription and compatible local AI', competitor: 'Verify current processing path' },
+      { label: 'Provider control', extraBrain: 'Local and BYO providers', competitor: 'Vendor-managed product access' },
+      { label: 'Core access', extraBrain: 'Free', competitor: 'Short free trial' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You prefer non-expiring credits', body: 'KeetAI says purchased credits do not expire, which may suit intermittent interview schedules.' },
+      { title: 'You want its focused Mac workflow', body: 'It is built specifically around live interview assistance on macOS.' },
+    ],
+    faq: [
+      { question: 'What is the best KeetAI alternative for Mac?', answer: 'ExtraBrain is a strong alternative for free-core access, local-first options, provider control, and meeting support.' },
+      { question: 'Does ExtraBrain support coding interviews?', answer: 'Yes. It combines live transcription, screen-aware context, and AI support with system design and behavioral workflows.' },
+      { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac app is free, with optional Pro controls and any separate provider costs you select.' },
+      { question: 'Do KeetAI credits expire?', answer: 'KeetAI currently says purchased credits do not expire. Verify current credit and refund terms before purchase.' },
+      { question: 'Can either tool make prohibited help acceptable?', answer: 'No. Use assistance only where the interview, assessment, employer, school, and platform rules permit it.' },
+    ],
+    sources: [
+      { label: 'KeetAI homepage', href: 'https://keetai.app/' },
+      { label: 'KeetAI pricing', href: 'https://keetai.app/#pricing' },
+      { label: 'ExtraBrain responsible use', href: '/responsible-use/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/acedly',
+    competitorName: 'Acedly',
+    checkedAt: 'July 29, 2026',
+    description: 'Compare ExtraBrain as an Acedly alternative for Mac and Windows interviews, local-first privacy, provider control, meetings, and pricing.',
+    lead: 'ExtraBrain is an Acedly alternative for Mac users who want local transcription, optional on-device AI, screen-aware context, provider control, and broader meeting support.',
+    shortAnswer: 'Choose ExtraBrain for a free-core local-first Mac workflow, bring-your-own providers, and reusable meeting context. Acedly may fit better when you need native Mac and Windows support or prefer its live transcription, resume, job-description, coding, and screen workflow.',
+    whySwitch: [
+      { title: 'You want broader meeting support', body: 'ExtraBrain uses the same live context and session-review workflow for interviews, work meetings, lectures, and research calls.' },
+      { title: 'You want local-first options', body: 'Local Parakeet transcription and compatible local Gemma 4 AI can keep more of a conversation on your Mac.' },
+      { title: 'You want provider control', body: 'Bring provider access you control and compare its billing, retention, and model choices yourself.' },
+      { title: 'You want a free core Mac app', body: 'ExtraBrain includes the main interview and meeting workflow for free, with optional Pro customization.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. Optional Pro and any external AI or transcription services you choose determine additional cost.' },
+      { title: 'Acedly pricing', body: 'Acedly currently advertises free minutes, Pro access, and a lifetime option. Verify live promotional prices, usage limits, and plan terms.' },
+      { title: 'Compare device coverage', body: 'Acedly supports Mac and Windows, while ExtraBrain focuses on a deeper local-first Mac workflow.' },
+    ],
+    related: [
+      { title: 'Compare AI interview assistants', body: 'Review ExtraBrain against focused live copilots and larger suites.', href: '/compare/' },
+      { title: 'Behavioral interview support', body: 'See how local context can help you organize truthful experience-based stories.', href: '/use-cases/behavioral-interviews/' },
+      { title: 'All alternatives', body: 'Browse every curated alternative guide.', href: '/alternatives/' },
+    ],
+    competitorSummary: 'Acedly positions itself as a native Mac and Windows interview assistant with live transcription, resume and job-description context, coding support, and screen-aware prompts.',
+    pricingSnapshot: 'Acedly currently advertises free minutes plus Pro and lifetime options; verify live promotional pricing, included minutes, limits, and renewal terms.',
+    competitorPlatform: 'Native Mac and Windows live interview assistant with resume, role, coding, and screen context.',
+    bestForCompetitor: [
+      'People who need both Mac and Windows support.',
+      'Candidates who want resume and job-description grounding.',
+      'People who prefer its current Pro or lifetime access model.',
+    ],
+    atAGlance: [
+      { label: 'Product scope', extraBrain: 'Interviews and meetings', competitor: 'Live interviews' },
+      { label: 'Platform', extraBrain: 'macOS', competitor: 'macOS and Windows' },
+      { label: 'Local options', extraBrain: 'Local transcription and compatible local AI', competitor: 'Verify current processing path' },
+      { label: 'Provider control', extraBrain: 'Local and BYO providers', competitor: 'Vendor-managed product access' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You need Windows support', body: 'Acedly publishes native downloads for both Mac and Windows.' },
+      { title: 'You want its lifetime option', body: 'Its current pricing page advertises a lifetime plan alongside free and Pro access.' },
+    ],
+    faq: [
+      { question: 'What is the best Acedly alternative for Mac?', answer: 'ExtraBrain is a strong alternative when you want local-first transcription, optional local AI, provider control, broader meeting support, and free core access.' },
+      { question: 'Does Acedly support Windows?', answer: 'Yes. Its official site currently lists native Mac and Windows downloads.' },
+      { question: 'Does Acedly offer free interview time?', answer: 'Its official site currently advertises a limited free allowance. Verify the current minutes and restrictions before relying on it.' },
+      { question: 'Which product offers local AI options?', answer: 'ExtraBrain supports compatible local Gemma 4 AI and local Parakeet transcription on supported Macs.' },
+      { question: 'Can either tool make prohibited assistance acceptable?', answer: 'No. Follow every interview, employer, school, and platform rule and represent your experience truthfully.' },
+    ],
+    sources: [
+      { label: 'Acedly homepage', href: 'https://acedly.ai/' },
+      { label: 'Acedly pricing', href: 'https://acedly.ai/#pricing' },
+      { label: 'ExtraBrain responsible use', href: '/responsible-use/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/hidini',
+    competitorName: 'Hidini',
+    checkedAt: 'July 29, 2026',
+    description: 'Compare ExtraBrain as a Hidini alternative for Mac with local transcription, provider control, screen context, meeting support, and pricing.',
+    lead: 'ExtraBrain is a Hidini alternative for Mac users comparing two native copilots with live transcription, AI guidance, screen context, and bring-your-own provider options.',
+    shortAnswer: 'Choose ExtraBrain for free-core access, local Parakeet transcription, optional local Gemma 4 AI, and broader meeting workflows. Hidini may fit better when its native Swift design, screen analysis, bring-your-own APIs, and one-time Pro offer match your setup.',
+    whySwitch: [
+      { title: 'You want local processing choices', body: 'ExtraBrain supports local Parakeet transcription and compatible local Gemma 4 AI where installed.' },
+      { title: 'You want a wider provider workflow', body: 'ExtraBrain supports local AI plus OpenAI, Anthropic, Claude, Codex, and compatible endpoints you control.' },
+      { title: 'You want meeting support', body: 'ExtraBrain is also a meeting, lecture, and research-call copilot, not only an interview product.' },
+      { title: 'You want a free core app', body: 'The main ExtraBrain Mac workflow is free, while Pro adds customization and richer session history.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core app is free. Optional Pro and provider usage are separate, so you control which recurring costs you accept.' },
+      { title: 'Hidini pricing', body: 'Hidini currently advertises free credits and a one-time Pro license. Verify the live price, included credits, updates, and license terms.' },
+      { title: 'Account for provider costs', body: 'Both products can use provider access you control, so include API usage and any local model requirements in the comparison.' },
+    ],
+    related: [
+      { title: 'Compare all assistants', body: 'See focused live copilots and broad interview suites side by side.', href: '/compare/' },
+      { title: 'Meeting copilot workflow', body: 'Learn how ExtraBrain carries the same private context into work calls.', href: '/use-cases/meeting-copilot/' },
+      { title: 'All alternatives', body: 'Browse the full alternative index.', href: '/alternatives/' },
+    ],
+    competitorSummary: 'Hidini positions itself as a native Swift macOS interview assistant with live transcription, AI hints, screen analysis, bring-your-own Claude, OpenAI, or Gemini access, and local OpenAI-compatible endpoints.',
+    pricingSnapshot: 'Hidini currently advertises free credits and a one-time Pro license; verify the live price, included credits, update policy, API costs, and license terms.',
+    competitorPlatform: 'Native Swift macOS interview assistant with screen analysis and bring-your-own providers.',
+    bestForCompetitor: [
+      'Mac users who value its native Swift implementation.',
+      'People who want its screen-analysis workflow.',
+      'People who prefer its current one-time Pro license.',
+    ],
+    atAGlance: [
+      { label: 'Product scope', extraBrain: 'Interviews and meetings', competitor: 'Interviews' },
+      { label: 'Local options', extraBrain: 'Local transcription and compatible local AI', competitor: 'Local-compatible endpoint support' },
+      { label: 'Provider control', extraBrain: 'Local and BYO providers', competitor: 'BYO Claude, OpenAI, Gemini' },
+      { label: 'Core access', extraBrain: 'Free core app', competitor: 'Free credits' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You prefer its native Swift design', body: 'Hidini emphasizes a native Swift macOS implementation.' },
+      { title: 'You want a one-time license', body: 'Its current Pro offer is presented as a one-time purchase rather than a subscription.' },
+    ],
+    faq: [
+      { question: 'What is the best Hidini alternative for Mac?', answer: 'ExtraBrain is a strong alternative for local transcription, optional local AI, provider control, broader meeting support, and free core access.' },
+      { question: 'Does Hidini support bring-your-own APIs?', answer: 'Its official site lists Claude, OpenAI, and Gemini API keys plus local OpenAI-compatible endpoints.' },
+      { question: 'Which product supports meetings?', answer: 'ExtraBrain is designed for interviews and general meetings, lectures, and research calls.' },
+      { question: 'Does Hidini offer a one-time license?', answer: 'Its official site currently advertises a one-time Pro purchase. Verify the live price and license terms.' },
+      { question: 'Can either tool make prohibited assistance acceptable?', answer: 'No. Follow every interview, employer, school, meeting, and platform rule.' },
+    ],
+    sources: [
+      { label: 'Hidini homepage', href: 'https://hidini.com/' },
+      { label: 'Hidini pricing', href: 'https://hidini.com/#pricing' },
+      { label: 'ExtraBrain responsible use', href: '/responsible-use/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/sutra-ai',
+    competitorName: 'Sutra AI',
+    checkedAt: 'July 29, 2026',
+    description: 'Compare ExtraBrain as a Sutra AI alternative for interviews and meetings, Indian-language support, local-first privacy, pricing, and provider control.',
+    lead: 'ExtraBrain is a Sutra AI alternative for Mac users comparing interview and meeting copilots, with local transcription, optional on-device AI, screen-aware context, and provider choice.',
+    shortAnswer: 'Choose ExtraBrain for free-core Mac access, local processing choices, and bring-your-own providers. Sutra AI may fit better when you need Mac and Windows support, Indian-language transcription, credit packs without a subscription, or its session-report workflow.',
+    whySwitch: [
+      { title: 'You want local-first options', body: 'ExtraBrain supports local NVIDIA Parakeet transcription and compatible local Gemma 4 AI on supported Macs.' },
+      { title: 'You want provider choice', body: 'Connect provider access you control and decide which model, billing account, and processing path to use.' },
+      { title: 'You want local-first choices', body: 'ExtraBrain supports local Parakeet transcription and compatible local Gemma 4 AI on supported Macs.' },
+      { title: 'You want free core access', body: 'The main ExtraBrain Mac experience is free, with Pro reserved for custom profiles and richer history.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. Optional Pro and external provider usage determine any additional cost.' },
+      { title: 'Sutra AI pricing', body: 'Sutra AI currently advertises one-time credit packs without a subscription. Verify live prices, included credits, expiry, and consumption rules.' },
+      { title: 'Compare language coverage', body: 'If you need an Indian language, test recognition quality for your exact language, accent, microphone, and call platform.' },
+    ],
+    related: [
+      { title: 'Compare all assistants', body: 'Review privacy, pricing, and platform tradeoffs across the category.', href: '/compare/' },
+      { title: 'Meeting assistant workflow', body: 'See how ExtraBrain supports calls outside interview loops.', href: '/use-cases/ai-assistant-for-meetings/' },
+      { title: 'All alternatives', body: 'Browse every curated competitor alternative.', href: '/alternatives/' },
+    ],
+    competitorSummary: 'Sutra AI positions itself as a Mac and Windows copilot for interviews, meetings, and calls with Indian-language transcription, live suggestions, and post-session reports.',
+    pricingSnapshot: 'Sutra AI currently advertises one-time credit packs without a subscription; verify live prices, currency, included credits, expiry, and consumption rules.',
+    competitorPlatform: 'Mac and Windows interview and meeting copilot with Indian-language transcription.',
+    bestForCompetitor: [
+      'People who need Indian-language transcription.',
+      'People who use both Mac and Windows.',
+      'People who prefer prepaid credits without a subscription.',
+    ],
+    atAGlance: [
+      { label: 'Product scope', extraBrain: 'Interviews and meetings', competitor: 'Interviews, meetings, calls' },
+      { label: 'Platform', extraBrain: 'macOS', competitor: 'macOS and Windows' },
+      { label: 'Local options', extraBrain: 'Local transcription and compatible local AI', competitor: 'Verify current processing path' },
+      { label: 'Access model', extraBrain: 'Free core plus optional Pro', competitor: 'Prepaid credit packs' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You need Indian-language transcription', body: 'Sutra AI explicitly highlights transcription for several Indian languages.' },
+      { title: 'You prefer prepaid credits', body: 'Its current pricing model uses one-time credit packs rather than a recurring subscription.' },
+    ],
+    faq: [
+      { question: 'What is the best Sutra AI alternative for Mac?', answer: 'ExtraBrain is a strong alternative for local transcription, optional local AI, provider control, screen-aware context, and free core access.' },
+      { question: 'Does Sutra AI require a subscription?', answer: 'Its official site currently advertises one-time credit packs. Verify current purchase and expiry terms.' },
+      { question: 'Which product supports local AI?', answer: 'ExtraBrain supports compatible local Gemma 4 AI and local Parakeet transcription on supported Macs.' },
+      { question: 'Does Sutra AI work for meetings?', answer: 'Yes. Its official site positions the product for interviews, meetings, and calls.' },
+      { question: 'Can either tool make prohibited assistance acceptable?', answer: 'No. Follow all interview, employer, school, meeting, and platform rules.' },
+    ],
+    sources: [
+      { label: 'Sutra AI homepage', href: 'https://www.sutra-ai.com/' },
+      { label: 'Sutra AI pricing', href: 'https://www.sutra-ai.com/#pricing' },
+      { label: 'ExtraBrain responsible use', href: '/responsible-use/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/the-interview-copilot',
+    competitorName: 'The Interview Copilot',
+    checkedAt: 'July 29, 2026',
+    description: 'Compare ExtraBrain with The Interview Copilot for Mac, local-first privacy, technical rounds, meetings, provider control, and pricing.',
+    lead: 'ExtraBrain is an alternative to The Interview Copilot for Mac users who want local transcription, optional on-device AI, screen-aware context, and one workflow for interviews and meetings.',
+    shortAnswer: 'Choose ExtraBrain for a free core Mac app, local-first options, provider control, and meeting support. The Interview Copilot may fit better when you need its Mac and Windows workflow, automatic answer mode, or screenshot-based coding help.',
+    whySwitch: [
+      { title: 'You need technical context', body: 'ExtraBrain combines live transcription with screen-aware context for coding and system design rounds where assistance is allowed.' },
+      { title: 'You want local-first processing', body: 'Local Parakeet transcription and compatible local Gemma 4 AI give supported Macs an on-device path.' },
+      { title: 'You want provider control', body: 'Choose local AI or connect OpenAI, Anthropic, Claude, Codex, and compatible provider access you control.' },
+      { title: 'You need meeting support', body: 'ExtraBrain also supports meetings, lectures, and research calls with local session history.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. Optional Pro and external providers you select determine any additional cost.' },
+      { title: 'The Interview Copilot pricing', body: 'The site currently advertises limited free Groq use and paid Claude activation. Verify live prices, time limits, screenshots, and renewal terms.' },
+      { title: 'Compare device coverage', body: 'The Interview Copilot lists Mac and Windows downloads, while ExtraBrain focuses on a deeper local-first Mac workflow.' },
+    ],
+    related: [
+      { title: 'Compare all assistants', body: 'Review Mac, privacy, pricing, and provider-control tradeoffs.', href: '/compare/' },
+      { title: 'Technical interview assistant', body: 'Explore ExtraBrain for coding and system design workflows.', href: '/technical-interview-ai-assistant/' },
+      { title: 'All alternatives', body: 'Browse the complete interview assistant alternative index.', href: '/alternatives/' },
+    ],
+    competitorSummary: 'The Interview Copilot positions itself as a Mac and Windows interview assistant with automatic answers, coding screenshots, limited free Groq use, and paid Claude activation.',
+    pricingSnapshot: 'The Interview Copilot currently advertises limited free Groq use and a monthly Claude activation; verify live prices, time, screenshot limits, and renewal terms.',
+    competitorPlatform: 'Mac and Windows interview assistant with automatic answers and coding screenshots.',
+    bestForCompetitor: [
+      'People who need both Mac and Windows support.',
+      'Candidates who want its automatic answer mode.',
+      'People who want screenshot-based coding prompts.',
+    ],
+    atAGlance: [
+      { label: 'Product scope', extraBrain: 'Interviews and meetings', competitor: 'Interviews' },
+      { label: 'Platform', extraBrain: 'macOS', competitor: 'macOS and Windows' },
+      { label: 'Local options', extraBrain: 'Local transcription and compatible local AI', competitor: 'Verify current processing path' },
+      { label: 'Provider control', extraBrain: 'Local and BYO providers', competitor: 'Vendor-managed product access' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You need Windows support', body: 'The Interview Copilot publishes Mac and Windows downloads.' },
+      { title: 'You want automatic answers', body: 'Its public site emphasizes an automatic answer mode alongside manual prompting.' },
+    ],
+    faq: [
+      { question: 'What is an alternative to The Interview Copilot for Mac?', answer: 'ExtraBrain is a strong alternative for local-first privacy, provider control, technical rounds, meeting support, and free core access.' },
+      { question: 'Does ExtraBrain support technical interviews?', answer: 'Yes. ExtraBrain supports coding and system design workflows with transcription and screen-aware context where the rules allow assistance.' },
+      { question: 'Is ExtraBrain free?', answer: 'Yes. The core Mac app is free, with optional Pro controls and separate provider costs you choose.' },
+      { question: 'Does The Interview Copilot support Windows?', answer: 'Its official site currently lists Mac and Windows downloads.' },
+      { question: 'Can either tool make prohibited help acceptable?', answer: 'No. Follow all interview, assessment, employer, school, and platform rules.' },
+    ],
+    sources: [
+      { label: 'The Interview Copilot homepage', href: 'https://theinterviewcopilot.com/' },
+      { label: 'The Interview Copilot pricing', href: 'https://theinterviewcopilot.com/#pricing' },
+      { label: 'ExtraBrain responsible use', href: '/responsible-use/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/hcalls',
+    competitorName: 'hcalls',
+    checkedAt: 'July 29, 2026',
+    description: 'Compare ExtraBrain as an hcalls alternative for Mac with local-first privacy, provider control, meeting support, pricing, and free core access.',
+    lead: 'ExtraBrain is an hcalls alternative for Mac users who want a local-first interview and meeting copilot with local transcription, optional on-device AI, and provider choice.',
+    shortAnswer: 'Choose ExtraBrain for a Mac-native, free-core workflow that also supports meetings and local AI. hcalls may fit better when you want its web, phone, browser-extension, and desktop modes with one-time fuel credits.',
+    whySwitch: [
+      { title: 'You want a Mac-focused desktop workflow', body: 'ExtraBrain is built for macOS live context, session history, and screen-aware interview or meeting support.' },
+      { title: 'You want local transcription and AI', body: 'Use local Parakeet transcription and compatible local Gemma 4 AI where installed on your Mac.' },
+      { title: 'You want provider choice', body: 'Connect your own providers and choose how model billing and access are managed.' },
+      { title: 'You need a meeting copilot too', body: 'ExtraBrain applies the same context and review workflow to work meetings, lectures, and research calls.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. Pro is optional, and any external AI or transcription costs depend on providers you choose.' },
+      { title: 'hcalls pricing', body: 'hcalls currently publishes a free trial and one-time Starter and Pro fuel-credit passes. Verify live prices, credit consumption, expiry, and platform limits.' },
+      { title: 'Credits and providers differ', body: 'A credit pack offers predictable units, while ExtraBrain BYO providers let you manage model access and billing directly.' },
+    ],
+    related: [
+      { title: 'Compare all assistants', body: 'Review current live copilot workflows and privacy models.', href: '/compare/' },
+      { title: 'Meeting copilot for Mac', body: 'See how ExtraBrain handles interviews and ordinary work calls.', href: '/use-cases/meeting-copilot/' },
+      { title: 'All alternatives', body: 'Browse established and emerging competitor alternatives.', href: '/alternatives/' },
+    ],
+    competitorSummary: 'hcalls is positioned as a real-time interview communication copilot with web, phone, browser-extension, and desktop modes, resume and job-description context, and one-time fuel-credit passes.',
+    pricingSnapshot: 'hcalls currently lists a free trial plus one-time Starter and Pro credit passes; verify live prices, credit usage, expiry, and platform limits.',
+    competitorPlatform: 'Credit-based live interview copilot across web, phone, extension, and desktop modes.',
+    bestForCompetitor: [
+      'People who want a one-time credit-pack purchase instead of a recurring subscription.',
+      'Candidates who want web, secondary-device, extension, and desktop modes.',
+      'People whose interview setup matches its supported platforms and desktop overlay.',
+    ],
+    atAGlance: [
+      { label: 'Product scope', extraBrain: 'Interviews and meetings', competitor: 'Live interviews' },
+      { label: 'Access model', extraBrain: 'Free core plus optional Pro', competitor: 'Free trial plus credit passes' },
+      { label: 'Provider control', extraBrain: 'Local and BYO providers', competitor: 'Credit plan with custom-key support listed for Pro' },
+      { label: 'Primary platform', extraBrain: 'Mac desktop', competitor: 'Web, phone, extension, desktop' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You prefer one-time credits', body: 'hcalls currently sells fuel-credit passes that its pricing page says do not expire.' },
+      { title: 'You want multiple delivery modes', body: 'Its official site describes web, phone, extension, and desktop ways to receive guidance.' },
+    ],
+    faq: [
+      { question: 'What is the best hcalls alternative for Mac?', answer: 'ExtraBrain is a strong alternative when you want a free-core Mac app, local transcription and AI options, meeting support, and provider control.' },
+      { question: 'Does hcalls have a free trial?', answer: 'Its current pricing page lists a free trial with fuel credits and a per-call time cap. Verify the live limits before relying on it.' },
+      { question: 'Which product works for meetings?', answer: 'ExtraBrain is explicitly built for interviews, meetings, lectures, and research calls.' },
+      { question: 'Which product offers local AI?', answer: 'ExtraBrain supports compatible local Gemma 4 AI and local Parakeet transcription on supported Macs.' },
+      { question: 'Can either tool make prohibited help acceptable?', answer: 'No. Follow every interview, employer, school, meeting, and platform rule.' },
+    ],
+    sources: [
+      { label: 'hcalls homepage', href: 'https://hcalls.com/' },
+      { label: 'hcalls pricing', href: 'https://hcalls.com/pricing' },
+      { label: 'ExtraBrain responsible use', href: '/responsible-use/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/interviewcopilot',
+    competitorName: 'InterviewCopilot',
+    checkedAt: 'July 29, 2026',
+    description: 'Compare ExtraBrain as an InterviewCopilot alternative for Mac with local AI, provider control, meeting support, pricing, and free core access.',
+    lead: 'ExtraBrain is an InterviewCopilot alternative for Mac users who want local transcription, optional on-device AI, provider choice, and a reusable meeting workflow.',
+    shortAnswer: 'Choose ExtraBrain for free core access, local-first options, BYO providers, and meetings. InterviewCopilot may fit better when you want its fixed-price Mac and Windows desktop plan with resume-grounded answers and screenshot analysis.',
+    whySwitch: [
+      { title: 'You want a free core app', body: 'ExtraBrain includes its main Mac interview and meeting workflow at no charge.' },
+      { title: 'You want local-first options', body: 'Local Parakeet transcription and compatible local Gemma 4 AI can keep more processing on your device.' },
+      { title: 'You want provider control', body: 'Bring your own OpenAI, Anthropic, Claude, Codex, or compatible endpoint instead of using only bundled model access.' },
+      { title: 'You need more than interviews', body: 'ExtraBrain also supports meetings, lectures, research calls, and local session review.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. Pro and external providers are optional, so you decide which recurring costs to add.' },
+      { title: 'InterviewCopilot pricing', body: 'InterviewCopilot currently publishes one monthly plan and a discounted yearly price with no credit or session caps. Verify current checkout terms.' },
+      { title: 'Compare bundled use with BYO billing', body: 'Unlimited bundled use is simple, while BYO providers give you more choice over models, accounts, and data paths.' },
+    ],
+    related: [
+      { title: 'Compare all assistants', body: 'Review live desktop copilots, suites, and privacy tradeoffs.', href: '/compare/' },
+      { title: 'AI interview copilot', body: 'See the broader ExtraBrain live-assistance workflow.', href: '/ai-interview-copilot/' },
+      { title: 'All alternatives', body: 'Browse every curated alternative page.', href: '/alternatives/' },
+    ],
+    competitorSummary: 'InterviewCopilot is positioned as a native Mac and Windows desktop interview assistant with resume-aware live answers, transcription, screenshot analysis, and a no-credit-cap subscription.',
+    pricingSnapshot: 'InterviewCopilot currently lists monthly and discounted yearly pricing with no credit or session caps; verify live checkout and renewal terms.',
+    competitorPlatform: 'Native Mac and Windows live interview copilot with screenshot analysis.',
+    bestForCompetitor: [
+      'People who want one bundled plan without credit or session meters.',
+      'Candidates who need both Mac and Windows support.',
+      'People who value its resume grounding and screenshot-analysis workflow.',
+    ],
+    atAGlance: [
+      { label: 'Product scope', extraBrain: 'Interviews and meetings', competitor: 'Live interviews' },
+      { label: 'Access model', extraBrain: 'Free core plus optional Pro', competitor: 'Monthly or yearly subscription' },
+      { label: 'Provider control', extraBrain: 'Local and BYO providers', competitor: 'Vendor-managed included access' },
+      { label: 'Desktop platforms', extraBrain: 'macOS', competitor: 'macOS and Windows' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You need Windows support', body: 'InterviewCopilot documents native desktop apps for both macOS and Windows.' },
+      { title: 'You prefer bundled unlimited use', body: 'Its current plan advertises no credit meters, session caps, or per-minute billing.' },
+    ],
+    faq: [
+      { question: 'What is the best InterviewCopilot alternative for Mac?', answer: 'ExtraBrain is a strong alternative for free core access, local-first options, provider control, and meeting support.' },
+      { question: 'How much does InterviewCopilot cost?', answer: 'Its official site currently lists monthly and yearly subscription prices. Verify the live checkout total and renewal terms before buying.' },
+      { question: 'Which product offers local AI?', answer: 'ExtraBrain supports compatible local Gemma 4 AI and local Parakeet transcription on supported Macs.' },
+      { question: 'Which product works for meetings?', answer: 'ExtraBrain is explicitly designed for interviews and general meetings, lectures, and research calls.' },
+      { question: 'Can either tool make prohibited help acceptable?', answer: 'No. Follow the interview, employer, school, meeting, and platform rules.' },
+    ],
+    sources: [
+      { label: 'InterviewCopilot homepage', href: 'https://interviewcopilot.ai/' },
+      { label: 'InterviewCopilot pricing', href: 'https://interviewcopilot.ai/pricing' },
+      { label: 'ExtraBrain responsible use', href: '/responsible-use/' },
+    ],
+  }),
+  alternativePage({
+    slug: 'alternatives/mirly',
+    competitorName: 'Mirly',
+    checkedAt: 'July 29, 2026',
+    description: 'Compare ExtraBrain as a Mirly alternative for Mac with local AI, provider control, meeting support, pricing, privacy, and free core access.',
+    lead: 'ExtraBrain is a Mirly alternative for people who want a free-core local-first Mac interview and meeting copilot with provider choice and post-session continuity.',
+    shortAnswer: 'Choose ExtraBrain for local transcription and AI options, BYO providers, free core access, and meeting support. Mirly may fit better when its Mac and Windows apps, speed-focused workflow, and resume-and-STAR personalization match your needs.',
+    whySwitch: [
+      { title: 'You want free core access', body: 'ExtraBrain includes its primary Mac interview and meeting workflow for free.' },
+      { title: 'You want provider choice', body: 'Use local AI or connect providers you control instead of relying only on a bundled model stack.' },
+      { title: 'You want local transcription', body: 'ExtraBrain supports local NVIDIA Parakeet transcription, with optional Deepgram when you choose hosted transcription.' },
+      { title: 'You need a meeting copilot', body: 'ExtraBrain continues beyond interview loops into meetings, lectures, and research calls.' },
+    ],
+    pricingNotes: [
+      { title: 'ExtraBrain pricing', body: 'The core Mac app is free. Optional Pro and provider usage determine any additional cost.' },
+      { title: 'Mirly pricing', body: 'Mirly currently advertises a short free trial, a single credit, and monthly access with opt-in renewal. Verify live GBP prices and terms.' },
+      { title: 'Compare speed claims carefully', body: 'Test latency on your own Mac, audio setup, network, and model path rather than treating any published speed as universal.' },
+    ],
+    related: [
+      { title: 'Compare all assistants', body: 'Review current interview copilot products and tradeoffs.', href: '/compare/' },
+      { title: 'Local transcription', body: 'Learn how ExtraBrain can transcribe directly on your Mac.', href: '/features/local-transcription/' },
+      { title: 'All alternatives', body: 'Browse the full alternatives hub.', href: '/alternatives/' },
+    ],
+    competitorSummary: 'Mirly is positioned as a Mac and Windows real-time interview copilot focused on low latency and answers personalized from a resume, STAR stories, and prior experience.',
+    pricingSnapshot: 'Mirly currently advertises a short free trial, a single-credit option, and monthly GBP pricing with opt-in renewal; verify live prices and terms.',
+    competitorPlatform: 'Mac and Windows real-time interview copilot focused on speed and personal voice.',
+    bestForCompetitor: [
+      'People who need both Mac and Windows support.',
+      'Candidates who value its resume and STAR-story personalization.',
+      'People who prefer its current single-credit or monthly purchase options.',
+    ],
+    atAGlance: [
+      { label: 'Product scope', extraBrain: 'Interviews and meetings', competitor: 'Live interviews' },
+      { label: 'Access model', extraBrain: 'Free core plus optional Pro', competitor: 'Trial, credit, or monthly access' },
+      { label: 'Provider control', extraBrain: 'Local and BYO providers', competitor: 'Bundled model stack' },
+      { label: 'Desktop platforms', extraBrain: 'macOS', competitor: 'macOS and Windows' },
+    ],
+    chooseCompetitorWhen: [
+      { title: 'You need a Windows app', body: 'Mirly documents support for both macOS and Windows.' },
+      { title: 'You want its personalization model', body: 'Its public site emphasizes answers built from a resume, STAR stories, and personal metrics.' },
+    ],
+    faq: [
+      { question: 'What is the best Mirly alternative for Mac?', answer: 'ExtraBrain is a strong alternative for free core access, local transcription and AI options, provider control, and meeting support.' },
+      { question: 'Does Mirly offer a free trial?', answer: 'Its official site currently advertises a short no-card trial. Verify the live duration and access limits before relying on it.' },
+      { question: 'Which product offers provider control?', answer: 'ExtraBrain supports local AI and bring-your-own provider accounts for more control over models, billing, and processing paths.' },
+      { question: 'Which product works for meetings?', answer: 'ExtraBrain is designed for interviews, meetings, lectures, and research calls.' },
+      { question: 'Can either tool make prohibited help acceptable?', answer: 'No. Follow every interview, employer, school, meeting, and platform rule.' },
+    ],
+    sources: [
+      { label: 'Mirly homepage', href: 'https://www.mirly.co.uk/' },
+      { label: 'How Mirly works', href: 'https://www.mirly.co.uk/how-it-works' },
+      { label: 'ExtraBrain responsible use', href: '/responsible-use/' },
     ],
   }),
 ];

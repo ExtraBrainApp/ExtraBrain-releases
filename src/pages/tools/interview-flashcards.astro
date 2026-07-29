@@ -18,6 +18,7 @@ const cards = [
   { q: 'Tell me about a time you influenced without authority.', a: 'Use STAR. Show how you built alignment through data, relationships, and clear communication to move a decision forward.' },
   { q: 'Do you have any questions for us?', a: 'Always yes. Ask about team challenges, success in the role, how decisions are made, or what growth looks like. Prepare three in advance.' },
 ];
+const cardsJson = JSON.stringify(cards).replace(/</g, '\\u003c');
 ---
 
 <ToolLayout
@@ -70,8 +71,11 @@ const cards = [
   .flashcard-hint { position: absolute; bottom: 14px; right: 18px; font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); }
 </style>
 
-<script is:inline define:vars={{ cards }}>
+<script is:inline id="flashcard-data" type="application/json" set:html={cardsJson}></script>
+<script is:inline>
   (function () {
+    var data = document.getElementById('flashcard-data');
+    var cards = data ? JSON.parse(data.textContent || '[]') : [];
     var card = document.getElementById('card');
     var qEl = document.getElementById('card-q');
     var aEl = document.getElementById('card-a');
