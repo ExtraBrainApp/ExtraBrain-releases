@@ -427,7 +427,7 @@ export type MarketingPage = {
   comparison?: unknown;
 };
 
-const defaultCta = { label: 'Download Free', href: '/download/' };
+const defaultCta = { label: 'Download Free', href: '/download/#install' };
 
 const baseMarketingPages: MarketingPage[] = [
   {
@@ -438,7 +438,7 @@ const baseMarketingPages: MarketingPage[] = [
     eyebrow: "Download ExtraBrain",
     h1: "Download the free ExtraBrain app for Mac.",
     lead: "Use this first-party download page as the canonical place for the feature-complete ExtraBrain Mac release, platform requirements, installation steps, release integrity notes, and troubleshooting before a live interview or meeting. The Mac App Store version is also available if you prefer App Store installation. If you searched for Extra Brain or ExtraBrains, this is the official ExtraBrain download page.",
-    primaryCta: { label: "Download Free Mac App", href: latestReleaseUrl },
+    primaryCta: { label: "Choose an installation method", href: "/download/#install" },
     secondaryCta: {
       label: "Read installation guide",
       href: "/help/installation/",
@@ -695,7 +695,7 @@ const baseMarketingPages: MarketingPage[] = [
     h1: "ExtraBrain vs ExtraBrain Pro.",
     lead: "ExtraBrain Free gives you the core Mac live assistant, local-first workflow, built-in domains, and bring-your-own provider setup. ExtraBrain Pro adds advanced controls for people who reuse profiles, session context, summaries, and premium settings across repeated interviews, meetings, and research calls.",
     ogImage: "/assets/og/free-vs-pro.svg",
-    primaryCta: { label: "Download Free", href: "/download/" },
+    primaryCta: { label: "Download Free", href: "/download/#install" },
     secondaryCta: {
       label: "Open Settings -> License",
       href: "/help/billing-pro/activate-license/",
@@ -715,7 +715,7 @@ const baseMarketingPages: MarketingPage[] = [
                 "Best for trying the core Mac live assistant with built-in profiles and your own provider setup.",
               cta: {
                 label: "Download Free",
-                href: "/download/",
+                href: "/download/#install",
                 variant: "secondary",
               },
             },

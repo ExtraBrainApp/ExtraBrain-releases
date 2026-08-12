@@ -24,7 +24,7 @@ const pageTitle = 'ExtraBrain - Local-First AI Interview & Meeting Copilot';
 const pageDescription =
   'Free Mac AI interview assistant and meeting copilot with live transcription, local-first privacy, on-device AI powered by Gemma, and BYO providers.';
 
-const downloadHref = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases/latest';
+const downloadHref = '/download/#install';
 const feedbackHref = `mailto:${contactEmail}?subject=ExtraBrain%20feedback`;
 
 const homepageFeatureList = [
@@ -226,7 +226,7 @@ const pathCards = [
     eyebrow: 'Installation and setup',
     title: 'Get from download to first live session',
     body: 'Install the app, connect your keys, and verify the workflow before a high-stakes call.',
-    href: '/download/',
+    href: '/download/#install',
     cta: 'Open download page',
   },
   {
@@ -278,7 +278,7 @@ const compatibilityPlatforms = [
             and <strong class="hero-lead-accent">privacy controls</strong>. Available for Mac today, with Windows and Linux planned.
           </p>
           <div class="hero-ctas">
-            <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-hero">
+            <a class="btn primary" href={downloadHref} data-track="download_install_choice_clicked" data-attr="download-cta-hero">
               Download Free
             </a>
             <a class="btn ghost" href="#overview">
@@ -541,7 +541,7 @@ const compatibilityPlatforms = [
               <ul class="price-list">
                 {card.features.map((feature) => <li>{feature}</li>)}
               </ul>
-              <a class:list={['btn', card.featured ? 'primary' : 'ghost dark']} href={card.href} data-download={card.href === downloadHref ? '' : undefined} data-attr={card.href === downloadHref ? 'download-cta-pricing-card' : undefined}>{card.cta}</a>
+              <a class:list={['btn', card.featured ? 'primary' : 'ghost dark']} href={card.href} data-track={card.href === downloadHref ? 'download_install_choice_clicked' : undefined} data-attr={card.href === downloadHref ? 'download-cta-pricing-card' : undefined}>{card.cta}</a>
             </article>
           ))}
         </div>
@@ -664,7 +664,7 @@ const compatibilityPlatforms = [
           </p>
         </div>
         <div class="cta-actions">
-          <a class="btn primary" href={downloadHref} data-download data-attr="download-cta-final">
+          <a class="btn primary" href={downloadHref} data-track="download_install_choice_clicked" data-attr="download-cta-final">
             Download Free Mac App
           </a>
           <a class="btn ghost" href="/help/">Open help center</a>
@@ -719,35 +719,6 @@ const compatibilityPlatforms = [
         }
       }
 
-      document.querySelectorAll('[data-download]').forEach(function (el) {
-        el.addEventListener('click', function () {
-          trackEvent('download_cta_clicked', {
-            target: el.getAttribute('href')
-          });
-        });
-      });
-
-      function resolveLatestDownload() {
-        fetch('https://api.github.com/repos/ExtraBrainApp/ExtraBrain-releases/releases/latest')
-          .then(function (res) {
-            if (!res.ok) throw new Error('GitHub API error: ' + res.status);
-            return res.json();
-          })
-          .then(function (release) {
-            var asset = (release.assets || []).find(function (item) {
-              return /\.dmg$/i.test(item.name || '') && item.browser_download_url;
-            });
-            if (!asset) return;
-
-            document.querySelectorAll('[data-download]').forEach(function (el) {
-              el.setAttribute('href', asset.browser_download_url);
-            });
-          })
-          .catch(function () {
-            // Keep the GitHub latest-release fallback href.
-          });
-      }
-
       document.querySelectorAll('[data-track]').forEach(function (el) {
         el.addEventListener('click', function () {
           trackEvent(el.getAttribute('data-track'), {
@@ -756,11 +727,6 @@ const compatibilityPlatforms = [
         });
       });
 
-      if (document.readyState === 'complete') {
-        resolveLatestDownload();
-      } else {
-        window.addEventListener('load', resolveLatestDownload, { once: true });
-      }
     })();
   </script>
 </MarketingLayout>

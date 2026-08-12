@@ -8,6 +8,7 @@ import {
   contactEmail,
   faqSchema,
   githubUrl,
+  latestReleaseUrl,
   macAppStoreUrl,
   homepageFaq,
   offerCatalogSchema,
@@ -96,7 +97,7 @@ const pricingTierMeta: Record<string, { tagline: string; icon: string; href: str
   Free: {
     tagline: 'Best for trying ExtraBrain end-to-end',
     icon: '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 3 7v6c0 5 3.5 8.5 9 10 5.5-1.5 9-5 9-10V7l-9-4Z"/></svg>',
-    href: '/download/',
+    href: '/download/#install',
     cta: 'Download Free',
   },
   Pro: {
@@ -258,7 +259,7 @@ const breadcrumbItems = [
           {page.slug === 'pricing' || page.slug === 'pricing/free-vs-pro' ? <h1 set:html={colorizePricingH1(page.h1, page.slug)} /> : <h1>{page.h1}</h1>}
           <p class="lead">{page.lead}</p>
           <div class="hero-ctas">
-            {page.primaryCta && <a class="btn primary" href={page.primaryCta.href} data-track="page_primary_cta_clicked" data-attr={page.primaryCta.href === '/download/' || page.primaryCta.href === githubUrl ? 'download-cta-hero' : undefined}>{page.primaryCta.label}</a>}
+            {page.primaryCta && <a class="btn primary" href={page.primaryCta.href} data-track="page_primary_cta_clicked" data-attr={page.primaryCta.href === '/download/#install' || page.primaryCta.href === githubUrl ? 'download-cta-hero' : undefined}>{page.primaryCta.label}</a>}
             {page.secondaryCta && <a class="btn ghost" href={page.secondaryCta.href} data-track="page_secondary_cta_clicked">{page.secondaryCta.label}</a>}
           </div>
         </div>
@@ -384,7 +385,7 @@ const breadcrumbItems = [
               Direct download includes the full ExtraBrain feature set. Choose the Mac App Store if you prefer App Store installation.
             </p>
             <div class="install-choice-actions">
-              <a class="btn primary" href={page.primaryCta?.href ?? githubUrl} data-track="download_direct_clicked" data-attr="download-cta-install-choice">Download Full Mac App</a>
+              <a class="btn primary" href={latestReleaseUrl} data-track="download_direct_clicked" data-attr="download-cta-install-choice">Download Full Mac App</a>
               <a class="store-badge-link" href={macAppStoreUrl} target="_blank" rel="noopener noreferrer" data-track="mac_app_store_download_page_clicked">
                 <img src="/assets/badges/download-on-the-mac-app-store.svg" alt="Download on the Mac App Store" width="156" height="40" />
                 <span class="sr-only"> (opens in a new tab)</span>
@@ -420,7 +421,7 @@ const breadcrumbItems = [
                   const meta = pricingTierMeta[tier.name];
                   const tierExtras = tier as PricingTierExtras;
                   const billingOptions = tierExtras.billingOptions;
-                  const ctaHref = tierExtras.primaryCta?.href ?? meta?.href ?? '/download/';
+                  const ctaHref = tierExtras.primaryCta?.href ?? meta?.href ?? '/download/#install';
                   const ctaLabel = tierExtras.primaryCta?.label ?? meta?.cta ?? 'Learn more';
                   return (
                     <article class:list={['price-card', meta?.featured && 'featured']}>
@@ -450,7 +451,7 @@ const breadcrumbItems = [
                       <ul class="price-list">
                         {tier.features.map((feature) => <li>{feature}</li>)}
                       </ul>
-                      <a class:list={['btn', meta?.featured ? 'primary' : 'ghost dark']} href={ctaHref} data-attr={ctaHref === '/download/' ? 'download-cta-pricing-card' : undefined}>{ctaLabel}</a>
+                      <a class:list={['btn', meta?.featured ? 'primary' : 'ghost dark']} href={ctaHref} data-attr={ctaHref === '/download/#install' ? 'download-cta-pricing-card' : undefined}>{ctaLabel}</a>
                     </article>
                   );
                 })}
@@ -494,7 +495,7 @@ const breadcrumbItems = [
                         <p class="free-pro-plan-price">{plan.price}</p>
                         <p class="free-pro-plan-summary">{plan.summary}</p>
                       </div>
-                      <a class:list={['btn', plan.cta.variant === 'primary' ? 'primary' : 'ghost dark']} href={plan.cta.href} data-attr={plan.cta.href === '/download/' ? 'download-cta-free-vs-pro-card' : undefined}>{plan.cta.label}</a>
+                      <a class:list={['btn', plan.cta.variant === 'primary' ? 'primary' : 'ghost dark']} href={plan.cta.href} data-attr={plan.cta.href === '/download/#install' ? 'download-cta-free-vs-pro-card' : undefined}>{plan.cta.label}</a>
                     </article>
                   ))}
                 </div>
