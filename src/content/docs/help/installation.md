@@ -23,7 +23,14 @@ ExtraBrain installation is the macOS setup path that gets the desktop app, live 
 - A reliable first setup has 5 checks: app launch, microphone permission, Screen Recording permission, transcription choice, and provider validation.
 - Local Parakeet transcription does not require a Deepgram API key; optional Deepgram uses your Deepgram account.
 
-## Install From GitHub Releases
+## Choose an Installation Method
+
+ExtraBrain is available in two places:
+
+- [Direct download](/download/) is the recommended, feature-complete macOS build.
+- [Mac App Store](https://apps.apple.com/us/app/extrabrain-app/id6795829980?mt=12) is available if you prefer App Store installation.
+
+For direct download:
 
 1. Open the [ExtraBrain download page](/download/).
 2. Download the current macOS build.
@@ -55,7 +62,7 @@ Do not wait until five minutes before an interview to install the app for the fi
 
 ### Where should I download ExtraBrain?
 
-Use the official [ExtraBrain download page](/download/). It points to the current macOS release and avoids stale third-party builds.
+Use the official [ExtraBrain download page](/download/). It recommends the feature-complete direct macOS build and also links to the Mac App Store version.
 
 ### What should I test after installing ExtraBrain?
 
