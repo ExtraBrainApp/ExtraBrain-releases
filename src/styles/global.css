@@ -786,7 +786,6 @@ cite {
 
 .page-fact-panel,
 .page-card,
-.release-panel,
 .page-info-card {
   background: var(--warm-bone-elevated);
   border: 1px solid var(--line-dark);
@@ -816,9 +815,7 @@ cite {
   list-style: none;
 }
 
-.page-fact-panel li,
-.release-panel dd,
-.release-panel dt {
+.page-fact-panel li {
   color: var(--ink-secondary);
   font-size: 15px;
 }
@@ -844,40 +841,21 @@ cite {
 }
 
 .page-card {
+  max-width: 840px;
   border-radius: 30px;
   padding: clamp(24px, 4vw, 42px);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
-  gap: clamp(24px, 4vw, 48px);
-  align-items: start;
 }
 
-.release-panel {
-  border-radius: 22px;
-  padding: 24px;
-  box-shadow: none;
+.install-choice-content {
+  max-width: 680px;
 }
 
-.release-panel dl {
-  display: grid;
-  gap: 12px;
-  margin: 0 0 24px;
-}
-
-.release-panel dl div {
-  display: grid;
-  grid-template-columns: 96px minmax(0, 1fr);
-  gap: 12px;
-  align-items: start;
-}
-
-.release-panel dt {
-  font-weight: 800;
-}
-
-.release-panel dd {
-  margin: 0;
-  overflow-wrap: anywhere;
+.install-choice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
 }
 
 .page-content-section {
@@ -2067,7 +2045,6 @@ footer p {
 
   .page-card,
   .page-fact-panel,
-  .release-panel,
   .page-info-card {
     border-radius: 22px;
   }
@@ -2076,9 +2053,17 @@ footer p {
     padding: 24px;
   }
 
-  .release-panel dl div {
-    grid-template-columns: 1fr;
-    gap: 2px;
+  .install-choice-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .install-choice-actions .btn {
+    width: 100%;
+  }
+
+  .install-choice-actions .store-badge-link {
+    align-self: flex-start;
   }
 
   .page-comparison-table {
@@ -2345,7 +2330,6 @@ body::before {
 .store-badge-link {
   display: inline-flex;
   width: max-content;
-  margin-top: 12px;
   border-radius: 5px;
 }
 
