@@ -4,6 +4,7 @@ import { comparisonMarketingPages } from './comparisons';
 export const siteUrl = 'https://extrabrain.app';
 export const githubUrl = 'https://github.com/ExtraBrainApp/ExtraBrain-releases/releases';
 export const latestReleaseUrl = `${githubUrl}/latest`;
+export const macAppStoreUrl = 'https://apps.apple.com/us/app/extrabrain-app/id6795829980?mt=12';
 export const productName = 'ExtraBrain';
 export const brandAliases = ['Extra Brain'];
 export const productCategory = 'Free, local-first desktop AI interview and meeting copilot';
@@ -436,7 +437,7 @@ const baseMarketingPages: MarketingPage[] = [
       "Download ExtraBrain for Mac, check compatibility, install the latest app, and set up your local-first AI assistant safely.",
     eyebrow: "Download ExtraBrain",
     h1: "Download the free ExtraBrain app for Mac.",
-    lead: "Use this first-party download page as the canonical place for the latest ExtraBrain Mac release, platform requirements, installation steps, release integrity notes, and troubleshooting before a live interview or meeting. If you searched for Extra Brain or ExtraBrains, this is the official ExtraBrain download page.",
+    lead: "Use this first-party download page as the canonical place for the feature-complete ExtraBrain Mac release, platform requirements, installation steps, release integrity notes, and troubleshooting before a live interview or meeting. The Mac App Store version is also available if you prefer App Store installation. If you searched for Extra Brain or ExtraBrains, this is the official ExtraBrain download page.",
     primaryCta: { label: "Download Free Mac App", href: latestReleaseUrl },
     secondaryCta: {
       label: "Read installation guide",
@@ -469,8 +470,8 @@ const baseMarketingPages: MarketingPage[] = [
         title: "Install steps",
         items: [
           {
-            title: "Download",
-            body: "Open the latest GitHub release and download the current macOS build.",
+            title: "Choose an install path",
+            body: "Download the feature-complete macOS build directly from the latest GitHub release, or choose the Mac App Store if you prefer App Store installation.",
           },
           {
             title: "Install",
@@ -498,6 +499,7 @@ const baseMarketingPages: MarketingPage[] = [
     sources: [
       { label: "Official ExtraBrain download page", href: "/download/" },
       { label: "Latest GitHub release", href: latestReleaseUrl },
+      { label: "ExtraBrain on the Mac App Store", href: macAppStoreUrl },
       { label: "Installation help guide", href: "/help/installation/" },
       { label: "Provider setup guide", href: "/help/setup-api-keys/" },
       {
@@ -509,7 +511,7 @@ const baseMarketingPages: MarketingPage[] = [
       {
         question: "Where is the latest ExtraBrain download?",
         answer:
-          "The canonical download link is /download/, which points to the latest GitHub release for the macOS app.",
+          "The canonical download link is /download/. It recommends the feature-complete direct macOS build and also links to ExtraBrain on the Mac App Store.",
       },
       {
         question: "Does ExtraBrain support Intel Macs?",

@@ -8,6 +8,7 @@ import {
   contactEmail,
   faqSchema,
   githubUrl,
+  macAppStoreUrl,
   homepageFaq,
   offerCatalogSchema,
   organizationSchema,
@@ -377,14 +378,19 @@ const breadcrumbItems = [
       <section class:list={['light-section', 'page-release-section', sectionBandClass(releaseBandIndex)]} aria-labelledby="latest-release-title">
         <div class="container page-card">
           <div>
-            <span class="eyebrow">Latest release</span>
-            <h2 id="latest-release-title">Current macOS build</h2>
+            <span class="eyebrow">Choose your install</span>
+            <h2 id="latest-release-title">Get ExtraBrain for Mac</h2>
             <p class="lead light">
-              This block reads GitHub release metadata in the browser. If that request fails, the download button still points to the latest official release page.
+              Direct download includes the full ExtraBrain feature set. Choose the Mac App Store if you prefer App Store installation.
             </p>
+            <a class="store-badge-link" href={macAppStoreUrl} target="_blank" rel="noopener noreferrer" data-track="mac_app_store_download_page_clicked">
+              <img src="/assets/badges/download-on-the-mac-app-store.svg" alt="Download on the Mac App Store" width="156" height="40" />
+              <span class="sr-only"> (opens in a new tab)</span>
+            </a>
+            <p class="apple-trademark-credit">Apple, the Apple logo, and Mac App Store are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
           </div>
           <div class="release-panel" data-release-panel>
-            <p class="panel-label">Release metadata</p>
+            <p class="panel-label">Recommended: direct download</p>
             <dl>
               <div><dt>Version</dt><dd data-release-version>Loading latest release...</dd></div>
               <div><dt>Published</dt><dd data-release-date>Loading</dd></div>
@@ -392,7 +398,7 @@ const breadcrumbItems = [
               <div><dt>SHA-256</dt><dd data-release-digest>Shown when published by GitHub release metadata.</dd></div>
               <div><dt>Signing</dt><dd>Verify signing and notarization details in the current release notes.</dd></div>
             </dl>
-            <a class="btn primary" href={page.primaryCta?.href ?? githubUrl} data-release-download data-download data-attr="download-cta-release-panel">Download Free Mac App</a>
+            <a class="btn primary" href={page.primaryCta?.href ?? githubUrl} data-release-download data-download data-attr="download-cta-release-panel">Download Full Mac App</a>
           </div>
         </div>
       </section>

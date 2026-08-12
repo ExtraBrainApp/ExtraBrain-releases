@@ -1,5 +1,5 @@
 ---
-import { contactEmail } from '../data/product';
+import { contactEmail, macAppStoreUrl } from '../data/product';
 
 type Props = {
   isHome?: boolean;
@@ -56,7 +56,11 @@ const downloadAttributes = {
     </nav>
     <div class="nav-actions">
       <a class="btn primary" href={downloadHref} data-attr={downloadDataAttr} {...downloadAttributes}>{downloadLabel}</a>
+      <a class="nav-store-link" href={macAppStoreUrl} target="_blank" rel="noopener noreferrer" data-track="mac_app_store_nav_clicked">Mac App Store<span class="sr-only"> (opens in a new tab)</span></a>
     </div>
-    <a class="btn primary mobile-only" href={downloadHref} data-attr={mobileDownloadDataAttr} {...downloadAttributes}>{downloadLabel}</a>
+    <div class="mobile-download-actions">
+      <a class="btn primary mobile-only" href={downloadHref} data-attr={mobileDownloadDataAttr} {...downloadAttributes}>{downloadLabel}</a>
+      <a class="nav-store-link nav-store-link--mobile" href={macAppStoreUrl} target="_blank" rel="noopener noreferrer" data-track="mac_app_store_nav_mobile_clicked">Mac App Store<span class="sr-only"> (opens in a new tab)</span></a>
+    </div>
   </div>
 </header>
