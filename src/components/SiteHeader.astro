@@ -8,7 +8,6 @@ type Props = {
   downloadLabel?: string;
   downloadDataAttr?: string;
   mobileDownloadDataAttr?: string;
-  useDataDownload?: boolean;
   downloadTrackEvent?: string;
   feedbackHref?: string;
   feedbackTrigger?: boolean;
@@ -21,8 +20,7 @@ const {
   downloadLabel = 'Download Free',
   downloadDataAttr = 'download-cta-nav',
   mobileDownloadDataAttr = 'download-cta-nav-mobile',
-  useDataDownload = false,
-  downloadTrackEvent = useDataDownload ? undefined : 'download_nav_clicked',
+  downloadTrackEvent = 'download_nav_clicked',
   feedbackHref = `mailto:${contactEmail}?subject=ExtraBrain%20Feedback`,
   feedbackTrigger = false,
 } = Astro.props;
@@ -30,7 +28,6 @@ const {
 const productHref = isHome ? '#overview' : '/#overview';
 const useCasesHref = isHome ? '#workflows' : '/#workflows';
 const downloadAttributes = {
-  'data-download': useDataDownload ? '' : undefined,
   'data-track': downloadTrackEvent,
 };
 ---

@@ -40,7 +40,7 @@ export type ComparisonHubContent = {
   }>;
 };
 
-const defaultCta = { label: 'Download Free', href: '/download/' };
+const defaultCta = { label: 'Download Free', href: '/download/#install' };
 const checkedAt = 'May 12, 2026';
 const responsibleUse =
   'Use any live AI assistant only where interview, workplace, school, and platform rules allow it. Do not use generated answers to misrepresent your skills, experience, or authorship.';
