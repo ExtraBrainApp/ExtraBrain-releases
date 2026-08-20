@@ -109,6 +109,33 @@ export default defineConfig({
       },
       head: [
         {
+          tag: 'script',
+          content: `(() => {
+  const storageKey = 'extrabrain-theme';
+  let theme;
+  try { theme = localStorage.getItem(storageKey); } catch (_) {}
+  if (theme === 'light' || theme === 'dark') {
+    try { localStorage.setItem('starlight-theme', theme); } catch (_) {}
+  }
+  if (theme !== 'light' && theme !== 'dark') {
+    theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  document.documentElement.dataset.theme = theme;
+  new MutationObserver(() => {
+    const nextTheme = document.documentElement.dataset.theme;
+    try {
+      const starlightTheme = localStorage.getItem('starlight-theme');
+      if (starlightTheme === 'light' || starlightTheme === 'dark') {
+        localStorage.setItem(storageKey, nextTheme);
+      } else {
+        localStorage.removeItem(storageKey);
+      }
+    } catch (_) {
+    }
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+})();`,
+        },
+        {
           tag: 'meta',
           attrs: {
             name: 'theme-color',

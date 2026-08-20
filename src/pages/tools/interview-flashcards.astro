@@ -58,10 +58,10 @@ const cardsJson = JSON.stringify(cards).replace(/</g, '\\u003c');
   .flashcard { position: relative; width: 100%; min-height: 240px; perspective: 1200px; cursor: pointer; margin-bottom: 18px; }
   .flashcard-face {
     position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 14px;
-    padding: 28px; border-radius: 18px; border: 1px solid rgba(16,24,40,.1);
+    padding: 28px; border-radius: 18px; border: 1px solid var(--border-subtle);
     backface-visibility: hidden; transition: transform .5s var(--ease-standard); box-shadow: var(--shadow-editorial-soft);
   }
-  .flashcard-front { background: #fff; transform: rotateY(0deg); }
+  .flashcard-front { background: var(--surface-input); transform: rotateY(0deg); }
   .flashcard-back { background: var(--editorial-canvas-alt); transform: rotateY(180deg); }
   .flashcard.flipped .flashcard-front { transform: rotateY(-180deg); }
   .flashcard.flipped .flashcard-back { transform: rotateY(0deg); }
