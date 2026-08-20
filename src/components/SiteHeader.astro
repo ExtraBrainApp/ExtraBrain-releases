@@ -52,8 +52,53 @@ const downloadAttributes = {
       <a href={feedbackHref} data-feedback-trigger={feedbackTrigger ? '' : undefined}>Feedback</a>
     </nav>
     <div class="nav-actions">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+      </button>
       <a class="btn primary" href={downloadHref} data-attr={downloadDataAttr} {...downloadAttributes}>{downloadLabel}</a>
     </div>
-    <a class="btn primary mobile-only" href={downloadHref} data-attr={mobileDownloadDataAttr} {...downloadAttributes}>{downloadLabel}</a>
+    <div class="mobile-nav-actions">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+      </button>
+      <a class="btn primary mobile-only" href={downloadHref} data-attr={mobileDownloadDataAttr} {...downloadAttributes}>{downloadLabel}</a>
+    </div>
   </div>
 </header>
+
+<script is:inline>
+  (function () {
+    var storageKey = 'extrabrain-theme';
+    var root = document.documentElement;
+    var controls = document.querySelectorAll('[data-theme-toggle]');
+
+    function getTheme() {
+      return root.dataset.theme === 'dark' ? 'dark' : 'light';
+    }
+
+    function syncControls() {
+      var isDark = getTheme() === 'dark';
+      controls.forEach(function (control) {
+        control.setAttribute('aria-pressed', String(isDark));
+        control.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      });
+    }
+
+    function setTheme(theme) {
+      root.dataset.theme = theme;
+      try {
+        localStorage.setItem(storageKey, theme);
+        localStorage.setItem('starlight-theme', theme);
+      } catch (_) {}
+      syncControls();
+    }
+
+    controls.forEach(function (control) {
+      control.addEventListener('click', function () {
+        setTheme(getTheme() === 'dark' ? 'light' : 'dark');
+      });
+    });
+
+    syncControls();
+  })();
+</script>
