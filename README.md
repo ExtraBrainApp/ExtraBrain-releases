@@ -4,7 +4,7 @@ ExtraBrain is a free, local-first desktop app that follows live interviews and m
 
 This repository hosts the official ExtraBrain releases. The website and Help Center live at [extrabrain.app](https://extrabrain.app/?utm_source=github&utm_medium=repo&utm_campaign=releases).
 
-![ExtraBrain live session with transcript and answer](https://extrabrain.app/assets/screenshots/live_session.png)
+![ExtraBrain during a system design interview: live transcript on the right, a structured answer about API rate limiting with follow-up questions on the left](screenshots/structured-answer.png)
 
 ## Download
 
@@ -23,6 +23,17 @@ Linux is planned.
 - **Your choice of AI**: on-device Gemma, your own OpenAI, Anthropic, Claude, Codex, or compatible endpoint, or ExtraBrain AI credits.
 - **No meeting bot**: it runs on your computer and never joins Zoom, Teams, or Meet as a participant.
 - **Session history and summaries** to review what was asked and what to prepare next.
+
+## Screenshots
+
+| | |
+|---|---|
+| ![Live transcript of a system design interview next to the ExtraBrain window](screenshots/live-transcript.png) | ![ExtraBrain detecting the interview topic "API Rate Limiter Design" with a confidence score](screenshots/topic-detected.png) |
+| **Live transcript** that follows the call | **Topic detection** with one-click analysis |
+| ![ExtraBrain reading the screen and comparing token bucket and sliding window rate limiting](screenshots/screen-context.png) | ![ExtraBrain showing a token bucket rate limiter implementation with complexity notes](screenshots/code-answer.png) |
+| **Screen context** for prompts, code, and docs | **Code and tradeoffs** for technical rounds |
+| ![ExtraBrain session summary with key takeaways from a system design interview](screenshots/session-summary.png) | |
+| **Session summary** to review afterward | |
 
 ## Pricing
 
